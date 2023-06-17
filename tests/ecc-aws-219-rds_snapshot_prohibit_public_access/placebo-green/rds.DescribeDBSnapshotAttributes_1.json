@@ -1,0 +1,15 @@
+{
+    "status_code": 200,
+    "data": {
+        "DBSnapshotAttributesResult": {
+            "DBSnapshotIdentifier": "green-db-snapshot-219",
+            "DBSnapshotAttributes": [
+                {
+                    "AttributeName": "restore",
+                    "AttributeValues": []
+                }
+            ]
+        },
+        "ResponseMetadata": {}
+    }
+}

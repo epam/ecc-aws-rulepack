@@ -1,0 +1,35 @@
+{
+    "status_code": 200,
+    "data": {
+        "PaginationToken": "",
+        "ResourceTagMappingList": [
+            {
+                "ResourceARN": "arn:aws:rds:us-east-1:111111111111:cluster:rds-cluster-360-red",
+                "Tags": [
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Red"
+                    },
+                    {
+                        "Key": "CsutodianRule",
+                        "Value": "ecc-aws-360-rds_cluster_multi_az_enabled"
+                    }
+                ]
+            },
+            {
+                "ResourceARN": "arn:aws:rds:us-east-1:111111111111:cluster:cluster-asxn35vvqs7jt3ujqrffmbfqwu",
+                "Tags": [
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Red"
+                    },
+                    {
+                        "Key": "CsutodianRule",
+                        "Value": "ecc-aws-360-rds_cluster_multi_az_enabled"
+                    }
+                ]
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "status_code": 200,
+    "data": {
+        "logGroups": [
+
+            {
+                "logGroupName": "cloudwatch_725_log_group_green",
+                "creationTime": 1673860834364,
+                "retentionInDays": 180,
+                "metricFilterCount": 0,
+                "arn": "arn:aws:logs:us-east-1:111111111111:log-group:cloudwatch_725_log_group_green:*",
+                "storedBytes": 0
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

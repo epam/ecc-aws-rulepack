@@ -1,0 +1,75 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "Policy": {
+            "PolicyId": "policy-075cecb4e18b76a52",
+            "Description": "dlm lifecycly policy 583 green",
+            "State": "ENABLED",
+            "StatusMessage": "ENABLED",
+            "ExecutionRoleArn": "arn:aws:iam::111111111111:role/iam-role-583-green",
+            "DateCreated": {
+                "__class__": "datetime",
+                "year": 2022,
+                "month": 12,
+                "day": 22,
+                "hour": 8,
+                "minute": 42,
+                "second": 57,
+                "microsecond": 345000
+            },
+            "DateModified": {
+                "__class__": "datetime",
+                "year": 2022,
+                "month": 12,
+                "day": 22,
+                "hour": 8,
+                "minute": 42,
+                "second": 57,
+                "microsecond": 462000
+            },
+            "PolicyDetails": {
+                "PolicyType": "EBS_SNAPSHOT_MANAGEMENT",
+                "ResourceTypes": [
+                    "VOLUME"
+                ],
+                "ResourceLocations": [
+                    "CLOUD"
+                ],
+                "TargetTags": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-583-dlm_without_tag_information"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    }
+                ],
+                "Schedules": [
+                    {
+                        "Name": "2 weeks of daily snapshots",
+                        "CopyTags": false,
+                        "CreateRule": {
+                            "Location": "CLOUD",
+                            "Interval": 24,
+                            "IntervalUnit": "HOURS",
+                            "Times": [
+                                "23:45"
+                            ]
+                        },
+                        "RetainRule": {
+                            "Count": 14,
+                            "Interval": 0
+                        }
+                    }
+                ]
+            },
+            "Tags": {
+                "CustodianRule": "ecc-aws-583-dlm_without_tag_information",
+                "ComplianceStatus": "Green"
+            },
+            "PolicyArn": "arn:aws:dlm:us-east-1:111111111111:policy/policy-075cecb4e18b76a52"
+        }
+    }
+}

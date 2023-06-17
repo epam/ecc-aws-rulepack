@@ -1,0 +1,19 @@
+{
+    "status_code": 200,
+    "data": {
+        "Parameters": [
+            {
+                "ParameterName": "log_rotation_size",
+                "ParameterValue": "1000000",
+                "Description": "(kB) Automatic log file rotation will occur after N kilobytes.",
+                "Source": "user",
+                "ApplyType": "dynamic",
+                "DataType": "integer",
+                "AllowedValues": "0-2097151",
+                "IsModifiable": true,
+                "ApplyMethod": "immediate"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

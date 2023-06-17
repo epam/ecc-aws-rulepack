@@ -1,0 +1,49 @@
+{
+    "status_code": 200,
+    "data": {
+        "Certificate": {
+            "CertificateArn": "arn:aws:acm:us-east-1:111111111111:certificate/3de8d05a-3e4d-4721-a496-77dc8059c906",
+            "DomainName": "examplegreen.com",
+            "SubjectAlternativeNames": [
+                "examplegreen.com"
+            ],
+            "DomainValidationOptions": [
+                {
+                    "DomainName": "examplegreen.com",
+                    "ValidationDomain": "examplegreen.com",
+                    "ValidationStatus": "PENDING_VALIDATION",
+                    "ResourceRecord": {
+                        "Name": "_d8ba774c444ecbf83c45dd0c1ad8352b.examplegreen.com.",
+                        "Type": "CNAME",
+                        "Value": "_33107ea6f9af7f4c0f1c11ba96e82878.xgxxrgwpcb.acm-validations.aws."
+                    },
+                    "ValidationMethod": "DNS"
+                }
+            ],
+            "Subject": "CN=examplegreen.com",
+            "Issuer": "Amazon",
+            "CreatedAt": {
+                "__class__": "datetime",
+                "year": 2022,
+                "month": 8,
+                "day": 16,
+                "hour": 9,
+                "minute": 22,
+                "second": 5,
+                "microsecond": 787000
+            },
+            "Status": "PENDING_VALIDATION",
+            "KeyAlgorithm": "RSA-2048",
+            "SignatureAlgorithm": "SHA256WITHRSA",
+            "InUseBy": [],
+            "Type": "AMAZON_ISSUED",
+            "KeyUsages": [],
+            "ExtendedKeyUsages": [],
+            "RenewalEligibility": "INELIGIBLE",
+            "Options": {
+                "CertificateTransparencyLoggingPreference": "ENABLED"
+            }
+        },
+        "ResponseMetadata": {}
+    }
+}

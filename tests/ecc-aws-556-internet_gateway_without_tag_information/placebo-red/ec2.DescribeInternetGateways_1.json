@@ -1,0 +1,19 @@
+{
+    "status_code": 200,
+    "data": {
+        "InternetGateways": [
+            {
+                "Attachments": [
+                    {
+                        "State": "available",
+                        "VpcId": "vpc-12345asdfg"
+                    }
+                ],
+                "InternetGatewayId": "igw-0970b82138ab25acf",
+                "OwnerId": "111111111111",
+                "Tags": []
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

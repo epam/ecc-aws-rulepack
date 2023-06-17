@@ -1,0 +1,16 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: ecc-aws-344-elasticsearch_node_to_node_encryption_enabled
+    resource: aws.elasticsearch
+    description: |
+      Elasticsearch domains data sent between nodes is not encrypted
+    filters:
+      - type: value
+        key: NodeToNodeEncryptionOptions.Enabled
+        value: false

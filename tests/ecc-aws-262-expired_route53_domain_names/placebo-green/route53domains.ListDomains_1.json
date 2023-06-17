@@ -1,0 +1,23 @@
+{
+    "status_code": 200,
+    "data": {
+        "Domains": [
+            {
+                "DomainName": "custodian-rule.click",
+                "AutoRenew": false,
+                "TransferLock": false,
+                "Expiry": {
+                    "__class__": "datetime",
+                    "year": 2024,
+                    "month": 1,
+                    "day": 17,
+                    "hour": 10,
+                    "minute": 3,
+                    "second": 55,
+                    "microsecond": 887000
+                }
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

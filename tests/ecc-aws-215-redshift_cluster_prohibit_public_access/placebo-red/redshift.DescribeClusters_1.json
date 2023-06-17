@@ -1,0 +1,67 @@
+{
+    "status_code": 200,
+    "data": {
+        "Clusters": [
+            {
+                "ClusterIdentifier": "red-redshift-215",
+                "NodeType": "dc1.large",
+                "ClusterStatus": "creating",
+                "ClusterAvailabilityStatus": "Modifying",
+                "MasterUsername": "c7n",
+                "DBName": "mydb",
+                "AutomatedSnapshotRetentionPeriod": 1,
+                "ManualSnapshotRetentionPeriod": -1,
+                "ClusterSecurityGroups": [],
+                "VpcSecurityGroups": [
+                    {
+                        "VpcSecurityGroupId": "sg-1212121112212",
+                        "Status": "active"
+                    }
+                ],
+                "ClusterParameterGroups": [
+                    {
+                        "ParameterGroupName": "default.redshift-1.0",
+                        "ParameterApplyStatus": "in-sync"
+                    }
+                ],
+                "ClusterSubnetGroupName": "default",
+                "VpcId": "vpc-12345asdfg",
+                "AvailabilityZone": "us-east-1c",
+                "PreferredMaintenanceWindow": "wed:07:30-wed:08:00",
+                "PendingModifiedValues": {
+                    "MasterUserPassword": "****"
+                },
+                "ClusterVersion": "1.0",
+                "AllowVersionUpgrade": true,
+                "NumberOfNodes": 1,
+                "PubliclyAccessible": true,
+                "Encrypted": false,
+                "ClusterPublicKey": "ssh-rsa 1212121112212/1212121112212/T/1212121112212/2fugHKzy/1212121112212+1212121112212/d+1212121112212 Amazon-Redshift\n",
+                "ClusterNodes": [
+                    {
+                        "NodeRole": "SHARED",
+                        "PrivateIPAddress": "1212121112212",
+                        "PublicIPAddress": "1212121112212"
+                    }
+                ],
+                "ClusterRevisionNumber": "21212121112212",
+                "Tags": [],
+                "EnhancedVpcRouting": false,
+                "IamRoles": [],
+                "MaintenanceTrackName": "current",
+                "DeferredMaintenanceWindows": [],
+                "NextMaintenanceWindowStartTime": {
+                    "__class__": "datetime",
+                    "year": 2021,
+                    "month": 6,
+                    "day": 9,
+                    "hour": 7,
+                    "minute": 30,
+                    "second": 0,
+                    "microsecond": 0
+                }
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

@@ -1,0 +1,62 @@
+{
+    "status_code": 200,
+    "data": {
+        "Volumes": [
+            {
+                "Attachments": [
+                    {
+                        "AttachTime": {
+                            "__class__": "datetime",
+                            "year": 2022,
+                            "month": 5,
+                            "day": 10,
+                            "hour": 11,
+                            "minute": 1,
+                            "second": 34,
+                            "microsecond": 0
+                        },
+                        "Device": "/dev/sdh",
+                        "InstanceId": "i-0e1c293a86f7252fa",
+                        "State": "attached",
+                        "VolumeId": "vol-0eae961b45e89549d",
+                        "DeleteOnTermination": false
+                    }
+                ],
+                "AvailabilityZone": "us-east-1a",
+                "CreateTime": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 5,
+                    "day": 10,
+                    "hour": 11,
+                    "minute": 0,
+                    "second": 50,
+                    "microsecond": 926000
+                },
+                "Encrypted": false,
+                "Size": 1,
+                "SnapshotId": "",
+                "State": "in-use",
+                "VolumeId": "vol-0eae961b45e89549d",
+                "Iops": 100,
+                "Tags": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-489-unused_ebs_volumes"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    },
+                    {
+                        "Key": "Name",
+                        "Value": "489-unused_ebs_volumes_green"
+                    }
+                ],
+                "VolumeType": "gp2",
+                "MultiAttachEnabled": false
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

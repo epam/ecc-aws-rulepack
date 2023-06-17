@@ -1,0 +1,65 @@
+{
+    "status_code": 200,
+    "data": {
+        "taskDefinition": {
+            "taskDefinitionArn": "arn:aws:ecs:us-east-1:111111111111:task-definition/906_ecs_task_definition_green:1",
+            "containerDefinitions": [
+                {
+                    "name": "mysql",
+                    "image": "mysql",
+                    "cpu": 1,
+                    "memory": 5,
+                    "portMappings": [],
+                    "essential": true,
+                    "environment": [],
+                    "mountPoints": [],
+                    "volumesFrom": [],
+                    "readonlyRootFilesystem": true
+                }
+            ],
+            "family": "906_ecs_task_definition_green",
+            "networkMode": "host",
+            "revision": 1,
+            "volumes": [],
+            "status": "ACTIVE",
+            "requiresAttributes": [
+                {
+                    "name": "com.amazonaws.ecs.capability.docker-remote-api.1.17"
+                },
+                {
+                    "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+                }
+            ],
+            "placementConstraints": [],
+            "compatibilities": [
+                "EXTERNAL",
+                "EC2"
+            ],
+            "requiresCompatibilities": [
+                "EC2"
+            ],
+            "registeredAt": {
+                "__class__": "datetime",
+                "year": 2022,
+                "month": 10,
+                "day": 17,
+                "hour": 9,
+                "minute": 49,
+                "second": 12,
+                "microsecond": 53000
+            },
+            "registeredBy": "arn:aws:iam::111111111111:user/test"
+        },
+        "tags": [
+            {
+                "key": "CustodianRule",
+                "Value": "ecc-aws-906-ecs_containers_readonly_access"
+            },
+            {
+                "key": "ComplianceStatus",
+                "value": "Green"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

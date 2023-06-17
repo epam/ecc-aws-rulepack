@@ -1,0 +1,27 @@
+{
+    "status_code": 200,
+    "data": {
+        "LoadBalancerAttributes": {
+            "CrossZoneLoadBalancing": {
+                "Enabled": true
+            },
+            "AccessLog": {
+                "Enabled": false
+            },
+            "ConnectionDraining": {
+                "Enabled": false,
+                "Timeout": 300
+            },
+            "ConnectionSettings": {
+                "IdleTimeout": 400
+            },
+            "AdditionalAttributes": [
+                {
+                    "Key": "elb.http.desyncmitigationmode",
+                    "Value": "defensive"
+                }
+            ]
+        },
+        "ResponseMetadata": {}
+    }
+}

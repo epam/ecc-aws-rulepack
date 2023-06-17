@@ -1,0 +1,16 @@
+{
+    "status_code": 200,
+    "data": {
+        "tags": [
+            {
+                "Key": "CustodianRule",
+                "Value": "ecc-aws-741-ecr_private_lifecycle_policy_configured"
+            },
+            {
+                "Key": "ComplianceStatus",
+                "Value": "Green"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

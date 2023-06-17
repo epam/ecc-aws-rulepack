@@ -1,0 +1,18 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: ecc-aws-095-ensure_hardware_mfa_is_enabled_for_root_account
+    resource: account
+    description: |
+      Hardware MFA is not enabled for the 'root' account
+    filters:
+      - type: has-virtual-mfa
+        value: false
+      - type: credential
+        key: mfa_active
+        value: true

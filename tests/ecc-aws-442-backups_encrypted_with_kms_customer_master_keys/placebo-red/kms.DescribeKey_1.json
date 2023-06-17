@@ -1,0 +1,32 @@
+{
+    "status_code": 200,
+    "data": {
+        "KeyMetadata": {
+            "AWSAccountId": "111111111111",
+            "KeyId": "86cac66f-e240-46a4-a5c6-527c91f61644",
+            "Arn": "arn:aws:kms:us-east-1:111111111111:key/86cac66f-e240-46a4-a5c6-527c91f61644",
+            "CreationDate": {
+                "__class__": "datetime",
+                "year": 2021,
+                "month": 3,
+                "day": 12,
+                "hour": 14,
+                "minute": 21,
+                "second": 30,
+                "microsecond": 822000
+            },
+            "Enabled": true,
+            "Description": "Default master key that protects my Backup data when no other key is defined",
+            "KeyUsage": "ENCRYPT_DECRYPT",
+            "KeyState": "Enabled",
+            "Origin": "AWS_KMS",
+            "KeyManager": "AWS",
+            "CustomerMasterKeySpec": "SYMMETRIC_DEFAULT",
+            "EncryptionAlgorithms": [
+                "SYMMETRIC_DEFAULT"
+            ],
+            "MultiRegion": false
+        },
+        "ResponseMetadata": {}
+    }
+}

@@ -1,0 +1,47 @@
+{
+    "status_code": 200,
+    "data": {
+        "Environments": [
+            {
+                "EnvironmentName": "environment-590-red",
+                "EnvironmentId": "e-mmcfxgsu8i",
+                "ApplicationName": "590_application_red",
+                "SolutionStackName": "64bit Amazon Linux 2 v3.3.7 running Python 3.8",
+                "PlatformArn": "arn:aws:elasticbeanstalk:us-east-1::platform/Python 3.8 running on 64bit Amazon Linux 2/3.3.7",
+                "EndpointURL": "awseb-e-m-AWSEBLoa-1COY4KFXEGZ58-503115957.us-east-1.elb.amazonaws.com",
+                "CNAME": "environment-590-red.eba-evr4bayp.us-east-1.elasticbeanstalk.com",
+                "DateCreated": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 8,
+                    "day": 16,
+                    "hour": 12,
+                    "minute": 25,
+                    "second": 35,
+                    "microsecond": 36000
+                },
+                "DateUpdated": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 8,
+                    "day": 16,
+                    "hour": 12,
+                    "minute": 27,
+                    "second": 50,
+                    "microsecond": 934000
+                },
+                "Status": "Ready",
+                "AbortableOperationInProgress": false,
+                "Health": "Green",
+                "Tier": {
+                    "Name": "WebServer",
+                    "Type": "Standard",
+                    "Version": "1.0"
+                },
+                "EnvironmentLinks": [],
+                "EnvironmentArn": "arn:aws:elasticbeanstalk:us-east-1:111111111111:environment/590_application_red/environment-590-red"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

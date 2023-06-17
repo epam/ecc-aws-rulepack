@@ -1,0 +1,32 @@
+{
+    "status_code": 200,
+    "data": {
+        "KeyMetadata": {
+            "AWSAccountId": "111111111111",
+            "KeyId": "fe68c9a7-b85c-4246-a8c4-afe3e0630b8d",
+            "Arn": "arn:aws:kms:us-east-1:111111111111:key/fe68c9a7-b85c-4246-a8c4-afe3e0630b8d",
+            "CreationDate": {
+                "__class__": "datetime",
+                "year": 2022,
+                "month": 5,
+                "day": 19,
+                "hour": 22,
+                "minute": 35,
+                "second": 10,
+                "microsecond": 936000
+            },
+            "Enabled": true,
+            "Description": "Key to encrypt and decrypt secret parameters",
+            "KeyUsage": "ENCRYPT_DECRYPT",
+            "KeyState": "Enabled",
+            "Origin": "AWS_KMS",
+            "KeyManager": "CUSTOMER",
+            "CustomerMasterKeySpec": "SYMMETRIC_DEFAULT",
+            "EncryptionAlgorithms": [
+                "SYMMETRIC_DEFAULT"
+            ],
+            "MultiRegion": false
+        },
+        "ResponseMetadata": {}
+    }
+}

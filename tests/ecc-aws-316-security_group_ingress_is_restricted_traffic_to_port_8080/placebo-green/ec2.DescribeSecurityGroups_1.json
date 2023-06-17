@@ -1,0 +1,53 @@
+{
+    "status_code": 200,
+    "data": {
+        "SecurityGroups": [
+            {
+                "Description": "Managed by Terraform",
+                "GroupName": "316_security_group_green",
+                "IpPermissions": [
+                    {
+                        "FromPort": 8080,
+                        "IpProtocol": "tcp",
+                        "IpRanges": [
+                            {
+                                "CidrIp": "10.0.0.0/16"
+                            }
+                        ],
+                        "Ipv6Ranges": [],
+                        "PrefixListIds": [],
+                        "ToPort": 8080,
+                        "UserIdGroupPairs": []
+                    }
+                ],
+                "OwnerId": "this",
+                "GroupId": "sg-1234567asdfg",
+                "IpPermissionsEgress": [
+                    {
+                        "IpProtocol": "-1",
+                        "IpRanges": [
+                            {
+                                "CidrIp": "0.0.0.0/0"
+                            }
+                        ],
+                        "Ipv6Ranges": [],
+                        "PrefixListIds": [],
+                        "UserIdGroupPairs": []
+                    }
+                ],
+                "Tags": [
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    },
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-316-security_group_ingress_is_restricted_traffic_to_port_8080"
+                    }
+                ],
+                "VpcId": "vpc-12345asdfg"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

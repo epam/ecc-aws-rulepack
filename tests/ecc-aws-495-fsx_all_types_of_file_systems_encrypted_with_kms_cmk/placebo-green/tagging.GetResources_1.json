@@ -1,0 +1,22 @@
+{
+    "status_code": 200,
+    "data": {
+        "PaginationToken": "",
+        "ResourceTagMappingList": [
+            {
+                "ResourceARN": "arn:aws:kms:us-east-1:111111111111:key/af354f6b-2244-43ef-94dc-d728a40d1396",
+                "Tags": [
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    },
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-495-fsx_all_types_of_file_systems_encrypted_with_kms_cmk"
+                    }
+                ]
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

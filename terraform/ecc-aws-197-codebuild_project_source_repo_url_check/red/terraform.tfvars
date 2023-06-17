@@ -1,0 +1,7 @@
+profile            = "c7n"
+default-region     = "us-east-1"
+github_location    = "GitHub repository"
+bitbucket_location = "Bitbucket repository"
+token              = "GitHub access token"
+user_password      = "Bitbucket user password"
+user_name          = "Bitbucket user name"

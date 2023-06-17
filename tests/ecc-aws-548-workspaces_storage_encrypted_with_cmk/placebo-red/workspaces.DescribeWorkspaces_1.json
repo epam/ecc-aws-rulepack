@@ -1,0 +1,29 @@
+{
+    "status_code": 200,
+    "data": {
+        "Workspaces": [
+            {
+                "WorkspaceId": "ws-9fx9bntb5",
+                "DirectoryId": "d-90674b7222",
+                "UserName": "Admin",
+                "IpAddress": "10.0.2.147",
+                "State": "REBOOTING",
+                "BundleId": "wsb-clj85qzj1",
+                "SubnetId": "subnet-03ca90690d1c151dc",
+                "ComputerName": "A-23DUBZT8WO8KH",
+                "VolumeEncryptionKey": "arn:aws:kms:us-east-1:111111111111:key/8b5f7500-ae57-49fb-884a-ba4b25bd28ea",
+                "UserVolumeEncryptionEnabled": true,
+                "RootVolumeEncryptionEnabled": true,
+                "WorkspaceProperties": {
+                    "RunningMode": "AUTO_STOP",
+                    "RunningModeAutoStopTimeoutInMinutes": 60,
+                    "RootVolumeSizeGib": 80,
+                    "UserVolumeSizeGib": 50,
+                    "ComputeTypeName": "STANDARD"
+                },
+                "ModificationStates": []
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "status_code": 200,
+    "data": {
+        "trailList": [
+            {
+                "Name": "c7n-red-trail-176",
+                "S3BucketName": "c7n-red-bucket-176",
+                "IncludeGlobalServiceEvents": true,
+                "IsMultiRegionTrail": false,
+                "HomeRegion": "us-east-1",
+                "TrailARN": "arn:aws:cloudtrail:us-east-1:111111111111:trail/c7n-red-trail-176",
+                "LogFileValidationEnabled": false,
+                "HasCustomEventSelectors": false,
+                "HasInsightSelectors": false,
+                "IsOrganizationTrail": false
+            }
+           
+        ],
+        "ResponseMetadata": {}
+    }
+}

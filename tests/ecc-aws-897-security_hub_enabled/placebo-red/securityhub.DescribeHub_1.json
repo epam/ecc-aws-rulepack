@@ -1,0 +1,12 @@
+{
+    "status_code": 401,
+    "data": {
+        "Error": {
+            "Message": "Account 111111111111 is not subscribed to AWS Security Hub",
+            "Code": "InvalidAccessException"
+        },
+        "ResponseMetadata": {},
+        "Message": "Account 111111111111 is not subscribed to AWS Security Hub",
+        "Code": "InvalidAccessException"
+    }
+}

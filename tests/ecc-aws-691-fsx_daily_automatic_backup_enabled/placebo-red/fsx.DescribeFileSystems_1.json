@@ -1,0 +1,64 @@
+{
+    "status_code": 200,
+    "data": {
+        "FileSystems": [
+            {
+                "OwnerId": "111111111111",
+                "CreationTime": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 7,
+                    "day": 26,
+                    "hour": 12,
+                    "minute": 22,
+                    "second": 2,
+                    "microsecond": 288000
+                },
+                "FileSystemId": "fs-02586e973b26c15a7",
+                "FileSystemType": "LUSTRE",
+                "Lifecycle": "AVAILABLE",
+                "StorageCapacity": 6000,
+                "StorageType": "HDD",
+                "VpcId": "vpc-12345asdfg",
+                "SubnetIds": [
+                    "subnet-cd7af8ec"
+                ],
+                "NetworkInterfaceIds": [
+                    "eni-0f26136802151f7b5",
+                    "eni-0e8b638074e045430"
+                ],
+                "DNSName": "fs-02586e973b26c15a7.fsx.us-east-1.amazonaws.com",
+                "KmsKeyId": "arn:aws:kms:us-east-1:111111111111:key/dd9fb145-9e61-4b40-a1d5-b079e1d5ccdd",
+                "ResourceARN": "arn:aws:fsx:us-east-1:111111111111:file-system/fs-02586e973b26c15a7",
+                "Tags": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-691-fsx_daily_automatic_backup_enabled"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Red"
+                    },
+                    {
+                        "Key": "Name",
+                        "Value": "691-fsx_lustre_file_system-red"
+                    }
+                ],
+                "LustreConfiguration": {
+                    "WeeklyMaintenanceStartTime": "3:07:00",
+                    "DeploymentType": "PERSISTENT_1",
+                    "PerUnitStorageThroughput": 12,
+                    "MountName": "4qmahbev",
+                    "CopyTagsToBackups": false,
+                    "DriveCacheType": "NONE",
+                    "DataCompressionType": "NONE",
+                    "LogConfiguration": {
+                        "Level": "DISABLED"
+                    }
+                },
+                "FileSystemTypeVersion": "2.10"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

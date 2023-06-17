@@ -1,0 +1,22 @@
+{
+    "status_code": 200,
+    "data": {
+        "PaginationToken": "",
+        "ResourceTagMappingList": [
+            {
+                "ResourceARN": "arn:aws:qldb:us-east-1:111111111111:ledger/qldb-643-red",
+                "Tags": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-643-qldb_persmission_mode_is_standard"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Red"
+                    }
+                ]
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

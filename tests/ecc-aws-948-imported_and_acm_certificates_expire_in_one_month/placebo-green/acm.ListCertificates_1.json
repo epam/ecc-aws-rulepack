@@ -1,0 +1,11 @@
+{
+    "status_code": 200,
+    "data": {
+        "CertificateSummaryList": [
+            {
+                "CertificateArn": "arn:aws:acm:us-east-1:111111111111:certificate/f8cdefd4-2290-42f4-a3ed-a05877c181e8"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

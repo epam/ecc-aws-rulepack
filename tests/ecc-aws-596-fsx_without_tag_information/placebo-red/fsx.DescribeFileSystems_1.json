@@ -1,0 +1,51 @@
+{
+    "status_code": 200,
+    "data": {
+        "FileSystems": [
+            {
+                "OwnerId": "111111111111",
+                "CreationTime": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 8,
+                    "day": 12,
+                    "hour": 9,
+                    "minute": 1,
+                    "second": 49,
+                    "microsecond": 49000
+                },
+                "FileSystemId": "fs-0ca40251bb3dc409a",
+                "FileSystemType": "LUSTRE",
+                "Lifecycle": "AVAILABLE",
+                "StorageCapacity": 6000,
+                "StorageType": "HDD",
+                "VpcId": "vpc-12345asdfg",
+                "SubnetIds": [
+                    "subnet-0d96a06b0662d448a"
+                ],
+                "NetworkInterfaceIds": [
+                    "eni-03734af111355a6df",
+                    "eni-0396416723b9a0c91"
+                ],
+                "DNSName": "fs-0ca40251bb3dc409a.fsx.us-east-1.amazonaws.com",
+                "KmsKeyId": "arn:aws:kms:us-east-1:111111111111:key/dd9fb145-9e61-4b40-a1d5-b079e1d5ccdd",
+                "ResourceARN": "arn:aws:fsx:us-east-1:111111111111:file-system/fs-0ca40251bb3dc409a",
+                "Tags": [],
+                "LustreConfiguration": {
+                    "WeeklyMaintenanceStartTime": "4:09:00",
+                    "DeploymentType": "PERSISTENT_1",
+                    "PerUnitStorageThroughput": 12,
+                    "MountName": "olqbxbev",
+                    "CopyTagsToBackups": false,
+                    "DriveCacheType": "NONE",
+                    "DataCompressionType": "NONE",
+                    "LogConfiguration": {
+                        "Level": "DISABLED"
+                    }
+                },
+                "FileSystemTypeVersion": "2.10"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

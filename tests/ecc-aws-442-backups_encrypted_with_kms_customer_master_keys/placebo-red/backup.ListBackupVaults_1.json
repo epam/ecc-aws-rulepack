@@ -1,0 +1,24 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "BackupVaultList": [
+            {
+                "BackupVaultName": "442_backup_vault_red",
+                "BackupVaultArn": "arn:aws:backup:us-east-1:111111111111:backup-vault:442_backup_vault_red",
+                "CreationDate": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 1,
+                    "day": 6,
+                    "hour": 17,
+                    "minute": 7,
+                    "second": 2,
+                    "microsecond": 937000
+                },
+                "EncryptionKeyArn": "arn:aws:kms:us-east-1:111111111111:key/86cac66f-e240-46a4-a5c6-527c91f61644",
+                "NumberOfRecoveryPoints": 0
+            }
+        ]
+    }
+}

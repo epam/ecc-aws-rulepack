@@ -1,0 +1,19 @@
+{
+    "status_code": 200,
+    "data": {
+        "Parameters": [
+            {
+                "ParameterName": "global_names",
+                "ParameterValue": "FALSE",
+                "Description": "enforce that database links have same name as remote database",
+                "Source": "user",
+                "ApplyType": "dynamic",
+                "DataType": "boolean",
+                "AllowedValues": "TRUE,FALSE",
+                "IsModifiable": true,
+                "ApplyMethod": "pending-reboot"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

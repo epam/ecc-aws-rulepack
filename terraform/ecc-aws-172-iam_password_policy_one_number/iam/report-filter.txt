@@ -1,0 +1,1 @@
+"--field RequireNumbers='\"c7n:password_policy\".RequireNumbers'"

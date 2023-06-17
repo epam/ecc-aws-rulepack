@@ -1,0 +1,20 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: ecc-aws-331-ec2_stopped_instance
+    description: |
+      Stopped EC2 instances are not removed after a specified time period
+    resource: aws.ec2
+    filters:
+      - and:
+          - type: state-age
+            op: ge
+            days: 30
+          - type: value
+            key: State.Name
+            value: stopped

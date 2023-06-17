@@ -1,0 +1,16 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: ecc-aws-332-ec2_instance_no_public_ip
+    resource: aws.ec2
+    description: |
+      EC2 instances have public IP address
+    filters:
+      - type: value
+        key: NetworkInterfaces[].Association.PublicIp
+        value: not-null

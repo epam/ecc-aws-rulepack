@@ -1,0 +1,20 @@
+{
+    "status_code": 200,
+    "data": {
+        "trailList": [
+            {
+                "Name": "cloudtrail-578-red",
+                "S3BucketName": "bucket-578-red",
+                "IncludeGlobalServiceEvents": true,
+                "IsMultiRegionTrail": false,
+                "HomeRegion": "us-east-1",
+                "TrailARN": "arn:aws:cloudtrail:us-east-1:111111111111:trail/cloudtrail-578-red",
+                "LogFileValidationEnabled": false,
+                "HasCustomEventSelectors": false,
+                "HasInsightSelectors": false,
+                "IsOrganizationTrail": false
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

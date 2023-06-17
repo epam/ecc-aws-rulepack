@@ -1,0 +1,22 @@
+{
+    "status_code": 200,
+    "data": {
+        "PaginationToken": "",
+        "ResourceTagMappingList": [
+            {
+                "ResourceARN": "arn:aws:rds:us-east-1:this:snapshot:snapshot320red",
+                "Tags": [
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Red"
+                    },
+                    {
+                        "Key": "CsutodianRule",
+                        "Value": "ecc-aws-320-rds_snapshots_storage_is_encrypted"
+                    }
+                ]
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

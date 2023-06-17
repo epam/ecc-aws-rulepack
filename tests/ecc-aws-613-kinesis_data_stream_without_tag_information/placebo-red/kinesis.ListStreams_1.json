@@ -1,0 +1,10 @@
+{
+    "status_code": 200,
+    "data": {
+        "StreamNames": [
+            "613_kinesis1_stream_red"
+        ],
+        "HasMoreStreams": false,
+        "ResponseMetadata": {}
+    }
+}

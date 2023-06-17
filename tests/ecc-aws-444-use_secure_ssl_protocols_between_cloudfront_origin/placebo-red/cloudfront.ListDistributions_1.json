@@ -1,0 +1,152 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "DistributionList": {
+            "Marker": "",
+            "MaxItems": 100,
+            "IsTruncated": false,
+            "Quantity": 4,
+            "Items": [
+                {
+                    "Id": "E32QEHSIE8V7TF",
+                    "ARN": "arn:aws:cloudfront::111111111111:distribution/E32QEHSIE8V7TF",
+                    "Status": "Deployed",
+                    "LastModifiedTime": {
+                        "__class__": "datetime",
+                        "year": 2022,
+                        "month": 5,
+                        "day": 20,
+                        "hour": 13,
+                        "minute": 32,
+                        "second": 12,
+                        "microsecond": 356000
+                    },
+                    "DomainName": "d2ohku0rzi86fg.cloudfront.net",
+                    "Aliases": {
+                        "Quantity": 0
+                    },
+                    "Origins": {
+                        "Quantity": 1,
+                        "Items": [
+                            {
+                                "Id": "myEC2Origin",
+                                "DomainName": "ec2-3-84-182-11.compute-1.amazonaws.com",
+                                "OriginPath": "",
+                                "CustomHeaders": {
+                                    "Quantity": 0
+                                },
+                                "CustomOriginConfig": {
+                                    "HTTPPort": 80,
+                                    "HTTPSPort": 443,
+                                    "OriginProtocolPolicy": "https-only",
+                                    "OriginSslProtocols": {
+                                        "Quantity": 1,
+                                        "Items": [
+                                            "TLSv1.1"
+                                        ]
+                                    },
+                                    "OriginReadTimeout": 30,
+                                    "OriginKeepaliveTimeout": 5
+                                },
+                                "ConnectionAttempts": 3,
+                                "ConnectionTimeout": 10,
+                                "OriginShield": {
+                                    "Enabled": false
+                                }
+                            }
+                        ]
+                    },
+                    "OriginGroups": {
+                        "Quantity": 0
+                    },
+                    "DefaultCacheBehavior": {
+                        "TargetOriginId": "myEC2Origin",
+                        "TrustedSigners": {
+                            "Enabled": false,
+                            "Quantity": 0
+                        },
+                        "TrustedKeyGroups": {
+                            "Enabled": false,
+                            "Quantity": 0
+                        },
+                        "ViewerProtocolPolicy": "allow-all",
+                        "AllowedMethods": {
+                            "Quantity": 7,
+                            "Items": [
+                                "HEAD",
+                                "DELETE",
+                                "POST",
+                                "GET",
+                                "OPTIONS",
+                                "PUT",
+                                "PATCH"
+                            ],
+                            "CachedMethods": {
+                                "Quantity": 2,
+                                "Items": [
+                                    "HEAD",
+                                    "GET"
+                                ]
+                            }
+                        },
+                        "SmoothStreaming": false,
+                        "Compress": false,
+                        "LambdaFunctionAssociations": {
+                            "Quantity": 0
+                        },
+                        "FunctionAssociations": {
+                            "Quantity": 0
+                        },
+                        "FieldLevelEncryptionId": "",
+                        "ForwardedValues": {
+                            "QueryString": false,
+                            "Cookies": {
+                                "Forward": "none"
+                            },
+                            "Headers": {
+                                "Quantity": 0
+                            },
+                            "QueryStringCacheKeys": {
+                                "Quantity": 0
+                            }
+                        },
+                        "MinTTL": 0,
+                        "DefaultTTL": 3600,
+                        "MaxTTL": 86400
+                    },
+                    "CacheBehaviors": {
+                        "Quantity": 0
+                    },
+                    "CustomErrorResponses": {
+                        "Quantity": 0
+                    },
+                    "Comment": "",
+                    "PriceClass": "PriceClass_All",
+                    "Enabled": true,
+                    "ViewerCertificate": {
+                        "CloudFrontDefaultCertificate": true,
+                        "SSLSupportMethod": "vip",
+                        "MinimumProtocolVersion": "TLSv1",
+                        "CertificateSource": "cloudfront"
+                    },
+                    "Restrictions": {
+                        "GeoRestriction": {
+                            "RestrictionType": "whitelist",
+                            "Quantity": 4,
+                            "Items": [
+                                "US",
+                                "CA",
+                                "GB",
+                                "DE"
+                            ]
+                        }
+                    },
+                    "WebACLId": "",
+                    "HttpVersion": "HTTP2",
+                    "IsIPV6Enabled": false
+                }
+            ]
+        }
+    }
+}

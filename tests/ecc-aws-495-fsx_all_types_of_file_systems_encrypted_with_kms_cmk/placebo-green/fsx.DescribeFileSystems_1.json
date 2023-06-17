@@ -1,0 +1,60 @@
+{
+    "status_code": 200,
+    "data": {
+        "FileSystems": [
+            {
+                "OwnerId": "111111111111",
+                "CreationTime": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 1,
+                    "day": 14,
+                    "hour": 14,
+                    "minute": 18,
+                    "second": 32,
+                    "microsecond": 818000
+                },
+                "FileSystemId": "fs-0e6e727c7f8f39ae4",
+                "FileSystemType": "LUSTRE",
+                "Lifecycle": "CREATING",
+                "StorageCapacity": 6000,
+                "StorageType": "HDD",
+                "VpcId": "vpc-12345asdfg",
+                "SubnetIds": [
+                    "subnet-0be80c5b3411b7b8e"
+                ],
+                "NetworkInterfaceIds": [
+                    "eni-0ddd566aef2fea365",
+                    "eni-0d96aad9b693b1272"
+                ],
+                "DNSName": "fs-0e6e727c7f8f39ae4.fsx.us-east-1.amazonaws.com",
+                "KmsKeyId": "arn:aws:kms:us-east-1:111111111111:key/af354f6b-2244-43ef-94dc-d728a40d1396",
+                "ResourceARN": "arn:aws:fsx:us-east-1:111111111111:file-system/fs-0e6e727c7f8f39ae4",
+                "Tags": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-495-fsx_all_types_of_file_systems_encrypted_with_kms_cmk"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    },
+                    {
+                        "Key": "Name",
+                        "Value": "495_fsx_ontap_file_system_green"
+                    }
+                ],
+                "LustreConfiguration": {
+                    "WeeklyMaintenanceStartTime": "3:07:30",
+                    "DeploymentType": "PERSISTENT_1",
+                    "PerUnitStorageThroughput": 12,
+                    "MountName": "bx557bmv",
+                    "CopyTagsToBackups": false,
+                    "DriveCacheType": "NONE",
+                    "DataCompressionType": "NONE"
+                }
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

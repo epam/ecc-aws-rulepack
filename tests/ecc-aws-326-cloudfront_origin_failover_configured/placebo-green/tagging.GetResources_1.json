@@ -1,0 +1,22 @@
+{
+    "status_code": 200,
+    "data": {
+        "PaginationToken": "",
+        "ResourceTagMappingList": [
+            {
+                "ResourceARN": "arn:aws:cloudfront::111111111111:distribution/E1PJYZGMX46NOE",
+                "Tags": [
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    },
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-326-cloudfront_origin_failover_configured"
+                    }
+                ]
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

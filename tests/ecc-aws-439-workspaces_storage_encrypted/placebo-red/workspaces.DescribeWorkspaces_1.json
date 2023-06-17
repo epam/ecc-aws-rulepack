@@ -1,0 +1,26 @@
+{
+    "status_code": 200,
+    "data": {
+        "Workspaces": [
+            {
+                "WorkspaceId": "ws-9fx9bntb5",
+                "DirectoryId": "d-90674b7222",
+                "UserName": "Admin",
+                "IpAddress": "10.0.2.88",
+                "State": "STOPPING",
+                "BundleId": "wsb-clj85qzj1",
+                "SubnetId": "subnet-03ca90690d1c151dc",
+                "ComputerName": "A-3OVDZ4D7ZWYJU",
+                "WorkspaceProperties": {
+                    "RunningMode": "AUTO_STOP",
+                    "RunningModeAutoStopTimeoutInMinutes": 60,
+                    "RootVolumeSizeGib": 80,
+                    "UserVolumeSizeGib": 50,
+                    "ComputeTypeName": "STANDARD"
+                },
+                "ModificationStates": []
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "status_code": 200,
+    "data": {
+        "PaginationToken": "",
+        "ResourceTagMappingList": [
+            {
+                "ResourceARN": "arn:aws:kms:us-east-1:111111111111:key/53b5cbbb-4357-402a-9b38-4948ceec5549",
+                "Tags": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-911-kms_cmk_not_scheduled_for_deletion"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Red"
+                    }
+                ]
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

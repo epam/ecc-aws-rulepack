@@ -1,0 +1,12 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "DistributionList": {
+            "Marker": "",
+            "MaxItems": 100,
+            "IsTruncated": false,
+            "Quantity": 0
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "items": [
+            {
+                "id": "1212121121212",
+                "path": "/"
+            },
+            {
+                "id": "1212121121212",
+                "parentId": "1212121121212",
+                "pathPart": "mydemoresource",
+                "path": "/mydemoresource",
+                "resourceMethods": {
+                    "GET": {}
+                }
+            }
+        ]
+    }
+}

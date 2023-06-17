@@ -1,0 +1,22 @@
+{
+    "status_code": 200,
+    "data": {
+        "PaginationToken": "",
+        "ResourceTagMappingList": [
+            {
+                "ResourceARN": "arn:aws:dynamodb:us-east-1:111111111111:table/329_dynamodb_table_green",
+                "Tags": [
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    },
+                    {
+                        "Key": "CsutodianRule",
+                        "Value": "ecc-aws-329-dynamodb_tables_pitr_enabled"
+                    }
+                ]
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

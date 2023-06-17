@@ -1,0 +1,26 @@
+{
+    "status_code": 200,
+    "data": {
+        "Workspaces": [
+            {
+                "WorkspaceId": "ws-j9cvh4174",
+                "DirectoryId": "d-90674a5da3",
+                "UserName": "Administrator",
+                "State": "PENDING",
+                "BundleId": "wsb-clj85qzj1",
+                "VolumeEncryptionKey": "arn:aws:kms:us-east-1:111111111111:key/768d611d-3174-4d0e-a05e-0b4071af1ef5",
+                "UserVolumeEncryptionEnabled": true,
+                "RootVolumeEncryptionEnabled": true,
+                "WorkspaceProperties": {
+                    "RunningMode": "AUTO_STOP",
+                    "RunningModeAutoStopTimeoutInMinutes": 60,
+                    "RootVolumeSizeGib": 80,
+                    "UserVolumeSizeGib": 50,
+                    "ComputeTypeName": "STANDARD"
+                },
+                "ModificationStates": []
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

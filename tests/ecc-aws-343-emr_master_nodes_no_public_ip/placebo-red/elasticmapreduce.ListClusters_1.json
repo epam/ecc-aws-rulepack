@@ -1,0 +1,42 @@
+{
+    "status_code": 200,
+    "data": {
+        "Clusters": [
+            {
+                "Id": "j-1VNANG9TXKIBU",
+                "Name": "343_emr_cluster_red",
+                "Status": {
+                    "State": "WAITING",
+                    "StateChangeReason": {
+                        "Message": "Cluster ready to run steps."
+                    },
+                    "Timeline": {
+                        "CreationDateTime": {
+                            "__class__": "datetime",
+                            "year": 2021,
+                            "month": 11,
+                            "day": 12,
+                            "hour": 9,
+                            "minute": 29,
+                            "second": 24,
+                            "microsecond": 538000
+                        },
+                        "ReadyDateTime": {
+                            "__class__": "datetime",
+                            "year": 2021,
+                            "month": 11,
+                            "day": 12,
+                            "hour": 9,
+                            "minute": 37,
+                            "second": 34,
+                            "microsecond": 164000
+                        }
+                    }
+                },
+                "NormalizedInstanceHours": 0,
+                "ClusterArn": "arn:aws:elasticmapreduce:us-east-1:111111111111:cluster/j-1VNANG9TXKIBU"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

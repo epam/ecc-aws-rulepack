@@ -1,0 +1,22 @@
+{
+    "status_code": 200,
+    "data": {
+        "PaginationToken": "",
+        "ResourceTagMappingList": [
+            {
+                "ResourceARN": "arn:aws:workspaces:us-east-1:111111111111:directory/d-90674b7222",
+                "Tags": [
+                    {
+                        "Key": "CustodiaRule",
+                        "Value": "ecc-aws-494-workspaces_web_access_disabled"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Red"
+                    }
+                ]
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

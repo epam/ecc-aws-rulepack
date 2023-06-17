@@ -1,0 +1,12 @@
+{
+    "status_code": 200,
+    "data": {
+        "CertificateSummaryList": [
+            {
+                "CertificateArn": "arn:aws:acm:us-east-1:111111111111:certificate/c0c11626-3990-4e29-962a-d2d347fad4cd",
+                "DomainName": "examplegreen.com"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

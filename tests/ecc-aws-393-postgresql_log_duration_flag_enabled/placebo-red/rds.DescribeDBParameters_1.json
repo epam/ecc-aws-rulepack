@@ -1,0 +1,18 @@
+{
+    "status_code": 200,
+    "data": {
+        "Parameters": [
+            {
+                "ParameterName": "log_duration",
+                "Description": "Logs the duration of each completed SQL statement.",
+                "Source": "engine-default",
+                "ApplyType": "dynamic",
+                "DataType": "boolean",
+                "AllowedValues": "0,1",
+                "IsModifiable": true,
+                "ApplyMethod": "pending-reboot"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

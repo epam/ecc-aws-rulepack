@@ -1,0 +1,17 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "sagemaker:ListEndpointConfigs",
+                "sagemaker:DescribeEndpointConfig",
+                "sagemaker:ListTags",
+                "kms:DescribeKey",
+                "kms:ListAliases",
+                "tag:GetResources"
+            ],
+            "Resource": "*"
+        }
+    ]
+}

@@ -1,0 +1,20 @@
+{
+    "status_code": 200,
+    "data": {
+        "Tags": [
+            {
+                "Key": "Name",
+                "ResourceId": "i-12121212513333333",
+                "ResourceType": "instance",
+                "Value": "y-test"
+            },
+            {
+                "Key": "Name",
+                "ResourceId": "i-eee21212513333333",
+                "ResourceType": "instance",
+                "Value": "YO"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

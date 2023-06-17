@@ -1,0 +1,41 @@
+{
+    "status_code": 200,
+    "data": {
+        "Images": [
+            {
+                "Architecture": "x86_64",
+                "CreationDate": "2021-12-09T19:30:44.000Z",
+                "ImageId": "ami-0e9ec365374bb782e",
+                "ImageLocation": "amazon/amzn2-ami-ecs-gpu-hvm-2.0.20211209-x86_64-ebs",
+                "ImageType": "machine",
+                "Public": true,
+                "OwnerId": "111111111111",
+                "PlatformDetails": "Linux/UNIX",
+                "UsageOperation": "RunInstances",
+                "State": "available",
+                "BlockDeviceMappings": [
+                    {
+                        "DeviceName": "/dev/xvda",
+                        "Ebs": {
+                            "DeleteOnTermination": true,
+                            "SnapshotId": "snap-0aed7bc8b6acd13fc",
+                            "VolumeSize": 30,
+                            "VolumeType": "gp2",
+                            "Encrypted": false
+                        }
+                    }
+                ],
+                "Description": "Amazon Linux AMI 2.0.20211209 x86_64 ECS HVM GP2",
+                "EnaSupport": true,
+                "Hypervisor": "xen",
+                "ImageOwnerAlias": "amazon",
+                "Name": "amzn2-ami-ecs-gpu-hvm-2.0.20211209-x86_64-ebs",
+                "RootDeviceName": "/dev/xvda",
+                "RootDeviceType": "ebs",
+                "SriovNetSupport": "simple",
+                "VirtualizationType": "hvm"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

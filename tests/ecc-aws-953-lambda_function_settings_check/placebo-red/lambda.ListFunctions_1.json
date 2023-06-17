@@ -1,0 +1,30 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "Functions": [
+            {
+                "FunctionName": "953_lambda_red",
+                "FunctionArn": "arn:aws:lambda:us-east-1:111111111111:function:953_lambda_red",
+                "Runtime": "python2.7",
+                "Role": "arn:aws:iam::111111111111:role/953_role_red",
+                "Handler": "func.py",
+                "CodeSize": 299,
+                "Description": "",
+                "Timeout": 3,
+                "MemorySize": 128,
+                "LastModified": "2022-12-19T11:52:58.921+0000",
+                "CodeSha256": "wVKxCuS3+QGJFX662+Zi8SIwlKE7zm6222zpZo7SFHI=",
+                "Version": "$LATEST",
+                "TracingConfig": {
+                    "Mode": "PassThrough"
+                },
+                "RevisionId": "d05a42c7-9a54-4e88-bd5f-388a448d84d9",
+                "PackageType": "Zip",
+                "Architectures": [
+                    "x86_64"
+                ]
+            }
+        ]
+    }
+}

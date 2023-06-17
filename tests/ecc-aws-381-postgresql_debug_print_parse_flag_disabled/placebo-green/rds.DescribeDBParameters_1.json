@@ -1,0 +1,19 @@
+{
+    "status_code": 200,
+    "data": {
+        "Parameters": [
+            {
+                "ParameterName": "debug_print_parse",
+                "ParameterValue": "0",
+                "Description": "Logs each querys parse tree.",
+                "Source": "user",
+                "ApplyType": "dynamic",
+                "DataType": "boolean",
+                "AllowedValues": "0,1",
+                "IsModifiable": true,
+                "ApplyMethod": "immediate"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

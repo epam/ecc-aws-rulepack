@@ -1,0 +1,21 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: ecc-aws-680-lambda_latest_runtime_environment_version
+    description: |
+      Lambda functions not are not using latest runtime environment versions
+    resource: lambda
+    filters:
+      - type: value
+        key: PackageType
+        value: Zip
+      - not:
+        - type: value
+          key: Runtime
+          op: regex
+          value: '(nodejs18.x|python3.9|java11|dotnetcore3.1|dotnet6|go1.x|ruby2.7)'

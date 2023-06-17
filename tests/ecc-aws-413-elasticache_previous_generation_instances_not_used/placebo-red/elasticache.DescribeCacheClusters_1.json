@@ -1,0 +1,46 @@
+{
+    "status_code": 200,
+    "data": {
+        "CacheClusters": [
+            {
+                "CacheClusterId": "c7n-413-elasticache-redis-cluster-red",
+                "ClientDownloadLandingPage": "https://console.aws.amazon.com/elasticache/home#client-download:",
+                "CacheNodeType": "cache.m3.medium",
+                "Engine": "redis",
+                "EngineVersion": "5.0.6",
+                "CacheClusterStatus": "available",
+                "NumCacheNodes": 1,
+                "PreferredAvailabilityZone": "us-east-1d",
+                "CacheClusterCreateTime": {
+                    "__class__": "datetime",
+                    "year": 2021,
+                    "month": 12,
+                    "day": 7,
+                    "hour": 9,
+                    "minute": 4,
+                    "second": 32,
+                    "microsecond": 145000
+                },
+                "PreferredMaintenanceWindow": "wed:07:00-wed:08:00",
+                "PendingModifiedValues": {},
+                "CacheSecurityGroups": [],
+                "CacheParameterGroup": {
+                    "CacheParameterGroupName": "default.redis5.0",
+                    "ParameterApplyStatus": "in-sync",
+                    "CacheNodeIdsToReboot": []
+                },
+                "CacheSubnetGroupName": "default",
+                "AutoMinorVersionUpgrade": true,
+                "SnapshotRetentionLimit": 0,
+                "SnapshotWindow": "06:00-07:00",
+                "AuthTokenEnabled": false,
+                "TransitEncryptionEnabled": false,
+                "AtRestEncryptionEnabled": false,
+                "ARN": "arn:aws:elasticache:us-east-1:this:cluster:c7n-413-elasticache-redis-cluster-red",
+                "ReplicationGroupLogDeliveryEnabled": false,
+                "LogDeliveryConfigurations": []
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

@@ -1,0 +1,23 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: ecc-aws-277-only_one_active_access_key_available_for_any_single_iam_user
+    resource: iam-user
+    description: |
+      More than one active access key is available for a single IAM user
+    filters:
+      - type: access-key
+        key: Status
+        value: Active
+      - and:
+          - type: value
+            key: '"c7n:AccessKeys"[0].Status'
+            value: Active
+          - type: value
+            key: '"c7n:AccessKeys"[1].Status'
+            value: Active

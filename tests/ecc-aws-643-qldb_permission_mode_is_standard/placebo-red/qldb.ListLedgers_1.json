@@ -1,0 +1,22 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "Ledgers": [
+            {
+                "Name": "qldb-643-red",
+                "State": "ACTIVE",
+                "CreationDateTime": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 9,
+                    "day": 1,
+                    "hour": 9,
+                    "minute": 1,
+                    "second": 51,
+                    "microsecond": 169000
+                }
+            }
+        ]
+    }
+}

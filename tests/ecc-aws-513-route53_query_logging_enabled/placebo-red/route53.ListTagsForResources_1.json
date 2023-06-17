@@ -1,0 +1,22 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "ResourceTagSets": [
+            {
+                "ResourceType": "hostedzone",
+                "ResourceId": "Z02315613BNTIIDGXHMO5",
+                "Tags": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-513-route53_query_logging_enabled"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Red"
+                    }
+                ]
+            }
+        ]
+    }
+}

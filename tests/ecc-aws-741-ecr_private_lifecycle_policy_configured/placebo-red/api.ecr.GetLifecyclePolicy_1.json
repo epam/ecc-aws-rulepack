@@ -1,0 +1,11 @@
+{
+    "status_code": 400,
+    "data": {
+        "Error": {
+            "Message": "Lifecycle policy does not exist for the repository with name '741_ecr_respository_red' in the registry with id '111111111111'",
+            "Code": "LifecyclePolicyNotFoundException"
+        },
+        "ResponseMetadata": {},
+        "message": "Lifecycle policy does not exist for the repository with name '741_ecr_respository_red' in the registry with id '111111111111'"
+    }
+}

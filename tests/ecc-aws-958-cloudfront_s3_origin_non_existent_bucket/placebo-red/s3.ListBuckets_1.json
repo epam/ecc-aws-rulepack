@@ -1,0 +1,25 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "Buckets": [
+            {
+                "Name": "bucket-958-red",
+                "CreationDate": {
+                    "__class__": "datetime",
+                    "year": 2023,
+                    "month": 1,
+                    "day": 6,
+                    "hour": 15,
+                    "minute": 18,
+                    "second": 17,
+                    "microsecond": 0
+                }
+            }
+        ],
+        "Owner": {
+            "DisplayName": "test",
+            "ID": "111111111111"
+        }
+    }
+}

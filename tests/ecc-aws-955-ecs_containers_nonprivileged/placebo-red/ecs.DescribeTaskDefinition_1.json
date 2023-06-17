@@ -1,0 +1,71 @@
+{
+    "status_code": 200,
+    "data": {
+        "taskDefinition": {
+            "taskDefinitionArn": "arn:aws:ecs:us-east-1:111111111111:task-definition/955_ecs_task_definition_red:2",
+            "containerDefinitions": [
+                {
+                    "name": "mysql",
+                    "image": "mysql",
+                    "cpu": 1,
+                    "memory": 5,
+                    "portMappings": [],
+                    "essential": true,
+                    "environment": [],
+                    "mountPoints": [],
+                    "volumesFrom": [],
+                    "user": "test",
+                    "privileged": true
+                }
+            ],
+            "family": "955_ecs_task_definition_red",
+            "networkMode": "awsvpc",
+            "revision": 2,
+            "volumes": [],
+            "status": "ACTIVE",
+            "requiresAttributes": [
+                {
+                    "name": "com.amazonaws.ecs.capability.privileged-container"
+                },
+                {
+                    "name": "com.amazonaws.ecs.capability.docker-remote-api.1.17"
+                },
+                {
+                    "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+                },
+                {
+                    "name": "ecs.capability.task-eni"
+                }
+            ],
+            "placementConstraints": [],
+            "compatibilities": [
+                "EC2"
+            ],
+            "requiresCompatibilities": [
+                "EC2"
+            ],
+            "registeredAt": {
+                "__class__": "datetime",
+                "year": 2022,
+                "month": 12,
+                "day": 16,
+                "hour": 11,
+                "minute": 53,
+                "second": 57,
+                "microsecond": 982000
+            },
+            "registeredBy": "arn:aws:iam::111111111111:user/test"
+        },
+        "tags": [
+            {
+                "key": "CustodianRule",
+                "Value": "ecc-aws-955-ecs_containers_nonprivileged"
+            },
+            {
+                "key": "ComplianceStatus",
+                "value": "Red"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

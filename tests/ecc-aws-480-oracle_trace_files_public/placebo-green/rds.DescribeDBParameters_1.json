@@ -1,0 +1,19 @@
+{
+    "status_code": 200,
+    "data": {
+        "Parameters": [
+            {
+                "ParameterName": "_trace_files_public",
+                "ParameterValue": "FALSE",
+                "Description": "Create publicly accessible trace files",
+                "Source": "user",
+                "ApplyType": "static",
+                "DataType": "boolean",
+                "AllowedValues": "TRUE,FALSE",
+                "IsModifiable": true,
+                "ApplyMethod": "pending-reboot"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

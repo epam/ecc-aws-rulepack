@@ -1,0 +1,19 @@
+{
+    "status_code": 200,
+    "data": {
+        "Parameters": [
+            {
+                "ParameterName": "debug_pretty_print",
+                "ParameterValue": "1",
+                "Description": "Indents parse and plan tree displays.",
+                "Source": "user",
+                "ApplyType": "dynamic",
+                "DataType": "boolean",
+                "AllowedValues": "0,1",
+                "IsModifiable": true,
+                "ApplyMethod": "immediate"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

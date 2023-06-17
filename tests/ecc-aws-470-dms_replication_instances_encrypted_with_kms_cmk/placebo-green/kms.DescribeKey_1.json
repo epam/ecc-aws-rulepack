@@ -1,0 +1,33 @@
+{
+    "status_code": 200,
+    "data": {
+        "KeyMetadata": {
+            "AWSAccountId": "111111111111",
+            "KeyId": "f21e45e3-97ad-471e-ba12-63a9504d53f8",
+            "Arn": "arn:aws:kms:us-east-1:111111111111:key/f21e45e3-97ad-471e-ba12-63a9504d53f8",
+            "CreationDate": {
+                "__class__": "datetime",
+                "year": 2022,
+                "month": 6,
+                "day": 8,
+                "hour": 9,
+                "minute": 15,
+                "second": 56,
+                "microsecond": 983000
+            },
+            "Enabled": true,
+            "Description": "Key to encrypt and decrypt DMS",
+            "KeyUsage": "ENCRYPT_DECRYPT",
+            "KeyState": "Enabled",
+            "Origin": "AWS_KMS",
+            "KeyManager": "CUSTOMER",
+            "CustomerMasterKeySpec": "SYMMETRIC_DEFAULT",
+            "KeySpec": "SYMMETRIC_DEFAULT",
+            "EncryptionAlgorithms": [
+                "SYMMETRIC_DEFAULT"
+            ],
+            "MultiRegion": false
+        },
+        "ResponseMetadata": {}
+    }
+}

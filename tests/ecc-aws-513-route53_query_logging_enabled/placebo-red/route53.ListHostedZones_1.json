@@ -1,0 +1,20 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "HostedZones": [
+            {
+                "Id": "/hostedzone/ASASASASASASAS",
+                "Name": "513route53red.com.",
+                "CallerReference": "terraform-20220623070540121800000001",
+                "Config": {
+                    "Comment": "Managed by Terraform",
+                    "PrivateZone": false
+                },
+                "ResourceRecordSetCount": 2
+            }
+        ],
+        "IsTruncated": false,
+        "MaxItems": "100"
+    }
+}

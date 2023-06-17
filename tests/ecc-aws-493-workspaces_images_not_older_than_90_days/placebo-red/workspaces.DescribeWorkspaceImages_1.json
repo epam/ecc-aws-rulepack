@@ -1,0 +1,29 @@
+{
+    "status_code": 200,
+    "data": {
+        "Images": [
+            {
+                "ImageId": "wsi-wtp207q3f",
+                "Name": "493_workspace_image_red",
+                "Description": "493_workspace_image_red",
+                "OperatingSystem": {
+                    "Type": "LINUX"
+                },
+                "State": "PENDING",
+                "RequiredTenancy": "DEFAULT",
+                "Created": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 1,
+                    "day": 6,
+                    "hour": 18,
+                    "minute": 10,
+                    "second": 43,
+                    "microsecond": 35000
+                },
+                "OwnerAccountId": "111111111111"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

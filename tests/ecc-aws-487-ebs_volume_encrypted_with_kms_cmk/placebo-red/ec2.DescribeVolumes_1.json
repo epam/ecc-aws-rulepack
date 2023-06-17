@@ -1,0 +1,45 @@
+{
+    "status_code": 200,
+    "data": {
+        "Volumes": [
+            {
+                "Attachments": [],
+                "AvailabilityZone": "us-east-1a",
+                "CreateTime": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 5,
+                    "day": 17,
+                    "hour": 12,
+                    "minute": 38,
+                    "second": 8,
+                    "microsecond": 964000
+                },
+                "Encrypted": true,
+                "KmsKeyId": "arn:aws:kms:us-east-1:111111111111:key/d790d044-f208-4947-a2d3-8622db8d40b4",
+                "Size": 5,
+                "SnapshotId": "",
+                "State": "available",
+                "VolumeId": "vol-0d6e91f4d601cc2b5",
+                "Iops": 100,
+                "Tags": [
+                    {
+                        "Key": "Name",
+                        "Value": "487-ebs-volume-red"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Red"
+                    },
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-487-ebs_volume_encrypted_with_kms_cmk"
+                    }
+                ],
+                "VolumeType": "gp2",
+                "MultiAttachEnabled": false
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

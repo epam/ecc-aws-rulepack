@@ -1,0 +1,35 @@
+{
+    "status_code": 200,
+    "data": {
+        "SecurityConfigurations": [
+            {
+                "Name": "404_security_configuration_red",
+                "CreatedTimeStamp": {
+                    "__class__": "datetime",
+                    "year": 2021,
+                    "month": 12,
+                    "day": 13,
+                    "hour": 13,
+                    "minute": 28,
+                    "second": 41,
+                    "microsecond": 519000
+                },
+                "EncryptionConfiguration": {
+                    "S3Encryption": [
+                        {
+                            "S3EncryptionMode": "DISABLED"
+                        }
+                    ],
+                    "CloudWatchEncryption": {
+                        "CloudWatchEncryptionMode": "DISABLED"
+                    },
+                    "JobBookmarksEncryption": {
+                        "JobBookmarksEncryptionMode": "DISABLED"
+                    }
+                }
+            }
+        ],
+        "NextToken": "",
+        "ResponseMetadata": {}
+    }
+}

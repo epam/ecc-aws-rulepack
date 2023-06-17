@@ -1,0 +1,16 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: ecc-aws-238-cloudfront_web_distributions_with_geo_restriction_enabled
+    description: |
+      Cloudfront web distribution with geo restriction is not enabled
+    resource: distribution
+    filters:
+      - type: value
+        key: Restrictions.GeoRestriction.RestrictionType
+        value: none

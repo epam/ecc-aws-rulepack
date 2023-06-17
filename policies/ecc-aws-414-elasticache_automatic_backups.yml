@@ -1,0 +1,17 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: ecc-aws-414-elasticache_automatic_backups
+    description: |
+      ElastiCache Redis cluster automatic backups are not enabled or a retention period is not set to at least 7 days
+    resource: cache-cluster
+    filters:
+      - type: value
+        key: SnapshotRetentionLimit
+        value: 7
+        op: lt

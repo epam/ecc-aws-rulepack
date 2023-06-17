@@ -1,0 +1,71 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "cluster": {
+            "name": "248_eks_cluster_green",
+            "arn": "arn:aws:eks:us-east-1:111111111111:cluster/248_eks_cluster_green",
+            "createdAt": {
+                "__class__": "datetime",
+                "year": 2021,
+                "month": 10,
+                "day": 7,
+                "hour": 12,
+                "minute": 31,
+                "second": 42,
+                "microsecond": 213000
+            },
+            "version": "1.21",
+            "endpoint": "https://84815A44B645D8A81F3414313B8299F0.gr7.us-east-1.eks.amazonaws.com",
+            "roleArn": "arn:aws:iam::111111111111:role/248_role_green",
+            "resourcesVpcConfig": {
+                "subnetIds": [
+                    "subnet-06f7eaf99030d4c4a",
+                    "subnet-06f477f2a842ea355"
+                ],
+                "securityGroupIds": [
+                    "sg-08b25ebfdfad4e390",
+                    "sg-01ae3484b4f9cd6f2"
+                ],
+                "clusterSecurityGroupId": "sg-0ae28e513909b75cd",
+                "vpcId": "vpc-08d8ec720296562e8",
+                "endpointPublicAccess": true,
+                "endpointPrivateAccess": false,
+                "publicAccessCidrs": [
+                    "0.0.0.0/0"
+                ]
+            },
+            "kubernetesNetworkConfig": {
+                "serviceIpv4Cidr": "172.20.0.0/16"
+            },
+            "logging": {
+                "clusterLogging": [
+                    {
+                        "types": [
+                            "api",
+                            "audit",
+                            "authenticator",
+                            "controllerManager",
+                            "scheduler"
+                        ],
+                        "enabled": false
+                    }
+                ]
+            },
+            "identity": {
+                "oidc": {
+                    "issuer": "https://oidc.eks.us-east-1.amazonaws.com/id/84815A44B645D8A81F3414313B8299F0"
+                }
+            },
+            "status": "ACTIVE",
+            "certificateAuthority": {
+                "data": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUM1ekNDQWMrZ0F3SUJBZ0lCQURBTkJna3Foa2lHOXcwQkFRc0ZBREFWTVJNd0VRWURWUVFERXdwcmRXSmwKY201bGRHVnpNQjRYRFRJeE1UQXdOekE1TXpnME5Gb1hEVE14TVRBd05UQTVNemcwTkZvd0ZURVRNQkVHQTFVRQpBeE1LYTNWaVpYSnVaWFJsY3pDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBTVVNCkczSzNaRFFRaFZXL3pNdThWV0xRTm5lNHlLdW1mVzZLakJmVDZCdmR5cXlPeVlMZDJxQmZXRHNLeDlYdkVxUjMKN0ZmZUp0T3RpajRKUFd1K1hWdHM4QUhHdnJoMldkbHJSK1FUZnpNUS9nSDVYTVZ3dHFzVFdWVWY3VGc5UG1tdwo2UFJZZEtreFQ1blprMmJyVnoxY2dUMDh6TjN6OGc0ZDN6cHBPL1JQbUluaG9tdk5QNU16RXF2NEtULzZUa1lPCnl0eXREN3FLdTY1QkJEcVFBUDdYUDJZQk1DMisxQXhKUTNvbEw4NUVldEUzdWxmdEtoUUoxekY0MW9yeFlCUEgKRXVSZi9nOTFFbmNiSXFWbjgrVTd5cHpObWhOYlRFL3E5aElWR0Y3K2VKNUNNeWQ2b2V3MjlNY3VudTN0SGE5cApBQ2lpS2p4NCtheHd1UFJVV2IwQ0F3RUFBYU5DTUVBd0RnWURWUjBQQVFIL0JBUURBZ0trTUE4R0ExVWRFd0VCCi93UUZNQU1CQWY4d0hRWURWUjBPQkJZRUZDR0ZUNnQzdDRsZ0kxVzIxUmhreDFWRDhNVXBNQTBHQ1NxR1NJYjMKRFFFQkN3VUFBNElCQVFBNFlJcVROeU5pRXE5d0lET0VpQmxwTVhEeFNEUVFWTXpnb3d6UmJkaFZLSDBEUmJTcgplS3RIck93ZzRodkNhcjlOQ05xNVJjWEk1UkljS3JVOGtMR2U1YnVOVHRoUHBtWXRDU0Z1eU41Ym45S2dJZGNqCnhkaXJYOUZoZVpYakFScVR0bFQyUTZrRXVCUlZwYUtSWk9mSzFGaktxc09DOUJmdUtyVnA3aFQxdmJqVmpPUmIKVmpzVWIyVGR3eEROc0RUSy9sSWgrOWN0Rno4WCtSUjIyYno0S1RBQVIvREcvMElyZytZVmtiUkg4dDZDRXo5VQo1R3Q0WER5MlBON01ic3B4UklCS3ZOeGoxZ3lUYnpoUStPaXBDTk1iYlZxQkN6elJ4aTZQbnRZRXdkZEVIWjBlCjQyUnFOUFN2elFGWmZBQjM5aDdZOGd4RGpyN25vN0c3S1VveQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg=="
+            },
+            "platformVersion": "eks.2",
+            "tags": {
+                "CustodianRule": "ecc-aws-248-k8s_cluster_network_firewall_inbound_rule_permissive_to_all_traffic",
+                "ComplianceStatus": "Green"
+            }
+        }
+    }
+}

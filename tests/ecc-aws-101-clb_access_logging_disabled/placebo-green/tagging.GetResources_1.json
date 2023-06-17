@@ -1,0 +1,18 @@
+{
+    "status_code": 200,
+    "data": {
+        "PaginationToken": "",
+        "ResourceTagMappingList": [
+            {
+                "ResourceARN": "arn:aws:elasticloadbalancing:us-east-1:111111111111:loadbalancer/elb-http-093green",
+                "Tags": [
+                    {
+                        "Key": "Name",
+                        "Value": "elb-http-093green"
+                    }
+                ]
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

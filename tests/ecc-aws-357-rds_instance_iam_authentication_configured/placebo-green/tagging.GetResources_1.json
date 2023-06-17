@@ -1,0 +1,22 @@
+{
+    "status_code": 200,
+    "data": {
+        "PaginationToken": "",
+        "ResourceTagMappingList": [
+            {
+                "ResourceARN": "arn:aws:rds:us-east-1:this:db:terraform-20211029102352335500000001",
+                "Tags": [
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    },
+                    {
+                        "Key": "CsutodianRule",
+                        "Value": "ecc-aws-357-rds_instance_iam_authentication_configured"
+                    }
+                ]
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

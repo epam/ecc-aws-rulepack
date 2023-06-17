@@ -1,0 +1,31 @@
+{
+    "status_code": 200,
+    "data": {
+        "KeyMetadata": {
+            "AWSAccountId": "111111111111",
+            "KeyId": "f1222765-672a-4ed9-9390-5dad09bbfd84",
+            "Arn": "arn:aws:kms:us-east-1:111111111111:key/f1222765-672a-4ed9-9390-5dad09bbfd84",
+            "CreationDate": {
+                "__class__": "datetime",
+                "year": 2021,
+                "month": 3,
+                "day": 12,
+                "hour": 14,
+                "minute": 21,
+                "second": 11,
+                "microsecond": 513000
+            },
+            "Enabled": true,
+            "Description": "Default master key that protects my EFS filesystems when no other key is defined",
+            "KeyUsage": "ENCRYPT_DECRYPT",
+            "KeyState": "Enabled",
+            "Origin": "AWS_KMS",
+            "KeyManager": "AWS",
+            "CustomerMasterKeySpec": "SYMMETRIC_DEFAULT",
+            "EncryptionAlgorithms": [
+                "SYMMETRIC_DEFAULT"
+            ]
+        },
+        "ResponseMetadata": {}
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "status_code": 200,
+    "data": {
+        "PaginationToken": "",
+        "ResourceTagMappingList": [
+            {
+                "ResourceARN": "arn:aws:elasticloadbalancing:us-east-1:this:loadbalancer/elb-294-red",
+                "Tags": [
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Red"
+                    },
+                    {
+                        "Key": "CsutodianRule",
+                        "Value": "ecc-aws-294-classic_load_balancers_connection_draining_enabled"
+                    }
+                ]
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

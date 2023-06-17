@@ -1,0 +1,18 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "es:ListDomainNames",
+                "es:DescribeElasticsearchDomains",
+                "es:ListTags",
+				"kms:DescribeKey",
+                "kms:ListAliases",
+                "tag:GetResources"
+
+            ],
+            "Resource": "*"
+        }
+    ]
+}

@@ -1,0 +1,96 @@
+{
+    "status_code": 200,
+    "data": {
+        "ReplicationInstances": [
+            {
+                "ReplicationInstanceIdentifier": "dms-replication-instance-461-green",
+                "ReplicationInstanceClass": "dms.t2.micro",
+                "ReplicationInstanceStatus": "available",
+                "AllocatedStorage": 5,
+                "InstanceCreateTime": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 9,
+                    "day": 29,
+                    "hour": 17,
+                    "minute": 51,
+                    "second": 39,
+                    "microsecond": 671000
+                },
+                "VpcSecurityGroups": [
+                    {
+                        "VpcSecurityGroupId": "sg-a5befc90",
+                        "Status": "active"
+                    }
+                ],
+                "AvailabilityZone": "us-east-1b",
+                "ReplicationSubnetGroup": {
+                    "ReplicationSubnetGroupIdentifier": "default",
+                    "ReplicationSubnetGroupDescription": "default",
+                    "VpcId": "vpc-12345asdfg",
+                    "SubnetGroupStatus": "Complete",
+                    "Subnets": [
+                        {
+                            "SubnetIdentifier": "subnet-8158d8de",
+                            "SubnetAvailabilityZone": {
+                                "Name": "us-east-1a"
+                            },
+                            "SubnetStatus": "Active"
+                        },
+                        {
+                            "SubnetIdentifier": "subnet-5264af63",
+                            "SubnetAvailabilityZone": {
+                                "Name": "us-east-1e"
+                            },
+                            "SubnetStatus": "Active"
+                        },
+                        {
+                            "SubnetIdentifier": "subnet-b045c2d6",
+                            "SubnetAvailabilityZone": {
+                                "Name": "us-east-1b"
+                            },
+                            "SubnetStatus": "Active"
+                        },
+                        {
+                            "SubnetIdentifier": "subnet-247c052a",
+                            "SubnetAvailabilityZone": {
+                                "Name": "us-east-1f"
+                            },
+                            "SubnetStatus": "Active"
+                        },
+                        {
+                            "SubnetIdentifier": "subnet-fa9dcab7",
+                            "SubnetAvailabilityZone": {
+                                "Name": "us-east-1d"
+                            },
+                            "SubnetStatus": "Active"
+                        },
+                        {
+                            "SubnetIdentifier": "subnet-cd7af8ec",
+                            "SubnetAvailabilityZone": {
+                                "Name": "us-east-1c"
+                            },
+                            "SubnetStatus": "Active"
+                        }
+                    ]
+                },
+                "PreferredMaintenanceWindow": "sat:13:07-sat:13:37",
+                "PendingModifiedValues": {},
+                "MultiAZ": false,
+                "EngineVersion": "3.4.7",
+                "AutoMinorVersionUpgrade": false,
+                "KmsKeyId": "arn:aws:kms:us-east-1:111111111111:key/e56f2d19-2ba5-4c25-829a-44ad8f133131",
+                "ReplicationInstanceArn": "arn:aws:dms:us-east-1:111111111111:rep:UM3S7JB7K5M7NGHUWRC3JIOIG3IS2Y2O2R24FYA",
+                "ReplicationInstancePrivateIpAddress": "172.31.8.162",
+                "ReplicationInstancePublicIpAddresses": [
+                    null
+                ],
+                "ReplicationInstancePrivateIpAddresses": [
+                    "172.31.8.162"
+                ],
+                "PubliclyAccessible": false
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

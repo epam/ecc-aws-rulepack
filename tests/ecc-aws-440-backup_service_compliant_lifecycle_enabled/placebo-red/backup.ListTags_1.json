@@ -1,0 +1,10 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "Tags": {
+            "ComplianceStatus": "Red",
+            "CustodianRule": "ecc-aws-440-backup_service_compliant_lifecycle_enabled"
+        }
+    }
+}

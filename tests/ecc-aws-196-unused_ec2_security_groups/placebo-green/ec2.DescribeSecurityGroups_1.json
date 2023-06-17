@@ -1,0 +1,27 @@
+{
+    "status_code": 200,
+    "data": {
+        "SecurityGroups": [
+            {
+                "Description": "Managed by Terraform",
+                "GroupName": "196_security_group_green",
+                "IpPermissions": [],
+                "OwnerId": "111111111111",
+                "GroupId": "sg-1234567asdfg",
+                "IpPermissionsEgress": [],
+                "Tags": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-196-unused_ec2_security_groups"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    }
+                ],
+                "VpcId": "vpc-12345asdfg"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

@@ -1,0 +1,11 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "EncryptionConfig": {
+            "KeyId": "arn:aws:kms:us-east-1:111111111111:key/390325fc-0f58-4982-9ff9-391a3c9724ce",
+            "Status": "ACTIVE",
+            "Type": "KMS"
+        }
+    }
+}

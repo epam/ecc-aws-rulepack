@@ -1,0 +1,132 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "DistributionList": {
+            "Marker": "",
+            "MaxItems": 100,
+            "IsTruncated": false,
+            "Quantity": 1,
+            "Items": [
+                {
+                    "Id": "E33O92NK067DQ8",
+                    "ARN": "arn:aws:cloudfront::111111111111:distribution/E33O92NK067DQ8",
+                    "Status": "InProgress",
+                    "LastModifiedTime": {
+                        "__class__": "datetime",
+                        "year": 2021,
+                        "month": 10,
+                        "day": 26,
+                        "hour": 13,
+                        "minute": 29,
+                        "second": 48,
+                        "microsecond": 612000
+                    },
+                    "DomainName": "d1mxpate34dzjr.cloudfront.net",
+                    "Aliases": {
+                        "Quantity": 0
+                    },
+                    "Origins": {
+                        "Quantity": 1,
+                        "Items": [
+                            {
+                                "Id": "myredS3",
+                                "DomainName": "c7n-326-bucket-red.s3.amazonaws.com",
+                                "OriginPath": "",
+                                "CustomHeaders": {
+                                    "Quantity": 0
+                                },
+                                "S3OriginConfig": {
+                                    "OriginAccessIdentity": "origin-access-identity/cloudfront/E3NO8PVGX4387B"
+                                },
+                                "ConnectionAttempts": 3,
+                                "ConnectionTimeout": 10,
+                                "OriginShield": {
+                                    "Enabled": false
+                                }
+                            }
+                        ]
+                    },
+                    "OriginGroups": {
+                        "Quantity": 0
+                    },
+                    "DefaultCacheBehavior": {
+                        "TargetOriginId": "myredS3",
+                        "TrustedSigners": {
+                            "Enabled": false,
+                            "Quantity": 0
+                        },
+                        "TrustedKeyGroups": {
+                            "Enabled": false,
+                            "Quantity": 0
+                        },
+                        "ViewerProtocolPolicy": "allow-all",
+                        "AllowedMethods": {
+                            "Quantity": 7,
+                            "Items": [
+                                "HEAD",
+                                "DELETE",
+                                "POST",
+                                "GET",
+                                "OPTIONS",
+                                "PUT",
+                                "PATCH"
+                            ],
+                            "CachedMethods": {
+                                "Quantity": 2,
+                                "Items": [
+                                    "HEAD",
+                                    "GET"
+                                ]
+                            }
+                        },
+                        "SmoothStreaming": false,
+                        "Compress": false,
+                        "LambdaFunctionAssociations": {
+                            "Quantity": 0
+                        },
+                        "FieldLevelEncryptionId": "",
+                        "ForwardedValues": {
+                            "QueryString": false,
+                            "Cookies": {
+                                "Forward": "none"
+                            },
+                            "Headers": {
+                                "Quantity": 0
+                            },
+                            "QueryStringCacheKeys": {
+                                "Quantity": 0
+                            }
+                        },
+                        "MinTTL": 0,
+                        "DefaultTTL": 0,
+                        "MaxTTL": 0
+                    },
+                    "CacheBehaviors": {
+                        "Quantity": 0
+                    },
+                    "CustomErrorResponses": {
+                        "Quantity": 0
+                    },
+                    "Comment": "",
+                    "PriceClass": "PriceClass_All",
+                    "Enabled": true,
+                    "ViewerCertificate": {
+                        "CloudFrontDefaultCertificate": true,
+                        "MinimumProtocolVersion": "TLSv1",
+                        "CertificateSource": "cloudfront"
+                    },
+                    "Restrictions": {
+                        "GeoRestriction": {
+                            "RestrictionType": "none",
+                            "Quantity": 0
+                        }
+                    },
+                    "WebACLId": "",
+                    "HttpVersion": "HTTP2",
+                    "IsIPV6Enabled": false
+                }
+            ]
+        }
+    }
+}

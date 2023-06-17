@@ -1,0 +1,95 @@
+{
+    "status_code": 200,
+    "data": {
+        "Clusters": [
+            {
+                "ClusterIdentifier": "c7n-777-redshift-green",
+                "NodeType": "dc2.large",
+                "ClusterStatus": "available",
+                "ClusterAvailabilityStatus": "Available",
+                "MasterUsername": "root",
+                "DBName": "redshift777green",
+                "Endpoint": {
+                    "Address": "c7n-777-redshift-green.cqwaglj6btcm.us-east-1.redshift.amazonaws.com",
+                    "Port": 5439
+                },
+                "ClusterCreateTime": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 9,
+                    "day": 28,
+                    "hour": 10,
+                    "minute": 53,
+                    "second": 21,
+                    "microsecond": 93000
+                },
+                "AutomatedSnapshotRetentionPeriod": 1,
+                "ManualSnapshotRetentionPeriod": -1,
+                "ClusterSecurityGroups": [],
+                "VpcSecurityGroups": [
+                    {
+                        "VpcSecurityGroupId": "sg-a5befc90",
+                        "Status": "active"
+                    }
+                ],
+                "ClusterParameterGroups": [
+                    {
+                        "ParameterGroupName": "default.redshift-1.0",
+                        "ParameterApplyStatus": "in-sync"
+                    }
+                ],
+                "ClusterSubnetGroupName": "default",
+                "VpcId": "vpc-12345asdfg",
+                "AvailabilityZone": "us-east-1e",
+                "PreferredMaintenanceWindow": "tue:05:30-tue:06:00",
+                "PendingModifiedValues": {},
+                "ClusterVersion": "1.0",
+                "AllowVersionUpgrade": true,
+                "NumberOfNodes": 1,
+                "PubliclyAccessible": true,
+                "Encrypted": false,
+                "ClusterPublicKey": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCPJV4Q2L/l5di1rlFlGh6uf409opj0QK0iBq4p0BIhmfciilW/cuQalN6eEobD9njDnLQT++sYO0le/A7qmGF3/RiwkYPsrSzizv+k1WkgFjTibIxKBD+J+FYUA/afhBu5zo1ETl22ChX9hMiV0Px/qer3j0oPZ9DROiPXS1bGAX8eIQBZjfoJPWX8S/zUIdYyOb03ZXBxOkFrBezBelUUJfHFg4+xvrrwwglT5hID9ypuIZGwij5XiKZlTmuE5tCLlPjiF70RxXO1yMDWyR3z8dSnPiGSvcJCyEj8/G4s1QLjPTXZB0c7pGZiAars00tkYMOSYZ5ZpAXkgE9Oy49r Amazon-Redshift\n",
+                "ClusterNodes": [
+                    {
+                        "NodeRole": "SHARED",
+                        "PrivateIPAddress": "172.31.51.90",
+                        "PublicIPAddress": "44.210.158.189"
+                    }
+                ],
+                "ClusterRevisionNumber": "41881",
+                "Tags": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-777-redshift_default_db_name_check"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    }
+                ],
+                "EnhancedVpcRouting": false,
+                "IamRoles": [],
+                "MaintenanceTrackName": "current",
+                "DeferredMaintenanceWindows": [],
+                "NextMaintenanceWindowStartTime": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 10,
+                    "day": 4,
+                    "hour": 5,
+                    "minute": 30,
+                    "second": 0,
+                    "microsecond": 0
+                },
+                "AvailabilityZoneRelocationStatus": "disabled",
+                "ClusterNamespaceArn": "arn:aws:redshift:us-east-1:111111111111:namespace:03e04a04-d3d1-47d7-8376-5df86bcef629",
+                "TotalStorageCapacityInMegaBytes": 400000,
+                "AquaConfiguration": {
+                    "AquaStatus": "disabled",
+                    "AquaConfigurationStatus": "auto"
+                }
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

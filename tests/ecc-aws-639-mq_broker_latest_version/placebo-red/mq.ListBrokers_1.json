@@ -1,0 +1,27 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "BrokerSummaries": [
+            {
+                "BrokerArn": "arn:aws:mq:us-east-1:111111111111:broker:mq-broker-rabbit-639-red:b-3147bbc4-8ebd-4bbe-b2d6-286249deeec2",
+                "BrokerId": "b-3147bbc4-8ebd-4bbe-b2d6-286249deeec2",
+                "BrokerName": "mq-broker-rabbit-639-red",
+                "BrokerState": "RUNNING",
+                "Created": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 7,
+                    "day": 4,
+                    "hour": 9,
+                    "minute": 3,
+                    "second": 22,
+                    "microsecond": 69000
+                },
+                "DeploymentMode": "SINGLE_INSTANCE",
+                "EngineType": "RabbitMQ",
+                "HostInstanceType": "mq.t3.micro"
+            }
+        ]
+    }
+}

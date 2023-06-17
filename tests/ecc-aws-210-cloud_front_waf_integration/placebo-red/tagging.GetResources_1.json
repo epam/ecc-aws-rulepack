@@ -1,0 +1,18 @@
+{
+    "status_code": 200,
+    "data": {
+        "PaginationToken": "",
+        "ResourceTagMappingList": [
+            {
+                "ResourceARN": "arn:aws:cloudfront::1212121112212:distribution/1212121112212",
+                "Tags": [
+                    {
+                        "Key": "Environment",
+                        "Value": "Custodian"
+                    }
+                ]
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

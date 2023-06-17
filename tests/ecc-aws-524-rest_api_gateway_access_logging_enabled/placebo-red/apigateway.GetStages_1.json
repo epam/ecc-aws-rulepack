@@ -1,0 +1,54 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "item": [
+            {
+                "deploymentId": "fudfw9",
+                "stageName": "apiGatewayStage524Red",
+                "cacheClusterEnabled": true,
+                "cacheClusterSize": "0.5",
+                "cacheClusterStatus": "AVAILABLE",
+                "methodSettings": {
+                    "*/*": {
+                        "metricsEnabled": false,
+                        "loggingLevel": "ERROR",
+                        "dataTraceEnabled": false,
+                        "throttlingBurstLimit": -1,
+                        "throttlingRateLimit": -1.0,
+                        "cachingEnabled": false,
+                        "cacheTtlInSeconds": 300,
+                        "cacheDataEncrypted": false,
+                        "requireAuthorizationForCacheControl": true,
+                        "unauthorizedCacheControlHeaderStrategy": "SUCCEED_WITH_RESPONSE_HEADER"
+                    }
+                },
+                "tracingEnabled": false,
+                "tags": {
+                    "ComplianceStatus": "Red",
+                    "CustodianRule": "ecc-aws-526-cloudtrail_logs_set_correctly"
+                },
+                "createdDate": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 5,
+                    "day": 26,
+                    "hour": 10,
+                    "minute": 44,
+                    "second": 28,
+                    "microsecond": 0
+                },
+                "lastUpdatedDate": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 5,
+                    "day": 26,
+                    "hour": 10,
+                    "minute": 48,
+                    "second": 16,
+                    "microsecond": 0
+                }
+            }
+        ]
+    }
+}

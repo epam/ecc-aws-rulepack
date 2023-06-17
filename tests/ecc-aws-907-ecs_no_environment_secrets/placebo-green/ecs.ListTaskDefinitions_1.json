@@ -1,0 +1,9 @@
+{
+    "status_code": 200,
+    "data": {
+        "taskDefinitionArns": [
+            "arn:aws:ecs:us-east-1:111111111111:task-definition/907_ecs_task_definition_green:2"
+        ],
+        "ResponseMetadata": {}
+    }
+}

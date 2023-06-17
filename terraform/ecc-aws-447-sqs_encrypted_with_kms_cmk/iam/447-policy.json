@@ -1,0 +1,16 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "sqs:ListQueues",
+                "tag:GetResources",
+                "sqs:GetQueueAttributes",
+                "kms:DescribeKey",
+                "kms:ListAliases"
+            ],
+            "Resource": "*"
+        }
+    ]
+}

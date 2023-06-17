@@ -1,0 +1,73 @@
+{
+    "status_code": 200,
+    "data": {
+        "LoadBalancerDescriptions": [
+            {
+                "LoadBalancerName": "elb-http-092-red",
+                "DNSName": "elb-http-092-red-1212121112212.us-east-1.elb.amazonaws.com",
+                "CanonicalHostedZoneName": "elb-http-092-red-1212121112212.us-east-1.elb.amazonaws.com",
+                "CanonicalHostedZoneNameID": "Z35SXDOTRQ7X7K",
+                "ListenerDescriptions": [
+                    {
+                        "Listener": {
+                            "Protocol": "HTTPS",
+                            "LoadBalancerPort": 443,
+                            "InstanceProtocol": "HTTP",
+                            "InstancePort": 8000,
+                            "SSLCertificateId": "arn:aws:acm:us-east-1:1212121112212:certificate/1212121112212"
+                        },
+                        "PolicyNames": [
+                            "ELBSecurityPolicy-2016-08"
+                        ]
+                    }
+                ],
+                "Policies": {
+                    "AppCookieStickinessPolicies": [],
+                    "LBCookieStickinessPolicies": [],
+                    "OtherPolicies": [
+                        "ELBSecurityPolicy-2016-08"
+                    ]
+                },
+                "BackendServerDescriptions": [],
+                "AvailabilityZones": [
+                    "us-east-1e"
+                ],
+                "Subnets": [
+                    "subnet-1212121112212"
+                ],
+                "VPCId": "vpc-1212121112212",
+                "Instances": [
+                    {
+                        "InstanceId": "i-1212121112212"
+                    }
+                ],
+                "HealthCheck": {
+                    "Target": "TCP:8000",
+                    "Interval": 30,
+                    "Timeout": 5,
+                    "UnhealthyThreshold": 2,
+                    "HealthyThreshold": 10
+                },
+                "SourceSecurityGroup": {
+                    "OwnerAlias": "1212121112212",
+                    "GroupName": "default_elb_1212121112212"
+                },
+                "SecurityGroups": [
+                    "sg-01212121112212"
+                ],
+                "CreatedTime": {
+                    "__class__": "datetime",
+                    "year": 2021,
+                    "month": 5,
+                    "day": 27,
+                    "hour": 10,
+                    "minute": 36,
+                    "second": 22,
+                    "microsecond": 480000
+                },
+                "Scheme": "internet-facing"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

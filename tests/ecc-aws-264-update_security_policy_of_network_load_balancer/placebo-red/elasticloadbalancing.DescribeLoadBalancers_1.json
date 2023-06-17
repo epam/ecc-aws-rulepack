@@ -1,0 +1,43 @@
+{
+    "status_code": 200,
+    "data": {
+        "LoadBalancers": [
+            {
+                "LoadBalancerArn": "arn:aws:elasticloadbalancing:us-east-1:111111111111:loadbalancer/net/red-nlb-264/ARN",
+                "DNSName": "red-nlb-264-c9b5c5745a57f888.elb.us-east-1.amazonaws.com",
+                "CanonicalHostedZoneId": "Z26RNL4JYFTOTI",
+                "CreatedTime": {
+                    "__class__": "datetime",
+                    "year": 2021,
+                    "month": 6,
+                    "day": 18,
+                    "hour": 12,
+                    "minute": 7,
+                    "second": 48,
+                    "microsecond": 401000
+                },
+                "LoadBalancerName": "red-nlb-264",
+                "Scheme": "internet-facing",
+                "VpcId": "vpc-12345asdfg",
+                "State": {
+                    "Code": "active"
+                },
+                "Type": "network",
+                "AvailabilityZones": [
+                    {
+                        "ZoneName": "us-east-1b",
+                        "SubnetId": "subnet-ID",
+                        "LoadBalancerAddresses": []
+                    },
+                    {
+                        "ZoneName": "us-east-1a",
+                        "SubnetId": "subnet-ID",
+                        "LoadBalancerAddresses": []
+                    }
+                ],
+                "IpAddressType": "ipv4"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

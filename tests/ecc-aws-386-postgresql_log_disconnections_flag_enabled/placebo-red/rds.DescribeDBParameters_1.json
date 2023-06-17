@@ -1,0 +1,18 @@
+{
+    "status_code": 200,
+    "data": {
+        "Parameters": [
+            {
+                "ParameterName": "log_disconnections",
+                "Description": "Logs end of a session, including duration.",
+                "Source": "engine-default",
+                "ApplyType": "dynamic",
+                "DataType": "boolean",
+                "AllowedValues": "0,1",
+                "IsModifiable": true,
+                "ApplyMethod": "pending-reboot"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

@@ -1,0 +1,36 @@
+{
+    "status_code": 200,
+    "data": {
+        "FlowLogs": [
+            {
+                "CreationTime": {
+                    "__class__": "datetime",
+                    "year": 2021,
+                    "month": 4,
+                    "day": 3,
+                    "hour": 17,
+                    "minute": 16,
+                    "second": 55,
+                    "microsecond": 495000
+                },
+                "DeliverLogsPermissionArn": "arn:aws:iam::111111111111:role/AdminAccessC7Nrole",
+                "DeliverLogsStatus": "SUCCESS",
+                "FlowLogId": "fl-0913a01b9bab4f91f",
+                "FlowLogStatus": "ACTIVE",
+                "LogGroupName": "/aws/sagemaker/NotebookInstances",
+                "ResourceId": "vpc-ad9744d0",
+                "TrafficType": "ACCEPT",
+                "LogDestinationType": "cloud-watch-logs",
+                "LogFormat": "${version} ${account-id} ${interface-id} ${srcaddr} ${dstaddr} ${srcport} ${dstport} ${protocol} ${packets} ${bytes} ${start} ${end} ${action} ${log-status}",
+                "Tags": [
+                    {
+                        "Key": "Name",
+                        "Value": "033-test"
+                    }
+                ],
+                "MaxAggregationInterval": 600
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

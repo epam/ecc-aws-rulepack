@@ -1,0 +1,22 @@
+{
+    "status_code": 200,
+    "data": {
+        "PaginationToken": "",
+        "ResourceTagMappingList": [
+            {
+                "ResourceARN": "arn:aws:rds:us-east-1:111111111111:db:terraform-20210923101039107900000001",
+                "Tags": [
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    },
+                    {
+                        "Key": "CsutodianRule",
+                        "Value": "ecc-aws-319-rds_instances_storage_is_encrypted"
+                    }
+                ]
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

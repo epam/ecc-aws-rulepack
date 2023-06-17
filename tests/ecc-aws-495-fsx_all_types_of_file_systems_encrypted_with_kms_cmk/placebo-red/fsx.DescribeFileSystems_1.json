@@ -1,0 +1,38 @@
+{
+    "status_code": 200,
+    "data": {
+        "FileSystems": [
+            {
+                "OwnerId": "111111111111",
+                "CreationTime": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 1,
+                    "day": 14,
+                    "hour": 13,
+                    "minute": 9,
+                    "second": 12,
+                    "microsecond": 151000
+                },
+                "FileSystemId": "fs-0c5c4adce0912a580",
+                "FileSystemType": "ONTAP",
+                "Lifecycle": "AVAILABLE",
+                "StorageCapacity": 1024,
+                "StorageType": "SSD",
+                "VpcId": "vpc-12345asdfg",
+                "SubnetIds": [
+                    "subnet-002fc0f883c0ba578",
+                    "subnet-065145625125676be"
+                ],
+                "NetworkInterfaceIds": [
+                    "eni-0f9e40ae38a3e7c30",
+                    "eni-0e0d50737d676d0b9"
+                ],
+                "KmsKeyId": "arn:aws:kms:us-east-1:111111111111:key/dd9fb145-9e61-4b40-a1d5-b079e1d5ccdd",
+                "ResourceARN": "arn:aws:fsx:us-east-1:111111111111:file-system/fs-0c5c4adce0912a580",
+                "Tags": []
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

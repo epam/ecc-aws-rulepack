@@ -1,0 +1,117 @@
+{
+    "status_code": 200,
+    "data": {
+        "instances": [
+            {
+                "name": "lightsail-instance-617-green",
+                "arn": "arn:aws:lightsail:us-east-1:111111111111:Instance/0ca14b52-c35f-498c-821a-52c79650464e",
+                "supportCode": "111111111111/i-003c89e2af630307c",
+                "createdAt": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 12,
+                    "day": 22,
+                    "hour": 12,
+                    "minute": 3,
+                    "second": 36,
+                    "microsecond": 816000
+                },
+                "location": {
+                    "availabilityZone": "us-east-1b",
+                    "regionName": "us-east-1"
+                },
+                "resourceType": "Instance",
+                "tags": [
+                    {
+                        "key": "CustodianRule",
+                        "Value": "ecc-aws-617-lightsail_instance_without_tag_information"
+                    },
+                    {
+                        "key": "ComplianceStatus",
+                        "value": "Green"
+                    }
+                ],
+                "blueprintId": "amazon_linux_2",
+                "blueprintName": "Amazon Linux 2",
+                "bundleId": "nano_2_0",
+                "isStaticIp": false,
+                "privateIpAddress": "172.26.28.155",
+                "publicIpAddress": "44.204.107.246",
+                "ipv6Addresses": [
+                    "2600:1f18:1df3:4801:dd07:fc74:d757:c888"
+                ],
+                "ipAddressType": "dualstack",
+                "hardware": {
+                    "cpuCount": 1,
+                    "disks": [
+                        {
+                            "createdAt": {
+                                "__class__": "datetime",
+                                "year": 2022,
+                                "month": 12,
+                                "day": 22,
+                                "hour": 12,
+                                "minute": 3,
+                                "second": 36,
+                                "microsecond": 816000
+                            },
+                            "sizeInGb": 20,
+                            "isSystemDisk": true,
+                            "iops": 100,
+                            "path": "/dev/xvda",
+                            "attachedTo": "lightsail-instance-617-green",
+                            "attachmentState": "attached"
+                        }
+                    ],
+                    "ramSizeInGb": 0.5
+                },
+                "networking": {
+                    "monthlyTransfer": {
+                        "gbPerMonthAllocated": 1024
+                    },
+                    "ports": [
+                        {
+                            "fromPort": 80,
+                            "toPort": 80,
+                            "protocol": "tcp",
+                            "accessFrom": "Anywhere (0.0.0.0/0 and ::/0)",
+                            "accessType": "public",
+                            "commonName": "",
+                            "accessDirection": "inbound",
+                            "cidrs": [
+                                "0.0.0.0/0"
+                            ],
+                            "ipv6Cidrs": [
+                                "::/0"
+                            ],
+                            "cidrListAliases": []
+                        },
+                        {
+                            "fromPort": 22,
+                            "toPort": 22,
+                            "protocol": "tcp",
+                            "accessFrom": "Anywhere (0.0.0.0/0 and ::/0)",
+                            "accessType": "public",
+                            "commonName": "",
+                            "accessDirection": "inbound",
+                            "cidrs": [
+                                "0.0.0.0/0"
+                            ],
+                            "ipv6Cidrs": [
+                                "::/0"
+                            ],
+                            "cidrListAliases": []
+                        }
+                    ]
+                },
+                "state": {
+                    "code": 16,
+                    "name": "running"
+                },
+                "username": "ec2-user",
+                "sshKeyName": "key-pair-617-green"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

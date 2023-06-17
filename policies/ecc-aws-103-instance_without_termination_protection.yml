@@ -1,0 +1,19 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: ecc-aws-103-instance_without_termination_protection
+    description: |
+      Instances without termination protection
+    resource: ec2
+    filters:
+      - not:
+          - type: value
+            key: State.Name
+            value: terminated
+      - not:
+          - type: termination-protected

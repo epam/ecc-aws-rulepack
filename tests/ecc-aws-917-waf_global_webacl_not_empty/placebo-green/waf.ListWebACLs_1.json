@@ -1,0 +1,16 @@
+{
+    "status_code": 200,
+    "data": {
+        "WebACLs": [
+            {
+                "WebACLId": "766791d9-db18-4695-a1ed-9db48301fb70",
+                "Name": "917_webacl_green"
+            },
+            {
+                "WebACLId": "ae50bf89-0057-4a9d-9860-b7d4c5d5c686",
+                "Name": "917_webacl_green2"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

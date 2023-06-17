@@ -1,0 +1,16 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: ecc-aws-319-rds_instances_storage_is_encrypted
+    description: |
+      RDS instances storage not encrypted
+    resource: rds
+    filters:
+      - type: value
+        key: StorageEncrypted
+        value: false

@@ -1,0 +1,19 @@
+{
+    "status_code": 200,
+    "data": {
+        "Parameters": [
+            {
+                "ParameterName": "log_destination",
+                "ParameterValue": "csvlog",
+                "Description": "Sets the destination for server log output.",
+                "Source": "system",
+                "ApplyType": "dynamic",
+                "DataType": "string",
+                "AllowedValues": "stderr,csvlog",
+                "IsModifiable": true,
+                "ApplyMethod": "pending-reboot"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

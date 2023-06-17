@@ -1,0 +1,1 @@
+"--field RequireUppercaseCharacters='\"c7n:password_policy\".RequireUppercaseCharacters'"

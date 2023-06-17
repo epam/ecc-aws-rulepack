@@ -1,0 +1,49 @@
+resource "aws_mwaa_environment" "this" {
+  airflow_configuration_options = {
+    "core.default_task_retries" = 16
+    "core.parallelism"          = 1
+  }
+
+  dag_s3_path        = "dags/"
+  execution_role_arn = aws_iam_role.this.arn
+  name               = "mwaa_620_red"
+  max_workers        = 1
+  airflow_version    = "2.0.2"
+  network_configuration {
+    security_group_ids = [aws_security_group.this.id]
+    subnet_ids         = [aws_subnet.private1.id, aws_subnet.private2.id]
+  }
+
+  source_bucket_arn = aws_s3_bucket.this.arn
+}
+
+resource "aws_s3_bucket" "this" {
+  bucket = "620-bucket-red"
+}
+
+resource "aws_s3_bucket_acl" "this" {
+  bucket = aws_s3_bucket.this.id
+  acl    = "private"
+}
+
+resource "aws_s3_bucket_public_access_block" "this" {
+  bucket = aws_s3_bucket.this.id
+
+  block_public_acls   = true
+  block_public_policy = true
+  ignore_public_acls  = true
+  restrict_public_buckets = true
+}
+
+resource "aws_s3_bucket_versioning" "this" {
+  bucket = aws_s3_bucket.this.id
+  versioning_configuration {
+    status = "Enabled"
+  }
+}
+
+resource "aws_s3_object" "this" {
+  key        = "dags/code.py"
+  bucket     = aws_s3_bucket.this.id
+  source     = "code.py"
+}

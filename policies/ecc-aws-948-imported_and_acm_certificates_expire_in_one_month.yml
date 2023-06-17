@@ -1,0 +1,18 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: ecc-aws-948-imported_and_acm_certificates_expire_in_one_month
+    description: |
+      Imported and ACM-issued certificates expire in less than a month
+    resource: aws.acm-certificate
+    filters:
+      - type: value
+        key: NotAfter
+        value_type: expiration
+        op: lt
+        value: 30

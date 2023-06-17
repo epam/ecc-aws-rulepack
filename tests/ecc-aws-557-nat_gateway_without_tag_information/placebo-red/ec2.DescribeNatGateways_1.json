@@ -1,0 +1,32 @@
+{
+    "status_code": 200,
+    "data": {
+        "NatGateways": [
+            {
+                "CreateTime": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 11,
+                    "day": 16,
+                    "hour": 16,
+                    "minute": 4,
+                    "second": 36,
+                    "microsecond": 0
+                },
+                "NatGatewayAddresses": [
+                    {
+                        "NetworkInterfaceId": "eni-000ae78bed38e26c2",
+                        "PrivateIp": "192.168.0.229"
+                    }
+                ],
+                "NatGatewayId": "nat-0ea840d6c0a2cfdbd",
+                "State": "available",
+                "SubnetId": "subnet-05c5d74b105d741fa",
+                "VpcId": "vpc-12345asdfg",
+                "Tags": [],
+                "ConnectivityType": "private"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

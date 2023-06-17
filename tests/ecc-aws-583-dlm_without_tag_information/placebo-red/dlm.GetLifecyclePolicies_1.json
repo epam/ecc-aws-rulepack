@@ -1,0 +1,15 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "Policies": [
+            {
+                "PolicyId": "policy-02029d638a4c74e22",
+                "Description": "dlm lifecycle policy 583 red",
+                "State": "ENABLED",
+                "Tags": {},
+                "PolicyType": "EBS_SNAPSHOT_MANAGEMENT"
+            }
+        ]
+    }
+}

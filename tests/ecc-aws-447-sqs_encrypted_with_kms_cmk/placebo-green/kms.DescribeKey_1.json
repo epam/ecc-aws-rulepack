@@ -1,0 +1,32 @@
+{
+    "status_code": 200,
+    "data": {
+        "KeyMetadata": {
+            "AWSAccountId": "111111111111",
+            "KeyId": "6cc71fec-e7a7-403d-a252-e64fd4df1e25",
+            "Arn": "arn:aws:kms:us-east-1:111111111111:key/6cc71fec-e7a7-403d-a252-e64fd4df1e25",
+            "CreationDate": {
+                "__class__": "datetime",
+                "year": 2022,
+                "month": 1,
+                "day": 6,
+                "hour": 9,
+                "minute": 25,
+                "second": 13,
+                "microsecond": 985000
+            },
+            "Enabled": true,
+            "Description": "Key to encrypt and decrypt SQS",
+            "KeyUsage": "ENCRYPT_DECRYPT",
+            "KeyState": "Enabled",
+            "Origin": "AWS_KMS",
+            "KeyManager": "CUSTOMER",
+            "CustomerMasterKeySpec": "SYMMETRIC_DEFAULT",
+            "EncryptionAlgorithms": [
+                "SYMMETRIC_DEFAULT"
+            ],
+            "MultiRegion": false
+        },
+        "ResponseMetadata": {}
+    }
+}

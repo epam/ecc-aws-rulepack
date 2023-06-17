@@ -1,0 +1,17 @@
+{
+    "status_code": 200,
+    "data": {
+        "TagDescriptions": [
+            {
+                "ResourceArn": "arn:aws:elasticloadbalancing:us-east-1:12121212121121212121212121212121212:loadbalancer/app/green-alb-245/12121212121121212121212121212121212",
+                "Tags": [
+                    {
+                        "Key": "Environment",
+                        "Value": "production"
+                    }
+                ]
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

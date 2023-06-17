@@ -1,0 +1,46 @@
+{
+    "status_code": 200,
+    "data": {
+        "LoadBalancers": [
+            {
+                "LoadBalancerArn": "arn:aws:elasticloadbalancing:us-east-1:111111111111:loadbalancer/app/alb-696-red/41f34b2e65d2ba72",
+                "DNSName": "alb-696-red-1689571504.us-east-1.elb.amazonaws.com",
+                "CanonicalHostedZoneId": "Z35SXDOTRQ7X7K",
+                "CreatedTime": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 10,
+                    "day": 27,
+                    "hour": 11,
+                    "minute": 2,
+                    "second": 39,
+                    "microsecond": 970000
+                },
+                "LoadBalancerName": "alb-696-red",
+                "Scheme": "internet-facing",
+                "VpcId": "vpc-12345asdfg",
+                "State": {
+                    "Code": "active"
+                },
+                "Type": "application",
+                "AvailabilityZones": [
+                    {
+                        "ZoneName": "us-east-1a",
+                        "SubnetId": "subnet-0a836d1ddc51a5825",
+                        "LoadBalancerAddresses": []
+                    },
+                    {
+                        "ZoneName": "us-east-1b",
+                        "SubnetId": "subnet-0bbb2e4e86f11a0fc",
+                        "LoadBalancerAddresses": []
+                    }
+                ],
+                "SecurityGroups": [
+                    "sg-0f31bc19d2a9479d1"
+                ],
+                "IpAddressType": "ipv4"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

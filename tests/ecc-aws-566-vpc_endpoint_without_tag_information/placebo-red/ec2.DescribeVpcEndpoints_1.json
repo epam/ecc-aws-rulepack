@@ -1,0 +1,35 @@
+{
+    "status_code": 200,
+    "data": {
+        "VpcEndpoints": [
+            {
+                "VpcEndpointId": "vpce-09e7268767bdd0afa",
+                "VpcEndpointType": "Gateway",
+                "VpcId": "vpc-12345asdfg",
+                "ServiceName": "com.amazonaws.us-east-1.s3",
+                "State": "available",
+                "PolicyDocument": "{\"Version\":\"2008-10-17\",\"Statement\":[{\"Effect\":\"Allow\",\"Principal\":\"*\",\"Action\":\"*\",\"Resource\":\"*\"}]}",
+                "RouteTableIds": [],
+                "SubnetIds": [],
+                "Groups": [],
+                "PrivateDnsEnabled": false,
+                "RequesterManaged": false,
+                "NetworkInterfaceIds": [],
+                "DnsEntries": [],
+                "CreationTimestamp": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 7,
+                    "day": 26,
+                    "hour": 12,
+                    "minute": 3,
+                    "second": 36,
+                    "microsecond": 0
+                },
+                "Tags": [],
+                "OwnerId": "111111111111"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

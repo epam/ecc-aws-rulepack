@@ -1,0 +1,30 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: ecc-aws-248-k8s_cluster_network_firewall_inbound_rule_permissive_to_all_traffic
+    description: |
+      Kubernetes Engine Clusters network firewall inbound rule is overly permissive to all traffic
+    resource: eks
+    filters:
+      - and:
+          - type: security-group
+            key: IpPermissions[].IpProtocol
+            value_type: swap
+            op: in
+            value: "-1"
+          - or:
+              - type: security-group
+                key: IpPermissions[].IpRanges[].CidrIp
+                value_type: swap
+                op: in
+                value: "0.0.0.0/0"
+              - type: security-group
+                key: IpPermissions[].Ipv6Ranges[].CidrIpv6
+                value_type: swap
+                op: in
+                value: "::/0"

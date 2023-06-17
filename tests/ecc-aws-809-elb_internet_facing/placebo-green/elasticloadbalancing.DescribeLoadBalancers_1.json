@@ -1,0 +1,46 @@
+{
+    "status_code": 200,
+    "data": {
+        "LoadBalancers": [
+            {
+                "LoadBalancerArn": "arn:aws:elasticloadbalancing:us-east-1:111111111111:loadbalancer/app/alb-809-green/d8c2a96d55c5f7a1",
+                "DNSName": "internal-alb-809-green-2053259571.us-east-1.elb.amazonaws.com",
+                "CanonicalHostedZoneId": "Z35SXDOTRQ7X7K",
+                "CreatedTime": {
+                    "__class__": "datetime",
+                    "year": 2023,
+                    "month": 1,
+                    "day": 13,
+                    "hour": 8,
+                    "minute": 56,
+                    "second": 5,
+                    "microsecond": 650000
+                },
+                "LoadBalancerName": "alb-809-green",
+                "Scheme": "internal",
+                "VpcId": "vpc-12345asdfg",
+                "State": {
+                    "Code": "active"
+                },
+                "Type": "application",
+                "AvailabilityZones": [
+                    {
+                        "ZoneName": "us-east-1b",
+                        "SubnetId": "subnet-0076f5cc00b27549c",
+                        "LoadBalancerAddresses": []
+                    },
+                    {
+                        "ZoneName": "us-east-1a",
+                        "SubnetId": "subnet-0c5d145e749de5141",
+                        "LoadBalancerAddresses": []
+                    }
+                ],
+                "SecurityGroups": [
+                    "sg-0abd2a12537d2e69e"
+                ],
+                "IpAddressType": "ipv4"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

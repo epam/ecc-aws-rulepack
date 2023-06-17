@@ -1,0 +1,32 @@
+{
+    "status_code": 200,
+    "data": {
+        "TransitGatewayAttachments": [
+            {
+                "TransitGatewayAttachmentId": "tgw-attach-09f9652a4579bb00e",
+                "TransitGatewayId": "tgw-087734459a06e43e9",
+                "TransitGatewayOwnerId": "111111111111",
+                "ResourceOwnerId": "111111111111",
+                "ResourceType": "vpc",
+                "ResourceId": "vpc-0fd52cfdc14979f7b",
+                "State": "available",
+                "Association": {
+                    "TransitGatewayRouteTableId": "tgw-rtb-067f38ae9bcf7d68c",
+                    "State": "associated"
+                },
+                "CreationTime": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 12,
+                    "day": 8,
+                    "hour": 14,
+                    "minute": 7,
+                    "second": 23,
+                    "microsecond": 0
+                },
+                "Tags": []
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

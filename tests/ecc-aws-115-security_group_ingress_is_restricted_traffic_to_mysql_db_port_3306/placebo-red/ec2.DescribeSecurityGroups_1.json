@@ -1,0 +1,43 @@
+{
+    "status_code": 200,
+    "data": {
+        "SecurityGroups": [
+            {
+                "Description": "test-red-mysqldb",
+                "GroupName": "test-red-mysqldb",
+                "IpPermissions": [
+                    {
+                        "FromPort": 3306,
+                        "IpProtocol": "tcp",
+                        "IpRanges": [
+                            {
+                                "CidrIp": "0.0.0.0/0"
+                            }
+                        ],
+                        "Ipv6Ranges": [],
+                        "PrefixListIds": [],
+                        "ToPort": 3306,
+                        "UserIdGroupPairs": []
+                    }
+                ],
+                "OwnerId": "123456789123",
+                "GroupId": "sg-123456abcdef",
+                "IpPermissionsEgress": [
+                    {
+                        "IpProtocol": "-1",
+                        "IpRanges": [
+                            {
+                                "CidrIp": "0.0.0.0/0"
+                            }
+                        ],
+                        "Ipv6Ranges": [],
+                        "PrefixListIds": [],
+                        "UserIdGroupPairs": []
+                    }
+                ],
+                "VpcId": "vpc-ad123456"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

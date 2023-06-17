@@ -1,0 +1,34 @@
+{
+    "status_code": 200,
+    "data": {
+        "Aliases": [
+            {
+                "AliasName": "alias/447-green",
+                "AliasArn": "arn:aws:kms:us-east-1:111111111111:alias/447-green",
+                "TargetKeyId": "6cc71fec-e7a7-403d-a252-e64fd4df1e25",
+                "CreationDate": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 1,
+                    "day": 6,
+                    "hour": 11,
+                    "minute": 23,
+                    "second": 45,
+                    "microsecond": 786000
+                },
+                "LastUpdatedDate": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 1,
+                    "day": 6,
+                    "hour": 11,
+                    "minute": 23,
+                    "second": 45,
+                    "microsecond": 786000
+                }
+            }
+        ],
+        "Truncated": false,
+        "ResponseMetadata": {}
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "status_code": 200,
+    "data": {
+        "TagDescriptions": [
+            {
+                "ResourceArn": "arn:aws:elasticloadbalancing:us-east-1:111111111111:loadbalancer/net/nlb-755-green/45b9af0cb34428e8",
+                "Tags": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-755-elbv2_multiple_az"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    }
+                ]
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

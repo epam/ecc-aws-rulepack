@@ -1,0 +1,16 @@
+{
+    "status_code": 200,
+    "data": {
+        "DataCatalogEncryptionSettings": {
+            "EncryptionAtRest": {
+                "CatalogEncryptionMode": "SSE-KMS",
+                "SseAwsKmsKeyId": "arn:aws:kms:us-east-1:111111111111:key/5d7a3d26-9e29-45bb-a4e1-2b01fadccfe6"
+            },
+            "ConnectionPasswordEncryption": {
+                "ReturnConnectionPasswordEncrypted": true,
+                "AwsKmsKeyId": "arn:aws:kms:us-east-1:111111111111:key/5d7a3d26-9e29-45bb-a4e1-2b01fadccfe6"
+            }
+        },
+        "ResponseMetadata": {}
+    }
+}

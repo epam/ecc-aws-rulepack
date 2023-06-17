@@ -1,0 +1,32 @@
+{
+    "status_code": 200,
+    "data": {
+        "KeyMetadata": {
+            "AWSAccountId": "111111111111",
+            "KeyId": "c92b312b-4c0a-44c7-bc0b-381f8aba9bff",
+            "Arn": "arn:aws:kms:us-east-1:111111111111:key/c92b312b-4c0a-44c7-bc0b-381f8aba9bff",
+            "CreationDate": {
+                "__class__": "datetime",
+                "year": 2021,
+                "month": 3,
+                "day": 12,
+                "hour": 16,
+                "minute": 10,
+                "second": 38,
+                "microsecond": 20000
+            },
+            "Enabled": true,
+            "Description": "Default master key that protects my SNS data when no other key is defined",
+            "KeyUsage": "ENCRYPT_DECRYPT",
+            "KeyState": "Enabled",
+            "Origin": "AWS_KMS",
+            "KeyManager": "AWS",
+            "CustomerMasterKeySpec": "SYMMETRIC_DEFAULT",
+            "EncryptionAlgorithms": [
+                "SYMMETRIC_DEFAULT"
+            ],
+            "MultiRegion": false
+        },
+        "ResponseMetadata": {}
+    }
+}

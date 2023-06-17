@@ -1,0 +1,69 @@
+{
+    "status_code": 200,
+    "data": {
+        "CacheClusters": [
+            {
+                "CacheClusterId": "c7n-664-elasticache-cluster-green",
+                "ClientDownloadLandingPage": "https://console.aws.amazon.com/elasticache/home#client-download:",
+                "CacheNodeType": "cache.t2.micro",
+                "Engine": "redis",
+                "EngineVersion": "7.0.5",
+                "CacheClusterStatus": "available",
+                "NumCacheNodes": 1,
+                "PreferredAvailabilityZone": "us-east-1a",
+                "CacheClusterCreateTime": {
+                    "__class__": "datetime",
+                    "year": 2023,
+                    "month": 1,
+                    "day": 6,
+                    "hour": 14,
+                    "minute": 33,
+                    "second": 42,
+                    "microsecond": 323000
+                },
+                "PreferredMaintenanceWindow": "wed:09:00-wed:10:00",
+                "PendingModifiedValues": {},
+                "CacheSecurityGroups": [],
+                "CacheParameterGroup": {
+                    "CacheParameterGroupName": "default.redis7",
+                    "ParameterApplyStatus": "in-sync",
+                    "CacheNodeIdsToReboot": []
+                },
+                "CacheSubnetGroupName": "default",
+                "AutoMinorVersionUpgrade": true,
+                "SnapshotRetentionLimit": 0,
+                "SnapshotWindow": "04:30-05:30",
+                "AuthTokenEnabled": false,
+                "TransitEncryptionEnabled": false,
+                "AtRestEncryptionEnabled": false,
+                "ARN": "arn:aws:elasticache:us-east-1:111111111111:cluster:c7n-664-elasticache-cluster-green",
+                "ReplicationGroupLogDeliveryEnabled": false,
+                "LogDeliveryConfigurations": [
+                    {
+                        "LogType": "engine-log",
+                        "DestinationType": "cloudwatch-logs",
+                        "DestinationDetails": {
+                            "CloudWatchLogsDetails": {
+                                "LogGroup": "664-log-group-green"
+                            }
+                        },
+                        "LogFormat": "json",
+                        "Status": "active"
+                    },
+                    {
+                        "LogType": "slow-log",
+                        "DestinationType": "cloudwatch-logs",
+                        "DestinationDetails": {
+                            "CloudWatchLogsDetails": {
+                                "LogGroup": "664-log-group-green"
+                            }
+                        },
+                        "LogFormat": "text",
+                        "Status": "active"
+                    }
+                ]
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

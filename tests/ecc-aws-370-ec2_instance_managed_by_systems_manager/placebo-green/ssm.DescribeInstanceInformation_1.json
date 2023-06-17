@@ -1,0 +1,57 @@
+{
+    "status_code": 200,
+    "data": {
+        "InstanceInformationList": [
+            {
+                "InstanceId": "i-09372179bfd53a220",
+                "PingStatus": "Online",
+                "LastPingDateTime": {
+                    "__class__": "datetime",
+                    "year": 2021,
+                    "month": 11,
+                    "day": 8,
+                    "hour": 15,
+                    "minute": 47,
+                    "second": 36,
+                    "microsecond": 921000
+                },
+                "AgentVersion": "3.1.459.0",
+                "IsLatestVersion": true,
+                "PlatformType": "Linux",
+                "PlatformName": "Amazon Linux",
+                "PlatformVersion": "2",
+                "ResourceType": "EC2Instance",
+                "IPAddress": "172.31.18.49",
+                "ComputerName": "ip-172-31-18-49.ec2.internal",
+                "AssociationStatus": "Success",
+                "LastAssociationExecutionDate": {
+                    "__class__": "datetime",
+                    "year": 2021,
+                    "month": 11,
+                    "day": 8,
+                    "hour": 15,
+                    "minute": 26,
+                    "second": 5,
+                    "microsecond": 269000
+                },
+                "LastSuccessfulAssociationExecutionDate": {
+                    "__class__": "datetime",
+                    "year": 2021,
+                    "month": 11,
+                    "day": 8,
+                    "hour": 15,
+                    "minute": 26,
+                    "second": 5,
+                    "microsecond": 269000
+                },
+                "AssociationOverview": {
+                    "DetailedStatus": "Success",
+                    "InstanceAssociationStatusAggregatedCount": {
+                        "Success": 1
+                    }
+                }
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

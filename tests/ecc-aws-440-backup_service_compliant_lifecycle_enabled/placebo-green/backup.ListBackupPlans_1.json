@@ -1,0 +1,24 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "BackupPlansList": [
+            {
+                "BackupPlanArn": "arn:aws:backup:us-east-1:111111111111:backup-plan:d91b1c98-74e7-4201-bf7a-f6a96ce30e6a",
+                "BackupPlanId": "d91b1c98-74e7-4201-bf7a-f6a96ce30e6a",
+                "CreationDate": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 1,
+                    "day": 6,
+                    "hour": 13,
+                    "minute": 17,
+                    "second": 15,
+                    "microsecond": 495000
+                },
+                "VersionId": "OTM1NGZkMzQtYWM1NC00ODZjLTkzZjktNjlkMTA0NzRmODhh",
+                "BackupPlanName": "440_backup_plan_green"
+            }
+        ]
+    }
+}

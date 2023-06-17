@@ -1,0 +1,57 @@
+{
+    "status_code": 200,
+    "data": {
+        "VpcPeeringConnections": [
+            {
+                "AccepterVpcInfo": {
+                    "CidrBlock": "10.1.0.0/16",
+                    "CidrBlockSet": [
+                        {
+                            "CidrBlock": "10.1.0.0/16"
+                        }
+                    ],
+                    "OwnerId": "111111111111",
+                    "PeeringOptions": {
+                        "AllowDnsResolutionFromRemoteVpc": false,
+                        "AllowEgressFromLocalClassicLinkToRemoteVpc": false,
+                        "AllowEgressFromLocalVpcToRemoteClassicLink": false
+                    },
+                    "VpcId": "vpc-12345asdfg",
+                    "Region": "us-east-1"
+                },
+                "RequesterVpcInfo": {
+                    "CidrBlock": "10.2.0.0/16",
+                    "CidrBlockSet": [
+                        {
+                            "CidrBlock": "10.2.0.0/16"
+                        }
+                    ],
+                    "OwnerId": "111111111111",
+                    "PeeringOptions": {
+                        "AllowDnsResolutionFromRemoteVpc": false,
+                        "AllowEgressFromLocalClassicLinkToRemoteVpc": false,
+                        "AllowEgressFromLocalVpcToRemoteClassicLink": false
+                    },
+                    "VpcId": "vpc-12345asdfg",
+                    "Region": "us-east-1"
+                },
+                "Status": {
+                    "Code": "active",
+                    "Message": "Active"
+                },
+                "Tags": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-564-peering_connection_without_tag_information"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    }
+                ],
+                "VpcPeeringConnectionId": "pcx-02a02de21ce0532ce"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

@@ -1,0 +1,57 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "AuthenticationStrategy": "simple",
+        "AutoMinorVersionUpgrade": false,
+        "BrokerArn": "arn:aws:mq:us-east-1:111111111111:broker:mq-broker-rabbit-639-green:b-6bfc14fc-3acb-41d9-9fd4-f4931e15e604",
+        "BrokerId": "b-6bfc14fc-3acb-41d9-9fd4-f4931e15e604",
+        "BrokerInstances": [
+            {
+                "ConsoleURL": "https://b-6bfc14fc-3acb-41d9-9fd4-f4931e15e604.mq.us-east-1.amazonaws.com",
+                "Endpoints": [
+                    "amqps://b-6bfc14fc-3acb-41d9-9fd4-f4931e15e604.mq.us-east-1.amazonaws.com:5671"
+                ]
+            }
+        ],
+        "BrokerName": "mq-broker-rabbit-639-green",
+        "BrokerState": "RUNNING",
+        "Created": {
+            "__class__": "datetime",
+            "year": 2023,
+            "month": 1,
+            "day": 3,
+            "hour": 11,
+            "minute": 46,
+            "second": 27,
+            "microsecond": 783000
+        },
+        "DeploymentMode": "SINGLE_INSTANCE",
+        "EncryptionOptions": {
+            "UseAwsOwnedKey": true
+        },
+        "EngineType": "RabbitMQ",
+        "EngineVersion": "3.10.10",
+        "HostInstanceType": "mq.t3.micro",
+        "Logs": {
+            "General": false,
+            "GeneralLogGroup": "/aws/amazonmq/broker/b-6bfc14fc-3acb-41d9-9fd4-f4931e15e604/general"
+        },
+        "MaintenanceWindowStartTime": {
+            "DayOfWeek": "WEDNESDAY",
+            "TimeOfDay": "19:00",
+            "TimeZone": "UTC"
+        },
+        "PubliclyAccessible": true,
+        "SecurityGroups": [],
+        "StorageType": "ebs",
+        "SubnetIds": [
+            "subnet-8158d8de"
+        ],
+        "Tags": {
+            "CustodianRule": "ecc-aws-639-mq_brocker_latest_version",
+            "ComplianceStatus": "Green"
+        },
+        "Users": []
+    }
+}

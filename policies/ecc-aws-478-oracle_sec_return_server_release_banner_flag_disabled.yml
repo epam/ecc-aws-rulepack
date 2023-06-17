@@ -1,0 +1,22 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: ecc-aws-478-oracle_sec_return_server_release_banner_flag_disabled
+    resource: aws.rds
+    description: |
+      The 'sec_return_server_release_banner' flag for Oracle is enabled
+    filters:
+      - and:
+          - type: value
+            key: Engine
+            op: regex
+            value: 'oracle*?'
+          - not:
+              - type: db-parameter
+                key: sec_return_server_release_banner
+                value: false

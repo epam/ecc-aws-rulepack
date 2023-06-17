@@ -1,0 +1,26 @@
+{
+    "status_code": 200,
+    "data": {
+        "Vpcs": [
+            {
+                "CidrBlock": "172.31.0.0/16",
+                "DhcpOptionsId": "dopt-12312412",
+                "State": "available",
+                "VpcId": "vpc-124124",
+                "OwnerId": "123124124",
+                "InstanceTenancy": "default",
+                "CidrBlockAssociationSet": [
+                    {
+                        "AssociationId": "vpc-cidr-assoc-123123412",
+                        "CidrBlock": "172.31.0.0/16",
+                        "CidrBlockState": {
+                            "State": "associated"
+                        }
+                    }
+                ],
+                "IsDefault": true
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

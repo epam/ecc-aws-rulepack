@@ -1,0 +1,19 @@
+{
+    "status_code": 200,
+    "data": {
+        "Parameters": [
+            {
+                "ParameterName": "sql92_security",
+                "ParameterValue": "FALSE",
+                "Description": "require select privilege for searched update/delete",
+                "Source": "user",
+                "ApplyType": "static",
+                "DataType": "boolean",
+                "AllowedValues": "TRUE,FALSE",
+                "IsModifiable": true,
+                "ApplyMethod": "pending-reboot"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

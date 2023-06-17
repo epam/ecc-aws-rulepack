@@ -1,0 +1,13 @@
+{
+    "status_code": 200,
+    "data": {
+        "NextMarker": "12121212121121212121212121212121212",
+        "WebACLs": [
+            {
+                "WebACLId": "12121212121121212121212121212121212",
+                "Name": "GreenWAFRegionalACL"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

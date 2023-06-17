@@ -1,0 +1,26 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "CreatedAt": "2021-06-18T07:31:20.362Z",
+        "FindingPublishingFrequency": "SIX_HOURS",
+        "ServiceRole": "arn:aws:iam::111111111111:role/aws-service-role/guardduty.amazonaws.com/AWSServiceRoleForAmazonGuardDuty",
+        "Status": "ENABLED",
+        "UpdatedAt": "2021-06-18T07:31:20.362Z",
+        "DataSources": {
+            "CloudTrail": {
+                "Status": "ENABLED"
+            },
+            "DNSLogs": {
+                "Status": "ENABLED"
+            },
+            "FlowLogs": {
+                "Status": "ENABLED"
+            },
+            "S3Logs": {
+                "Status": "ENABLED"
+            }
+        },
+        "Tags": {}
+    }
+}

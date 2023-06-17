@@ -1,0 +1,60 @@
+{
+    "status_code": 200,
+    "data": {
+        "Table": {
+            "AttributeDefinitions": [
+                {
+                    "AttributeName": "RedTableHashKey",
+                    "AttributeType": "S"
+                }
+            ],
+            "TableName": "red-dynamodb-table-256",
+            "KeySchema": [
+                {
+                    "AttributeName": "RedTableHashKey",
+                    "KeyType": "HASH"
+                }
+            ],
+            "TableStatus": "ACTIVE",
+            "CreationDateTime": {
+                "__class__": "datetime",
+                "year": 2021,
+                "month": 6,
+                "day": 16,
+                "hour": 13,
+                "minute": 49,
+                "second": 36,
+                "microsecond": 954000
+            },
+            "ProvisionedThroughput": {
+                "NumberOfDecreasesToday": 0,
+                "ReadCapacityUnits": 0,
+                "WriteCapacityUnits": 0
+            },
+            "TableSizeBytes": 0,
+            "ItemCount": 0,
+            "TableArn": "arn:aws:dynamodb:us-east-1:111111111111:table/red-dynamodb-table-256",
+            "TableId": "c458852f-d412-44c9-8c2e-ID",
+            "BillingModeSummary": {
+                "BillingMode": "PAY_PER_REQUEST",
+                "LastUpdateToPayPerRequestDateTime": {
+                    "__class__": "datetime",
+                    "year": 2021,
+                    "month": 6,
+                    "day": 16,
+                    "hour": 13,
+                    "minute": 49,
+                    "second": 36,
+                    "microsecond": 954000
+                }
+            },
+            "StreamSpecification": {
+                "StreamEnabled": true,
+                "StreamViewType": "NEW_AND_OLD_IMAGES"
+            },
+            "LatestStreamLabel": "2021-06-16T10:49:36.954",
+            "LatestStreamArn": "arn:aws:dynamodb:us-east-1:111111111111:table/red-dynamodb-table-256/stream/2021-06-16T10:49:36.954"
+        },
+        "ResponseMetadata": {}
+    }
+}

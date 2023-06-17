@@ -1,0 +1,18 @@
+{
+    "status_code": 200,
+    "data": {
+        "PaginationToken": "",
+        "ResourceTagMappingList": [
+            {
+                "ResourceARN": "arn:aws:cloudtrail:us-east-1:12312414124124124:trail/green-184",
+                "Tags": [
+                    {
+                        "Key": "Name",
+                        "Value": "green-184"
+                    }
+                ]
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

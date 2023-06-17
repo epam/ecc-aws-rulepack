@@ -1,0 +1,18 @@
+{
+    "status_code": 200,
+    "data": {
+        "Parameters": [
+            {
+                "ParameterName": "sec_protocol_error_further_action",
+                "ParameterValue": "(DROP,3)",
+                "Description": "TTC protocol error continue action",
+                "Source": "user",
+                "ApplyType": "dynamic",
+                "DataType": "string",
+                "IsModifiable": true,
+                "ApplyMethod": "pending-reboot"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

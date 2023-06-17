@@ -1,0 +1,22 @@
+{
+    "status_code": 200,
+    "data": {
+        "User": {
+            "Path": "/",
+            "UserName": "user_with_group",
+            "UserId": "AIDAXPHGII4ANM7PMPIN2",
+            "Arn": "arn:aws:iam::121212121212:user/user_with_group",
+            "CreateDate": {
+                "__class__": "datetime",
+                "year": 2021,
+                "month": 5,
+                "day": 13,
+                "hour": 10,
+                "minute": 26,
+                "second": 58,
+                "microsecond": 0
+            }
+        },
+        "ResponseMetadata": {}
+    }
+}

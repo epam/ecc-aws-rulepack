@@ -1,0 +1,49 @@
+{
+    "status_code": 200,
+    "data": {
+        "Certificate": {
+            "CertificateArn": "arn:aws:acm:us-east-1:111111111111:certificate/0a1ff233-bfcb-488e-ba7c-ARN",
+            "DomainName": "aws.custodian.com",
+            "SubjectAlternativeNames": [
+                "aws.custodian.com"
+            ],
+            "DomainValidationOptions": [
+                {
+                    "DomainName": "aws.custodian.com",
+                    "ValidationDomain": "aws.custodian.com",
+                    "ValidationStatus": "PENDING_VALIDATION",
+                    "ResourceRecord": {
+                        "Name": "_NAME.aws.custodian.com.",
+                        "Type": "CNAME",
+                        "Value": "_VALUE.xrchbtpdjs.acm-validations.aws."
+                    },
+                    "ValidationMethod": "DNS"
+                }
+            ],
+            "Subject": "CN=aws.custodian.com",
+            "Issuer": "Amazon",
+            "CreatedAt": {
+                "__class__": "datetime",
+                "year": 2021,
+                "month": 6,
+                "day": 10,
+                "hour": 15,
+                "minute": 24,
+                "second": 58,
+                "microsecond": 0
+            },
+            "Status": "PENDING_VALIDATION",
+            "KeyAlgorithm": "RSA-2048",
+            "SignatureAlgorithm": "SHA256WITHRSA",
+            "InUseBy": [],
+            "Type": "AMAZON_ISSUED",
+            "KeyUsages": [],
+            "ExtendedKeyUsages": [],
+            "RenewalEligibility": "INELIGIBLE",
+            "Options": {
+                "CertificateTransparencyLoggingPreference": "ENABLED"
+            }
+        },
+        "ResponseMetadata": {}
+    }
+}

@@ -1,0 +1,49 @@
+{
+    "status_code": 200,
+    "data": {
+        "Certificate": {
+            "CertificateArn": "arn:aws:acm:us-east-1:111111111111:certificate/addab542-0b60-40cb-b089-2c2b50f0162f",
+            "DomainName": "examplered.com",
+            "SubjectAlternativeNames": [
+                "examplered.com"
+            ],
+            "DomainValidationOptions": [
+                {
+                    "DomainName": "examplered.com",
+                    "ValidationDomain": "examplered.com",
+                    "ValidationStatus": "PENDING_VALIDATION",
+                    "ResourceRecord": {
+                        "Name": "_acec75d5bedf50a88b44bbd4c9042425.examplered.com.",
+                        "Type": "CNAME",
+                        "Value": "_bc713a33248b5aa71ed51eddce94179d.xgxxrgwpcb.acm-validations.aws."
+                    },
+                    "ValidationMethod": "DNS"
+                }
+            ],
+            "Subject": "CN=examplered.com",
+            "Issuer": "Amazon",
+            "CreatedAt": {
+                "__class__": "datetime",
+                "year": 2022,
+                "month": 12,
+                "day": 15,
+                "hour": 9,
+                "minute": 7,
+                "second": 42,
+                "microsecond": 669000
+            },
+            "Status": "PENDING_VALIDATION",
+            "KeyAlgorithm": "RSA-2048",
+            "SignatureAlgorithm": "SHA256WITHRSA",
+            "InUseBy": [],
+            "Type": "AMAZON_ISSUED",
+            "KeyUsages": [],
+            "ExtendedKeyUsages": [],
+            "RenewalEligibility": "INELIGIBLE",
+            "Options": {
+                "CertificateTransparencyLoggingPreference": "DISABLED"
+            }
+        },
+        "ResponseMetadata": {}
+    }
+}

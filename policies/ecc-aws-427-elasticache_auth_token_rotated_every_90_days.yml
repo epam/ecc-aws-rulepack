@@ -1,0 +1,18 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: ecc-aws-427-elasticache_auth_token_rotated_every_90_days
+    description: |
+      Elasticache AUTH token is not rotated every 90 days
+    resource: cache-cluster
+    filters:
+      - type: value
+        key: AuthTokenLastModifiedDate
+        op: gt
+        value_type: age
+        value: 90

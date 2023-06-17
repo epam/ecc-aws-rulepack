@@ -1,0 +1,66 @@
+{
+    "status_code": 200,
+    "data": {
+        "SecurityGroups": [
+            {
+                "Description": "Managed by Terraform",
+                "GroupName": "317_security_group_green",
+                "IpPermissions": [
+                    {
+                        "FromPort": 9300,
+                        "IpProtocol": "tcp",
+                        "IpRanges": [
+                            {
+                                "CidrIp": "10.0.0.0/16"
+                            }
+                        ],
+                        "Ipv6Ranges": [],
+                        "PrefixListIds": [],
+                        "ToPort": 9300,
+                        "UserIdGroupPairs": []
+                    },
+                    {
+                        "FromPort": 9200,
+                        "IpProtocol": "tcp",
+                        "IpRanges": [
+                            {
+                                "CidrIp": "10.0.0.0/16"
+                            }
+                        ],
+                        "Ipv6Ranges": [],
+                        "PrefixListIds": [],
+                        "ToPort": 9200,
+                        "UserIdGroupPairs": []
+                    }
+                ],
+                "OwnerId": "111111111111",
+                "GroupId": "sg-1234567asdfg",
+                "IpPermissionsEgress": [
+                    {
+                        "IpProtocol": "-1",
+                        "IpRanges": [
+                            {
+                                "CidrIp": "0.0.0.0/0"
+                            }
+                        ],
+                        "Ipv6Ranges": [],
+                        "PrefixListIds": [],
+                        "UserIdGroupPairs": []
+                    }
+                ],
+                "Tags": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-317-security_group_ingress_is_restricted_traffic_to_elasticsearch_service_ports"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    }
+                ],
+                "VpcId": "vpc-12345asdfg"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

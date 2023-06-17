@@ -1,0 +1,9 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "HubArn": "arn:aws:securityhub:us-east-1:111111111111:hub/default",
+        "SubscribedAt": "2023-01-18T15:27:56.359Z",
+        "AutoEnableControls": true
+    }
+}

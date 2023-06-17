@@ -1,0 +1,56 @@
+{
+    "status_code": 200,
+    "data": {
+        "DirectoryDescriptions": [
+            {
+                "DirectoryId": "d-90674d99ed",
+                "Name": "DirectoryService.example.com",
+                "ShortName": "DirectoryServic",
+                "Size": "Small",
+                "Alias": "d-90674d99ed",
+                "AccessUrl": "d-90674d99ed.awsapps.com",
+                "DnsIpAddrs": [
+                    "10.0.1.86",
+                    "10.0.2.230"
+                ],
+                "Stage": "Active",
+                "LaunchTime": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 5,
+                    "day": 17,
+                    "hour": 14,
+                    "minute": 13,
+                    "second": 34,
+                    "microsecond": 516000
+                },
+                "StageLastUpdatedDateTime": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 5,
+                    "day": 17,
+                    "hour": 14,
+                    "minute": 20,
+                    "second": 48,
+                    "microsecond": 175000
+                },
+                "Type": "SimpleAD",
+                "VpcSettings": {
+                    "VpcId": "vpc-12345asdfg",
+                    "SubnetIds": [
+                        "subnet-082579082d7b38182",
+                        "subnet-02682a905307e70cd"
+                    ],
+                    "SecurityGroupId": "sg-03da26794df66ab4d",
+                    "AvailabilityZones": [
+                        "us-east-1c",
+                        "us-east-1d"
+                    ]
+                },
+                "SsoEnabled": false,
+                "DesiredNumberOfDomainControllers": 0
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "status_code": 200,
+    "data": {
+        "PaginationToken": "",
+        "ResourceTagMappingList": [
+            {
+                "ResourceARN": "arn:aws:elasticfilesystem:us-east-1:this:file-system/fs-0c0b6185d03a22bff",
+                "Tags": [
+                    {
+                        "Key": "aws:elasticfilesystem:default-backup",
+                        "Value": "enabled"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    },
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-337-efs_in_backup_plan"
+                    }
+                ]
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

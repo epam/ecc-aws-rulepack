@@ -1,0 +1,58 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "item": [
+            {
+                "deploymentId": "yukktd",
+                "stageName": "apiGatewayStage526Green",
+                "cacheClusterEnabled": true,
+                "cacheClusterSize": "0.5",
+                "cacheClusterStatus": "AVAILABLE",
+                "methodSettings": {
+                    "*/*": {
+                        "metricsEnabled": false,
+                        "loggingLevel": "ERROR",
+                        "dataTraceEnabled": false,
+                        "throttlingBurstLimit": -1,
+                        "throttlingRateLimit": -1.0,
+                        "cachingEnabled": false,
+                        "cacheTtlInSeconds": 300,
+                        "cacheDataEncrypted": false,
+                        "requireAuthorizationForCacheControl": true,
+                        "unauthorizedCacheControlHeaderStrategy": "SUCCEED_WITH_RESPONSE_HEADER"
+                    }
+                },
+                "accessLogSettings": {
+                    "format": "$context.identity.sourceIp,$context.identity.caller,$context.identity.user,$context.requestTime,$context.httpMethod,$context.resourcePath,$context.protocol,$context.status,$context.responseLength,$context.requestId",
+                    "destinationArn": "arn:aws:logs:us-east-1:111111111111:log-group:526_log_group_green"
+                },
+                "tracingEnabled": false,
+                "tags": {
+                    "ComplianceStatus": "Green",
+                    "CustodianRule": "ecc-aws-398-api_gateway_cache_enabled"
+                },
+                "createdDate": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 5,
+                    "day": 21,
+                    "hour": 13,
+                    "minute": 31,
+                    "second": 0,
+                    "microsecond": 0
+                },
+                "lastUpdatedDate": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 5,
+                    "day": 21,
+                    "hour": 16,
+                    "minute": 6,
+                    "second": 21,
+                    "microsecond": 0
+                }
+            }
+        ]
+    }
+}

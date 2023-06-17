@@ -1,0 +1,43 @@
+{
+    "status_code": 200,
+    "data": {
+        "SecurityGroups": [
+            {
+                "Description": "test-green-dns",
+                "GroupName": "test-green-dns",
+                "IpPermissions": [
+                    {
+                        "FromPort": 53,
+                        "IpProtocol": "tcp",
+                        "IpRanges": [
+                            {
+                                "CidrIp": "192.168.2.1/32"
+                            }
+                        ],
+                        "Ipv6Ranges": [],
+                        "PrefixListIds": [],
+                        "ToPort": 53,
+                        "UserIdGroupPairs": []
+                    }
+                ],
+                "OwnerId": "012345678912",
+                "GroupId": "sg-0d12c3b12345e1234",
+                "IpPermissionsEgress": [
+                    {
+                        "IpProtocol": "-1",
+                        "IpRanges": [
+                            {
+                                "CidrIp": "0.0.0.0/0"
+                            }
+                        ],
+                        "Ipv6Ranges": [],
+                        "PrefixListIds": [],
+                        "UserIdGroupPairs": []
+                    }
+                ],
+                "VpcId": "vpc-ad1234d0"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

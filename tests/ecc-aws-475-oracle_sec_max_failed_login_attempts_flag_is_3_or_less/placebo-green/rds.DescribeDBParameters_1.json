@@ -1,0 +1,19 @@
+{
+    "status_code": 200,
+    "data": {
+        "Parameters": [
+            {
+                "ParameterName": "sec_max_failed_login_attempts",
+                "ParameterValue": "2",
+                "Description": "maximum number of failed login attempts on a connection",
+                "Source": "user",
+                "ApplyType": "static",
+                "DataType": "integer",
+                "AllowedValues": "1-100000",
+                "IsModifiable": true,
+                "ApplyMethod": "pending-reboot"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

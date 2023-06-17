@@ -1,0 +1,23 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "autoscaling:DescribeAutoScalingGroups",
+                "ec2:DescribeLaunchTemplateVersions",
+                "ec2:DescribeSubnets",
+                "ec2:DescribeSecurityGroups",
+                "ec2:DescribeKeyPairs",
+                "elasticloadbalancing:DescribeLoadBalancers",
+                "elasticloadbalancing:DescribeLoadBalancerAttributes",
+                "elasticloadbalancing:DescribeTags",
+                "elasticloadbalancing:DescribeTargetGroups",
+                "ec2:DescribeSnapshots",
+                "ec2:DescribeImages",
+                "elasticloadbalancing:DescribeTargetHealth"
+            ],
+            "Resource": "*"
+        }
+    ]
+}

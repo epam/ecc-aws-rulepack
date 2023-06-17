@@ -1,0 +1,84 @@
+name: test-custodian-policies
+on: [push]
+jobs:
+  test_policy_red_flights:
+    runs-on: ubuntu-22.04
+    container: python:3.8
+    steps: 
+      - uses: actions/checkout@v3
+      - uses: ./.github/workflows/composite-action
+      - name: test_policy_red_flights
+        shell: bash
+        run: |
+          cd cloud-custodian
+          python3.8 -m venv .venv && source .venv/bin/activate
+          pip install poetry
+          make install
+          mkdir out
+          RULE_NAMES=$(find ./aws-custodian-policies/tests/ -maxdepth 1 -type d | tail -n +2 | awk -F '/' '{ print $NF }')
+          RED_WHITELISTED_RULE_NAMES=$(cat ./aws-custodian-policies/tests/.whitelisted_red)
+          touch .red_passed .red_failed .whitelisted_red_failed
+          echo "$RULE_NAMES" |
+          while IFS= read -r policy ; do
+          echo "red test $policy executing..."
+
+          mkdir out/$policy
+          cp aws-custodian-policies/tests/$policy/placebo-red/* out/$policy
+          ls out/$policy
+          red_policy_test_file_name="aws-custodian-policies.tests.$policy.red_policy_test"
+          python3 policy_as_test.py test aws-custodian-policies/policies/$policy.yml $red_policy_test_file_name out \
+          && echo $policy >> .red_passed || if [[ $RED_WHITELISTED_RULE_NAMES =~ $policy ]]; \
+          then echo $policy >> .whitelisted_red_failed; else echo $policy >> .red_failed; fi
+          rm -r out/$policy
+          done
+
+          echo "red tests executed"
+          echo "red_passed:"
+          cat .red_passed
+          echo "whitelisted_red_failed:"
+          cat .whitelisted_red_failed
+          echo "red_failed:"
+          cat .red_failed
+          test -s .red_failed && exit 1
+          exit 0
+
+  test_policy_green_flights:
+    runs-on: ubuntu-22.04
+    container: python:3.8
+    steps: 
+      - uses: actions/checkout@v3
+      - uses: ./.github/workflows/composite-action
+      - name: test_policy_green_flights
+        shell: bash
+        run: |
+          cd cloud-custodian
+          python3.8 -m venv .venv && source .venv/bin/activate
+          pip install poetry
+          make install
+          mkdir out
+          RULE_NAMES=$(find ./aws-custodian-policies/tests/ -maxdepth 1 -type d | tail -n +2 | awk -F '/' '{ print $NF }')
+          GREEN_WHITELISTED_RULE_NAMES=$(cat ./aws-custodian-policies/tests/.whitelisted_green)
+          touch .green_passed .green_failed .whitelisted_green_failed
+
+          echo "$RULE_NAMES" |
+          while IFS= read -r policy ; do
+          echo "green test $policy executing..."
+          mkdir out/$policy
+          cp aws-custodian-policies/tests/$policy/placebo-green/* out/$policy
+          ls out/$policy
+          green_policy_test_file_name=$(test -f aws-custodian-policies/tests/$policy/green_policy_test.py && echo "aws-custodian-policies.tests.$policy.green_policy_test" || echo "green_policy_test")
+          python3 policy_as_test.py test aws-custodian-policies/policies/$policy.yml $green_policy_test_file_name out \
+          && echo $policy >> .green_passed || if [[ $GREEN_WHITELISTED_RULE_NAMES =~ $policy ]]; \
+          then echo $policy >> .whitelisted_green_failed; else echo $policy >> .green_failed; fi
+          rm -r out/$policy
+          done
+          
+          echo "green tests executed"
+          echo "green_passed:"
+          cat .green_passed
+          echo "whitelisted_green_failed:"
+          cat .whitelisted_green_failed
+          echo "green_failed:"
+          cat .green_failed
+          test -s .green_failed && exit 1
+          exit 0

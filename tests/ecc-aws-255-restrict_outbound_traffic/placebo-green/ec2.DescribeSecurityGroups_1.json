@@ -1,0 +1,50 @@
+{
+    "status_code": 200,
+    "data": {
+        "SecurityGroups": [
+            {
+                "Description": "Managed by Terraform",
+                "GroupName": "green-allow-http-255",
+                "IpPermissions": [
+                    {
+                        "FromPort": 80,
+                        "IpProtocol": "tcp",
+                        "IpRanges": [
+                            {
+                                "CidrIp": "10.0.0.0/16",
+                                "Description": "HTTP from VPC"
+                            }
+                        ],
+                        "Ipv6Ranges": [],
+                        "PrefixListIds": [],
+                        "ToPort": 80,
+                        "UserIdGroupPairs": []
+                    }
+                ],
+                "OwnerId": "111111111111",
+                "GroupId": "sg-1234567asdfg",
+                "IpPermissionsEgress": [
+                    {
+                        "IpProtocol": "-1",
+                        "IpRanges": [
+                            {
+                                "CidrIp": "10.0.0.0/16"
+                            }
+                        ],
+                        "Ipv6Ranges": [],
+                        "PrefixListIds": [],
+                        "UserIdGroupPairs": []
+                    }
+                ],
+                "Tags": [
+                    {
+                        "Key": "Name",
+                        "Value": "allow_http"
+                    }
+                ],
+                "VpcId": "vpc-12345asdfg"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

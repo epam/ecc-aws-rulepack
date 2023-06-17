@@ -1,0 +1,48 @@
+{
+    "status_code": 200,
+    "data": {
+        "AutoScalingGroups": [
+            {
+                "AutoScalingGroupName": "terraform-20230105160825212900000003",
+                "AutoScalingGroupARN": "arn:aws:autoscaling:us-east-1:111111111111:autoScalingGroup:a6666629-78da-4df0-ab18-d208da46fe75:autoScalingGroupName/terraform-20230105160825212900000003",
+                "LaunchTemplate": {
+                    "LaunchTemplateId": "lt-089038a6deb97cd0e",
+                    "LaunchTemplateName": "950_launch_template_green20230105160823661500000001",
+                    "Version": "$Latest"
+                },
+                "MinSize": 0,
+                "MaxSize": 0,
+                "DesiredCapacity": 0,
+                "DefaultCooldown": 300,
+                "AvailabilityZones": [
+                    "us-east-1a"
+                ],
+                "LoadBalancerNames": [],
+                "TargetGroupARNs": [],
+                "HealthCheckType": "ELB",
+                "HealthCheckGracePeriod": 300,
+                "Instances": [],
+                "CreatedTime": {
+                    "__class__": "datetime",
+                    "year": 2023,
+                    "month": 1,
+                    "day": 5,
+                    "hour": 16,
+                    "minute": 8,
+                    "second": 27,
+                    "microsecond": 460000
+                },
+                "SuspendedProcesses": [],
+                "VPCZoneIdentifier": "",
+                "EnabledMetrics": [],
+                "Tags": [],
+                "TerminationPolicies": [
+                    "Default"
+                ],
+                "NewInstancesProtectedFromScaleIn": false,
+                "ServiceLinkedRoleARN": "arn:aws:iam::111111111111:role/aws-service-role/autoscaling.amazonaws.com/AWSServiceRoleForAutoScaling"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

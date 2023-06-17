@@ -1,0 +1,17 @@
+{
+    "status_code": 200,
+    "data": {
+        "LoggingEnabled": true,
+        "LastSuccessfulDeliveryTime": {
+            "__class__": "datetime",
+            "year": 2022,
+            "month": 10,
+            "day": 21,
+            "hour": 14,
+            "minute": 54,
+            "second": 0,
+            "microsecond": 764000
+        },
+        "ResponseMetadata": {}
+    }
+}

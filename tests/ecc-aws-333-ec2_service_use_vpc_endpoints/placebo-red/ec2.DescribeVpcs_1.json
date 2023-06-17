@@ -1,0 +1,40 @@
+{
+    "status_code": 200,
+    "data": {
+        "Vpcs": [
+            {
+                "CidrBlock": "10.0.0.0/16",
+                "DhcpOptionsId": "dopt-bc2559c6",
+                "State": "available",
+                "VpcId": "vpc-12345asdfg",
+                "OwnerId": "111111111111",
+                "InstanceTenancy": "default",
+                "CidrBlockAssociationSet": [
+                    {
+                        "AssociationId": "vpc-cidr-assoc-0e4ac67bc3418256b",
+                        "CidrBlock": "10.0.0.0/16",
+                        "CidrBlockState": {
+                            "State": "associated"
+                        }
+                    }
+                ],
+                "IsDefault": false,
+                "Tags": [
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Red"
+                    },
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-333-ec2_service_use_vpc_endpoints"
+                    },
+                    {
+                        "Key": "Name",
+                        "Value": "333_vpc_red"
+                    }
+                ]
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

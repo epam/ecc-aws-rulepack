@@ -1,0 +1,33 @@
+{
+    "status_code": 200,
+    "data": {
+        "KeyMetadata": {
+            "AWSAccountId": "111111111111",
+            "KeyId": "27b443b5-648f-4a7a-8fdc-7b22c92504b3",
+            "Arn": "arn:aws:kms:us-east-1:111111111111:key/27b443b5-648f-4a7a-8fdc-7b22c92504b3",
+            "CreationDate": {
+                "__class__": "datetime",
+                "year": 2022,
+                "month": 7,
+                "day": 5,
+                "hour": 7,
+                "minute": 52,
+                "second": 54,
+                "microsecond": 390000
+            },
+            "Enabled": true,
+            "Description": "Key to encrypt and decrypt MQ",
+            "KeyUsage": "ENCRYPT_DECRYPT",
+            "KeyState": "Enabled",
+            "Origin": "AWS_KMS",
+            "KeyManager": "CUSTOMER",
+            "CustomerMasterKeySpec": "SYMMETRIC_DEFAULT",
+            "KeySpec": "SYMMETRIC_DEFAULT",
+            "EncryptionAlgorithms": [
+                "SYMMETRIC_DEFAULT"
+            ],
+            "MultiRegion": false
+        },
+        "ResponseMetadata": {}
+    }
+}

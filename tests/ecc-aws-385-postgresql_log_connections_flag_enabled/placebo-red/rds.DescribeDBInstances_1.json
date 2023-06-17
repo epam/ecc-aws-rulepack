@@ -1,0 +1,135 @@
+{
+    "status_code": 200,
+    "data": {
+        "DBInstances": [
+            {
+                "DBInstanceIdentifier": "database-385-red",
+                "DBInstanceClass": "db.t3.micro",
+                "Engine": "postgres",
+                "DBInstanceStatus": "creating",
+                "MasterUsername": "root",
+                "DBName": "red385",
+                "AllocatedStorage": 10,
+                "PreferredBackupWindow": "03:46-04:16",
+                "BackupRetentionPeriod": 0,
+                "DBSecurityGroups": [],
+                "VpcSecurityGroups": [
+                    {
+                        "VpcSecurityGroupId": "sg-a5befc90",
+                        "Status": "active"
+                    }
+                ],
+                "DBParameterGroups": [
+                    {
+                        "DBParameterGroupName": "parameter-group-385-red",
+                        "ParameterApplyStatus": "in-sync"
+                    }
+                ],
+                "AvailabilityZone": "us-east-1f",
+                "DBSubnetGroup": {
+                    "DBSubnetGroupName": "default",
+                    "DBSubnetGroupDescription": "default",
+                    "VpcId": "vpc-12345asdfg",
+                    "SubnetGroupStatus": "Complete",
+                    "Subnets": [
+                        {
+                            "SubnetIdentifier": "subnet-8158d8de",
+                            "SubnetAvailabilityZone": {
+                                "Name": "us-east-1a"
+                            },
+                            "SubnetOutpost": {},
+                            "SubnetStatus": "Active"
+                        },
+                        {
+                            "SubnetIdentifier": "subnet-5264af63",
+                            "SubnetAvailabilityZone": {
+                                "Name": "us-east-1e"
+                            },
+                            "SubnetOutpost": {},
+                            "SubnetStatus": "Active"
+                        },
+                        {
+                            "SubnetIdentifier": "subnet-b045c2d6",
+                            "SubnetAvailabilityZone": {
+                                "Name": "us-east-1b"
+                            },
+                            "SubnetOutpost": {},
+                            "SubnetStatus": "Active"
+                        },
+                        {
+                            "SubnetIdentifier": "subnet-247c052a",
+                            "SubnetAvailabilityZone": {
+                                "Name": "us-east-1f"
+                            },
+                            "SubnetOutpost": {},
+                            "SubnetStatus": "Active"
+                        },
+                        {
+                            "SubnetIdentifier": "subnet-fa9dcab7",
+                            "SubnetAvailabilityZone": {
+                                "Name": "us-east-1d"
+                            },
+                            "SubnetOutpost": {},
+                            "SubnetStatus": "Active"
+                        },
+                        {
+                            "SubnetIdentifier": "subnet-cd7af8ec",
+                            "SubnetAvailabilityZone": {
+                                "Name": "us-east-1c"
+                            },
+                            "SubnetOutpost": {},
+                            "SubnetStatus": "Active"
+                        }
+                    ]
+                },
+                "PreferredMaintenanceWindow": "wed:06:06-wed:06:36",
+                "PendingModifiedValues": {
+                    "MasterUserPassword": "****",
+                    "PendingCloudwatchLogsExports": {
+                        "LogTypesToEnable": [
+                            "postgresql"
+                        ]
+                    }
+                },
+                "MultiAZ": false,
+                "EngineVersion": "13.3",
+                "AutoMinorVersionUpgrade": true,
+                "ReadReplicaDBInstanceIdentifiers": [],
+                "LicenseModel": "postgresql-license",
+                "OptionGroupMemberships": [
+                    {
+                        "OptionGroupName": "default:postgres-13",
+                        "Status": "in-sync"
+                    }
+                ],
+                "PubliclyAccessible": false,
+                "StorageType": "gp2",
+                "DbInstancePort": 0,
+                "StorageEncrypted": false,
+                "DbiResourceId": "db-EO5W5YQFR3YRHANAB6JCTU7PZY",
+                "CACertificateIdentifier": "rds-ca-2019",
+                "DomainMemberships": [],
+                "CopyTagsToSnapshot": false,
+                "MonitoringInterval": 0,
+                "DBInstanceArn": "arn:aws:rds:us-east-1:111111111111:db:database-385-red",
+                "IAMDatabaseAuthenticationEnabled": false,
+                "PerformanceInsightsEnabled": false,
+                "DeletionProtection": false,
+                "AssociatedRoles": [],
+                "TagList": [
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Red"
+                    },
+                    {
+                        "Key": "CsutodianRule",
+                        "Value": "ecc-aws-385-postgresql_log_connections_flag_enabled"
+                    }
+                ],
+                "CustomerOwnedIpEnabled": false,
+                "ActivityStreamStatus": "stopped"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

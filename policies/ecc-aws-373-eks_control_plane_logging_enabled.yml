@@ -1,0 +1,25 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: ecc-aws-373-eks_control_plane_logging_enabled
+    description: |
+      EKS control plane logging is disabled
+    resource: aws.eks
+    filters:
+      - not:
+          - and:
+              - type: value
+                key: logging.clusterLogging[].types[]
+                value_type: swap
+                value: [api, audit, authenticator, controllerManager, scheduler]
+
+              - type: value
+                key: logging.clusterLogging[].enabled
+                op: in
+                value_type: swap
+                value: true

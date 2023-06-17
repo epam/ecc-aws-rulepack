@@ -1,0 +1,22 @@
+{
+    "status_code": 200,
+    "data": {
+        "User": {
+            "Path": "/",
+            "UserName": "user_with_policy",
+            "UserId": "AIDAXPHGII4AF6VSTOHXG",
+            "Arn": "arn:aws:iam::121212121212:user/user_with_policy",
+            "CreateDate": {
+                "__class__": "datetime",
+                "year": 2021,
+                "month": 5,
+                "day": 13,
+                "hour": 10,
+                "minute": 28,
+                "second": 46,
+                "microsecond": 0
+            }
+        },
+        "ResponseMetadata": {}
+    }
+}

@@ -1,0 +1,30 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "items": [
+            {
+                "id": "f4g5el2gua",
+                "name": "apiGatewayRestApi396Red",
+                "createdDate": {
+                    "__class__": "datetime",
+                    "year": 2021,
+                    "month": 12,
+                    "day": 3,
+                    "hour": 13,
+                    "minute": 3,
+                    "second": 16,
+                    "microsecond": 0
+                },
+                "version": "1.0",
+                "apiKeySource": "HEADER",
+                "endpointConfiguration": {
+                    "types": [
+                        "EDGE"
+                    ]
+                },
+                "disableExecuteApiEndpoint": false
+            }
+        ]
+    }
+}

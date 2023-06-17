@@ -1,0 +1,31 @@
+{
+    "status_code": 200,
+    "data": {
+        "KeyMetadata": {
+            "AWSAccountId": "123232411231",
+            "KeyId": "12323241-v1233-2rwe-2132-123dqwdqw",
+            "Arn": "arn:aws:kms:us-east-1:123232411231:key/12323241-v1233-2rwe-2132-123dqwdqw",
+            "CreationDate": {
+                "__class__": "datetime",
+                "year": 2021,
+                "month": 3,
+                "day": 12,
+                "hour": 12,
+                "minute": 22,
+                "second": 58,
+                "microsecond": 680000
+            },
+            "Enabled": true,
+            "Description": "Default master key that protects my ACM private keys when no other key is defined",
+            "KeyUsage": "ENCRYPT_DECRYPT",
+            "KeyState": "Enabled",
+            "Origin": "AWS_KMS",
+            "KeyManager": "AWS",
+            "CustomerMasterKeySpec": "SYMMETRIC_DEFAULT",
+            "EncryptionAlgorithms": [
+                "SYMMETRIC_DEFAULT"
+            ]
+        },
+        "ResponseMetadata": {}
+    }
+}

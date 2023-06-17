@@ -1,0 +1,20 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: ecc-aws-693-fsx_windows_file_server_multi_az_enabled
+    description: |
+      FSx for for Windows File Server file systems do not have Multi-AZ enabled
+    resource: aws.fsx
+    filters:
+      - type: value
+        key: FileSystemType
+        value: WINDOWS
+      - not:
+        - type: value
+          key: WindowsConfiguration.DeploymentType
+          value: MULTI_AZ_1

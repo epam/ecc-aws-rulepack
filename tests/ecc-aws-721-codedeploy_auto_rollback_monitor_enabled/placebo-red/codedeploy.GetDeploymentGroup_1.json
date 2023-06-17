@@ -1,0 +1,38 @@
+{
+    "status_code": 200,
+    "data": {
+        "deploymentGroupInfo": {
+            "applicationName": "721_codedeploy-app_red1",
+            "deploymentGroupId": "1f3fe41d-d4be-46fe-8da0-77e62889519c",
+            "deploymentGroupName": "721_codedeploy_deployment_group_red1",
+            "deploymentConfigName": "721_deployment-config_red1",
+            "ec2TagFilters": [],
+            "onPremisesInstanceTagFilters": [],
+            "autoScalingGroups": [],
+            "serviceRoleArn": "arn:aws:iam::111111111111:role/721_AWSCodeDeployRoleForLambda_red1",
+            "triggerConfigurations": [],
+            "alarmConfiguration": {
+                "enabled": false,
+                "ignorePollAlarmFailure": false,
+                "alarms": [
+                    {
+                        "name": "721_alarm1_red"
+                    }
+                ]
+            },
+            "autoRollbackConfiguration": {
+                "enabled": true,
+                "events": [
+                    "DEPLOYMENT_STOP_ON_ALARM"
+                ]
+            },
+            "deploymentStyle": {
+                "deploymentType": "BLUE_GREEN",
+                "deploymentOption": "WITH_TRAFFIC_CONTROL"
+            },
+            "outdatedInstancesStrategy": "UPDATE",
+            "computePlatform": "Lambda"
+        },
+        "ResponseMetadata": {}
+    }
+}

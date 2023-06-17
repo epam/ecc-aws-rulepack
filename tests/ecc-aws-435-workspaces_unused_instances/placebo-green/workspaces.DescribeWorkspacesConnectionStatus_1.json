@@ -1,0 +1,32 @@
+{
+    "status_code": 200,
+    "data": {
+        "WorkspacesConnectionStatus": [
+            {
+                "WorkspaceId": "ws-9fx9bntb5",
+                "ConnectionState": "UNKNOWN",
+                "ConnectionStateCheckTimestamp": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 5,
+                    "day": 6,
+                    "hour": 15,
+                    "minute": 37,
+                    "second": 57,
+                    "microsecond": 351000
+                },
+                "LastKnownUserConnectionTimestamp": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 5,
+                    "day": 6,
+                    "hour": 15,
+                    "minute": 17,
+                    "second": 53,
+                    "microsecond": 300000
+                }
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

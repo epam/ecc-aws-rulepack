@@ -1,0 +1,26 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: ecc-aws-440-backup_service_compliant_lifecycle_enabled
+    resource: aws.backup-plan
+    description: |
+      Amazon Backup plan has a non-compliant lifecycle configuration
+    filters:
+      - or:
+          - not:
+              - type: value
+                key: Rules[].Lifecycle.MoveToColdStorageAfterDays
+                op: in
+                value_type: swap
+                value: 90
+          - not:
+              - type: value
+                key: Rules[].Lifecycle.DeleteAfterDays
+                op: in
+                value_type: swap
+                value: 180

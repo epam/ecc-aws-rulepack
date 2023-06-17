@@ -1,0 +1,42 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "flows": [
+            {
+                "flowArn": "arn:aws:appflow:us-east-1:111111111111:flow/568-appflow-green",
+                "flowName": "568-appflow-green",
+                "flowStatus": "Active",
+                "sourceConnectorType": "S3",
+                "destinationConnectorType": "S3",
+                "triggerType": "OnDemand",
+                "createdAt": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 12,
+                    "day": 20,
+                    "hour": 12,
+                    "minute": 59,
+                    "second": 6,
+                    "microsecond": 800000
+                },
+                "lastUpdatedAt": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 12,
+                    "day": 20,
+                    "hour": 12,
+                    "minute": 59,
+                    "second": 6,
+                    "microsecond": 800000
+                },
+                "createdBy": "arn:aws:iam::111111111111:user/test",
+                "lastUpdatedBy": "arn:aws:iam::111111111111:user/test",
+                "tags": {
+                    "CustodianRule": "ecc-aws-568-app_flow_without_tag_information",
+                    "ComplianceStatus": "Green"
+                }
+            }
+        ]
+    }
+}

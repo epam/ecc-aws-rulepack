@@ -1,0 +1,21 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResourceArn": "arn:aws:elasticbeanstalk:us-east-1:111111111111:environment/590_application_red/environment-590-red",
+        "ResourceTags": [
+            {
+                "Key": "elasticbeanstalk:environment-name",
+                "Value": "environment-590-red"
+            },
+            {
+                "Key": "elasticbeanstalk:environment-id",
+                "Value": "e-mmcfxgsu8i"
+            },
+            {
+                "Key": "Name",
+                "Value": "environment-590-red"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

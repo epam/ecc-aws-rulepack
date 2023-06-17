@@ -1,0 +1,12 @@
+{
+    "status_code": 200,
+    "data": {
+        "DeliveryChannels": [
+            {
+                "name": "default",
+                "s3BucketName": "bucket-459-red"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

@@ -1,0 +1,35 @@
+{
+    "status_code": 200,
+    "data": {
+        "PaginationToken": "",
+        "ResourceTagMappingList": [
+            {
+                "ResourceARN": "arn:aws:rds:us-east-1:111111111111:cluster:cluster-dsk3askrtodoyytdqygrkpqe5u",
+                "Tags": [
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Red"
+                    },
+                    {
+                        "Key": "CsutodianRule",
+                        "Value": "ecc-aws-359-rds_aurora_mysql_backtracking_enabled"
+                    }
+                ]
+            },
+            {
+                "ResourceARN": "arn:aws:rds:us-east-1:111111111111:cluster:cluster-359-red",
+                "Tags": [
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Red"
+                    },
+                    {
+                        "Key": "CsutodianRule",
+                        "Value": "ecc-aws-359-rds_aurora_mysql_backtracking_enabled"
+                    }
+                ]
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "status_code": 200,
+    "data": {
+        "PaginationToken": "",
+        "ResourceTagMappingList": [
+            {
+                "ResourceARN": "arn:aws:sqs:us-east-1:123123181212:sqs_green_102",
+                "Tags": [
+                    {
+                        "Key": "Environment",
+                        "Value": "sqs_green_102"
+                    }
+                ]
+            }
+
+        ],
+        "ResponseMetadata": {}
+    }
+}

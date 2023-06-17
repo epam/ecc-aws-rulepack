@@ -1,0 +1,16 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: ecc-aws-961-cloudfront_origin_access_control_enabled
+    description: |
+      CloudFront distributions do not have origin access control enabled
+    resource: aws.distribution
+    filters:
+      - type: value
+        key: length(Origins.Items[?!CustomOriginConfig && OriginAccessControlId==''])>=`1`
+        value: true

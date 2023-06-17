@@ -1,0 +1,31 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "Name": "qldb-624-green",
+        "Arn": "arn:aws:qldb:us-east-1:111111111111:ledger/qldb-624-green",
+        "State": "ACTIVE",
+        "CreationDateTime": {
+            "__class__": "datetime",
+            "year": 2022,
+            "month": 9,
+            "day": 5,
+            "hour": 12,
+            "minute": 3,
+            "second": 5,
+            "microsecond": 309000
+        },
+        "PermissionsMode": "STANDARD",
+        "DeletionProtection": false,
+		"Tags": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-624-qldb_ledgers_without_tag_information"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    }
+                ]
+    }
+}

@@ -1,0 +1,18 @@
+{
+    "status_code": 200,
+    "data": {
+        "Parameters": [
+            {
+                "ParameterName": "enable_user_activity_logging",
+                "ParameterValue": "false",
+                "Description": "parameter for audit logging purpose",
+                "Source": "engine-default",
+                "DataType": "boolean",
+                "AllowedValues": "true,false",
+                "ApplyType": "static",
+                "IsModifiable": true
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

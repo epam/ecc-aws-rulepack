@@ -1,0 +1,41 @@
+{
+    "status_code": 200,
+    "data": {
+        "StreamDescription": {
+            "StreamName": "red-kinesis-stream-254",
+            "StreamARN": "arn:aws:kinesis:us-east-1:111111111111:stream/red-kinesis-stream-254",
+            "StreamStatus": "ACTIVE",
+            "Shards": [
+                {
+                    "ShardId": "shardId-6",
+                    "HashKeyRange": {
+                        "StartingHashKey": "0",
+                        "EndingHashKey": "340282366920938463463374607431768211456"
+                    },
+                    "SequenceNumberRange": {
+                        "StartingSequenceNumber": "49619234775585128664436740515280318494956067075796238339"
+                    }
+                }
+            ],
+            "HasMoreShards": false,
+            "RetentionPeriodHours": 24,
+            "StreamCreationTimestamp": {
+                "__class__": "datetime",
+                "year": 2021,
+                "month": 6,
+                "day": 15,
+                "hour": 15,
+                "minute": 51,
+                "second": 55,
+                "microsecond": 0
+            },
+            "EnhancedMonitoring": [
+                {
+                    "ShardLevelMetrics": []
+                }
+            ],
+            "EncryptionType": "NONE"
+        },
+        "ResponseMetadata": {}
+    }
+}

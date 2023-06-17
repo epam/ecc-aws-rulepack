@@ -1,0 +1,19 @@
+{
+    "status_code": 200,
+    "data": {
+        "Parameters": [
+            {
+                "ParameterName": "log_duration",
+                "ParameterValue": "1",
+                "Description": "Logs the duration of each completed SQL statement.",
+                "Source": "user",
+                "ApplyType": "dynamic",
+                "DataType": "boolean",
+                "AllowedValues": "0,1",
+                "IsModifiable": true,
+                "ApplyMethod": "immediate"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

@@ -1,0 +1,33 @@
+{
+    "status_code": 200,
+    "data": {
+        "KeyMetadata": {
+            "AWSAccountId": "111111111111",
+            "KeyId": "8b5f7500-ae57-49fb-884a-ba4b25bd28ea",
+            "Arn": "arn:aws:kms:us-east-1:111111111111:key/8b5f7500-ae57-49fb-884a-ba4b25bd28ea",
+            "CreationDate": {
+                "__class__": "datetime",
+                "year": 2022,
+                "month": 1,
+                "day": 12,
+                "hour": 18,
+                "minute": 39,
+                "second": 54,
+                "microsecond": 976000
+            },
+            "Enabled": true,
+            "Description": "Default key that protects my Workspaces when no other key is defined",
+            "KeyUsage": "ENCRYPT_DECRYPT",
+            "KeyState": "Enabled",
+            "Origin": "AWS_KMS",
+            "KeyManager": "AWS",
+            "CustomerMasterKeySpec": "SYMMETRIC_DEFAULT",
+            "KeySpec": "SYMMETRIC_DEFAULT",
+            "EncryptionAlgorithms": [
+                "SYMMETRIC_DEFAULT"
+            ],
+            "MultiRegion": false
+        },    
+        "ResponseMetadata": {}
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "status_code": 200,
+    "data": {
+        "Tags": [
+            {
+                "Key": "Name",
+                "ResourceId": "i-12345678998765432",
+                "ResourceType": "instance",
+                "Value": "red-181"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

@@ -1,0 +1,32 @@
+{
+    "status_code": 200,
+    "data": {
+        "KeyMetadata": {
+            "AWSAccountId": "111111111111",
+            "KeyId": "dd9fb145-9e61-4b40-a1d5-b079e1d5ccdd",
+            "Arn": "arn:aws:kms:us-east-1:111111111111:key/dd9fb145-9e61-4b40-a1d5-b079e1d5ccdd",
+            "CreationDate": {
+                "__class__": "datetime",
+                "year": 2021,
+                "month": 12,
+                "day": 17,
+                "hour": 10,
+                "minute": 39,
+                "second": 30,
+                "microsecond": 375000
+            },
+            "Enabled": true,
+            "Description": "Default key that protects my FSx resources when no other key is defined",
+            "KeyUsage": "ENCRYPT_DECRYPT",
+            "KeyState": "Enabled",
+            "Origin": "AWS_KMS",
+            "KeyManager": "AWS",
+            "CustomerMasterKeySpec": "SYMMETRIC_DEFAULT",
+            "EncryptionAlgorithms": [
+                "SYMMETRIC_DEFAULT"
+            ],
+            "MultiRegion": false
+        },
+        "ResponseMetadata": {}
+    }
+}

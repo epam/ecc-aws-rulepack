@@ -1,0 +1,25 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: ecc-aws-444-use_secure_ssl_protocols_between_cloudfront_origin
+    description: |
+      Cloudfront origin uses not latest SSL certificate
+    resource: aws.distribution
+    filters:
+      - and:
+          - type: value
+            key: Origins.Items[].CustomOriginConfig.OriginProtocolPolicy
+            value_type: swap
+            value: https-only
+            op: in
+          - not:
+              - type: value
+                key: Origins.Items[].CustomOriginConfig.OriginSslProtocols.Items[]
+                value_type: swap
+                value: TLSv1.2
+                op: in

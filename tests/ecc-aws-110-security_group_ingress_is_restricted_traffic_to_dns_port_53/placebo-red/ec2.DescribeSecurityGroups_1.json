@@ -1,0 +1,43 @@
+{
+    "status_code": 200,
+    "data": {
+        "SecurityGroups": [
+            {
+                "Description": "test-dns",
+                "GroupName": "test-dns",
+                "IpPermissions": [
+                    {
+                        "FromPort": 53,
+                        "IpProtocol": "tcp",
+                        "IpRanges": [
+                            {
+                                "CidrIp": "0.0.0.0/0"
+                            }
+                        ],
+                        "Ipv6Ranges": [],
+                        "PrefixListIds": [],
+                        "ToPort": 53,
+                        "UserIdGroupPairs": []
+                    }
+                ],
+                "OwnerId": "123456789112",
+                "GroupId": "sg-123412b1225fc12de",
+                "IpPermissionsEgress": [
+                    {
+                        "IpProtocol": "-1",
+                        "IpRanges": [
+                            {
+                                "CidrIp": "0.0.0.0/0"
+                            }
+                        ],
+                        "Ipv6Ranges": [],
+                        "PrefixListIds": [],
+                        "UserIdGroupPairs": []
+                    }
+                ],
+                "VpcId": "vpc-ad1234d0"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

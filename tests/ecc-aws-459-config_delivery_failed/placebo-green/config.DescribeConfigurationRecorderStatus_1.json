@@ -1,0 +1,33 @@
+{
+    "status_code": 200,
+    "data": {
+        "ConfigurationRecordersStatus": [
+            {
+                "name": "default",
+                "lastStartTime": {
+                    "__class__": "datetime",
+                    "year": 2023,
+                    "month": 1,
+                    "day": 30,
+                    "hour": 13,
+                    "minute": 12,
+                    "second": 34,
+                    "microsecond": 605000
+                },
+                "recording": true,
+                "lastStatus": "SUCCESS",
+                "lastStatusChangeTime": {
+                    "__class__": "datetime",
+                    "year": 2023,
+                    "month": 1,
+                    "day": 30,
+                    "hour": 13,
+                    "minute": 12,
+                    "second": 46,
+                    "microsecond": 171000
+                }
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

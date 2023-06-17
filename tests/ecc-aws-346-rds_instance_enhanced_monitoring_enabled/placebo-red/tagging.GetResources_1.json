@@ -1,0 +1,22 @@
+{
+    "status_code": 200,
+    "data": {
+        "PaginationToken": "",
+        "ResourceTagMappingList": [
+            {
+                "ResourceARN": "arn:aws:rds:us-east-1:this:db:terraform-20211006084128923900000001",
+                "Tags": [
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Red"
+                    },
+                    {
+                        "Key": "CsutodianRule",
+                        "Value": "ecc-aws-346-rds_instance_enhanced_monitoring_enabled"
+                    }
+                ]
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

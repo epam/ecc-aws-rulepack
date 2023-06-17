@@ -1,0 +1,19 @@
+{
+    "status_code": 200,
+    "data": {
+        "Parameters": [
+            {
+                "ParameterName": "log_statement",
+                "ParameterValue": "all",
+                "Description": "Sets the type of statements logged.",
+                "Source": "user",
+                "ApplyType": "dynamic",
+                "DataType": "string",
+                "AllowedValues": "none,ddl,mod,all",
+                "IsModifiable": true,
+                "ApplyMethod": "immediate"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

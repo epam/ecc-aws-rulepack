@@ -1,0 +1,18 @@
+{
+    "status_code": 200,
+    "data": {
+        "PaginationToken": "",
+        "ResourceTagMappingList": [
+            {
+                "ResourceARN": "arn:aws:rds:us-east-1:6:db:terraform-2",
+                "Tags": [
+                    {
+                        "Key": "c7n",
+                        "Value": "green"
+                    }
+                ]
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

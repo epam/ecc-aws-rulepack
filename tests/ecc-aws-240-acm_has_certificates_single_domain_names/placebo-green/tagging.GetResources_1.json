@@ -1,0 +1,18 @@
+{
+    "status_code": 200,
+    "data": {
+        "PaginationToken": "",
+        "ResourceTagMappingList": [
+            {
+                "ResourceARN": "arn:aws:acm:us-east-1:111111111111:certificate/acb38716-1471-4264-bee8-ARN",
+                "Tags": [
+                    {
+                        "Key": "Environment",
+                        "Value": "test"
+                    }
+                ]
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

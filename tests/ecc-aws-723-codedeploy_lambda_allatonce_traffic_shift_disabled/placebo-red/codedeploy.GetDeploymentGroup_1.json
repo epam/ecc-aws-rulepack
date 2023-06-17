@@ -1,0 +1,23 @@
+{
+    "status_code": 200,
+    "data": {
+        "deploymentGroupInfo": {
+            "applicationName": "723_codedeploy-app_red",
+            "deploymentGroupId": "28217e71-46f0-4757-9653-8e84c5bdcd96",
+            "deploymentGroupName": "723_codedeploy_deployment_group_red",
+            "deploymentConfigName": "CodeDeployDefault.LambdaAllAtOnce",
+            "ec2TagFilters": [],
+            "onPremisesInstanceTagFilters": [],
+            "autoScalingGroups": [],
+            "serviceRoleArn": "arn:aws:iam::111111111111:role/723_AWSCodeDeployRoleForLambda_red",
+            "triggerConfigurations": [],
+            "deploymentStyle": {
+                "deploymentType": "BLUE_GREEN",
+                "deploymentOption": "WITH_TRAFFIC_CONTROL"
+            },
+            "outdatedInstancesStrategy": "UPDATE",
+            "computePlatform": "Lambda"
+        },
+        "ResponseMetadata": {}
+    }
+}

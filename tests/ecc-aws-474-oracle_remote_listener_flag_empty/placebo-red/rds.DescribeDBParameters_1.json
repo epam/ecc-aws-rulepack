@@ -1,0 +1,18 @@
+{
+    "status_code": 200,
+    "data": {
+        "Parameters": [
+            {
+                "ParameterName": "remote_listener",
+                "ParameterValue": "10.0.159.100:1521",
+                "Description": "remote listener",
+                "Source": "user",
+                "ApplyType": "dynamic",
+                "DataType": "string",
+                "IsModifiable": true,
+                "ApplyMethod": "pending-reboot"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

@@ -1,0 +1,32 @@
+{
+    "status_code": 200,
+    "data": {
+        "KeyMetadata": {
+            "AWSAccountId": "111111111111",
+            "KeyId": "768d611d-3174-4d0e-a05e-0b4071af1ef5",
+            "Arn": "arn:aws:kms:us-east-1:111111111111:key/768d611d-3174-4d0e-a05e-0b4071af1ef5",
+            "CreationDate": {
+                "__class__": "datetime",
+                "year": 2022,
+                "month": 5,
+                "day": 12,
+                "hour": 11,
+                "minute": 27,
+                "second": 59,
+                "microsecond": 247000
+            },
+            "Enabled": true,
+            "Description": "Key to encrypt and decrypt WorkSpaces",
+            "KeyUsage": "ENCRYPT_DECRYPT",
+            "KeyState": "Enabled",
+            "Origin": "AWS_KMS",
+            "KeyManager": "CUSTOMER",
+            "CustomerMasterKeySpec": "SYMMETRIC_DEFAULT",
+            "EncryptionAlgorithms": [
+                "SYMMETRIC_DEFAULT"
+            ],
+            "MultiRegion": false
+        },
+        "ResponseMetadata": {}
+    }
+}

@@ -1,0 +1,33 @@
+{
+    "status_code": 200,
+    "data": {
+        "KeyMetadata": {
+            "AWSAccountId": "111111111111",
+            "KeyId": "a5e95036-8806-46b5-bc53-6158c469034c",
+            "Arn": "arn:aws:kms:us-east-1:111111111111:key/a5e95036-8806-46b5-bc53-6158c469034c",
+            "CreationDate": {
+                "__class__": "datetime",
+                "year": 2022,
+                "month": 5,
+                "day": 25,
+                "hour": 8,
+                "minute": 47,
+                "second": 16,
+                "microsecond": 267000
+            },
+            "Enabled": true,
+            "Description": "Default key that protects my Kafka data when no other key is defined",
+            "KeyUsage": "ENCRYPT_DECRYPT",
+            "KeyState": "Enabled",
+            "Origin": "AWS_KMS",
+            "KeyManager": "AWS",
+            "CustomerMasterKeySpec": "SYMMETRIC_DEFAULT",
+            "KeySpec": "SYMMETRIC_DEFAULT",
+            "EncryptionAlgorithms": [
+                "SYMMETRIC_DEFAULT"
+            ],
+            "MultiRegion": false
+        },
+        "ResponseMetadata": {}
+    }
+}

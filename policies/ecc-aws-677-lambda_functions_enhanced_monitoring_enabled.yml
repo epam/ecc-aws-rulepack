@@ -1,0 +1,18 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: ecc-aws-677-lambda_functions_enhanced_monitoring_enabled
+    description: |
+      Enhanced Monitoring for Lambda Functions disabled
+    resource: aws.lambda
+    filters:
+    - not:
+      - type: value
+        key: Layers[].Arn
+        value: 'arn:aws:lambda:.*:[0-9]{12}:layer:LambdaInsightsExtension:[0-9]*'
+        op: regex

@@ -1,0 +1,21 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: ecc-aws-445-rds_mysql_instances_latest_major_version
+    description: |
+      RDS MySQL instances are not using latest major version
+    resource: rds
+    filters:
+      - type: value
+        key: Engine
+        value: mysql
+      - not:
+          - type: value
+            key: EngineVersion
+            op: regex
+            value: '8.0.*'

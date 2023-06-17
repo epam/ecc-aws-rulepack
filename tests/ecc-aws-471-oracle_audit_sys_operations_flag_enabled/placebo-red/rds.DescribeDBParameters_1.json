@@ -1,0 +1,19 @@
+{
+    "status_code": 200,
+    "data": {
+        "Parameters": [
+            {
+                "ParameterName": "audit_sys_operations",
+                "ParameterValue": "FALSE",
+                "Description": "enable sys auditing",
+                "Source": "user",
+                "ApplyType": "static",
+                "DataType": "boolean",
+                "AllowedValues": "TRUE,FALSE",
+                "IsModifiable": true,
+                "ApplyMethod": "pending-reboot"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

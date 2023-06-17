@@ -1,0 +1,15 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "iam:GetAccountPasswordPolicy",
+                "iam:ListAccountAliases",
+                "iam:ListMFADevices",
+                "iam:GetCredentialReport"
+            ],
+            "Resource": "*"
+        }
+    ]
+}

@@ -1,0 +1,17 @@
+{
+    "status_code": 200,
+    "data": {
+        "SecurityGroups": [
+            {
+                "Description": "default VPC security group",
+                "GroupName": "default",
+                "IpPermissions": [],
+                "OwnerId": "123456789876",
+                "GroupId": "sg-123456789abcdef12",
+                "IpPermissionsEgress": [],
+                "VpcId": "vpc-abcdef98765432112"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

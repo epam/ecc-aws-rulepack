@@ -1,0 +1,30 @@
+{
+    "status_code": 200,
+    "data": {
+        "Volumes": [
+            {
+                "Attachments": [],
+                "AvailabilityZone": "us-east-1a",
+                "CreateTime": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 7,
+                    "day": 18,
+                    "hour": 11,
+                    "minute": 6,
+                    "second": 43,
+                    "microsecond": 705000
+                },
+                "Encrypted": false,
+                "Size": 8,
+                "SnapshotId": "",
+                "State": "available",
+                "VolumeId": "vol-0f8b6b81c33ef9d2e",
+                "Iops": 100,
+                "VolumeType": "gp2",
+                "MultiAttachEnabled": false
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

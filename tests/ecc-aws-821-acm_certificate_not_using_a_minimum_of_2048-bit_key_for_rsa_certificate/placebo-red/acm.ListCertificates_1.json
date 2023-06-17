@@ -1,0 +1,12 @@
+{
+    "status_code": 200,
+    "data": {
+        "CertificateSummaryList": [
+            {
+                "CertificateArn": "arn:aws:acm:us-east-1:111111111111:certificate/0b4a0eee-2eb1-475d-8b6e-bbfdccd18c47",
+                "DomainName": "examplered.com"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

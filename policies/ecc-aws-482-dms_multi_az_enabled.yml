@@ -1,0 +1,16 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: ecc-aws-482-dms_multi_az_enabled
+    description: |
+      Amazon DMS replication instances do not have the Multi-AZ feature enabled
+    resource: dms-instance
+    filters:
+      - type: value
+        key: MultiAZ
+        value: false

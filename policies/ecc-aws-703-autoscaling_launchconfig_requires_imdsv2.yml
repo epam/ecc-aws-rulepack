@@ -1,0 +1,20 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: ecc-aws-703-autoscaling_launchconfig_requires_imdsv2
+    resource: launch-config
+    description: |
+      Auto Scaling launch configuration IMDSv1 enabled
+    filters:
+      - not:
+          - type: value
+            key: MetadataOptions.HttpTokens
+            value: required
+          - type: value
+            key: MetadataOptions.HttpEndpoint
+            value: enabled

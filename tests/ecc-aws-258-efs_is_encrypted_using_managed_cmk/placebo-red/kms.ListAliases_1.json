@@ -1,0 +1,14 @@
+{
+    "status_code": 200,
+    "data": {
+        "Aliases": [
+            {
+                "AliasName": "alias/aws/elasticfilesystem",
+                "AliasArn": "arn:aws:kms:us-east-1:111111111111:alias/aws/elasticfilesystem",
+                "TargetKeyId": "f1222765-672a-4ed9-9390-5dad09bbfd84"
+            }
+        ],
+        "Truncated": false,
+        "ResponseMetadata": {}
+    }
+}

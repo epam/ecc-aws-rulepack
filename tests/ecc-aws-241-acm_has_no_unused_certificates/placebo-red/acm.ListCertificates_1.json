@@ -1,0 +1,12 @@
+{
+    "status_code": 200,
+    "data": {
+        "CertificateSummaryList": [
+            {
+                "CertificateArn": "arn:aws:acm:us-east-1:111111111111:certificate/0a1ff233-bfcb-488e-ba7c-ARN",
+                "DomainName": "aws.custodian.com"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

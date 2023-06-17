@@ -1,0 +1,16 @@
+{
+    "status_code": 200,
+    "data": {
+        "Tags": [
+            {
+                "Key": "CustodianRule",
+                "Value": "ecc-aws-464-sagemaker_instances_encrypted"
+            },
+            {
+                "Key": "ComplianceStatus",
+                "Value": "Green"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

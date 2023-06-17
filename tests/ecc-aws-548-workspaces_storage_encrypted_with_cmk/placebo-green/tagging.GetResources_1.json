@@ -1,0 +1,22 @@
+{
+    "status_code": 200,
+    "data": {
+        "PaginationToken": "",
+        "ResourceTagMappingList": [
+            {
+                "ResourceARN": "arn:aws:workspaces:us-east-1:111111111111:workspace/ws-j9cvh4174",
+                "Tags": [
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    },
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-543-workspaces_primary_interface_ports_not_open_to_all_inbound_traffic"
+                    }
+                ]
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

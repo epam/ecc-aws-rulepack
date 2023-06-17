@@ -1,0 +1,19 @@
+{
+    "status_code": 200,
+    "data": {
+        "Parameters": [
+            {
+                "ParameterName": "audit_trail",
+                "ParameterValue": "NONE",
+                "Description": "enable system auditing",
+                "Source": "user",
+                "ApplyType": "static",
+                "DataType": "list",
+                "AllowedValues": "DB,OS,NONE,XML,EXTENDED",
+                "IsModifiable": true,
+                "ApplyMethod": "pending-reboot"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

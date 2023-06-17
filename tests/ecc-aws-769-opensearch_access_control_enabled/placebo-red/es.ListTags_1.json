@@ -1,0 +1,16 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "TagList": [
+            {
+                "Key": "CustodianRule",
+                "Value": "ecc-aws-769-opensearch_access_control_enabled"
+            },
+            {
+                "Key": "ComplianceStatus",
+                "Value": "Red"
+            }
+        ]
+    }
+}

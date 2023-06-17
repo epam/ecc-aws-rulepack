@@ -1,0 +1,32 @@
+{
+    "status_code": 200,
+    "data": {
+        "KeyMetadata": {
+            "AWSAccountId": "111111111111",
+            "KeyId": "4113ce8f-1387-4755-96d8-bb8ca98c06b2",
+            "Arn": "arn:aws:kms:us-east-1:111111111111:key/4113ce8f-1387-4755-96d8-bb8ca98c06b2",
+            "CreationDate": {
+                "__class__": "datetime",
+                "year": 2021,
+                "month": 11,
+                "day": 11,
+                "hour": 11,
+                "minute": 50,
+                "second": 8,
+                "microsecond": 193000
+            },
+            "Enabled": true,
+            "Description": "Default key that protects my Glue data when no other key is defined",
+            "KeyUsage": "ENCRYPT_DECRYPT",
+            "KeyState": "Enabled",
+            "Origin": "AWS_KMS",
+            "KeyManager": "AWS",
+            "CustomerMasterKeySpec": "SYMMETRIC_DEFAULT",
+            "EncryptionAlgorithms": [
+                "SYMMETRIC_DEFAULT"
+            ],
+            "MultiRegion": false
+        },
+        "ResponseMetadata": {}
+    }
+}

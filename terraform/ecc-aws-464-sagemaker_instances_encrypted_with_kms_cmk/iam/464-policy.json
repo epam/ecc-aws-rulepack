@@ -1,0 +1,17 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "sagemaker:ListNotebookInstances",
+                "sagemaker:DescribeNotebookInstance",
+                "sagemaker:ListTags",
+				"kms:ListKeys",
+                "kms:ListAliases",
+                "kms:DescribeKey"
+            ],
+            "Resource": "*"
+        }
+    ]
+}

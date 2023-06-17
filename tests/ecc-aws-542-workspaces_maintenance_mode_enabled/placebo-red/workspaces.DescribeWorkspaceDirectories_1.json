@@ -1,0 +1,51 @@
+{
+    "status_code": 200,
+    "data": {
+        "Directories": [
+            {
+                "DirectoryId": "d-90674b7222",
+                "Alias": "d-90674b7222",
+                "DirectoryName": "workspaces.example.com",
+                "RegistrationCode": "SLiad+8FFLEB",
+                "SubnetIds": [
+                    "subnet-0035427bfbdccb158",
+                    "subnet-03ca90690d1c151dc"
+                ],
+                "DnsIpAddresses": [
+                    "10.0.1.175",
+                    "10.0.2.165"
+                ],
+                "CustomerUserName": "Administrator",
+                "IamRoleId": "arn:aws:iam::111111111111:role/workspaces_DefaultRole",
+                "DirectoryType": "MicrosoftAD",
+                "WorkspaceSecurityGroupId": "sg-06c533c8f4105f4f1",
+                "State": "REGISTERED",
+                "WorkspaceCreationProperties": {
+                    "EnableWorkDocs": false,
+                    "EnableInternetAccess": false,
+                    "UserEnabledAsLocalAdministrator": false,
+                    "EnableMaintenanceMode": false
+                },
+                "WorkspaceAccessProperties": {
+                    "DeviceTypeWindows": "ALLOW",
+                    "DeviceTypeOsx": "ALLOW",
+                    "DeviceTypeWeb": "DENY",
+                    "DeviceTypeIos": "ALLOW",
+                    "DeviceTypeAndroid": "ALLOW",
+                    "DeviceTypeChromeOs": "ALLOW",
+                    "DeviceTypeZeroClient": "ALLOW",
+                    "DeviceTypeLinux": "DENY"
+                },
+                "Tenancy": "SHARED",
+                "SelfservicePermissions": {
+                    "RestartWorkspace": "ENABLED",
+                    "IncreaseVolumeSize": "DISABLED",
+                    "ChangeComputeType": "DISABLED",
+                    "SwitchRunningMode": "DISABLED",
+                    "RebuildWorkspace": "DISABLED"
+                }
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

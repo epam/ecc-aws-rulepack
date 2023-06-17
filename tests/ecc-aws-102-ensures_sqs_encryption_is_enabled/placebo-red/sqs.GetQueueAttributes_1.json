@@ -1,0 +1,20 @@
+{
+    "status_code": 200,
+    "data": {
+        "Attributes": {
+            "QueueArn": "arn:aws:sqs:us-east-1:123123181212:sqs_red_102",
+            "ApproximateNumberOfMessages": "0",
+            "ApproximateNumberOfMessagesNotVisible": "0",
+            "ApproximateNumberOfMessagesDelayed": "0",
+            "CreatedTimestamp": "1621873032",
+            "LastModifiedTimestamp": "1621873032",
+            "VisibilityTimeout": "30",
+            "MaximumMessageSize": "2048",
+            "MessageRetentionPeriod": "86400",
+            "DelaySeconds": "90",
+            "Policy": "{\"Version\":\"2012-10-17\",\"Id\":\"sqspolicy\",\"Statement\":[{\"Sid\":\"First\",\"Effect\":\"Allow\",\"Principal\":\"*\",\"Action\":\"sqs:SendMessage\",\"Resource\":\"arn:aws:sqs:us-east-1:123123181212:sqs_red_102\"}]}",
+            "ReceiveMessageWaitTimeSeconds": "10"
+        },
+        "ResponseMetadata": {}
+    }
+}

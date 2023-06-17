@@ -1,0 +1,28 @@
+{
+    "status_code": 200,
+    "data": {
+        "VpnGateways": [
+            {
+                "State": "available",
+                "Type": "ipsec.1",
+                "VpcAttachments": [],
+                "VpnGatewayId": "vgw-022d87200eaaad93b",
+                "AmazonSideAsn": 64512,
+                "Tags": [
+                    {
+                        "Key": "Name",
+                        "Value": "411-vpn-gateway-red"
+                    }
+                ]
+            },
+            {
+                "State": "deleted",
+                "Type": "ipsec.1",
+                "VpcAttachments": [],
+                "VpnGatewayId": "vgw-0bd4d6754f02d0cff",
+                "AmazonSideAsn": 64512
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

@@ -1,0 +1,36 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "Functions": [
+            {
+                "FunctionName": "500_lambda_green",
+                "FunctionArn": "arn:aws:lambda:us-east-1:111111111111:function:500_lambda_green",
+                "Runtime": "python3.8",
+                "Role": "arn:aws:iam::111111111111:role/500_role_green",
+                "Handler": "func.py",
+                "CodeSize": 299,
+                "Description": "",
+                "Timeout": 3,
+                "MemorySize": 128,
+                "LastModified": "2022-07-01T13:15:49.645+0000",
+                "CodeSha256": "wVKxCuS3+QGJFX662+Zi8SIwlKE7zm6222zpZo7SFHI=",
+                "Version": "$LATEST",
+                "Environment": {
+                    "Variables": {
+                        "foo": "bar"
+                    }
+                },
+                "KMSKeyArn": "arn:aws:kms:us-east-1:111111111111:key/99222bcf-f5ab-49ee-a01a-2c89b05a60ce",
+                "TracingConfig": {
+                    "Mode": "PassThrough"
+                },
+                "RevisionId": "b5391f4c-5680-4b23-893e-c9bb2f88f66e",
+                "PackageType": "Zip",
+                "Architectures": [
+                    "x86_64"
+                ]
+            }
+        ]
+    }
+}

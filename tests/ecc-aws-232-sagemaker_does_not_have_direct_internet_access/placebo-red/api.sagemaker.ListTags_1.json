@@ -1,0 +1,12 @@
+{
+    "status_code": 200,
+    "data": {
+        "Tags": [
+            {
+                "Key": "Name",
+                "Value": "red-sagemaker-notebook-instance-232"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

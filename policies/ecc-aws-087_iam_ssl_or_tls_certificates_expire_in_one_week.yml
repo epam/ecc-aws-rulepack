@@ -1,0 +1,18 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: ecc-aws-087_iam_ssl_or_tls_certificates_expire_in_one_week
+    resource: iam-certificate
+    description: |
+      SSL/TLS certificates expire in less than a week
+    filters:
+      - type: value
+        key: Expiration
+        value_type: expiration
+        value: 7
+        op: le

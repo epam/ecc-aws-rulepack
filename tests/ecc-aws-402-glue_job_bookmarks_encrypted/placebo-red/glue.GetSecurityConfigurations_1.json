@@ -1,0 +1,35 @@
+{
+    "status_code": 200,
+    "data": {
+        "SecurityConfigurations": [
+            {
+                "Name": "401_security_configuration_green",
+                "CreatedTimeStamp": {
+                    "__class__": "datetime",
+                    "year": 2021,
+                    "month": 12,
+                    "day": 7,
+                    "hour": 14,
+                    "minute": 40,
+                    "second": 48,
+                    "microsecond": 7000
+                },
+                "EncryptionConfiguration": {
+                    "S3Encryption": [
+                        {
+                            "S3EncryptionMode": "DISABLED"
+                        }
+                    ],
+                    "CloudWatchEncryption": {
+                        "CloudWatchEncryptionMode": "DISABLED"
+                    },
+                    "JobBookmarksEncryption": {
+                        "JobBookmarksEncryptionMode": "DISABLED"
+                    }
+                }
+            }
+        ],
+        "NextToken": "",
+        "ResponseMetadata": {}
+    }
+}

@@ -1,0 +1,16 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: ecc-aws-300-rds_db_instances_configured_to_copy_tags_to_snapshots
+    resource: aws.rds
+    description: |
+      RDS DB instances are not configured to copy tags to snapshots
+    filters:
+      - type: value
+        key: CopyTagsToSnapshot
+        value: false

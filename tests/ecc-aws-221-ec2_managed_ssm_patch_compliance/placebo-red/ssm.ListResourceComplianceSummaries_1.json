@@ -1,0 +1,51 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResourceComplianceSummaryItems": [
+            {
+                "ComplianceType": "Patch",
+                "ResourceType": "ManagedInstance",
+                "ResourceId": "i-08fb5b37644f95266",
+                "Status": "NON_COMPLIANT",
+                "OverallSeverity": "UNSPECIFIED",
+                "ExecutionSummary": {
+                    "ExecutionTime": {
+                        "__class__": "datetime",
+                        "year": 2021,
+                        "month": 11,
+                        "day": 29,
+                        "hour": 11,
+                        "minute": 11,
+                        "second": 55,
+                        "microsecond": 0
+                    },
+                    "ExecutionId": "4847e8b2-1985-44c7-bd85-a74f3dc272b1",
+                    "ExecutionType": "Command"
+                },
+                "CompliantSummary": {
+                    "CompliantCount": 448,
+                    "SeveritySummary": {
+                        "CriticalCount": 0,
+                        "HighCount": 0,
+                        "MediumCount": 0,
+                        "LowCount": 0,
+                        "InformationalCount": 0,
+                        "UnspecifiedCount": 448
+                    }
+                },
+                "NonCompliantSummary": {
+                    "NonCompliantCount": 1,
+                    "SeveritySummary": {
+                        "CriticalCount": 0,
+                        "HighCount": 0,
+                        "MediumCount": 0,
+                        "LowCount": 0,
+                        "InformationalCount": 0,
+                        "UnspecifiedCount": 1
+                    }
+                }
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

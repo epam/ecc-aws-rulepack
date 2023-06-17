@@ -1,0 +1,41 @@
+{
+    "DomainName": "522-domain-red.click",
+    "DurationInYears": 1,
+    "AutoRenew": false,
+    "AdminContact": {
+        "FirstName": "Enter_Name",
+        "LastName": "Enter_LastName",
+        "ContactType": "PERSON",
+        "AddressLine1": "30 Predslavynska",
+        "City": "Kyiv",
+        "CountryCode": "UA",
+        "ZipCode": "02000",
+        "PhoneNumber": "+380.123456789",
+        "Email": "example@gmail.com"
+    },
+    "RegistrantContact": {
+        "FirstName": "Enter_Name",
+        "LastName": "Enter_LastName",
+        "ContactType": "PERSON",
+        "AddressLine1": "30 Predslavynska",
+        "City": "Kyiv",
+        "CountryCode": "UA",
+        "ZipCode": "02000",
+        "PhoneNumber": "+380.123456789",
+        "Email": "example@gmail.com"
+    },
+    "TechContact": {
+        "FirstName": "Enter_Name",
+        "LastName": "Enter_LastName",
+        "ContactType": "PERSON",
+        "AddressLine1": "30 Predslavynska",
+        "City": "Kyiv",
+        "CountryCode": "UA",
+        "ZipCode": "02000",
+        "PhoneNumber": "+380.123456789",
+        "Email": "example@gmail.com"
+    },
+    "PrivacyProtectAdminContact": false,
+    "PrivacyProtectRegistrantContact": false,
+    "PrivacyProtectTechContact": false
+}

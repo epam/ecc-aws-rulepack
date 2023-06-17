@@ -1,0 +1,36 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "analyzers": [
+            {
+                "arn": "arn:aws:access-analyzer:us-east-1:121212121211:analyzer/green-276",
+                "createdAt": {
+                    "__class__": "datetime",
+                    "year": 2021,
+                    "month": 5,
+                    "day": 6,
+                    "hour": 7,
+                    "minute": 26,
+                    "second": 16,
+                    "microsecond": 0
+                },
+                "lastResourceAnalyzed": "arn:aws:iam::121212121211:role/test-rule",
+                "lastResourceAnalyzedAt": {
+                    "__class__": "datetime",
+                    "year": 2021,
+                    "month": 5,
+                    "day": 6,
+                    "hour": 7,
+                    "minute": 26,
+                    "second": 17,
+                    "microsecond": 40000
+                },
+                "name": "green-276",
+                "status": "ACTIVE",
+                "tags": {},
+                "type": "ACCOUNT"
+            }
+        ]
+    }
+}

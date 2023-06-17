@@ -1,0 +1,32 @@
+{
+    "status_code": 200,
+    "data": {
+        "KeyMetadata": {
+            "AWSAccountId": "111111111111",
+            "KeyId": "e93a1f42-c284-46f0-8e7a-15fd35d5e15b",
+            "Arn": "arn:aws:kms:us-east-1:111111111111:key/e93a1f42-c284-46f0-8e7a-15fd35d5e15b",
+            "CreationDate": {
+                "__class__": "datetime",
+                "year": 2021,
+                "month": 9,
+                "day": 8,
+                "hour": 12,
+                "minute": 13,
+                "second": 15,
+                "microsecond": 90000
+            },
+            "Enabled": true,
+            "Description": "Default key that protects my SQS messages when no other key is defined",
+            "KeyUsage": "ENCRYPT_DECRYPT",
+            "KeyState": "Enabled",
+            "Origin": "AWS_KMS",
+            "KeyManager": "AWS",
+            "CustomerMasterKeySpec": "SYMMETRIC_DEFAULT",
+            "EncryptionAlgorithms": [
+                "SYMMETRIC_DEFAULT"
+            ],
+            "MultiRegion": false
+        },
+        "ResponseMetadata": {}
+    }
+}

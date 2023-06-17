@@ -1,0 +1,43 @@
+{
+    "status_code": 200,
+    "data": {
+        "SecurityGroups": [
+            {
+                "Description": "test-green-smtp",
+                "GroupName": "test-green-smtp",
+                "IpPermissions": [
+                    {
+                        "FromPort": 25,
+                        "IpProtocol": "tcp",
+                        "IpRanges": [
+                            {
+                                "CidrIp": "192.168.1.1/32"
+                            }
+                        ],
+                        "Ipv6Ranges": [],
+                        "PrefixListIds": [],
+                        "ToPort": 25,
+                        "UserIdGroupPairs": []
+                    }
+                ],
+                "OwnerId": "123456789123",
+                "GroupId": "sg-123456abcdef",
+                "IpPermissionsEgress": [
+                    {
+                        "IpProtocol": "-1",
+                        "IpRanges": [
+                            {
+                                "CidrIp": "0.0.0.0/0"
+                            }
+                        ],
+                        "Ipv6Ranges": [],
+                        "PrefixListIds": [],
+                        "UserIdGroupPairs": []
+                    }
+                ],
+                "VpcId": "vpc-ad123456"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

@@ -1,0 +1,32 @@
+{
+    "status_code": 200,
+    "data": {
+        "User": {
+            "Path": "/",
+            "UserName": "USER",
+            "UserId": "ASASASASASASASASAS",
+            "Arn": "arn:aws:iam::121212121212:user/USER",
+            "CreateDate": {
+                "__class__": "datetime",
+                "year": 2021,
+                "month": 2,
+                "day": 25,
+                "hour": 9,
+                "minute": 26,
+                "second": 50,
+                "microsecond": 0
+            },
+            "PasswordLastUsed": {
+                "__class__": "datetime",
+                "year": 2021,
+                "month": 2,
+                "day": 25,
+                "hour": 19,
+                "minute": 59,
+                "second": 4,
+                "microsecond": 0
+            }
+        },
+        "ResponseMetadata": {}
+    }
+}

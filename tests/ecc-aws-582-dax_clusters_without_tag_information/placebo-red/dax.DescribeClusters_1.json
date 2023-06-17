@@ -1,0 +1,61 @@
+{
+    "status_code": 200,
+    "data": {
+        "Clusters": [
+            {
+                "ClusterName": "cluster-582-red",
+                "ClusterArn": "arn:aws:dax:us-east-1:111111111111:cache/cluster-582-red",
+                "TotalNodes": 1,
+                "ActiveNodes": 1,
+                "NodeType": "dax.r4.large",
+                "Status": "available",
+                "ClusterDiscoveryEndpoint": {
+                    "Address": "cluster-582-red.ps5uie.dax-clusters.us-east-1.amazonaws.com",
+                    "Port": 8111,
+                    "URL": "dax://cluster-582-red.ps5uie.dax-clusters.us-east-1.amazonaws.com"
+                },
+                "Nodes": [
+                    {
+                        "NodeId": "cluster-582-red-a",
+                        "Endpoint": {
+                            "Address": "cluster-582-red-a.ps5uie.nodes.dax-clusters.us-east-1.amazonaws.com",
+                            "Port": 8111
+                        },
+                        "NodeCreateTime": {
+                            "__class__": "datetime",
+                            "year": 2022,
+                            "month": 8,
+                            "day": 15,
+                            "hour": 12,
+                            "minute": 37,
+                            "second": 39,
+                            "microsecond": 481000
+                        },
+                        "AvailabilityZone": "us-east-1e",
+                        "NodeStatus": "available",
+                        "ParameterGroupStatus": "in-sync"
+                    }
+                ],
+                "PreferredMaintenanceWindow": "mon:09:30-mon:10:30",
+                "SubnetGroup": "default",
+                "SecurityGroups": [
+                    {
+                        "SecurityGroupIdentifier": "sg-a5befc90",
+                        "Status": "active"
+                    }
+                ],
+                "IamRoleArn": "arn:aws:iam::111111111111:role/role_for_dax_582_red",
+                "ParameterGroup": {
+                    "ParameterGroupName": "default.dax1.0",
+                    "ParameterApplyStatus": "in-sync",
+                    "NodeIdsToReboot": []
+                },
+                "SSEDescription": {
+                    "Status": "DISABLED"
+                },
+                "ClusterEndpointEncryptionType": "NONE"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

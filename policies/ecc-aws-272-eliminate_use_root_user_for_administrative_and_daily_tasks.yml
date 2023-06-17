@@ -1,0 +1,29 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: ecc-aws-272-eliminate_use_root_user_for_administrative_and_daily_tasks
+    resource: aws.account
+    description: |
+      Root user is used for administrative and daily tasks
+    filters:
+      - or:
+          - and:
+              - type: credential
+                key: access_keys.active
+                value: true
+              - type: credential
+                key: access_keys.last_used_date
+                value: present
+
+          - and:
+              - type: credential
+                key: password_enabled
+                value: true
+              - type: credential
+                key: password_last_used
+                value: present

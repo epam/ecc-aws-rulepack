@@ -1,0 +1,22 @@
+{
+    "status_code": 200,
+    "data": {
+        "PaginationToken": "",
+        "ResourceTagMappingList": [
+            {
+                "ResourceARN": "arn:aws:elasticfilesystem:us-east-1:111111111111:file-system/fs-ae8a9e1a",
+                "Tags": [
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Red"
+                    },
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-258-efs_is_encrypted_using_managed_cmk"
+                    }
+                ]
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

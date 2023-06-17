@@ -1,0 +1,153 @@
+{
+    "status_code": 200,
+    "data": {
+        "Clusters": [
+            {
+                "ClusterIdentifier": "redshift-306-red",
+                "NodeType": "dc2.large",
+                "ClusterStatus": "available",
+                "ClusterAvailabilityStatus": "Available",
+                "MasterUsername": "root",
+                "DBName": "redshift306red",
+                "Endpoint": {
+                    "Address": "redshift-306-red.cqwaglj6btcm.us-east-1.redshift.amazonaws.com",
+                    "Port": 5439
+                },
+                "ClusterCreateTime": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 7,
+                    "day": 19,
+                    "hour": 9,
+                    "minute": 50,
+                    "second": 21,
+                    "microsecond": 25000
+                },
+                "AutomatedSnapshotRetentionPeriod": 1,
+                "ManualSnapshotRetentionPeriod": -1,
+                "ClusterSecurityGroups": [],
+                "VpcSecurityGroups": [
+                    {
+                        "VpcSecurityGroupId": "sg-a5befc90",
+                        "Status": "active"
+                    }
+                ],
+                "ClusterParameterGroups": [
+                    {
+                        "ParameterGroupName": "parameter-group-306-red",
+                        "ParameterApplyStatus": "pending-reboot",
+                        "ClusterParameterStatusList": [
+                            {
+                                "ParameterName": "enable_user_activity_logging",
+                                "ParameterApplyStatus": "pending-reboot"
+                            },
+                            {
+                                "ParameterName": "auto_analyze",
+                                "ParameterApplyStatus": "pending-reboot"
+                            },
+                            {
+                                "ParameterName": "max_cursor_result_set_size",
+                                "ParameterApplyStatus": "pending-reboot"
+                            },
+                            {
+                                "ParameterName": "query_group",
+                                "ParameterApplyStatus": "pending-reboot"
+                            },
+                            {
+                                "ParameterName": "datestyle",
+                                "ParameterApplyStatus": "pending-reboot"
+                            },
+                            {
+                                "ParameterName": "extra_float_digits",
+                                "ParameterApplyStatus": "pending-reboot"
+                            },
+                            {
+                                "ParameterName": "search_path",
+                                "ParameterApplyStatus": "pending-reboot"
+                            },
+                            {
+                                "ParameterName": "statement_timeout",
+                                "ParameterApplyStatus": "pending-reboot"
+                            },
+                            {
+                                "ParameterName": "wlm_json_configuration",
+                                "ParameterApplyStatus": "pending-reboot"
+                            },
+                            {
+                                "ParameterName": "require_ssl",
+                                "ParameterApplyStatus": "pending-reboot"
+                            },
+                            {
+                                "ParameterName": "use_fips_ssl",
+                                "ParameterApplyStatus": "pending-reboot"
+                            },
+                            {
+                                "ParameterName": "max_concurrency_scaling_clusters",
+                                "ParameterApplyStatus": "pending-reboot"
+                            },
+                            {
+                                "ParameterName": "auto_mv",
+                                "ParameterApplyStatus": "pending-reboot"
+                            },
+                            {
+                                "ParameterName": "enable_case_sensitive_identifier",
+                                "ParameterApplyStatus": "pending-reboot"
+                            }
+                        ]
+                    }
+                ],
+                "ClusterSubnetGroupName": "default",
+                "VpcId": "vpc-12345asdfg",
+                "AvailabilityZone": "us-east-1f",
+                "PreferredMaintenanceWindow": "thu:07:00-thu:07:30",
+                "PendingModifiedValues": {},
+                "ClusterVersion": "1.0",
+                "AllowVersionUpgrade": true,
+                "NumberOfNodes": 1,
+                "PubliclyAccessible": true,
+                "Encrypted": false,
+                "ClusterPublicKey": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCMNj/+rkDkiVJhmZAMS5j0zPtTj8IR6MNpl+kshTVq+r/vYr1cYOPs970WC8nO9r/FJxz+kMQpFG0MK1PoRHx6xEEH1jkatE4J0fpAcUBwvFlVg6GH0NEOBllqIzyrM3qTvo80PlkjRe70il/+vKVlm+pDDFRLvug8zIBjca5x1vtS1JRoC2xGcWQElJsh8xRFJeopnvyziZY7A92/wtDssB6nWShjP2MbcRP1C7unImi2xxvZVxxHtsbuP32pinhjeGlTT8JLxu2ywQGdVqlbGUPmxfrTLlID6N9hjJnM/thhJ+ZKy0w+d+Kmy1uaKXa994Zzox9keokzjAPnoPDR Amazon-Redshift\n",
+                "ClusterNodes": [
+                    {
+                        "NodeRole": "SHARED",
+                        "PrivateIPAddress": "172.31.66.5",
+                        "PublicIPAddress": "44.208.185.67"
+                    }
+                ],
+                "ClusterRevisionNumber": "40083",
+                "Tags": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-306-redshift_clusters_audit_logging_enabled"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Red"
+                    }
+                ],
+                "EnhancedVpcRouting": false,
+                "IamRoles": [],
+                "MaintenanceTrackName": "current",
+                "DeferredMaintenanceWindows": [],
+                "NextMaintenanceWindowStartTime": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 7,
+                    "day": 21,
+                    "hour": 7,
+                    "minute": 0,
+                    "second": 0,
+                    "microsecond": 0
+                },
+                "AvailabilityZoneRelocationStatus": "disabled",
+                "ClusterNamespaceArn": "arn:aws:redshift:us-east-1:111111111111:namespace:d28fd605-bd2b-4ff3-a484-315ddac97786",
+                "TotalStorageCapacityInMegaBytes": 400000,
+                "AquaConfiguration": {
+                    "AquaStatus": "disabled",
+                    "AquaConfigurationStatus": "auto"
+                }
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

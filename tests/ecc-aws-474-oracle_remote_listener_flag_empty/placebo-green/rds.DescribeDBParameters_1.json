@@ -1,0 +1,17 @@
+{
+    "status_code": 200,
+    "data": {
+        "Parameters": [
+            {
+                "ParameterName": "remote_listener",
+                "Description": "remote listener",
+                "Source": "engine-default",
+                "ApplyType": "dynamic",
+                "DataType": "string",
+                "IsModifiable": true,
+                "ApplyMethod": "pending-reboot"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

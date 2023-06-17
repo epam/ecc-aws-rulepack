@@ -1,0 +1,62 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: ecc-aws-691-fsx_daily_automatic_backup_enabled
+    description: |
+      FSx file systems do not have retention period set
+    resource: aws.fsx
+    filters:
+      - or: 
+        - and:
+          - type: value
+            key: FileSystemType
+            value: LUSTRE
+          - type: value
+            key: LustreConfiguration.DeploymentType
+            op: in
+            value: [PERSISTENT_1, PERSISTENT_2]
+          - or: 
+            - type: value
+              key: LustreConfiguration.AutomaticBackupRetentionDays
+              value: 0
+            - type: value
+              key: LustreConfiguration.AutomaticBackupRetentionDays
+              value: absent
+        - and: 
+            - type: value
+              key: FileSystemType
+              value: OPENZFS
+            - or: 
+              - type: value
+                key: OpenZFSConfiguration.AutomaticBackupRetentionDays
+                value: 0
+              - type: value
+                key: OpenZFSConfiguration.AutomaticBackupRetentionDays
+                value: absent
+        - and: 
+            - type: value
+              key: FileSystemType
+              value: ONTAP
+            - or: 
+              - type: value
+                key: OntapConfiguration.AutomaticBackupRetentionDays
+                value: 0
+              - type: value
+                key: OntapConfiguration.AutomaticBackupRetentionDays
+                value: absent
+        - and: 
+            - type: value
+              key: FileSystemType
+              value: WINDOWS 
+            - or:
+              - type: value
+                key: WindowsConfiguration.AutomaticBackupRetentionDays
+                value: 0
+              - type: value
+                key: WindowsConfiguration.AutomaticBackupRetentionDays
+                value: absent

@@ -1,0 +1,62 @@
+{
+    "status_code": 200,
+    "data": {
+        "DBSnapshots": [
+            {
+                "DBSnapshotIdentifier": "db626snapshotred",
+                "DBInstanceIdentifier": "terraform-20221103163406034500000001",
+                "SnapshotCreateTime": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 11,
+                    "day": 3,
+                    "hour": 16,
+                    "minute": 40,
+                    "second": 18,
+                    "microsecond": 7000
+                },
+                "Engine": "mysql",
+                "AllocatedStorage": 10,
+                "Status": "available",
+                "Port": 3306,
+                "AvailabilityZone": "us-east-1f",
+                "VpcId": "vpc-12345asdfg",
+                "InstanceCreateTime": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 11,
+                    "day": 3,
+                    "hour": 16,
+                    "minute": 39,
+                    "second": 21,
+                    "microsecond": 429000
+                },
+                "MasterUsername": "root",
+                "EngineVersion": "5.7.38",
+                "LicenseModel": "general-public-license",
+                "SnapshotType": "manual",
+                "OptionGroupName": "default:mysql-5-7",
+                "PercentProgress": 100,
+                "StorageType": "gp2",
+                "Encrypted": false,
+                "DBSnapshotArn": "arn:aws:rds:us-east-1:111111111111:snapshot:db626snapshotred",
+                "IAMDatabaseAuthenticationEnabled": false,
+                "ProcessorFeatures": [],
+                "DbiResourceId": "db-ZBSO5OHLJSYVSRN3B3BDLG4KXA",
+                "TagList": [],
+                "OriginalSnapshotCreateTime": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 11,
+                    "day": 3,
+                    "hour": 16,
+                    "minute": 40,
+                    "second": 18,
+                    "microsecond": 7000
+                },
+                "SnapshotTarget": "region"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

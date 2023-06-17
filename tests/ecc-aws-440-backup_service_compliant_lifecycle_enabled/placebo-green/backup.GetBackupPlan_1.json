@@ -1,0 +1,37 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "BackupPlan": {
+            "BackupPlanName": "440_backup_plan_green",
+            "Rules": [
+                {
+                    "RuleName": "440_backup_rule_green",
+                    "TargetBackupVaultName": "440_backup_vault_green",
+                    "ScheduleExpression": "cron(0 12 * * ? *)",
+                    "StartWindowMinutes": 60,
+                    "CompletionWindowMinutes": 180,
+                    "Lifecycle": {
+                        "MoveToColdStorageAfterDays": 90,
+                        "DeleteAfterDays": 180
+                    },
+                    "RuleId": "ee1fda97-c523-4b6d-8b4f-cf8f626ba1ec",
+                    "EnableContinuousBackup": false
+                }
+            ]
+        },
+        "BackupPlanId": "d91b1c98-74e7-4201-bf7a-f6a96ce30e6a",
+        "BackupPlanArn": "arn:aws:backup:us-east-1:111111111111:backup-plan:d91b1c98-74e7-4201-bf7a-f6a96ce30e6a",
+        "VersionId": "OTM1NGZkMzQtYWM1NC00ODZjLTkzZjktNjlkMTA0NzRmODhh",
+        "CreationDate": {
+            "__class__": "datetime",
+            "year": 2022,
+            "month": 1,
+            "day": 6,
+            "hour": 13,
+            "minute": 17,
+            "second": 15,
+            "microsecond": 495000
+        }
+    }
+}

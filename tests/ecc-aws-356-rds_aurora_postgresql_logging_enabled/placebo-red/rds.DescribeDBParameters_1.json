@@ -1,0 +1,28 @@
+{
+    "status_code": 200,
+    "data": {
+        "Parameters": [
+            {
+                "ParameterName": "log_min_duration_statement",
+                "Description": "(ms) Sets the minimum execution time above which statements will be logged.",
+                "Source": "engine-default",
+                "ApplyType": "dynamic",
+                "DataType": "integer",
+                "AllowedValues": "-1-2147483647",
+                "IsModifiable": true,
+                "ApplyMethod": "pending-reboot"
+            },
+            {
+                "ParameterName": "log_statement",
+                "Description": "Sets the type of statements logged.",
+                "Source": "engine-default",
+                "ApplyType": "dynamic",
+                "DataType": "string",
+                "AllowedValues": "none,ddl,mod,all",
+                "IsModifiable": true,
+                "ApplyMethod": "pending-reboot"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "DetectorIds": [
+            "111111111111"
+        ]
+    }
+}

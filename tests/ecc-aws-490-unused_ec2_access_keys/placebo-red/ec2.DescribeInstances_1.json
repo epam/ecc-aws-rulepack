@@ -1,0 +1,14 @@
+{
+    "status_code": 200,
+    "data": {
+        "Reservations": [
+            {
+                "Groups": [],
+                "Instances": [],
+                "OwnerId": "111111111111",
+                "ReservationId": "r-02c123e4776d323d0"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

@@ -1,0 +1,33 @@
+{
+    "status_code": 200,
+    "data": {
+        "KeyMetadata": {
+            "AWSAccountId": "111111111111",
+            "KeyId": "d9a082dd-5f0b-4b2a-8647-29ffac537ddc",
+            "Arn": "arn:aws:kms:us-east-1:111111111111:key/d9a082dd-5f0b-4b2a-8647-29ffac537ddc",
+            "CreationDate": {
+                "__class__": "datetime",
+                "year": 2022,
+                "month": 6,
+                "day": 7,
+                "hour": 8,
+                "minute": 6,
+                "second": 41,
+                "microsecond": 691000
+            },
+            "Enabled": true,
+            "Description": "Key to encrypt and decrypt Elasticsearch",
+            "KeyUsage": "ENCRYPT_DECRYPT",
+            "KeyState": "Enabled",
+            "Origin": "AWS_KMS",
+            "KeyManager": "CUSTOMER",
+            "CustomerMasterKeySpec": "SYMMETRIC_DEFAULT",
+            "KeySpec": "SYMMETRIC_DEFAULT",
+            "EncryptionAlgorithms": [
+                "SYMMETRIC_DEFAULT"
+            ],
+            "MultiRegion": false
+        },
+        "ResponseMetadata": {}
+    }
+}

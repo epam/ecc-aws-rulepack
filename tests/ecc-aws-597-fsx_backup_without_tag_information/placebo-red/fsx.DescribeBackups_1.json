@@ -1,0 +1,45 @@
+{
+    "status_code": 200,
+    "data": {
+        "Backups": [
+            {
+                "BackupId": "backup-0c22bf04adbc6851d",
+                "Lifecycle": "AVAILABLE",
+                "Type": "USER_INITIATED",
+                "ProgressPercent": 100,
+                "CreationTime": {
+                    "__class__": "datetime",
+                    "year": 2023,
+                    "month": 1,
+                    "day": 5,
+                    "hour": 10,
+                    "minute": 15,
+                    "second": 55,
+                    "microsecond": 534000
+                },
+                "KmsKeyId": "arn:aws:kms:us-east-1:111111111111:key/dd9fb145-9e61-4b40-a1d5-b079e1d5ccdd",
+                "ResourceARN": "arn:aws:fsx:us-east-1:111111111111:backup/backup-0c22bf04adbc6851d",
+                "Tags": [],
+                "FileSystem": {
+                    "FileSystemId": "fs-036261c62de53f5df",
+                    "FileSystemType": "LUSTRE",
+                    "StorageCapacity": 6000,
+                    "StorageType": "HDD",
+                    "ResourceARN": "arn:aws:fsx:us-east-1:111111111111:file-system/fs-036261c62de53f5df",
+                    "LustreConfiguration": {
+                        "WeeklyMaintenanceStartTime": "6:05:00",
+                        "DeploymentType": "PERSISTENT_1",
+                        "PerUnitStorageThroughput": 12,
+                        "DailyAutomaticBackupStartTime": "08:30",
+                        "AutomaticBackupRetentionDays": 5,
+                        "DriveCacheType": "NONE",
+                        "DataCompressionType": "NONE"
+                    },
+                    "FileSystemTypeVersion": "2.10"
+                },
+                "OwnerId": "111111111111"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

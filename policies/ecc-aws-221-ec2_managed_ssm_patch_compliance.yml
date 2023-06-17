@@ -1,0 +1,18 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: ecc-aws-221-ec2_managed_ssm_patch_compliance
+    description: |
+      Amazon EC2 instances managed by Systems Manager have a patch compliance status of NON-COMPLIANT after a patch installation
+    resource: ec2
+    filters:
+      - type: ssm-compliance
+        compliance_types:
+          - Patch
+        states:
+          - NON_COMPLIANT

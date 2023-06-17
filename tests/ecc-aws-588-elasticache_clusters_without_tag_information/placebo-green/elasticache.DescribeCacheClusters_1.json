@@ -1,0 +1,57 @@
+{
+    "status_code": 200,
+    "data": {
+        "CacheClusters": [
+            {
+                "CacheClusterId": "c7n-588-elasticache-cluster-green",
+                "ClientDownloadLandingPage": "https://console.aws.amazon.com/elasticache/home#client-download:",
+                "CacheNodeType": "cache.t2.micro",
+                "Engine": "redis",
+                "EngineVersion": "6.2.6",
+                "CacheClusterStatus": "available",
+                "NumCacheNodes": 1,
+                "PreferredAvailabilityZone": "us-east-1f",
+                "CacheClusterCreateTime": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 7,
+                    "day": 13,
+                    "hour": 7,
+                    "minute": 50,
+                    "second": 44,
+                    "microsecond": 227000
+                },
+                "PreferredMaintenanceWindow": "wed:08:30-wed:09:30",
+                "PendingModifiedValues": {},
+                "CacheSecurityGroups": [],
+                "CacheParameterGroup": {
+                    "CacheParameterGroupName": "default.redis6.x",
+                    "ParameterApplyStatus": "in-sync",
+                    "CacheNodeIdsToReboot": []
+                },
+                "CacheSubnetGroupName": "default",
+                "AutoMinorVersionUpgrade": true,
+                "ReplicationGroupId": "c7n-588-elasticache-group-green",
+                "SnapshotRetentionLimit": 0,
+                "SnapshotWindow": "04:30-05:30",
+                "AuthTokenEnabled": false,
+                "TransitEncryptionEnabled": false,
+                "AtRestEncryptionEnabled": false,
+                "ARN": "arn:aws:elasticache:us-east-1:111111111111:cluster:c7n-588-elasticache-cluster-green",
+                "ReplicationGroupLogDeliveryEnabled": false,
+                "LogDeliveryConfigurations": [],
+				"Tags": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-588-elasticache_clusters_without_tag_information"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    }
+                ]
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

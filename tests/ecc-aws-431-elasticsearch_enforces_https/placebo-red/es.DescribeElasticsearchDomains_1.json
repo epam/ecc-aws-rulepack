@@ -1,0 +1,81 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "DomainStatusList": [
+            {
+                "DomainId": "111111111111/elasticsearch-431-red",
+                "DomainName": "elasticsearch-431-red",
+                "ARN": "arn:aws:es:us-east-1:111111111111:domain/elasticsearch-431-red",
+                "Created": true,
+                "Deleted": false,
+                "Processing": true,
+                "UpgradeProcessing": false,
+                "ElasticsearchVersion": "1.5",
+                "ElasticsearchClusterConfig": {
+                    "InstanceType": "m4.large.elasticsearch",
+                    "InstanceCount": 1,
+                    "DedicatedMasterEnabled": false,
+                    "ZoneAwarenessEnabled": false,
+                    "WarmEnabled": false,
+                    "ColdStorageOptions": {
+                        "Enabled": false
+                    }
+                },
+                "EBSOptions": {
+                    "EBSEnabled": true,
+                    "VolumeType": "gp2",
+                    "VolumeSize": 10
+                },
+                "AccessPolicies": "",
+                "SnapshotOptions": {
+                    "AutomatedSnapshotStartHour": 0
+                },
+                "CognitoOptions": {
+                    "Enabled": false
+                },
+                "EncryptionAtRestOptions": {
+                    "Enabled": false
+                },
+                "NodeToNodeEncryptionOptions": {
+                    "Enabled": false
+                },
+                "AdvancedOptions": {
+                    "override_main_response_version": "false",
+                    "rest.action.multi.allow_explicit_index": "true"
+                },
+                "ServiceSoftwareOptions": {
+                    "CurrentVersion": "",
+                    "NewVersion": "",
+                    "UpdateAvailable": false,
+                    "Cancellable": false,
+                    "UpdateStatus": "COMPLETED",
+                    "Description": "There is no software update available for this domain.",
+                    "AutomatedUpdateDate": {
+                        "__class__": "datetime",
+                        "year": 1970,
+                        "month": 1,
+                        "day": 1,
+                        "hour": 2,
+                        "minute": 0,
+                        "second": 0,
+                        "microsecond": 0
+                    },
+                    "OptionalDeployment": true
+                },
+                "DomainEndpointOptions": {
+                    "EnforceHTTPS": false,
+                    "TLSSecurityPolicy": "Policy-Min-TLS-1-0-2019-07",
+                    "CustomEndpointEnabled": false
+                },
+                "AdvancedSecurityOptions": {
+                    "Enabled": false,
+                    "InternalUserDatabaseEnabled": false
+                },
+                "AutoTuneOptions": {
+                    "State": "DISABLED"
+                }
+            }
+        ]
+    }
+}

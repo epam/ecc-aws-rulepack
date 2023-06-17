@@ -1,0 +1,20 @@
+{
+    "status_code": 200,
+    "data": {
+        "trailList": [
+            {
+                "Name": "452_cloudtrail_green",
+                "S3BucketName": "452-bucket-green",
+                "IncludeGlobalServiceEvents": false,
+                "IsMultiRegionTrail": false,
+                "HomeRegion": "us-east-1",
+                "TrailARN": "arn:aws:cloudtrail:us-east-1:111111111111:trail/452_cloudtrail_green",
+                "LogFileValidationEnabled": false,
+                "HasCustomEventSelectors": true,
+                "HasInsightSelectors": false,
+                "IsOrganizationTrail": false
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

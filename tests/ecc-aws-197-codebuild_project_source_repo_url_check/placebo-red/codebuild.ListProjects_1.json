@@ -1,0 +1,10 @@
+{
+    "status_code": 200,
+    "data": {
+        "projects": [
+            "red-codebuild-197-a",
+            "red-codebuild-197-b"
+        ],
+        "ResponseMetadata": {}
+    }
+}

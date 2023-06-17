@@ -1,0 +1,85 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "Environment": {
+            "AirflowConfigurationOptions": {
+                "core.default_task_retries": "16",
+                "core.parallelism": "1"
+            },
+            "AirflowVersion": "2.0.2",
+            "Arn": "arn:aws:airflow:us-east-1:111111111111:environment/mwaa_620_red",
+            "CreatedAt": {
+                "__class__": "datetime",
+                "year": 2022,
+                "month": 8,
+                "day": 30,
+                "hour": 11,
+                "minute": 0,
+                "second": 20,
+                "microsecond": 0
+            },
+            "DagS3Path": "dags/",
+            "EnvironmentClass": "mw1.small",
+            "ExecutionRoleArn": "arn:aws:iam::111111111111:role/620_role_red",
+            "LastUpdate": {
+                "CreatedAt": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 8,
+                    "day": 30,
+                    "hour": 11,
+                    "minute": 0,
+                    "second": 20,
+                    "microsecond": 0
+                },
+                "Error": {
+                    "ErrorCode": "INCORRECT_CONFIGURATION",
+                    "ErrorMessage": "You may need to check the execution role permissions policy for your environment, and that each of the VPC networking components required by the environment are configured to allow traffic. Troubleshooting: https://docs.aws.amazon.com/mwaa/latest/userguide/troubleshooting.html"
+                },
+                "Status": "FAILED"
+            },
+            "LoggingConfiguration": {
+                "DagProcessingLogs": {
+                    "Enabled": false,
+                    "LogLevel": "INFO"
+                },
+                "SchedulerLogs": {
+                    "Enabled": false,
+                    "LogLevel": "INFO"
+                },
+                "TaskLogs": {
+                    "Enabled": true,
+                    "LogLevel": "INFO"
+                },
+                "WebserverLogs": {
+                    "Enabled": false,
+                    "LogLevel": "INFO"
+                },
+                "WorkerLogs": {
+                    "Enabled": false,
+                    "LogLevel": "INFO"
+                }
+            },
+            "MaxWorkers": 1,
+            "MinWorkers": 1,
+            "Name": "mwaa_620_red",
+            "NetworkConfiguration": {
+                "SecurityGroupIds": [
+                    "sg-0684786d24ae24081"
+                ],
+                "SubnetIds": [
+                    "subnet-0f79de1aaad201e09",
+                    "subnet-0cae08fffa6bd98b7"
+                ]
+            },
+            "Schedulers": 2,
+            "ServiceRoleArn": "arn:aws:iam::111111111111:role/aws-service-role/airflow.amazonaws.com/AWSServiceRoleForAmazonMWAA",
+            "SourceBucketArn": "arn:aws:s3:::620-bucket-red",
+            "Status": "CREATE_FAILED",
+            "Tags": {},
+            "WebserverAccessMode": "PRIVATE_ONLY",
+            "WeeklyMaintenanceWindowStart": "WED:10:00"
+        }
+    }
+}

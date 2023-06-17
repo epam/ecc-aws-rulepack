@@ -1,0 +1,16 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "TagList": [
+            {
+                "Key": "ComplianceStatus",
+                "Value": "Red"
+            },
+            {
+                "Key": "CsutodianRule",
+                "Value": "ecc-aws-295-elasticsearch_domains_audit_logging_enabled"
+            }
+        ]
+    }
+}

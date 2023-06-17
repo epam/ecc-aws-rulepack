@@ -1,0 +1,37 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "item": [
+            {
+                "deploymentId": "lv6kfo",
+                "stageName": "apiGatewayStage396Green",
+                "cacheClusterEnabled": false,
+                "cacheClusterStatus": "NOT_AVAILABLE",
+                "methodSettings": {},
+                "tracingEnabled": false,
+                "webAclArn": "arn:aws:waf-regional:us-east-1:111111111111:webacl/1ef2359b-5855-4a4d-8343-cfbbbb4413bd",
+                "createdDate": {
+                    "__class__": "datetime",
+                    "year": 2021,
+                    "month": 12,
+                    "day": 3,
+                    "hour": 12,
+                    "minute": 57,
+                    "second": 46,
+                    "microsecond": 0
+                },
+                "lastUpdatedDate": {
+                    "__class__": "datetime",
+                    "year": 2021,
+                    "month": 12,
+                    "day": 3,
+                    "hour": 13,
+                    "minute": 0,
+                    "second": 13,
+                    "microsecond": 0
+                }
+            }
+        ]
+    }
+}

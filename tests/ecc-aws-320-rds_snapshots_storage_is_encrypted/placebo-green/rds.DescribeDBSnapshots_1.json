@@ -1,0 +1,61 @@
+{
+    "status_code": 200,
+    "data": {
+        "DBSnapshots": [
+            {
+                "DBSnapshotIdentifier": "snapshot320green",
+                "DBInstanceIdentifier": "terraform-20211001110348344700000001",
+                "SnapshotCreateTime": {
+                    "__class__": "datetime",
+                    "year": 2021,
+                    "month": 10,
+                    "day": 1,
+                    "hour": 11,
+                    "minute": 10,
+                    "second": 31,
+                    "microsecond": 575000
+                },
+                "Engine": "mysql",
+                "AllocatedStorage": 10,
+                "Status": "available",
+                "Port": 3306,
+                "AvailabilityZone": "us-east-1d",
+                "VpcId": "vpc-12345asdfg",
+                "InstanceCreateTime": {
+                    "__class__": "datetime",
+                    "year": 2021,
+                    "month": 10,
+                    "day": 1,
+                    "hour": 11,
+                    "minute": 9,
+                    "second": 22,
+                    "microsecond": 867000
+                },
+                "MasterUsername": "root",
+                "EngineVersion": "5.7.33",
+                "LicenseModel": "general-public-license",
+                "SnapshotType": "manual",
+                "OptionGroupName": "default:mysql-5-7",
+                "PercentProgress": 100,
+                "StorageType": "gp2",
+                "Encrypted": true,
+                "KmsKeyId": "arn:aws:kms:us-east-1:this:key/7662e8d8-3711-4c8c-ba73-fe609ad50611",
+                "DBSnapshotArn": "arn:aws:rds:us-east-1:this:snapshot:snapshot320green",
+                "IAMDatabaseAuthenticationEnabled": false,
+                "ProcessorFeatures": [],
+                "DbiResourceId": "db-QMNXBTRX7NG7NAHGL5FHCEJQLM",
+                "TagList": [
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    },
+                    {
+                        "Key": "CsutodianRule",
+                        "Value": "ecc-aws-320-rds_snapshots_storage_is_encrypted"
+                    }
+                ]
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

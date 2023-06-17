@@ -1,0 +1,60 @@
+{
+    "status_code": 200,
+    "data": {
+        "FileSystems": [
+            {
+                "OwnerId": "111111111111",
+                "CreationTime": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 6,
+                    "day": 16,
+                    "hour": 11,
+                    "minute": 52,
+                    "second": 25,
+                    "microsecond": 257000
+                },
+                "FileSystemId": "fs-046c6e83f27909e9a",
+                "FileSystemType": "LUSTRE",
+                "Lifecycle": "AVAILABLE",
+                "StorageCapacity": 6000,
+                "StorageType": "HDD",
+                "VpcId": "vpc-12345asdfg",
+                "SubnetIds": [
+                    "subnet-cd7af8ec"
+                ],
+                "NetworkInterfaceIds": [
+                    "eni-068f93a2f3d88ba94",
+                    "eni-019815543a7fb3f7a"
+                ],
+                "DNSName": "fs-046c6e83f27909e9a.fsx.us-east-1.amazonaws.com",
+                "KmsKeyId": "arn:aws:kms:us-east-1:111111111111:key/dd9fb145-9e61-4b40-a1d5-b079e1d5ccdd",
+                "ResourceARN": "arn:aws:fsx:us-east-1:111111111111:file-system/fs-046c6e83f27909e9a",
+                "Tags": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-539-fsx_lustre_retention_period_set_at_least_to_7_days"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Red"
+                    }
+                ],
+                "LustreConfiguration": {
+                    "WeeklyMaintenanceStartTime": "2:09:30",
+                    "DeploymentType": "PERSISTENT_1",
+                    "PerUnitStorageThroughput": 12,
+                    "MountName": "ouyq5bev",
+                    "CopyTagsToBackups": false,
+                    "DriveCacheType": "NONE",
+                    "DataCompressionType": "NONE",
+                    "LogConfiguration": {
+                        "Level": "DISABLED"
+                    }
+                },
+                "FileSystemTypeVersion": "2.10"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

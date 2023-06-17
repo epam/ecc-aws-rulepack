@@ -1,0 +1,30 @@
+{
+    "status_code": 200,
+    "data": {
+        "Workspaces": [
+            {
+                "WorkspaceId": "ws-j9cvh4174",
+                "DirectoryId": "d-90674a5da3",
+                "UserName": "Administrator",
+                "IpAddress": "10.0.2.82",
+                "State": "UNHEALTHY",
+                "BundleId": "wsb-clj85qzj1",
+                "SubnetId": "subnet-08c5a699d0020dc32",
+                "ErrorMessage": "There was an error rebooting the WorkSpace. Please try again.",
+                "ComputerName": "A-1HKONV4L1JJSN",
+                "VolumeEncryptionKey": "arn:aws:kms:us-east-1:111111111111:key/768d611d-3174-4d0e-a05e-0b4071af1ef5",
+                "UserVolumeEncryptionEnabled": true,
+                "RootVolumeEncryptionEnabled": true,
+                "WorkspaceProperties": {
+                  "RunningMode": "AUTO_STOP",
+                  "RunningModeAutoStopTimeoutInMinutes": 60,
+                  "RootVolumeSizeGib": 80,
+                  "UserVolumeSizeGib": 50,
+                  "ComputeTypeName": "STANDARD"
+                },
+                "ModificationStates": []
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

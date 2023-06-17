@@ -1,0 +1,22 @@
+{
+    "status_code": 200,
+    "data": {
+        "Models": [
+            {
+                "ModelName": "sagemaker-model-504-green",
+                "ModelArn": "arn:aws:sagemaker:us-east-1:111111111111:model/sagemaker-model-504-green",
+                "CreationTime": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 5,
+                    "day": 18,
+                    "hour": 7,
+                    "minute": 25,
+                    "second": 43,
+                    "microsecond": 351000
+                }
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "status_code": 200,
+    "data": {
+        "Parameters": [
+            {
+                "ParameterName": "sec_return_server_release_banner",
+                "ParameterValue": "FALSE",
+                "Description": "whether the server retruns the complete version information",
+                "Source": "user",
+                "ApplyType": "static",
+                "DataType": "boolean",
+                "AllowedValues": "TRUE,FALSE",
+                "IsModifiable": true,
+                "ApplyMethod": "pending-reboot"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

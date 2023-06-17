@@ -1,0 +1,83 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "DomainStatusList": [
+            {
+                "DomainId": "111111111111/elasticsearch-593-red",
+                "DomainName": "elasticsearch-593-red",
+                "ARN": "arn:aws:es:us-east-1:111111111111:domain/elasticsearch-593-red",
+                "Created": true,
+                "Deleted": false,
+                "Endpoint": "search-elasticsearch-593-red-73abc4wxcbxrt4suc57drdh4mi.us-east-1.es.amazonaws.com",
+                "Processing": false,
+                "UpgradeProcessing": false,
+                "ElasticsearchVersion": "1.5",
+                "ElasticsearchClusterConfig": {
+                    "InstanceType": "m4.large.elasticsearch",
+                    "InstanceCount": 1,
+                    "DedicatedMasterEnabled": false,
+                    "ZoneAwarenessEnabled": false,
+                    "WarmEnabled": false,
+                    "ColdStorageOptions": {
+                        "Enabled": false
+                    }
+                },
+                "EBSOptions": {
+                    "EBSEnabled": true,
+                    "VolumeType": "gp2",
+                    "VolumeSize": 10
+                },
+                "AccessPolicies": "",
+                "SnapshotOptions": {
+                    "AutomatedSnapshotStartHour": 0
+                },
+                "CognitoOptions": {
+                    "Enabled": false
+                },
+                "EncryptionAtRestOptions": {
+                    "Enabled": false
+                },
+                "NodeToNodeEncryptionOptions": {
+                    "Enabled": false
+                },
+                "AdvancedOptions": {
+                    "override_main_response_version": "false",
+                    "rest.action.multi.allow_explicit_index": "true"
+                },
+                "ServiceSoftwareOptions": {
+                    "CurrentVersion": "",
+                    "NewVersion": "R20220323-P5",
+                    "UpdateAvailable": true,
+                    "Cancellable": false,
+                    "UpdateStatus": "ELIGIBLE",
+                    "Description": "A newer release R20220323-P5 is available.",
+                    "AutomatedUpdateDate": {
+                        "__class__": "datetime",
+                        "year": 1970,
+                        "month": 1,
+                        "day": 1,
+                        "hour": 0,
+                        "minute": 0,
+                        "second": 0,
+                        "microsecond": 0
+                    },
+                    "OptionalDeployment": true
+                },
+                "DomainEndpointOptions": {
+                    "EnforceHTTPS": false,
+                    "TLSSecurityPolicy": "Policy-Min-TLS-1-0-2019-07",
+                    "CustomEndpointEnabled": false
+                },
+                "AdvancedSecurityOptions": {
+                    "Enabled": false,
+                    "InternalUserDatabaseEnabled": false,
+                    "AnonymousAuthEnabled": false
+                },
+                "AutoTuneOptions": {
+                    "State": "DISABLED"
+                }
+            }
+        ]
+    }
+}

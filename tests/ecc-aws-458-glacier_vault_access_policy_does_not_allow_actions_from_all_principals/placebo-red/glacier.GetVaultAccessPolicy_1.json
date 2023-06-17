@@ -1,0 +1,9 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "policy": {
+            "Policy": "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Sid\":\"458_glacier_vault_red\",\"Effect\":\"Allow\",\"Principal\":\"*\",\"Action\":\"glacier:ListVaults\",\"Resource\":\"arn:aws:glacier:us-east-1:111111111111:vaults/458_glacier_vault_red\"}]}"
+        }
+    }
+}

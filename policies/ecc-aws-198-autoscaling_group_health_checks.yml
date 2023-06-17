@@ -1,0 +1,20 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: ecc-aws-198-autoscaling_group_health_checks
+    description: |
+      Auto scaling groups associated with a load balancer do not use health checks
+    resource: asg
+    filters:
+      - not:
+          - type: value
+            key: HealthCheckType
+            value: ELB
+          - type: value
+            key: HealthCheckGracePeriod
+            value: 300

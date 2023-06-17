@@ -1,0 +1,45 @@
+{
+    "status_code": 200,
+    "data": {
+        "Jobs": [
+            {
+                "Name": "600_glue_job_red",
+                "Role": "arn:aws:iam::111111111111:role/600_role_red",
+                "CreatedOn": {
+                    "__class__": "datetime",
+                    "year": 2023,
+                    "month": 1,
+                    "day": 19,
+                    "hour": 12,
+                    "minute": 18,
+                    "second": 55,
+                    "microsecond": 372000
+                },
+                "LastModifiedOn": {
+                    "__class__": "datetime",
+                    "year": 2023,
+                    "month": 1,
+                    "day": 19,
+                    "hour": 12,
+                    "minute": 18,
+                    "second": 55,
+                    "microsecond": 372000
+                },
+                "ExecutionProperty": {
+                    "MaxConcurrentRuns": 1
+                },
+                "Command": {
+                    "Name": "glueetl",
+                    "ScriptLocation": "s3://bucket-600-red/script",
+                    "PythonVersion": "2"
+                },
+                "MaxRetries": 0,
+                "AllocatedCapacity": 10,
+                "Timeout": 2880,
+                "MaxCapacity": 10.0,
+                "GlueVersion": "0.9"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

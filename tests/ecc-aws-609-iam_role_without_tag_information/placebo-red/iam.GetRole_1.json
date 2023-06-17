@@ -1,0 +1,25 @@
+{
+    "status_code": 200,
+    "data": {
+        "Role": {
+            "Path": "/",
+            "RoleName": "609_role_red",
+            "RoleId": "AROAXPHGII4AOSRNIJYXK",
+            "Arn": "arn:aws:iam::111111111111:role/609_role_red",
+            "CreateDate": {
+                "__class__": "datetime",
+                "year": 2022,
+                "month": 9,
+                "day": 19,
+                "hour": 9,
+                "minute": 59,
+                "second": 58,
+                "microsecond": 0
+            },
+            "AssumeRolePolicyDocument": "%7B%22Version%22%3A%222012-10-17%22%2C%22Statement%22%3A%5B%7B%22Sid%22%3A%22%22%2C%22Effect%22%3A%22Allow%22%2C%22Principal%22%3A%7B%22Service%22%3A%22ec2.amazonaws.com%22%7D%2C%22Action%22%3A%22sts%3AAssumeRole%22%7D%5D%7D",
+            "MaxSessionDuration": 3600,
+            "RoleLastUsed": {}
+        },
+        "ResponseMetadata": {}
+    }
+}

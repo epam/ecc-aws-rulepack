@@ -1,0 +1,21 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "Name": "qldb-624-red",
+        "Arn": "arn:aws:qldb:us-east-1:111111111111:ledger/qldb-624-red",
+        "State": "ACTIVE",
+        "CreationDateTime": {
+            "__class__": "datetime",
+            "year": 2022,
+            "month": 9,
+            "day": 5,
+            "hour": 12,
+            "minute": 3,
+            "second": 22,
+            "microsecond": 990000
+        },
+        "PermissionsMode": "STANDARD",
+        "DeletionProtection": false
+    }
+}

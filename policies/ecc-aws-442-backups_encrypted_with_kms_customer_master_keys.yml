@@ -1,0 +1,17 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: ecc-aws-442-backups_encrypted_with_kms_customer_master_keys
+    description: |
+      Backup vaults are not encrypted at rest using KMS CMK
+    resource: aws.backup-vault
+    filters:
+      - not:
+          - type: kms-key
+            key: KeyManager
+            value: CUSTOMER

@@ -1,0 +1,24 @@
+{
+    "status_code": 200,
+    "data": {
+        "Subnets": [
+            {
+                "AvailabilityZone": "us-east-1a",
+                "AvailabilityZoneId": "use1-az6",
+                "AvailableIpAddressCount": 4090,
+                "CidrBlock": "172.31.32.0/20",
+                "DefaultForAz": true,
+                "MapPublicIpOnLaunch": true,
+                "MapCustomerOwnedIpOnLaunch": false,
+                "State": "available",
+                "SubnetId": "subnet-8158d8de",
+                "VpcId": "vpc-12345asdfg",
+                "OwnerId": "111111111111",
+                "AssignIpv6AddressOnCreation": false,
+                "Ipv6CidrBlockAssociationSet": [],
+                "SubnetArn": "arn:aws:ec2:us-east-1:111111111111:subnet/subnet-8158d8de"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

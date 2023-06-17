@@ -1,0 +1,29 @@
+{
+    "status_code": 200,
+    "data": {
+        "TargetGroups": [
+            {
+                "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:111111111111:targetgroup/c7n-target-group/9d1ad7ad3d3ccde3",
+                "TargetGroupName": "c7n-target-group",
+                "Protocol": "HTTP",
+                "Port": 80,
+                "VpcId": "vpc-12345asdfg",
+                "HealthCheckProtocol": "HTTP",
+                "HealthCheckPort": "traffic-port",
+                "HealthCheckEnabled": true,
+                "HealthCheckIntervalSeconds": 30,
+                "HealthCheckTimeoutSeconds": 5,
+                "HealthyThresholdCount": 5,
+                "UnhealthyThresholdCount": 2,
+                "HealthCheckPath": "/",
+                "Matcher": {
+                    "HttpCode": "200"
+                },
+                "LoadBalancerArns": [],
+                "TargetType": "instance",
+                "ProtocolVersion": "HTTP1"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

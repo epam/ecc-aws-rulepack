@@ -1,0 +1,64 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "cluster": {
+            "name": "373_eks_cluster_red",
+            "arn": "arn:aws:eks:us-east-1:111111111111:cluster/373_eks_cluster_red",
+            "createdAt": {
+                "__class__": "datetime",
+                "year": 2021,
+                "month": 11,
+                "day": 30,
+                "hour": 9,
+                "minute": 48,
+                "second": 7,
+                "microsecond": 660000
+            },
+            "version": "1.21",
+            "roleArn": "arn:aws:iam::111111111111:role/eks-373-cluster-red",
+            "resourcesVpcConfig": {
+                "subnetIds": [
+                    "subnet-0d9fef870dd7f81c6",
+                    "subnet-0714aef691dd649aa"
+                ],
+                "securityGroupIds": [],
+                "vpcId": "vpc-0cb2f9bedb52396a4",
+                "endpointPublicAccess": true,
+                "endpointPrivateAccess": false,
+                "publicAccessCidrs": [
+                    "0.0.0.0/0"
+                ]
+            },
+            "kubernetesNetworkConfig": {
+                "serviceIpv4Cidr": "172.20.0.0/16"
+            },
+            "logging": {
+                "clusterLogging": [
+                    {
+                        "types": [
+                            "api",
+                            "audit",
+                            "controllerManager",
+                            "scheduler"
+                        ],
+                        "enabled": true
+                    },
+                    {
+                        "types": [
+                            "authenticator"
+                        ],
+                        "enabled": false
+                    }
+                ]
+            },
+            "status": "ACTIVE",
+            "certificateAuthority": {},
+            "platformVersion": "eks.3",
+            "tags": {
+                "CustodianRule": "ecc-aws-373-eks_control_plane_logging_enabled",
+                "ComplianceStatus": "Red"
+            }
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "status_code": 200,
+    "data": {
+        "PaginationToken": "",
+        "ResourceTagMappingList": [
+            {
+                "ResourceARN": "arn:aws:sqs:us-east-1:111111111111:447_sqs_red",
+                "Tags": [
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Red"
+                    },
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-447-sqs_encrypted_with_kms_cmk"
+                    }
+                ]
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

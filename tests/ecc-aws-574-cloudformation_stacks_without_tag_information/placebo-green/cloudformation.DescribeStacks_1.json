@@ -1,0 +1,45 @@
+{
+    "status_code": 200,
+    "data": {
+        "Stacks": [
+            {
+                "StackId": "arn:aws:cloudformation:us-east-1:111111111111:stack/stack-574-green/cc499fd0-7c6d-11ed-89c5-12f94afc5527",
+                "StackName": "stack-574-green",
+                "Parameters": [
+                    {
+                        "ParameterKey": "VPCCidr",
+                        "ParameterValue": "10.0.0.0/16"
+                    }
+                ],
+                "CreationTime": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 12,
+                    "day": 15,
+                    "hour": 11,
+                    "minute": 44,
+                    "second": 13,
+                    "microsecond": 995000
+                },
+                "RollbackConfiguration": {},
+                "StackStatus": "CREATE_COMPLETE",
+                "DisableRollback": false,
+                "NotificationARNs": [],
+                "Tags": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-574-cloudformation_stacks_without_tag_information"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    }
+                ],
+                "DriftInformation": {
+                    "StackDriftStatus": "NOT_CHECKED"
+                }
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

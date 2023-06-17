@@ -1,0 +1,15 @@
+{
+    "status_code": 200,
+    "data": {
+        "KeyPairs": [
+            {
+                "KeyPairId": "key-06344e00288a88514",
+                "KeyFingerprint": "5a:3b:bd:c7:0a:05:0b:f6:60:9a:4d:db:ca:e0:a5:17",
+                "KeyName": "keypair949red",
+                "KeyType": "rsa",
+                "Tags": []
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}
