@@ -4,7 +4,7 @@
         "Error": {
             "Code": "NoSuchBucketPolicy",
             "Message": "The bucket policy does not exist",
-            "BucketName": "141-bucket-green"
+            "BucketName": "141-bucket-red"
         },
         "ResponseMetadata": {}
     }

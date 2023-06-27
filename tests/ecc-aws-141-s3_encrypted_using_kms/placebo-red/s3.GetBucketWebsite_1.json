@@ -4,7 +4,7 @@
         "Error": {
             "Code": "NoSuchWebsiteConfiguration",
             "Message": "The specified bucket does not have a website configuration",
-            "BucketName": "141-bucket-green"
+            "BucketName": "141-bucket-red"
         },
         "ResponseMetadata": {}
     }
