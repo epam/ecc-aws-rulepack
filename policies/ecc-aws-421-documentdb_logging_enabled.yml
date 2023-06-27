@@ -1,0 +1,35 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: ecc-aws-421-documentdb_logging_enabled
+    resource: aws.rds-cluster
+    description: |
+      DocumentDB logging is not enabled
+    filters:
+      - and:
+          - type: value
+            key: Engine
+            value: 'docdb'
+          - not:
+              - and:
+                  - type: value
+                    key: EnabledCloudwatchLogsExports
+                    op: in
+                    value_type: swap
+                    value: audit
+                  - type: value
+                    key: EnabledCloudwatchLogsExports
+                    op: in
+                    value_type: swap
+                    value: profiler
+                  - type: db-cluster-parameter
+                    key: audit_logs
+                    value: enabled
+                  - type: db-cluster-parameter
+                    key: profiler
+                    value: enabled
