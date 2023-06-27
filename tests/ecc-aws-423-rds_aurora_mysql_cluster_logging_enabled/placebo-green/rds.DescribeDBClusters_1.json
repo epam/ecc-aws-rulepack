@@ -1,0 +1,107 @@
+{
+    "status_code": 200,
+    "data": {
+        "DBClusters": [
+            {
+                "AllocatedStorage": 1,
+                "AvailabilityZones": [
+                    "us-east-1a",
+                    "us-east-1c",
+                    "us-east-1d"
+                ],
+                "BackupRetentionPeriod": 1,
+                "DatabaseName": "green423",
+                "DBClusterIdentifier": "aurora-cluster-423-green",
+                "DBClusterParameterGroup": "cluster-parameter-group-423-green",
+                "DBSubnetGroup": "default",
+                "Status": "available",
+                "EarliestRestorableTime": {
+                    "__class__": "datetime",
+                    "year": 2023,
+                    "month": 6,
+                    "day": 26,
+                    "hour": 10,
+                    "minute": 48,
+                    "second": 39,
+                    "microsecond": 739000
+                },
+                "Endpoint": "aurora-cluster-423-green.cluster-chhajgiktbgu.us-east-1.rds.amazonaws.com",
+                "ReaderEndpoint": "aurora-cluster-423-green.cluster-ro-chhajgiktbgu.us-east-1.rds.amazonaws.com",
+                "MultiAZ": false,
+                "Engine": "aurora-mysql",
+                "EngineVersion": "5.7.mysql_aurora.2.11.2",
+                "LatestRestorableTime": {
+                    "__class__": "datetime",
+                    "year": 2023,
+                    "month": 6,
+                    "day": 26,
+                    "hour": 11,
+                    "minute": 1,
+                    "second": 16,
+                    "microsecond": 818000
+                },
+                "Port": 3306,
+                "MasterUsername": "root",
+                "PreferredBackupWindow": "09:01-09:31",
+                "PreferredMaintenanceWindow": "sat:07:22-sat:07:52",
+                "ReadReplicaIdentifiers": [],
+                "DBClusterMembers": [
+                    {
+                        "DBInstanceIdentifier": "database-423-green",
+                        "IsClusterWriter": true,
+                        "DBClusterParameterGroupStatus": "in-sync",
+                        "PromotionTier": 0
+                    }
+                ],
+                "VpcSecurityGroups": [
+                    {
+                        "VpcSecurityGroupId": "sg-a5befc90",
+                        "Status": "active"
+                    }
+                ],
+                "HostedZoneId": "Z2R2ITUGPM61AM",
+                "StorageEncrypted": false,
+                "DbClusterResourceId": "cluster-6L2HKPSTMDIYQBX4IEKH765KLQ",
+                "DBClusterArn": "arn:aws:rds:us-east-1:1111111111:cluster:aurora-cluster-423-green",
+                "AssociatedRoles": [],
+                "IAMDatabaseAuthenticationEnabled": false,
+                "ClusterCreateTime": {
+                    "__class__": "datetime",
+                    "year": 2023,
+                    "month": 6,
+                    "day": 26,
+                    "hour": 10,
+                    "minute": 47,
+                    "second": 52,
+                    "microsecond": 821000
+                },
+                "EnabledCloudwatchLogsExports": [
+                    "audit",
+                    "error",
+                    "general",
+                    "slowquery"
+                ],
+                "EngineMode": "provisioned",
+                "DeletionProtection": false,
+                "HttpEndpointEnabled": false,
+                "ActivityStreamStatus": "stopped",
+                "CopyTagsToSnapshot": false,
+                "CrossAccountClone": false,
+                "DomainMemberships": [],
+                "TagList": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-423-rds_aurora_mysql_cluster_logging_enabled"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    }
+                ],
+                "AutoMinorVersionUpgrade": true,
+                "NetworkType": "IPV4"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

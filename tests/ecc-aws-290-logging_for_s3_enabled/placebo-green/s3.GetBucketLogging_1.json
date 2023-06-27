@@ -1,0 +1,10 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "LoggingEnabled": {
+            "TargetBucket": "log-bucket-290-green",
+            "TargetPrefix": "log/"
+        }
+    }
+}

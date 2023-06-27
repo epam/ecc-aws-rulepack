@@ -1,0 +1,28 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "Rules": [
+            {
+                "Expiration": {
+                    "Days": 90
+                },
+                "ID": "rule-1",
+                "Filter": {
+                    "Prefix": ""
+                },
+                "Status": "Enabled",
+                "Transitions": [
+                    {
+                        "Days": 60,
+                        "StorageClass": "GLACIER"
+                    },
+                    {
+                        "Days": 30,
+                        "StorageClass": "STANDARD_IA"
+                    }
+                ]
+            }
+        ]
+    }
+}

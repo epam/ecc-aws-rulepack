@@ -1,0 +1,18 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "Rules": [
+            {
+                "Expiration": {
+                    "Days": 1
+                },
+                "ID": "Expire logs after 1 day",
+                "Filter": {
+                    "Prefix": ""
+                },
+                "Status": "Enabled"
+            }
+        ]
+    }
+}

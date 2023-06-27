@@ -1,0 +1,21 @@
+{
+    "status_code": 200,
+    "data": {
+        "SecurityConfigurations": [
+            {
+                "Name": "670_security_configuration_green",
+                "CreationDateTime": {
+                    "__class__": "datetime",
+                    "year": 2023,
+                    "month": 6,
+                    "day": 23,
+                    "hour": 12,
+                    "minute": 23,
+                    "second": 20,
+                    "microsecond": 593000
+                }
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

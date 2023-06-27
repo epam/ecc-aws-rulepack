@@ -1,0 +1,25 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "Owner": {
+            "ID": "11111111111111111111"
+        },
+        "Grants": [
+            {
+                "Grantee": {
+                    "ID": "11111111111111111111",
+                    "Type": "CanonicalUser"
+                },
+                "Permission": "FULL_CONTROL"
+            },
+            {
+                "Grantee": {
+                    "ID": "22222222222222222222",
+                    "Type": "CanonicalUser"
+                },
+                "Permission": "FULL_CONTROL"
+            }
+        ]
+    }
+}

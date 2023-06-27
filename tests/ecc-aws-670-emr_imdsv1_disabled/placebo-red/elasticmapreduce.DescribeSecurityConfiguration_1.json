@@ -1,0 +1,18 @@
+{
+    "status_code": 200,
+    "data": {
+        "Name": "670_security_configuration_red",
+        "SecurityConfiguration": "{\n  \"InstanceMetadataServiceConfiguration\" : {\n      \"MinimumInstanceMetadataServiceVersion\": 1,\n      \"HttpPutResponseHopLimit\": 1\n   }\n}\n",
+        "CreationDateTime": {
+            "__class__": "datetime",
+            "year": 2023,
+            "month": 6,
+            "day": 23,
+            "hour": 12,
+            "minute": 28,
+            "second": 18,
+            "microsecond": 400000
+        },
+        "ResponseMetadata": {}
+    }
+}

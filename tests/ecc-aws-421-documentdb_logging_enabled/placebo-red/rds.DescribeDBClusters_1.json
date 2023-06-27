@@ -1,0 +1,103 @@
+{
+    "status_code": 200,
+    "data": {
+        "DBClusters": [
+            {
+                "AllocatedStorage": 1,
+                "AvailabilityZones": [
+                    "us-east-1b",
+                    "us-east-1a",
+                    "us-east-1d"
+                ],
+                "BackupRetentionPeriod": 1,
+                "DBClusterIdentifier": "cluster-421-red",
+                "DBClusterParameterGroup": "parameter-group-421-red",
+                "DBSubnetGroup": "default",
+                "Status": "available",
+                "EarliestRestorableTime": {
+                    "__class__": "datetime",
+                    "year": 2023,
+                    "month": 6,
+                    "day": 26,
+                    "hour": 10,
+                    "minute": 28,
+                    "second": 8,
+                    "microsecond": 45000
+                },
+                "Endpoint": "cluster-421-red.cluster-chhajgiktbgu.us-east-1.docdb.amazonaws.com",
+                "ReaderEndpoint": "cluster-421-red.cluster-ro-chhajgiktbgu.us-east-1.docdb.amazonaws.com",
+                "MultiAZ": false,
+                "Engine": "docdb",
+                "EngineVersion": "5.0.0",
+                "LatestRestorableTime": {
+                    "__class__": "datetime",
+                    "year": 2023,
+                    "month": 6,
+                    "day": 26,
+                    "hour": 10,
+                    "minute": 34,
+                    "second": 48,
+                    "microsecond": 554000
+                },
+                "Port": 27017,
+                "MasterUsername": "root",
+                "PreferredBackupWindow": "04:19-04:49",
+                "PreferredMaintenanceWindow": "sat:08:56-sat:09:26",
+                "ReadReplicaIdentifiers": [],
+                "DBClusterMembers": [
+                    {
+                        "DBInstanceIdentifier": "docdb-421-red-0",
+                        "IsClusterWriter": true,
+                        "DBClusterParameterGroupStatus": "in-sync",
+                        "PromotionTier": 0
+                    }
+                ],
+                "VpcSecurityGroups": [
+                    {
+                        "VpcSecurityGroupId": "sg-a5befc90",
+                        "Status": "active"
+                    }
+                ],
+                "HostedZoneId": "ZNKXH85TT8WVW",
+                "StorageEncrypted": false,
+                "DbClusterResourceId": "cluster-OMWQVGHSQSS73DOWRUVIAW3W7Y",
+                "DBClusterArn": "arn:aws:rds:us-east-1:1111111111:cluster:cluster-421-red",
+                "AssociatedRoles": [],
+                "IAMDatabaseAuthenticationEnabled": false,
+                "ClusterCreateTime": {
+                    "__class__": "datetime",
+                    "year": 2023,
+                    "month": 6,
+                    "day": 26,
+                    "hour": 10,
+                    "minute": 26,
+                    "second": 47,
+                    "microsecond": 627000
+                },
+                "EnabledCloudwatchLogsExports": [
+                    "audit"
+                ],
+                "EngineMode": "provisioned",
+                "DeletionProtection": false,
+                "HttpEndpointEnabled": false,
+                "ActivityStreamStatus": "stopped",
+                "CopyTagsToSnapshot": false,
+                "CrossAccountClone": false,
+                "DomainMemberships": [],
+                "TagList": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-421-documentdb_logging_enabled"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Red"
+                    }
+                ],
+                "AutoMinorVersionUpgrade": false,
+                "NetworkType": "IPV4"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

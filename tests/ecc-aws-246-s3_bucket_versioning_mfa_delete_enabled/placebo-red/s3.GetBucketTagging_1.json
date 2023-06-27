@@ -1,0 +1,16 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "TagSet": [
+            {
+                "Key": "CustodianRule",
+                "Value": "ecc-aws-246-s3_bucket_versioning_mfa_delete_enabled"
+            },
+            {
+                "Key": "ComplianceStatus",
+                "Value": "Red"
+            }
+        ]
+    }
+}

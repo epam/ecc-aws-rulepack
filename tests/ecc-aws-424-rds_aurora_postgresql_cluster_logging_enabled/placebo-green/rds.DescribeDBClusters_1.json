@@ -1,0 +1,104 @@
+{
+    "status_code": 200,
+    "data": {
+        "DBClusters": [
+            {
+                "AllocatedStorage": 1,
+                "AvailabilityZones": [
+                    "us-east-1b",
+                    "us-east-1a",
+                    "us-east-1c"
+                ],
+                "BackupRetentionPeriod": 1,
+                "DatabaseName": "green424",
+                "DBClusterIdentifier": "aurora-cluster-424-green",
+                "DBClusterParameterGroup": "cluster-parameter-group-424-green",
+                "DBSubnetGroup": "default",
+                "Status": "available",
+                "EarliestRestorableTime": {
+                    "__class__": "datetime",
+                    "year": 2023,
+                    "month": 6,
+                    "day": 26,
+                    "hour": 11,
+                    "minute": 21,
+                    "second": 38,
+                    "microsecond": 688000
+                },
+                "Endpoint": "aurora-cluster-424-green.cluster-chhajgiktbgu.us-east-1.rds.amazonaws.com",
+                "ReaderEndpoint": "aurora-cluster-424-green.cluster-ro-chhajgiktbgu.us-east-1.rds.amazonaws.com",
+                "MultiAZ": false,
+                "Engine": "aurora-postgresql",
+                "EngineVersion": "13.10",
+                "LatestRestorableTime": {
+                    "__class__": "datetime",
+                    "year": 2023,
+                    "month": 6,
+                    "day": 26,
+                    "hour": 11,
+                    "minute": 26,
+                    "second": 48,
+                    "microsecond": 379000
+                },
+                "Port": 5432,
+                "MasterUsername": "root",
+                "PreferredBackupWindow": "06:48-07:18",
+                "PreferredMaintenanceWindow": "wed:08:19-wed:08:49",
+                "ReadReplicaIdentifiers": [],
+                "DBClusterMembers": [
+                    {
+                        "DBInstanceIdentifier": "database-424-green",
+                        "IsClusterWriter": true,
+                        "DBClusterParameterGroupStatus": "in-sync",
+                        "PromotionTier": 0
+                    }
+                ],
+                "VpcSecurityGroups": [
+                    {
+                        "VpcSecurityGroupId": "sg-a5befc90",
+                        "Status": "active"
+                    }
+                ],
+                "HostedZoneId": "Z2R2ITUGPM61AM",
+                "StorageEncrypted": false,
+                "DbClusterResourceId": "cluster-UNHKOJXIOVMFLSBXKKZNQYXDTM",
+                "DBClusterArn": "arn:aws:rds:us-east-1:1111111111:cluster:aurora-cluster-424-green",
+                "AssociatedRoles": [],
+                "IAMDatabaseAuthenticationEnabled": false,
+                "ClusterCreateTime": {
+                    "__class__": "datetime",
+                    "year": 2023,
+                    "month": 6,
+                    "day": 26,
+                    "hour": 11,
+                    "minute": 20,
+                    "second": 13,
+                    "microsecond": 843000
+                },
+                "EnabledCloudwatchLogsExports": [
+                    "postgresql"
+                ],
+                "EngineMode": "provisioned",
+                "DeletionProtection": false,
+                "HttpEndpointEnabled": false,
+                "ActivityStreamStatus": "stopped",
+                "CopyTagsToSnapshot": false,
+                "CrossAccountClone": false,
+                "DomainMemberships": [],
+                "TagList": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-424-rds_aurora_postgresql_cluster_logging_enabled"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    }
+                ],
+                "AutoMinorVersionUpgrade": true,
+                "NetworkType": "IPV4"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

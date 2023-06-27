@@ -1,0 +1,36 @@
+{
+    "status_code": 200,
+    "data": {
+        "Parameters": [
+            {
+                "ParameterName": "audit_logs",
+                "ParameterValue": "enabled",
+                "Description": "Enables auditing on cluster.",
+                "Source": "user",
+                "ApplyType": "dynamic",
+                "DataType": "string",
+                "AllowedValues": "enabled,disabled",
+                "IsModifiable": true,
+                "ApplyMethod": "pending-reboot",
+                "SupportedEngineModes": [
+                    "provisioned"
+                ]
+            },
+            {
+                "ParameterName": "profiler",
+                "ParameterValue": "enabled",
+                "Description": "Enables profiling for slow operations",
+                "Source": "user",
+                "ApplyType": "dynamic",
+                "DataType": "string",
+                "AllowedValues": "enabled,disabled",
+                "IsModifiable": true,
+                "ApplyMethod": "pending-reboot",
+                "SupportedEngineModes": [
+                    "provisioned"
+                ]
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}
