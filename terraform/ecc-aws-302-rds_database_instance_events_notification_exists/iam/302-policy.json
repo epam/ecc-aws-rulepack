@@ -1,0 +1,16 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "iam:ListAccountAliases",
+                "rds:DescribeEventSubscriptions",
+                "rds:DescribeDBInstances",
+                "SNS:ListTopics",
+                "SNS:GetTopicAttributes"
+            ],
+            "Resource": "*"
+        }
+    ]
+}

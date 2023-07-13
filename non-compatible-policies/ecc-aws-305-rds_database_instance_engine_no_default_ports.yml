@@ -1,0 +1,16 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+policies:
+  - name: ecc-aws-305-rds_database_instance_engine_no_default_ports
+    resource: aws.rds
+    description: |
+      RDS database instances are using database engine default ports
+    filters:
+      - type: endpoint-port
+        required-ports: 1433, 1521, 3306, 5432
+      - type: vpc-security-group-inbound-ports
+        required-ports: 1433, 1521, 3306, 5432

@@ -1,0 +1,17 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+policies:
+  - name: ecc-aws-642-s3_bucket_object_lock_enabled
+    description: |
+      S3 Bucket object lock disabled
+    resource: s3-light
+    filters:
+      - not:
+          - type: lock-configuration-filter
+            mode: COMPLIANCE
+            days: 7
+

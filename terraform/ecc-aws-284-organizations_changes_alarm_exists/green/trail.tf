@@ -1,0 +1,56 @@
+data "aws_caller_identity" "this" {}
+
+resource "aws_cloudtrail" "this" {
+  name                          = "284-cloudtrail-green"
+  s3_bucket_name                = aws_s3_bucket.this.id
+  cloud_watch_logs_role_arn     = aws_iam_role.this.arn
+  cloud_watch_logs_group_arn    = "${aws_cloudwatch_log_group.this.arn}:*"
+  include_global_service_events = true
+  is_multi_region_trail         = true
+  depends_on = [
+    aws_s3_bucket.this,
+    aws_s3_bucket_policy.this
+  ]
+}
+
+resource "aws_s3_bucket" "this" {
+  bucket        = "284-bucket-green"
+  force_destroy = true
+}
+
+resource "aws_s3_bucket_policy" "this" {
+  bucket = aws_s3_bucket.this.id
+  policy = data.aws_iam_policy_document.this.json
+}
+
+data "aws_iam_policy_document" "this" {
+  statement {
+    effect = "Allow"
+
+    principals {
+      type        = "Service"
+      identifiers = ["cloudtrail.amazonaws.com"]
+    }
+      actions = ["s3:GetBucketAcl"]
+      resources = ["arn:aws:s3:::284-bucket-green"]
+  }
+  statement {
+    effect = "Allow"
+
+    principals {
+      type        = "Service"
+      identifiers = ["cloudtrail.amazonaws.com"]
+    }
+
+    actions = ["s3:PutObject"]
+    resources = ["arn:aws:s3:::284-bucket-green/AWSLogs/${data.aws_caller_identity.this.account_id}/*"]
+    
+    condition {
+      test     = "StringEquals"
+      variable = "s3:x-amz-acl"
+      values = [
+        "bucket-owner-full-control"
+      ]
+    }
+  }
+}

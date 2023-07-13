@@ -1,0 +1,19 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": [
+                "s3:GetObject",
+                "elasticbeanstalk:DescribeEnvironments",
+                "sns:GetTopicAttributes",
+                "sns:ListTopics",
+                "s3:ListBucket",
+                "elasticbeanstalk:DescribeConfigurationSettings",
+                "s3:GetBucketLocation"
+            ],
+            "Resource": "*"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+policies:
+  - name: ecc-aws-303-rds_database_parameter_group_events_notification_exists
+    resource: aws.account
+    description: |
+      RDS event notifications subscription is not configured for database parameter group events
+    filters:
+      - type: rds-sns-subscription-filter
+        check_in: rds
+        key: SourceType=='db-parameter-group' && SourceIdsList==null && ( EventCategoriesList==null || EventCategoriesList.contains(@, 'configuration change')==`true`) && Enabled==`true`
+        value: true
+        op: eq
+

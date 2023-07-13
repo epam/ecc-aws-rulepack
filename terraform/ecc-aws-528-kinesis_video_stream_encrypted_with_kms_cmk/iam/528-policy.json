@@ -1,0 +1,15 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "kinesisvideo:ListStreams",
+                "tag:GetResources",
+                "kms:DescribeKey",
+                "kms:ListAliases"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
