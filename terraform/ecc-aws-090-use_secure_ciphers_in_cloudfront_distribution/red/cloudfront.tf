@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "this" {
-  bucket = "bucket-090-${random_integer.this.result}-red"
+  bucket = "090-bucket-${random_integer.this.result}-red"
 }
 
 resource "random_integer" "this" {
