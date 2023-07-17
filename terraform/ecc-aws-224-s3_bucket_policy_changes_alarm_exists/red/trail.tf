@@ -12,7 +12,7 @@ resource "aws_cloudtrail" "this" {
 }
 
 resource "aws_s3_bucket" "this" {
-  bucket        = "bucket-224-red"
+  bucket        = "224-bucket-${random_integer.this.result}-red"
   force_destroy = true
 }
 
@@ -32,7 +32,7 @@ data "aws_iam_policy_document" "this" {
     }
 
     actions   = ["s3:GetBucketAcl"]
-    resources = ["arn:aws:s3:::bucket-224-red"]
+    resources = [aws_s3_bucket.this.arn]
   }
   statement {
     effect = "Allow"
@@ -43,7 +43,7 @@ data "aws_iam_policy_document" "this" {
     }
 
     actions   = ["s3:PutObject"]
-    resources = ["arn:aws:s3:::bucket-224-red/AWSLogs/${data.aws_caller_identity.this.account_id}/*"]
+    resources = ["${aws_s3_bucket.this.arn}/AWSLogs/${data.aws_caller_identity.this.account_id}/*"]
     condition {
       test     = "StringEquals"
       variable = "s3:x-amz-acl"

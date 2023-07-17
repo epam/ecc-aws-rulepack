@@ -1,6 +1,12 @@
 resource "aws_s3_bucket" "this" {
-  bucket = "900-s3-bucket-green"
+  bucket = "900-bucket-${random_integer.this.result}-green"
 }
+
+resource "random_integer" "this" {
+  min = 1
+  max = 10000000
+}
+
 resource "aws_s3_bucket_public_access_block" "this" {
   bucket = aws_s3_bucket.this.id
 

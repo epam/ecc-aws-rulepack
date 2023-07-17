@@ -1,6 +1,11 @@
 resource "aws_s3_bucket" "bucket1" {
-  bucket        = "bucket1-216-green"
+  bucket        = "216-bucket1-${random_integer.this.result}-green"
   force_destroy = true
+}
+
+resource "random_integer" "this" {
+  min = 1
+  max = 10000000
 }
 
 resource "aws_s3_bucket_versioning" "bucket1" {
@@ -27,7 +32,7 @@ resource "aws_s3_bucket_replication_configuration" "bucket1" {
 }
 
 resource "aws_s3_bucket" "bucket2" {
-  bucket        = "bucket2-216-green"
+  bucket        = "216-bucket2-${random_integer.this.result}-green"
   force_destroy = true
 } 
 

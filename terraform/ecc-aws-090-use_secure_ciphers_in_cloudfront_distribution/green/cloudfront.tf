@@ -1,5 +1,10 @@
 resource "aws_s3_bucket" "this" {
-  bucket = "bucket-090-green"
+  bucket = "bucket-090-${random_integer.this.result}-green"
+}
+
+resource "random_integer" "this" {
+  min = 1
+  max = 10000000
 }
 
 resource "tls_private_key" "this" {

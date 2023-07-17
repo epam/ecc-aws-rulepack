@@ -1,6 +1,11 @@
 resource "aws_s3_bucket" "this" {
-  bucket        = "162-bucket-green"
+  bucket        = "162-bucket-${random_integer.this.result}-green"
   force_destroy = "true"
+}
+
+resource "random_integer" "this" {
+  min = 1
+  max = 10000000
 }
 
 resource "aws_s3_bucket_ownership_controls" "this" {
@@ -32,7 +37,7 @@ resource "aws_s3_bucket_lifecycle_configuration" "this" {
         prefix = "log/"
 		
 		tags = {
-          CustodianRule    = "ecc-aws-162-s3_bucket_lifecycle"
+          CustodianRule    = "epam-aws-162-s3_bucket_lifecycle"
           ComplianceStatus = "Green"
         }
       }

@@ -1,8 +1,13 @@
 data "aws_caller_identity" "this" {}
 
 resource "aws_s3_bucket" "this" {
-  bucket        = "bucket-523-red"
+  bucket        = "523-bucket-${random_integer.this.result}-red"
   force_destroy = true
+}
+
+resource "random_integer" "this" {
+  min = 1
+  max = 10000000
 }
 
 resource "aws_s3_bucket_ownership_controls" "this" {
@@ -34,7 +39,7 @@ data "aws_iam_policy_document" "this" {
     }
 
     actions   = ["s3:GetBucketAcl"]
-    resources = ["arn:aws:s3:::bucket-523-red"]
+    resources = [aws_s3_bucket.this.arn]
     condition {
       test     = "StringEquals"
       variable = "AWS:SourceArn"
@@ -54,7 +59,7 @@ data "aws_iam_policy_document" "this" {
     }
 
     actions   = ["s3:PutObject"]
-    resources = ["arn:aws:s3:::bucket-523-red/AWSLogs/${data.aws_caller_identity.this.account_id}/*"]
+    resources = ["${aws_s3_bucket.this.arn}/AWSLogs/${data.aws_caller_identity.this.account_id}/*"]
     condition {
       test     = "StringEquals"
       variable = "s3:x-amz-acl"

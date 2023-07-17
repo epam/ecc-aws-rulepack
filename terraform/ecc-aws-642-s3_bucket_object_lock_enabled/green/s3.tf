@@ -1,7 +1,12 @@
 resource "aws_s3_bucket" "this" {
-  bucket              = "642-bucket-green"
+  bucket              = "642-bucket-${random_integer.this.result}-green"
   object_lock_enabled = true
 
+}
+
+resource "random_integer" "this" {
+  min = 1
+  max = 10000000
 }
 
 resource "aws_s3_bucket_object_lock_configuration" "this" {

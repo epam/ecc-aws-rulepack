@@ -1,6 +1,11 @@
 resource "aws_s3_bucket" "this" {
-  bucket        = "399-bucket-green"
+  bucket        = "399-bucket-${random_integer.this.result}-green"
   force_destroy = true
+}
+
+resource "random_integer" "this" {
+  min = 1
+  max = 10000000
 }
 
 resource "aws_s3_bucket_acl" "this" {
@@ -30,34 +35,31 @@ resource "aws_s3_object" "this2" {
 
 resource "aws_s3_bucket_policy" "this" {
   bucket = aws_s3_bucket.this.id
-  policy = <<EOF
-{
-    "Statement": [
-        {
-            "Effect": "Allow",
-            "Sid": "AllowAppFlowSourceActions",
-            "Principal": {
-                "Service": "appflow.amazonaws.com"
-            },
-            "Action": [
-                "s3:ListBucket",
-                "s3:GetObject",
-                "s3:PutObject",
-                "s3:AbortMultipartUpload",
-                "s3:ListMultipartUploadParts",
-                "s3:ListBucketMultipartUploads",
-                "s3:GetBucketAcl",
-                "s3:PutObjectAcl"
-            ],
-            "Resource": [
-                "arn:aws:s3:::399-bucket-green",
-                "arn:aws:s3:::399-bucket-green/*"
-            ]
-        }
-    ],
-    "Version": "2012-10-17"
+  policy = data.aws_iam_policy_document.this.json
 }
-EOF
+
+data "aws_iam_policy_document" "this" {
+  statement {
+    effect    = "Allow"
+    actions   = [
+      "s3:ListBucket",
+      "s3:GetObject",
+      "s3:PutObject",
+      "s3:AbortMultipartUpload",
+      "s3:ListMultipartUploadParts",
+      "s3:ListBucketMultipartUploads",
+      "s3:GetBucketAcl",
+      "s3:PutObjectAcl"
+    ]
+    resources = [
+      aws_s3_bucket.this.arn,
+      "${aws_s3_bucket.this.arn}/*"
+    ]
+    principals {
+      type        = "Service"
+      identifiers = ["appflow.amazonaws.com"]
+    }
+  }
 }
 
 resource "aws_kms_key" "this" {

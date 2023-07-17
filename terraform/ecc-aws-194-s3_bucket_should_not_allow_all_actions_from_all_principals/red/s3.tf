@@ -1,10 +1,26 @@
 resource "aws_s3_bucket" "this" {
-  bucket = "bucket-194-red"
+  bucket = "194-bucket-${random_integer.this.result}-red"
+}
+
+resource "random_integer" "this" {
+  min = 1
+  max = 10000000
+}
+
+resource "aws_s3_bucket_public_access_block" "this" {
+  bucket = aws_s3_bucket.this.id
+
+  block_public_acls       = false
+  block_public_policy     = false
+  ignore_public_acls      = false
+  restrict_public_buckets = false
 }
 
 resource "aws_s3_bucket_policy" "this" {
   bucket = aws_s3_bucket.this.id
   policy = data.aws_iam_policy_document.this.json
+
+  depends_on = [aws_s3_bucket_public_access_block.this ]
 }
 
 data "aws_iam_policy_document" "this" {
@@ -17,7 +33,7 @@ data "aws_iam_policy_document" "this" {
     }
 
     actions = ["*"]
-    resources = ["arn:aws:s3:::bucket-194-red/*"]
+    resources = ["${aws_s3_bucket.this.arn}/*"]
   }
 }
 

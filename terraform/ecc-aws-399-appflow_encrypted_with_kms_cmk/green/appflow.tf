@@ -41,6 +41,6 @@ resource "aws_appflow_flow" "this" {
   }
   
   depends_on = [
-    aws_s3_bucket_acl.this
+    aws_s3_bucket_acl.this, aws_s3_bucket_policy.this
   ]
 }

@@ -4,7 +4,12 @@ resource "aws_accessanalyzer_analyzer" "this" {
 }
 
 resource "aws_s3_bucket" "this" {
-  bucket = "426-bucket-green"
+  bucket = "426-bucket-${random_integer.this.result}-green"
+}
+
+resource "random_integer" "this" {
+  min = 1
+  max = 10000000
 }
 
 resource "aws_s3_bucket_acl" "this" {

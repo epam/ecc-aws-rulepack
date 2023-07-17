@@ -6,6 +6,11 @@ locals {
   s3_origin_id = "myRedS3"
 }
 
+resource "random_integer" "this" {
+  min = 1
+  max = 10000000
+}
+
 resource "aws_cloudfront_distribution" "this" {
   origin {
     domain_name = aws_s3_bucket.this.bucket_regional_domain_name

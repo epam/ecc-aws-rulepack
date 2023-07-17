@@ -1,9 +1,23 @@
 resource "aws_s3_bucket" "this" {
-  bucket = "bucket-448-green"
+  bucket = "448-bucket-${random_integer.this.result}-green"
   force_destroy = true
 }
 
+resource "aws_s3_bucket_ownership_controls" "this" {
+  bucket = aws_s3_bucket.this.id
+  rule {
+    object_ownership = "BucketOwnerPreferred"
+  }
+}
+
+resource "random_integer" "this" {
+  min = 1
+  max = 10000000
+}
+
 resource "aws_s3_bucket_acl" "this" {
+  depends_on = [aws_s3_bucket_ownership_controls.this]
+
   bucket = aws_s3_bucket.this.id
   acl    = "private"
 }

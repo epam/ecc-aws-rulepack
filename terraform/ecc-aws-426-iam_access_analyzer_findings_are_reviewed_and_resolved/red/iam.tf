@@ -28,8 +28,13 @@ data "aws_iam_policy_document" "this" {
 }
 
 resource "aws_s3_bucket" "this" {
-  bucket = "426-bucket-red"
+  bucket = "426-bucket-${random_integer.this.result}-red"
   force_destroy= true
+}
+
+resource "random_integer" "this" {
+  min = 1
+  max = 10000000
 }
 
 resource "aws_s3_bucket_acl" "this" {

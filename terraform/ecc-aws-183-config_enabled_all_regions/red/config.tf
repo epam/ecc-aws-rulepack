@@ -10,9 +10,14 @@ resource "aws_iam_role_policy_attachment" "this" {
 }
 
 resource "aws_s3_bucket" "this" {
-  bucket        = "bucket-183-red"
+  bucket        = "183-bucket-${random_integer.this.result}-red"
   force_destroy = true
 
+}
+
+resource "random_integer" "this" {
+  min = 1
+  max = 10000000
 }
 
 resource "aws_config_delivery_channel" "this" {
