@@ -5,14 +5,6 @@ resource "aws_lb" "this" {
   subnets                    = [aws_subnet.subnet1.id, aws_subnet.subnet2.id]
   internal                   = false
   enable_deletion_protection = false
-  # subnet_mapping   {
-  #   subnet_id     = aws_subnet.subnet1.id
-  #   allocation_id = aws_eip.this.id
-  # }
-  # subnet_mapping  {
-  #   subnet_id     = aws_subnet.subnet2.id
-  #   allocation_id = aws_eip.this1.id
-  # }
 }
 
 resource "aws_vpc" "this" {
@@ -47,11 +39,3 @@ resource "aws_security_group" "this" {
 resource "aws_internet_gateway" "this" {
   vpc_id = aws_vpc.this.id
 }
-
-# resource "aws_eip" "this" {
-#   vpc   = true
-# }
-
-# resource "aws_eip" "this1" {
-#   vpc   = true
-# }

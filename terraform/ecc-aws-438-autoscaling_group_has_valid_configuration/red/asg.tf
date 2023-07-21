@@ -1,20 +1,27 @@
-# In order to create red infrastructure manual steps are required.
-# 1. Before running 'terraform apply' create key pair using a 'ssh-keygen -f ~/key_pair -m PEM' command.
-# 2. Run 'terraform apply'.
-# 3. Go to https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#KeyPairs and delete '438_key_pair_red' key pair.
-# 4. Run custodian policy.
+resource "null_resource" "this" {
+  provisioner "local-exec" {
+    command     = "aws ec2 delete-key-pair --key-name ${aws_key_pair.this.key_name}"
+    interpreter = ["/bin/bash", "-c"]
+  }
 
+  depends_on = [aws_autoscaling_group.this]
+}
+
+resource "tls_private_key" "rsa" {
+algorithm = "RSA"
+rsa_bits  = 4096
+}
 
 resource "aws_key_pair" "this" {
   key_name   = "438_key_pair_red"
-  public_key = file("${path.module}/key_pair.pub")
+  public_key = tls_private_key.rsa.public_key_openssh
 }
 
 resource "aws_launch_template" "this" {
   name_prefix   = "438_launch_template_red"
   image_id      = data.aws_ami.this.id
   instance_type = "t2.micro"
-  key_name = "438_key_pair_red"
+  key_name      = "438_key_pair_red"
 }
 
 data "aws_ami" "this" {
@@ -40,8 +47,8 @@ resource "aws_autoscaling_group" "this" {
   }
   
   tag {
-        key                 = "CustodianRule"
-        value               = "ecc-aws-438-autoscaling_group_has_valid_configuration"
+        key                 = "CsutodianRule"
+        value               = "epam-aws-438-autoscaling_group_has_valid_configuration"
         propagate_at_launch = true
   }
 	  
