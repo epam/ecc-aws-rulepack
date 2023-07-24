@@ -37,7 +37,7 @@ resource "aws_s3_bucket_lifecycle_configuration" "this" {
         prefix = "log/"
 		
 		tags = {
-          CustodianRule    = "epam-aws-162-s3_bucket_lifecycle"
+          CustodianRule    = "ecc-aws-162-s3_bucket_lifecycle"
           ComplianceStatus = "Green"
         }
       }

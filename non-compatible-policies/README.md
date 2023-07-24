@@ -1,4 +1,4 @@
-## Non-Compatible Rule Packs
-The <strong>non-compatible-policies</strong> folder in this repository contains rule packs that are currently not compatible with the open-source version of Cloud Custodian. However, these rule packs will become compatible once custom filters and resources are merged into the open-source project. The <strong>non-compatible-policies</strong> folder serves as a temporary holding space until the necessary changes are made and merged upstream.
+## Non-Compatible Rules
+The <strong>non-compatible-policies</strong> folder in this repository contains rules that are currently not compatible with the open-source version of Cloud Custodian. However, these rules will become compatible once custom filters and resources are merged into the open-source project. The <strong>non-compatible-policies</strong> folder serves as a temporary holding space until the necessary changes are made and merged to upstream.
 
 You can track the progress of the merging process through the following [link](https://github.com/cloud-custodian/cloud-custodian/issues/8358)
