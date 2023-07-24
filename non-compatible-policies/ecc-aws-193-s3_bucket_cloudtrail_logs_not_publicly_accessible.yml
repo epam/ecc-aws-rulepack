@@ -1,0 +1,30 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+policies:
+  - name: ecc-aws-193-s3_bucket_cloudtrail_logs_not_publicly_accessible
+    description: |
+      S3 bucket used to store CloudTrail logs is publicly accessible
+    resource: aws.cloudtrail
+    filters:
+      - or:
+          - type: cloudtrail-s3-filter
+            key: PublicAccessBlockConfiguration.BlockPublicAcls
+            op: eq
+            value: false
+          - type: cloudtrail-s3-filter
+            key: PublicAccessBlockConfiguration.BlockPublicPolicy
+            op: eq
+            value: false
+          - type: cloudtrail-s3-filter
+            key: PublicAccessBlockConfiguration.IgnorePublicAcls
+            op: eq
+            value: false
+          - type: cloudtrail-s3-filter
+            key: PublicAccessBlockConfiguration.RestrictPublicBuckets
+            op: eq
+            value: false
+

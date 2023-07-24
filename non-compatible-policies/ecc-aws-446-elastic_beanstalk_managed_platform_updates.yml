@@ -1,0 +1,16 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+policies:
+  - name: ecc-aws-446-elastic_beanstalk_managed_platform_updates
+    description: |
+      Elastic Beanstalk managed platform updates is disabled
+    resource: aws.elasticbeanstalk-environment
+    filters:
+      - type: elasticbeanstalk-configuration-settings-filter
+        key: ManagedActionsEnabled
+        op: eq
+        value: "false"
