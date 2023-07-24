@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "this" {
-  bucket = "bucket-326-red"
+  bucket = "326-bucket-${random_integer.this.result}-red"
   force_destroy = "true"
 }
 
@@ -9,6 +9,20 @@ locals {
 
 data "aws_caller_identity" "this" {
   provider = aws
+}
+
+resource "aws_s3_bucket_ownership_controls" "this" {
+  bucket = aws_s3_bucket.this.id
+  rule {
+    object_ownership = "BucketOwnerPreferred"
+  }
+}
+
+resource "aws_s3_bucket_acl" "this" {
+  depends_on = [aws_s3_bucket_ownership_controls.this]
+
+  bucket = aws_s3_bucket.this.id
+  acl    = "private"
 }
 
 
@@ -24,9 +38,7 @@ data "aws_iam_policy_document" "this" {
       "s3:PutBucketACL",
     ]
 
-    resources = [
-      "arn:aws:s3:::bucket-326-red",
-    ]
+    resources = [aws_s3_bucket.this.arn]
 
     principals {
       type = "AWS"
@@ -82,6 +94,10 @@ resource "aws_cloudfront_distribution" "this" {
   viewer_certificate {
     cloudfront_default_certificate = true
   }
+
+  depends_on = [
+    aws_s3_bucket_acl.this
+  ]
 }
 
 resource "aws_cloudfront_origin_access_identity" "this" {

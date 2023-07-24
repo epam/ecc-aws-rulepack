@@ -1,9 +1,14 @@
 resource "aws_s3_bucket" "this" {
-  bucket = "bucket-210-green"
+  bucket = "210-bucket-${random_integer.this.result}-green"
 }
 
 locals {
   s3_origin_id = "myGreenS3"
+}
+
+resource "random_integer" "this" {
+  min = 1
+  max = 10000000
 }
 
 resource "aws_cloudfront_distribution" "this" {

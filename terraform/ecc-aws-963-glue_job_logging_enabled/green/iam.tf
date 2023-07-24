@@ -39,15 +39,17 @@ resource "aws_iam_role_policy" "this" {
 EOF
 }
 
+data "aws_caller_identity" "this" {}
+
 data "aws_iam_policy_document" "this" {
   statement {
     effect = "Allow"
 
     principals {
       type        = "AWS"
-      identifiers = ["*"]
+      identifiers = [data.aws_caller_identity.this.account_id]
     }
     actions   = ["s3:PutObject"]
-    resources = ["arn:aws:s3:::bucket-963-green/*"]
+    resources = ["${aws_s3_bucket.this.arn}/*"]
   }
 }

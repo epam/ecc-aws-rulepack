@@ -5,10 +5,6 @@ resource "aws_lb" "this" {
   subnets            = [aws_subnet.subnet1.id, aws_subnet.subnet2.id]
 }
 
-###### The step to be done before run infrastructure is to run command below
-# openssl req -x509 -nodes -days 32 -newkey rsa:2048 -keyout private.key -out certificate.crt 
-
-
 resource "aws_lb_target_group" "this" {
   name     = "lb-target-group-264-green"
   port     = 443
@@ -31,8 +27,25 @@ resource "aws_lb_listener" "this" {
 
 resource "aws_iam_server_certificate" "this" {
   name             = "264_certificate_green"
-  certificate_body = file("certificate.crt")
-  private_key      = file("private.key")
+  certificate_body = data.local_file.certificate.content
+  private_key      = data.local_file.private_key.content
+}
+
+resource "null_resource" "this" {
+  provisioner "local-exec" {
+    command     = "echo -e '\\n\\n\\n\\n\\n\\n\\n\\n' | openssl req -x509 -nodes -days 50 -newkey rsa:2048 -keyout private.key -out certificate.crt"
+    interpreter = ["/bin/bash", "-c"]
+  }
+}
+
+data "local_file" "certificate" {
+  filename = "certificate.crt"
+  depends_on = [null_resource.this]
+}
+
+data "local_file" "private_key" {
+  filename = "private.key"
+  depends_on = [null_resource.this]
 }
 
 resource "aws_vpc" "this" {

@@ -9,8 +9,13 @@ resource "aws_cloudtrail" "this" {
 }
 
 resource "aws_s3_bucket" "this" {
-  bucket        = "bucket-578-red"
+  bucket        = "578-bucket-${random_integer.this.result}-red"
   force_destroy = true
+}
+
+resource "random_integer" "this" {
+  min = 1
+  max = 10000000
 }
 
 resource "aws_s3_bucket_policy" "this" {
@@ -19,6 +24,7 @@ resource "aws_s3_bucket_policy" "this" {
 }
 
 data "aws_iam_policy_document" "this" {
+
   statement {
     effect = "Allow"
 
@@ -27,10 +33,9 @@ data "aws_iam_policy_document" "this" {
       identifiers = ["cloudtrail.amazonaws.com"]
     }
 
-    actions = ["s3:GetBucketAcl"]
-    resources = ["arn:aws:s3:::bucket-578-red"]
+    actions   = ["s3:GetBucketAcl"]
+    resources = [aws_s3_bucket.this.arn]
   }
-
   statement {
     effect = "Allow"
 
@@ -39,8 +44,8 @@ data "aws_iam_policy_document" "this" {
       identifiers = ["cloudtrail.amazonaws.com"]
     }
 
-    actions = ["s3:PutObject"]
-    resources = ["arn:aws:s3:::bucket-578-red/AWSLogs/${data.aws_caller_identity.this.account_id}/*"]
+    actions   = ["s3:PutObject"]
+    resources = ["${aws_s3_bucket.this.arn}/AWSLogs/${data.aws_caller_identity.this.account_id}/*"]
     condition {
       test     = "StringEquals"
       variable = "s3:x-amz-acl"

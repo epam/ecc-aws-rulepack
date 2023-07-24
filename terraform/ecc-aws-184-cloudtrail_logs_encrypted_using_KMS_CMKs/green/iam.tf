@@ -52,7 +52,7 @@ data "aws_iam_policy_document" "bucket" {
     }
 
     actions = ["s3:GetBucketAcl"]
-    resources = ["arn:aws:s3:::bucket-184-green"]
+    resources = [aws_s3_bucket.this.arn]
   }
 
   statement {
@@ -64,7 +64,7 @@ data "aws_iam_policy_document" "bucket" {
     }
 
     actions = ["s3:PutObject"]
-    resources = ["arn:aws:s3:::bucket-184-green/AWSLogs/${data.aws_caller_identity.this.account_id}/*"]
+    resources = ["${aws_s3_bucket.this.arn}/AWSLogs/${data.aws_caller_identity.this.account_id}/*"]
     condition {
       test     = "StringEquals"
       variable = "s3:x-amz-acl"
