@@ -28,15 +28,29 @@ resource "aws_emr_cluster" "this" {
 
   service_role = aws_iam_role.emr_service_role.arn
 
-  depends_on = [aws_subnet.this, aws_iam_role.emr_service_role, aws_iam_role.emr_ec2_instance_profile, aws_iam_instance_profile.this]
+  depends_on = [aws_subnet.this, aws_iam_role.emr_service_role, aws_iam_role.emr_ec2_instance_profile, aws_iam_instance_profile.this, aws_s3_bucket_acl.this]
 }
 
 resource "aws_s3_bucket" "this" {
-  bucket = "bucket-408-green"
+  bucket = "408-bucket-${random_integer.this.result}-green"
   force_destroy = true
 }
 
+resource "random_integer" "this" {
+  min = 1
+  max = 10000000
+}
+
 resource "aws_s3_bucket_acl" "this" {
+  depends_on = [aws_s3_bucket_ownership_controls.this]
+
   bucket = aws_s3_bucket.this.id
   acl    = "private"
+}
+
+resource "aws_s3_bucket_ownership_controls" "this" {
+  bucket = aws_s3_bucket.this.id
+  rule {
+    object_ownership = "BucketOwnerPreferred"
+  }
 }

@@ -1,0 +1,16 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+policies:
+  - name: ecc-aws-265-instance_with_unencrypted_service_is_exposed_to_public_internet
+    description: |
+      Instance with unencrypted service is exposed to the public internet
+    resource: aws.ec2
+    filters:
+      - type: cidrip-security-group-ec2-filter
+        required-ports: 9200, 9300, 11211, 27017, 61620, 9090, 22, 389, 1521, 2483, 6379, 7000, 7199, 8888, 9042, 9160, 3389
+        egress: false
+        cidr: ["0.0.0.0/0", "::/0"]

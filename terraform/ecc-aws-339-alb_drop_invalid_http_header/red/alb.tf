@@ -1,30 +1,44 @@
 resource "aws_s3_bucket" "this" {
-  bucket = "bucket-339-red"
+  bucket = "339-bucket-${random_integer.this.result}-red"
   force_destroy = true
 }
 
+resource "random_integer" "this" {
+  min = 1
+  max = 10000000
+}
+
 resource "aws_s3_bucket_acl" "this" {
+  depends_on = [aws_s3_bucket_ownership_controls.this]
+
   bucket = aws_s3_bucket.this.id
   acl    = "private"
 }
 
+resource "aws_s3_bucket_ownership_controls" "this" {
+  bucket = aws_s3_bucket.this.id
+  rule {
+    object_ownership = "BucketOwnerPreferred"
+  }
+}
 resource "aws_s3_bucket_policy" "this" {
   bucket = aws_s3_bucket.this.id
   policy = data.aws_iam_policy_document.this.json
 }
 
-data "aws_iam_policy_document" "this" {
+data "aws_elb_service_account" "this" {}
 
+data "aws_iam_policy_document" "this" {
   statement {
     effect = "Allow"
 
     principals {
       type        = "AWS"
-      identifiers = ["*"]
+      identifiers = [data.aws_elb_service_account.this.arn]
     }
 
     actions   = ["s3:PutObject"]
-    resources = ["arn:aws:s3:::bucket-339-red/*"]
+    resources = ["${aws_s3_bucket.this.arn}/AWSLogs/*"]
   }
 }
 
@@ -38,4 +52,8 @@ resource "aws_alb" "this" {
     bucket  = aws_s3_bucket.this.id
     enabled = true
   }
+
+  depends_on = [
+    aws_s3_bucket_acl.this
+  ]
 }

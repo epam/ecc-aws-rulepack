@@ -1,10 +1,15 @@
 resource "aws_s3_bucket" "input_bucket" {
-  bucket        = "bucket-codebuild-input-bucket-216-green"
+  bucket        = "bucket-${random_integer.this.result}-codebuild-input-bucket-216-green"
   force_destroy = true
 }
 resource "aws_s3_bucket" "output_bucket" {
-  bucket        = "bucket-codebuild-output-bucket-216-green"
+  bucket        = "bucket-${random_integer.this.result}-codebuild-output-bucket-216-green"
   force_destroy = true
+}
+
+resource "random_integer" "this" {
+  min = 1
+  max = 10000000
 }
 
 resource "aws_s3_object" "object" {

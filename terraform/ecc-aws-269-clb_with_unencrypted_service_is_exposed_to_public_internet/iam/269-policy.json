@@ -1,0 +1,16 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [ 
+                "elasticloadbalancing:DescribeLoadBalancers",
+                "tag:GetResources",
+                "ec2:DescribeSecurityGroups",
+                "ec2:DescribeRegions",
+                "ec2:DescribeSecurityGroupRules"
+            ],
+            "Resource": "*"
+        }
+    ]
+}

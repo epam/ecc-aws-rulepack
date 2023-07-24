@@ -1,6 +1,11 @@
 resource "aws_s3_bucket" "this" {
-  bucket        = "www.510-domain-green.click"
+  bucket        = "www.510-domain-${random_integer.this.result}-green.click"
   force_destroy = "true"
+}
+
+resource "random_integer" "this" {
+  min = 1
+  max = 10000000
 }
 
 resource "aws_s3_bucket_public_access_block" "this" {
@@ -54,4 +59,6 @@ data "aws_iam_policy_document" "this" {
 resource "aws_s3_bucket_policy" "this" {
   bucket = aws_s3_bucket.this.id
   policy = data.aws_iam_policy_document.this.json
+
+  depends_on = [aws_s3_bucket_public_access_block.this ]
 }

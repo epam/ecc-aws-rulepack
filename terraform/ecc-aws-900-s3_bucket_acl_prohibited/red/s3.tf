@@ -1,7 +1,12 @@
 data "aws_canonical_user_id" "current" {}
 
 resource "aws_s3_bucket" "this" {
-  bucket = "900-s3-bucket-red"
+  bucket = "900-bucket-${random_integer.this.result}-red"
+}
+
+resource "random_integer" "this" {
+  min = 1
+  max = 10000000
 }
 
 resource "aws_s3_bucket_ownership_controls" "this" {

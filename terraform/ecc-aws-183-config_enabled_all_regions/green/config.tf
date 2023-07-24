@@ -5,9 +5,14 @@ resource "aws_config_configuration_recorder_status" "this" {
 }
 
 resource "aws_s3_bucket" "this" {
-  bucket        = "bucket-183-green"
+  bucket        = "183-bucket-${random_integer.this.result}-green"
   force_destroy = true
 
+}
+
+resource "random_integer" "this" {
+  min = 1
+  max = 10000000
 }
 
 resource "aws_config_delivery_channel" "this" {

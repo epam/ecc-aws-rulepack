@@ -1,0 +1,17 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+policies:
+  - name: ecc-aws-285-no_acls_allow_ingress_for_everyone_to_remote_server_administration_ports
+    description: |
+      Network ACLs allow ingress from 0.0.0.0/0 to remote server administration ports
+    resource: aws.network-acl
+    filters:
+      - type: cidr-egress-port-range
+        egress: false
+        required-ports: 22,3389
+        cidr: 0.0.0.0/0
+        rule-action: allow

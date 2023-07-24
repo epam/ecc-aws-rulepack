@@ -8,7 +8,7 @@ resource "aws_kms_key" "this" {
 }
 
 resource "aws_kms_alias" "this" {
-  name          = "alias/k-184"
+  name          = "alias/k-184-green"
   target_key_id = "${aws_kms_key.this.key_id}"
 }
 
@@ -24,14 +24,29 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "this" {
 }
 
 resource "aws_s3_bucket" "this" {
-  bucket        = "bucket-184-green"
+  bucket        = "184-bucket-${random_integer.this.result}-green"
   force_destroy = true
 }
 
+resource "random_integer" "this" {
+  min = 1
+  max = 10000000
+}
+
+resource "aws_s3_bucket_ownership_controls" "this" {
+  bucket = aws_s3_bucket.this.id
+  rule {
+    object_ownership = "BucketOwnerPreferred"
+  }
+}
+
 resource "aws_s3_bucket_acl" "this" {
+  depends_on = [aws_s3_bucket_ownership_controls.this]
+
   bucket = aws_s3_bucket.this.id
   acl    = "private"
 }
+
 
 resource "aws_s3_bucket_policy" "this" {
   bucket = aws_s3_bucket.this.id

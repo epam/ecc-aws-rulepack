@@ -13,6 +13,14 @@ resource "aws_redshift_cluster" "this" {
     enable      = true
     bucket_name = aws_s3_bucket.this.id
   }
+  depends_on = [
+    aws_s3_bucket_acl.this
+  ]
+}
+
+resource "random_integer" "this" {
+  min = 1
+  max = 10000000
 }
 
 resource "aws_redshift_parameter_group" "this" {
@@ -25,11 +33,20 @@ resource "aws_redshift_parameter_group" "this" {
   }
 }
 resource "aws_s3_bucket" "this" {
-  bucket        = "bucket-306-green"
+  bucket        = "306-bucket-${random_integer.this.result}-green"
   force_destroy = "true"
 }
 
+resource "aws_s3_bucket_ownership_controls" "this" {
+  bucket = aws_s3_bucket.this.id
+  rule {
+    object_ownership = "BucketOwnerPreferred"
+  }
+}
+
 resource "aws_s3_bucket_acl" "this" {
+  depends_on = [aws_s3_bucket_ownership_controls.this]
+
   bucket = aws_s3_bucket.this.id
   acl    = "private"
 }
@@ -51,7 +68,7 @@ data "aws_iam_policy_document" "this" {
     }
 
     actions   = ["s3:PutObject"]
-    resources = ["arn:aws:s3:::bucket-306-green/*"]
+    resources = ["${aws_s3_bucket.this.arn}/*"]
   }
   statement {
     sid    = "Get bucket policy needed for audit logging "
@@ -63,7 +80,7 @@ data "aws_iam_policy_document" "this" {
     }
 
     actions   = ["s3:GetBucketAcl"]
-    resources = ["arn:aws:s3:::bucket-306-green"]
+    resources = [aws_s3_bucket.this.arn]
   }
 }
 
