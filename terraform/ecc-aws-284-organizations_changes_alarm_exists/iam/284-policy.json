@@ -1,0 +1,21 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "sns:GetTopicAttributes",
+                "logs:DescribeLogGroups",
+                "organizations:DescribeOrganization",
+                "cloudtrail:GetTrailStatus",
+                "cloudwatch:DescribeAlarms",
+                "sns:ListTopics",
+                "iam:ListAccountAliases",
+                "logs:DescribeMetricFilters",
+                "cloudtrail:GetEventSelectors",
+                "cloudtrail:DescribeTrails"
+            ],
+            "Resource": "*"
+        }
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "tag:GetResources",
+                "rds:DescribeDBInstances",
+                "ec2:DescribeSecurityGroups",
+                "ec2:DescribeSecurityGroupRules"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
