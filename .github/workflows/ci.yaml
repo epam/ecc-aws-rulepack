@@ -6,6 +6,7 @@ on:
       - submitted
 jobs:
   test_policy_red_flights:
+    if: github.event_name == 'push' || (github.event_name == 'pull_request_review' && github.event.review.state == 'approved')
     runs-on: ubuntu-22.04
     container: python:3.8
     steps: 
@@ -47,6 +48,7 @@ jobs:
           exit 0
 
   test_policy_green_flights:
+    if: github.event_name == 'push' || (github.event_name == 'pull_request_review' && github.event.review.state == 'approved')
     runs-on: ubuntu-22.04
     container: python:3.8
     steps: 
