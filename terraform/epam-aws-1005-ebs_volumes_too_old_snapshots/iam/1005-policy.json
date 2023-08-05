@@ -1,0 +1,15 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "Stmt1684842287073",
+            "Action": [
+                "ec2:DescribeSnapshots",
+                "ec2:DescribeImages",
+                "autoscaling:DescribeAutoScalingGroups"
+            ],
+            "Effect": "Allow",
+            "Resource": "*"
+        }
+    ]
+}
