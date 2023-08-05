@@ -1,0 +1,22 @@
+{
+    "status_code": 200,
+    "data": {
+        "PaginationToken": "",
+        "ResourceTagMappingList": [
+            {
+                "ResourceARN": "arn:aws:cloudfront::111111111111:distribution/E33O92NK067DQ8",
+                "Tags": [
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    },
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-180-cloudfront_distribution_access_logging"
+                    }
+                ]
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "status_code": 200,
+    "data": {
+        "tags": [
+            {
+                "Key": "ComplianceStatus",
+                "Value": "Red"
+            },
+            {
+                "Key": "CsutodianRule",
+                "Value": "ecc-aws-228-ecr_immutable_image_tags"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

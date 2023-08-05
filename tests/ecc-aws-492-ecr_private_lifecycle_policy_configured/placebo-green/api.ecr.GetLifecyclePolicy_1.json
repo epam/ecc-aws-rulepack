@@ -1,0 +1,19 @@
+{
+    "status_code": 200,
+    "data": {
+        "registryId": "111111111111",
+        "repositoryName": "492_ecr_respository_green",
+        "lifecyclePolicyText": "{\"rules\":[{\"rulePriority\":1,\"description\":\"Expire images older than 14 days\",\"selection\":{\"tagStatus\":\"untagged\",\"countType\":\"sinceImagePushed\",\"countUnit\":\"days\",\"countNumber\":14},\"action\":{\"type\":\"expire\"}}]}",
+        "lastEvaluatedAt": {
+            "__class__": "datetime",
+            "year": 1970,
+            "month": 1,
+            "day": 1,
+            "hour": 2,
+            "minute": 0,
+            "second": 0,
+            "microsecond": 0
+        },
+        "ResponseMetadata": {}
+    }
+}

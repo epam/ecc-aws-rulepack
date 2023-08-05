@@ -1,0 +1,12 @@
+{
+    "status_code": 200,
+    "data": {
+        "ConfigurationRecordersStatus": [
+            {
+                "name": "059_configuration_recorder_red1",
+                "recording": false
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

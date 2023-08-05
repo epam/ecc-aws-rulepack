@@ -1,0 +1,48 @@
+{
+    "status_code": 200,
+    "data": {
+        "TransitGateways": [
+            {
+                "TransitGatewayId": "tgw-0206989849558c776",
+                "TransitGatewayArn": "arn:aws:ec2:us-east-1:111111111111:transit-gateway/tgw-0206989849558c776",
+                "State": "available",
+                "OwnerId": "111111111111",
+                "CreationTime": {
+                    "__class__": "datetime",
+                    "year": 2021,
+                    "month": 12,
+                    "day": 17,
+                    "hour": 15,
+                    "minute": 7,
+                    "second": 6,
+                    "microsecond": 0
+                },
+                "Options": {
+                    "AmazonSideAsn": 64512,
+                    "AutoAcceptSharedAttachments": "disable",
+                    "DefaultRouteTableAssociation": "disable",
+                    "DefaultRouteTablePropagation": "enable",
+                    "PropagationDefaultRouteTableId": "tgw-rtb-024aeb27445541133",
+                    "VpnEcmpSupport": "enable",
+                    "DnsSupport": "enable",
+                    "MulticastSupport": "disable"
+                },
+                "Tags": [
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    },
+                    {
+                        "Key": "CsutodianRule",
+                        "Value": "ecc-aws-246-transit_gateway_default_route_table_association_disabled"
+                    },
+                    {
+                        "Key": "Name",
+                        "Value": "246_transit_gateway_green"
+                    }
+                ]
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

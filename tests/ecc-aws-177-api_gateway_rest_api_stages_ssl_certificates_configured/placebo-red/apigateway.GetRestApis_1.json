@@ -1,0 +1,33 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "items": [
+            {
+                "id": "ugjlm8qa0l",
+                "name": "177_api_gateway_rest_api_red",
+                "createdDate": {
+                    "__class__": "datetime",
+                    "year": 2021,
+                    "month": 10,
+                    "day": 25,
+                    "hour": 10,
+                    "minute": 55,
+                    "second": 51,
+                    "microsecond": 0
+                },
+                "apiKeySource": "HEADER",
+                "endpointConfiguration": {
+                    "types": [
+                        "EDGE"
+                    ]
+                },
+                "tags": {
+                    "ComplianceStatus": "Red",
+                    "CustodianRule": "ecc-aws-177-api_gateway_rest_api_stages_ssl_certificates_configured"
+                },
+                "disableExecuteApiEndpoint": false
+            }
+        ]
+    }
+}

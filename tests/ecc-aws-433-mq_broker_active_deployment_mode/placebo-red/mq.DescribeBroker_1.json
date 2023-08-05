@@ -1,0 +1,77 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "AuthenticationStrategy": "simple",
+        "AutoMinorVersionUpgrade": false,
+        "BrokerArn": "arn:aws:mq:us-east-1:111111111111:broker:mq-broker-active-433-red:b-dbd9cf80-6664-47c8-8774-2bbddc89b13b",
+        "BrokerId": "b-dbd9cf80-6664-47c8-8774-2bbddc89b13b",
+        "BrokerInstances": [
+            {
+                "ConsoleURL": "https://b-dbd9cf80-6664-47c8-8774-2bbddc89b13b-1.mq.us-east-1.amazonaws.com:8162",
+                "Endpoints": [
+                    "ssl://b-dbd9cf80-6664-47c8-8774-2bbddc89b13b-1.mq.us-east-1.amazonaws.com:61617",
+                    "amqp+ssl://b-dbd9cf80-6664-47c8-8774-2bbddc89b13b-1.mq.us-east-1.amazonaws.com:5671",
+                    "stomp+ssl://b-dbd9cf80-6664-47c8-8774-2bbddc89b13b-1.mq.us-east-1.amazonaws.com:61614",
+                    "mqtt+ssl://b-dbd9cf80-6664-47c8-8774-2bbddc89b13b-1.mq.us-east-1.amazonaws.com:8883",
+                    "wss://b-dbd9cf80-6664-47c8-8774-2bbddc89b13b-1.mq.us-east-1.amazonaws.com:61619"
+                ],
+                "IpAddress": "172.31.13.141"
+            }
+        ],
+        "BrokerName": "mq-broker-active-433-red",
+        "BrokerState": "RUNNING",
+        "Configurations": {
+            "Current": {
+                "Id": "c-111qqq2-asdf-qwer-1111-asdfghqwe",
+                "Revision": 1
+            },
+            "History": []
+        },
+        "Created": {
+            "__class__": "datetime",
+            "year": 2022,
+            "month": 7,
+            "day": 5,
+            "hour": 11,
+            "minute": 27,
+            "second": 13,
+            "microsecond": 692000
+        },
+        "DeploymentMode": "SINGLE_INSTANCE",
+        "EncryptionOptions": {
+            "UseAwsOwnedKey": true
+        },
+        "EngineType": "ActiveMQ",
+        "EngineVersion": "5.16.4",
+        "HostInstanceType": "mq.t2.micro",
+        "Logs": {
+            "Audit": false,
+            "AuditLogGroup": "/aws/amazonmq/broker/b-dbd9cf80-6664-47c8-8774-2bbddc89b13b/audit",
+            "General": false,
+            "GeneralLogGroup": "/aws/amazonmq/broker/b-dbd9cf80-6664-47c8-8774-2bbddc89b13b/general"
+        },
+        "MaintenanceWindowStartTime": {
+            "DayOfWeek": "THURSDAY",
+            "TimeOfDay": "18:00",
+            "TimeZone": "UTC"
+        },
+        "PubliclyAccessible": false,
+        "SecurityGroups": [
+            "sg-a5befc90"
+        ],
+        "StorageType": "efs",
+        "SubnetIds": [
+            "subnet-b045c2d6"
+        ],
+        "Tags": {
+            "CustodianRule": "ecc-aws-433-mq_broker_active_deployment_mode",
+            "ComplianceStatus": "Red"
+        },
+        "Users": [
+            {
+                "Username": "root"
+            }
+        ]
+    }
+}

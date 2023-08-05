@@ -1,0 +1,16 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "TagSet": [
+            {
+                "Key": "CustodianRule",
+                "Value": "ecc-aws-517-s3_bucket_acl_prohibited"
+            },
+            {
+                "Key": "ComplianceStatus",
+                "Value": "Red"
+            }
+        ]
+    }
+}

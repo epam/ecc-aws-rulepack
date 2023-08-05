@@ -1,0 +1,65 @@
+{
+    "status_code": 200,
+    "data": {
+        "LoadBalancerDescriptions": [
+            {
+                "LoadBalancerName": "elb-511-green",
+                "DNSName": "internal-elb-511-green-1920171249.us-east-1.elb.amazonaws.com",
+                "CanonicalHostedZoneNameID": "Z35SXDOTRQ7X7K",
+                "ListenerDescriptions": [
+                    {
+                        "Listener": {
+                            "Protocol": "HTTP",
+                            "LoadBalancerPort": 80,
+                            "InstanceProtocol": "HTTP",
+                            "InstancePort": 8000
+                        },
+                        "PolicyNames": []
+                    }
+                ],
+                "Policies": {
+                    "AppCookieStickinessPolicies": [],
+                    "LBCookieStickinessPolicies": [],
+                    "OtherPolicies": []
+                },
+                "BackendServerDescriptions": [],
+                "AvailabilityZones": [
+                    "us-east-1b",
+                    "us-east-1a"
+                ],
+                "Subnets": [
+                    "subnet-022c9393cb7a0e33d",
+                    "subnet-0aec115193c37a260"
+                ],
+                "VPCId": "vpc-0d6caa09beec41f6e",
+                "Instances": [],
+                "HealthCheck": {
+                    "Target": "TCP:8000",
+                    "Interval": 30,
+                    "Timeout": 5,
+                    "UnhealthyThreshold": 2,
+                    "HealthyThreshold": 10
+                },
+                "SourceSecurityGroup": {
+                    "OwnerAlias": "111111111111",
+                    "GroupName": "511_security_group_green"
+                },
+                "SecurityGroups": [
+                    "sg-0062e5d88c64065b8"
+                ],
+                "CreatedTime": {
+                    "__class__": "datetime",
+                    "year": 2023,
+                    "month": 1,
+                    "day": 13,
+                    "hour": 13,
+                    "minute": 0,
+                    "second": 4,
+                    "microsecond": 180000
+                },
+                "Scheme": "internal"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

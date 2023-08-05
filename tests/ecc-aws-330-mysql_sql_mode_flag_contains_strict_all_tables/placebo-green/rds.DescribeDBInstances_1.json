@@ -1,0 +1,144 @@
+{
+    "status_code": 200,
+    "data": {
+        "DBInstances": [
+            {
+                "DBInstanceIdentifier": "database-330-green",
+                "DBInstanceClass": "db.t3.micro",
+                "Engine": "mysql",
+                "DBInstanceStatus": "available",
+                "MasterUsername": "root",
+                "DBName": "green330",
+                "Endpoint": {
+                    "Address": "database-330-green.chhajgiktbgu.us-east-1.rds.amazonaws.com",
+                    "Port": 3306,
+                    "HostedZoneId": "ASASASASASASAS"
+                },
+                "AllocatedStorage": 10,
+                "InstanceCreateTime": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 5,
+                    "day": 19,
+                    "hour": 12,
+                    "minute": 48,
+                    "second": 44,
+                    "microsecond": 680000
+                },
+                "PreferredBackupWindow": "07:19-07:49",
+                "BackupRetentionPeriod": 0,
+                "DBSecurityGroups": [],
+                "VpcSecurityGroups": [
+                    {
+                        "VpcSecurityGroupId": "sg-a5befc90",
+                        "Status": "active"
+                    }
+                ],
+                "DBParameterGroups": [
+                    {
+                        "DBParameterGroupName": "parameter-group-330-green",
+                        "ParameterApplyStatus": "in-sync"
+                    }
+                ],
+                "AvailabilityZone": "us-east-1a",
+                "DBSubnetGroup": {
+                    "DBSubnetGroupName": "default",
+                    "DBSubnetGroupDescription": "default",
+                    "VpcId": "vpc-12345asdfg",
+                    "SubnetGroupStatus": "Complete",
+                    "Subnets": [
+                        {
+                            "SubnetIdentifier": "subnet-8158d8de",
+                            "SubnetAvailabilityZone": {
+                                "Name": "us-east-1a"
+                            },
+                            "SubnetOutpost": {},
+                            "SubnetStatus": "Active"
+                        },
+                        {
+                            "SubnetIdentifier": "subnet-5264af63",
+                            "SubnetAvailabilityZone": {
+                                "Name": "us-east-1e"
+                            },
+                            "SubnetOutpost": {},
+                            "SubnetStatus": "Active"
+                        },
+                        {
+                            "SubnetIdentifier": "subnet-b045c2d6",
+                            "SubnetAvailabilityZone": {
+                                "Name": "us-east-1b"
+                            },
+                            "SubnetOutpost": {},
+                            "SubnetStatus": "Active"
+                        },
+                        {
+                            "SubnetIdentifier": "subnet-247c052a",
+                            "SubnetAvailabilityZone": {
+                                "Name": "us-east-1f"
+                            },
+                            "SubnetOutpost": {},
+                            "SubnetStatus": "Active"
+                        },
+                        {
+                            "SubnetIdentifier": "subnet-fa9dcab7",
+                            "SubnetAvailabilityZone": {
+                                "Name": "us-east-1d"
+                            },
+                            "SubnetOutpost": {},
+                            "SubnetStatus": "Active"
+                        },
+                        {
+                            "SubnetIdentifier": "subnet-cd7af8ec",
+                            "SubnetAvailabilityZone": {
+                                "Name": "us-east-1c"
+                            },
+                            "SubnetOutpost": {},
+                            "SubnetStatus": "Active"
+                        }
+                    ]
+                },
+                "PreferredMaintenanceWindow": "sun:08:51-sun:09:21",
+                "PendingModifiedValues": {},
+                "MultiAZ": false,
+                "EngineVersion": "8.0.28",
+                "AutoMinorVersionUpgrade": true,
+                "ReadReplicaDBInstanceIdentifiers": [],
+                "LicenseModel": "general-public-license",
+                "OptionGroupMemberships": [
+                    {
+                        "OptionGroupName": "default:mysql-8-0",
+                        "Status": "in-sync"
+                    }
+                ],
+                "PubliclyAccessible": false,
+                "StorageType": "gp2",
+                "DbInstancePort": 0,
+                "StorageEncrypted": false,
+                "DbiResourceId": "db-IPGMSNTIE3J2YAQEQ5OWOF4Y6Y",
+                "CACertificateIdentifier": "rds-ca-2019",
+                "DomainMemberships": [],
+                "CopyTagsToSnapshot": false,
+                "MonitoringInterval": 0,
+                "DBInstanceArn": "arn:aws:rds:us-east-1:111111111111:db:database-330-green",
+                "IAMDatabaseAuthenticationEnabled": false,
+                "PerformanceInsightsEnabled": false,
+                "DeletionProtection": false,
+                "AssociatedRoles": [],
+                "TagList": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-330-mysql_sql_mode_flag_contains_strict_all_tables"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    }
+                ],
+                "CustomerOwnedIpEnabled": false,
+                "ActivityStreamStatus": "stopped",
+                "BackupTarget": "region"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

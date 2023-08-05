@@ -1,8 +1,0 @@
-resource "aws_elasticache_cluster" "this" {
-  cluster_id               = "c7n-414-elasticache-cluster-red"
-  engine                   = "redis"
-  node_type                = "cache.t2.micro"
-  num_cache_nodes          = 1
-  port                     = 6379
-  snapshot_retention_limit = 0
-}

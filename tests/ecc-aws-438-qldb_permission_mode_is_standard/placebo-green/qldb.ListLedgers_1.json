@@ -1,0 +1,22 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "Ledgers": [
+            {
+                "Name": "qldb-438-green",
+                "State": "ACTIVE",
+                "CreationDateTime": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 9,
+                    "day": 1,
+                    "hour": 9,
+                    "minute": 1,
+                    "second": 25,
+                    "microsecond": 401000
+                }
+            }
+        ]
+    }
+}

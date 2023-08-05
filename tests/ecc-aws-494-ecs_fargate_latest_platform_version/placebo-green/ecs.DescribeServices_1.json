@@ -1,0 +1,234 @@
+{
+    "status_code": 200,
+    "data": {
+        "services": [
+            {
+                "serviceArn": "arn:aws:ecs:us-east-1:111111111111:service/494_ecs_cluster_green/494_ecs_service_green",
+                "serviceName": "494_ecs_service_green",
+                "clusterArn": "arn:aws:ecs:us-east-1:111111111111:cluster/494_ecs_cluster_green",
+                "loadBalancers": [],
+                "serviceRegistries": [],
+                "status": "ACTIVE",
+                "desiredCount": 1,
+                "runningCount": 0,
+                "pendingCount": 0,
+                "launchType": "FARGATE",
+                "platformVersion": "LATEST",
+                "platformFamily": "Linux",
+                "taskDefinition": "arn:aws:ecs:us-east-1:111111111111:task-definition/service:31",
+                "deploymentConfiguration": {
+                    "deploymentCircuitBreaker": {
+                        "enable": false,
+                        "rollback": false
+                    },
+                    "maximumPercent": 200,
+                    "minimumHealthyPercent": 100
+                },
+                "deployments": [
+                    {
+                        "id": "ecs-svc/2132728681776188762",
+                        "status": "PRIMARY",
+                        "taskDefinition": "arn:aws:ecs:us-east-1:111111111111:task-definition/service:31",
+                        "desiredCount": 1,
+                        "pendingCount": 0,
+                        "runningCount": 0,
+                        "failedTasks": 7,
+                        "createdAt": {
+                            "__class__": "datetime",
+                            "year": 2022,
+                            "month": 10,
+                            "day": 3,
+                            "hour": 11,
+                            "minute": 29,
+                            "second": 7,
+                            "microsecond": 408000
+                        },
+                        "updatedAt": {
+                            "__class__": "datetime",
+                            "year": 2022,
+                            "month": 10,
+                            "day": 3,
+                            "hour": 11,
+                            "minute": 29,
+                            "second": 7,
+                            "microsecond": 408000
+                        },
+                        "launchType": "FARGATE",
+                        "platformVersion": "1.4.0",
+                        "platformFamily": "Linux",
+                        "networkConfiguration": {
+                            "awsvpcConfiguration": {
+                                "subnets": [
+                                    "subnet-00bf897c5d38dcd25",
+                                    "subnet-0da4a99422afa5677"
+                                ],
+                                "securityGroups": [
+                                    "sg-0e57c163f19b954d1"
+                                ],
+                                "assignPublicIp": "ENABLED"
+                            }
+                        },
+                        "rolloutState": "IN_PROGRESS",
+                        "rolloutStateReason": "ECS deployment ecs-svc/2132728681776188762 in progress."
+                    }
+                ],
+                "roleArn": "arn:aws:iam::111111111111:role/aws-service-role/ecs.amazonaws.com/AWSServiceRoleForECS",
+                "events": [
+                    {
+                        "id": "d8464edd-b8d4-4166-a093-66f610e905c8",
+                        "createdAt": {
+                            "__class__": "datetime",
+                            "year": 2022,
+                            "month": 10,
+                            "day": 3,
+                            "hour": 12,
+                            "minute": 13,
+                            "second": 21,
+                            "microsecond": 851000
+                        },
+                        "message": "(service 494_ecs_service_green) has started 1 tasks: (task ed579bfe822a41dcbf0cd0baeffccf48)."
+                    },
+                    {
+                        "id": "8a43cfe6-7a64-40dc-83bc-ab8909531787",
+                        "createdAt": {
+                            "__class__": "datetime",
+                            "year": 2022,
+                            "month": 10,
+                            "day": 3,
+                            "hour": 12,
+                            "minute": 4,
+                            "second": 27,
+                            "microsecond": 278000
+                        },
+                        "message": "(service 494_ecs_service_green) has started 1 tasks: (task 6f6550cfb5484a678e12a05fd19725ac)."
+                    },
+                    {
+                        "id": "08384bc3-a4d0-481e-b9af-effcd35c8334",
+                        "createdAt": {
+                            "__class__": "datetime",
+                            "year": 2022,
+                            "month": 10,
+                            "day": 3,
+                            "hour": 11,
+                            "minute": 55,
+                            "second": 46,
+                            "microsecond": 356000
+                        },
+                        "message": "(service 494_ecs_service_green) has started 1 tasks: (task b6a9fdcf7cd64de3b45e3b908e95a36a)."
+                    },
+                    {
+                        "id": "a4948e97-1cdf-431d-81ee-65bf4b0c9eb5",
+                        "createdAt": {
+                            "__class__": "datetime",
+                            "year": 2022,
+                            "month": 10,
+                            "day": 3,
+                            "hour": 11,
+                            "minute": 46,
+                            "second": 52,
+                            "microsecond": 467000
+                        },
+                        "message": "(service 494_ecs_service_green) has started 1 tasks: (task 7a9902df89ef40f9b952f5ac6dba4eec)."
+                    },
+                    {
+                        "id": "03ce99fb-f5da-4500-8603-8336027b9d39",
+                        "createdAt": {
+                            "__class__": "datetime",
+                            "year": 2022,
+                            "month": 10,
+                            "day": 3,
+                            "hour": 11,
+                            "minute": 42,
+                            "second": 26,
+                            "microsecond": 238000
+                        },
+                        "message": "(service 494_ecs_service_green) has started 1 tasks: (task fdf63004c21c4c67bdc8ee24b3ef8201)."
+                    },
+                    {
+                        "id": "7ff79043-e7fe-4551-862d-96accb20d86b",
+                        "createdAt": {
+                            "__class__": "datetime",
+                            "year": 2022,
+                            "month": 10,
+                            "day": 3,
+                            "hour": 11,
+                            "minute": 38,
+                            "second": 1,
+                            "microsecond": 217000
+                        },
+                        "message": "(service 494_ecs_service_green) has started 1 tasks: (task f8130b277b86414fbaa17ce5b6b8ece8)."
+                    },
+                    {
+                        "id": "5978f1f8-2465-4dea-84bc-0488dd4bdc4a",
+                        "createdAt": {
+                            "__class__": "datetime",
+                            "year": 2022,
+                            "month": 10,
+                            "day": 3,
+                            "hour": 11,
+                            "minute": 33,
+                            "second": 36,
+                            "microsecond": 448000
+                        },
+                        "message": "(service 494_ecs_service_green) has started 1 tasks: (task 3579c1dff6af4570b44acbabeaaaf0fb)."
+                    },
+                    {
+                        "id": "595c698f-2b3b-4e36-b1d9-c1896aa1c20c",
+                        "createdAt": {
+                            "__class__": "datetime",
+                            "year": 2022,
+                            "month": 10,
+                            "day": 3,
+                            "hour": 11,
+                            "minute": 29,
+                            "second": 11,
+                            "microsecond": 23000
+                        },
+                        "message": "(service 494_ecs_service_green) has started 1 tasks: (task 4c5241a94157441aa29d6fa91aaa571c)."
+                    }
+                ],
+                "createdAt": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 10,
+                    "day": 3,
+                    "hour": 11,
+                    "minute": 29,
+                    "second": 7,
+                    "microsecond": 408000
+                },
+                "placementConstraints": [],
+                "placementStrategy": [],
+                "networkConfiguration": {
+                    "awsvpcConfiguration": {
+                        "subnets": [
+                            "subnet-00bf897c5d38dcd25",
+                            "subnet-0da4a99422afa5677"
+                        ],
+                        "securityGroups": [
+                            "sg-0e57c163f19b954d1"
+                        ],
+                        "assignPublicIp": "ENABLED"
+                    }
+                },
+                "schedulingStrategy": "REPLICA",
+                "tags": [
+                    {
+                        "key": "CustodianRule",
+                        "value": "ecc-aws-494-ecs_fargate_latest_platform_version"
+                    },
+                    {
+                        "key": "ComplianceStatus",
+                        "value": "Red"
+                    }
+                ],
+                "createdBy": "arn:aws:iam::111111111111:user/test",
+                "enableECSManagedTags": false,
+                "propagateTags": "NONE",
+                "enableExecuteCommand": false
+            }
+        ],
+        "failures": [],
+        "ResponseMetadata": {}
+    }
+}

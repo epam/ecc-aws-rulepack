@@ -1,0 +1,46 @@
+{
+    "status_code": 200,
+    "data": {
+        "NetworkInterfaces": [
+            {
+                "AvailabilityZone": "us-east-1a",
+                "Description": "",
+                "Groups": [
+                    {
+                        "GroupName": "default",
+                        "GroupId": "sg-1234567asdfg"
+                    }
+                ],
+                "InterfaceType": "interface",
+                "Ipv6Addresses": [],
+                "MacAddress": "0e:44:d3:68:8d:cf",
+                "NetworkInterfaceId": "eni-076b49abde34b7b22",
+                "OwnerId": "111111111111",
+                "PrivateIpAddress": "10.0.1.217",
+                "PrivateIpAddresses": [
+                    {
+                        "Primary": true,
+                        "PrivateIpAddress": "10.0.1.217"
+                    }
+                ],
+                "RequesterId": "AIDAXPHGII4AKSWWJRALQ",
+                "RequesterManaged": false,
+                "SourceDestCheck": true,
+                "Status": "available",
+                "SubnetId": "subnet-0bb8f385aef3b8833",
+                "TagSet": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-381-eni_without_tag_information"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    }
+                ],
+                "VpcId": "vpc-12345asdfg"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

@@ -1,0 +1,36 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "item": [
+            {
+                "deploymentId": "iazd21",
+                "stageName": "apiGatewayStage250Red",
+                "cacheClusterEnabled": false,
+                "cacheClusterStatus": "NOT_AVAILABLE",
+                "methodSettings": {},
+                "tracingEnabled": false,
+                "createdDate": {
+                    "__class__": "datetime",
+                    "year": 2021,
+                    "month": 12,
+                    "day": 6,
+                    "hour": 9,
+                    "minute": 0,
+                    "second": 8,
+                    "microsecond": 0
+                },
+                "lastUpdatedDate": {
+                    "__class__": "datetime",
+                    "year": 2021,
+                    "month": 12,
+                    "day": 6,
+                    "hour": 9,
+                    "minute": 0,
+                    "second": 8,
+                    "microsecond": 0
+                }
+            }
+        ]
+    }
+}

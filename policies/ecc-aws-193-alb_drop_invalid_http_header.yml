@@ -1,0 +1,17 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: ecc-aws-193-alb_drop_invalid_http_header
+    description: |
+      Application load balancers are not configured to drop invalid HTTP headers
+    resource: aws.app-elb
+    filters:
+      - type: attributes
+        key: routing.http.drop_invalid_header_fields.enabled
+        value: false
+        op: eq

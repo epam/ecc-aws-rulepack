@@ -1,0 +1,92 @@
+{
+    "status_code": 200,
+    "data": {
+        "DBClusters": [
+            {
+                "AllocatedStorage": 1,
+                "AvailabilityZones": [
+                    "us-east-1c",
+                    "us-east-1b",
+                    "us-east-1d"
+                ],
+                "BackupRetentionPeriod": 1,
+                "DatabaseName": "cluster174red",
+                "DBClusterIdentifier": "cluster-174-red",
+                "DBClusterParameterGroup": "default.aurora-mysql5.7",
+                "DBSubnetGroup": "default",
+                "Status": "available",
+                "EarliestRestorableTime": {
+                    "__class__": "datetime",
+                    "year": 2021,
+                    "month": 9,
+                    "day": 28,
+                    "hour": 18,
+                    "minute": 49,
+                    "second": 39,
+                    "microsecond": 163000
+                },
+                "Endpoint": "cluster-174-red.cluster-chhajgiktbgu.us-east-1.rds.amazonaws.com",
+                "ReaderEndpoint": "cluster-174-red.cluster-ro-chhajgiktbgu.us-east-1.rds.amazonaws.com",
+                "MultiAZ": false,
+                "Engine": "aurora-mysql",
+                "EngineVersion": "5.7.mysql_aurora.2.03.2",
+                "LatestRestorableTime": {
+                    "__class__": "datetime",
+                    "year": 2021,
+                    "month": 9,
+                    "day": 28,
+                    "hour": 18,
+                    "minute": 49,
+                    "second": 39,
+                    "microsecond": 163000
+                },
+                "Port": 3306,
+                "MasterUsername": "root",
+                "PreferredBackupWindow": "07:51-08:21",
+                "PreferredMaintenanceWindow": "sat:04:40-sat:05:10",
+                "ReadReplicaIdentifiers": [],
+                "DBClusterMembers": [],
+                "VpcSecurityGroups": [
+                    {
+                        "VpcSecurityGroupId": "sg-a5befc90",
+                        "Status": "active"
+                    }
+                ],
+                "HostedZoneId": "ASASASASASASAS",
+                "StorageEncrypted": false,
+                "DbClusterResourceId": "cluster-YG2NVS4H3WPLRTQ7RNWWT7BSAE",
+                "DBClusterArn": "arn:aws:rds:us-east-1:111111111111:cluster:cluster-174-red",
+                "AssociatedRoles": [],
+                "IAMDatabaseAuthenticationEnabled": false,
+                "ClusterCreateTime": {
+                    "__class__": "datetime",
+                    "year": 2021,
+                    "month": 9,
+                    "day": 28,
+                    "hour": 18,
+                    "minute": 48,
+                    "second": 58,
+                    "microsecond": 557000
+                },
+                "EngineMode": "provisioned",
+                "DeletionProtection": false,
+                "HttpEndpointEnabled": false,
+                "ActivityStreamStatus": "stopped",
+                "CopyTagsToSnapshot": false,
+                "CrossAccountClone": false,
+                "DomainMemberships": [],
+                "TagList": [
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Red"
+                    },
+                    {
+                        "Key": "CsutodianRule",
+                        "Value": "ecc-aws-174-rds_database_cluster_engine_no_default_ports"
+                    }
+                ]
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

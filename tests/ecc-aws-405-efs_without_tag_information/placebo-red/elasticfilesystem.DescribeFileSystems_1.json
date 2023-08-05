@@ -1,0 +1,35 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "FileSystems": [
+            {
+                "OwnerId": "111111111111",
+                "CreationToken": "405_efs_red",
+                "FileSystemId": "fs-0c1f4dd5eae5c1767",
+                "FileSystemArn": "arn:aws:elasticfilesystem:us-east-1:111111111111:file-system/fs-0c1f4dd5eae5c1767",
+                "CreationTime": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 7,
+                    "day": 19,
+                    "hour": 7,
+                    "minute": 49,
+                    "second": 16,
+                    "microsecond": 0
+                },
+                "LifeCycleState": "available",
+                "NumberOfMountTargets": 0,
+                "SizeInBytes": {
+                    "Value": 6144,
+                    "ValueInIA": 0,
+                    "ValueInStandard": 6144
+                },
+                "PerformanceMode": "generalPurpose",
+                "Encrypted": false,
+                "ThroughputMode": "bursting",
+                "Tags": []
+            }
+        ]
+    }
+}

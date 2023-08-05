@@ -1,0 +1,10 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "Tags": {
+            "ComplianceStatus": "Green",
+            "CustodianRule": "ecc-aws-413-glacier_without_tag_information"
+        }
+    }
+}

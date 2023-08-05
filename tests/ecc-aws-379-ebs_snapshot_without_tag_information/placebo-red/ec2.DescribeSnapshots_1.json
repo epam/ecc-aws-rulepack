@@ -1,0 +1,29 @@
+{
+    "status_code": 200,
+    "data": {
+        "Snapshots": [
+            {
+                "Description": "ebs_snapshot_379",
+                "Encrypted": false,
+                "OwnerId": "111111111111",
+                "Progress": "100%",
+                "SnapshotId": "snap-00ebcae19d80be037",
+                "StartTime": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 11,
+                    "day": 17,
+                    "hour": 6,
+                    "minute": 48,
+                    "second": 39,
+                    "microsecond": 556000
+                },
+                "State": "completed",
+                "VolumeId": "vol-02409415eeedd6f69",
+                "VolumeSize": 8,
+                "StorageTier": "standard"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

@@ -1,0 +1,36 @@
+{
+    "status_code": 200,
+    "data": {
+        "stateMachineArn": "arn:aws:states:us-east-1:111111111111:stateMachine:state-machine-545-red",
+        "name": "state-machine-545-red",
+        "status": "ACTIVE",
+        "definition": "{\n  \"Comment\": \"A Hello World example of the Amazon States Language using an AWS Lambda Function\",\n  \"StartAt\": \"HelloWorld\",\n  \"States\": {\n    \"HelloWorld\": {\n      \"Type\": \"Task\",\n      \"Resource\": \"arn:aws:lambda:us-east-1:111111111111:function:lambda-545-red\",\n      \"End\": true\n    }\n  }\n}\n",
+        "roleArn": "arn:aws:iam::111111111111:role/iam-545-sfn-red",
+        "type": "STANDARD",
+        "creationDate": {
+            "__class__": "datetime",
+            "year": 2023,
+            "month": 6,
+            "day": 23,
+            "hour": 14,
+            "minute": 13,
+            "second": 36,
+            "microsecond": 367000
+        },
+        "loggingConfiguration": {
+            "level": "OFF",
+            "includeExecutionData": true,
+            "destinations": [
+                {
+                    "cloudWatchLogsLogGroup": {
+                        "logGroupArn": "arn:aws:logs:us-east-1:111111111111:log-group:loggroup-545-green:*"
+                    }
+                }
+            ]
+        },
+        "tracingConfiguration": {
+            "enabled": false
+        },
+        "ResponseMetadata": {}
+    }
+}

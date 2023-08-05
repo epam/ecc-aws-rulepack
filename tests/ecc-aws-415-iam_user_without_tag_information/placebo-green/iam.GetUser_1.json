@@ -1,0 +1,32 @@
+{
+    "status_code": 200,
+    "data": {
+        "User": {
+            "Path": "/",
+            "UserName": "415_user_green",
+            "UserId": "ASASASASASASASASASA",
+            "Arn": "arn:aws:iam::111111111111:user/415_user_green",
+            "CreateDate": {
+                "__class__": "datetime",
+                "year": 2022,
+                "month": 9,
+                "day": 19,
+                "hour": 12,
+                "minute": 15,
+                "second": 15,
+                "microsecond": 0
+            },
+            "Tags": [
+                {
+                    "Key": "CustodianRule",
+                    "Value": "ecc-aws-415-iam_user_without_tag_information"
+                },
+                {
+                    "Key": "ComplianceStatus",
+                    "Value": "Green"
+                }
+            ]
+        },
+        "ResponseMetadata": {}
+    }
+}

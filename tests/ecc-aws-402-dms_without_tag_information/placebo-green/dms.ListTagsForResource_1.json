@@ -1,0 +1,16 @@
+{
+    "status_code": 200,
+    "data": {
+        "TagList": [
+            {
+                "Key": "CustodianRule",
+                "Value": "ecc-aws-402-dms_without_tag_information"
+            },
+            {
+                "Key": "ComplianceStatus",
+                "Value": "Green"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

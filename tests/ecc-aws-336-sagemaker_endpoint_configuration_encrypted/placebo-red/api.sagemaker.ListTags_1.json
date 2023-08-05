@@ -1,0 +1,16 @@
+{
+    "status_code": 200,
+    "data": {
+        "Tags": [
+            {
+                "Key": "CustodianRule",
+                "Value": "ecc-aws-336-sagemaker_endpoint_configuration_encrypted"
+            },
+            {
+                "Key": "ComplianceStatus",
+                "Value": "Red"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

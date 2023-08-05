@@ -1,0 +1,164 @@
+{
+    "status_code": 200,
+    "data": {
+        "services": [
+            {
+                "serviceArn": "arn:aws:ecs:us-east-1:111111111111:service/494_ecs_cluster_red/494_ecs_service_red",
+                "serviceName": "494_ecs_service_red",
+                "clusterArn": "arn:aws:ecs:us-east-1:111111111111:cluster/494_ecs_cluster_red",
+                "loadBalancers": [],
+                "serviceRegistries": [],
+                "status": "ACTIVE",
+                "desiredCount": 1,
+                "runningCount": 1,
+                "pendingCount": 0,
+                "launchType": "FARGATE",
+                "platformVersion": "1.3.0",
+                "platformFamily": "Linux",
+                "taskDefinition": "arn:aws:ecs:us-east-1:111111111111:task-definition/service:33",
+                "deploymentConfiguration": {
+                    "deploymentCircuitBreaker": {
+                        "enable": false,
+                        "rollback": false
+                    },
+                    "maximumPercent": 200,
+                    "minimumHealthyPercent": 100
+                },
+                "deployments": [
+                    {
+                        "id": "ecs-svc/4655305331441726886",
+                        "status": "PRIMARY",
+                        "taskDefinition": "arn:aws:ecs:us-east-1:111111111111:task-definition/service:33",
+                        "desiredCount": 1,
+                        "pendingCount": 0,
+                        "runningCount": 1,
+                        "failedTasks": 0,
+                        "createdAt": {
+                            "__class__": "datetime",
+                            "year": 2022,
+                            "month": 10,
+                            "day": 3,
+                            "hour": 12,
+                            "minute": 0,
+                            "second": 0,
+                            "microsecond": 580000
+                        },
+                        "updatedAt": {
+                            "__class__": "datetime",
+                            "year": 2022,
+                            "month": 10,
+                            "day": 3,
+                            "hour": 12,
+                            "minute": 1,
+                            "second": 36,
+                            "microsecond": 957000
+                        },
+                        "launchType": "FARGATE",
+                        "platformVersion": "1.3.0",
+                        "platformFamily": "Linux",
+                        "networkConfiguration": {
+                            "awsvpcConfiguration": {
+                                "subnets": [
+                                    "subnet-01476da0417aad114",
+                                    "subnet-0dcb26b71d28d3cca"
+                                ],
+                                "securityGroups": [
+                                    "sg-0c6892d033246f9a7"
+                                ],
+                                "assignPublicIp": "ENABLED"
+                            }
+                        },
+                        "rolloutState": "COMPLETED",
+                        "rolloutStateReason": "ECS deployment ecs-svc/4655305331441726886 completed."
+                    }
+                ],
+                "roleArn": "arn:aws:iam::111111111111:role/aws-service-role/ecs.amazonaws.com/AWSServiceRoleForECS",
+                "events": [
+                    {
+                        "id": "54e8beef-8b7a-459e-bd27-5a19a326df33",
+                        "createdAt": {
+                            "__class__": "datetime",
+                            "year": 2022,
+                            "month": 10,
+                            "day": 3,
+                            "hour": 12,
+                            "minute": 1,
+                            "second": 36,
+                            "microsecond": 963000
+                        },
+                        "message": "(service 494_ecs_service_red) has reached a steady state."
+                    },
+                    {
+                        "id": "fe13787b-7ba3-4834-af16-ff5b5baf6060",
+                        "createdAt": {
+                            "__class__": "datetime",
+                            "year": 2022,
+                            "month": 10,
+                            "day": 3,
+                            "hour": 12,
+                            "minute": 1,
+                            "second": 36,
+                            "microsecond": 962000
+                        },
+                        "message": "(service 494_ecs_service_red) (deployment ecs-svc/4655305331441726886) deployment completed."
+                    },
+                    {
+                        "id": "fde57811-baac-4f4e-a99e-5656a53750bd",
+                        "createdAt": {
+                            "__class__": "datetime",
+                            "year": 2022,
+                            "month": 10,
+                            "day": 3,
+                            "hour": 12,
+                            "minute": 0,
+                            "second": 1,
+                            "microsecond": 608000
+                        },
+                        "message": "(service 494_ecs_service_red) has started 1 tasks: (task 7a44409b59c34573b797af6e19331872)."
+                    }
+                ],
+                "createdAt": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 10,
+                    "day": 3,
+                    "hour": 12,
+                    "minute": 0,
+                    "second": 0,
+                    "microsecond": 580000
+                },
+                "placementConstraints": [],
+                "placementStrategy": [],
+                "networkConfiguration": {
+                    "awsvpcConfiguration": {
+                        "subnets": [
+                            "subnet-01476da0417aad114",
+                            "subnet-0dcb26b71d28d3cca"
+                        ],
+                        "securityGroups": [
+                            "sg-0c6892d033246f9a7"
+                        ],
+                        "assignPublicIp": "ENABLED"
+                    }
+                },
+                "schedulingStrategy": "REPLICA",
+                "tags": [
+                    {
+                        "key": "CustodianRule",
+                        "value": "ecc-aws-494-ecs_fargate_latest_platform_version"
+                    },
+                    {
+                        "key": "ComplianceStatus",
+                        "value": "Red"
+                    }
+                ],
+                "createdBy": "arn:aws:iam::111111111111:user/test",
+                "enableECSManagedTags": false,
+                "propagateTags": "NONE",
+                "enableExecuteCommand": false
+            }
+        ],
+        "failures": [],
+        "ResponseMetadata": {}
+    }
+}

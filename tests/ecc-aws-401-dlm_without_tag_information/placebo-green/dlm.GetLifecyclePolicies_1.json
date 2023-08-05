@@ -1,0 +1,18 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "Policies": [
+            {
+                "PolicyId": "policy-075cecb4e18b76a52",
+                "Description": "dlm lifecycly policy 401 green",
+                "State": "ENABLED",
+                "Tags": {
+                    "CustodianRule": "ecc-aws-401-dlm_without_tag_information",
+                    "ComplianceStatus": "Green"
+                },
+                "PolicyType": "EBS_SNAPSHOT_MANAGEMENT"
+            }
+        ]
+    }
+}

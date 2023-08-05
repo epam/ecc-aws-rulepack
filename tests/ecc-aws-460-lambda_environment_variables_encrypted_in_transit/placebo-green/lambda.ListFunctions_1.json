@@ -1,0 +1,35 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "Functions": [
+            {
+                "FunctionName": "460_lambda_green",
+                "FunctionArn": "arn:aws:lambda:us-east-1:111111111111:function:460_lambda_green",
+                "Runtime": "python3.9",
+                "Role": "arn:aws:iam::111111111111:role/460_role_green",
+                "Handler": "lambda_function.lambda_handler",
+                "CodeSize": 520,
+                "Description": "",
+                "Timeout": 5,
+                "MemorySize": 128,
+                "LastModified": "2023-01-20T16:55:42.000+0000",
+                "CodeSha256": "rhQ+bO32SDYy4HNxNGDNOCyYEeJ/QRUXMryH7IwXa+I=",
+                "Version": "$LATEST",
+                "Environment": {
+                    "Variables": {
+                        "foo": "AQICAHgMd32Evm7kY+idWX5X+R2WPiMESmexs5JbNw23irR9jAEtlAXRejV8K4H27mscAQmfAAAAYTBfBgkqhkiG9w0BBwagUjBQAgEAMEsGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMq20VTvz7mL0BvaZDAgEQgB5BeolKpdsrBFft1naVbbV9kRU49thRALVNFyG8FAg="
+                    }
+                },
+                "TracingConfig": {
+                    "Mode": "PassThrough"
+                },
+                "RevisionId": "bade49b1-7f6f-4065-8b0a-5c54499c418d",
+                "PackageType": "Zip",
+                "Architectures": [
+                    "x86_64"
+                ]
+            }
+        ]
+    }
+}

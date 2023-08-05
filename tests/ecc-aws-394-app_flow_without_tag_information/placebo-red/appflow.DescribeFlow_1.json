@@ -1,0 +1,74 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "flowArn": "arn:aws:appflow:us-east-1:111111111111:flow/394-appflow-red",
+        "flowName": "394-appflow-red",
+        "kmsArn": "arn:aws:kms:us-east-1:111111111111:key/fb3fc7b3-b7de-4f1b-9919-0bb551444ad7",
+        "flowStatus": "Active",
+        "sourceFlowConfig": {
+            "connectorType": "S3",
+            "sourceConnectorProperties": {
+                "S3": {
+                    "bucketName": "394-bucket-red",
+                    "bucketPrefix": "source"
+                }
+            }
+        },
+        "destinationFlowConfigList": [
+            {
+                "connectorType": "S3",
+                "destinationConnectorProperties": {
+                    "S3": {
+                        "bucketName": "394-bucket-red",
+                        "bucketPrefix": "destination",
+                        "s3OutputFormatConfig": {
+                            "fileType": "JSON",
+                            "prefixConfig": {}
+                        }
+                    }
+                }
+            }
+        ],
+        "triggerConfig": {
+            "triggerType": "OnDemand",
+            "triggerProperties": {}
+        },
+        "tasks": [
+            {
+                "sourceFields": [
+                    "title1"
+                ],
+                "connectorOperator": {
+                    "S3": "NO_OP"
+                },
+                "destinationField": "title1",
+                "taskType": "Map",
+                "taskProperties": {}
+            }
+        ],
+        "createdAt": {
+            "__class__": "datetime",
+            "year": 2022,
+            "month": 12,
+            "day": 20,
+            "hour": 12,
+            "minute": 59,
+            "second": 34,
+            "microsecond": 647000
+        },
+        "lastUpdatedAt": {
+            "__class__": "datetime",
+            "year": 2022,
+            "month": 12,
+            "day": 20,
+            "hour": 12,
+            "minute": 59,
+            "second": 34,
+            "microsecond": 647000
+        },
+        "createdBy": "arn:aws:iam::111111111111:user/test",
+        "lastUpdatedBy": "arn:aws:iam::111111111111:user/test",
+        "tags": {}
+    }
+}

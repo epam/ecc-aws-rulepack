@@ -1,0 +1,21 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "Name": "qldb-439-green",
+        "Arn": "arn:aws:qldb:us-east-1:111111111111:ledger/qldb-439-green",
+        "State": "ACTIVE",
+        "CreationDateTime": {
+            "__class__": "datetime",
+            "year": 2022,
+            "month": 8,
+            "day": 31,
+            "hour": 12,
+            "minute": 3,
+            "second": 37,
+            "microsecond": 76000
+        },
+        "PermissionsMode": "STANDARD",
+        "DeletionProtection": true
+    }
+}

@@ -1,0 +1,18 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: ecc-aws-090-rds_snapshot_prohibit_public_access
+    description: |
+      RDS snapshots do not prohibit public access
+    resource: rds-snapshot
+    filters:
+      - and:
+          - type: cross-account
+          - type: value
+            key: '"c7n:CrossAccountViolations"[0]'
+            value: all

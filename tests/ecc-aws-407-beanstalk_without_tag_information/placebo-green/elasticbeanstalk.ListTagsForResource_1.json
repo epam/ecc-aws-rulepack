@@ -1,0 +1,29 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResourceArn": "arn:aws:elasticbeanstalk:us-east-1:111111111111:environment/407_application_green/environment-407-green",
+        "ResourceTags": [
+            {
+                "Key": "CustodianRule",
+                "Value": "ecc-aws-407-beanstalk_application_without_tag_information"
+            },
+            {
+                "Key": "elasticbeanstalk:environment-id",
+                "Value": "e-7jfrh5mn8k"
+            },
+            {
+                "Key": "ComplianceStatus",
+                "Value": "Green"
+            },
+            {
+                "Key": "elasticbeanstalk:environment-name",
+                "Value": "environment-407-green"
+            },
+            {
+                "Key": "Name",
+                "Value": "environment-407-green"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

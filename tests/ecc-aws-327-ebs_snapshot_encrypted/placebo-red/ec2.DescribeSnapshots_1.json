@@ -1,0 +1,38 @@
+{
+    "status_code": 200,
+    "data": {
+        "Snapshots": [
+            {
+                "Description": "",
+                "Encrypted": false,
+                "OwnerId": "111111111111",
+                "Progress": "100%",
+                "SnapshotId": "snap-0c41856bb82129315",
+                "StartTime": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 4,
+                    "day": 29,
+                    "hour": 12,
+                    "minute": 28,
+                    "second": 58,
+                    "microsecond": 597000
+                },
+                "State": "completed",
+                "VolumeId": "vol-0dd4472eca325be73",
+                "VolumeSize": 8,
+                "Tags": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-327-ebs_snapshot_encrypted"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Red"
+                    }
+                ]
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

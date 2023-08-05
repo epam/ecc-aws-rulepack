@@ -1,0 +1,55 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: ecc-aws-226-eks_clusters_security_group_traffic_restricted
+    description: |
+      Amazon EKS clusters security group traffic is not restricted
+    resource: aws.eks
+    filters:
+      - not:
+          - and:
+              - type: security-group
+                key: IpPermissions[].FromPort
+                value_type: swap
+                op: in
+                value: 443
+              - type: security-group
+                key: IpPermissions[].ToPort
+                value_type: swap
+                op: in
+                value: 443
+              - type: security-group
+                key: IpPermissions[].FromPort
+                value_type: swap
+                op: in
+                value: 10250
+              - type: security-group
+                key: IpPermissions[].ToPort
+                value_type: swap
+                op: in
+                value: 10250
+              - type: security-group
+                key: IpPermissionsEgress[].FromPort
+                value_type: swap
+                op: in
+                value: 443
+              - type: security-group
+                key: IpPermissionsEgress[].ToPort
+                value_type: swap
+                op: in
+                value: 443
+              - type: security-group
+                key: IpPermissionsEgress[].FromPort
+                value_type: swap
+                op: in
+                value: 10250
+              - type: security-group
+                key: IpPermissionsEgress[].ToPort
+                value_type: swap
+                op: in
+                value: 10250

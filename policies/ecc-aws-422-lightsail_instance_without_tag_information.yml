@@ -1,0 +1,16 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: ecc-aws-422-lightsail_instance_without_tag_information
+    description: |
+      Amazon Lightsail instance without tag information
+    resource: aws.lightsail-instance
+    filters:
+      - type: value
+        key: tags
+        value: empty

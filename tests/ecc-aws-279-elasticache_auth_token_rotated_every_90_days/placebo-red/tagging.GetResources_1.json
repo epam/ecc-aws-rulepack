@@ -1,0 +1,22 @@
+{
+    "status_code": 200,
+    "data": {
+        "PaginationToken": "",
+        "ResourceTagMappingList": [
+            {
+                "ResourceARN": "arn:aws:elasticache:us-east-1:111111111111:cluster:elasticache-group-279-red-001",
+                "Tags": [
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Red"
+                    },
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-279-elasticache_auth_token_rotated_every_90_days"
+                    }
+                ]
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

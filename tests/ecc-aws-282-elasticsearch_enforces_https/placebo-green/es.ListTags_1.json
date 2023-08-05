@@ -1,0 +1,16 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "TagList": [
+            {
+                "Key": "ComplianceStatus",
+                "Value": "Green"
+            },
+            {
+                "Key": "CsutodianRule",
+                "Value": "ecc-aws-282-elasticsearch_enforce_https"
+            }
+        ]
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "status_code": 200,
+    "data": {
+        "PaginationToken": "",
+        "ResourceTagMappingList": [
+            {
+                "ResourceARN": "arn:aws:codebuild:us-east-1:111111111111:project/399_codebuilt_red",
+                "Tags": []
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

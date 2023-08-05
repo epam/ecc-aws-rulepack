@@ -1,0 +1,51 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+policies:
+  - name: ecc-aws-274-rds_aurora_cluster_logging_enabled
+    resource: aws.rds-cluster
+    description: |
+      Aurora cluster logging is disabled
+    filters:
+      - and:
+          - type: value
+            key: Engine
+            value: aurora
+          - not:
+              - and:
+                  - type: value
+                    key: EnabledCloudwatchLogsExports
+                    op: in
+                    value_type: swap
+                    value: audit
+                  - type: value
+                    key: EnabledCloudwatchLogsExports
+                    op: in
+                    value_type: swap
+                    value: error
+                  - type: value
+                    key: EnabledCloudwatchLogsExports
+                    op: in
+                    value_type: swap
+                    value: general
+                  - type: value
+                    key: EnabledCloudwatchLogsExports
+                    op: in
+                    value_type: swap
+                    value: slowquery
+                  - type: rds-cluster-parameter-filter
+                    parameters:
+                      - key: general_log
+                        value: 1
+                  - type: rds-cluster-parameter-filter
+                    parameters:
+                      - key: slow_query_log
+                        value: 1
+                  - type: rds-cluster-parameter-filter
+                    parameters:
+                      - key: log_output
+                        value: FILE
+

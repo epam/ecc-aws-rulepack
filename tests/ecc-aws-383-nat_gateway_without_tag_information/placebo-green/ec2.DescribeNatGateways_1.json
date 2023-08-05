@@ -1,0 +1,41 @@
+{
+    "status_code": 200,
+    "data": {
+        "NatGateways": [
+            {
+                "CreateTime": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 11,
+                    "day": 16,
+                    "hour": 16,
+                    "minute": 7,
+                    "second": 35,
+                    "microsecond": 0
+                },
+                "NatGatewayAddresses": [
+                    {
+                        "NetworkInterfaceId": "eni-037284e52c8fad674",
+                        "PrivateIp": "192.168.0.37"
+                    }
+                ],
+                "NatGatewayId": "nat-012e91ddb1e7e8f93",
+                "State": "available",
+                "SubnetId": "subnet-04f09f62451a3c0c7",
+                "VpcId": "vpc-12345asdfg",
+                "Tags": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-383-nat_gateway_without_tag_information"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    }
+                ],
+                "ConnectivityType": "private"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

@@ -1,0 +1,27 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: ecc-aws-516-s3_event_notifications_enabled
+    description: |
+      S3 buckets should have event notifications enabled
+    resource: aws.s3
+    filters:
+    - not:
+      - or:
+        - type: bucket-notification
+          kind: sns
+          key: Id
+          value: present
+        - type: bucket-notification
+          kind: sqs
+          key: Id
+          value: present
+        - type: bucket-notification
+          kind: lambda
+          key: Id
+          value: present

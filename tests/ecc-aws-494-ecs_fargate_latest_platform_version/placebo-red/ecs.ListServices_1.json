@@ -1,0 +1,9 @@
+{
+    "status_code": 200,
+    "data": {
+        "serviceArns": [
+            "arn:aws:ecs:us-east-1:111111111111:service/494_ecs_cluster_red/494_ecs_service_red"
+        ],
+        "ResponseMetadata": {}
+    }
+}

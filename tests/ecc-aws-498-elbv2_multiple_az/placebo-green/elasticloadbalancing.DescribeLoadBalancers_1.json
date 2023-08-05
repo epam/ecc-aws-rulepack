@@ -1,0 +1,43 @@
+{
+    "status_code": 200,
+    "data": {
+        "LoadBalancers": [
+            {
+                "LoadBalancerArn": "arn:aws:elasticloadbalancing:us-east-1:111111111111:loadbalancer/net/nlb-498-green/45b9af0cb34428e8",
+                "DNSName": "nlb-498-green-45b9af0cb34428e8.elb.us-east-1.amazonaws.com",
+                "CanonicalHostedZoneId": "Z26RNL4JYFTOTI",
+                "CreatedTime": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 11,
+                    "day": 2,
+                    "hour": 14,
+                    "minute": 6,
+                    "second": 56,
+                    "microsecond": 27000
+                },
+                "LoadBalancerName": "nlb-498-green",
+                "Scheme": "internet-facing",
+                "VpcId": "vpc-12345asdfg",
+                "State": {
+                    "Code": "active"
+                },
+                "Type": "network",
+                "AvailabilityZones": [
+                    {
+                        "ZoneName": "us-east-1a",
+                        "SubnetId": "subnet-03b9bfe329c910c41",
+                        "LoadBalancerAddresses": []
+                    },
+                    {
+                        "ZoneName": "us-east-1b",
+                        "SubnetId": "subnet-0968b4b2571a5cb09",
+                        "LoadBalancerAddresses": []
+                    }
+                ],
+                "IpAddressType": "ipv4"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

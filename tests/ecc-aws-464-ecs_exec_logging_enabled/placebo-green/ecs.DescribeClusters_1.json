@@ -1,0 +1,43 @@
+{
+    "status_code": 200,
+    "data": {
+        "clusters": [
+            {
+                "clusterArn": "arn:aws:ecs:us-east-1:111111111111:cluster/464_ecs_cluster_green",
+                "clusterName": "464_ecs_cluster_green",
+                "configuration": {
+                    "executeCommandConfiguration": {
+                        "logging": "OVERRIDE",
+                        "logConfiguration": {
+                            "cloudWatchEncryptionEnabled": false,
+                            "s3BucketName": "bucket-464-green",
+                            "s3EncryptionEnabled": false,
+                            "s3KeyPrefix": "exec-output"
+                        }
+                    }
+                },
+                "status": "ACTIVE",
+                "registeredContainerInstancesCount": 0,
+                "runningTasksCount": 0,
+                "pendingTasksCount": 0,
+                "activeServicesCount": 0,
+                "statistics": [],
+                "tags": [
+                    {
+                        "key": "CustodianRule",
+                        "value": "ecc-aws-464-ecs_exec_logging_enabled"
+                    },
+                    {
+                        "key": "ComplianceStatus",
+                        "value": "Green"
+                    }
+                ],
+                "settings": [],
+                "capacityProviders": [],
+                "defaultCapacityProviderStrategy": []
+            }
+        ],
+        "failures": [],
+        "ResponseMetadata": {}
+    }
+}

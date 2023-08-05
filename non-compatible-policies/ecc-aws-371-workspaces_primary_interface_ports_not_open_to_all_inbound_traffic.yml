@@ -1,0 +1,17 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+policies:
+  - name: ecc-aws-371-workspaces_primary_interface_ports_not_open_to_all_inbound_traffic
+    resource: aws.workspaces
+    description: |
+      Primary interface ports for Workspaces are open to all inbound traffic
+    filters:
+      - type: security-group-workspace-filter
+        key: length(IpPermissions[?(IpRanges[?CidrIp=='0.0.0.0/0'] || Ipv6Ranges[?CidrIpv6=='::/0']) && IpProtocol=='-1'&& !FromPort&& !ToPort ])
+        op: ge
+        value: 1
+

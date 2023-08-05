@@ -1,0 +1,54 @@
+{
+    "status_code": 200,
+    "data": {
+        "StreamDescription": {
+            "StreamName": "418_kinesis1_stream_green",
+            "StreamARN": "arn:aws:kinesis:us-east-1:111111111111:stream/418_kinesis1_stream_green",
+            "StreamStatus": "ACTIVE",
+            "StreamModeDetails": {
+                "StreamMode": "PROVISIONED"
+            },
+            "Shards": [
+                {
+                    "ShardId": "shardId-111111111111",
+                    "HashKeyRange": {
+                        "StartingHashKey": "0",
+                        "EndingHashKey": "340282366920938463463374607431768211455"
+                    },
+                    "SequenceNumberRange": {
+                        "StartingSequenceNumber": "49636034225594761481571364483301443616220835793537597442"
+                    }
+                }
+            ],
+            "HasMoreShards": false,
+            "RetentionPeriodHours": 24,
+            "StreamCreationTimestamp": {
+                "__class__": "datetime",
+                "year": 2022,
+                "month": 12,
+                "day": 12,
+                "hour": 11,
+                "minute": 13,
+                "second": 22,
+                "microsecond": 0
+            },
+            "EnhancedMonitoring": [
+                {
+                    "ShardLevelMetrics": []
+                }
+            ],
+            "EncryptionType": "NONE",
+			"Tags": [
+				{
+					"Key": "CustodianRule",
+					"Value": "ecc-aws-418-kinesis_data_stream_without_tag_information"
+				},
+				{
+					"Key": "ComplianceStatus",
+					"Value": "Green"
+				}
+			]
+        },
+        "ResponseMetadata": {}
+    }
+}

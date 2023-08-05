@@ -1,0 +1,22 @@
+{
+    "status_code": 200,
+    "data": {
+        "TrailARN": "arn:aws:cloudtrail:us-east-1:111111111111:trail/374_cloudtrail_green",
+        "EventSelectors": [
+            {
+                "ReadWriteType": "WriteOnly",
+                "IncludeManagementEvents": false,
+                "DataResources": [
+                    {
+                        "Type": "AWS::Lambda::Function",
+                        "Values": [
+                            "arn:aws:lambda"
+                        ]
+                    }
+                ],
+                "ExcludeManagementEventSources": []
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

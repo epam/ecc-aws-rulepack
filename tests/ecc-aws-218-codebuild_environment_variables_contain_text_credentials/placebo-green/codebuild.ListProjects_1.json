@@ -1,9 +1,0 @@
-{
-    "status_code": 200,
-    "data": {
-        "projects": [
-            "green-codebuild-218"
-        ],
-        "ResponseMetadata": {}
-    }
-}

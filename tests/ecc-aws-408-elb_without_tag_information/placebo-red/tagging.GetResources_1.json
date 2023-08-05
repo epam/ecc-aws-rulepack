@@ -1,0 +1,13 @@
+{
+    "status_code": 200,
+    "data": {
+        "PaginationToken": "",
+        "ResourceTagMappingList": [
+            {
+                "ResourceARN": "arn:aws:elasticloadbalancing:us-east-1:111111111111:loadbalancer/elb-408-red",
+                "Tags": []
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

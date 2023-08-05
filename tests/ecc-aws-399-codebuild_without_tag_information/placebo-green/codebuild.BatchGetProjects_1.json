@@ -1,0 +1,93 @@
+{
+    "status_code": 200,
+    "data": {
+        "projects": [
+            {
+                "name": "399_codebuilt_green",
+                "arn": "arn:aws:codebuild:us-east-1:111111111111:project/399_codebuilt_green",
+                "source": {
+                    "type": "GITHUB",
+                    "location": "https://github.com/mitchellh/packer.git",
+                    "gitCloneDepth": 1,
+                    "gitSubmodulesConfig": {
+                        "fetchSubmodules": true
+                    },
+                    "buildspec": "",
+                    "reportBuildStatus": false,
+                    "insecureSsl": false
+                },
+                "artifacts": {
+                    "type": "NO_ARTIFACTS",
+                    "overrideArtifactName": false
+                },
+                "cache": {
+                    "type": "S3",
+                    "location": "399-bucket-green"
+                },
+                "environment": {
+                    "type": "LINUX_CONTAINER",
+                    "image": "aws/codebuild/amazonlinux2-x86_64-standard:3.0",
+                    "computeType": "BUILD_GENERAL1_SMALL",
+                    "environmentVariables": [
+                        {
+                            "name": "SOME_KEY1",
+                            "value": "SOME_VALUE1",
+                            "type": "PLAINTEXT"
+                        }
+                    ],
+                    "privilegedMode": false,
+                    "imagePullCredentialsType": "CODEBUILD"
+                },
+                "serviceRole": "arn:aws:iam::111111111111:role/399_role_green",
+                "timeoutInMinutes": 60,
+                "queuedTimeoutInMinutes": 480,
+                "encryptionKey": "arn:aws:kms:us-east-1:111111111111:alias/aws/s3",
+                "tags": [
+                    {
+                        "key": "CustodianRule",
+                        "Value": "ecc-aws-399-codebuild_without_tag_information"
+                    },
+                    {
+                        "key": "ComplianceStatus",
+                        "value": "Green"
+                    }
+                ],
+                "created": {
+                    "__class__": "datetime",
+                    "year": 2023,
+                    "month": 1,
+                    "day": 17,
+                    "hour": 11,
+                    "minute": 38,
+                    "second": 0,
+                    "microsecond": 755000
+                },
+                "lastModified": {
+                    "__class__": "datetime",
+                    "year": 2023,
+                    "month": 1,
+                    "day": 17,
+                    "hour": 11,
+                    "minute": 38,
+                    "second": 0,
+                    "microsecond": 755000
+                },
+                "badge": {
+                    "badgeEnabled": false
+                },
+                "logsConfig": {
+                    "cloudWatchLogs": {
+                        "status": "DISABLED"
+                    },
+                    "s3Logs": {
+                        "status": "DISABLED",
+                        "encryptionDisabled": false
+                    }
+                },
+                "projectVisibility": "PRIVATE"
+            }
+        ],
+        "projectsNotFound": [],
+        "ResponseMetadata": {}
+    }
+}

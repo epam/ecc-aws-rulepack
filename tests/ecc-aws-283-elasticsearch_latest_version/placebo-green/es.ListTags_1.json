@@ -1,0 +1,16 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "TagList": [
+            {
+                "Key": "CustodianRule",
+                "Value": "ecc-aws-283-elasticsearch_latest_version"
+            },
+            {
+                "Key": "ComplianceStatus",
+                "Value": "Green"
+            }
+        ]
+    }
+}

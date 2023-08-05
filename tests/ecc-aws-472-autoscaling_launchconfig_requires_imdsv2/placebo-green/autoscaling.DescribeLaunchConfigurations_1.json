@@ -1,0 +1,40 @@
+{
+    "status_code": 200,
+    "data": {
+        "LaunchConfigurations": [
+            {
+                "LaunchConfigurationName": "472_launch_configuration_green20220926090252030400000001",
+                "LaunchConfigurationARN": "arn:aws:autoscaling:us-east-1:111111111111:launchConfiguration:f9b87782-358e-4db4-b127-70f599632f6e:launchConfigurationName/472_launch_configuration_green20220926090252030400000001",
+                "ImageId": "ami-0464d49b8794eba32",
+                "KeyName": "",
+                "SecurityGroups": [],
+                "ClassicLinkVPCSecurityGroups": [],
+                "UserData": "",
+                "InstanceType": "t2.micro",
+                "KernelId": "",
+                "RamdiskId": "",
+                "BlockDeviceMappings": [],
+                "InstanceMonitoring": {
+                    "Enabled": true
+                },
+                "CreatedTime": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 9,
+                    "day": 26,
+                    "hour": 9,
+                    "minute": 2,
+                    "second": 52,
+                    "microsecond": 280000
+                },
+                "EbsOptimized": false,
+                "MetadataOptions": {
+                    "HttpTokens": "required",
+                    "HttpPutResponseHopLimit": 2,
+                    "HttpEndpoint": "enabled"
+                }
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

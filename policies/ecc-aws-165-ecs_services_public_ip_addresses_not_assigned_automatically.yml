@@ -1,0 +1,16 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: ecc-aws-165-ecs_services_public_ip_addresses_not_assigned_automatically
+    resource: aws.ecs-service
+    description: |
+      Amazon ECS services public IP addresses are assigned to them automatically 
+    filters:
+      - type: value
+        key: deployments[0].networkConfiguration.awsvpcConfiguration.assignPublicIp
+        value: ENABLED

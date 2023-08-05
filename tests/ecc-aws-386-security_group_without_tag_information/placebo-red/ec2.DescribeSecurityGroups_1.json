@@ -1,0 +1,17 @@
+{
+    "status_code": 200,
+    "data": {
+        "SecurityGroups": [
+            {
+                "Description": "Managed by Terraform",
+                "GroupName": "386_security_group_red",
+                "IpPermissions": [],
+                "OwnerId": "111111111111",
+                "GroupId": "sg-1234567asdfg",
+                "IpPermissionsEgress": [],
+                "VpcId": "vpc-12345asdfg"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

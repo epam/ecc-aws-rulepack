@@ -1,9 +1,0 @@
-{
-    "status_code": 200,
-    "data": {
-        "ResponseMetadata": {},
-        "clusters": [
-            "248_eks_cluster_red"
-        ]
-    }
-}

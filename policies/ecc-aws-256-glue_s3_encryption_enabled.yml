@@ -1,0 +1,18 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: ecc-aws-256-glue_s3_encryption_enabled
+    description: |
+      S3 is not encrypted for AWS Glue
+    resource: aws.glue-security-configuration
+    filters:
+      - type: value
+        key: EncryptionConfiguration.S3Encryption[].S3EncryptionMode
+        op: in
+        value_type: swap
+        value: DISABLED

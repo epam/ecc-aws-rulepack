@@ -1,9 +1,0 @@
-{
-    "status_code": 200,
-    "data": {
-        "applications": [
-            "723_codedeploy-app_green"
-        ],
-        "ResponseMetadata": {}
-    }
-}

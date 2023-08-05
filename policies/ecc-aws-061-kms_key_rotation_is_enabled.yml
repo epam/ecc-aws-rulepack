@@ -1,0 +1,22 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: ecc-aws-061-kms_key_rotation_is_enabled
+    description: |
+      Rotation for symmetric customer-created CMKs is not enabled
+    resource: aws.kms-key
+    filters:
+      - type: value
+        key: 'KeyState'
+        value: Enabled
+      - type: key-rotation-status
+        key: KeyRotationEnabled
+        value: false
+      - type: value
+        key: KeySpec
+        value: SYMMETRIC_DEFAULT

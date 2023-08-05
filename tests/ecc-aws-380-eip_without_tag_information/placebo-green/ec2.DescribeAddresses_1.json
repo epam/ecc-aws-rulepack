@@ -1,0 +1,25 @@
+{
+    "status_code": 200,
+    "data": {
+        "Addresses": [
+            {
+                "PublicIp": "34.239.68.48",
+                "AllocationId": "eipalloc-0f3f8f7cd91d4b4f4",
+                "Domain": "vpc",
+                "Tags": [
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    },
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-380-eip_without_tag_information"
+                    }
+                ],
+                "PublicIpv4Pool": "amazon",
+                "NetworkBorderGroup": "us-east-1"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

@@ -1,0 +1,17 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: ecc-aws-188-vpc_unused_network_acl
+    resource: aws.network-acl
+    description: |
+      Unused network access control lists are not removed
+    filters:
+      - not:
+          - type: value
+            key: Associations
+            value: not-null

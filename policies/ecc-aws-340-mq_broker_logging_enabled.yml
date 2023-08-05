@@ -1,0 +1,31 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: ecc-aws-340-mq_broker_logging_enabled
+    resource: aws.message-broker
+    description: |
+      MQ broker logging not enabled
+    filters:
+      - or:
+          - and:
+              - type: value
+                key: EngineType
+                value: ActiveMQ
+              - type: value
+                key: Logs.Audit
+                value: false
+              - type: value
+                key: Logs.General
+                value: false
+          - and:
+              - type: value
+                key: EngineType
+                value: RabbitMQ
+              - type: value
+                key: Logs.General
+                value: false

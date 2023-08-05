@@ -1,0 +1,54 @@
+{
+    "status_code": 200,
+    "data": {
+        "Backups": [
+            {
+                "BackupId": "backup-07d01923d782256fb",
+                "Lifecycle": "AVAILABLE",
+                "Type": "USER_INITIATED",
+                "ProgressPercent": 100,
+                "CreationTime": {
+                    "__class__": "datetime",
+                    "year": 2023,
+                    "month": 1,
+                    "day": 5,
+                    "hour": 10,
+                    "minute": 17,
+                    "second": 14,
+                    "microsecond": 16000
+                },
+                "KmsKeyId": "arn:aws:kms:us-east-1:111111111111:key/dd9fb145-9e61-4b40-a1d5-b079e1d5ccdd",
+                "ResourceARN": "arn:aws:fsx:us-east-1:111111111111:backup/backup-07d01923d782256fb",
+                "Tags": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-412-fsx_backup_without_tag_information"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    }
+                ],
+                "FileSystem": {
+                    "FileSystemId": "fs-0194416bdb2184e68",
+                    "FileSystemType": "LUSTRE",
+                    "StorageCapacity": 6000,
+                    "StorageType": "HDD",
+                    "ResourceARN": "arn:aws:fsx:us-east-1:111111111111:file-system/fs-0194416bdb2184e68",
+                    "LustreConfiguration": {
+                        "WeeklyMaintenanceStartTime": "4:05:00",
+                        "DeploymentType": "PERSISTENT_1",
+                        "PerUnitStorageThroughput": 12,
+                        "DailyAutomaticBackupStartTime": "04:00",
+                        "AutomaticBackupRetentionDays": 5,
+                        "DriveCacheType": "NONE",
+                        "DataCompressionType": "NONE"
+                    },
+                    "FileSystemTypeVersion": "2.10"
+                },
+                "OwnerId": "111111111111"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

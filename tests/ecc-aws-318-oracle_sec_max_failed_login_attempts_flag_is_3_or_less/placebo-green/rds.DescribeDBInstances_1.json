@@ -1,0 +1,145 @@
+{
+    "status_code": 200,
+    "data": {
+        "DBInstances": [
+            {
+                "DBInstanceIdentifier": "database-318-green",
+                "DBInstanceClass": "db.t3.micro",
+                "Engine": "oracle-ee",
+                "DBInstanceStatus": "available",
+                "MasterUsername": "root",
+                "DBName": "GREEN318",
+                "Endpoint": {
+                    "Address": "database-318-green.chhajgiktbgu.us-east-1.rds.amazonaws.com",
+                    "Port": 1521,
+                    "HostedZoneId": "ASASASASASASAS"
+                },
+                "AllocatedStorage": 10,
+                "InstanceCreateTime": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 4,
+                    "day": 28,
+                    "hour": 11,
+                    "minute": 24,
+                    "second": 1,
+                    "microsecond": 937000
+                },
+                "PreferredBackupWindow": "03:23-03:53",
+                "BackupRetentionPeriod": 0,
+                "DBSecurityGroups": [],
+                "VpcSecurityGroups": [
+                    {
+                        "VpcSecurityGroupId": "sg-a5befc90",
+                        "Status": "active"
+                    }
+                ],
+                "DBParameterGroups": [
+                    {
+                        "DBParameterGroupName": "parameter-group-318-green",
+                        "ParameterApplyStatus": "in-sync"
+                    }
+                ],
+                "AvailabilityZone": "us-east-1b",
+                "DBSubnetGroup": {
+                    "DBSubnetGroupName": "default",
+                    "DBSubnetGroupDescription": "default",
+                    "VpcId": "vpc-12345asdfg",
+                    "SubnetGroupStatus": "Complete",
+                    "Subnets": [
+                        {
+                            "SubnetIdentifier": "subnet-8158d8de",
+                            "SubnetAvailabilityZone": {
+                                "Name": "us-east-1a"
+                            },
+                            "SubnetOutpost": {},
+                            "SubnetStatus": "Active"
+                        },
+                        {
+                            "SubnetIdentifier": "subnet-5264af63",
+                            "SubnetAvailabilityZone": {
+                                "Name": "us-east-1e"
+                            },
+                            "SubnetOutpost": {},
+                            "SubnetStatus": "Active"
+                        },
+                        {
+                            "SubnetIdentifier": "subnet-b045c2d6",
+                            "SubnetAvailabilityZone": {
+                                "Name": "us-east-1b"
+                            },
+                            "SubnetOutpost": {},
+                            "SubnetStatus": "Active"
+                        },
+                        {
+                            "SubnetIdentifier": "subnet-247c052a",
+                            "SubnetAvailabilityZone": {
+                                "Name": "us-east-1f"
+                            },
+                            "SubnetOutpost": {},
+                            "SubnetStatus": "Active"
+                        },
+                        {
+                            "SubnetIdentifier": "subnet-fa9dcab7",
+                            "SubnetAvailabilityZone": {
+                                "Name": "us-east-1d"
+                            },
+                            "SubnetOutpost": {},
+                            "SubnetStatus": "Active"
+                        },
+                        {
+                            "SubnetIdentifier": "subnet-cd7af8ec",
+                            "SubnetAvailabilityZone": {
+                                "Name": "us-east-1c"
+                            },
+                            "SubnetOutpost": {},
+                            "SubnetStatus": "Active"
+                        }
+                    ]
+                },
+                "PreferredMaintenanceWindow": "wed:06:22-wed:06:52",
+                "PendingModifiedValues": {},
+                "MultiAZ": false,
+                "EngineVersion": "12.1.0.2.v25",
+                "AutoMinorVersionUpgrade": true,
+                "ReadReplicaDBInstanceIdentifiers": [],
+                "LicenseModel": "bring-your-own-license",
+                "OptionGroupMemberships": [
+                    {
+                        "OptionGroupName": "default:oracle-ee-12-1",
+                        "Status": "in-sync"
+                    }
+                ],
+                "CharacterSetName": "AL32UTF8",
+                "NcharCharacterSetName": "AL16UTF16",
+                "PubliclyAccessible": false,
+                "StorageType": "gp2",
+                "DbInstancePort": 0,
+                "StorageEncrypted": false,
+                "DbiResourceId": "db-TYQBVONQEAW4IWHHAETTZG73AE",
+                "CACertificateIdentifier": "rds-ca-2019",
+                "DomainMemberships": [],
+                "CopyTagsToSnapshot": false,
+                "MonitoringInterval": 0,
+                "DBInstanceArn": "arn:aws:rds:us-east-1:111111111111:db:database-318-green",
+                "IAMDatabaseAuthenticationEnabled": false,
+                "PerformanceInsightsEnabled": false,
+                "DeletionProtection": false,
+                "AssociatedRoles": [],
+                "TagList": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-318-oracle_sec_max_failed_attempts_flag_is_3_or_less"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    }
+                ],
+                "CustomerOwnedIpEnabled": false,
+                "ActivityStreamStatus": "stopped"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

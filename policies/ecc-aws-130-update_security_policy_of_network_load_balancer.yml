@@ -1,0 +1,25 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: ecc-aws-130-update_security_policy_of_network_load_balancer
+    description: |
+      Security Policy of the Network Load Balancer is not updated
+    resource: app-elb
+    filters:
+      - type: value
+        key: Type
+        value: "network"
+        op: in
+      - type: listener
+        key: Protocol
+        value: TLS
+      - not:
+          - type: listener
+            key: SslPolicy
+            op: regex
+            value: 'ELBSecurityPolicy-(TLS13|FS).*'

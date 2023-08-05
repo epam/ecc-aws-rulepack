@@ -1,0 +1,14 @@
+{
+    "status_code": 200,
+    "data": {
+        "Aliases": [
+            {
+                "AliasName": "alias/124_kms_key_green",
+                "AliasArn": "arn:aws:kms:us-east-1:111111111111:alias/124_kms_key_green",
+                "TargetKeyId": "9e5eca23-bf40-4743-955d-0a703b0b115a"
+            }
+        ],
+        "Truncated": false,
+        "ResponseMetadata": {}
+    }
+}

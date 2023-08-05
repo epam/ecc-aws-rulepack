@@ -1,0 +1,94 @@
+{
+    "status_code": 200,
+    "data": {
+        "Clusters": [
+            {
+                "ClusterIdentifier": "c7n-356-redshift-green",
+                "NodeType": "dc2.large",
+                "ClusterStatus": "available",
+                "ClusterAvailabilityStatus": "Available",
+                "MasterUsername": "root",
+                "DBName": "redshift356green",
+                "Endpoint": {
+                    "Address": "c7n-356-redshift-green.cqwaglj6btcm.us-east-1.redshift.amazonaws.com",
+                    "Port": 5439
+                },
+                "ClusterCreateTime": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 5,
+                    "day": 16,
+                    "hour": 10,
+                    "minute": 22,
+                    "second": 30,
+                    "microsecond": 119000
+                },
+                "AutomatedSnapshotRetentionPeriod": 1,
+                "ManualSnapshotRetentionPeriod": -1,
+                "ClusterSecurityGroups": [],
+                "VpcSecurityGroups": [
+                    {
+                        "VpcSecurityGroupId": "sg-a5befc90",
+                        "Status": "active"
+                    }
+                ],
+                "ClusterParameterGroups": [
+                    {
+                        "ParameterGroupName": "parameter-group-356-green",
+                        "ParameterApplyStatus": "in-sync"
+                    }
+                ],
+                "ClusterSubnetGroupName": "default",
+                "VpcId": "vpc-12345asdfg",
+                "AvailabilityZone": "us-east-1e",
+                "PreferredMaintenanceWindow": "tue:07:30-tue:08:00",
+                "PendingModifiedValues": {},
+                "ClusterVersion": "1.0",
+                "AllowVersionUpgrade": true,
+                "NumberOfNodes": 1,
+                "PubliclyAccessible": true,
+                "Encrypted": false,
+                "ClusterPublicKey": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCmoq7ezdHzY4fDO1GkublYr5THzU/M2rbPN+wLnpThPSMNTEJ0nmfsO4Ea/M4DJflsXiBWmDjpP+nBzDfiZaC6sjEUo+y2UeW6PUY9SWqp0HR+1lwRIfE6s13FgGH+s6aYRmrA4btPVq619I+onJFUP/TcRKYafBU5L/oZb2Sqmd5bcssZjam6eB3AhcrVmYh2WMNB1GJdHoI1XUNnY/qE+Pts01h8kHklwEo2jG4g1gslExHoq3cveUgxP3MFstUDSyAlBgZgabhnoE8MszipAe8SvmkJ1kGzqLuV2t5+fN5QJ9BPh1CJpvAgbmup+4HFYVRKzhmlYEnfsd8cTAP7 Amazon-Redshift\n",
+                "ClusterNodes": [
+                    {
+                        "NodeRole": "SHARED",
+                        "PrivateIPAddress": "172.31.50.233",
+                        "PublicIPAddress": "3.222.125.207"
+                    }
+                ],
+                "ClusterRevisionNumber": "38361",
+                "Tags": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-356-redshift_parameter_group_require_ssl"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    }
+                ],
+                "EnhancedVpcRouting": false,
+                "IamRoles": [],
+                "MaintenanceTrackName": "current",
+                "DeferredMaintenanceWindows": [],
+                "NextMaintenanceWindowStartTime": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 5,
+                    "day": 17,
+                    "hour": 7,
+                    "minute": 30,
+                    "second": 0,
+                    "microsecond": 0
+                },
+                "AvailabilityZoneRelocationStatus": "disabled",
+                "ClusterNamespaceArn": "arn:aws:redshift:us-east-1:111111111111:namespace:bb841af4-80f0-4f16-967e-deb96b593809",
+                "AquaConfiguration": {
+                    "AquaStatus": "disabled",
+                    "AquaConfigurationStatus": "auto"
+                }
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

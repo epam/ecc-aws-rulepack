@@ -1,0 +1,31 @@
+{
+    "status_code": 200,
+    "data": {
+        "LaunchTemplateVersions": [
+            {
+                "LaunchTemplateId": "lt-0c2a3106fe4b09ba3",
+                "LaunchTemplateName": "289_launch_template_red20220106072325529300000001",
+                "VersionNumber": 1,
+                "CreateTime": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 1,
+                    "day": 6,
+                    "hour": 7,
+                    "minute": 23,
+                    "second": 26,
+                    "microsecond": 0
+                },
+                "CreatedBy": "arn:aws:iam::111111111111:user/test",
+                "DefaultVersion": true,
+                "LaunchTemplateData": {
+                    "ImageId": "ami-0e9ec365374bb782e",
+                    "InstanceType": "t2.micro",
+                    "KeyName": "289_key_pair_red",
+                    "UserData": ""
+                }
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

@@ -1,0 +1,76 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "ResourceRecordSets": [
+            {
+                "Name": "346-route53-zone.rule.",
+                "Type": "A",
+                "AliasTarget": {
+                    "HostedZoneId": "ASASASASASASAS",
+                    "DNSName": "s3-website-us-east-1.amazonaws.com.",
+                    "EvaluateTargetHealth": false
+                }
+            },
+            {
+                "Name": "346-route53-zone.rule.",
+                "Type": "AAAA",
+                "SetIdentifier": "346_record_green",
+                "Weight": 200,
+                "TTL": 300,
+                "ResourceRecords": [
+                    {
+                        "Value": "1111::1111"
+                    }
+                ],
+                "HealthCheckId": "a759badc-2e6b-44bf-a214-6717e4071e9c"
+            },
+            {
+                "Name": "346-route53-zone.rule.",
+                "Type": "MX",
+                "SetIdentifier": "346_record_green",
+                "GeoLocation": {
+                    "CountryCode": "UA"
+                },
+                "TTL": 300,
+                "ResourceRecords": [
+                    {
+                        "Value": "10 mailhost1.example.com"
+                    }
+                ],
+                "HealthCheckId": "a759badc-2e6b-44bf-a214-6717e4071e9c"
+            },
+            {
+                "Name": "346-route53-zone.rule.",
+                "Type": "NS",
+                "TTL": 172800,
+                "ResourceRecords": [
+                    {
+                        "Value": "ns-790.awsdns-34.net."
+                    },
+                    {
+                        "Value": "ns-1070.awsdns-05.org."
+                    },
+                    {
+                        "Value": "ns-106.awsdns-13.com."
+                    },
+                    {
+                        "Value": "ns-1921.awsdns-48.co.uk."
+                    }
+                ]
+            },
+            {
+                "Name": "346-route53-zone.rule.",
+                "Type": "SOA",
+                "TTL": 900,
+                "ResourceRecords": [
+                    {
+                        "Value": "ns-790.awsdns-34.net. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+                    }
+                ]
+            }
+        ],
+        "IsTruncated": false,
+        "MaxItems": "100"
+    }
+}

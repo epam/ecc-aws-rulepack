@@ -1,0 +1,22 @@
+{
+    "status_code": 200,
+    "data": {
+        "PaginationToken": "",
+        "ResourceTagMappingList": [
+            {
+                "ResourceARN": "arn:aws:rds:us-east-1:this:db:terraform-20210906115453271000000001",
+                "Tags": [
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Red"
+                    },
+                    {
+                        "Key": "CsutodianRule",
+                        "Value": "ecc-aws-158-rds_db_instances_configured_to_copy_tags_to_snapshots"
+                    }
+                ]
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

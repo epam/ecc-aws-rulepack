@@ -1,0 +1,16 @@
+{
+    "status_code": 200,
+    "data": {
+        "Tags": [
+            {
+                "Key": "CustodianRule",
+                "Value": "ecc-aws-367-ds_directory_not_open_to_large_scope"
+            },
+            {
+                "Key": "ComplianceStatus",
+                "Value": "Red"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

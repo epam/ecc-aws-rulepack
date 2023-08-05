@@ -1,0 +1,33 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+policies:
+  - name: ecc-aws-485-codedeploy_ec2_minimum_healthy_hosts_configured
+    description: |
+      CodeDeploy deployment config of application does not meet the requirements
+    resource: aws.codedeploy-group
+    filters:
+      - type: value
+        key: computePlatform
+        value: Server
+      - or:
+          - and:
+              - type: deployment-config-filter
+                key: minimumHealthyHosts.type
+                value: "FLEET_PERCENT"
+              - type: deployment-config-filter
+                key: minimumHealthyHosts.value
+                op: lt
+                value: 50
+          - and:
+              - type: deployment-config-filter
+                key: minimumHealthyHosts.type
+                value: "HOST_COUNT"
+              - type: deployment-config-filter
+                key: minimumHealthyHosts.value
+                op: lt
+                value: 1
+

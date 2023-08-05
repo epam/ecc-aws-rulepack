@@ -1,0 +1,41 @@
+{
+    "status_code": 200,
+    "data": {
+        "TransitGatewayAttachments": [
+            {
+                "TransitGatewayAttachmentId": "tgw-attach-0e0d765fb55a6c848",
+                "TransitGatewayId": "tgw-02b6fb740624e1432",
+                "TransitGatewayOwnerId": "111111111111",
+                "ResourceOwnerId": "111111111111",
+                "ResourceType": "vpc",
+                "ResourceId": "vpc-088c19069e9ed4d27",
+                "State": "available",
+                "Association": {
+                    "TransitGatewayRouteTableId": "tgw-rtb-04c62e5c195a975cd",
+                    "State": "associated"
+                },
+                "CreationTime": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 12,
+                    "day": 9,
+                    "hour": 9,
+                    "minute": 5,
+                    "second": 43,
+                    "microsecond": 0
+                },
+                "Tags": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-389-transit_gateway_attachment_without_tag_information"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    }
+                ]
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

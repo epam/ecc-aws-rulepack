@@ -1,0 +1,10 @@
+{
+    "status_code": 200,
+    "data": {
+        "applicationName": "484_codedeploy-app_green",
+        "deploymentGroups": [
+            "484_codedeploy_deployment_group_green"
+        ],
+        "ResponseMetadata": {}
+    }
+}

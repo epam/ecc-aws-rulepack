@@ -1,0 +1,89 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "AuthenticationStrategy": "simple",
+        "AutoMinorVersionUpgrade": false,
+        "BrokerArn": "arn:aws:mq:us-east-1:111111111111:broker:mq-broker-active-433-green:b-6875c09b-72c5-436c-aa43-e2e897dea5d4",
+        "BrokerId": "b-6875c09b-72c5-436c-aa43-e2e897dea5d4",
+        "BrokerInstances": [
+            {
+                "ConsoleURL": "https://b-6875c09b-72c5-436c-aa43-e2e897dea5d4-1.mq.us-east-1.amazonaws.com:8162",
+                "Endpoints": [
+                    "ssl://b-6875c09b-72c5-436c-aa43-e2e897dea5d4-1.mq.us-east-1.amazonaws.com:61617",
+                    "amqp+ssl://b-6875c09b-72c5-436c-aa43-e2e897dea5d4-1.mq.us-east-1.amazonaws.com:5671",
+                    "stomp+ssl://b-6875c09b-72c5-436c-aa43-e2e897dea5d4-1.mq.us-east-1.amazonaws.com:61614",
+                    "mqtt+ssl://b-6875c09b-72c5-436c-aa43-e2e897dea5d4-1.mq.us-east-1.amazonaws.com:8883",
+                    "wss://b-6875c09b-72c5-436c-aa43-e2e897dea5d4-1.mq.us-east-1.amazonaws.com:61619"
+                ],
+                "IpAddress": "172.31.23.174"
+            },
+            {
+                "ConsoleURL": "https://b-6875c09b-72c5-436c-aa43-e2e897dea5d4-2.mq.us-east-1.amazonaws.com:8162",
+                "Endpoints": [
+                    "ssl://b-6875c09b-72c5-436c-aa43-e2e897dea5d4-2.mq.us-east-1.amazonaws.com:61617",
+                    "amqp+ssl://b-6875c09b-72c5-436c-aa43-e2e897dea5d4-2.mq.us-east-1.amazonaws.com:5671",
+                    "stomp+ssl://b-6875c09b-72c5-436c-aa43-e2e897dea5d4-2.mq.us-east-1.amazonaws.com:61614",
+                    "mqtt+ssl://b-6875c09b-72c5-436c-aa43-e2e897dea5d4-2.mq.us-east-1.amazonaws.com:8883",
+                    "wss://b-6875c09b-72c5-436c-aa43-e2e897dea5d4-2.mq.us-east-1.amazonaws.com:61619"
+                ],
+                "IpAddress": "172.31.79.185"
+            }
+        ],
+        "BrokerName": "mq-broker-active-433-green",
+        "BrokerState": "RUNNING",
+        "Configurations": {
+            "Current": {
+                "Id": "c-111qqq2-asdf-qwer-1111-asdfghqwe",
+                "Revision": 1
+            },
+            "History": []
+        },
+        "Created": {
+            "__class__": "datetime",
+            "year": 2022,
+            "month": 7,
+            "day": 5,
+            "hour": 10,
+            "minute": 53,
+            "second": 52,
+            "microsecond": 711000
+        },
+        "DeploymentMode": "ACTIVE_STANDBY_MULTI_AZ",
+        "EncryptionOptions": {
+            "UseAwsOwnedKey": true
+        },
+        "EngineType": "ActiveMQ",
+        "EngineVersion": "5.16.4",
+        "HostInstanceType": "mq.t2.micro",
+        "Logs": {
+            "Audit": false,
+            "AuditLogGroup": "/aws/amazonmq/broker/b-6875c09b-72c5-436c-aa43-e2e897dea5d4/audit",
+            "General": false,
+            "GeneralLogGroup": "/aws/amazonmq/broker/b-6875c09b-72c5-436c-aa43-e2e897dea5d4/general"
+        },
+        "MaintenanceWindowStartTime": {
+            "DayOfWeek": "TUESDAY",
+            "TimeOfDay": "20:00",
+            "TimeZone": "UTC"
+        },
+        "PubliclyAccessible": false,
+        "SecurityGroups": [
+            "sg-a5befc90"
+        ],
+        "StorageType": "efs",
+        "SubnetIds": [
+            "subnet-247c052a",
+            "subnet-fa9dcab7"
+        ],
+        "Tags": {
+            "CustodianRule": "ecc-aws-433-mq_broker_active_deployment_mode",
+            "ComplianceStatus": "Green"
+        },
+        "Users": [
+            {
+                "Username": "root"
+            }
+        ]
+    }
+}

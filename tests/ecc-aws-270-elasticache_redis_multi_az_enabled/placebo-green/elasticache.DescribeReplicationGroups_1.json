@@ -1,0 +1,76 @@
+{
+    "status_code": 200,
+    "data": {
+        "ReplicationGroups": [
+            {
+                "ReplicationGroupId": "c7n-270-elasticache-group-green",
+                "Description": "270_elasticache_group_green",
+                "GlobalReplicationGroupInfo": {},
+                "Status": "available",
+                "PendingModifiedValues": {},
+                "MemberClusters": [
+                    "c7n-270-elasticache-group-green-001",
+                    "c7n-270-elasticache-group-green-002"
+                ],
+                "NodeGroups": [
+                    {
+                        "NodeGroupId": "0001",
+                        "Status": "available",
+                        "PrimaryEndpoint": {
+                            "Address": "c7n-270-elasticache-group-green.ps5uie.ng.0001.use1.cache.amazonaws.com",
+                            "Port": 6379
+                        },
+                        "ReaderEndpoint": {
+                            "Address": "c7n-270-elasticache-group-green-ro.ps5uie.ng.0001.use1.cache.amazonaws.com",
+                            "Port": 6379
+                        },
+                        "NodeGroupMembers": [
+                            {
+                                "CacheClusterId": "c7n-270-elasticache-group-green-001",
+                                "CacheNodeId": "0001",
+                                "ReadEndpoint": {
+                                    "Address": "c7n-270-elasticache-group-green-001.ps5uie.0001.use1.cache.amazonaws.com",
+                                    "Port": 6379
+                                },
+                                "PreferredAvailabilityZone": "us-east-1a",
+                                "CurrentRole": "primary"
+                            },
+                            {
+                                "CacheClusterId": "c7n-270-elasticache-group-green-002",
+                                "CacheNodeId": "0001",
+                                "ReadEndpoint": {
+                                    "Address": "c7n-270-elasticache-group-green-002.ps5uie.0001.use1.cache.amazonaws.com",
+                                    "Port": 6379
+                                },
+                                "PreferredAvailabilityZone": "us-east-1b",
+                                "CurrentRole": "replica"
+                            }
+                        ]
+                    }
+                ],
+                "AutomaticFailover": "enabled",
+                "MultiAZ": "enabled",
+                "SnapshotRetentionLimit": 0,
+                "SnapshotWindow": "05:00-06:00",
+                "ClusterEnabled": false,
+                "CacheNodeType": "cache.t2.micro",
+                "AuthTokenEnabled": false,
+                "TransitEncryptionEnabled": false,
+                "AtRestEncryptionEnabled": false,
+                "ARN": "arn:aws:elasticache:us-east-1:this:replicationgroup:c7n-270-elasticache-group-green",
+                "LogDeliveryConfigurations": [],
+                "ReplicationGroupCreateTime": {
+                    "__class__": "datetime",
+                    "year": 2021,
+                    "month": 12,
+                    "day": 2,
+                    "hour": 12,
+                    "minute": 41,
+                    "second": 51,
+                    "microsecond": 145000
+                }
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

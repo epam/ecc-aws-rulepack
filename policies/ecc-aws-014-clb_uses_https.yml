@@ -1,0 +1,25 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: ecc-aws-014-clb_uses_https
+    description: |
+      Classic Load Balancer listeners are not blocking connection requests over http
+    resource: elb
+    filters:
+      - not:
+          - or:
+              - type: value
+                key: ListenerDescriptions[].Listener.Protocol
+                value_type: swap
+                value: HTTPS
+                op: in
+              - type: value
+                key: ListenerDescriptions[].Listener.Protocol
+                value_type: swap
+                value: SSL
+                op: in

@@ -1,0 +1,19 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: ecc-aws-519-vpc_vpn_2_tunnels_up
+    description: |
+      One or both VPN tunnels for an AWS Site-to-Site VPN connection are in DOWN status
+    resource: aws.vpn-connection
+    filters:
+      - type: value
+        key: State
+        value: available
+      - type: value
+        key: length(VgwTelemetry[?Status=='UP'])==`2`
+        value: false

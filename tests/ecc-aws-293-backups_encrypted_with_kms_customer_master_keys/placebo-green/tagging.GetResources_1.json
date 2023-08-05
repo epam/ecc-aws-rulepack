@@ -1,0 +1,22 @@
+{
+    "status_code": 200,
+    "data": {
+        "PaginationToken": "",
+        "ResourceTagMappingList": [
+            {
+                "ResourceARN": "arn:aws:backup:us-east-1:111111111111:backup-vault:293_backup_vault_green",
+                "Tags": [
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    },
+                    {
+                        "Key": "CsutodianRule",
+                        "Value": "ecc-aws-293-backups_encrypted_with_kms_customer_master_keys"
+                    }
+                ]
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

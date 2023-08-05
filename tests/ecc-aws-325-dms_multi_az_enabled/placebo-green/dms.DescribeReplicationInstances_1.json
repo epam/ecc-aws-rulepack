@@ -1,0 +1,70 @@
+{
+    "status_code": 200,
+    "data": {
+        "ReplicationInstances": [
+            {
+                "ReplicationInstanceIdentifier": "dms-replication-instance-325-green",
+                "ReplicationInstanceClass": "dms.t2.micro",
+                "ReplicationInstanceStatus": "available",
+                "AllocatedStorage": 5,
+                "InstanceCreateTime": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 1,
+                    "day": 10,
+                    "hour": 13,
+                    "minute": 4,
+                    "second": 12,
+                    "microsecond": 871000
+                },
+                "VpcSecurityGroups": [
+                    {
+                        "VpcSecurityGroupId": "sg-08137cd7e984a088d",
+                        "Status": "active"
+                    }
+                ],
+                "AvailabilityZone": "us-east-1b",
+                "ReplicationSubnetGroup": {
+                    "ReplicationSubnetGroupIdentifier": "subnet-group-green",
+                    "ReplicationSubnetGroupDescription": "325_subnet_group_green",
+                    "VpcId": "vpc-12345asdfg",
+                    "SubnetGroupStatus": "Complete",
+                    "Subnets": [
+                        {
+                            "SubnetIdentifier": "subnet-0416d4086612ad876",
+                            "SubnetAvailabilityZone": {
+                                "Name": "us-east-1a"
+                            },
+                            "SubnetStatus": "Active"
+                        },
+                        {
+                            "SubnetIdentifier": "subnet-0a6fbf587e7317747",
+                            "SubnetAvailabilityZone": {
+                                "Name": "us-east-1b"
+                            },
+                            "SubnetStatus": "Active"
+                        }
+                    ]
+                },
+                "PreferredMaintenanceWindow": "sat:06:31-sat:07:01",
+                "PendingModifiedValues": {},
+                "MultiAZ": true,
+                "EngineVersion": "3.4.3",
+                "AutoMinorVersionUpgrade": false,
+                "KmsKeyId": "arn:aws:kms:us-east-1:111111111111:key/e56f2d19-2ba5-4c25-829a-44ad8f133131",
+                "ReplicationInstanceArn": "arn:aws:dms:us-east-1:111111111111:rep:ITACAYO2QJ7TFBPZOTKFBCBZZMSZJITDABDO4BI",
+                "ReplicationInstancePrivateIpAddress": "10.0.2.49",
+                "ReplicationInstancePublicIpAddresses": [
+                    null
+                ],
+                "ReplicationInstancePrivateIpAddresses": [
+                    "10.0.2.49",
+                    "10.0.1.122"
+                ],
+                "PubliclyAccessible": false,
+                "SecondaryAvailabilityZone": "us-east-1a"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

@@ -1,0 +1,71 @@
+{
+    "status_code": 200,
+    "data": {
+        "DBSnapshots": [
+            {
+                "DBSnapshotIdentifier": "db428snapshotgreen",
+                "DBInstanceIdentifier": "terraform-20221103163058810600000001",
+                "SnapshotCreateTime": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 11,
+                    "day": 3,
+                    "hour": 16,
+                    "minute": 37,
+                    "second": 19,
+                    "microsecond": 505000
+                },
+                "Engine": "mysql",
+                "AllocatedStorage": 10,
+                "Status": "available",
+                "Port": 3306,
+                "AvailabilityZone": "us-east-1f",
+                "VpcId": "vpc-12345asdfg",
+                "InstanceCreateTime": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 11,
+                    "day": 3,
+                    "hour": 16,
+                    "minute": 35,
+                    "second": 43,
+                    "microsecond": 897000
+                },
+                "MasterUsername": "root",
+                "EngineVersion": "5.7.38",
+                "LicenseModel": "general-public-license",
+                "SnapshotType": "manual",
+                "OptionGroupName": "default:mysql-5-7",
+                "PercentProgress": 100,
+                "StorageType": "gp2",
+                "Encrypted": false,
+                "DBSnapshotArn": "arn:aws:rds:us-east-1:111111111111:snapshot:db428snapshotgreen",
+                "IAMDatabaseAuthenticationEnabled": false,
+                "ProcessorFeatures": [],
+                "DbiResourceId": "db-Q5XHBWE5NMM6BTIFUBLVRLJWJY",
+                "TagList": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-428-rds_snapshot_without_tag_information"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    }
+                ],
+                "OriginalSnapshotCreateTime": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 11,
+                    "day": 3,
+                    "hour": 16,
+                    "minute": 37,
+                    "second": 19,
+                    "microsecond": 505000
+                },
+                "SnapshotTarget": "region"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

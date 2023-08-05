@@ -1,0 +1,10 @@
+{
+    "status_code": 200,
+    "data": {
+        "DeliveryStreamNames": [
+            "334_kinesis_firehose_green"
+        ],
+        "HasMoreDeliveryStreams": false,
+        "ResponseMetadata": {}
+    }
+}

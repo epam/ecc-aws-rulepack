@@ -1,0 +1,21 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+policies:
+  - name: ecc-aws-105-kinesis_streams_keys_are_rotated
+    description: |
+      Kinesis Streams Keys are not rotated
+    resource: aws.kinesis
+    filters:
+      - or:
+          - type: kms-key-kinesis-filter
+            key: KeyRotationEnabled
+            op: eq
+            value: false
+          - type: kms-key-kinesis-filter
+            key: EncryptionType
+            op: eq
+            value: NONE
