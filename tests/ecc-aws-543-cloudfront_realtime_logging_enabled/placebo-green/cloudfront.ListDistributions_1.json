@@ -1,0 +1,136 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "DistributionList": {
+            "Marker": "",
+            "MaxItems": 100,
+            "IsTruncated": false,
+            "Quantity": 4,
+            "Items": [
+                {
+                    "Id": "E2FECRD44XPF04",
+                    "ARN": "arn:aws:cloudfront::111111111111:distribution/E2FECRD44XPF04",
+                    "Status": "Deployed",
+                    "LastModifiedTime": {
+                        "__class__": "datetime",
+                        "year": 2023,
+                        "month": 7,
+                        "day": 19,
+                        "hour": 8,
+                        "minute": 19,
+                        "second": 53,
+                        "microsecond": 802000
+                    },
+                    "DomainName": "d1lms1b3mugl14.cloudfront.net",
+                    "Aliases": {
+                        "Quantity": 0
+                    },
+                    "Origins": {
+                        "Quantity": 1,
+                        "Items": [
+                            {
+                                "Id": "543_oac_green",
+                                "DomainName": "543-bucket-6331250-green.s3.amazonaws.com",
+                                "OriginPath": "",
+                                "CustomHeaders": {
+                                    "Quantity": 0
+                                },
+                                "S3OriginConfig": {
+                                    "OriginAccessIdentity": ""
+                                },
+                                "ConnectionAttempts": 3,
+                                "ConnectionTimeout": 10,
+                                "OriginShield": {
+                                    "Enabled": false
+                                },
+                                "OriginAccessControlId": "E1409780I6PEZ2"
+                            }
+                        ]
+                    },
+                    "OriginGroups": {
+                        "Quantity": 0
+                    },
+                    "DefaultCacheBehavior": {
+                        "TargetOriginId": "543_oac_green",
+                        "TrustedSigners": {
+                            "Enabled": false,
+                            "Quantity": 0
+                        },
+                        "TrustedKeyGroups": {
+                            "Enabled": false,
+                            "Quantity": 0
+                        },
+                        "ViewerProtocolPolicy": "redirect-to-https",
+                        "AllowedMethods": {
+                            "Quantity": 3,
+                            "Items": [
+                                "HEAD",
+                                "GET",
+                                "OPTIONS"
+                            ],
+                            "CachedMethods": {
+                                "Quantity": 2,
+                                "Items": [
+                                    "HEAD",
+                                    "GET"
+                                ]
+                            }
+                        },
+                        "SmoothStreaming": false,
+                        "Compress": true,
+                        "LambdaFunctionAssociations": {
+                            "Quantity": 0
+                        },
+                        "FunctionAssociations": {
+                            "Quantity": 0
+                        },
+                        "FieldLevelEncryptionId": "",
+                        "RealtimeLogConfigArn": "arn:aws:cloudfront::111111111111:realtime-log-config/543_cloudfront_log_green",
+                        "CachePolicyId": "658327ea-f89d-4fab-a63d-7e88639e58f6",
+                        "OriginRequestPolicyId": "88a5eaf4-2fd4-4709-b370-b4c650ea3fcf"
+                    },
+                    "CacheBehaviors": {
+                        "Quantity": 0
+                    },
+                    "CustomErrorResponses": {
+                        "Quantity": 2,
+                        "Items": [
+                            {
+                                "ErrorCode": 403,
+                                "ResponsePagePath": "/index.html",
+                                "ResponseCode": "200",
+                                "ErrorCachingMinTTL": 0
+                            },
+                            {
+                                "ErrorCode": 404,
+                                "ResponsePagePath": "/index.html",
+                                "ResponseCode": "200",
+                                "ErrorCachingMinTTL": 0
+                            }
+                        ]
+                    },
+                    "Comment": "",
+                    "PriceClass": "PriceClass_All",
+                    "Enabled": true,
+                    "ViewerCertificate": {
+                        "CloudFrontDefaultCertificate": true,
+                        "SSLSupportMethod": "vip",
+                        "MinimumProtocolVersion": "TLSv1",
+                        "CertificateSource": "cloudfront"
+                    },
+                    "Restrictions": {
+                        "GeoRestriction": {
+                            "RestrictionType": "none",
+                            "Quantity": 0
+                        }
+                    },
+                    "WebACLId": "",
+                    "HttpVersion": "HTTP2",
+                    "IsIPV6Enabled": true,
+                    "Staging": false
+                }
+            ]
+        }
+    }
+}

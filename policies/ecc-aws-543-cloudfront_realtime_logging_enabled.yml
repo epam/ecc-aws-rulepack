@@ -1,0 +1,20 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: ecc-aws-543-cloudfront_realtime_logging_enabled
+    resource: aws.distribution
+    description: |
+      CloudFront Realtime logging disabled
+    filters:
+      - and:
+          - type: value
+            key: DefaultCacheBehavior.RealtimeLogConfigArn
+            value: absent
+          - type: value
+            key: CacheBehaviors.Items[].RealtimeLogConfigArn
+            value: empty
