@@ -1,0 +1,17 @@
+# Copyright (c) 2023 ecc Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: ecc-aws-529-ebs_attached_volume_delete_on_termination_enabled
+    resource: aws.ec2
+    description: |
+      EBS volumes attached to an EC2 instance is not marked for deletion upon instance termination
+    filters:
+      - type: value
+        key: BlockDeviceMappings[].Ebs.DeleteOnTermination
+        op: contains
+        value: false
