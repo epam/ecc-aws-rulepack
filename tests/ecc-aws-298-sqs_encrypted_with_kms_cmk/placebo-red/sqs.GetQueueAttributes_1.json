@@ -1,0 +1,23 @@
+{
+    "status_code": 200,
+    "data": {
+        "Attributes": {
+            "QueueArn": "arn:aws:sqs:us-east-1:111111111111:298_sqs_red",
+            "ApproximateNumberOfMessages": "0",
+            "ApproximateNumberOfMessagesNotVisible": "0",
+            "ApproximateNumberOfMessagesDelayed": "0",
+            "CreatedTimestamp": "1641463954",
+            "LastModifiedTimestamp": "1641463984",
+            "VisibilityTimeout": "30",
+            "MaximumMessageSize": "2048",
+            "MessageRetentionPeriod": "86400",
+            "DelaySeconds": "90",
+            "Policy": "{\"Version\":\"2012-10-17\",\"Id\":\"sqspolicy\",\"Statement\":[{\"Sid\":\"First\",\"Effect\":\"Allow\",\"Principal\":\"*\",\"Action\":\"sqs:SendMessage\",\"Resource\":\"arn:aws:sqs:us-east-1:111111111111:298_sqs_red\"}]}",
+            "ReceiveMessageWaitTimeSeconds": "10",
+            "KmsMasterKeyId": "alias/aws/sqs",
+            "KmsDataKeyReusePeriodSeconds": "300",
+            "SqsManagedSseEnabled": "false"
+        },
+        "ResponseMetadata": {}
+    }
+}

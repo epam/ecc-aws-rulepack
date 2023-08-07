@@ -1,0 +1,55 @@
+{
+    "status_code": 200,
+    "data": {
+        "Jobs": [
+            {
+                "Name": "414_glue_job_green",
+                "Role": "arn:aws:iam::111111111111:role/414_role_green",
+                "CreatedOn": {
+                    "__class__": "datetime",
+                    "year": 2023,
+                    "month": 1,
+                    "day": 19,
+                    "hour": 12,
+                    "minute": 16,
+                    "second": 21,
+                    "microsecond": 648000
+                },
+                "LastModifiedOn": {
+                    "__class__": "datetime",
+                    "year": 2023,
+                    "month": 1,
+                    "day": 19,
+                    "hour": 12,
+                    "minute": 16,
+                    "second": 21,
+                    "microsecond": 648000
+                },
+                "ExecutionProperty": {
+                    "MaxConcurrentRuns": 1
+                },
+                "Command": {
+                    "Name": "glueetl",
+                    "ScriptLocation": "s3://bucket-414-green/script",
+                    "PythonVersion": "2"
+                },
+                "MaxRetries": 0,
+                "AllocatedCapacity": 10,
+                "Timeout": 2880,
+                "MaxCapacity": 10.0,
+                "GlueVersion": "0.9",
+                "Tags": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-414-glue_job_without_tag_information"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    }
+			    ]
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "status_code": 200,
+    "data": {
+        "ConfigurationRecorders": [
+            {
+                "name": "059_configuration_recorder_red1",
+                "roleARN": "arn:aws:iam::111111111111:role/059_role_red1",
+                "recordingGroup": {
+                    "allSupported": false,
+                    "includeGlobalResourceTypes": false,
+                    "resourceTypes": [
+                        "AWS::RDS::DBInstance"
+                    ]
+                }
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

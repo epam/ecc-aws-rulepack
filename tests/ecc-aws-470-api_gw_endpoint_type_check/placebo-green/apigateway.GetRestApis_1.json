@@ -1,0 +1,33 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "items": [
+            {
+                "id": "krsm2atdga",
+                "name": "470_api_green",
+                "createdDate": {
+                    "__class__": "datetime",
+                    "year": 2023,
+                    "month": 1,
+                    "day": 16,
+                    "hour": 12,
+                    "minute": 26,
+                    "second": 12,
+                    "microsecond": 0
+                },
+                "apiKeySource": "HEADER",
+                "endpointConfiguration": {
+                    "types": [
+                        "EDGE"
+                    ]
+                },
+                "tags": {
+                    "ComplianceStatus": "Green",
+                    "CustodianRule": "ecc-aws-470-api_gw_endpoint_type_check"
+                },
+                "disableExecuteApiEndpoint": false
+            }
+        ]
+    }
+}

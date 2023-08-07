@@ -1,0 +1,16 @@
+{
+    "status_code": 200,
+    "data": {
+        "logGroups": [
+            {
+                "logGroupName": "cloudwatch_479_log_group_green",
+                "creationTime": 1657189560178,
+                "metricFilterCount": 0,
+                "arn": "arn:aws:logs:us-east-1:111111111111:log-group:cloudwatch_479_log_group_green:*",
+                "storedBytes": 0,
+                "kmsKeyId": "arn:aws:kms:us-east-1:111111111111:key/3b30d9fa-da49-49de-9730-f95b4de21e95"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

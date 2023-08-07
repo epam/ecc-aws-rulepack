@@ -1,0 +1,29 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResourceArn": "arn:aws:elasticbeanstalk:us-east-1:111111111111:environment/192_application_red/environment-192-red",
+        "ResourceTags": [
+            {
+                "Key": "elasticbeanstalk:environment-id",
+                "Value": "e-n6dgqimezz"
+            },
+            {
+                "Key": "CustodianRule",
+                "Value": "ecc-aws-192-elastic_beanstalk_enhanced_health_reporting_enabled"
+            },
+            {
+                "Key": "ComplianceStatus",
+                "Value": "Red"
+            },
+            {
+                "Key": "elasticbeanstalk:environment-name",
+                "Value": "environment-192-red"
+            },
+            {
+                "Key": "Name",
+                "Value": "environment-192-red"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

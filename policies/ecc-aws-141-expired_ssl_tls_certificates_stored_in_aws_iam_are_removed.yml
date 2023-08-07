@@ -1,0 +1,18 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: ecc-aws-141-expired_ssl_tls_certificates_stored_in_aws_iam_are_removed
+    resource: iam-certificate
+    description: |
+      Expired SSL/TLS certificates stored in IAM are not removed
+    filters:
+      - type: value
+        key: Expiration
+        value_type: expiration
+        op: le
+        value: 0

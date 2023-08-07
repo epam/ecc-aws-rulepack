@@ -1,0 +1,94 @@
+{
+    "status_code": 200,
+    "data": {
+        "Clusters": [
+            {
+                "ClusterIdentifier": "c7n-449-redshift-red",
+                "NodeType": "dc2.large",
+                "ClusterStatus": "available",
+                "ClusterAvailabilityStatus": "Available",
+                "MasterUsername": "root",
+                "DBName": "c7nredshiftred",
+                "Endpoint": {
+                    "Address": "c7n-449-redshift-red.cqwaglj6btcm.us-east-1.redshift.amazonaws.com",
+                    "Port": 5439
+                },
+                "ClusterCreateTime": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 7,
+                    "day": 6,
+                    "hour": 10,
+                    "minute": 51,
+                    "second": 40,
+                    "microsecond": 157000
+                },
+                "AutomatedSnapshotRetentionPeriod": 1,
+                "ManualSnapshotRetentionPeriod": -1,
+                "ClusterSecurityGroups": [],
+                "VpcSecurityGroups": [
+                    {
+                        "VpcSecurityGroupId": "sg-a5befc90",
+                        "Status": "active"
+                    }
+                ],
+                "ClusterParameterGroups": [
+                    {
+                        "ParameterGroupName": "default.redshift-1.0",
+                        "ParameterApplyStatus": "in-sync"
+                    }
+                ],
+                "ClusterSubnetGroupName": "default",
+                "VpcId": "vpc-12345asdfg",
+                "AvailabilityZone": "us-east-1e",
+                "PreferredMaintenanceWindow": "thu:03:30-thu:04:00",
+                "PendingModifiedValues": {},
+                "ClusterVersion": "1.0",
+                "AllowVersionUpgrade": true,
+                "NumberOfNodes": 1,
+                "PubliclyAccessible": true,
+                "Encrypted": false,
+                "ClusterPublicKey": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCtQ4/PWoUcrZvSSIyGC/lG/z2c9C00wLDi6/FjLX32OxCGkIsB6Dg+TkiR+CrrJSCpSTzHSB0IW660fFde1vvrPhb/3mGqbZ1nPZrjF1KwQ6ci7RNnwibpit+YiLTE7PSXRFje8ND58NDBBPPXEkzx7V1p3EsI+45nUkEgetnMrVwgK9UGUU1NPAOZ6to68l9X0CmAmI3rhiZJFosV6/S7fnrRlWHfhMZPkRj0qZezpnzgQFeLtLOkX09U8QrIADXjK8PoOfYKRLfUkL4+QisV2iVGJah9aEp9B7yYi/Bbx6dfB5avzKsEhZbJLp5ysfSeFKaZczlKE+gR/ODV56iZ Amazon-Redshift\n",
+                "ClusterNodes": [
+                    {
+                        "NodeRole": "SHARED",
+                        "PrivateIPAddress": "172.31.60.214",
+                        "PublicIPAddress": "23.20.203.135"
+                    }
+                ],
+                "ClusterRevisionNumber": "38698",
+                "Tags": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-449-redshift_availability_zone_relocation_enabled"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Red"
+                    }
+                ],
+                "EnhancedVpcRouting": false,
+                "IamRoles": [],
+                "MaintenanceTrackName": "current",
+                "DeferredMaintenanceWindows": [],
+                "NextMaintenanceWindowStartTime": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 7,
+                    "day": 7,
+                    "hour": 3,
+                    "minute": 30,
+                    "second": 0,
+                    "microsecond": 0
+                },
+                "AvailabilityZoneRelocationStatus": "disabled",
+                "ClusterNamespaceArn": "arn:aws:redshift:us-east-1:111111111111:namespace:8342dcbc-3ed3-40e5-9532-eab2e7f8e0cd",
+                "AquaConfiguration": {
+                    "AquaStatus": "disabled",
+                    "AquaConfigurationStatus": "auto"
+                }
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

@@ -1,0 +1,88 @@
+{
+    "status_code": 200,
+    "data": {
+        "Cluster": {
+            "Id": "j-33YO7CLXN0V2S",
+            "Name": "455_emr_cluster_red",
+            "Status": {
+                "State": "WAITING",
+                "StateChangeReason": {
+                    "Message": "Cluster ready to run steps."
+                },
+                "Timeline": {
+                    "CreationDateTime": {
+                        "__class__": "datetime",
+                        "year": 2022,
+                        "month": 7,
+                        "day": 8,
+                        "hour": 7,
+                        "minute": 54,
+                        "second": 11,
+                        "microsecond": 205000
+                    },
+                    "ReadyDateTime": {
+                        "__class__": "datetime",
+                        "year": 2022,
+                        "month": 7,
+                        "day": 8,
+                        "hour": 8,
+                        "minute": 2,
+                        "second": 43,
+                        "microsecond": 708000
+                    }
+                }
+            },
+            "Ec2InstanceAttributes": {
+                "Ec2KeyName": "",
+                "Ec2SubnetId": "subnet-046c64b0a12c8f960",
+                "RequestedEc2SubnetIds": [
+                    "subnet-046c64b0a12c8f960"
+                ],
+                "Ec2AvailabilityZone": "us-east-1a",
+                "RequestedEc2AvailabilityZones": [],
+                "IamInstanceProfile": "arn:aws:iam::111111111111:instance-profile/455_emr_instance_profile_red",
+                "EmrManagedMasterSecurityGroup": "sg-0027b2a83424c481e",
+                "EmrManagedSlaveSecurityGroup": "sg-0027b2a83424c481e",
+                "ServiceAccessSecurityGroup": "",
+                "AdditionalMasterSecurityGroups": [
+                    ""
+                ],
+                "AdditionalSlaveSecurityGroups": [
+                    ""
+                ]
+            },
+            "InstanceCollectionType": "INSTANCE_GROUP",
+            "ReleaseLabel": "emr-5.33.0",
+            "AutoTerminate": false,
+            "TerminationProtected": false,
+            "VisibleToAllUsers": true,
+            "Applications": [
+                {
+                    "Name": "Spark",
+                    "Version": "2.4.7"
+                }
+            ],
+            "Tags": [
+                {
+                    "Key": "CustodianRule",
+                    "Value": "ecc-aws-455-emr_termination_protection_enabled"
+                },
+                {
+                    "Key": "ComplianceStatus",
+                    "Value": "Red"
+                }
+            ],
+            "ServiceRole": "arn:aws:iam::111111111111:role/455_emr_service_role_red",
+            "NormalizedInstanceHours": 0,
+            "MasterPublicDnsName": "54.165.25.238",
+            "Configurations": [],
+            "ScaleDownBehavior": "TERMINATE_AT_TASK_COMPLETION",
+            "EbsRootVolumeSize": 10,
+            "KerberosAttributes": {},
+            "ClusterArn": "arn:aws:elasticmapreduce:us-east-1:111111111111:cluster/j-33YO7CLXN0V2S",
+            "StepConcurrencyLevel": 1,
+            "PlacementGroups": []
+        },
+        "ResponseMetadata": {}
+    }
+}

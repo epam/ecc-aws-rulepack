@@ -1,0 +1,26 @@
+{
+    "status_code": 200,
+    "data": {
+        "Addresses": [
+            {
+                "InstanceId": "i-ID",
+                "PublicIp": "50.17.200.36",
+                "AllocationId": "eipalloc-ID",
+                "AssociationId": "eipassoc-ID",
+                "Domain": "vpc",
+                "NetworkInterfaceId": "eni-ID",
+                "NetworkInterfaceOwnerId": "1234",
+                "PrivateIpAddress": "172.31.57.172",
+                "Tags": [
+                    {
+                        "Key": "Name",
+                        "Value": "green ip 073"
+                    }
+                ],
+                "PublicIpv4Pool": "amazon",
+                "NetworkBorderGroup": "us-east-1"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

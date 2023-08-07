@@ -1,0 +1,17 @@
+{
+    "status_code": 200,
+    "data": {
+        "NextMarker": "ede2d4c7-aacc-4b36-bfa1-7b0f673cfff1",
+        "WebACLs": [
+            {
+                "WebACLId": "e1401f68-27a8-4fef-beef-f7f523032c17",
+                "Name": "524_webacl_green2"
+            },
+            {
+                "WebACLId": "ede2d4c7-aacc-4b36-bfa1-7b0f673cfff1",
+                "Name": "524_webacl_green"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

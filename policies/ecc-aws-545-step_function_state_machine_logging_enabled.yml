@@ -1,0 +1,16 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: ecc-aws-545-step_function_state_machine_logging_enabled
+    description: |
+      AWS Step Function State Machine logging is disabled
+    resource: aws.step-machine
+    filters:
+      - type: value
+        key: loggingConfiguration.level
+        value: 'OFF'

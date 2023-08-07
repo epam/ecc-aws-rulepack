@@ -1,0 +1,15 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "VaultList": [
+            {
+                "VaultARN": "arn:aws:glacier:us-east-1:111111111111:vaults/308_glacier_vault_green",
+                "VaultName": "308_glacier_vault_green",
+                "CreationDate": "2022-01-18T09:24:33.697Z",
+                "NumberOfArchives": 0,
+                "SizeInBytes": 0
+            }
+        ]
+    }
+}

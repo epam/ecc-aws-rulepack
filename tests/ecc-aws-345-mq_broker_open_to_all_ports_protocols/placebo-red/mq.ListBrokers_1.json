@@ -1,0 +1,27 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "BrokerSummaries": [
+            {
+                "BrokerArn": "arn:aws:mq:us-east-1:111111111111:broker:mq-broker-345-red:b-f231d914-c165-43f0-ab6b-1fe5755f6627",
+                "BrokerId": "b-f231d914-c165-43f0-ab6b-1fe5755f6627",
+                "BrokerName": "mq-broker-345-red",
+                "BrokerState": "RUNNING",
+                "Created": {
+                    "__class__": "datetime",
+                    "year": 2023,
+                    "month": 2,
+                    "day": 1,
+                    "hour": 12,
+                    "minute": 29,
+                    "second": 29,
+                    "microsecond": 539000
+                },
+                "DeploymentMode": "ACTIVE_STANDBY_MULTI_AZ",
+                "EngineType": "ActiveMQ",
+                "HostInstanceType": "mq.t2.micro"
+            }
+        ]
+    }
+}

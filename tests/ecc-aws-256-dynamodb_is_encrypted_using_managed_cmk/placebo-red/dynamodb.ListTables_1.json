@@ -1,9 +1,0 @@
-{
-    "status_code": 200,
-    "data": {
-        "TableNames": [
-            "red-dynamodb-table-256"
-        ],
-        "ResponseMetadata": {}
-    }
-}

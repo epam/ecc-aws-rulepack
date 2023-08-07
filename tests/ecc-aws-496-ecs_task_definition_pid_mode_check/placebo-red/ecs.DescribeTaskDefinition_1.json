@@ -1,0 +1,65 @@
+{
+    "status_code": 200,
+    "data": {
+        "taskDefinition": {
+            "taskDefinitionArn": "arn:aws:ecs:us-east-1:111111111111:task-definition/496_ecs_task_definition_red:2",
+            "containerDefinitions": [
+                {
+                    "name": "mysql",
+                    "image": "mysql",
+                    "cpu": 1,
+                    "memory": 5,
+                    "portMappings": [],
+                    "essential": true,
+                    "environment": [],
+                    "mountPoints": [],
+                    "volumesFrom": []
+                }
+            ],
+            "family": "496_ecs_task_definition_red",
+            "networkMode": "host",
+            "revision": 2,
+            "volumes": [],
+            "status": "ACTIVE",
+            "requiresAttributes": [
+                {
+                    "name": "ecs.capability.pid-ipc-namespace-sharing"
+                },
+                {
+                    "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+                }
+            ],
+            "placementConstraints": [],
+            "compatibilities": [
+                "EXTERNAL",
+                "EC2"
+            ],
+            "requiresCompatibilities": [
+                "EC2"
+            ],
+            "pidMode": "host",
+            "registeredAt": {
+                "__class__": "datetime",
+                "year": 2022,
+                "month": 10,
+                "day": 12,
+                "hour": 9,
+                "minute": 18,
+                "second": 35,
+                "microsecond": 975000
+            },
+            "registeredBy": "arn:aws:iam::111111111111:user/test"
+        },
+        "tags": [
+            {
+                "key": "CustodianRule",
+                "value": "ecc-aws-496-ecs_task_definition_pid_mode_check"
+            },
+            {
+                "key": "ComplianceStatus",
+                "value": "Red"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

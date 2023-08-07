@@ -1,0 +1,104 @@
+{
+    "status_code": 200,
+    "data": {
+        "DBClusters": [
+            {
+                "AllocatedStorage": 1,
+                "AvailabilityZones": [
+                    "us-east-1a",
+                    "us-east-1c",
+                    "us-east-1d"
+                ],
+                "BackupRetentionPeriod": 1,
+                "DBClusterIdentifier": "cluster-273-green",
+                "DBClusterParameterGroup": "parameter-group-273-green",
+                "DBSubnetGroup": "default",
+                "Status": "available",
+                "EarliestRestorableTime": {
+                    "__class__": "datetime",
+                    "year": 2023,
+                    "month": 6,
+                    "day": 26,
+                    "hour": 10,
+                    "minute": 27,
+                    "second": 25,
+                    "microsecond": 764000
+                },
+                "Endpoint": "cluster-273-green.cluster-chhajgiktbgu.us-east-1.docdb.amazonaws.com",
+                "ReaderEndpoint": "cluster-273-green.cluster-ro-chhajgiktbgu.us-east-1.docdb.amazonaws.com",
+                "MultiAZ": false,
+                "Engine": "docdb",
+                "EngineVersion": "5.0.0",
+                "LatestRestorableTime": {
+                    "__class__": "datetime",
+                    "year": 2023,
+                    "month": 6,
+                    "day": 26,
+                    "hour": 10,
+                    "minute": 36,
+                    "second": 25,
+                    "microsecond": 142000
+                },
+                "Port": 27017,
+                "MasterUsername": "root",
+                "PreferredBackupWindow": "03:39-04:09",
+                "PreferredMaintenanceWindow": "tue:06:28-tue:06:58",
+                "ReadReplicaIdentifiers": [],
+                "DBClusterMembers": [
+                    {
+                        "DBInstanceIdentifier": "docdb-273-green-0",
+                        "IsClusterWriter": true,
+                        "DBClusterParameterGroupStatus": "in-sync",
+                        "PromotionTier": 0
+                    }
+                ],
+                "VpcSecurityGroups": [
+                    {
+                        "VpcSecurityGroupId": "sg-a5befc90",
+                        "Status": "active"
+                    }
+                ],
+                "HostedZoneId": "ZNKXH85TT8WVW",
+                "StorageEncrypted": false,
+                "DbClusterResourceId": "cluster-MKJ72FOUL24GAR7OGO3IBPLSAU",
+                "DBClusterArn": "arn:aws:rds:us-east-1:1111111111:cluster:cluster-273-green",
+                "AssociatedRoles": [],
+                "IAMDatabaseAuthenticationEnabled": false,
+                "ClusterCreateTime": {
+                    "__class__": "datetime",
+                    "year": 2023,
+                    "month": 6,
+                    "day": 26,
+                    "hour": 10,
+                    "minute": 26,
+                    "second": 19,
+                    "microsecond": 417000
+                },
+                "EnabledCloudwatchLogsExports": [
+                    "audit",
+                    "profiler"
+                ],
+                "EngineMode": "provisioned",
+                "DeletionProtection": false,
+                "HttpEndpointEnabled": false,
+                "ActivityStreamStatus": "stopped",
+                "CopyTagsToSnapshot": false,
+                "CrossAccountClone": false,
+                "DomainMemberships": [],
+                "TagList": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-273-documentdb_logging_enabled"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    }
+                ],
+                "AutoMinorVersionUpgrade": false,
+                "NetworkType": "IPV4"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

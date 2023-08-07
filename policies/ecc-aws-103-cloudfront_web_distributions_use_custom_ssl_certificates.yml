@@ -1,0 +1,20 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: ecc-aws-103-cloudfront_web_distributions_use_custom_ssl_certificates
+    description: |
+      Cloudfront web distributions do not use custom SSL certificates
+    resource: distribution
+    filters:
+      - and:
+          - type: value
+            key: ViewerCertificate.CloudFrontDefaultCertificate
+            value: true
+          - type: value
+            key: ViewerCertificate.CertificateSource
+            value: cloudfront

@@ -1,0 +1,21 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: ecc-aws-259-emr_clusters_in_vpc
+    description: |
+      EMR clusters are not in VPC
+    resource: emr
+    filters:
+      - and:
+          - type: value
+            key: Status.State
+            op: in
+            value: [RUNNING, WAITING]
+          - type: value
+            key: Ec2InstanceAttributes.Ec2SubnetId
+            value: empty

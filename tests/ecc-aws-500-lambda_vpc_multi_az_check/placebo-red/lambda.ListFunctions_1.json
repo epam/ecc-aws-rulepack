@@ -1,0 +1,39 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "Functions": [
+            {
+                "FunctionName": "500_lambda_red1",
+                "FunctionArn": "arn:aws:lambda:us-east-1:111111111111:function:500_lambda_red1",
+                "Runtime": "python3.8",
+                "Role": "arn:aws:iam::111111111111:role/500_role_red1",
+                "Handler": "func.py",
+                "CodeSize": 299,
+                "Description": "",
+                "Timeout": 3,
+                "MemorySize": 128,
+                "LastModified": "2023-01-04T14:59:02.089+0000",
+                "CodeSha256": "wVKxCuS3+QGJFX662+Zi8SIwlKE7zm6222zpZo7SFHI=",
+                "Version": "$LATEST",
+                "VpcConfig": {
+                    "SubnetIds": [
+                        "subnet-cd7af8ec"
+                    ],
+                    "SecurityGroupIds": [
+                        "sg-0188571a1330d25ae"
+                    ],
+                    "VpcId": "vpc-12345asdfg"
+                },
+                "TracingConfig": {
+                    "Mode": "PassThrough"
+                },
+                "RevisionId": "de9721ab-014c-40f6-8f1c-e807c6432f8b",
+                "PackageType": "Zip",
+                "Architectures": [
+                    "x86_64"
+                ]
+            }
+        ]
+    }
+}

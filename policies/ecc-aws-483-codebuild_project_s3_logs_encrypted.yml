@@ -1,0 +1,19 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: ecc-aws-483-codebuild_project_s3_logs_encrypted
+    description: |
+      CodeBuild S3 logs are not encrypted 
+    resource: aws.codebuild
+    filters:
+      - type: value
+        key: logsConfig.s3Logs.status
+        value: "ENABLED"
+      - type: value
+        key: logsConfig.s3Logs.encryptionDisabled
+        value: true

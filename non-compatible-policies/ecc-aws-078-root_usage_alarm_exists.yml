@@ -1,0 +1,20 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+policies:
+  - name: ecc-aws-078-root_usage_alarm_exists
+    resource: aws.account
+    description: |
+      Log metric filter and alarm do not exist for usage of "root" account
+    filters:
+      - type: cloudtrails
+        valueList: trailList[?IsMultiRegionTrail == `true`]
+        statusList: statusList[?IsLogging == `true`]
+        selectorList: selectorList[?AdvancedEventSelectors[?FieldSelectors[?Field == 'eventCategory' && Equals[?contains(@, 'Management')==`true`]] && !(FieldSelectors[?Field=='readOnly']) && !(FieldSelectors[?Field=='eventSource'])] || EventSelectors[?IncludeManagementEvents==`true` && ReadWriteType=='All']]
+        configurationChangesAlarmList: "(\\()? ?\\$\\.userIdentity\\.type ?= ?\"Root\" ?(\\))? ?\\&\\& ?(\\(?) ?\\$\\.userIdentity\\.invokedBy NOT EXISTS ?(\\))? ?&& ?(\\()? ?\\$\\.eventType ?!= ?\"AwsServiceEvent\" ?(\\))?"
+        op: eq
+        value: 0
+

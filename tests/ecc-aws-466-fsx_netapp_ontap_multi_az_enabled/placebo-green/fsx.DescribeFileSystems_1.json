@@ -1,0 +1,82 @@
+{
+    "status_code": 200,
+    "data": {
+        "FileSystems": [
+            {
+                "OwnerId": "111111111111",
+                "CreationTime": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 7,
+                    "day": 26,
+                    "hour": 15,
+                    "minute": 56,
+                    "second": 3,
+                    "microsecond": 971000
+                },
+                "FileSystemId": "fs-0cb7f9c0553b6c2d6",
+                "FileSystemType": "ONTAP",
+                "Lifecycle": "CREATING",
+                "StorageCapacity": 1024,
+                "StorageType": "SSD",
+                "VpcId": "vpc-12345asdfg",
+                "SubnetIds": [
+                    "subnet-cd7af8ec",
+                    "subnet-fa9dcab7"
+                ],
+                "NetworkInterfaceIds": [
+                    "eni-00bc827e11482a115",
+                    "eni-0f386300483916f6d"
+                ],
+                "KmsKeyId": "arn:aws:kms:us-east-1:111111111111:key/dd9fb145-9e61-4b40-a1d5-b079e1d5ccdd",
+                "ResourceARN": "arn:aws:fsx:us-east-1:111111111111:file-system/fs-0cb7f9c0553b6c2d6",
+                "Tags": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-466-fsx_netapp_ontap_multi_az_enabled"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    },
+                    {
+                        "Key": "Name",
+                        "Value": "466_fsx_ontap_file_system_green"
+                    }
+                ],
+                "OntapConfiguration": {
+                    "AutomaticBackupRetentionDays": 10,
+                    "DailyAutomaticBackupStartTime": "06:30",
+                    "DeploymentType": "MULTI_AZ_1",
+                    "EndpointIpAddressRange": "198.19.255.0/24",
+                    "Endpoints": {
+                        "Intercluster": {
+                            "DNSName": "intercluster.fs-0cb7f9c0553b6c2d6.fsx.us-east-1.amazonaws.com",
+                            "IpAddresses": [
+                                "172.31.94.60",
+                                "172.31.23.61"
+                            ]
+                        },
+                        "Management": {
+                            "DNSName": "management.fs-0cb7f9c0553b6c2d6.fsx.us-east-1.amazonaws.com",
+                            "IpAddresses": [
+                                "198.19.255.37"
+                            ]
+                        }
+                    },
+                    "DiskIopsConfiguration": {
+                        "Mode": "AUTOMATIC",
+                        "Iops": 3072
+                    },
+                    "PreferredSubnetId": "subnet-cd7af8ec",
+                    "RouteTableIds": [
+                        "rtb-57f8a729"
+                    ],
+                    "ThroughputCapacity": 128,
+                    "WeeklyMaintenanceStartTime": "4:03:30"
+                }
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

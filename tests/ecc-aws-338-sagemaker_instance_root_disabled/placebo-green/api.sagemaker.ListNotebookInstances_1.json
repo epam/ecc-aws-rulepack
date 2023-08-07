@@ -1,0 +1,35 @@
+{
+    "status_code": 200,
+    "data": {
+        "NotebookInstances": [
+            {
+                "NotebookInstanceName": "338-sagemaker-notebook-instance-green",
+                "NotebookInstanceArn": "arn:aws:sagemaker:us-east-1:111111111111:notebook-instance/338-sagemaker-notebook-instance-green",
+                "NotebookInstanceStatus": "InService",
+                "Url": "338-sagemaker-notebook-instance-green.notebook.us-east-1.sagemaker.aws",
+                "InstanceType": "ml.t2.medium",
+                "CreationTime": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 5,
+                    "day": 19,
+                    "hour": 8,
+                    "minute": 45,
+                    "second": 7,
+                    "microsecond": 67000
+                },
+                "LastModifiedTime": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 5,
+                    "day": 19,
+                    "hour": 8,
+                    "minute": 50,
+                    "second": 20,
+                    "microsecond": 585000
+                }
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

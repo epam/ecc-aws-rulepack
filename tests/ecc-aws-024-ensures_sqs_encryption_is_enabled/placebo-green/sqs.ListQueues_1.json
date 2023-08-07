@@ -1,0 +1,9 @@
+{
+    "status_code": 200,
+    "data": {
+        "QueueUrls": [
+            "https://queue.amazonaws.com/123123181212/sqs_green_024"
+        ],
+        "ResponseMetadata": {}
+    }
+}

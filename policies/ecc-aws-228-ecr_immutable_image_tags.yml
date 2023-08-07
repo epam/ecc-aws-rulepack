@@ -1,0 +1,16 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: ecc-aws-228-ecr_immutable_image_tags
+    description: |
+      Amazon ECR is not configured with immutable tags
+    resource: ecr
+    filters:
+      - type: value
+        key: imageTagMutability
+        value: MUTABLE

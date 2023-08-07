@@ -1,0 +1,22 @@
+{
+    "status_code": 200,
+    "data": {
+        "User": {
+            "Path": "/",
+            "UserName": "415_user_red",
+            "UserId": "ASASASASASASASASASA",
+            "Arn": "arn:aws:iam::111111111111:user/415_user_red",
+            "CreateDate": {
+                "__class__": "datetime",
+                "year": 2022,
+                "month": 9,
+                "day": 19,
+                "hour": 12,
+                "minute": 17,
+                "second": 6,
+                "microsecond": 0
+            }
+        },
+        "ResponseMetadata": {}
+    }
+}

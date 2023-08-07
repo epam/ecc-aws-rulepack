@@ -1,0 +1,22 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: ecc-aws-317-oracle_remote_listener_flag_empty
+    resource: aws.rds
+    description: |
+      The 'remote_listener' flag for Oracle is not empty
+    filters:
+      - and:
+          - type: value
+            key: Engine
+            op: regex
+            value: 'oracle*?'
+          - not:
+              - type: db-parameter
+                key: remote_listener
+                value: empty

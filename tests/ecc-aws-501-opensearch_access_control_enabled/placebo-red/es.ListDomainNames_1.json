@@ -1,0 +1,12 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "DomainNames": [
+            {
+                "DomainName": "domain-501-red",
+                "EngineType": "Elasticsearch"
+            }
+        ]
+    }
+}

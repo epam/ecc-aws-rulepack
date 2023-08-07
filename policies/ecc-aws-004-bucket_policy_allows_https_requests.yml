@@ -1,0 +1,36 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: ecc-aws-004-bucket_policy_allows_https_requests
+    resource: aws.s3
+    description: |
+      S3 Bucket Policy allows HTTP requests
+    filters:
+      - not:
+          - or:
+              - type: has-statement
+                statements:
+                  - Effect: Deny
+                    Action: 's3:*'
+                    Condition:
+                      Bool:
+                        "aws:SecureTransport": "false"
+              - type: has-statement
+                statements:
+                  - Effect: Deny
+                    Action: '*'
+                    Condition:
+                      Bool:
+                        "aws:SecureTransport": "false"
+              - type: has-statement
+                statements:
+                  - Effect: Deny
+                    Action: 's3:GetObject'
+                    Condition:
+                      Bool:
+                        "aws:SecureTransport": "false"

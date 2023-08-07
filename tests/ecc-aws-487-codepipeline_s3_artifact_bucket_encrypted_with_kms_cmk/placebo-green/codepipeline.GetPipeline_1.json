@@ -1,0 +1,126 @@
+{
+    "status_code": 200,
+    "data": {
+        "pipeline": {
+            "name": "487-codepipeline-green",
+            "roleArn": "arn:aws:iam::111111111111:role/487-role-green",
+            "artifactStore": {
+                "type": "S3",
+                "location": "487-bucket-green",
+                "encryptionKey": {
+                    "id": "arn:aws:kms:us-east-1:111111111111:alias/k-487",
+                    "type": "KMS"
+                }
+            },
+            "stages": [
+                {
+                    "name": "Source",
+                    "actions": [
+                        {
+                            "name": "Source",
+                            "actionTypeId": {
+                                "category": "Source",
+                                "owner": "AWS",
+                                "provider": "CodeStarSourceConnection",
+                                "version": "1"
+                            },
+                            "runOrder": 1,
+                            "configuration": {
+                                "BranchName": "main",
+                                "ConnectionArn": "arn:aws:codestar-connections:us-east-1:111111111111:connection/8899d4ec-787e-4181-90f9-ebf4ecd7f476",
+                                "FullRepositoryId": "my-organization/example"
+                            },
+                            "outputArtifacts": [
+                                {
+                                    "name": "source_output"
+                                }
+                            ],
+                            "inputArtifacts": []
+                        }
+                    ]
+                },
+                {
+                    "name": "487-build-green",
+                    "actions": [
+                        {
+                            "name": "Build",
+                            "actionTypeId": {
+                                "category": "Build",
+                                "owner": "AWS",
+                                "provider": "CodeBuild",
+                                "version": "1"
+                            },
+                            "runOrder": 1,
+                            "configuration": {
+                                "ProjectName": "487-project-green"
+                            },
+                            "outputArtifacts": [
+                                {
+                                    "name": "build_output"
+                                }
+                            ],
+                            "inputArtifacts": [
+                                {
+                                    "name": "source_output"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "487-deploy-green",
+                    "actions": [
+                        {
+                            "name": "Deploy",
+                            "actionTypeId": {
+                                "category": "Deploy",
+                                "owner": "AWS",
+                                "provider": "CloudFormation",
+                                "version": "1"
+                            },
+                            "runOrder": 1,
+                            "configuration": {
+                                "ActionMode": "REPLACE_ON_FAILURE",
+                                "Capabilities": "CAPABILITY_AUTO_EXPAND,CAPABILITY_IAM",
+                                "OutputFileName": "CreateStackOutput.json",
+                                "StackName": "MyStack",
+                                "TemplatePath": "build_output::sam-templated.yaml"
+                            },
+                            "outputArtifacts": [],
+                            "inputArtifacts": [
+                                {
+                                    "name": "build_output"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "version": 1
+        },
+        "metadata": {
+            "pipelineArn": "arn:aws:codepipeline:us-east-1:111111111111:487-codepipeline-green",
+            "created": {
+                "__class__": "datetime",
+                "year": 2023,
+                "month": 1,
+                "day": 31,
+                "hour": 12,
+                "minute": 4,
+                "second": 41,
+                "microsecond": 948000
+            },
+            "updated": {
+                "__class__": "datetime",
+                "year": 2023,
+                "month": 1,
+                "day": 31,
+                "hour": 12,
+                "minute": 4,
+                "second": 41,
+                "microsecond": 948000
+            }
+        },
+        "ResponseMetadata": {}
+    }
+}

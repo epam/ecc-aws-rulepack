@@ -1,0 +1,33 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "graphqlApis": [
+            {
+                "name": "440_appsync-graphql-api_green",
+                "apiId": "26yurn6hfzc6bnjgsodw4icuwe",
+                "authenticationType": "API_KEY",
+                "logConfig": {
+                    "fieldLogLevel": "ERROR",
+                    "cloudWatchLogsRoleArn": "arn:aws:iam::1111111111:role/440_role_green",
+                    "excludeVerboseContent": false
+                },
+                "arn": "arn:aws:appsync:us-east-1:1111111111:apis/26yurn6hfzc6bnjgsodw4icuwe",
+                "uris": {
+                    "REALTIME": "wss://neez2ey4vjd6nbiatuf6voo4ti.appsync-realtime-api.us-east-1.amazonaws.com/graphql",
+                    "GRAPHQL": "https://neez2ey4vjd6nbiatuf6voo4ti.appsync-api.us-east-1.amazonaws.com/graphql"
+                },
+                "tags": {
+                    "CustodianRule": "ecc-aws-440-appsync_logging_enabled",
+                    "ComplianceStatus": "Green"
+                },
+                "xrayEnabled": false,
+                "dns": {
+                    "REALTIME": "neez2ey4vjd6nbiatuf6voo4ti.appsync-realtime-api.us-east-1.amazonaws.com",
+                    "GRAPHQL": "neez2ey4vjd6nbiatuf6voo4ti.appsync-api.us-east-1.amazonaws.com"
+                },
+                "visibility": "GLOBAL"
+            }
+        ]
+    }
+}

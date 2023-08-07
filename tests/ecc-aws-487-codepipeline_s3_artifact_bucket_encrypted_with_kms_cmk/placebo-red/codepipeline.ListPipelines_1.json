@@ -1,0 +1,32 @@
+{
+    "status_code": 200,
+    "data": {
+        "pipelines": [
+            {
+                "name": "487-codepipeline-red",
+                "version": 1,
+                "created": {
+                    "__class__": "datetime",
+                    "year": 2023,
+                    "month": 1,
+                    "day": 31,
+                    "hour": 11,
+                    "minute": 51,
+                    "second": 37,
+                    "microsecond": 529000
+                },
+                "updated": {
+                    "__class__": "datetime",
+                    "year": 2023,
+                    "month": 1,
+                    "day": 31,
+                    "hour": 11,
+                    "minute": 51,
+                    "second": 37,
+                    "microsecond": 529000
+                }
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

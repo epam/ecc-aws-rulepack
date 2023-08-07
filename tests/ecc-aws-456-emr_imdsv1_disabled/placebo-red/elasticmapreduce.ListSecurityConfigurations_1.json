@@ -1,0 +1,21 @@
+{
+    "status_code": 200,
+    "data": {
+        "SecurityConfigurations": [
+            {
+                "Name": "456_security_configuration_red",
+                "CreationDateTime": {
+                    "__class__": "datetime",
+                    "year": 2023,
+                    "month": 7,
+                    "day": 5,
+                    "hour": 9,
+                    "minute": 34,
+                    "second": 42,
+                    "microsecond": 78000
+                }
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

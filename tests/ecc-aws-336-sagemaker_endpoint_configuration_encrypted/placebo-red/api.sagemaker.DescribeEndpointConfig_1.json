@@ -1,0 +1,27 @@
+{
+    "status_code": 200,
+    "data": {
+        "EndpointConfigName": "336-endpoint-configuration-red",
+        "EndpointConfigArn": "arn:aws:sagemaker:us-east-1:111111111111:endpoint-config/336-endpoint-configuration-red",
+        "ProductionVariants": [
+            {
+                "VariantName": "336-variant-red",
+                "ModelName": "sagemaker-model-336-red",
+                "InitialInstanceCount": 1,
+                "InstanceType": "ml.t2.medium",
+                "InitialVariantWeight": 1.0
+            }
+        ],
+        "CreationTime": {
+            "__class__": "datetime",
+            "year": 2022,
+            "month": 5,
+            "day": 18,
+            "hour": 12,
+            "minute": 27,
+            "second": 12,
+            "microsecond": 613000
+        },
+        "ResponseMetadata": {}
+    }
+}

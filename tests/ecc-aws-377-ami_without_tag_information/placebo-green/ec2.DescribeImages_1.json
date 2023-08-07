@@ -1,0 +1,50 @@
+{
+    "status_code": 200,
+    "data": {
+        "Images": [
+            {
+                "Architecture": "x86_64",
+                "CreationDate": "2022-07-25T08:31:07.000Z",
+                "ImageId": "ami-0e6d1a67e456d808f",
+                "ImageLocation": "111111111111/377_ami_green",
+                "ImageType": "machine",
+                "Public": false,
+                "OwnerId": "111111111111",
+                "PlatformDetails": "Linux/UNIX",
+                "UsageOperation": "RunInstances",
+                "State": "available",
+                "BlockDeviceMappings": [
+                    {
+                        "DeviceName": "/dev/xvda",
+                        "Ebs": {
+                            "DeleteOnTermination": true,
+                            "SnapshotId": "snap-0d6ff3bef27662a4f",
+                            "VolumeSize": 10,
+                            "VolumeType": "standard",
+                            "Encrypted": false
+                        }
+                    }
+                ],
+                "Description": "",
+                "EnaSupport": false,
+                "Hypervisor": "xen",
+                "Name": "377_ami_green",
+                "RootDeviceName": "/dev/xvda",
+                "RootDeviceType": "ebs",
+                "SriovNetSupport": "simple",
+                "Tags": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-377-ami_without_tag_information"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    }
+                ],
+                "VirtualizationType": "hvm"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

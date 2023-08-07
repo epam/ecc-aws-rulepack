@@ -1,0 +1,12 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "DomainNames": [
+            {
+                "DomainName": "elasticsearch-280-green",
+                "EngineType": "OpenSearch"
+            }
+        ]
+    }
+}

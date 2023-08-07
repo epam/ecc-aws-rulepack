@@ -1,0 +1,32 @@
+{
+    "status_code": 200,
+    "data": {
+        "repositories": [
+            {
+                "repositoryArn": "arn:aws:ecr:us-east-1:111111111111:repository/229_ecr_respository_green",
+                "registryId": "111111111111",
+                "repositoryName": "229_ecr_respository_green",
+                "repositoryUri": "111111111111.dkr.ecr.us-east-1.amazonaws.com/229_ecr_respository_green",
+                "createdAt": {
+                    "__class__": "datetime",
+                    "year": 2021,
+                    "month": 12,
+                    "day": 3,
+                    "hour": 14,
+                    "minute": 1,
+                    "second": 47,
+                    "microsecond": 0
+                },
+                "imageTagMutability": "MUTABLE",
+                "imageScanningConfiguration": {
+                    "scanOnPush": false
+                },
+                "encryptionConfiguration": {
+                    "encryptionType": "KMS",
+                    "kmsKey": "arn:aws:kms:us-east-1:111111111111:key/46799033-a498-4586-a8ac-e6c3857af4be"
+                }
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

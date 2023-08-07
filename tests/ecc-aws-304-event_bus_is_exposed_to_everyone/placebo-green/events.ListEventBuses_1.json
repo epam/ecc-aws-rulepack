@@ -1,0 +1,17 @@
+{
+    "status_code": 200,
+    "data": {
+        "EventBuses": [
+            {
+                "Name": "default",
+                "Arn": "arn:aws:events:us-east-1:111111111111:event-bus/default"
+            },
+            {
+                "Name": "304_event_bus_green",
+                "Arn": "arn:aws:events:us-east-1:111111111111:event-bus/304_event_bus_green",
+                "Policy": "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Sid\":\"304_event_bus_policy_green\",\"Effect\":\"Allow\",\"Principal\":{\"AWS\":\"111111111111\"},\"Action\":\"events:DescribeEventBus\",\"Resource\":\"arn:aws:events:us-east-1:111111111111:event-bus/304_event_bus_green\"}]}"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

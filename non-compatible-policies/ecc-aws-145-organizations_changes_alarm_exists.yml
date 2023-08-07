@@ -1,0 +1,27 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+policies:
+  - name: ecc-aws-145-organizations_changes_alarm_exists
+    description: |
+      Log metric filter and alarm do not exist for AWS Organizations changes
+    resource: aws.account
+    filters:
+      - type: organization
+        key: Id
+        value: present
+      - type: organization
+        key: MasterAccountId
+        value: "{account_id}"
+
+      - type: cloudtrails
+        valueList: trailList[?IsMultiRegionTrail == `true`]
+        statusList: statusList[?IsLogging == `true`]
+        selectorList: selectorList[?AdvancedEventSelectors[?FieldSelectors[?Field == 'eventCategory' && Equals[?contains(@, 'Management')==`true`]] && !(FieldSelectors[?Field=='readOnly']) && !(FieldSelectors[?Field=='eventSource'])] || EventSelectors[?IncludeManagementEvents==`true` && ReadWriteType=='All']]
+        configurationChangesAlarmList: "{ ?(\\()? ?\\$\\.eventSource ?= ?organizations\\.amazonaws\\.com(\\))? ?&& ?\\( ?(\\()? ?\\$\\.eventName ?= ?(\")?AcceptHandshake(\")? ?(\\))? ?\\|\\| ?(\\()? ?\\$\\.eventName ?= ?(\")?AttachPolicy(\")? ?(\\))? ?\\|\\| ?(\\()? ?\\$\\.eventName ?= ?(\")?CreateAccount(\")? ?(\\))? ?\\|\\| ?(\\()? ?\\$\\.eventName ?= ?(\")?CreateOrganizationalUnit(\")? ?(\\))? ?\\|\\| ?(\\()? ?\\$\\.eventName ?= ?(\")?CreatePolicy(\")? ?(\\))? ?\\|\\| ?(\\()? ?\\$\\.eventName ?= ?(\")?DeclineHandshake(\")? ?(\\))? ?\\|\\| ?(\\()? ?\\$\\.eventName ?= ?(\")?DeleteOrganization(\")? ?(\\))? ?\\|\\| ?(\\()? ?\\$\\.eventName ?= ?(\")?DeleteOrganizationalUnit(\")? ?(\\))? ?\\|\\| ?(\\()? ?\\$\\.eventName ?= ?(\")?DeletePolicy(\")? ?(\\))? ?\\|\\| ?(\\()? ?\\$\\.eventName ?= ?(\")?DetachPolicy(\")? ?(\\))? ?\\|\\| ?(\\()? ?\\$\\.eventName ?= ?(\")?DisablePolicyType(\")? ?(\\))? ?\\|\\| ?(\\()? ?\\$\\.eventName ?= ?(\")?EnablePolicyType(\")? ?(\\))? ?\\|\\| ?(\\()? ?\\$\\.eventName ?= ?(\")?InviteAccountToOrganization(\")? ?(\\))? ?\\|\\| ?(\\()? ?\\$\\.eventName ?= ?(\")?LeaveOrganization(\")? ?(\\))? ?\\|\\| ?(\\()? ?\\$\\.eventName ?= ?(\")?MoveAccount(\")? ?(\\))? ?\\|\\| ?(\\()? ?\\$\\.eventName ?= ?(\")?RemoveAccountFromOrganization(\")? ?(\\))? ?\\|\\| ?(\\()? ?\\$\\.eventName ?= ?(\")?UpdatePolicy(\")? ?(\\))? ?\\|\\| ?(\\()? ?\\$\\.eventName ?= ?(\")?UpdateOrganizationalUnit(\")? ?(\\))? ?\\) ?}"
+        op: eq
+        value: 0
+

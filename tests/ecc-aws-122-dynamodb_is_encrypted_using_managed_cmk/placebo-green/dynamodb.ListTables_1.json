@@ -1,0 +1,9 @@
+{
+    "status_code": 200,
+    "data": {
+        "TableNames": [
+            "green-dynamodb-table-122"
+        ],
+        "ResponseMetadata": {}
+    }
+}

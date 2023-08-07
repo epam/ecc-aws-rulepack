@@ -1,0 +1,199 @@
+{
+    "status_code": 200,
+    "data": {
+        "Reservations": [
+            {
+                "Groups": [],
+                "Instances": [
+                    {
+                        "AmiLaunchIndex": 0,
+                        "ImageId": "ami-09d234abcc8a4ec09",
+                        "InstanceId": "i-0b52c5ba94630a380",
+                        "InstanceType": "t2.micro",
+                        "LaunchTime": {
+                            "__class__": "datetime",
+                            "year": 2023,
+                            "month": 3,
+                            "day": 8,
+                            "hour": 10,
+                            "minute": 12,
+                            "second": 25,
+                            "microsecond": 0
+                        },
+                        "Monitoring": {
+                            "State": "disabled"
+                        },
+                        "Placement": {
+                            "AvailabilityZone": "us-east-1a",
+                            "GroupName": "",
+                            "Tenancy": "default"
+                        },
+                        "PrivateDnsName": "ip-192-168-42-6.ec2.internal",
+                        "PrivateIpAddress": "192.168.42.6",
+                        "ProductCodes": [],
+                        "PublicDnsName": "",
+                        "State": {
+                            "Code": 16,
+                            "Name": "running"
+                        },
+                        "StateTransitionReason": "",
+                        "SubnetId": "subnet-0454b2cb0becd9a24",
+                        "VpcId": "vpc-07d4103f91cf91fed",
+                        "Architecture": "x86_64",
+                        "BlockDeviceMappings": [
+                            {
+                                "DeviceName": "/dev/xvda",
+                                "Ebs": {
+                                    "AttachTime": {
+                                        "__class__": "datetime",
+                                        "year": 2023,
+                                        "month": 3,
+                                        "day": 8,
+                                        "hour": 10,
+                                        "minute": 12,
+                                        "second": 26,
+                                        "microsecond": 0
+                                    },
+                                    "DeleteOnTermination": true,
+                                    "Status": "attached",
+                                    "VolumeId": "vol-071d54c147626fdb6"
+                                }
+                            },
+                            {
+                                "DeviceName": "/dev/sdh",
+                                "Ebs": {
+                                    "AttachTime": {
+                                        "__class__": "datetime",
+                                        "year": 2023,
+                                        "month": 3,
+                                        "day": 8,
+                                        "hour": 10,
+                                        "minute": 12,
+                                        "second": 26,
+                                        "microsecond": 0
+                                    },
+                                    "DeleteOnTermination": false,
+                                    "Status": "attached",
+                                    "VolumeId": "vol-069c80e7b49064c8a"
+                                }
+                            }
+                        ],
+                        "ClientToken": "terraform-20230308101224574500000001",
+                        "EbsOptimized": false,
+                        "EnaSupport": true,
+                        "Hypervisor": "xen",
+                        "NetworkInterfaces": [
+                            {
+                                "Attachment": {
+                                    "AttachTime": {
+                                        "__class__": "datetime",
+                                        "year": 2023,
+                                        "month": 3,
+                                        "day": 8,
+                                        "hour": 10,
+                                        "minute": 12,
+                                        "second": 25,
+                                        "microsecond": 0
+                                    },
+                                    "AttachmentId": "eni-attach-02a7f3fb8b44e1614",
+                                    "DeleteOnTermination": true,
+                                    "DeviceIndex": 0,
+                                    "Status": "attached",
+                                    "NetworkCardIndex": 0
+                                },
+                                "Description": "",
+                                "Groups": [
+                                    {
+                                        "GroupName": "default",
+                                        "GroupId": "sg-00b5e4e432d95bcc9"
+                                    }
+                                ],
+                                "Ipv6Addresses": [],
+                                "MacAddress": "0a:de:5c:97:ad:dd",
+                                "NetworkInterfaceId": "eni-06a374b70930deae5",
+                                "OwnerId": "111111111111",
+                                "PrivateIpAddress": "192.168.42.6",
+                                "PrivateIpAddresses": [
+                                    {
+                                        "Primary": true,
+                                        "PrivateIpAddress": "192.168.42.6"
+                                    }
+                                ],
+                                "SourceDestCheck": true,
+                                "Status": "in-use",
+                                "SubnetId": "subnet-0454b2cb0becd9a24",
+                                "VpcId": "vpc-07d4103f91cf91fed",
+                                "InterfaceType": "interface"
+                            }
+                        ],
+                        "RootDeviceName": "/dev/xvda",
+                        "RootDeviceType": "ebs",
+                        "SecurityGroups": [
+                            {
+                                "GroupName": "default",
+                                "GroupId": "sg-00b5e4e432d95bcc9"
+                            }
+                        ],
+                        "SourceDestCheck": true,
+                        "Tags": [
+                            {
+                                "Key": "Name",
+                                "Value": ""
+                            },
+                            {
+                                "Key": "ComplianceStatus",
+                                "Value": "Red"
+                            },
+                            {
+                                "Key": "CustodianRule",
+                                "Value": "ecc-aws-529-ebs_attached_volume_delete_on_termination_enabled"
+                            }
+                        ],
+                        "VirtualizationType": "hvm",
+                        "CpuOptions": {
+                            "CoreCount": 1,
+                            "ThreadsPerCore": 1
+                        },
+                        "CapacityReservationSpecification": {
+                            "CapacityReservationPreference": "open"
+                        },
+                        "HibernationOptions": {
+                            "Configured": false
+                        },
+                        "MetadataOptions": {
+                            "State": "applied",
+                            "HttpTokens": "optional",
+                            "HttpPutResponseHopLimit": 1,
+                            "HttpEndpoint": "enabled",
+                            "HttpProtocolIpv6": "disabled",
+                            "InstanceMetadataTags": "disabled"
+                        },
+                        "EnclaveOptions": {
+                            "Enabled": false
+                        },
+                        "PlatformDetails": "Linux/UNIX",
+                        "UsageOperation": "RunInstances",
+                        "UsageOperationUpdateTime": {
+                            "__class__": "datetime",
+                            "year": 2023,
+                            "month": 3,
+                            "day": 8,
+                            "hour": 10,
+                            "minute": 12,
+                            "second": 25,
+                            "microsecond": 0
+                        },
+                        "PrivateDnsNameOptions": {
+                            "HostnameType": "ip-name",
+                            "EnableResourceNameDnsARecord": false,
+                            "EnableResourceNameDnsAAAARecord": false
+                        }
+                    }
+                ],
+                "OwnerId": "111111111111",
+                "ReservationId": "r-0652aafc38f686907"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "status_code": 200,
+    "data": {
+        "PaginationToken": "",
+        "ResourceTagMappingList": [
+            {
+                "ResourceARN": "arn:aws:kms:us-east-1:111111111111:key/d9a082dd-5f0b-4b2a-8647-29ffac537ddc",
+                "Tags": [
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    },
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-280-elasticsearch_encrypted_with_kms_cmk"
+                    }
+                ]
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

@@ -1,0 +1,21 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: ecc-aws-353-redshift_user_activity_logging_enabled
+    description: |
+      AWS Redshift user activity logging is disabled
+    resource: redshift
+    filters:
+      - and:
+          - type: logging
+            key: LoggingEnabled
+            value: false
+          - type: param
+            key: enable_user_activity_logging
+            value: false
+            op: eq

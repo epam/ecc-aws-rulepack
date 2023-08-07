@@ -1,0 +1,23 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: ecc-aws-223-ec2_managed_instance_association_compliance_status_check
+    description: |
+      Instances managed by Systems Manager do not have association compliance status of COMPLIANT
+    resource: aws.ec2
+    filters:
+      - and:
+          - type: value
+            key: State.Name
+            op: in
+            value: [running, stopped]
+          - type: ssm-compliance
+            compliance_types:
+              - Association
+            states:
+              - NON_COMPLIANT

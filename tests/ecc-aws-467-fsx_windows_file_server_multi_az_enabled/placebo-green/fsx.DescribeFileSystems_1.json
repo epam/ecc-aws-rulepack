@@ -1,0 +1,68 @@
+{
+    "status_code": 200,
+    "data": {
+        "FileSystems": [
+            {
+                "OwnerId": "111111111111",
+                "CreationTime": {
+                    "__class__": "datetime",
+                    "year": 2023,
+                    "month": 1,
+                    "day": 6,
+                    "hour": 15,
+                    "minute": 38,
+                    "second": 52,
+                    "microsecond": 157000
+                },
+                "FileSystemId": "fs-0a85dfc9418421a3d",
+                "FileSystemType": "WINDOWS",
+                "Lifecycle": "AVAILABLE",
+                "StorageCapacity": 2000,
+                "StorageType": "HDD",
+                "VpcId": "vpc-12345asdfg",
+                "SubnetIds": [
+                    "subnet-cd7af8ec",
+                    "subnet-fa9dcab7"
+                ],
+                "NetworkInterfaceIds": [
+                    "eni-0a2ee2f9605901f76",
+                    "eni-08792084982d927b1"
+                ],
+                "DNSName": "amznfsxcz2rb7rr.workspaces.example.com",
+                "KmsKeyId": "arn:aws:kms:us-east-1:111111111111:key/dd9fb145-9e61-4b40-a1d5-b079e1d5ccdd",
+                "ResourceARN": "arn:aws:fsx:us-east-1:111111111111:file-system/fs-0a85dfc9418421a3d",
+                "Tags": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-467-fsx_windows_file_server_multi_az_enabled"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    },
+                    {
+                        "Key": "Name",
+                        "Value": "467_fsx_windows_file_system_green"
+                    }
+                ],
+                "WindowsConfiguration": {
+                    "ActiveDirectoryId": "d-9067a489ca",
+                    "DeploymentType": "MULTI_AZ_1",
+                    "RemoteAdministrationEndpoint": "amznfsxclsecqa1.workspaces.example.com",
+                    "PreferredSubnetId": "subnet-cd7af8ec",
+                    "PreferredFileServerIp": "172.31.92.209",
+                    "ThroughputCapacity": 8,
+                    "WeeklyMaintenanceStartTime": "6:06:00",
+                    "DailyAutomaticBackupStartTime": "08:00",
+                    "AutomaticBackupRetentionDays": 7,
+                    "CopyTagsToBackups": false,
+                    "AuditLogConfiguration": {
+                        "FileAccessAuditLogLevel": "DISABLED",
+                        "FileShareAccessAuditLogLevel": "DISABLED"
+                    }
+                }
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

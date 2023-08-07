@@ -1,0 +1,24 @@
+{
+    "status_code": 200,
+    "data": {
+        "KeyPairs": [
+            {
+                "KeyPairId": "key-00d4788b8e7ac672e",
+                "KeyFingerprint": "43:db:a7:9c:b5:bd:92:ac:08:7a:74:e9:c8:74:17:05",
+                "KeyName": "329_key_pair_red",
+                "KeyType": "rsa",
+                "Tags": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-329-unused_ec2_access_keys"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Red"
+                    }
+                ]
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

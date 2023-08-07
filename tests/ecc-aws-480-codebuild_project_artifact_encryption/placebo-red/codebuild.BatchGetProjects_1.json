@@ -1,0 +1,99 @@
+{
+    "status_code": 200,
+    "data": {
+        "projects": [
+            {
+                "name": "480_codebuilt_red",
+                "arn": "arn:aws:codebuild:us-east-1:111111111111:project/480_codebuilt_red",
+                "source": {
+                    "type": "GITHUB",
+                    "location": "https://github.com/mitchellh/packer.git",
+                    "gitCloneDepth": 1,
+                    "gitSubmodulesConfig": {
+                        "fetchSubmodules": true
+                    },
+                    "buildspec": "",
+                    "reportBuildStatus": false,
+                    "insecureSsl": false
+                },
+                "artifacts": {
+                    "type": "S3",
+                    "location": "480-bucket-red",
+                    "path": "/",
+                    "namespaceType": "NONE",
+                    "name": "480_codebuilt_red",
+                    "packaging": "ZIP",
+                    "overrideArtifactName": false,
+                    "encryptionDisabled": true
+                },
+                "cache": {
+                    "type": "S3",
+                    "location": "480-bucket-red"
+                },
+                "environment": {
+                    "type": "LINUX_CONTAINER",
+                    "image": "aws/codebuild/amazonlinux2-x86_64-standard:3.0",
+                    "computeType": "BUILD_GENERAL1_SMALL",
+                    "environmentVariables": [
+                        {
+                            "name": "SOME_KEY1",
+                            "value": "SOME_VALUE1",
+                            "type": "PLAINTEXT"
+                        }
+                    ],
+                    "privilegedMode": false,
+                    "imagePullCredentialsType": "CODEBUILD"
+                },
+                "serviceRole": "arn:aws:iam::111111111111:role/480_role_red",
+                "timeoutInMinutes": 60,
+                "queuedTimeoutInMinutes": 480,
+                "encryptionKey": "arn:aws:kms:us-east-1:111111111111:alias/aws/s3",
+                "tags": [
+                    {
+                        "key": "CustodianRule",
+                        "Value": "ecc-aws-480-codebuild_project_artifact_encryption"
+                    },
+                    {
+                        "key": "ComplianceStatus",
+                        "value": "Red"
+                    }
+                ],
+                "created": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 12,
+                    "day": 19,
+                    "hour": 9,
+                    "minute": 33,
+                    "second": 32,
+                    "microsecond": 834000
+                },
+                "lastModified": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 12,
+                    "day": 19,
+                    "hour": 9,
+                    "minute": 34,
+                    "second": 24,
+                    "microsecond": 223000
+                },
+                "badge": {
+                    "badgeEnabled": false
+                },
+                "logsConfig": {
+                    "cloudWatchLogs": {
+                        "status": "DISABLED"
+                    },
+                    "s3Logs": {
+                        "status": "DISABLED",
+                        "encryptionDisabled": false
+                    }
+                },
+                "projectVisibility": "PRIVATE"
+            }
+        ],
+        "projectsNotFound": [],
+        "ResponseMetadata": {}
+    }
+}

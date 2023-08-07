@@ -1,0 +1,67 @@
+{
+    "status_code": 200,
+    "data": {
+        "NetworkInterfaces": [
+            {
+                "Association": {
+                    "IpOwnerId": "amazon",
+                    "PublicDnsName": "ec2-100-25-4-177.compute-1.amazonaws.com",
+                    "PublicIp": "100.25.4.177"
+                },
+                "Attachment": {
+                    "AttachTime": {
+                        "__class__": "datetime",
+                        "year": 2023,
+                        "month": 3,
+                        "day": 27,
+                        "hour": 14,
+                        "minute": 0,
+                        "second": 31,
+                        "microsecond": 0
+                    },
+                    "AttachmentId": "eni-attach-05b62f98dd97fd7c7",
+                    "DeleteOnTermination": true,
+                    "DeviceIndex": 0,
+                    "NetworkCardIndex": 0,
+                    "InstanceId": "i-09f11280c2c06b354",
+                    "InstanceOwnerId": "111111111111",
+                    "Status": "attached"
+                },
+                "AvailabilityZone": "us-east-1e",
+                "Description": "",
+                "Groups": [
+                    {
+                        "GroupName": "070_security_group_green",
+                        "GroupId": "sg-1234567asdfg"
+                    }
+                ],
+                "InterfaceType": "interface",
+                "Ipv6Addresses": [],
+                "MacAddress": "06:47:d6:12:0a:99",
+                "NetworkInterfaceId": "eni-0d33ff2e01679ca46",
+                "OwnerId": "111111111111",
+                "PrivateDnsName": "ip-172-31-59-71.ec2.internal",
+                "PrivateIpAddress": "172.31.59.71",
+                "PrivateIpAddresses": [
+                    {
+                        "Association": {
+                            "IpOwnerId": "amazon",
+                            "PublicDnsName": "ec2-100-25-4-177.compute-1.amazonaws.com",
+                            "PublicIp": "100.25.4.177"
+                        },
+                        "Primary": true,
+                        "PrivateDnsName": "ip-172-31-59-71.ec2.internal",
+                        "PrivateIpAddress": "172.31.59.71"
+                    }
+                ],
+                "RequesterManaged": false,
+                "SourceDestCheck": true,
+                "Status": "in-use",
+                "SubnetId": "subnet-11111111",
+                "TagSet": [],
+                "VpcId": "vpc-12345asdfg"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

@@ -1,0 +1,38 @@
+{
+    "status_code": 200,
+    "data": {
+        "NotebookInstanceArn": "arn:aws:sagemaker:us-east-1:111111111111:notebook-instance/311-sagemaker-notebook-instance-green",
+        "NotebookInstanceName": "311-sagemaker-notebook-instance-green",
+        "NotebookInstanceStatus": "InService",
+        "Url": "311-sagemaker-notebook-instance-green-8t7o.notebook.us-east-1.sagemaker.aws",
+        "InstanceType": "ml.t2.medium",
+        "SecurityGroups": [],
+        "RoleArn": "arn:aws:iam::111111111111:role/311_role_green",
+        "KmsKeyId": "arn:aws:kms:us-east-1:111111111111:key/f693fa1e-ae7d-4666-acf4-434926f1abcb",
+        "LastModifiedTime": {
+            "__class__": "datetime",
+            "year": 2022,
+            "month": 1,
+            "day": 18,
+            "hour": 7,
+            "minute": 31,
+            "second": 27,
+            "microsecond": 93000
+        },
+        "CreationTime": {
+            "__class__": "datetime",
+            "year": 2022,
+            "month": 1,
+            "day": 18,
+            "hour": 7,
+            "minute": 24,
+            "second": 56,
+            "microsecond": 126000
+        },
+        "DirectInternetAccess": "Enabled",
+        "VolumeSizeInGB": 5,
+        "RootAccess": "Enabled",
+        "PlatformIdentifier": "notebook-al1-v1",
+        "ResponseMetadata": {}
+    }
+}

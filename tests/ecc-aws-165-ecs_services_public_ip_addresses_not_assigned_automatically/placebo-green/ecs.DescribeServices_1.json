@@ -1,0 +1,116 @@
+{
+    "status_code": 200,
+    "data": {
+        "services": [
+            {
+                "serviceArn": "arn:aws:ecs:us-east-1:this:service/165_ecs_cluster_green/165_ecs_service_green",
+                "serviceName": "165_ecs_service_green",
+                "clusterArn": "arn:aws:ecs:us-east-1:this:cluster/165_ecs_cluster_green",
+                "loadBalancers": [],
+                "serviceRegistries": [],
+                "status": "ACTIVE",
+                "desiredCount": 1,
+                "runningCount": 0,
+                "pendingCount": 1,
+                "launchType": "FARGATE",
+                "platformVersion": "LATEST",
+                "taskDefinition": "arn:aws:ecs:us-east-1:this:task-definition/service:16",
+                "deploymentConfiguration": {
+                    "maximumPercent": 200,
+                    "minimumHealthyPercent": 100
+                },
+                "deployments": [
+                    {
+                        "id": "ecs-svc/8221154871227926052",
+                        "status": "PRIMARY",
+                        "taskDefinition": "arn:aws:ecs:us-east-1:this:task-definition/service:16",
+                        "desiredCount": 1,
+                        "pendingCount": 1,
+                        "runningCount": 0,
+                        "createdAt": {
+                            "__class__": "datetime",
+                            "year": 2021,
+                            "month": 9,
+                            "day": 13,
+                            "hour": 13,
+                            "minute": 1,
+                            "second": 36,
+                            "microsecond": 642000
+                        },
+                        "updatedAt": {
+                            "__class__": "datetime",
+                            "year": 2021,
+                            "month": 9,
+                            "day": 13,
+                            "hour": 13,
+                            "minute": 1,
+                            "second": 36,
+                            "microsecond": 642000
+                        },
+                        "launchType": "FARGATE",
+                        "platformVersion": "1.4.0",
+                        "networkConfiguration": {
+                            "awsvpcConfiguration": {
+                                "subnets": [
+                                    "subnet-09bc27724625aee4d",
+                                    "subnet-0d9e9622b3f5d875d"
+                                ],
+                                "securityGroups": [
+                                    "sg-070eadb227fb2d12a"
+                                ],
+                                "assignPublicIp": "DISABLED"
+                            }
+                        }
+                    }
+                ],
+                "roleArn": "arn:aws:iam::this:role/aws-service-role/ecs.amazonaws.com/AWSServiceRoleForECS",
+                "events": [
+                    {
+                        "id": "a4c10ac5-741b-4234-bbae-48edfa20c709",
+                        "createdAt": {
+                            "__class__": "datetime",
+                            "year": 2021,
+                            "month": 9,
+                            "day": 13,
+                            "hour": 13,
+                            "minute": 1,
+                            "second": 38,
+                            "microsecond": 615000
+                        },
+                        "message": "(service 165_ecs_service_green) has started 1 tasks: (task 8bf55f510c854982a7e27da81148e84c)."
+                    }
+                ],
+                "createdAt": {
+                    "__class__": "datetime",
+                    "year": 2021,
+                    "month": 9,
+                    "day": 13,
+                    "hour": 13,
+                    "minute": 1,
+                    "second": 36,
+                    "microsecond": 642000
+                },
+                "placementConstraints": [],
+                "placementStrategy": [],
+                "networkConfiguration": {
+                    "awsvpcConfiguration": {
+                        "subnets": [
+                            "subnet-09bc27724625aee4d",
+                            "subnet-0d9e9622b3f5d875d"
+                        ],
+                        "securityGroups": [
+                            "sg-070eadb227fb2d12a"
+                        ],
+                        "assignPublicIp": "DISABLED"
+                    }
+                },
+                "schedulingStrategy": "REPLICA",
+                "createdBy": "arn:aws:iam::this:user/test",
+                "enableECSManagedTags": false,
+                "propagateTags": "NONE"
+            }
+        ],
+        "failures": [],
+        "ResponseMetadata": {}
+    }
+}

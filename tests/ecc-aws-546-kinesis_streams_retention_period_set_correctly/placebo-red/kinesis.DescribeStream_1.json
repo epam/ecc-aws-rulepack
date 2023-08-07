@@ -1,0 +1,44 @@
+{
+    "status_code": 200,
+    "data": {
+        "StreamDescription": {
+            "StreamName": "546_kinesis_red",
+            "StreamARN": "arn:aws:kinesis:us-east-1:111111111111:stream/546_kinesis_red",
+            "StreamStatus": "ACTIVE",
+            "StreamModeDetails": {
+                "StreamMode": "PROVISIONED"
+            },
+            "Shards": [
+                {
+                    "ShardId": "shardId-111111111111",
+                    "HashKeyRange": {
+                        "StartingHashKey": "0",
+                        "EndingHashKey": "340282366920938463463374607431768211455"
+                    },
+                    "SequenceNumberRange": {
+                        "StartingSequenceNumber": "49638898965050487798360527351087888330796671424014581762"
+                    }
+                }
+            ],
+            "HasMoreShards": false,
+            "RetentionPeriodHours": 24,
+            "StreamCreationTimestamp": {
+                "__class__": "datetime",
+                "year": 2023,
+                "month": 3,
+                "day": 15,
+                "hour": 11,
+                "minute": 25,
+                "second": 12,
+                "microsecond": 0
+            },
+            "EnhancedMonitoring": [
+                {
+                    "ShardLevelMetrics": []
+                }
+            ],
+            "EncryptionType": "NONE"
+        },
+        "ResponseMetadata": {}
+    }
+}

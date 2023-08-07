@@ -1,0 +1,13 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "QueryLoggingConfigs": [
+            {
+                "Id": "ec0d8a0d-048e-4f09-bf27-249c7fc45383",
+                "HostedZoneId": "ASASASASASASAS",
+                "CloudWatchLogsLogGroupArn": "arn:aws:logs:us-east-1:111111111111:log-group:/aws/route53/349route53green.com"
+            }
+        ]
+    }
+}

@@ -1,0 +1,54 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "item": [
+            {
+                "deploymentId": "1yiaix",
+                "clientCertificateId": "5gc72g",
+                "stageName": "177_api_gateway_stage_green",
+                "cacheClusterEnabled": true,
+                "cacheClusterSize": "0.5",
+                "cacheClusterStatus": "AVAILABLE",
+                "methodSettings": {
+                    "*/*": {
+                        "metricsEnabled": false,
+                        "dataTraceEnabled": false,
+                        "throttlingBurstLimit": -1,
+                        "throttlingRateLimit": -1.0,
+                        "cachingEnabled": true,
+                        "cacheTtlInSeconds": 300,
+                        "cacheDataEncrypted": false,
+                        "requireAuthorizationForCacheControl": true,
+                        "unauthorizedCacheControlHeaderStrategy": "SUCCEED_WITH_RESPONSE_HEADER"
+                    }
+                },
+                "tracingEnabled": false,
+                "tags": {
+                    "ComplianceStatus": "Green",
+                    "CustodianRule": "ecc-aws-177-api_gateway_rest_api_stages_ssl_certificates_configured"
+                },
+                "createdDate": {
+                    "__class__": "datetime",
+                    "year": 2021,
+                    "month": 10,
+                    "day": 25,
+                    "hour": 11,
+                    "minute": 50,
+                    "second": 30,
+                    "microsecond": 0
+                },
+                "lastUpdatedDate": {
+                    "__class__": "datetime",
+                    "year": 2021,
+                    "month": 10,
+                    "day": 25,
+                    "hour": 11,
+                    "minute": 53,
+                    "second": 54,
+                    "microsecond": 0
+                }
+            }
+        ]
+    }
+}

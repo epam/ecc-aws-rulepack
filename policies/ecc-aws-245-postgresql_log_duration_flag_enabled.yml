@@ -1,0 +1,22 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: ecc-aws-245-postgresql_log_duration_flag_enabled
+    resource: aws.rds
+    description: |
+      The 'log_duration' flag is not enabled for PostgreSQL
+    filters:
+      - and:
+          - type: value
+            key: Engine
+            value: postgres
+          - not:
+              - type: db-parameter
+                key: log_duration
+                op: eq
+                value: 1

@@ -1,0 +1,22 @@
+{
+    "status_code": 200,
+    "data": {
+        "EndpointConfigs": [
+            {
+                "EndpointConfigName": "336-endpoint-configuration-green",
+                "EndpointConfigArn": "arn:aws:sagemaker:us-east-1:111111111111:endpoint-config/336-endpoint-configuration-green",
+                "CreationTime": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 5,
+                    "day": 18,
+                    "hour": 12,
+                    "minute": 29,
+                    "second": 57,
+                    "microsecond": 997000
+                }
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

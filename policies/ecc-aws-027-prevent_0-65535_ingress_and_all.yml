@@ -1,0 +1,28 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: ecc-aws-027-prevent_0-65535_ingress_and_all
+    resource: aws.security-group
+    description: |
+      Security groups do not prevent all incoming traffic from 0-65535
+    filters:
+      - or:
+          - and:
+              - type: value
+                value_type: swap
+                key: IpPermissions[].FromPort
+                value: 0
+                op: in
+              - type: value
+                value_type: swap
+                key: IpPermissions[].ToPort
+                value: 65535
+                op: in
+          - and:
+              - type: ingress
+                IpProtocol: "-1"

@@ -1,0 +1,40 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: ecc-aws-203-rds_postgresql_logging_enabled
+    resource: aws.rds
+    description: |
+      PostgreSQL database logging is disabled
+    filters:
+      - and:
+          - type: value
+            key: Engine
+            value: postgres
+          - or:
+              - type: db-parameter
+                key: log_min_duration_statement
+                value: absent
+              - type: db-parameter
+                key: log_min_duration_statement
+                op: eq
+                value: '-1'
+              - not:
+                  - type: value
+                    key: EnabledCloudwatchLogsExports
+                    op: in
+                    value_type: swap
+                    value: postgresql
+                  - type: value
+                    key: EnabledCloudwatchLogsExports
+                    op: in
+                    value_type: swap
+                    value: upgrade
+                  - type: db-parameter
+                    key: log_statement
+                    op: eq
+                    value: 'all'

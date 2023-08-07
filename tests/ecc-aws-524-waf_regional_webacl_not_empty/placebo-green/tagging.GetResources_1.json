@@ -1,0 +1,35 @@
+{
+    "status_code": 200,
+    "data": {
+        "PaginationToken": "",
+        "ResourceTagMappingList": [
+            {
+                "ResourceARN": "arn:aws:waf-regional:us-east-1:111111111111:webacl/e1401f68-27a8-4fef-beef-f7f523032c17",
+                "Tags": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-524-waf_regional_webacl_not_empty"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    }
+                ]
+            },
+            {
+                "ResourceARN": "arn:aws:waf-regional:us-east-1:111111111111:webacl/ede2d4c7-aacc-4b36-bfa1-7b0f673cfff1",
+                "Tags": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-524-waf_regional_webacl_not_empty"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    }
+                ]
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

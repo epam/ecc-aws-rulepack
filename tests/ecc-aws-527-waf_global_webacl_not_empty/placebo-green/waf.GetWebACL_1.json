@@ -1,0 +1,25 @@
+{
+    "status_code": 200,
+    "data": {
+        "WebACL": {
+            "WebACLId": "766791d9-db18-4695-a1ed-9db48301fb70",
+            "Name": "527_webacl_green",
+            "MetricName": "527WebaclMetricGreen",
+            "DefaultAction": {
+                "Type": "ALLOW"
+            },
+            "Rules": [
+                {
+                    "Priority": 1,
+                    "RuleId": "9fa215f5-7c21-4eae-9d9f-775396d472f1",
+                    "OverrideAction": {
+                        "Type": "NONE"
+                    },
+                    "Type": "GROUP"
+                }
+            ],
+            "WebACLArn": "arn:aws:waf::111111111111:webacl/766791d9-db18-4695-a1ed-9db48301fb70"
+        },
+        "ResponseMetadata": {}
+    }
+}

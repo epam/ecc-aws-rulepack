@@ -1,0 +1,17 @@
+{
+    "status_code": 200,
+    "data": {
+        "ConfigurationRecorders": [
+            {
+                "name": "default",
+                "roleARN": "arn:aws:iam::111111111111:role/309_role_red",
+                "recordingGroup": {
+                    "allSupported": true,
+                    "includeGlobalResourceTypes": false,
+                    "resourceTypes": []
+                }
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

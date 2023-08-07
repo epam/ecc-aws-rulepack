@@ -1,0 +1,9 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "policy": {
+            "Policy": "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Sid\":\"308_glacier_vault_green\",\"Effect\":\"Deny\",\"Principal\":{\"AWS\":\"arn:aws:iam::111111111111:root\"},\"Action\":\"glacier:ListVaults\",\"Resource\":\"arn:aws:glacier:us-east-1:111111111111:vaults/308_glacier_vault_green\"}]}"
+        }
+    }
+}

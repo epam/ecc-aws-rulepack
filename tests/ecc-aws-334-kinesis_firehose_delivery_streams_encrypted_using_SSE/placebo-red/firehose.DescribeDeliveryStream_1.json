@@ -1,0 +1,72 @@
+{
+    "status_code": 200,
+    "data": {
+        "DeliveryStreamDescription": {
+            "DeliveryStreamName": "334_kinesis_firehose_red",
+            "DeliveryStreamARN": "arn:aws:firehose:us-east-1:111111111111:deliverystream/334_kinesis_firehose_red",
+            "DeliveryStreamStatus": "ACTIVE",
+            "DeliveryStreamEncryptionConfiguration": {
+                "Status": "DISABLED"
+            },
+            "DeliveryStreamType": "DirectPut",
+            "VersionId": "1",
+            "CreateTimestamp": {
+                "__class__": "datetime",
+                "year": 2023,
+                "month": 1,
+                "day": 19,
+                "hour": 10,
+                "minute": 0,
+                "second": 9,
+                "microsecond": 709000
+            },
+            "Destinations": [
+                {
+                    "DestinationId": "destinationId-111111111111",
+                    "S3DestinationDescription": {
+                        "RoleARN": "arn:aws:iam::111111111111:role/334_firehose_role_red",
+                        "BucketARN": "arn:aws:s3:::334-s3-bucket-red",
+                        "Prefix": "",
+                        "BufferingHints": {
+                            "SizeInMBs": 5,
+                            "IntervalInSeconds": 300
+                        },
+                        "CompressionFormat": "UNCOMPRESSED",
+                        "EncryptionConfiguration": {
+                            "NoEncryptionConfig": "NoEncryption"
+                        },
+                        "CloudWatchLoggingOptions": {
+                            "Enabled": false
+                        }
+                    },
+                    "ExtendedS3DestinationDescription": {
+                        "RoleARN": "arn:aws:iam::111111111111:role/334_firehose_role_red",
+                        "BucketARN": "arn:aws:s3:::334-s3-bucket-red",
+                        "Prefix": "",
+                        "BufferingHints": {
+                            "SizeInMBs": 5,
+                            "IntervalInSeconds": 300
+                        },
+                        "CompressionFormat": "UNCOMPRESSED",
+                        "EncryptionConfiguration": {
+                            "NoEncryptionConfig": "NoEncryption"
+                        },
+                        "CloudWatchLoggingOptions": {
+                            "Enabled": false
+                        },
+                        "ProcessingConfiguration": {
+                            "Enabled": false,
+                            "Processors": []
+                        },
+                        "S3BackupMode": "Disabled",
+                        "DataFormatConversionConfiguration": {
+                            "Enabled": false
+                        }
+                    }
+                }
+            ],
+            "HasMoreDestinations": false
+        },
+        "ResponseMetadata": {}
+    }
+}

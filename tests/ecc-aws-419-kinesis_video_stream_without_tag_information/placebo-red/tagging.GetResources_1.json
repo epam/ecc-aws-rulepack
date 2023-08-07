@@ -1,0 +1,13 @@
+{
+    "status_code": 200,
+    "data": {
+        "PaginationToken": "",
+        "ResourceTagMappingList": [
+            {
+                "ResourceARN": "arn:aws:kinesisvideo:us-east-1:1111111111:stream/419_kinesis_stream_red/1687779313287",
+                "Tags": []
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

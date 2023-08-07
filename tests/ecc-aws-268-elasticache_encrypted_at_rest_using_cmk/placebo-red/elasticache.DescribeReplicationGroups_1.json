@@ -1,0 +1,65 @@
+{
+    "status_code": 200,
+    "data": {
+        "ReplicationGroups": [
+            {
+                "ReplicationGroupId": "c7n-268-elasticache-group-red",
+                "Description": "268_elasticache_group_red",
+                "GlobalReplicationGroupInfo": {},
+                "Status": "available",
+                "PendingModifiedValues": {},
+                "MemberClusters": [
+                    "c7n-268-elasticache-group-red-001"
+                ],
+                "NodeGroups": [
+                    {
+                        "NodeGroupId": "0001",
+                        "Status": "available",
+                        "PrimaryEndpoint": {
+                            "Address": "c7n-268-elasticache-group-red.ps5uie.ng.0001.use1.cache.amazonaws.com",
+                            "Port": 6379
+                        },
+                        "ReaderEndpoint": {
+                            "Address": "c7n-268-elasticache-group-red-ro.ps5uie.ng.0001.use1.cache.amazonaws.com",
+                            "Port": 6379
+                        },
+                        "NodeGroupMembers": [
+                            {
+                                "CacheClusterId": "c7n-268-elasticache-group-red-001",
+                                "CacheNodeId": "0001",
+                                "ReadEndpoint": {
+                                    "Address": "c7n-268-elasticache-group-red-001.ps5uie.0001.use1.cache.amazonaws.com",
+                                    "Port": 6379
+                                },
+                                "PreferredAvailabilityZone": "us-east-1e",
+                                "CurrentRole": "primary"
+                            }
+                        ]
+                    }
+                ],
+                "AutomaticFailover": "disabled",
+                "MultiAZ": "disabled",
+                "SnapshotRetentionLimit": 0,
+                "SnapshotWindow": "05:00-06:00",
+                "ClusterEnabled": false,
+                "CacheNodeType": "cache.t2.micro",
+                "AuthTokenEnabled": false,
+                "TransitEncryptionEnabled": false,
+                "AtRestEncryptionEnabled": false,
+                "ARN": "arn:aws:elasticache:us-east-1:111111111111:replicationgroup:c7n-268-elasticache-group-red",
+                "LogDeliveryConfigurations": [],
+                "ReplicationGroupCreateTime": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 5,
+                    "day": 12,
+                    "hour": 12,
+                    "minute": 26,
+                    "second": 30,
+                    "microsecond": 447000
+                }
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

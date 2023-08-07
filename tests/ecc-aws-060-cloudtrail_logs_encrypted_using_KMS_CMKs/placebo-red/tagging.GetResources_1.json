@@ -1,0 +1,18 @@
+{
+    "status_code": 200,
+    "data": {
+        "PaginationToken": "",
+        "ResourceTagMappingList": [
+            {
+                "ResourceARN": "arn:aws:cloudtrail:us-east-1:12313124124:trail/red-060",
+                "Tags": [
+                    {
+                        "Key": "Name",
+                        "Value": "red-060"
+                    }
+                ]
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

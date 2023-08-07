@@ -1,0 +1,40 @@
+{
+    "status_code": 200,
+    "data": {
+        "OptionGroupsList": [
+            {
+                "OptionGroupName": "option-group-205-red",
+                "OptionGroupDescription": "Managed by Terraform",
+                "EngineName": "mariadb",
+                "MajorEngineVersion": "10.6",
+                "Options": [
+                    {
+                        "OptionName": "MARIADB_AUDIT_PLUGIN",
+                        "OptionDescription": "MariaDB Audit Plugin",
+                        "Persistent": false,
+                        "Permanent": false,
+                        "OptionSettings": [
+                            {
+                                "Name": "SERVER_AUDIT_EVENTS",
+                                "Value": "CONNECT,QUERY,TABLE,QUERY_DML,QUERY_DCL",
+                                "DefaultValue": "CONNECT,QUERY",
+                                "Description": "Types of actions to be logged (connect, query, or table)",
+                                "ApplyType": "DYNAMIC",
+                                "DataType": "STRING",
+                                "AllowedValues": "CONNECT,QUERY,TABLE,QUERY_DDL,QUERY_DML,QUERY_DCL,QUERY_DML_NO_SELECT",
+                                "IsModifiable": true,
+                                "IsCollection": true
+                            }
+                        ],
+                        "DBSecurityGroupMemberships": [],
+                        "VpcSecurityGroupMemberships": []
+                    }
+                ],
+                "AllowsVpcAndNonVpcInstanceMemberships": false,
+                "VpcId": "vpc-111111",
+                "OptionGroupArn": "arn:aws:rds:us-east-1:1111111111:og:option-group-205-red"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

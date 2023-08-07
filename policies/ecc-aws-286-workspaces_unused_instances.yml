@@ -1,0 +1,18 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: ecc-aws-286-workspaces_unused_instances
+    description: |
+      Unused Workspaces instances are not removed
+    resource: aws.workspaces
+    filters:
+      - type: connection-status
+        value_type: age
+        key: LastKnownUserConnectionTimestamp
+        op: ge
+        value: 30

@@ -1,0 +1,17 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+policies:
+  - name: ecc-aws-069-s3_bucket_should_not_allow_all_actions_from_all_principals
+    description: |
+      S3 bucket allows all actions from all principals
+    resource: aws.s3-light
+    filters:
+      - type: has-statement
+        statements:
+          - Effect: Allow
+            Action: '*'
+            Principal: '*'

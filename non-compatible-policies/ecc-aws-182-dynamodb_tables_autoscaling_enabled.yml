@@ -1,0 +1,19 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+policies:
+  - name: ecc-aws-182-dynamodb_tables_autoscaling_enabled
+    description: |
+      DynamoDB table Auto Scaling or On-Demand is not enabled on DynamoDB tables 
+    resource: aws.dynamodb-table
+    filters:
+      - type: value
+        key: ProvisionedThroughput.ReadCapacityUnits
+        op: ne
+        value: 0
+      - type: auto-scaling
+        enabled: false
+

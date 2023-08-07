@@ -1,0 +1,53 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "ResourceRecordSets": [
+            {
+                "Name": "346-route53-zone.rule.",
+                "Type": "MX",
+                "SetIdentifier": "346_record_red",
+                "GeoLocation": {
+                    "CountryCode": "UA"
+                },
+                "TTL": 300,
+                "ResourceRecords": [
+                    {
+                        "Value": "10 mailhost1.example.com"
+                    }
+                ]
+            },
+            {
+                "Name": "346-route53-zone.rule.",
+                "Type": "NS",
+                "TTL": 172800,
+                "ResourceRecords": [
+                    {
+                        "Value": "ns-790.awsdns-34.net."
+                    },
+                    {
+                        "Value": "ns-1070.awsdns-05.org."
+                    },
+                    {
+                        "Value": "ns-106.awsdns-13.com."
+                    },
+                    {
+                        "Value": "ns-1921.awsdns-48.co.uk."
+                    }
+                ]
+            },
+            {
+                "Name": "346-route53-zone.rule.",
+                "Type": "SOA",
+                "TTL": 900,
+                "ResourceRecords": [
+                    {
+                        "Value": "ns-790.awsdns-34.net. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+                    }
+                ]
+            }
+        ],
+        "IsTruncated": false,
+        "MaxItems": "100"
+    }
+}

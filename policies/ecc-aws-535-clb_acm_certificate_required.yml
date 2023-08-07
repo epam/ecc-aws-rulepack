@@ -1,0 +1,28 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: ecc-aws-535-clb_acm_certificate_required
+    description: |
+      Classic Load Balancers with HTTPS/SSL listeners do not use certificate provided by AWS Certificate Manager
+    resource: aws.elb
+    filters:
+      - or:
+          - type: value
+            key: ListenerDescriptions[].Listener.Protocol
+            value_type: swap
+            value: HTTPS
+            op: in
+          - type: value
+            key: ListenerDescriptions[].Listener.Protocol
+            value_type: swap
+            value: SSL
+            op: in
+      - type: value
+        key: length(ListenerDescriptions[].Listener.SSLCertificateId)>`0` && join(' ,', ListenerDescriptions[].Listener.SSLCertificateId)
+        op: regex
+        value: '.*(^|, )arn:aws:iam::[^,]*($|, ).*'

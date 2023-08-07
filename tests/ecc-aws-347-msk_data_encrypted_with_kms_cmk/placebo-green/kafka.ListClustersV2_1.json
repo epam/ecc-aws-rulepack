@@ -1,0 +1,79 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "ClusterInfoList": [
+            {
+                "ClusterType": "PROVISIONED",
+                "ClusterArn": "arn:aws:kafka:us-east-1:111111111111:cluster/347-msk-cluster-green/3c3c340f-0f32-478f-8757-5be4e44a9e8d-14",
+                "ClusterName": "347-msk-cluster-green",
+                "CreationTime": {
+                    "__class__": "datetime",
+                    "year": 2023,
+                    "month": 3,
+                    "day": 28,
+                    "hour": 9,
+                    "minute": 19,
+                    "second": 46,
+                    "microsecond": 623000
+                },
+                "CurrentVersion": "K3AEGXETSR30VB",
+                "State": "ACTIVE",
+                "Tags": {
+                    "CustodianRule": "ecc-aws-347-msk_data_encrypted_with_kms_cmk",
+                    "ComplianceStatus": "Green"
+                },
+                "Provisioned": {
+                    "BrokerNodeGroupInfo": {
+                        "BrokerAZDistribution": "DEFAULT",
+                        "ClientSubnets": [
+                            "subnet-0f6f1edac7654bccf",
+                            "subnet-002f3539004fee42c",
+                            "subnet-0d30f5f6bcc64f20d"
+                        ],
+                        "InstanceType": "kafka.t3.small",
+                        "SecurityGroups": [
+                            "sg-0f078ef4ee73cacf3"
+                        ],
+                        "StorageInfo": {
+                            "EbsStorageInfo": {
+                                "VolumeSize": 5
+                            }
+                        },
+                        "ConnectivityInfo": {
+                            "PublicAccess": {
+                                "Type": "DISABLED"
+                            }
+                        }
+                    },
+                    "CurrentBrokerSoftwareInfo": {
+                        "KafkaVersion": "2.6.2"
+                    },
+                    "EncryptionInfo": {
+                        "EncryptionAtRest": {
+                            "DataVolumeKMSKeyId": "arn:aws:kms:us-east-1:111111111111:key/f97cd60b-6064-44c1-aa1d-55074bf57dae"
+                        },
+                        "EncryptionInTransit": {
+                            "ClientBroker": "TLS",
+                            "InCluster": true
+                        }
+                    },
+                    "EnhancedMonitoring": "DEFAULT",
+                    "OpenMonitoring": {
+                        "Prometheus": {
+                            "JmxExporter": {
+                                "EnabledInBroker": false
+                            },
+                            "NodeExporter": {
+                                "EnabledInBroker": false
+                            }
+                        }
+                    },
+                    "NumberOfBrokerNodes": 3,
+                    "ZookeeperConnectString": "z-2.347mskclustergreen.o5wsep.c14.kafka.us-east-1.amazonaws.com:2181,z-1.347mskclustergreen.o5wsep.c14.kafka.us-east-1.amazonaws.com:2181,z-3.347mskclustergreen.o5wsep.c14.kafka.us-east-1.amazonaws.com:2181",
+                    "ZookeeperConnectStringTls": "z-2.347mskclustergreen.o5wsep.c14.kafka.us-east-1.amazonaws.com:2182,z-1.347mskclustergreen.o5wsep.c14.kafka.us-east-1.amazonaws.com:2182,z-3.347mskclustergreen.o5wsep.c14.kafka.us-east-1.amazonaws.com:2182"
+                }
+            }
+        ]
+    }
+}

@@ -1,0 +1,25 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+policies:
+  - name: ecc-aws-477-cloudformation_stack_notification_check
+    description: |
+      CloudFormation Stack notifications do not enabled
+    resource: aws.cfn
+    filters:
+      - type: value
+        key: StackStatus
+        op: in
+        value: ["CREATE_COMPLETE", "UPDATE_COMPLETE", "UPDATE_ROLLBACK_COMPLETE", "UPDATE_ROLLBACK_FAILED"]
+      - or:
+          - type: subscription
+            key: SubscriptionsConfirmed
+            op: eq
+            value: "0"
+          - type: value
+            key: NotificationARNs
+            value: empty
+
