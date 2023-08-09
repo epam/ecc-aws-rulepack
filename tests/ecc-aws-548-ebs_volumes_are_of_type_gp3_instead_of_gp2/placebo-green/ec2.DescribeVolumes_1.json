@@ -1,0 +1,40 @@
+{
+    "status_code": 200,
+    "data": {
+        "Volumes": [
+            {
+                "Attachments": [],
+                "AvailabilityZone": "us-east-1a",
+                "CreateTime": {
+                    "__class__": "datetime",
+                    "year": 2023,
+                    "month": 8,
+                    "day": 7,
+                    "hour": 10,
+                    "minute": 21,
+                    "second": 26,
+                    "microsecond": 451000
+                },
+                "Encrypted": false,
+                "Size": 8,
+                "SnapshotId": "",
+                "State": "available",
+                "VolumeId": "vol-0fb6c7480bfce553c",
+                "Iops": 100,
+                "Tags": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-548-ebs_volumes_are_of_type_gp3_instead_of_gp2"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    }
+                ],
+                "VolumeType": "gp3",
+                "MultiAttachEnabled": false
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}
