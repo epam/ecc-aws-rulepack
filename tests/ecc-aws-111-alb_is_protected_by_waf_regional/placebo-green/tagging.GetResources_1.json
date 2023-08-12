@@ -1,9 +1,10 @@
 {
     "status_code": 200,
     "data": {
-        "TagDescriptions": [
+        "PaginationToken": "",
+        "ResourceTagMappingList": [
             {
-                "ResourceArn": "arn:aws:elasticloadbalancing:us-east-1:111111111111:loadbalancer/app/alb-111-green/41dba721f54b3251",
+                "ResourceARN": "arn:aws:waf-regional:us-east-1:111111111111:webacl/4d7100e7-9fc9-4ebe-bf08-69aa8e71202c",
                 "Tags": [
                     {
                         "Key": "CustodianRule",

@@ -1,0 +1,25 @@
+{
+    "status_code": 200,
+    "data": {
+        "WebACL": {
+            "WebACLId": "4d7100e7-9fc9-4ebe-bf08-69aa8e71202c",
+            "Name": "GreenWAFRegionalACL",
+            "MetricName": "GreenWAFRegionalACL",
+            "DefaultAction": {
+                "Type": "ALLOW"
+            },
+            "Rules": [
+                {
+                    "Priority": 1,
+                    "RuleId": "40f46797-a8ed-4c3e-b300-7a04d071989b",
+                    "Action": {
+                        "Type": "BLOCK"
+                    },
+                    "Type": "REGULAR"
+                }
+            ],
+            "WebACLArn": "arn:aws:waf-regional:us-east-1:111111111111:webacl/4d7100e7-9fc9-4ebe-bf08-69aa8e71202c"
+        },
+        "ResponseMetadata": {}
+    }
+}
