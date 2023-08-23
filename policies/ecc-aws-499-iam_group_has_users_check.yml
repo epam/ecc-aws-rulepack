@@ -13,3 +13,4 @@ policies:
     filters:
       - type: has-users
         value: false
+    comment: '0018002000'

@@ -18,3 +18,4 @@ policies:
         - type: value
           key: WindowsConfiguration.DeploymentType
           value: MULTI_AZ_1
+    comment: '0050042000'

@@ -20,3 +20,4 @@ policies:
               - type: db-parameter
                 key: sec_return_server_release_banner
                 value: false
+    comment: '0023061700'

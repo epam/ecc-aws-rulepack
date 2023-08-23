@@ -20,3 +20,4 @@ policies:
                 key: log_checkpoints
                 op: eq
                 value: 1
+    comment: '0019062000'

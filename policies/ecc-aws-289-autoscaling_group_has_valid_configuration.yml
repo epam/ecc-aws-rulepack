@@ -12,3 +12,4 @@ policies:
       Auto Scaling Group has invalid configuration
     filters:
       - invalid
+    comment: '0023032000'

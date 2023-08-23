@@ -20,3 +20,4 @@ policies:
                 key: sql_mode
                 op: contains
                 value: STRICT_ALL_TABLES
+    comment: '0023061600'

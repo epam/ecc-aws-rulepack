@@ -19,3 +19,4 @@ policies:
               - type: db-parameter
                 key: log_min_error_statement
                 value: error
+    comment: '0019062010'

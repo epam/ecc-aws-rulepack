@@ -17,3 +17,4 @@ policies:
       - type: value
         key: length(VgwTelemetry[?Status=='UP'])==`2`
         value: false
+    comment: '0050022000'

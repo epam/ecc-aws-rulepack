@@ -14,3 +14,4 @@ policies:
       - type: value
         key: AutoMinorVersionUpgrade
         value: false
+    comment: '0021142000'

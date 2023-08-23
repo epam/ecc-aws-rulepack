@@ -17,4 +17,4 @@ policies:
         configurationChangesAlarmList: "\\(\\(\\$\\.errorCode=\"\\*UnauthorizedOperation\"\\) ?\\|\\| ?\\(\\$\\.errorCode=\"AccessDenied\\*\"\\)\\) ?&& ?\\(\\(\\$\\.sourceIPAddress!=(\")?delivery\\.logs\\.amazonaws\\.com(\")?\\) ?&& ?\\(\\$\\.eventName!=(\")?HeadBucket(\")?\\)\\)"
         op: eq
         value: 0
-
+    comment: '0016010300'

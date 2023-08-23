@@ -12,3 +12,4 @@ policies:
     resource: efs
     filters:
       - "tag:aws:elasticfilesystem:default-backup": absent
+    comment: '0049042000'

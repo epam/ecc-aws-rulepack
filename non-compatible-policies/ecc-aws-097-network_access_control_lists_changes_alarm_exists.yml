@@ -17,4 +17,4 @@ policies:
         configurationChangesAlarmList: "(\\()? ?\\$\\.eventName ?= ?(\")?CreateNetworkAcl(\")? ?(\\))? ?\\|\\| ?(\\()? ?\\$\\.eventName ?= ?(\")?CreateNetworkAclEntry(\")? ?(\\))? ?\\|\\| ?(\\()? ?\\$\\.eventName ?= ?(\")?DeleteNetworkAcl(\")? ?(\\))? ?\\|\\| ?(\\()? ?\\$\\.eventName ?= ?(\")?DeleteNetworkAclEntry(\")? ?(\\))? ?\\|\\| ?(\\()? ?\\$\\.eventName ?= ?(\")?ReplaceNetworkAclEntry(\")? ?(\\))? ?\\|\\| ?(\\()? ?\\$\\.eventName ?= ?(\")?ReplaceNetworkAclAssociation(\")? ?(\\))?"
         op: eq
         value: 0
-
+    comment: '0016010300'

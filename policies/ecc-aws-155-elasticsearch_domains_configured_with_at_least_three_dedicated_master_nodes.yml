@@ -20,3 +20,4 @@ policies:
               - type: value
                 key: ElasticsearchClusterConfig.DedicatedMasterEnabled
                 value: true
+    comment: '0050052000'

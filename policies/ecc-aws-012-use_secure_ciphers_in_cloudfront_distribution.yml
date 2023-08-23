@@ -16,3 +16,4 @@ policies:
             key: ViewerCertificate.MinimumProtocolVersion
             op: regex
             value: 'TLSv1\.2_*'
+    comment: '0023022001'

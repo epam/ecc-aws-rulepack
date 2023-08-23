@@ -18,3 +18,4 @@ policies:
           - type: db-parameter
             key: log_hostname
             value: 1
+    comment: '0019061900'

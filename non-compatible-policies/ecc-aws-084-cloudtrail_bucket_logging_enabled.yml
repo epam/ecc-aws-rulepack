@@ -12,4 +12,4 @@ policies:
     filters:
       - type: cloudtrail-s3-logging
         enabled: false
-
+    comment: '0019010300'

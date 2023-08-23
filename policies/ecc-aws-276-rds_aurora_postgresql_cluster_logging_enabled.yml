@@ -31,3 +31,4 @@ policies:
                   - type: db-cluster-parameter
                     key: log_statement
                     value: all
+    comment: '0019062000'

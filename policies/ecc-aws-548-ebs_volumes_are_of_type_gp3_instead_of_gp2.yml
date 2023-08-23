@@ -14,3 +14,4 @@ policies:
       - type: value
         key: VolumeType
         value: gp2
+    comment: '0007042000'

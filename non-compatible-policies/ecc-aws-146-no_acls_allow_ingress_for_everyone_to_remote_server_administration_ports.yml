@@ -15,3 +15,4 @@ policies:
         required-ports: 22,3389
         cidr: 0.0.0.0/0
         rule-action: allow
+    comment: '0024020300'

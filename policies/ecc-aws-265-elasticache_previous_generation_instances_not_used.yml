@@ -15,3 +15,4 @@ policies:
         key: CacheNodeType
         op: regex
         value: 'cache.(m1|m2|m3|r3|t1|c1).[^\s]+'
+    comment: '0006062000'

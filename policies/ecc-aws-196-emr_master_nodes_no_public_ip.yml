@@ -20,3 +20,4 @@ policies:
             key: MasterPublicDnsName
             op: regex
             value: '^([0-9]{1,3}\.){3}[0-9]{1,3}$'
+    comment: '0040052000'

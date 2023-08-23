@@ -17,4 +17,4 @@ policies:
         configurationChangesAlarmList: "(\\()? ?\\$\\.eventSource ?= ?(\")?kms\\.amazonaws\\.com(\")? ?(\\))? ?&& ?\\((\\()? ?\\$\\.eventName ?= ?(\")?DisableKey(\")? ?(\\))? ?\\|\\| ?(\\()? ?\\$\\.eventName ?= ?(\")?ScheduleKeyDeletion(\")? ?(\\))?\\)"
         op: eq
         value: 0
-
+    comment: '0016010300'

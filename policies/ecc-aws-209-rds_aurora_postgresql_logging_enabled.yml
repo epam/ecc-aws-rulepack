@@ -33,3 +33,4 @@ policies:
                     key: log_statement
                     op: eq
                     value: all
+    comment: '0019062000'

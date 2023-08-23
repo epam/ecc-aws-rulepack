@@ -17,3 +17,4 @@ policies:
       - type: value
         key: OntapConfiguration.DeploymentType
         value: SINGLE_AZ_1
+    comment: '0050042000'

@@ -18,3 +18,4 @@ policies:
           - type: value
             key: MetadataOptions.HttpEndpoint
             value: enabled
+    comment: '0024032000'

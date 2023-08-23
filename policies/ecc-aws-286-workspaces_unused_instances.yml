@@ -16,3 +16,4 @@ policies:
         key: LastKnownUserConnectionTimestamp
         op: ge
         value: 30
+    comment: '0002120600'

@@ -14,3 +14,4 @@ policies:
       - type: value
         key: deployments[0].networkConfiguration.awsvpcConfiguration.assignPublicIp
         value: ENABLED
+    comment: '0040082000'

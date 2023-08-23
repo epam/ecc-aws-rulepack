@@ -19,3 +19,4 @@ policies:
           - type: value
             key: cacheClusterStatus
             value: AVAILABLE
+    comment: '0009022000'

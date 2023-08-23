@@ -15,3 +15,4 @@ policies:
           - type: value
             key: containerDefinitions[0].readonlyRootFilesystem
             value: true
+    comment: '0022082000'

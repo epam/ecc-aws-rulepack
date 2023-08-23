@@ -19,3 +19,4 @@ policies:
           - type: value
             key: Ec2InstanceAttributes.Ec2SubnetId
             value: empty
+    comment: '0041052000'

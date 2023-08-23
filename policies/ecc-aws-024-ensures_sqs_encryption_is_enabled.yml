@@ -12,3 +12,4 @@ policies:
     resource: sqs
     filters:
       - KmsMasterKeyId: absent
+    comment: '0043142000'

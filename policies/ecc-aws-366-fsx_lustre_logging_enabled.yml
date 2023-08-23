@@ -19,3 +19,4 @@ policies:
           - type: value
             key: LustreConfiguration.LogConfiguration
             value: absent
+    comment: '0019042000'

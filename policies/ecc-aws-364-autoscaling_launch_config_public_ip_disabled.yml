@@ -18,3 +18,4 @@ policies:
           - type: value
             key: AssociatePublicIpAddress
             value: absent
+    comment: '0040032000'

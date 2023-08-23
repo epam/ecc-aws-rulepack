@@ -27,4 +27,4 @@ policies:
                 op: eq
               - not:
                   - type: elasticsearch-domain-filter
-
+    comment: '0050052000'

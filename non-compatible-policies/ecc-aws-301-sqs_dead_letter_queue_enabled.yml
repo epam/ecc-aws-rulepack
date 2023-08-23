@@ -11,4 +11,4 @@ policies:
     resource: sqs
     filters:
       - type: redrive-policy-sqs-filter
-
+    comment: '0023142000'

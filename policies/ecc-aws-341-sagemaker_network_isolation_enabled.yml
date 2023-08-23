@@ -14,3 +14,4 @@ policies:
       - type: value
         key: EnableNetworkIsolation
         value: false
+    comment: '0040112000'

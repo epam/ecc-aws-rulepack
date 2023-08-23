@@ -14,3 +14,4 @@ policies:
       - type: reserved-concurrency
         key: c7n:FunctionInfo.Concurrency.ReservedConcurrentExecutions
         value: absent
+    comment: '0031032000'

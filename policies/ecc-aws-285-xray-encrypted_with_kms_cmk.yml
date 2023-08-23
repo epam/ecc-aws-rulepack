@@ -19,3 +19,4 @@ policies:
                 key: kms
               - type: xray-encrypt-key
                 key: alias/aws/xray
+    comment: '0043132000'

@@ -19,3 +19,4 @@ policies:
               - type: db-parameter
                 key: log_connections
                 value: 1
+    comment: '0019061900'

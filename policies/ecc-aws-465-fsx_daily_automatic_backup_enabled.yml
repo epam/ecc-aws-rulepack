@@ -60,3 +60,4 @@ policies:
               - type: value
                 key: WindowsConfiguration.AutomaticBackupRetentionDays
                 value: absent
+    comment: '0049042000'

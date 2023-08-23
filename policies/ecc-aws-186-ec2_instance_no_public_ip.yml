@@ -14,3 +14,4 @@ policies:
       - type: value
         key: NetworkInterfaces[].Association.PublicIp
         value: not-null
+    comment: '0040032000'

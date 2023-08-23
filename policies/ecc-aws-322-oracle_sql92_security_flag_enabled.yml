@@ -20,3 +20,4 @@ policies:
               - type: db-parameter
                 key: sql92_security
                 value: true
+    comment: '0023061700'

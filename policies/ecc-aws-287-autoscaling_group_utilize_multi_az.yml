@@ -15,3 +15,4 @@ policies:
         key: AvailabilityZones
         value_type: size
         value: 1
+    comment: '0050032000'

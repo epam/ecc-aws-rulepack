@@ -20,3 +20,4 @@ policies:
                 key: log_disconnections
                 op: eq
                 value: 1
+    comment: '0019061900'

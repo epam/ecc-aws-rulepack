@@ -16,3 +16,4 @@ policies:
           - type: value
             key: '"c7n:CrossAccountViolations"[0]'
             value: all
+    comment: '0040062200'

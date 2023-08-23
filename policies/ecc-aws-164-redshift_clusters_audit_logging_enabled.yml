@@ -19,3 +19,4 @@ policies:
             key: enable_user_activity_logging
             value: false
             op: eq
+    comment: '0019052000'

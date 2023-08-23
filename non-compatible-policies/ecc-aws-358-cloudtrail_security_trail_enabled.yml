@@ -16,4 +16,4 @@ policies:
         selectorList: selectorList[?EventSelectors[?IncludeManagementEvents==`true` && ReadWriteType=='All' && !not_null(ExcludeManagementEventSources)] || AdvancedEventSelectors[?FieldSelectors[?Field == 'eventCategory' && Equals[?contains(@, 'Management')==`true`]] && !(FieldSelectors[?Field=='readOnly']) && !(FieldSelectors[?Field=='eventSource'])] ]
         op: eq
         value: 0
-
+    comment: '0019012000'

@@ -14,3 +14,4 @@ policies:
       - type: value
         key: ClusterEndpointEncryptionType
         value: NONE
+    comment: '0044062000'

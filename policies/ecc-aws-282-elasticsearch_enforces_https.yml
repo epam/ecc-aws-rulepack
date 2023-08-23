@@ -14,3 +14,4 @@ policies:
       - type: value
         key: DomainEndpointOptions.EnforceHTTPS
         value: false
+    comment: '0044052000'

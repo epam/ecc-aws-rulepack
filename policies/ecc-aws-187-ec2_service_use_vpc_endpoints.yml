@@ -16,3 +16,4 @@ policies:
             key: ServiceName
             op: regex
             value: 'com\.amazonaws\.[\-a-z1-5]*\.ec2'
+    comment: '0039022000'

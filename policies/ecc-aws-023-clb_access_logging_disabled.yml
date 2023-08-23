@@ -12,3 +12,4 @@ policies:
     resource: elb
     filters:
       - type: is-not-logging
+    comment: '0019022000'

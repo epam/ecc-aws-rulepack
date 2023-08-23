@@ -18,3 +18,4 @@ policies:
           - type: value
             key: logsConfig.cloudWatchLogs.status
             value: "DISABLED"
+    comment: '0019132000'

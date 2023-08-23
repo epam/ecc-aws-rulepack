@@ -14,3 +14,4 @@ policies:
       - not:
           - type: guard-duty
             Detector.Status: ENABLED
+    comment: '0016092000'

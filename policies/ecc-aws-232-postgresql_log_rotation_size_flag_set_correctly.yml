@@ -20,3 +20,4 @@ policies:
                 key: log_rotation_size
                 op: eq
                 value: 1000000
+    comment: '0019061910'

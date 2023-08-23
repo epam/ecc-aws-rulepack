@@ -14,3 +14,4 @@ policies:
       - type: value
         key: KeyId
         value: 'alias/aws/kinesis'
+    comment: '0043052000'

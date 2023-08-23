@@ -16,4 +16,4 @@ policies:
         selectorList: selectorList[?EventSelectors[?DataResources[?Type=='AWS::S3::Object'] && (ReadWriteType=='All' || ReadWriteType=='ReadOnly' )] || AdvancedEventSelectors[?FieldSelectors[? Equals[?contains(@, 'AWS::S3::Object')==`true`] && Field == 'resources.type'] && FieldSelectors[?Field == 'eventCategory' && Equals[?contains(@, 'Data')==`true`]] && ( !(FieldSelectors[?Field=='readOnly']) || (FieldSelectors[?contains(values(@), 'readOnly') && Equals[?contains(@, 'true')==`true`]] ))]]
         op: eq
         value: 0
-
+    comment: '0019010300'

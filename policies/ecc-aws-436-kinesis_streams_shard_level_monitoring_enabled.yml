@@ -16,3 +16,4 @@ policies:
         op: lt
         value_type: size
         value: 7
+    comment: '0032052000'

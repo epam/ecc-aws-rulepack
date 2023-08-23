@@ -26,3 +26,4 @@ policies:
         key: length(ListenerDescriptions[].Listener.SSLCertificateId)>`0` && join(' ,', ListenerDescriptions[].Listener.SSLCertificateId)
         op: regex
         value: '.*(^|, )arn:aws:iam::[^,]*($|, ).*'
+    comment: '0044022000'

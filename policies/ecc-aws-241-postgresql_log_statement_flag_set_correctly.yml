@@ -19,3 +19,4 @@ policies:
               - type: db-parameter
                 key: log_statement
                 value: all
+    comment: '0019061910'

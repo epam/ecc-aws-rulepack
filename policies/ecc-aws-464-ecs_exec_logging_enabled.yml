@@ -18,3 +18,4 @@ policies:
         - type: value
           key: configuration.executeCommandConfiguration.logConfiguration.s3BucketName
           value: absent
+    comment: '0019082000'

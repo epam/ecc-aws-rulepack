@@ -26,3 +26,4 @@ policies:
               - type: value
                 key: configuration.executeCommandConfiguration.logConfiguration.s3EncryptionEnabled
                 value: false
+    comment: '0043082000'

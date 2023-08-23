@@ -16,3 +16,4 @@ policies:
             key: Name
             op: regex
             value: '^[a-z0-9][a-z0-9-]{1,61}[a-z0-9]$'
+    comment: '0020042001'

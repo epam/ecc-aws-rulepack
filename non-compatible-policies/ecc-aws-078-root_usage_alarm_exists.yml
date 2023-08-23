@@ -17,4 +17,4 @@ policies:
         configurationChangesAlarmList: "(\\()? ?\\$\\.userIdentity\\.type ?= ?\"Root\" ?(\\))? ?\\&\\& ?(\\(?) ?\\$\\.userIdentity\\.invokedBy NOT EXISTS ?(\\))? ?&& ?(\\()? ?\\$\\.eventType ?!= ?\"AwsServiceEvent\" ?(\\))?"
         op: eq
         value: 0
-
+    comment: '0016010300'

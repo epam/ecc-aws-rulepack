@@ -14,3 +14,4 @@ policies:
       - type: value
         key: containerDefinitions[].memory
         value: empty
+    comment: '0020082000'

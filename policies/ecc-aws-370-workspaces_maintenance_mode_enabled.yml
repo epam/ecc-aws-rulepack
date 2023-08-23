@@ -14,3 +14,4 @@ policies:
       - type: value
         key: WorkspaceCreationProperties.EnableMaintenanceMode
         value: false
+    comment: '0021120600'

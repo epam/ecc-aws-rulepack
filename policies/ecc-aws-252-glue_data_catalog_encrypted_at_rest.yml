@@ -13,3 +13,4 @@ policies:
     filters:
       - type: glue-security-config
         CatalogEncryptionMode: DISABLED
+    comment: '0043052000'

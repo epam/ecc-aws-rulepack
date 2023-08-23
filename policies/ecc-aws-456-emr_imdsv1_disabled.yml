@@ -20,3 +20,4 @@ policies:
             key: InstanceMetadataServiceConfiguration.MinimumInstanceMetadataServiceVersion
             op: eq
             value: 2
+    comment: '0024052000'

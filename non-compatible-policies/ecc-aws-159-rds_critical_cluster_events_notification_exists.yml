@@ -15,4 +15,4 @@ policies:
         key: SourceType=='db-cluster' && SourceIdsList==null && ( EventCategoriesList==null || (EventCategoriesList.contains(@, 'failure')==`true` && EventCategoriesList.contains(@'maintenance')==`true`)) && Enabled==`true`
         value: true
         op: eq
-
+    comment: '0032062000'

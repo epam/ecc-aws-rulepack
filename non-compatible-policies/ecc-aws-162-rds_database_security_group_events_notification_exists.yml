@@ -15,4 +15,4 @@ policies:
         key: SourceType=='db-security-group' && Enabled==`true` && SourceIdsList==null && ( EventCategoriesList==null || length(EventCategoriesList[])==`2`)
         value: true
         op: eq
-
+    comment: '0032062000'

@@ -14,3 +14,4 @@ policies:
       - type: value
         key: DeletionProtection
         value: false
+    comment: '0047062000'

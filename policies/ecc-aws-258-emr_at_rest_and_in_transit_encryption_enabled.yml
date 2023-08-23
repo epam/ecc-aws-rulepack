@@ -26,4 +26,4 @@ policies:
               - type: cluster-security-configuration
                 key: EncryptionConfiguration.AtRestEncryptionConfiguration.LocalDiskEncryptionConfiguration.EncryptionKeyProviderType
                 value: present
-
+    comment: '0045052000'

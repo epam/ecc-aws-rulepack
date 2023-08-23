@@ -25,3 +25,4 @@ policies:
                     key: log_rotation_age
                     op: eq
                     value: 60
+    comment: '0019061900'

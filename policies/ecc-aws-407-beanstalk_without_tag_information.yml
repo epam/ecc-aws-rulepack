@@ -14,3 +14,4 @@ policies:
       - type: tag-count
         op: lt
         count: 4
+    comment: '0010032000'

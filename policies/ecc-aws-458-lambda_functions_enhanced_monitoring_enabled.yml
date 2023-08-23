@@ -16,3 +16,4 @@ policies:
         key: contains(keys(@), 'Layers') && join(' ,', Layers[].Arn[])
         value: '.*arn:aws:lambda:.*:[0-9]{12}:layer:LambdaInsightsExtension:[0-9]*.*'
         op: regex
+    comment: '0032032000'

@@ -12,3 +12,4 @@ policies:
     resource: iam-user
     filters:
       - type: has-inline-policy
+    comment: '0022002001'

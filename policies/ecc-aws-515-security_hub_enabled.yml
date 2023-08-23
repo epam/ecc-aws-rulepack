@@ -13,3 +13,4 @@ policies:
     filters:
      - type: securityhub
        enabled: false
+    comment: '0016090300'

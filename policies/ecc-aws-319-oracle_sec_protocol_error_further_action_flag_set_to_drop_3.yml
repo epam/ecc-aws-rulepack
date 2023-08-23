@@ -20,3 +20,4 @@ policies:
               - type: db-parameter
                 key: sec_protocol_error_further_action
                 value: '(DROP,3)'
+    comment: '0023061700'

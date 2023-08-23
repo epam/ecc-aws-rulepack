@@ -15,3 +15,4 @@ policies:
         - type: value
           key: DefaultArguments."--enable-continuous-cloudwatch-log"=='true'
           value: true
+    comment: '0019052000'

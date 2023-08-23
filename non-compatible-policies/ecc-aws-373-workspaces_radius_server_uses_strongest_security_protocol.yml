@@ -20,4 +20,4 @@ policies:
           - type: radius-settings
             key: AuthenticationProtocol
             value: MS-CHAPv1
-
+    comment: '0024120600'

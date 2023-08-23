@@ -24,3 +24,4 @@ policies:
                 key: Tags
                 value_type: size
                 value: 0
+    comment: '0010032000'

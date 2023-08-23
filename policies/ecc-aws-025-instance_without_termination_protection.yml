@@ -17,3 +17,4 @@ policies:
             value: terminated
       - not:
           - type: termination-protected
+    comment: '0047032000'

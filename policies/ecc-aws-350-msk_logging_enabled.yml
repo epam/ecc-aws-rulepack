@@ -22,3 +22,4 @@ policies:
               - type: value
                 key: LoggingInfo.BrokerLogs.S3.Enabled
                 value: true
+    comment: '0019052000'

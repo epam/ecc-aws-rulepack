@@ -28,3 +28,4 @@ policies:
                 key: source.auth.resource
                 op: regex
                 value: '^.*token.*$'
+    comment: '0048132200'

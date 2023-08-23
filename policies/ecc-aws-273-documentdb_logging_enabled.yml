@@ -33,3 +33,4 @@ policies:
                   - type: db-cluster-parameter
                     key: profiler
                     value: enabled
+    comment: '0019062000'

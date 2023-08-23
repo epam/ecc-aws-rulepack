@@ -19,3 +19,4 @@ policies:
               - type: db-parameter
                 key: log_lock_waits
                 value: 1
+    comment: '0019062000'

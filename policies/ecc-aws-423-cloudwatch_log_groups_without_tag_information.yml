@@ -14,3 +14,4 @@ policies:
       - type: tag-count
         op: eq
         count: 0
+    comment: '0010012000'

@@ -13,3 +13,4 @@ policies:
     filters:
       - type: cross-account
         everyone_only: true
+    comment: '0040042000'

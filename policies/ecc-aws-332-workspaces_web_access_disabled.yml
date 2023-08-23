@@ -14,3 +14,4 @@ policies:
       - type: value
         key: WorkspaceAccessProperties.DeviceTypeWeb
         value: ALLOW
+    comment: '0024120600'

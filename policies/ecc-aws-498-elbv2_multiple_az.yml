@@ -14,3 +14,4 @@ policies:
       - type: value
         key: AvailabilityZones[1]
         value: absent
+    comment: '0050022000'

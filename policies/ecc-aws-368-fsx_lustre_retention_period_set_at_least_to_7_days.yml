@@ -16,3 +16,4 @@ policies:
             key: LustreConfiguration.AutomaticBackupRetentionDays
             op: gte
             value: 7
+    comment: '0049042000'

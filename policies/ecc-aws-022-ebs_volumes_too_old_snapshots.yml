@@ -21,3 +21,4 @@ policies:
         value: true
       - type: skip-ami-snapshots
         value: true
+    comment: '0002042000'

@@ -14,3 +14,4 @@ policies:
         required-ports: 1433, 1521, 3306, 5432
       - type: vpc-security-group-inbound-ports
         required-ports: 1433, 1521, 3306, 5432
+    comment: '0024062000'

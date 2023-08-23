@@ -15,3 +15,4 @@ policies:
         key: AdditionalAttributes[?Key=='elb.http.desyncmitigationmode'].[Value=='monitor'][][]
         op: contains
         value: true
+    comment: '0046022000'

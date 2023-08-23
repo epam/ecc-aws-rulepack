@@ -14,3 +14,4 @@ policies:
       - type: value
         key: AvailabilityZoneRelocationStatus
         value: disabled
+    comment: '0050062000'

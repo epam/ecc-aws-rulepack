@@ -20,3 +20,4 @@ policies:
                 key: log_duration
                 op: eq
                 value: 1
+    comment: '0019062000'

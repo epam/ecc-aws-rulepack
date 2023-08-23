@@ -14,3 +14,4 @@ policies:
       - type: value
         key: Restrictions.GeoRestriction.RestrictionType
         value: none
+    comment: '0024022001'

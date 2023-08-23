@@ -17,3 +17,4 @@ policies:
       - type: value
         key: DeliveryStreamEncryptionConfiguration.Status
         value: DISABLED
+    comment: '0043052000'

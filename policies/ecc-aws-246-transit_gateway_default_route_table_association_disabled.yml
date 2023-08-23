@@ -18,3 +18,4 @@ policies:
           - type: value
             key: State
             value: available
+    comment: '0024022000'

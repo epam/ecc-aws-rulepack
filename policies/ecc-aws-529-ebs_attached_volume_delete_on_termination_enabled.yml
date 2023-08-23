@@ -15,3 +15,4 @@ policies:
         key: BlockDeviceMappings[].Ebs.DeleteOnTermination
         op: contains
         value: false
+    comment: '0002030400'

@@ -13,3 +13,4 @@ policies:
     filters:
       - type: query-logging-enabled
         state: false
+    comment: '0019022000'

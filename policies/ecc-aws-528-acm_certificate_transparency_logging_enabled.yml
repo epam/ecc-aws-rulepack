@@ -14,3 +14,4 @@ policies:
       - type: value
         key: Options.CertificateTransparencyLoggingPreference
         value: DISABLED
+    comment: '0019102000'

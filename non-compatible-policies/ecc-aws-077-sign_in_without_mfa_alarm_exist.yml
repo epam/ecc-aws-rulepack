@@ -17,4 +17,4 @@ policies:
         configurationChangesAlarmList: "\\(\\$\\.eventName ?= ?\"ConsoleLogin\"\\) ?&& ?\\(\\$\\.additionalEventData.MFAUsed ?!= ?\"Yes\"\\) ?&& ?\\(\\$\\.userIdentity\\.type ?= ?\"IAMUser\"\\) ?&& ?\\(\\$.responseElements\\.ConsoleLogin ?= ?\"Success\"\\)"
         op: eq
         value: 0
-
+    comment: '0016010300'

@@ -14,3 +14,4 @@ policies:
       - not:
           - type: flow-logs
             enabled: true
+    comment: '0019010300'

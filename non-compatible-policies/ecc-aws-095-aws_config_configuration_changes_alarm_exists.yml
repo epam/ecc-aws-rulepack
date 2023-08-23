@@ -17,4 +17,4 @@ policies:
         configurationChangesAlarmList: "(\\()? ?\\$\\.eventSource ?= ?(\")?config\\.amazonaws\\.com(\")? ?(\\))? ?&& ?\\((\\()? ?\\$\\.eventName ?= ?(\")?StopConfigurationRecorder(\")? ?(\\))? ?\\|\\| ?(\\()? ?\\$\\.eventName ?= ?(\")?DeleteDeliveryChannel(\")? ?(\\))? ?\\|\\| ?(\\()? ?\\$\\.eventName ?= ?(\")?PutDeliveryChannel(\")? ?(\\))? ?\\|\\| ?(\\()? ?\\$\\.eventName ?= ?(\")?PutConfigurationRecorder(\")? ?(\\))? ?\\)"
         op: eq
         value: 0
-
+    comment: '0016010300'

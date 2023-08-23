@@ -17,4 +17,4 @@ policies:
         configurationChangesAlarmList: "(\\()? ?\\$\\.eventName ?= ?(\")?AuthorizeSecurityGroupIngress(\")? ?(\\))? ?\\|\\| ?(\\()? ?\\$\\.eventName ?= ?(\")?AuthorizeSecurityGroupEgress(\")? ?(\\))? ?\\|\\| ?(\\()? ?\\$\\.eventName ?= ?(\")?RevokeSecurityGroupIngress(\")? ?(\\))? ?\\|\\| ?(\\()? ?\\$\\.eventName ?= ?(\")?RevokeSecurityGroupEgress(\")? ?(\\))? ?\\|\\| ?(\\()?\\$\\.eventName ?= ?(\")?CreateSecurityGroup(\")? ?(\\))? ?\\|\\| ?(\\()?\\$\\.eventName ?= ?(\")?DeleteSecurityGroup(\")? ?(\\))?"
         op: eq
         value: 0
-
+    comment: '0016010300'

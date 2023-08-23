@@ -18,3 +18,4 @@ policies:
           - type: value
             key: endpointConfiguration.types[0]
             value: EDGE
+    comment: '0040022000'

@@ -19,3 +19,4 @@ policies:
               - type: value
                 key: LogPublishingOptions.SEARCH_SLOW_LOGS.Enabled
                 value: true
+    comment: '0019052000'

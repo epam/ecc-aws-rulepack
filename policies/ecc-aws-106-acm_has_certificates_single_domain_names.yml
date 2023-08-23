@@ -15,3 +15,4 @@ policies:
         key: DomainName
         op: regex
         value: '.*\*.*'
+    comment: '0024102000'

@@ -15,3 +15,4 @@ policies:
         key: SnapshotRetentionLimit
         value: 7
         op: lt
+    comment: '0049062000'

@@ -12,3 +12,4 @@ policies:
       Unused key pairs exist
     filters:
       - type: unused
+    comment: '0018102000'

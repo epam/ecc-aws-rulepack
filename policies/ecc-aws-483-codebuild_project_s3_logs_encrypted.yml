@@ -17,3 +17,4 @@ policies:
       - type: value
         key: logsConfig.s3Logs.encryptionDisabled
         value: true
+    comment: '0043132000'

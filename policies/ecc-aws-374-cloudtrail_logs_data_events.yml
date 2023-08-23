@@ -14,3 +14,4 @@ policies:
       - type: event-selectors
         key: EventSelectors[].DataResources[]
         value: empty
+    comment: '0019012000'

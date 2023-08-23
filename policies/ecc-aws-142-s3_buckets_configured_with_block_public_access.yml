@@ -12,3 +12,4 @@ policies:
       S3 Buckets are not configured with 'Block public access' bucket settings
     filters:
       - type: check-public-block
+    comment: '0040040301'

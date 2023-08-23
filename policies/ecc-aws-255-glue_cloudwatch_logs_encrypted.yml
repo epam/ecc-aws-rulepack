@@ -14,3 +14,4 @@ policies:
       - type: value
         key: EncryptionConfiguration.CloudWatchEncryption.CloudWatchEncryptionMode
         value: DISABLED
+    comment: '0043052000'

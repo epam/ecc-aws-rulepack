@@ -18,3 +18,4 @@ policies:
           - type: value
             key: CacheBehaviors.Items[].ViewerProtocolPolicy
             value: allow-all
+    comment: '0044022001'

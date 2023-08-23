@@ -11,4 +11,4 @@ policies:
       WorkSpaces API requests do not flow through a VPC Endpoint
     filters:
       - type: check-vpc-endpoints-availability
-
+    comment: '0040120600'

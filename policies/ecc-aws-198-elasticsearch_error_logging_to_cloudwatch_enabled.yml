@@ -18,3 +18,4 @@ policies:
           - type: value
             key: LogPublishingOptions.ES_APPLICATION_LOGS
             value: absent
+    comment: '0019052000'

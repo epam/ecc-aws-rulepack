@@ -13,3 +13,4 @@ policies:
     filters:
       - type: glue-security-config
         SseAwsKmsKeyId: alias/aws/glue
+    comment: '0043052000'

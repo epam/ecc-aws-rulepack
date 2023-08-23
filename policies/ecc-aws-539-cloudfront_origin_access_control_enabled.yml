@@ -14,3 +14,4 @@ policies:
       - type: value
         key: length(Origins.Items[?!CustomOriginConfig && OriginAccessControlId==''])>=`1`
         value: true
+    comment: '0038022001'

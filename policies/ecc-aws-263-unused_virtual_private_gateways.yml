@@ -17,3 +17,4 @@ policies:
       - type: value
         key: VpcAttachments
         value: empty
+    comment: '0018022000'

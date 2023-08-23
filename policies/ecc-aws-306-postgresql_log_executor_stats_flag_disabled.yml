@@ -18,3 +18,4 @@ policies:
           - type: db-parameter
             key: log_executor_stats
             value: 1
+    comment: '0019062000'

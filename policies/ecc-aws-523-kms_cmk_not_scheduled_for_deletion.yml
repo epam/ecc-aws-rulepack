@@ -14,3 +14,4 @@ policies:
       - type: value
         key: 'KeyState'
         value: PendingDeletion
+    comment: '0047102000'
