@@ -9,7 +9,7 @@ policies:
   - name: ecc-aws-139-iam_access_analyzer_is_enabled
     resource: aws.account
     description: |
-      IAM Access analyzer is not enabled for all regions
+      IAM Access analyzer is not enabled
     filters:
       - not:
           - type: access-analyzer
