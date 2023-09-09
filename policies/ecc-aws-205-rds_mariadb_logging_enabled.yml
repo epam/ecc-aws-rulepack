@@ -7,9 +7,10 @@
 
 policies:
   - name: ecc-aws-205-rds_mariadb_logging_enabled
-    resource: aws.rds
+    comment: '010019062000'
     description: |
       MariaDB database logging is disabled
+    resource: aws.rds
     filters:
       - and:
           - type: value
@@ -54,4 +55,3 @@ policies:
                     key: log_output
                     op: eq
                     value: FILE
-    comment: '0019062000'

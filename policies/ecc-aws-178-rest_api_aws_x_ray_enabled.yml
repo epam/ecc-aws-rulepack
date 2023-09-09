@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-178-rest_api_aws_x_ray_enabled
+    comment: '010016022000'
     description: |
       API Gateway REST API stages do not have AWS X-Ray tracing enabled
     resource: rest-stage
@@ -14,4 +15,3 @@ policies:
       - type: value
         key: tracingEnabled
         value: false
-    comment: '0016022000'

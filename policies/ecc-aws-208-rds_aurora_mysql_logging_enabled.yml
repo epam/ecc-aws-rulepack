@@ -7,9 +7,10 @@
 
 policies:
   - name: ecc-aws-208-rds_aurora_mysql_logging_enabled
-    resource: rds
+    comment: '010019062000'
     description: |
       Aurora-MySQL database logging is disabled
+    resource: rds
     filters:
       - and:
           - type: value
@@ -49,4 +50,3 @@ policies:
                     key: log_output
                     op: eq
                     value: FILE
-    comment: '0019062000'

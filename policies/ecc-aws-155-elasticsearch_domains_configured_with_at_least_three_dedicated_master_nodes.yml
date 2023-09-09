@@ -7,9 +7,10 @@
 
 policies:
   - name: ecc-aws-155-elasticsearch_domains_configured_with_at_least_three_dedicated_master_nodes
-    resource: aws.elasticsearch
+    comment: '010050052000'
     description: |
       Elasticsearch domains are not configured with at least three dedicated master nodes
+    resource: aws.elasticsearch
     filters:
       - not:
           - and:
@@ -20,4 +21,3 @@ policies:
               - type: value
                 key: ElasticsearchClusterConfig.DedicatedMasterEnabled
                 value: true
-    comment: '0050052000'

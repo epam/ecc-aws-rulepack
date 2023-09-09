@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-506-redshift_default_db_name_check
+    comment: '010023062000'
     description: |
       Redshift clusters uses the default database name
     resource: redshift
@@ -14,4 +15,3 @@ policies:
       - type: value
         key: DBName
         value: dev
-    comment: '0023062000'

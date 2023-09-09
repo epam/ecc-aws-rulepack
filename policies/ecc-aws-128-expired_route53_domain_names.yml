@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-128-expired_route53_domain_names
+    comment: '010023022001'
     description: |
       Expired Route53 domain name
     resource: aws.r53domain
@@ -16,4 +17,3 @@ policies:
         value_type: expiration
         value: 0
         op: lte
-    comment: '0023022001'

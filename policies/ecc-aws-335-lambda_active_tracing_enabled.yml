@@ -7,11 +7,11 @@
 
 policies:
   - name: ecc-aws-335-lambda_active_tracing_enabled
-    resource: lambda
+    comment: '010019032000'
     description: |
       Lambda has active tracing disabled
+    resource: lambda
     filters:
       - type: value
         key: TracingConfig.Mode
         value: PassThrough
-    comment: '0019032000'

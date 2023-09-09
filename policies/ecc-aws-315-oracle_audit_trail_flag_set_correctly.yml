@@ -7,9 +7,10 @@
 
 policies:
   - name: ecc-aws-315-oracle_audit_trail_flag_set_correctly
-    resource: aws.rds
+    comment: '010019061710'
     description: |
       The 'audit_trail' flag is not set correctly for Oracle
+    resource: aws.rds
     filters:
       - and:
           - type: value
@@ -20,4 +21,3 @@ policies:
               - type: db-parameter
                 key: audit_trail
                 value: XML
-    comment: '0019061710'

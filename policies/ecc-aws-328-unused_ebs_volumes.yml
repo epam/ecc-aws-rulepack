@@ -7,11 +7,11 @@
 
 policies:
   - name: ecc-aws-328-unused_ebs_volumes
-    resource: aws.ebs
+    comment: '010002040400'
     description: |
       Unused EBS volumes exist
+    resource: aws.ebs
     filters:
       - type: value
         key: Attachments
         value: empty
-    comment: '0002040400'

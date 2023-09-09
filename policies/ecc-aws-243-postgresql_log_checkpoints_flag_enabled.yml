@@ -7,9 +7,10 @@
 
 policies:
   - name: ecc-aws-243-postgresql_log_checkpoints_flag_enabled
-    resource: aws.rds
+    comment: '010019062000'
     description: |
       The 'log_checkpoints' flag is not enabled for PostgreSQL
+    resource: aws.rds
     filters:
       - and:
           - type: value
@@ -20,4 +21,3 @@ policies:
                 key: log_checkpoints
                 op: eq
                 value: 1
-    comment: '0019062000'

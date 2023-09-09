@@ -7,11 +7,11 @@
 
 policies:
   - name: ecc-aws-374-cloudtrail_logs_data_events
-    resource: aws.cloudtrail
+    comment: '010019012000'
     description: |
       Data events are not included into Amazon CloudTrail trails configuration
+    resource: aws.cloudtrail
     filters:
       - type: event-selectors
         key: EventSelectors[].DataResources[]
         value: empty
-    comment: '0019012000'

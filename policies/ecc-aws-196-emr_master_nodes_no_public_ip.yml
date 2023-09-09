@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-196-emr_master_nodes_no_public_ip
+    comment: '010040052000'
     description: |
       Amazon EMR cluster master nodes have public IP addresses
     resource: emr
@@ -20,4 +21,3 @@ policies:
             key: MasterPublicDnsName
             op: regex
             value: '^([0-9]{1,3}\.){3}[0-9]{1,3}$'
-    comment: '0040052000'

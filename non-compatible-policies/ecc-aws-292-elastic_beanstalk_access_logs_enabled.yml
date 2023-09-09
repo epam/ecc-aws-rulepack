@@ -6,6 +6,7 @@
 
 policies:
   - name: ecc-aws-292-elastic_beanstalk_access_logs_enabled
+    comment: '010019030400'
     description: |
       Elastic Beanstalk environments with application load balancer do not have access logs enabled
     resource: aws.elasticbeanstalk-environment
@@ -18,4 +19,3 @@ policies:
         key: LoadBalancerType
         op: eq
         value: "application"
-    comment: '0019030400'

@@ -6,6 +6,7 @@
 
 policies:
   - name: ecc-aws-182-dynamodb_tables_autoscaling_enabled
+    comment: '010005062000'
     description: |
       DynamoDB table Auto Scaling or On-Demand is not enabled on DynamoDB tables 
     resource: aws.dynamodb-table
@@ -16,4 +17,3 @@ policies:
         value: 0
       - type: auto-scaling
         enabled: false
-    comment: '0005062000'

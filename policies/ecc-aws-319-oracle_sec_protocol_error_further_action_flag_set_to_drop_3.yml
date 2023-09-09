@@ -7,9 +7,10 @@
 
 policies:
   - name: ecc-aws-319-oracle_sec_protocol_error_further_action_flag_set_to_drop_3
-    resource: aws.rds
+    comment: '010023061700'
     description: |
       The 'sec_protocol_error_further_action' flag for Oracle is not set to '(DROP,3)'
+    resource: aws.rds
     filters:
       - and:
           - type: value
@@ -20,4 +21,3 @@ policies:
               - type: db-parameter
                 key: sec_protocol_error_further_action
                 value: '(DROP,3)'
-    comment: '0023061700'

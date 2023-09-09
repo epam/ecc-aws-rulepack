@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-534-autoscaling_launch_template
+    comment: '010020032000'
     description: |
       EC2 Auto Scaling groups is not using EC2 launch templates
     resource: aws.asg
@@ -14,4 +15,3 @@ policies:
       - type: value
         key: LaunchConfigurationName
         value: present
-    comment: '0020032000'

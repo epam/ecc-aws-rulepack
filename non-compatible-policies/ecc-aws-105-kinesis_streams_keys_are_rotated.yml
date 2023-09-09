@@ -6,6 +6,7 @@
 
 policies:
   - name: ecc-aws-105-kinesis_streams_keys_are_rotated
+    comment: '010029052000'
     description: |
       Kinesis Streams Keys are not rotated
     resource: aws.kinesis
@@ -19,4 +20,3 @@ policies:
             key: EncryptionType
             op: eq
             value: NONE
-    comment: '0029052000'

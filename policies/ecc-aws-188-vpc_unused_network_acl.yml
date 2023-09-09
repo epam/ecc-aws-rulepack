@@ -7,12 +7,12 @@
 
 policies:
   - name: ecc-aws-188-vpc_unused_network_acl
-    resource: aws.network-acl
+    comment: '010018022000'
     description: |
       Unused network access control lists are not removed
+    resource: aws.network-acl
     filters:
       - not:
           - type: value
             key: Associations
             value: not-null
-    comment: '0018022000'

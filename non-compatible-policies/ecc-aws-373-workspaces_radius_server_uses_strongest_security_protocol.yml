@@ -6,9 +6,10 @@
 
 policies:
   - name: ecc-aws-373-workspaces_radius_server_uses_strongest_security_protocol
-    resource: aws.workspaces-directory
+    comment: '010024120600'
     description: |
       Radius server is not using the recommended strongest security protocol 
+    resource: aws.workspaces-directory
     filters:
       - or:
           - type: radius-settings
@@ -20,4 +21,3 @@ policies:
           - type: radius-settings
             key: AuthenticationProtocol
             value: MS-CHAPv1
-    comment: '0024120600'

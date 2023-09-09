@@ -7,12 +7,12 @@
 
 policies:
   - name: ecc-aws-546-kinesis_streams_retention_period_set_correctly
-    resource: aws.kinesis
+    comment: '010049052010'
     description: |
       Kinesis Stream retention period is not set correctly
+    resource: aws.kinesis
     filters:
       - type: value
         key: RetentionPeriodHours
         op: lt
         value: 2160
-    comment: '0049052010'

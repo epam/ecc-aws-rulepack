@@ -7,9 +7,10 @@
 
 policies:
   - name: ecc-aws-242-postgresql_log_destination_flag_set_to_csvlog
-    resource: aws.rds
+    comment: '010019061900'
     description: |
       The 'log_destination' flag is not set to csvlog for PostgreSQL
+    resource: aws.rds
     filters:
       - and:
           - type: value
@@ -18,4 +19,3 @@ policies:
           - type: db-parameter
             key: log_destination
             value: "stderr"
-    comment: '0019061900'

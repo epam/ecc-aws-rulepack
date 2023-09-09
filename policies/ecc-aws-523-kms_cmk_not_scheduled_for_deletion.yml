@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-523-kms_cmk_not_scheduled_for_deletion
+    comment: '010047102000'
     description: |
       KMS keys should not be unintentionally deleted
     resource: aws.kms-key
@@ -14,4 +15,3 @@ policies:
       - type: value
         key: 'KeyState'
         value: PendingDeletion
-    comment: '0047102000'

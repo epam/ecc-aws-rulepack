@@ -7,12 +7,12 @@
 
 policies:
   - name: ecc-aws-006-rds_retention_backup_is_at_least_7_days
-    resource: rds
+    comment: '010049062010'
     description: |
       RDS retention policy is less than 7 days
+    resource: rds
     filters:
       - type: value
         key: BackupRetentionPeriod
         value: 7
         op: lt
-    comment: '0049062010'

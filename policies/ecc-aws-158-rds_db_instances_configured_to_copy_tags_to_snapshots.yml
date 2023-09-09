@@ -7,11 +7,11 @@
 
 policies:
   - name: ecc-aws-158-rds_db_instances_configured_to_copy_tags_to_snapshots
-    resource: aws.rds
+    comment: '010010062000'
     description: |
       RDS DB instances are not configured to copy tags to snapshots
+    resource: aws.rds
     filters:
       - type: value
         key: CopyTagsToSnapshot
         value: false
-    comment: '0010062000'

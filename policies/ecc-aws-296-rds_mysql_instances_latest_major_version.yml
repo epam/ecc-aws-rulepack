@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-296-rds_mysql_instances_latest_major_version
+    comment: '010021062000'
     description: |
       RDS MySQL instances are not using latest major version
     resource: rds
@@ -19,4 +20,3 @@ policies:
             key: EngineVersion
             op: regex
             value: '8.0.*'
-    comment: '0021062000'

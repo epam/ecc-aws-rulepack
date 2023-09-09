@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-190-ecs_task_definitions_secure_networking_modes_and_user_definitions
+    comment: '010022082000'
     description: |
       Amazon ECS task definitions do not have secure networking modes and user definitions
     resource: ecs-task-definition
@@ -33,4 +34,3 @@ policies:
                 value_type: swap
                 op: in
                 value: root
-    comment: '0022082000'

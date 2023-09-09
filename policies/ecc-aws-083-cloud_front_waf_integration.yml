@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-083-cloud_front_waf_integration
+    comment: '010027022001'
     description: |
       Cloud Front is not integrated with WAF
     resource: distribution
@@ -18,4 +19,3 @@ policies:
           - type: value
             key: WebACLId
             value: None
-    comment: '0027022001'

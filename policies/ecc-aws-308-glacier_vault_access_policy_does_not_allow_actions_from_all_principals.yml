@@ -7,10 +7,10 @@
 
 policies:
   - name: ecc-aws-308-glacier_vault_access_policy_does_not_allow_actions_from_all_principals
-    resource: aws.glacier
+    comment: '010040042000'
     description: |
       Glacier Vault policy allows actions from all principals
+    resource: aws.glacier
     filters:
       - type: cross-account
         everyone_only: true
-    comment: '0040042000'

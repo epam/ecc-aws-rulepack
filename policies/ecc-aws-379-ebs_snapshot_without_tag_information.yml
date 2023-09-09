@@ -7,11 +7,11 @@
 
 policies:
   - name: ecc-aws-379-ebs_snapshot_without_tag_information
-    resource: aws.ebs-snapshot
+    comment: '010010042000'
     description: |
       EBS snapshot without tag information
+    resource: aws.ebs-snapshot
     filters:
       - type: value
         key: Tags
         value: empty
-    comment: '0010042000'

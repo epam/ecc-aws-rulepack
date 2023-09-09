@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-346-route53_hosted_zone_records_health_check_configured
+    comment: '010018022000'
     description: |
       Route53 hosted zone records is not configured with health check
     resource: aws.rrset
@@ -17,4 +18,3 @@ policies:
       - type: value
         key: HealthCheckId
         value: absent
-    comment: '0018022000'

@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-545-step_function_state_machine_logging_enabled
+    comment: '010019142000'
     description: |
       AWS Step Function State Machine logging is disabled
     resource: aws.step-machine
@@ -14,4 +15,3 @@ policies:
       - type: value
         key: loggingConfiguration.level
         value: 'OFF'
-    comment: '0019142000'

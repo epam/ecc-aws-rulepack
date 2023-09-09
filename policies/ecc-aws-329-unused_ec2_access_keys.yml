@@ -7,9 +7,9 @@
 
 policies:
   - name: ecc-aws-329-unused_ec2_access_keys
-    resource: aws.key-pair
+    comment: '010018102000'
     description: |
       Unused key pairs exist
+    resource: aws.key-pair
     filters:
       - type: unused
-    comment: '0018102000'

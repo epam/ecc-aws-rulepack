@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-261-vpc_unused_internet_gateway
+    comment: '010018022000'
     description: |
       Unused Internet Gateways are not removed
     resource: internet-gateway
@@ -14,4 +15,3 @@ policies:
       - type: value
         key: Attachments
         value: empty
-    comment: '0018022000'

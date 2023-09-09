@@ -7,9 +7,10 @@
 
 policies:
   - name: ecc-aws-033-security_group_ingress_is_restricted_traffic_to_mysql_db_port_3306
-    resource: aws.security-group
+    comment: '010042022000'
     description: |
       Security group rule allows internet traffic to MySQL DB port (3306)
+    resource: aws.security-group
     filters:
       - type: ingress
         Ports: [3306]
@@ -17,4 +18,3 @@ policies:
           value:
             - "0.0.0.0/0"
           op: in
-    comment: '0042022000'

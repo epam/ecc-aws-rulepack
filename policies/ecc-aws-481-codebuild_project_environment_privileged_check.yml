@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-481-codebuild_project_environment_privileged_check
+    comment: '010023132000'
     description: |
       CodeBuild project environment privileged mode is set to true
     resource: codebuild
@@ -14,4 +15,3 @@ policies:
       - type: value
         key: environment.privilegedMode
         value: true
-    comment: '0023132000'

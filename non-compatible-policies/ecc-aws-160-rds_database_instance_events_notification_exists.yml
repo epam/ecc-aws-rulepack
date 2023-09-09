@@ -6,13 +6,13 @@
 
 policies:
   - name: ecc-aws-160-rds_database_instance_events_notification_exists
-    resource: aws.account
+    comment: '010032062000'
     description: |
       RDS event notifications subscription is not configured for critical database instance events
+    resource: aws.account
     filters:
       - type: rds-sns-subscription-filter
         check_in: rds
         key: SourceType=='db-instance' && SourceIdsList==null && ( EventCategoriesList==null || (EventCategoriesList.contains(@, 'configuration change')==`true` && EventCategoriesList.contains(@, 'failure')==`true` && EventCategoriesList.contains(@, 'maintenance')==`true`)) && Enabled==`true`
         value: true
         op: eq
-    comment: '0032062000'

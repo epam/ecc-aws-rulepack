@@ -7,9 +7,10 @@
 
 policies:
   - name: ecc-aws-330-mysql_sql_mode_flag_contains_strict_all_tables
-    resource: aws.rds
+    comment: '010023061600'
     description: |
       The 'sql_mode' flag for MySQL not contains 'strict_all_tables'
+    resource: aws.rds
     filters:
       - and:
           - type: value
@@ -20,4 +21,3 @@ policies:
                 key: sql_mode
                 op: contains
                 value: STRICT_ALL_TABLES
-    comment: '0023061600'

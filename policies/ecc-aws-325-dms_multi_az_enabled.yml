@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-325-dms_multi_az_enabled
+    comment: '010050062000'
     description: |
       Amazon DMS replication instances do not have the Multi-AZ feature enabled
     resource: dms-instance
@@ -14,4 +15,3 @@ policies:
       - type: value
         key: MultiAZ
         value: false
-    comment: '0050062000'

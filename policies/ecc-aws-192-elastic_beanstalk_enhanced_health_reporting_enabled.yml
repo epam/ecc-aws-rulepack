@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-192-elastic_beanstalk_enhanced_health_reporting_enabled
+    comment: '010032032000'
     description: |
       Elastic Beanstalk environments do not have enhanced health reporting enabled
     resource: aws.elasticbeanstalk-environment
@@ -14,4 +15,3 @@ policies:
       - type: value
         key: HealthStatus
         value: absent
-    comment: '0032032000'

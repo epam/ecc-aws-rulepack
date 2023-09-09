@@ -7,29 +7,29 @@
 
 policies:
   - name: ecc-aws-345-mq_broker_open_to_all_ports_protocols
-    resource: aws.message-broker
+    comment: '010024142000'
     description: |
       Mq broker not restricted only to default ports
+    resource: aws.message-broker
     filters:
       - not:
-        - type: security-group
-          key: IpPermissions[].FromPort
-          value_type: swap
-          op: in
-          value: 8162
-        - type: security-group
-          key: IpPermissions[].FromPort
-          value_type: swap
-          op: in
-          value: 61617
-        - type: security-group
-          key: IpPermissions[].ToPort
-          value_type: swap
-          op: in
-          value: 8162
-        - type: security-group
-          key: IpPermissions[].ToPort
-          value_type: swap
-          op: in
-          value: 61617
-    comment: '0024142000'
+          - type: security-group
+            key: IpPermissions[].FromPort
+            value_type: swap
+            op: in
+            value: 8162
+          - type: security-group
+            key: IpPermissions[].FromPort
+            value_type: swap
+            op: in
+            value: 61617
+          - type: security-group
+            key: IpPermissions[].ToPort
+            value_type: swap
+            op: in
+            value: 8162
+          - type: security-group
+            key: IpPermissions[].ToPort
+            value_type: swap
+            op: in
+            value: 61617

@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-300-sqs_not_open_to_everyone
+    comment: '010040142000'
     description: |
       SQS queue is open to everyone
     resource: sqs
@@ -20,4 +21,3 @@ policies:
             key: Policy
             op: regex
             value: ".*\\\"Principal\\\":\\\"[*]\\\".*"
-    comment: '0040142000'

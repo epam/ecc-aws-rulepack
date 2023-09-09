@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-087-redshift_cluster_prohibit_public_access
+    comment: '010040062200'
     description: |
       Redshift clusters do not prohibit public access
     resource: redshift
@@ -14,4 +15,3 @@ policies:
       - type: value
         key: PubliclyAccessible
         value: true
-    comment: '0040062200'

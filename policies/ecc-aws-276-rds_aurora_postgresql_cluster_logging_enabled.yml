@@ -7,9 +7,10 @@
 
 policies:
   - name: ecc-aws-276-rds_aurora_postgresql_cluster_logging_enabled
-    resource: aws.rds-cluster
+    comment: '010019062000'
     description: |
       Aurora-PostgreSQL cluster logging is disabled
+    resource: aws.rds-cluster
     filters:
       - and:
           - type: value
@@ -31,4 +32,3 @@ policies:
                   - type: db-cluster-parameter
                     key: log_statement
                     value: all
-    comment: '0019062000'

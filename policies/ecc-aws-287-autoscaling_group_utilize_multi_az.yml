@@ -7,12 +7,12 @@
 
 policies:
   - name: ecc-aws-287-autoscaling_group_utilize_multi_az
-    resource: aws.asg
+    comment: '010050032000'
     description: |
       Auto Scaling Groups do not utilize multiple Availability Zones
+    resource: aws.asg
     filters:
       - type: value
         key: AvailabilityZones
         value_type: size
         value: 1
-    comment: '0050032000'

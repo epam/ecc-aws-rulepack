@@ -7,9 +7,10 @@
 
 policies:
   - name: ecc-aws-318-oracle_sec_max_failed_login_attempts_flag_is_3_or_less
-    resource: aws.rds
+    comment: '010023061700'
     description: |
       The 'sec_max_failed_login_attempts' flag for Oracle is not set to 3 or less
+    resource: aws.rds
     filters:
       - and:
           - type: value
@@ -20,4 +21,3 @@ policies:
             key: sec_max_failed_login_attempts
             value: 3
             op: gt
-    comment: '0023061700'

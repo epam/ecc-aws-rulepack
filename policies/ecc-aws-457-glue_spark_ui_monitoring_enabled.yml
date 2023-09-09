@@ -7,12 +7,12 @@
 
 policies:
   - name: ecc-aws-457-glue_spark_ui_monitoring_enabled
+    comment: '010023052000'
     description: |
       Glue job spark ui disabled
     resource: aws.glue-job
     filters:
       - not:
-        - type: value
-          key: DefaultArguments."--enable-spark-ui"=='true'
-          value: true
-    comment: '0023052000'
+          - type: value
+            key: DefaultArguments."--enable-spark-ui"=='true'
+            value: true

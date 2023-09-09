@@ -6,6 +6,7 @@
 
 policies:
   - name: ecc-aws-258-emr_at_rest_and_in_transit_encryption_enabled
+    comment: '010045052000'
     description: |
       At-rest and in-transit encryption is not enabled for EMR clusters
     resource: aws.emr
@@ -26,4 +27,3 @@ policies:
               - type: cluster-security-configuration
                 key: EncryptionConfiguration.AtRestEncryptionConfiguration.LocalDiskEncryptionConfiguration.EncryptionKeyProviderType
                 value: present
-    comment: '0045052000'

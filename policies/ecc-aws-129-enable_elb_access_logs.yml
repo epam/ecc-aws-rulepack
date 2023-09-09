@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-129-enable_elb_access_logs
+    comment: '010019022000'
     description: |
       Application or Network Load Balancer access logs is disabled
     resource: app-elb
@@ -17,4 +18,3 @@ policies:
             value: "gateway"
             op: in
       - type: is-not-logging
-    comment: '0019022000'

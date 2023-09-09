@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-436-kinesis_streams_shard_level_monitoring_enabled
+    comment: '010032052000'
     description: |
       Kinesis streams shard level monitoring disabled
     resource: kinesis
@@ -16,4 +17,3 @@ policies:
         op: lt
         value_type: size
         value: 7
-    comment: '0032052000'

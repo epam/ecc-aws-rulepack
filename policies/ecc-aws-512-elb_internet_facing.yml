@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-512-elb_internet_facing
+    comment: '010040022000'
     description: |
       Amazon ELB is internet facing
     resource: aws.app-elb
@@ -14,4 +15,3 @@ policies:
       - type: value
         key: Scheme
         value: "internet-facing"
-    comment: '0040022000'

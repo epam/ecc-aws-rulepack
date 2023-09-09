@@ -7,9 +7,9 @@
 
 policies:
   - name: ecc-aws-289-autoscaling_group_has_valid_configuration
-    resource: asg
+    comment: '010023032000'
     description: |
       Auto Scaling Group has invalid configuration
+    resource: asg
     filters:
       - invalid
-    comment: '0023032000'

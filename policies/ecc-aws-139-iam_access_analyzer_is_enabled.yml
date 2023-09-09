@@ -7,13 +7,13 @@
 
 policies:
   - name: ecc-aws-139-iam_access_analyzer_is_enabled
-    resource: aws.account
+    comment: '010016000300'
     description: |
       IAM Access analyzer is not enabled
+    resource: aws.account
     filters:
       - not:
           - type: access-analyzer
             key: 'status'
             value: ACTIVE
             op: eq
-    comment: '0016000300'

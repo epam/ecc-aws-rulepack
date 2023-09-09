@@ -7,11 +7,11 @@
 
 policies:
   - name: ecc-aws-398-cloudtrail_without_tag_information
-    resource: aws.cloudtrail
+    comment: '010010012000'
     description: |
       Cloudtrail without tag information
+    resource: aws.cloudtrail
     filters:
       - type: value
         key: Tags
         value: empty
-    comment: '0010012000'

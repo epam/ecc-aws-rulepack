@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-213-rds_cluster_multi_az_enabled
+    comment: '010050062000'
     description: |
       DS DB clusters are not configured for multiple Availability Zones
     resource: aws.rds-cluster
@@ -14,4 +15,3 @@ policies:
       - type: value
         key: MultiAZ
         value: false
-    comment: '0050062000'

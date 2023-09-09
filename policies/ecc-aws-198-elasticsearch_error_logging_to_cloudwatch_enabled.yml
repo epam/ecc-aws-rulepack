@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-198-elasticsearch_error_logging_to_cloudwatch_enabled
+    comment: '010019052000'
     description: |
       Elasticsearch domain error logging to CloudWatch Logs is not enabled
     resource: aws.elasticsearch
@@ -18,4 +19,3 @@ policies:
           - type: value
             key: LogPublishingOptions.ES_APPLICATION_LOGS
             value: absent
-    comment: '0019052000'

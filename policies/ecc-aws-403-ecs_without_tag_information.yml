@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-403-ecs_without_tag_information
+    comment: '010010082000'
     description: |
       Amazon ECS cluster without tag information
     resource: ecs
@@ -14,4 +15,3 @@ policies:
       - type: value
         key: Tags
         value: empty
-    comment: '0010082000'

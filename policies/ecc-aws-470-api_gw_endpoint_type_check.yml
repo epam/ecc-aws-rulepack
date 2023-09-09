@@ -7,12 +7,12 @@
 
 policies:
   - name: ecc-aws-470-api_gw_endpoint_type_check
+    comment: '010039022010'
     description: |
       API Gateway endpoint type not set correctly
     resource: rest-api
     filters:
       - not:
-        - type: value
-          key: endpointConfiguration.types[0]
-          value: EDGE
-    comment: '0039022010'
+          - type: value
+            key: endpointConfiguration.types[0]
+            value: EDGE

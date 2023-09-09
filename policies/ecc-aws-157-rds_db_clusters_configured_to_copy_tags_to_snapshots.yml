@@ -7,11 +7,11 @@
 
 policies:
   - name: ecc-aws-157-rds_db_clusters_configured_to_copy_tags_to_snapshots
-    resource: aws.rds-cluster
+    comment: '010010062000'
     description: |
       RDS DB clusters are not configured to copy tags to snapshots
+    resource: aws.rds-cluster
     filters:
       - type: value
         key: CopyTagsToSnapshot
         value: false
-    comment: '0010062000'

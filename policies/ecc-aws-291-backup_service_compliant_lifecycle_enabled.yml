@@ -7,9 +7,10 @@
 
 policies:
   - name: ecc-aws-291-backup_service_compliant_lifecycle_enabled
-    resource: aws.backup-plan
+    comment: '010001042010'
     description: |
       Amazon Backup plan has a non-compliant lifecycle configuration
+    resource: aws.backup-plan
     filters:
       - or:
           - not:
@@ -24,4 +25,3 @@ policies:
                 op: in
                 value_type: swap
                 value: 180
-    comment: '0001042010'

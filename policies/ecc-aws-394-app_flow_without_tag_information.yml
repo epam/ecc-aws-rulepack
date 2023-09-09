@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-394-app_flow_without_tag_information
+    comment: '010010142000'
     description: |
       Amazon AppFlow without tag information
     resource: aws.app-flow
@@ -14,4 +15,3 @@ policies:
       - type: value
         key: Tags
         value: empty
-    comment: '0010142000'

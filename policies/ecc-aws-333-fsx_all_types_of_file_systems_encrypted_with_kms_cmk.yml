@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-333-fsx_all_types_of_file_systems_encrypted_with_kms_cmk
+    comment: '010043042000'
     description: |
       AWS FSx file system is not encrypted with KMS CMK
     resource: aws.fsx
@@ -14,4 +15,3 @@ policies:
       - type: kms-key
         key: KeyManager
         value: AWS
-    comment: '0043042000'

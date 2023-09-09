@@ -7,9 +7,10 @@
 
 policies:
   - name: ecc-aws-323-oracle_trace_files_public
-    resource: aws.rds
+    comment: '010023061700'
     description: |
       The '_trace_files_public' flag for Oracle is enabled
+    resource: aws.rds
     filters:
       - and:
           - type: value
@@ -20,4 +21,3 @@ policies:
               - type: db-parameter
                 key: _trace_files_public
                 value: false
-    comment: '0023061700'

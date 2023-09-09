@@ -7,9 +7,10 @@
 
 policies:
   - name: ecc-aws-284-autoscaling_group_has_associated_elb
-    resource: aws.asg
+    comment: '010024032000'
     description: |
       Auto Scaling Groups does not have an associated Elastic Load Balancers or Target Groups
+    resource: aws.asg
     filters:
       - and:
           - type: value
@@ -18,4 +19,3 @@ policies:
           - type: value
             key: TargetGroupARNs
             value: empty
-    comment: '0024032000'

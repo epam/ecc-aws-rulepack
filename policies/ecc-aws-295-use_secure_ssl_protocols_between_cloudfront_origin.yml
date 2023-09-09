@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-295-use_secure_ssl_protocols_between_cloudfront_origin
+    comment: '010023022001'
     description: |
       Cloudfront origin uses not latest SSL certificate
     resource: aws.distribution
@@ -23,4 +24,3 @@ policies:
                 value_type: swap
                 value: TLSv1.2
                 op: in
-    comment: '0023022001'

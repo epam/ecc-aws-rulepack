@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-108-cloudfront_distribution_access_logging
+    comment: '010019022001'
     description: |
       AWS CloudFront distribution with access logging is disabled
     resource: distribution
@@ -14,4 +15,3 @@ policies:
       - type: distribution-config
         key: Logging.Enabled
         value: false
-    comment: '0019022001'

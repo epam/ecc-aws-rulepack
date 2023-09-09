@@ -7,9 +7,10 @@
 
 policies:
   - name: ecc-aws-035-security_group_ingress_is_restricted_traffic_to_oracle_db_port_1521
-    resource: aws.security-group
+    comment: '010042022000'
     description: |
       Security group rule allows internet traffic to Oracle DB port (1521)
+    resource: aws.security-group
     filters:
       - type: ingress
         Ports: [1521]
@@ -17,4 +18,3 @@ policies:
           value:
             - "0.0.0.0/0"
           op: in
-    comment: '0042022000'

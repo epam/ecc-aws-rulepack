@@ -7,9 +7,10 @@
 
 policies:
   - name: ecc-aws-350-msk_logging_enabled
-    resource: aws.kafka
+    comment: '010019052000'
     description: |
       MSK Logging not enabled
+    resource: aws.kafka
     filters:
       - not:
           - or:
@@ -22,4 +23,3 @@ policies:
               - type: value
                 key: LoggingInfo.BrokerLogs.S3.Enabled
                 value: true
-    comment: '0019052000'

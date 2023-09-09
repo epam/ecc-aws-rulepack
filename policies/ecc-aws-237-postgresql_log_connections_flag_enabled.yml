@@ -7,9 +7,10 @@
 
 policies:
   - name: ecc-aws-237-postgresql_log_connections_flag_enabled
-    resource: aws.rds
+    comment: '010019061900'
     description: |
       The 'log_connections' flag is disabled for PostgreSQL
+    resource: aws.rds
     filters:
       - and:
           - type: value
@@ -19,4 +20,3 @@ policies:
               - type: db-parameter
                 key: log_connections
                 value: 1
-    comment: '0019061900'

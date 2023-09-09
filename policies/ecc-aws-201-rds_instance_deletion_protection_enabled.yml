@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-201-rds_instance_deletion_protection_enabled
+    comment: '010047062000'
     description: |
       RDS DB instances deletion protection is not enabled
     resource: rds
@@ -14,4 +15,3 @@ policies:
       - type: value
         key: DeletionProtection
         value: false
-    comment: '0047062000'

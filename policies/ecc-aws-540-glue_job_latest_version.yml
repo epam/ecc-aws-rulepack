@@ -7,12 +7,12 @@
 
 policies:
   - name: ecc-aws-540-glue_job_latest_version
+    comment: '010021052000'
     description: |
       Amazon Glue Job not latest version
     resource: glue-job
     filters:
       - not:
-        - type: value
-          key: GlueVersion
-          value: '4.0'
-    comment: '0021052000'
+          - type: value
+            key: GlueVersion
+            value: '4.0'

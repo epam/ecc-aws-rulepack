@@ -6,10 +6,10 @@
 
 policies:
   - name: ecc-aws-459-lambda_code_signing_enabled
-    resource: aws.lambda
+    comment: '010023030400'
     description: |
       Lambda code signing not enabled
+    resource: aws.lambda
     filters:
       - not:
           - type: awslambda-signing-config-filter
-    comment: '0023030400'

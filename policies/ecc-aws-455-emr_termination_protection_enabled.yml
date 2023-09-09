@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-455-emr_termination_protection_enabled
+    comment: '010047052000'
     description: |
       EMR termination protection not enabled
     resource: emr
@@ -14,4 +15,3 @@ policies:
       - type: value
         key: TerminationProtected
         value: false
-    comment: '0047052000'

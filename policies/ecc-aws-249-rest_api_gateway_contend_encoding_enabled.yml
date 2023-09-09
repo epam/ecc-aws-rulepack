@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-249-rest_api_gateway_contend_encoding_enabled
+    comment: '010023022000'
     description: |
       Content encoding is not enabled for API Gateway
     resource: rest-api
@@ -14,4 +15,3 @@ policies:
       - type: value
         key: minimumCompressionSize
         value: absent
-    comment: '0023022000'

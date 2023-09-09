@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-463-bucket_not_dns_compliant
+    comment: '010020042001'
     description: |
       S3 bucket is not DNS compliant
     resource: s3
@@ -16,4 +17,3 @@ policies:
             key: Name
             op: regex
             value: '^[a-z0-9][a-z0-9-]{1,61}[a-z0-9]$'
-    comment: '0020042001'

@@ -7,12 +7,12 @@
 
 policies:
   - name: ecc-aws-059-config_enabled_all_regions
-    resource: account
+    comment: '010016010301'
     description: |
       AWS Config is not enabled in all regions
+    resource: account
     filters:
       - type: check-config
         running: true
         all-resources: true
         global-resources: true
-    comment: '0016010300'

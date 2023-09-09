@@ -7,9 +7,10 @@
 
 policies:
   - name: ecc-aws-236-postgresql_debug_pretty_print_flag_enabled
-    resource: aws.rds
+    comment: '010019061900'
     description: |
       The 'debug_pretty_print' flag is disabled for PostgreSQL
+    resource: aws.rds
     filters:
       - and:
           - type: value
@@ -19,4 +20,3 @@ policies:
               - type: db-parameter
                 key: debug_pretty_print
                 value: 1
-    comment: '0019061900'

@@ -7,22 +7,22 @@
 
 policies:
   - name: ecc-aws-516-s3_event_notifications_enabled
+    comment: '010019042001'
     description: |
       S3 buckets should have event notifications enabled
     resource: aws.s3
     filters:
-    - not:
-      - or:
-        - type: bucket-notification
-          kind: sns
-          key: Id
-          value: present
-        - type: bucket-notification
-          kind: sqs
-          key: Id
-          value: present
-        - type: bucket-notification
-          kind: lambda
-          key: Id
-          value: present
-    comment: '0019042001'
+      - not:
+          - or:
+              - type: bucket-notification
+                kind: sns
+                key: Id
+                value: present
+              - type: bucket-notification
+                kind: sqs
+                key: Id
+                value: present
+              - type: bucket-notification
+                kind: lambda
+                key: Id
+                value: present

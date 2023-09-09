@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-354-redshift_not_using_default_port
+    comment: '010024062000'
     description: |
       Amazon Redshift uses default port 5439
     resource: redshift
@@ -14,4 +15,3 @@ policies:
       - type: value
         key: Endpoint.Port
         value: 5439
-    comment: '0024062000'

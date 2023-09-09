@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-221-sns_kms_encryption_enabled
+    comment: '010043142000'
     description: |
       SNS topics are not encrypted at rest using AWS KMS
     resource: sns
@@ -14,4 +15,3 @@ policies:
       - type: value
         key: KmsMasterKeyId
         value: absent
-    comment: '0043142000'

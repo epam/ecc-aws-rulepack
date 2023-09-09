@@ -6,6 +6,7 @@
 
 policies:
   - name: ecc-aws-251-appflow_encrypted_with_kms_cmk
+    comment: '010045142000'
     description: |
       Appflow is not encrypted with KMS CMK 
     resource: aws.app-flow
@@ -14,4 +15,3 @@ policies:
         key: KeyManager
         op: eq
         value: AWS
-    comment: '0045142000'

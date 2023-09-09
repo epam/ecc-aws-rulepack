@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-454-elasticache_notifications_enabled
+    comment: '010032062000'
     description: |
       Elasticache notification disabled
     resource: cache-cluster
@@ -14,4 +15,3 @@ policies:
       - type: value
         key: NotificationConfiguration
         value: absent
-    comment: '0032062000'

@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-336-sagemaker_endpoint_configuration_encrypted
+    comment: '010043112000'
     description: |
       Sagemaker endpoint configurations are not encrypted with KMS CMK
     resource: sagemaker-endpoint-config
@@ -15,4 +16,3 @@ policies:
           - type: kms-key
             key: KeyManager
             value: CUSTOMER
-    comment: '0043112000'

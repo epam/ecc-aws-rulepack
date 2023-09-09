@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-266-elasticache_automatic_backups
+    comment: '010049062000'
     description: |
       ElastiCache Redis cluster automatic backups are not enabled or a retention period is not set to at least 7 days
     resource: cache-cluster
@@ -15,4 +16,3 @@ policies:
         key: SnapshotRetentionLimit
         value: 7
         op: lt
-    comment: '0049062000'

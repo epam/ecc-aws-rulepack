@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-223-ec2_managed_instance_association_compliance_status_check
+    comment: '010016032000'
     description: |
       Instances managed by Systems Manager do not have association compliance status of COMPLIANT
     resource: aws.ec2
@@ -21,4 +22,3 @@ policies:
               - Association
             states:
               - NON_COMPLIANT
-    comment: '0016032000'

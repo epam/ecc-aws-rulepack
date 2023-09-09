@@ -6,13 +6,13 @@
 
 policies:
   - name: ecc-aws-162-rds_database_security_group_events_notification_exists
-    resource: aws.account
+    comment: '010032062000'
     description: |
       RDS event notifications subscription is not configured for critical database security group events
+    resource: aws.account
     filters:
       - type: rds-sns-subscription-filter
         check_in: rds
         key: SourceType=='db-security-group' && Enabled==`true` && SourceIdsList==null && ( EventCategoriesList==null || length(EventCategoriesList[])==`2`)
         value: true
         op: eq
-    comment: '0032062000'

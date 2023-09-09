@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-288-workspaces_instances_are_healthy
+    comment: '010018122000'
     description: |
       Workspaces instances are unhealthy
     resource: aws.workspaces
@@ -14,4 +15,3 @@ policies:
       - type: value
         key: State
         value: UNHEALTHY
-    comment: '0018122000'

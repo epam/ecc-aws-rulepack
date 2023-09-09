@@ -7,11 +7,11 @@
 
 policies:
   - name: ecc-aws-053-cloudtrail_log_validation_enabled
-    resource: aws.cloudtrail
+    comment: '010019010300'
     description: |
       CloudTrail log file validation is disabled
+    resource: aws.cloudtrail
     filters:
       - type: value
         key: LogFileValidationEnabled
         value: false
-    comment: '0019010300'

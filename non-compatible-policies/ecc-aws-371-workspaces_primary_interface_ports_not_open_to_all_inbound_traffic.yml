@@ -6,12 +6,12 @@
 
 policies:
   - name: ecc-aws-371-workspaces_primary_interface_ports_not_open_to_all_inbound_traffic
-    resource: aws.workspaces
+    comment: '010040120600'
     description: |
       Primary interface ports for Workspaces are open to all inbound traffic
+    resource: aws.workspaces
     filters:
       - type: security-group-workspace-filter
         key: length(IpPermissions[?(IpRanges[?CidrIp=='0.0.0.0/0'] || Ipv6Ranges[?CidrIpv6=='::/0']) && IpProtocol=='-1'&& !FromPort&& !ToPort ])
         op: ge
         value: 1
-    comment: '0040120600'

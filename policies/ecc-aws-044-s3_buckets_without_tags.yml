@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-044-s3_buckets_without_tags
+    comment: '010010042001'
     description: |
       S3 Buckets without tags 
     resource: s3
@@ -15,4 +16,3 @@ policies:
           - type: value
             key: Tags[0]
             value: present
-    comment: '0010042001'

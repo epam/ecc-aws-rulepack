@@ -7,11 +7,11 @@
 
 policies:
   - name: ecc-aws-442-appsync_cache_encrypted_in_transit
+    comment: '010044142000'
     description: |
       Appsync cache is not encrypted in transit
     resource: aws.graphql-api
     filters:
-     - type: api-cache
-       key: 'transitEncryptionEnabled'
-       value: false
-    comment: '0044142000'
+      - type: api-cache
+        key: 'transitEncryptionEnabled'
+        value: false

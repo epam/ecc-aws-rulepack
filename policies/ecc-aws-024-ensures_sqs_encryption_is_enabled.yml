@@ -7,9 +7,9 @@
 
 policies:
   - name: ecc-aws-024-ensures_sqs_encryption_is_enabled
+    comment: '010043142000'
     description: |
       SQS encryption is disabled
     resource: sqs
     filters:
       - KmsMasterKeyId: absent
-    comment: '0043142000'

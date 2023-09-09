@@ -6,9 +6,9 @@
 
 policies:
   - name: ecc-aws-301-sqs_dead_letter_queue_enabled
+    comment: '010023142000'
     description: |
       SQS Queue dead letter queue is disabled
     resource: sqs
     filters:
       - type: redrive-policy-sqs-filter
-    comment: '0023142000'

@@ -7,9 +7,10 @@
 
 policies:
   - name: ecc-aws-002-ensure_access_keys_are_rotated_every_90_days
-    resource: aws.iam-user
+    comment: '010022000301'
     description: |
       Access keys are not rotated every 90 days or less
+    resource: aws.iam-user
     filters:
       - type: credential
         key: access_keys.active
@@ -19,4 +20,3 @@ policies:
         value_type: age
         value: 90
         op: gt
-    comment: '0022000301'

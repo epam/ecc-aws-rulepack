@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-177-api_gateway_rest_api_stages_ssl_certificates_configured
+    comment: '010044022000'
     description: |
       API Gateway REST API stages are not configured to use SSL certificates for backend authentication
     resource: rest-stage
@@ -14,4 +15,3 @@ policies:
       - type: value
         key: clientCertificateId
         value: absent
-    comment: '0044022000'

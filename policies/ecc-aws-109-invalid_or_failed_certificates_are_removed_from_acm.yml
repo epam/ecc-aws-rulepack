@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-109-invalid_or_failed_certificates_are_removed_from_acm
+    comment: '010029102000'
     description: |
       Invalid or failed certificates are not removed from ACM
     resource: acm-certificate
@@ -18,4 +19,3 @@ policies:
           - type: value
             key: Status
             value: VALIDATION_TIMED_OUT
-    comment: '0029102000'

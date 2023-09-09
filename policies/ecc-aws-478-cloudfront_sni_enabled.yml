@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-478-cloudfront_sni_enabled
+    comment: '010023022001'
     description: |
       Cloudfront Distribution not uses SNI
     resource: aws.distribution
@@ -21,4 +22,3 @@ policies:
           - type: value
             key: ViewerCertificate.CertificateSource
             value: cloudfront
-    comment: '0023022001'

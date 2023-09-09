@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-179-cloudfront_default_root_object_configured
+    comment: '010040022001'
     description: |
       CloudFront distributions do not have a default root object configured
     resource: distribution
@@ -14,4 +15,3 @@ policies:
       - type: distribution-config
         key: DefaultRootObject
         value: empty
-    comment: '0040022001'

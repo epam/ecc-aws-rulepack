@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-065-encrypted_connection_between_cloudfront_origin
+    comment: '010044022001'
     description: |
       Traffic between a CloudFront distribution and the origin is not enforced to allow HTTPS-only
     resource: aws.distribution
@@ -25,4 +26,3 @@ policies:
                   - type: value
                     key: DefaultCacheBehavior.ViewerProtocolPolicy
                     value: https-only
-    comment: '0044022001'

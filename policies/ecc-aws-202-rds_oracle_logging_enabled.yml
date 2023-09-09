@@ -7,9 +7,10 @@
 
 policies:
   - name: ecc-aws-202-rds_oracle_logging_enabled
-    resource: aws.rds
+    comment: '010019062000'
     description: |
       Oracle database logging is disabled
+    resource: aws.rds
     filters:
       - and:
           - type: value
@@ -38,4 +39,3 @@ policies:
                     op: in
                     value_type: swap
                     value: listener
-    comment: '0019062000'

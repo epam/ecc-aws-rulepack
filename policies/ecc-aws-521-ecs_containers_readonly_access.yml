@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-521-ecs_containers_readonly_access
+    comment: '010022082000'
     description: |
       ECS container is not limited to read-only access to root file systems
     resource: ecs-task-definition
@@ -15,4 +16,3 @@ policies:
           - type: value
             key: containerDefinitions[0].readonlyRootFilesystem
             value: true
-    comment: '0022082000'

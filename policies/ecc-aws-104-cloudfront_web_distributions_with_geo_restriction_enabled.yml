@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-104-cloudfront_web_distributions_with_geo_restriction_enabled
+    comment: '010024022001'
     description: |
       Cloudfront web distribution with geo restriction is not enabled
     resource: distribution
@@ -14,4 +15,3 @@ policies:
       - type: value
         key: Restrictions.GeoRestriction.RestrictionType
         value: none
-    comment: '0024022001'

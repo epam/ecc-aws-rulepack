@@ -7,9 +7,10 @@
 
 policies:
   - name: ecc-aws-153-elasticsearch_domains_audit_logging_enabled
-    resource: aws.elasticsearch
+    comment: '010019052000'
     description: |
       Elasticsearch domains audit logging is not enabled 
+    resource: aws.elasticsearch
     filters:
       - or:
           - type: value
@@ -18,4 +19,3 @@ policies:
           - type: value
             key: LogPublishingOptions.AUDIT_LOGS
             value: absent
-    comment: '0019052000'

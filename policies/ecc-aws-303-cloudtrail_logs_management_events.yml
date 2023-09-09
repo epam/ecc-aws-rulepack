@@ -7,12 +7,12 @@
 
 policies:
   - name: ecc-aws-303-cloudtrail_logs_management_events
-    resource: aws.cloudtrail
+    comment: '010019012000'
     description: |
       Management events are not included into CloudTrail trails configuration
+    resource: aws.cloudtrail
     filters:
       - type: event-selectors
         key: EventSelectors[].IncludeManagementEvents
         op: contains
         value: false
-    comment: '0019012000'

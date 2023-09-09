@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-342-route53_domain_automatic_renewal_enabled
+    comment: '010023022001'
     description: |
       Route53 has automatic domain renewal disabled
     resource: aws.r53domain
@@ -14,4 +15,3 @@ policies:
       - type: value
         key: AutoRenew
         value: false
-    comment: '0023022001'

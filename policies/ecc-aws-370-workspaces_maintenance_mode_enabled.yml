@@ -7,11 +7,11 @@
 
 policies:
   - name: ecc-aws-370-workspaces_maintenance_mode_enabled
-    resource: aws.workspaces-directory
+    comment: '010021120600'
     description: |
       Workspaces maintenance mode disabled
+    resource: aws.workspaces-directory
     filters:
       - type: value
         key: WorkspaceCreationProperties.EnableMaintenanceMode
         value: false
-    comment: '0021120600'

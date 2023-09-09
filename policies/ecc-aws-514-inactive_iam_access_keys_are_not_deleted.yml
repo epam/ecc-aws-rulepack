@@ -7,11 +7,11 @@
 
 policies:
   - name: ecc-aws-514-inactive_iam_access_keys_are_not_deleted
-    resource: aws.iam-user
+    comment: '010018002001'
     description: |
       Inactive access keys are not deleted
+    resource: aws.iam-user
     filters:
       - type: credential
         key: access_keys.active
         value: false
-    comment: '0018002001'

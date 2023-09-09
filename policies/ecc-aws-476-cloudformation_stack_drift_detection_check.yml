@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-476-cloudformation_stack_drift_detection_check
+    comment: '010020132000'
     description: |
       CloudFormation Stack has been drifted
     resource: aws.cfn
@@ -19,4 +20,3 @@ policies:
         key: StackStatus
         op: in
         value: ["CREATE_COMPLETE", "UPDATE_COMPLETE", "UPDATE_ROLLBACK_COMPLETE", "UPDATE_ROLLBACK_FAILED"]
-    comment: '0020132000'

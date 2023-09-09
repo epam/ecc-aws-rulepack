@@ -7,10 +7,10 @@
 
 policies:
   - name: ecc-aws-492-ecr_private_lifecycle_policy_configured
+    comment: '010001082000'
     description: |
       ECR repository does not have any lifecycle policies configured
     resource: aws.ecr
     filters:
       - type: lifecycle-rule
-        state: False
-    comment: '0001082000'
+        state: false

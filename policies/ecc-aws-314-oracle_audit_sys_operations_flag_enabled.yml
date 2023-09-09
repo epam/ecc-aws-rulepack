@@ -7,9 +7,10 @@
 
 policies:
   - name: ecc-aws-314-oracle_audit_sys_operations_flag_enabled
-    resource: aws.rds
+    comment: '010019061700'
     description: |
       The 'audit_sys_operations' flag for Oracle is disabled
+    resource: aws.rds
     filters:
       - and:
           - type: value
@@ -20,4 +21,3 @@ policies:
               - type: db-parameter
                 key: audit_sys_operations
                 value: true
-    comment: '0019061700'

@@ -6,9 +6,10 @@
 
 policies:
   - name: ecc-aws-099-route_table_changes_alarm_exists
-    resource: aws.account
+    comment: '010016010300'
     description: |
       Log metric filter and alarm do not exist for route table changes
+    resource: aws.account
     filters:
       - type: cloudtrails
         valueList: trailList[?IsMultiRegionTrail == `true`]
@@ -17,4 +18,3 @@ policies:
         configurationChangesAlarmList: "(\\()? ?\\$\\.eventName ?= ?(\")?CreateRoute(\")? ?(\\))? ?\\|\\| ?(\\()? ?\\$\\.eventName ?= ?(\")?CreateRouteTable(\")? ?(\\))? ?\\|\\| ?(\\()? ?\\$\\.eventName ?= ?(\")?ReplaceRoute(\")? ?(\\))? ?\\|\\| ?(\\()? ?\\$\\.eventName ?= ?(\")?ReplaceRouteTableAssociation(\")? ?(\\))? ?\\|\\| ?(\\()? ?\\$\\.eventName ?= ?(\")?DeleteRouteTable(\")? ?(\\))? ?\\|\\| ?(\\()?\\$\\.eventName ?= ?(\")?DeleteRoute(\")? ?(\\)) ?\\|\\| ?(\\()? ?\\$\\.eventName ?= ?(\")?DisassociateRouteTable(\")? ?(\\))?"
         op: eq
         value: 0
-    comment: '0016010300'

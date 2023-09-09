@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-535-clb_acm_certificate_required
+    comment: '010044022000'
     description: |
       Classic Load Balancers with HTTPS/SSL listeners do not use certificate provided by AWS Certificate Manager
     resource: aws.elb
@@ -26,4 +27,3 @@ policies:
         key: length(ListenerDescriptions[].Listener.SSLCertificateId)>`0` && join(' ,', ListenerDescriptions[].Listener.SSLCertificateId)
         op: regex
         value: '.*(^|, )arn:aws:iam::[^,]*($|, ).*'
-    comment: '0044022000'

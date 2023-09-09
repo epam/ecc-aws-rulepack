@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-272-elasticache_latest_version
+    comment: '010021062000'
     description: |
       Elasticache is not using the latest version
     resource: cache-cluster
@@ -28,4 +29,3 @@ policies:
                     key: EngineVersion
                     op: regex
                     value: '7.0.*'
-    comment: '0021062000'

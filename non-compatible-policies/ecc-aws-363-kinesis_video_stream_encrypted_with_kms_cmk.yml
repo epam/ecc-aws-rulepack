@@ -6,6 +6,7 @@
 
 policies:
   - name: ecc-aws-363-kinesis_video_stream_encrypted_with_kms_cmk
+    comment: '010043052000'
     description: |
       AWS Kinesis Video Streams are not encrypted with KMS customer master keys
     resource: aws.kinesis-video
@@ -13,4 +14,3 @@ policies:
       - type: kms-key
         key: KeyManager
         value: AWS
-    comment: '0043052000'

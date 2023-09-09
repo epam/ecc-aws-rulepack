@@ -7,13 +7,13 @@
 
 policies:
   - name: ecc-aws-009-iam_ssl_or_tls_certificates_expire_in_one_week
-    resource: iam-certificate
+    comment: '010029092001'
     description: |
       SSL/TLS certificates expire in less than a week
+    resource: iam-certificate
     filters:
       - type: value
         key: Expiration
         value_type: expiration
         value: 7
         op: le
-    comment: '0029092001'

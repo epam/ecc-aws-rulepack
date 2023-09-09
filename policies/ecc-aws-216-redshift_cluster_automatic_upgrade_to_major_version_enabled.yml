@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-216-redshift_cluster_automatic_upgrade_to_major_version_enabled
+    comment: '010021052200'
     description: |
       Amazon Redshift automatic upgrades to major versions are disabled 
     resource: redshift
@@ -14,4 +15,3 @@ policies:
       - type: value
         key: AllowVersionUpgrade
         value: false
-    comment: '0021052200'

@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-225-eks_control_plane_logging_enabled
+    comment: '010019070500'
     description: |
       EKS control plane logging is disabled
     resource: aws.eks
@@ -23,4 +24,3 @@ policies:
                 op: in
                 value_type: swap
                 value: true
-    comment: '0019070500'

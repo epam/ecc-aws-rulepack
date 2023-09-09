@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-351-rds_encrypted_with_kms_cmk
+    comment: '010043062000'
     description: |
       RDS instances are not encrypted with KMS CMK
     resource: rds
@@ -18,4 +19,3 @@ policies:
           - type: kms-alias
             key: "AliasName"
             value: alias/aws/rds
-    comment: '0043062000'

@@ -7,11 +7,11 @@
 
 policies:
   - name: ecc-aws-165-ecs_services_public_ip_addresses_not_assigned_automatically
-    resource: aws.ecs-service
+    comment: '010040082000'
     description: |
       Amazon ECS services public IP addresses are assigned to them automatically 
+    resource: aws.ecs-service
     filters:
       - type: value
         key: deployments[0].networkConfiguration.awsvpcConfiguration.assignPublicIp
         value: ENABLED
-    comment: '0040082000'

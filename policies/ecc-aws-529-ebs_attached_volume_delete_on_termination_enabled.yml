@@ -7,12 +7,12 @@
 
 policies:
   - name: ecc-aws-529-ebs_attached_volume_delete_on_termination_enabled
-    resource: aws.ec2
+    comment: '010002030400'
     description: |
       EBS volumes attached to an EC2 instance is not marked for deletion upon instance termination
+    resource: aws.ec2
     filters:
       - type: value
         key: BlockDeviceMappings[].Ebs.DeleteOnTermination
         op: contains
         value: false
-    comment: '0002030400'

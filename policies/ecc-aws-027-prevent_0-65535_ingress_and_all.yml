@@ -7,9 +7,10 @@
 
 policies:
   - name: ecc-aws-027-prevent_0-65535_ingress_and_all
-    resource: aws.security-group
+    comment: '010042022000'
     description: |
       Security groups do not prevent all incoming traffic from 0-65535
+    resource: aws.security-group
     filters:
       - or:
           - and:
@@ -26,4 +27,3 @@ policies:
           - and:
               - type: ingress
                 IpProtocol: "-1"
-    comment: '0042022000'

@@ -7,11 +7,11 @@
 
 policies:
   - name: ecc-aws-548-ebs_volumes_are_of_type_gp3_instead_of_gp2
-    resource: aws.ebs
+    comment: '010007042000'
     description: |
       EBS volumes are type of gp2 instead of gp3
+    resource: aws.ebs
     filters:
       - type: value
         key: VolumeType
         value: gp2
-    comment: '0007042000'

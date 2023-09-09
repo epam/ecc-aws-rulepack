@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-293-backups_encrypted_with_kms_customer_master_keys
+    comment: '010043042000'
     description: |
       Backup vaults are not encrypted at rest using KMS CMK
     resource: aws.backup-vault
@@ -15,4 +16,3 @@ policies:
           - type: kms-key
             key: KeyManager
             value: CUSTOMER
-    comment: '0043042000'

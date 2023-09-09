@@ -6,6 +6,7 @@
 
 policies:
   - name: ecc-aws-493-ecs_container_insights_enabled
+    comment: '010019082000'
     description: |
       ECS container insight is disabled
     resource: aws.ecs
@@ -13,4 +14,3 @@ policies:
       - type: include-settings-ecs
         key: containerInsights
         value: disabled
-    comment: '0019082000'

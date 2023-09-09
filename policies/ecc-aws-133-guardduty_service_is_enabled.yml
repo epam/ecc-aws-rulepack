@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-133-guardduty_service_is_enabled
+    comment: '010016092000'
     description: |
       Amazon GuardDuty service is not enabled
     resource: account
@@ -14,4 +15,3 @@ policies:
       - not:
           - type: guard-duty
             Detector.Status: ENABLED
-    comment: '0016092000'

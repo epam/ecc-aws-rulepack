@@ -7,10 +7,10 @@
 
 policies:
   - name: ecc-aws-526-waf_global_rulegroup_not_empty
+    comment: '010018092001'
     description: |
       A WAF global rule group does not have at least one rule
     resource: aws.waf-rule-groups
     filters:
-      - not: 
-        - type: active-rules-filter
-    comment: '0018092001'
+      - not:
+          - type: active-rules-filter

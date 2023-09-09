@@ -7,11 +7,11 @@
 
 policies:
   - name: ecc-aws-416-iam_role_without_tag_information
-    resource: iam-role
+    comment: '010010002001'
     description: |
       IAM Role without tag information
+    resource: iam-role
     filters:
       - type: value
         key: Tags
         value: empty
-    comment: '0010002001'

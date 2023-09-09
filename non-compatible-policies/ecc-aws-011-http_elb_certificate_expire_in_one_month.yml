@@ -6,6 +6,7 @@
 
 policies:
   - name: ecc-aws-011-http_elb_certificate_expire_in_one_month
+    comment: '010029022000'
     description: |
       Application or Network Load balancer SSL certificate expire in less than a month
     resource: app-elb
@@ -19,4 +20,3 @@ policies:
         key: 'NotAfter'
         op: lt
         value: 30
-    comment: '0029022000'

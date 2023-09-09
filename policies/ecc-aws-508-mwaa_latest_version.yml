@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-508-mwaa_latest_version
+    comment: '010021142000'
     description: |
       Managed Workflows for Apache Airflow not using latest version
     resource: aws.airflow
@@ -15,4 +16,3 @@ policies:
           - type: value
             key: AirflowVersion
             value: '2.4.3'
-    comment: '0021142000'

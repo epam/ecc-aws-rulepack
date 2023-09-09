@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-422-lightsail_instance_without_tag_information
+    comment: '010010032000'
     description: |
       Amazon Lightsail instance without tag information
     resource: aws.lightsail-instance
@@ -14,4 +15,3 @@ policies:
       - type: value
         key: tags
         value: empty
-    comment: '0010032000'

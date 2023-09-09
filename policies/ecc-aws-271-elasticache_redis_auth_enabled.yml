@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-271-elasticache_redis_auth_enabled
+    comment: '010022062000'
     description: |
       Elasticache redis Auth is not enabled
     resource: cache-cluster
@@ -17,4 +18,3 @@ policies:
       - type: value
         key: Engine
         value: "redis"
-    comment: '0022062000'

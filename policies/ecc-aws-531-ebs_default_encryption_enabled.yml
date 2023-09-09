@@ -7,14 +7,14 @@
 
 policies:
   - name: ecc-aws-531-ebs_default_encryption_enabled
-    resource: aws.account
+    comment: '010043040300'
     description: |
       EBS volume default encryption disabled
+    resource: aws.account
     filters:
-     - type: default-ebs-encryption
-       key:
-         type: value
-         key: Origin
-         value: AWS_KMS
-       state: false
-    comment: '0043040300'
+      - type: default-ebs-encryption
+        key:
+          type: value
+          key: Origin
+          value: AWS_KMS
+        state: false

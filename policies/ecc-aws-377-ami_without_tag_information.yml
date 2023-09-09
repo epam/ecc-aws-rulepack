@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-377-ami_without_tag_information
+    comment: '010010032000'
     description: |
       AMI without tag information
     resource: aws.ami
@@ -14,4 +15,3 @@ policies:
       - type: value
         key: Tags
         value: empty
-    comment: '0010032000'

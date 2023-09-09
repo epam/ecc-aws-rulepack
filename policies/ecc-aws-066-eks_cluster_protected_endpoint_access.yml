@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-066-eks_cluster_protected_endpoint_access
+    comment: '010040072000'
     description: |
       EKS cluster endpoint does not have protected access
     resource: aws.eks
@@ -19,4 +20,3 @@ policies:
         value: "0.0.0.0/0"
         value_type: swap
         op: in
-    comment: '0040072000'

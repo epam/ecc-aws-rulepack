@@ -7,15 +7,15 @@
 
 policies:
   - name: ecc-aws-500-lambda_vpc_multi_az_check
+    comment: '010050032000'
     description: |
       Lambda functions are not operate in more than one Availability Zone
     resource: aws.lambda
     filters:
-        - type: value
-          key: VpcConfig
-          value: present
-        - type: value
-          key: VpcConfig.SubnetIds
-          value_type: size
-          value: 1
-    comment: '0050032000'
+      - type: value
+        key: VpcConfig
+        value: present
+      - type: value
+        key: VpcConfig.SubnetIds
+        value_type: size
+        value: 1

@@ -7,9 +7,9 @@
 
 policies:
   - name: ecc-aws-150-api_gateway_rest_api_encryption_at_rest
+    comment: '010043022000'
     description: |
       API Gateway REST API cache data is not encrypted at rest
     resource: rest-stage
     filters:
       - methodSettings."*/*".cacheDataEncrypted: false
-    comment: '0043022000'

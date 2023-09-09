@@ -7,11 +7,11 @@
 
 policies:
   - name: ecc-aws-384-network_acl_without_tag_information
-    resource: aws.network-acl
+    comment: '010010022000'
     description: |
       Amazon Network ACLs without tag information
+    resource: aws.network-acl
     filters:
       - type: tag-count
         op: eq
         count: 0
-    comment: '0010022000'

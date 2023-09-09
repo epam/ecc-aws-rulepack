@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-193-alb_drop_invalid_http_header
+    comment: '010024022000'
     description: |
       Application load balancers are not configured to drop invalid HTTP headers
     resource: aws.app-elb
@@ -15,4 +16,3 @@ policies:
         key: routing.http.drop_invalid_header_fields.enabled
         value: false
         op: eq
-    comment: '0024022000'

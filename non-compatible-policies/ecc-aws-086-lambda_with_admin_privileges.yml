@@ -6,9 +6,10 @@
 
 policies:
   - name: ecc-aws-086-lambda_with_admin_privileges
-    resource: lambda
+    comment: '010033030400'
     description: |
       Lambda roles have admin privileges
+    resource: lambda
     filters:
       - type: awslambda-iam-role-policy-filter
         conditions:
@@ -21,4 +22,3 @@ policies:
           - key: Action
             op: eq
             value: "*"
-    comment: '0033030400'

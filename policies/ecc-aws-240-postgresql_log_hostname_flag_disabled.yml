@@ -7,9 +7,10 @@
 
 policies:
   - name: ecc-aws-240-postgresql_log_hostname_flag_disabled
-    resource: aws.rds
+    comment: '010019061900'
     description: |
       The 'log_hostname' flag is not disabled for PostgreSQL
+    resource: aws.rds
     filters:
       - and:
           - type: value
@@ -18,4 +19,3 @@ policies:
           - type: db-parameter
             key: log_hostname
             value: 1
-    comment: '0019061900'

@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-149-rds_public_access_disabled
+    comment: '010040060300'
     description: |
       RDS instance is publicly accessible 
     resource: rds
@@ -14,4 +15,3 @@ policies:
       - type: value
         key: PubliclyAccessible
         value: true
-    comment: '0040060300'

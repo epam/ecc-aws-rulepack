@@ -6,9 +6,10 @@
 
 policies:
   - name: ecc-aws-274-rds_aurora_cluster_logging_enabled
-    resource: aws.rds-cluster
+    comment: '010019062000'
     description: |
       Aurora cluster logging is disabled
+    resource: aws.rds-cluster
     filters:
       - and:
           - type: value
@@ -48,4 +49,3 @@ policies:
                     parameters:
                       - key: log_output
                         value: FILE
-    comment: '0019062000'

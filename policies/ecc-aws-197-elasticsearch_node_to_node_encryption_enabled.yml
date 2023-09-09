@@ -7,11 +7,11 @@
 
 policies:
   - name: ecc-aws-197-elasticsearch_node_to_node_encryption_enabled
-    resource: aws.elasticsearch
+    comment: '010044052000'
     description: |
       Elasticsearch domains data sent between nodes is not encrypted
+    resource: aws.elasticsearch
     filters:
       - type: value
         key: NodeToNodeEncryptionOptions.Enabled
         value: false
-    comment: '0044052000'

@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-075-elasticsearch_service_domains_encryption_at_rest
+    comment: '010043052200'
     description: |
       Elasticsearch Service domains do not have encryption at rest
     resource: elasticsearch
@@ -14,4 +15,3 @@ policies:
       - type: value
         key: EncryptionAtRestOptions.Enabled
         value: false
-    comment: '0043052200'

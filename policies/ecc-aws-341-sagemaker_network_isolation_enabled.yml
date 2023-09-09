@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-341-sagemaker_network_isolation_enabled
+    comment: '010040112000'
     description: |
       Sagemaker model network isolation disabled 
     resource: sagemaker-model
@@ -14,4 +15,3 @@ policies:
       - type: value
         key: EnableNetworkIsolation
         value: false
-    comment: '0040112000'

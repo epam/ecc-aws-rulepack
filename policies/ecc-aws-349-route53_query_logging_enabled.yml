@@ -7,10 +7,10 @@
 
 policies:
   - name: ecc-aws-349-route53_query_logging_enabled
-    resource: aws.hostedzone
+    comment: '010019022000'
     description: |
       Route53 query logging not enabled
+    resource: aws.hostedzone
     filters:
       - type: query-logging-enabled
         state: false
-    comment: '0019022000'

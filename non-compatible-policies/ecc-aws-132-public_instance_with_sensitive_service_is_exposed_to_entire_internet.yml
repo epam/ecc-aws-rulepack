@@ -6,6 +6,7 @@
 
 policies:
   - name: ecc-aws-132-public_instance_with_sensitive_service_is_exposed_to_entire_internet
+    comment: '010040032000'
     description: |
       Public Instance with a sensitive service is exposed to the entire internet
     resource: aws.ec2
@@ -14,4 +15,3 @@ policies:
         required-ports: 135, 636, 1433, 2383, 2484, 3306, 5432, 7001, 9000, 11214, 11215, 23, 445, 25, 110, 137, 138, 139, 161, 53, 3000, 3020, 4505, 4506, 8000, 8080, 5500, 5900, 1434, 2382, 8140, 27018, 61621
         egress: false
         cidr: ["0.0.0.0/0", "::/0"]
-    comment: '0040032000'

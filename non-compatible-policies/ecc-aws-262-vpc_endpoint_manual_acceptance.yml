@@ -6,6 +6,7 @@
 
 policies:
   - name: ecc-aws-262-vpc_endpoint_manual_acceptance
+    comment: '010024022000'
     description: |
       Manual acceptance is not enabled for VPC endpoints 
     resource: vpc-endpoint-service
@@ -14,4 +15,3 @@ policies:
         key: AcceptanceRequired
         op: eq
         value: false
-    comment: '0024022000'

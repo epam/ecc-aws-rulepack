@@ -7,11 +7,11 @@
 
 policies:
   - name: ecc-aws-378-ebs_without_tag_information
-    resource: aws.ebs
+    comment: '010010042000'
     description: |
       EBS volumes without tag information
+    resource: aws.ebs
     filters:
       - type: value
         key: Tags
         value: empty
-    comment: '0010042000'

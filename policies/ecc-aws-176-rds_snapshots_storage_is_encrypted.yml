@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-176-rds_snapshots_storage_is_encrypted
+    comment: '010043062000'
     description: |
       RDS snapshot storage not encrypted
     resource: rds-snapshot
@@ -14,4 +15,3 @@ policies:
       - type: value
         key: Encrypted
         value: false
-    comment: '0043062000'

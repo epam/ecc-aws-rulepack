@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-388-transit_gateway_without_tag_information
+    comment: '010010022000'
     description: |
       Amazon Transit gateway without tag information
     resource: aws.transit-gateway
@@ -14,4 +15,3 @@ policies:
       - type: tag-count
         op: eq
         count: 0
-    comment: '0010022000'

@@ -7,9 +7,10 @@
 
 policies:
   - name: ecc-aws-174-rds_database_cluster_engine_no_default_ports
-    resource: aws.rds-cluster
+    comment: '010024062000'
     description: |
       RDS database clusters are using a database engine default ports
+    resource: aws.rds-cluster
     filters:
       - or:
           - type: value
@@ -20,4 +21,3 @@ policies:
             key: Port
             op: eq
             value: 5432
-    comment: '0024062000'

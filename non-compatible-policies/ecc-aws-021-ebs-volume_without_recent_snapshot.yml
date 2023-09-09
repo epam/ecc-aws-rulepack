@@ -6,6 +6,7 @@
 
 policies:
   - name: ecc-aws-021-ebs-volume_without_recent_snapshot
+    comment: '010049042000'
     description: |
       EBS Volumes without recent snapshots
     resource: aws.ebs
@@ -14,4 +15,3 @@ policies:
           - type: snapshot-age
             op: le
             days: 14
-    comment: '0049042000'

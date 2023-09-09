@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-400-dax_clusters_without_tag_information
+    comment: '010010062000'
     description: |
       DynamoDB Accelerator clusters without tag information
     resource: dax
@@ -14,4 +15,3 @@ policies:
       - type: value
         key: Tags
         value: empty
-    comment: '0010062000'

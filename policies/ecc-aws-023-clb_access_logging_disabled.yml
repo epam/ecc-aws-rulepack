@@ -7,9 +7,9 @@
 
 policies:
   - name: ecc-aws-023-clb_access_logging_disabled
+    comment: '010019022000'
     description: |
       Classic Load Balancer Access Logging is disabled 
     resource: elb
     filters:
       - type: is-not-logging
-    comment: '0019022000'

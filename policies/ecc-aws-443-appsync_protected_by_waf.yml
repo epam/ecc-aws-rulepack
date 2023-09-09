@@ -7,10 +7,10 @@
 
 policies:
   - name: ecc-aws-443-appsync_protected_by_waf
+    comment: '010027142000'
     description: |
       Appsync is not protected by WAF
     resource: graphql-api
     filters:
       - type: wafv2-enabled
         state: false
-    comment: '0027142000'

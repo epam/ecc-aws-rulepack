@@ -7,9 +7,10 @@
 
 policies:
   - name: ecc-aws-204-rds_mysql_logging_enabled
-    resource: aws.rds
+    comment: '010019062000'
     description: |
       MySQL database logging is disabled
+    resource: aws.rds
     filters:
       - and:
           - type: value
@@ -49,4 +50,3 @@ policies:
                     key: log_output
                     op: eq
                     value: FILE
-    comment: '0019062000'

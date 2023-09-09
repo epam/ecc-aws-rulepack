@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-440-appsync_logging_enabled
+    comment: '010019142000'
     description: |
       Appsync logging disabled
     resource: aws.graphql-api
@@ -14,4 +15,3 @@ policies:
       - type: value
         key: logConfig
         value: absent
-    comment: '0019142000'

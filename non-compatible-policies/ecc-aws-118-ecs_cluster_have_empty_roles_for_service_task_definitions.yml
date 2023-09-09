@@ -6,9 +6,9 @@
 
 policies:
   - name: ecc-aws-118-ecs_cluster_have_empty_roles_for_service_task_definitions
+    comment: '010033082000'
     description: |
       Container is using IAM roles for an instance
     resource: ecs-service
     filters:
       - type: ecs-task-definition-filter
-    comment: '0033082000'

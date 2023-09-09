@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-421-lambda_functions_without_tag_information
+    comment: '010010032000'
     description: |
       Lambda functions without tag information
     resource: lambda
@@ -14,4 +15,3 @@ policies:
       - type: value
         key: Tags
         value: empty
-    comment: '0010032000'

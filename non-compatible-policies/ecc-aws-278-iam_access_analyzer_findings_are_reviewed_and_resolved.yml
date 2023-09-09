@@ -6,9 +6,9 @@
 
 policies:
   - name: ecc-aws-278-iam_access_analyzer_findings_are_reviewed_and_resolved
-    resource: account
+    comment: '010016002000'
     description: |
       IAM Access Analyzer findings are not reviewed and resolved
+    resource: account
     filters:
       - type: analyzer-findings-filter
-    comment: '0016002000'

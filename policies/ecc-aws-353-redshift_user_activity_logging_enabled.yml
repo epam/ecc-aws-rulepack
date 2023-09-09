@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-353-redshift_user_activity_logging_enabled
+    comment: '010019062000'
     description: |
       AWS Redshift user activity logging is disabled
     resource: redshift
@@ -19,4 +20,3 @@ policies:
             key: enable_user_activity_logging
             value: false
             op: eq
-    comment: '0019062000'

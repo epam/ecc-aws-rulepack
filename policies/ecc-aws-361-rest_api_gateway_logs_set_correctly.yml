@@ -7,11 +7,11 @@
 
 policies:
   - name: ecc-aws-361-rest_api_gateway_logs_set_correctly
+    comment: '010019022010'
     description: |
       API Gateway REST API does not have logging correctly configured
     resource: rest-stage
     filters:
-        - type: value
-          key: methodSettings."*/*".loggingLevel
-          value: "OFF"
-    comment: '0019022010'
+      - type: value
+        key: methodSettings."*/*".loggingLevel
+        value: "OFF"

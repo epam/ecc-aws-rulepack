@@ -7,11 +7,11 @@
 
 policies:
   - name: ecc-aws-415-iam_user_without_tag_information
-    resource: iam-user
+    comment: '010010002001'
     description: |
       IAM User without tag information
+    resource: iam-user
     filters:
       - type: value
         key: Tags
         value: empty
-    comment: '0010002001'
