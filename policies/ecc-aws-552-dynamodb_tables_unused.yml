@@ -1,0 +1,46 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: ecc-aws-552-dynamodb_tables_unused
+    comment: '010002062000'
+    description: |
+      Unused Amazon DynamoDB tables
+    resource: aws.dynamodb-table
+    filters:
+    - and:
+      - type: value
+        key: ProvisionedThroughput.ReadCapacityUnits
+        op: ne
+        value: 0
+      - type: value
+        key: TableStatus
+        value: ACTIVE
+      - type: value
+        key: CreationDateTime
+        value_type: age
+        value: 60
+        op: ge
+      - or:
+        - type: value
+          key: ItemCount
+          value: 0
+        - and:
+          - type: metrics
+            name: ConsumedWriteCapacityUnits
+            namespace: AWS/DynamoDB
+            statistics: Maximum
+            days: 60
+            value: 0
+            op: equal
+          - type: metrics
+            name: ConsumedReadCapacityUnits
+            namespace: AWS/DynamoDB
+            statistics: Maximum
+            days: 60
+            value: 0
+            op: equal

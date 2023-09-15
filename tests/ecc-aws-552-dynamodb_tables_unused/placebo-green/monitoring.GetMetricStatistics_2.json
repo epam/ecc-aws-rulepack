@@ -1,0 +1,23 @@
+{
+    "status_code": 200,
+    "data": {
+        "Label": "ConsumedReadCapacityUnits",
+        "Datapoints": [
+            {
+                "Timestamp": {
+                    "__class__": "datetime",
+                    "year": 2023,
+                    "month": 6,
+                    "day": 17,
+                    "hour": 7,
+                    "minute": 0,
+                    "second": 0,
+                    "microsecond": 0
+                },
+                "Maximum": 0.5,
+                "Unit": "Count"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

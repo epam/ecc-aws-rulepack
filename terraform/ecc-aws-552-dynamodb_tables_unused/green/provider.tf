@@ -13,7 +13,7 @@ provider "aws" {
 
   default_tags {
     tags = {
-      CustodianRule    = "ecc-aws-916-waf_global_rulegroup_not_empty"
+      CustodianRule    = "ecc-aws-552-dynamodb_tables_unused"
       ComplianceStatus = "Green"
     }
   }
