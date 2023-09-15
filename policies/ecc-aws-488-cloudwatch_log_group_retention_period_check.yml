@@ -7,7 +7,7 @@
 
 policies:
   - name: ecc-aws-488-cloudwatch_log_group_retention_period_check
-    comment: '010049012010'
+    comment: '010001012010'
     description: |
       CloudWatch Log Group does not have retention period set correctly
     resource: log-group
