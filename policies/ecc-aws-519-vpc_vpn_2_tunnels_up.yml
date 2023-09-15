@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-519-vpc_vpn_2_tunnels_up
+    comment: '010050022000'
     description: |
       One or both VPN tunnels for an AWS Site-to-Site VPN connection are in DOWN status
     resource: aws.vpn-connection
@@ -17,4 +18,3 @@ policies:
       - type: value
         key: length(VgwTelemetry[?Status=='UP'])==`2`
         value: false
-    comment: '0050022000'

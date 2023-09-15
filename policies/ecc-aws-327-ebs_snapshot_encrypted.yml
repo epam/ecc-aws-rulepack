@@ -7,11 +7,11 @@
 
 policies:
   - name: ecc-aws-327-ebs_snapshot_encrypted
-    resource: aws.ebs-snapshot
+    comment: '010043040400'
     description: |
       EBS snapshot encryption is disabled
+    resource: aws.ebs-snapshot
     filters:
       - type: value
         key: Encrypted
         value: false
-    comment: '0043040400'

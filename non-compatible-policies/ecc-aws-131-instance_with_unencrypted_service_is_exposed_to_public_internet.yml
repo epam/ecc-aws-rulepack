@@ -6,6 +6,7 @@
 
 policies:
   - name: ecc-aws-131-instance_with_unencrypted_service_is_exposed_to_public_internet
+    comment: '010040092000'
     description: |
       Instance with unencrypted service is exposed to the public internet
     resource: aws.ec2
@@ -14,4 +15,3 @@ policies:
         required-ports: 9200, 9300, 11211, 27017, 61620, 9090, 22, 389, 1521, 2483, 6379, 7000, 7199, 8888, 9042, 9160, 3389
         egress: false
         cidr: ["0.0.0.0/0", "::/0"]
-    comment: '0040092000'

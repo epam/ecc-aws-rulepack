@@ -7,12 +7,12 @@
 
 policies:
   - name: ecc-aws-541-glue_job_logging_enabled
+    comment: '010019052000'
     description: |
       Glue job logging disabled
     resource: aws.glue-job
     filters:
       - not:
-        - type: value
-          key: DefaultArguments."--enable-continuous-cloudwatch-log"=='true'
-          value: true
-    comment: '0019052000'
+          - type: value
+            key: DefaultArguments."--enable-continuous-cloudwatch-log"=='true'
+            value: true

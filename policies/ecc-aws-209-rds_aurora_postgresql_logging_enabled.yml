@@ -7,9 +7,10 @@
 
 policies:
   - name: ecc-aws-209-rds_aurora_postgresql_logging_enabled
-    resource: rds
+    comment: '010019062000'
     description: |
       Aurora-PostgreSQL database logging is disabled
+    resource: rds
     filters:
       - and:
           - type: value
@@ -33,4 +34,3 @@ policies:
                     key: log_statement
                     op: eq
                     value: all
-    comment: '0019062000'

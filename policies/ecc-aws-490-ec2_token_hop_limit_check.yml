@@ -7,12 +7,12 @@
 
 policies:
   - name: ecc-aws-490-ec2_token_hop_limit_check
-    resource: aws.ec2
+    comment: '010024032010'
     description: |
       EC2 instances token hop limit set correctly
+    resource: aws.ec2
     filters:
       - not:
-        - type: value
-          key: MetadataOptions.HttpPutResponseHopLimit
-          value: 1
-    comment: '0024032010'
+          - type: value
+            key: MetadataOptions.HttpPutResponseHopLimit
+            value: 1

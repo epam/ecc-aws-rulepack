@@ -7,10 +7,10 @@
 
 policies:
   - name: ecc-aws-499-iam_group_has_users_check
-    resource: aws.iam-group
+    comment: '010018002000'
     description: |
       IAM group doesn't have users
+    resource: aws.iam-group
     filters:
       - type: has-users
         value: false
-    comment: '0018002000'

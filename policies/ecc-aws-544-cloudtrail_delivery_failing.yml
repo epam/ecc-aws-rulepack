@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-544-cloudtrail_delivery_failing
+    comment: '010019012000'
     description: |
       CloudTrail logs delivery failing
     resource: aws.cloudtrail
@@ -14,4 +15,3 @@ policies:
       - type: status
         key: LatestDeliveryError
         value: present
-    comment: '0019012000'

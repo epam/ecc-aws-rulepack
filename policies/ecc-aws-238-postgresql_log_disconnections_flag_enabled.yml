@@ -7,9 +7,10 @@
 
 policies:
   - name: ecc-aws-238-postgresql_log_disconnections_flag_enabled
-    resource: aws.rds
+    comment: '010019061900'
     description: |
       The 'log_disconnections' flag is disabled for PostgreSQL
+    resource: aws.rds
     filters:
       - and:
           - type: value
@@ -20,4 +21,3 @@ policies:
                 key: log_disconnections
                 op: eq
                 value: 1
-    comment: '0019061900'

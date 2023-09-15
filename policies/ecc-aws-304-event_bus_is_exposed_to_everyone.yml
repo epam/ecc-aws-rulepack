@@ -7,10 +7,10 @@
 
 policies:
   - name: ecc-aws-304-event_bus_is_exposed_to_everyone
-    resource: aws.event-bus
+    comment: '010040142000'
     description: |
       AWS CloudWatch event bus is exposed to everyone
+    resource: aws.event-bus
     filters:
       - type: cross-account
         everyone_only: true
-    comment: '0040142000'

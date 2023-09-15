@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-344-route53_domain_expires_in_30_days
+    comment: '010023022001'
     description: |
       Route53 domain name expire in less 30 days
     resource: aws.r53domain
@@ -21,4 +22,3 @@ policies:
         value_type: expiration
         value: 0
         op: ge
-    comment: '0023022001'

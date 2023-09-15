@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-311-sagemaker_instances_encrypted_with_kms_cmk
+    comment: '010043112000'
     description: |
       Ensure Sagemaker instances are not encrypted with KMS CMK
     resource: sagemaker-notebook
@@ -14,4 +15,3 @@ policies:
       - type: value
         key: KmsKeyId
         value: absent
-    comment: '0043112000'

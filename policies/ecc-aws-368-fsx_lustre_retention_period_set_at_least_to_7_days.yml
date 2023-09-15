@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-368-fsx_lustre_retention_period_set_at_least_to_7_days
+    comment: '010049042000'
     description: |
       FSx Lustre file system does not have retention period set at least to 7 days
     resource: aws.fsx
@@ -16,4 +17,3 @@ policies:
             key: LustreConfiguration.AutomaticBackupRetentionDays
             op: gte
             value: 7
-    comment: '0049042000'

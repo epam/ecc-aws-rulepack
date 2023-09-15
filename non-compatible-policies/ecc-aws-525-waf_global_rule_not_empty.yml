@@ -6,7 +6,8 @@
 
 policies:
   - name: ecc-aws-525-waf_global_rule_not_empty
-    description: | 
+    comment: '010002092001'
+    description: |
       A WAF global rule does not have at least one condition
     resource: aws.waf-rule
     filters:
@@ -14,4 +15,3 @@ policies:
         key: Predicates
         op: eq
         value: empty
-    comment: '0002092001'

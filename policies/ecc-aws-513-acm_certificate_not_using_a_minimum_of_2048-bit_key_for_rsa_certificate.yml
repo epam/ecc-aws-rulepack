@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-513-acm_certificate_not_using_a_minimum_of_2048-bit_key_for_rsa_certificate
+    comment: '010029102000'
     description: |
       ACM has certificates minimum rsa key is not 2048 bit
     resource: acm-certificate
@@ -15,4 +16,3 @@ policies:
         key: KeyAlgorithm
         op: regex
         value: RSA-1024
-    comment: '0029102000'

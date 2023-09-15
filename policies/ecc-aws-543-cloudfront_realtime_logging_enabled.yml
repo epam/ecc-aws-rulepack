@@ -7,9 +7,10 @@
 
 policies:
   - name: ecc-aws-543-cloudfront_realtime_logging_enabled
-    resource: aws.distribution
+    comment: '010019022001'
     description: |
       CloudFront Realtime logging disabled
+    resource: aws.distribution
     filters:
       - and:
           - type: value
@@ -18,4 +19,3 @@ policies:
           - type: value
             key: CacheBehaviors.Items[].RealtimeLogConfigArn
             value: empty
-    comment: '0019022001'

@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-337-lambda_variables_encrypted_with_kms_cmk
+    comment: '010043032000'
     description: |
       Lambda environment variables not encrypted with KMS CMK
     resource: lambda
@@ -15,4 +16,3 @@ policies:
           - type: kms-key
             key: KeyManager
             value: CUSTOMER
-    comment: '0043032000'

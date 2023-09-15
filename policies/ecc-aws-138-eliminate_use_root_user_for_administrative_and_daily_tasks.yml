@@ -7,19 +7,19 @@
 
 policies:
   - name: ecc-aws-138-eliminate_use_root_user_for_administrative_and_daily_tasks
-    resource: aws.account
+    comment: '010035000301'
     description: |
       Root user is used for administrative and daily tasks
+    resource: aws.account
     filters:
       - or:
-        - type: credential
-          key: password_last_used
-          op: less-than
-          value_type: age
-          value: 90
-        - type: credential
-          key: access_keys.last_used_date
-          op: less-than
-          value_type: age
-          value: 90
-    comment: '0035000301'
+          - type: credential
+            key: password_last_used
+            op: less-than
+            value_type: age
+            value: 90
+          - type: credential
+            key: access_keys.last_used_date
+            op: less-than
+            value_type: age
+            value: 90

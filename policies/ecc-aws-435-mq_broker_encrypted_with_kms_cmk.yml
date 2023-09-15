@@ -7,12 +7,12 @@
 
 policies:
   - name: ecc-aws-435-mq_broker_encrypted_with_kms_cmk
-    resource: aws.message-broker
+    comment: '010043142000'
     description: |
       MQ broker not encrypted with KMS CMK
+    resource: aws.message-broker
     filters:
       - not:
           - type: kms-key
             key: KeyManager
             value: CUSTOMER
-    comment: '0043142000'

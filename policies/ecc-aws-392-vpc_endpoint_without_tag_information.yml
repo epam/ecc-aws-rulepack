@@ -7,11 +7,11 @@
 
 policies:
   - name: ecc-aws-392-vpc_endpoint_without_tag_information
-    resource: aws.vpc-endpoint
+    comment: '010010022000'
     description: |
       VPC endpoint without tag information
+    resource: aws.vpc-endpoint
     filters:
       - type: tag-count
         op: eq
         count: 0
-    comment: '0010022000'

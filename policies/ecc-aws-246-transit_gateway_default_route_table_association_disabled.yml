@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-246-transit_gateway_default_route_table_association_disabled
+    comment: '010024022000'
     description: |
       Transit gateway default route table association is enabled
     resource: aws.transit-gateway
@@ -18,4 +19,3 @@ policies:
           - type: value
             key: State
             value: available
-    comment: '0024022000'

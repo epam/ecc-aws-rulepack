@@ -7,9 +7,10 @@
 
 policies:
   - name: ecc-aws-032-security_group_ingress_is_restricted_traffic_to_mongodb_port_27017
-    resource: aws.security-group
+    comment: '010042022000'
     description: |
       Security group rule allows internet traffic to MongoDB port (27017)
+    resource: aws.security-group
     filters:
       - type: ingress
         Ports: [27017]
@@ -17,4 +18,3 @@ policies:
           value:
             - "0.0.0.0/0"
           op: in
-    comment: '0042022000'

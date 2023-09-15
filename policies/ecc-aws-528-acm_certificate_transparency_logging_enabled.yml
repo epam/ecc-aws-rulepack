@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-528-acm_certificate_transparency_logging_enabled
+    comment: '010019102000'
     description: |
       ACM transparency logging disabled
     resource: acm-certificate
@@ -14,4 +15,3 @@ policies:
       - type: value
         key: Options.CertificateTransparencyLoggingPreference
         value: DISABLED
-    comment: '0019102000'

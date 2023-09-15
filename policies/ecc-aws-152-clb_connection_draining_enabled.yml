@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-152-clb_connection_draining_enabled
+    comment: '010031022000'
     description: |
       Classic Load Balancers connection draining is not enabled
     resource: aws.elb
@@ -14,4 +15,3 @@ policies:
       - type: attributes
         key: ConnectionDraining.Enabled
         value: false
-    comment: '0031022000'

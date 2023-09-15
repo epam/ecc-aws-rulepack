@@ -7,11 +7,11 @@
 
 policies:
   - name: ecc-aws-057-ensure_iam_instance_roles_are_used_for_resource_access_from_instance
-    resource: aws.ec2
+    comment: '010048000300'
     description: |
       IAM instance roles are not used for AWS resource access from instances
+    resource: aws.ec2
     filters:
       - type: value
         key: IamInstanceProfile
         value: absent
-    comment: '0048000300'

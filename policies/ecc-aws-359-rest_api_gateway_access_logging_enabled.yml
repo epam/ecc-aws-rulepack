@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-359-rest_api_gateway_access_logging_enabled
+    comment: '010019022000'
     description: |
       API Gateway REST API have access logging disabled
     resource: rest-stage
@@ -14,4 +15,3 @@ policies:
       - type: value
         key: accessLogSettings
         value: absent
-    comment: '0019022000'

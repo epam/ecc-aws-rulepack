@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-122-dynamodb_is_encrypted_using_managed_cmk
+    comment: '010043062000'
     description: |
       DynamoDB is not encrypted using KMS CMK
     resource: dynamodb-table
@@ -15,4 +16,3 @@ policies:
           - type: value
             key: SSEDescription.SSEType
             value: KMS
-    comment: '0043062000'

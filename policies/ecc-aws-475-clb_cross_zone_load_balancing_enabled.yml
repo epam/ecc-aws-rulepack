@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-475-clb_cross_zone_load_balancing_enabled
+    comment: '010050022000'
     description: |
       Classic Load Balancers are not configured with cross-zone load balancing.
     resource: aws.elb
@@ -14,4 +15,3 @@ policies:
       - type: attributes
         key: CrossZoneLoadBalancing.Enabled
         value: false
-    comment: '0050022000'

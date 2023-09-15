@@ -7,9 +7,10 @@
 
 policies:
   - name: ecc-aws-306-postgresql_log_executor_stats_flag_disabled
-    resource: aws.rds
+    comment: '010019062000'
     description: |
       The 'log_executor_stats' flag is enabled for PostgreSQL
+    resource: aws.rds
     filters:
       - and:
           - type: value
@@ -18,4 +19,3 @@ policies:
           - type: db-parameter
             key: log_executor_stats
             value: 1
-    comment: '0019062000'

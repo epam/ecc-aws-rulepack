@@ -7,9 +7,10 @@
 
 policies:
   - name: ecc-aws-241-postgresql_log_statement_flag_set_correctly
-    resource: aws.rds
+    comment: '010019061910'
     description: |
       The 'log_statement' flag is not set correctly for PostgreSQL
+    resource: aws.rds
     filters:
       - and:
           - type: value
@@ -19,4 +20,3 @@ policies:
               - type: db-parameter
                 key: log_statement
                 value: all
-    comment: '0019061910'

@@ -7,11 +7,11 @@
 
 policies:
   - name: ecc-aws-502-rds_automatic_minor_version_upgrade_enabled
-    resource: aws.rds
+    comment: '010021060300'
     description: |
       AUtomatic minor version upgrade is not configured for RDS DB instances
+    resource: aws.rds
     filters:
       - type: value
         key: AutoMinorVersionUpgrade
         value: false
-    comment: '0021060300'

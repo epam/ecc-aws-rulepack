@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-185-ec2_stopped_instance
+    comment: '010002030400'
     description: |
       Stopped EC2 instances are not removed after a specified time period
     resource: aws.ec2
@@ -18,4 +19,3 @@ policies:
           - type: value
             key: State.Name
             value: stopped
-    comment: '0002030400'

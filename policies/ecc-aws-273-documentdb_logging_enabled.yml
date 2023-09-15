@@ -7,9 +7,10 @@
 
 policies:
   - name: ecc-aws-273-documentdb_logging_enabled
-    resource: aws.rds-cluster
+    comment: '010019062000'
     description: |
       DocumentDB logging is not enabled
+    resource: aws.rds-cluster
     filters:
       - and:
           - type: value
@@ -33,4 +34,3 @@ policies:
                   - type: db-cluster-parameter
                     key: profiler
                     value: enabled
-    comment: '0019062000'

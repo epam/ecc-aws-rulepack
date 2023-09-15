@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-282-elasticsearch_enforces_https
+    comment: '010044052000'
     description: |
       Elasticsearch does not enforce HTTPS
     resource: elasticsearch
@@ -14,4 +15,3 @@ policies:
       - type: value
         key: DomainEndpointOptions.EnforceHTTPS
         value: false
-    comment: '0044052000'

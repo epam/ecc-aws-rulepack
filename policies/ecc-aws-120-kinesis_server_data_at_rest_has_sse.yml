@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-120-kinesis_server_data_at_rest_has_sse
+    comment: '010043052000'
     description: |
       Kinesis Server data at rest has no server-side encryption
     resource: kinesis
@@ -14,4 +15,3 @@ policies:
       - type: value
         key: EncryptionType
         value: NONE
-    comment: '0043052000'

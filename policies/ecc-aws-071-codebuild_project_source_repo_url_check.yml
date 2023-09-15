@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-071-codebuild_project_source_repo_url_check
+    comment: '010048132200'
     description: |
       CodeBuild GitHub or Bitbucket source repository URLs do not use OAuth
     resource: aws.codebuild
@@ -28,4 +29,3 @@ policies:
                 key: source.auth.resource
                 op: regex
                 value: '^.*token.*$'
-    comment: '0048132200'

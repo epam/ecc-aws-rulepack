@@ -7,9 +7,10 @@
 
 policies:
   - name: ecc-aws-434-mq_broker_latest_version
-    resource: aws.message-broker
+    comment: '010021142000'
     description: |
       MQ broker not using latest major version
+    resource: aws.message-broker
     filters:
       - not:
           - or:
@@ -29,4 +30,3 @@ policies:
                   - type: value
                     key: EngineType
                     value: ActiveMQ
-    comment: '0021142000'

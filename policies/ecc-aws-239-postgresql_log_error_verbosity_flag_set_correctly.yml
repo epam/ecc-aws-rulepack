@@ -7,9 +7,10 @@
 
 policies:
   - name: ecc-aws-239-postgresql_log_error_verbosity_flag_set_correctly
-    resource: aws.rds
+    comment: '010019061910'
     description: |
       The 'log_error_verbosity' flag is not set correctly for PostgreSQL
+    resource: aws.rds
     filters:
       - and:
           - type: value
@@ -19,4 +20,3 @@ policies:
               - type: db-parameter
                 key: log_error_verbosity
                 value: default
-    comment: '0019061910'

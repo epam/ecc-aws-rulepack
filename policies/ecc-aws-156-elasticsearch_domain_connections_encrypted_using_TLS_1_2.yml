@@ -7,9 +7,10 @@
 
 policies:
   - name: ecc-aws-156-elasticsearch_domain_connections_encrypted_using_TLS_1_2
-    resource: aws.elasticsearch
+    comment: '010044052000'
     description: |
       Connections to Elasticsearch domains are not encrypted using TLS 1.2
+    resource: aws.elasticsearch
     filters:
       - not:
           - and:
@@ -19,4 +20,3 @@ policies:
               - type: value
                 key: DomainEndpointOptions.EnforceHTTPS
                 value: true
-    comment: '0044052000'

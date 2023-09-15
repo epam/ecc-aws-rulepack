@@ -7,9 +7,10 @@
 
 policies:
   - name: ecc-aws-244-postgresql_log_lock_waits_flag_enabled
-    resource: aws.rds
+    comment: '010019062000'
     description: |
       The 'log_lock_waits' flag is not enabled for PostgreSQL
+    resource: aws.rds
     filters:
       - and:
           - type: value
@@ -19,4 +20,3 @@ policies:
               - type: db-parameter
                 key: log_lock_waits
                 value: 1
-    comment: '0019062000'

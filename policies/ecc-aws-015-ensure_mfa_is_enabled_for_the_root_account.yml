@@ -7,11 +7,11 @@
 
 policies:
   - name: ecc-aws-015-ensure_mfa_is_enabled_for_the_root_account
-    resource: aws.account
+    comment: '010036000301'
     description: |
       Virtual MFA is not enabled for the "root" account
+    resource: aws.account
     filters:
       - type: credential
         key: mfa_active
         value: false
-    comment: '0036000301'

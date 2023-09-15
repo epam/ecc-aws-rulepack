@@ -7,11 +7,11 @@
 
 policies:
   - name: ecc-aws-055-cloudtrail_integrated_with_cloudwatch
-    resource: aws.cloudtrail
+    comment: '010019010300'
     description: |
       CloudTrail trails are not integrated with CloudWatch Logs
+    resource: aws.cloudtrail
     filters:
       - type: value
         key: CloudWatchLogsLogGroupArn
         value: absent
-    comment: '0019010300'

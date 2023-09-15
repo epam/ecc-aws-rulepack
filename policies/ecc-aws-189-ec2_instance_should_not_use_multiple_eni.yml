@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-189-ec2_instance_should_not_use_multiple_eni
+    comment: '010024032000'
     description: |
       EC2 instances are using multiple ENIs
     resource: ec2
@@ -14,4 +15,3 @@ policies:
       - type: value
         key: NetworkInterfaces[1].Status
         value: "in-use"
-    comment: '0024032000'

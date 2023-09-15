@@ -6,10 +6,10 @@
 
 policies:
   - name: ecc-aws-084-cloudtrail_bucket_logging_enabled
-    resource: aws.cloudtrail
+    comment: '010019010300'
     description: |
       S3 bucket access logging is disabled on the CloudTrail S3 bucket
+    resource: aws.cloudtrail
     filters:
       - type: cloudtrail-s3-logging
         enabled: false
-    comment: '0019010300'

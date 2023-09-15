@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-366-fsx_lustre_logging_enabled
+    comment: '010019042000'
     description: |
       FSx Lustre file logging is disabled
     resource: aws.fsx
@@ -19,4 +20,3 @@ policies:
           - type: value
             key: LustreConfiguration.LogConfiguration
             value: absent
-    comment: '0019042000'

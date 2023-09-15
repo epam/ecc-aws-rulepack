@@ -6,13 +6,13 @@
 
 policies:
   - name: ecc-aws-161-rds_database_parameter_group_events_notification_exists
-    resource: aws.account
+    comment: '010032062000'
     description: |
       RDS event notifications subscription is not configured for database parameter group events
+    resource: aws.account
     filters:
       - type: rds-sns-subscription-filter
         check_in: rds
         key: SourceType=='db-parameter-group' && SourceIdsList==null && ( EventCategoriesList==null || EventCategoriesList.contains(@, 'configuration change')==`true`) && Enabled==`true`
         value: true
         op: eq
-    comment: '0032062000'

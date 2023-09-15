@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-547-rds_instance_generation
+    comment: '010006062000'
     description: |
       RDS instance is not using last generation classes
     resource: rds
@@ -15,4 +16,3 @@ policies:
         key: DBInstanceClass
         op: regex
         value: 'db.(m1|m2|m3|m4|r3|r4|cr1|t1|t2).[^\s]+'
-    comment: '0006062000'

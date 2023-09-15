@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-043-s3_bucket_lifecycle
+    comment: '010001042001'
     description: |
       S3 Bucket life cycle is not configured
     resource: s3
@@ -14,4 +15,3 @@ policies:
       - type: value
         key: Lifecycle
         value: null
-    comment: '0001042001'

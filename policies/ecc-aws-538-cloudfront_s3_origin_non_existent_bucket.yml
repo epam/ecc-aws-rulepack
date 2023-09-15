@@ -7,10 +7,10 @@
 
 policies:
   - name: ecc-aws-538-cloudfront_s3_origin_non_existent_bucket
+    comment: '010023022001'
     description: |
       CloudFront distributions are pointing to non-existent S3 origins
     resource: aws.distribution
     filters:
       - type: mismatch-s3-origin
         check_custom_origins: true
-    comment: '0023022001'

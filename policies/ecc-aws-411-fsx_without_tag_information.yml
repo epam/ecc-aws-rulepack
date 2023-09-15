@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-411-fsx_without_tag_information
+    comment: '010010042000'
     description: |
       Amazon FSX without tag information
     resource: aws.fsx
@@ -14,4 +15,3 @@ policies:
       - type: value
         key: Tags
         value: empty
-    comment: '0010042000'

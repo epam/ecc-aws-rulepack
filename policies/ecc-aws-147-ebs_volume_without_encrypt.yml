@@ -7,11 +7,11 @@
 
 policies:
   - name: ecc-aws-147-ebs_volume_without_encrypt
-    resource: aws.ebs
+    comment: '010043042000'
     description: |
       EBS volume encryption is disabled
+    resource: aws.ebs
     filters:
       - type: value
         key: Encrypted
         value: false
-    comment: '0043042000'

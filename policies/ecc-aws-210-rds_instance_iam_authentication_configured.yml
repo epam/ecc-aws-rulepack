@@ -7,11 +7,11 @@
 
 policies:
   - name: ecc-aws-210-rds_instance_iam_authentication_configured
-    resource: aws.rds
+    comment: '010034062000'
     description: |
       IAM authentication is not configured for RDS instances
+    resource: aws.rds
     filters:
       - type: value
         key: IAMDatabaseAuthenticationEnabled
         value: false
-    comment: '0034062000'

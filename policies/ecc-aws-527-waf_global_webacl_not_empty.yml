@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-527-waf_global_webacl_not_empty
+    comment: '010002092001'
     description: |
       A WAF global web ACL does not have at least one rule or rule group
     resource: aws.waf
@@ -14,4 +15,3 @@ policies:
       - type: value
         key: Rules
         value: empty
-    comment: '0002092001'

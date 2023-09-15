@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-334-kinesis_firehose_delivery_streams_encrypted_using_SSE
+    comment: '010043052000'
     description: |
       Kinesis Data Firehose delivery streams are not encrypted using Server-side encryption
     resource: aws.firehose
@@ -17,4 +18,3 @@ policies:
       - type: value
         key: DeliveryStreamEncryptionConfiguration.Status
         value: DISABLED
-    comment: '0043052000'

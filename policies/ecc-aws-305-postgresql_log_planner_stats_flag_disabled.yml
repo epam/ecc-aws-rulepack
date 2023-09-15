@@ -7,9 +7,10 @@
 
 policies:
   - name: ecc-aws-305-postgresql_log_planner_stats_flag_disabled
-    resource: aws.rds
+    comment: '010019062000'
     description: |
       The 'log_planner_stats' flag is enabled for PostgreSQL
+    resource: aws.rds
     filters:
       - and:
           - type: value
@@ -18,4 +19,3 @@ policies:
           - type: db-parameter
             key: log_planner_stats
             value: 1
-    comment: '0019062000'

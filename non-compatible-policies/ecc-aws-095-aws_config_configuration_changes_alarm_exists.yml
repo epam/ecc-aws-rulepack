@@ -6,9 +6,10 @@
 
 policies:
   - name: ecc-aws-095-aws_config_configuration_changes_alarm_exists
-    resource: aws.account
+    comment: '010016010300'
     description: |
       Log metric filter and alarm do not exist for AWS Config configuration changes
+    resource: aws.account
     filters:
       - type: cloudtrails
         valueList: trailList[?IsMultiRegionTrail == `true`]
@@ -17,4 +18,3 @@ policies:
         configurationChangesAlarmList: "(\\()? ?\\$\\.eventSource ?= ?(\")?config\\.amazonaws\\.com(\")? ?(\\))? ?&& ?\\((\\()? ?\\$\\.eventName ?= ?(\")?StopConfigurationRecorder(\")? ?(\\))? ?\\|\\| ?(\\()? ?\\$\\.eventName ?= ?(\")?DeleteDeliveryChannel(\")? ?(\\))? ?\\|\\| ?(\\()? ?\\$\\.eventName ?= ?(\")?PutDeliveryChannel(\")? ?(\\))? ?\\|\\| ?(\\()? ?\\$\\.eventName ?= ?(\")?PutConfigurationRecorder(\")? ?(\\))? ?\\)"
         op: eq
         value: 0
-    comment: '0016010300'

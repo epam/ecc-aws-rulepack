@@ -6,9 +6,10 @@
 
 policies:
   - name: ecc-aws-154-elasticsearch_domains_have_at_least_three_data_nodes
-    resource: aws.elasticsearch
+    comment: '010050052000'
     description: |
       Elasticsearch domains have less than three data nodes
+    resource: aws.elasticsearch
     filters:
       - or:
           - not:
@@ -27,4 +28,3 @@ policies:
                 op: eq
               - not:
                   - type: elasticsearch-domain-filter
-    comment: '0050052000'

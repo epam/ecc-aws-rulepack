@@ -6,9 +6,10 @@
 
 policies:
   - name: ecc-aws-079-iam_policy_changes_alarm_exist
-    resource: aws.account
+    comment: '010016010300'
     description: |
       Log metric filter and alarm do not exist for IAM policy changes
+    resource: aws.account
     filters:
       - type: cloudtrails
         valueList: trailList[?IsMultiRegionTrail == `true`]
@@ -17,4 +18,3 @@ policies:
         configurationChangesAlarmList: "(\\()? ?\\$\\.eventName=DeleteGroupPolicy ?(\\))? ?\\|\\| ?(\\()? ?\\$\\.eventName=DeleteRolePolicy ?(\\))? ?\\|\\| ?(\\()? ?\\$\\.eventName=DeleteUserPolicy(\\))? ?\\|\\| ?(\\()? ?\\$\\.eventName=PutGroupPolicy(\\))? ?\\|\\| ?(\\()? ?\\$\\.eventName=PutRolePolicy(\\))? ?\\|\\| ?(\\()? ?\\$\\.eventName=PutUserPolicy ?(\\))? ?\\|\\| ?(\\()? ?\\$\\.eventName=CreatePolicy ?(\\))? ?\\|\\| ?(\\()? ?\\$\\.eventName=DeletePolicy ?(\\))? ?\\|\\| ?(\\()? ?\\$\\.eventName=CreatePolicyVersion ?(\\))? ?\\|\\| ?(\\()? ?\\$\\.eventName=DeletePolicyVersion(\\))? ?\\|\\| ?(\\()? ?\\$\\.eventName=AttachRolePolicy ?(\\))? ?\\|\\| ?(\\()? ?\\$\\.eventName=DetachRolePolicy ?(\\))? ?\\|\\| ?(\\()? ?\\$\\.eventName=AttachUserPolicy ?(\\))? ?\\|\\| ?(\\()? ?\\$\\.eventName=DetachUserPolicy ?(\\))? ?\\|\\| ?(\\()? ?\\$\\.eventName=AttachGroupPolicy ?(\\))? ?\\|\\| ?(\\()? ?\\$\\.eventName=DetachGroupPolicy ?(\\))?"
         op: eq
         value: 0
-    comment: '0016010300'

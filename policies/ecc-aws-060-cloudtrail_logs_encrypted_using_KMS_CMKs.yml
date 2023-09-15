@@ -7,10 +7,10 @@
 
 policies:
   - name: ecc-aws-060-cloudtrail_logs_encrypted_using_KMS_CMKs
-    resource: aws.cloudtrail
+    comment: '010043010300'
     description: |
       CloudTrail logs are not encrypted at rest using KMS CMK
+    resource: aws.cloudtrail
     filters:
       - not:
           - KmsKeyId: present
-    comment: '0043010300'

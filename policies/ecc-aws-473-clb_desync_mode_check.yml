@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-473-clb_desync_mode_check
+    comment: '010046022000'
     description: |
       Classic Load Balancers are not configured with defensive or strictest desync mitigation mode
     resource: aws.elb
@@ -15,4 +16,3 @@ policies:
         key: AdditionalAttributes[?Key=='elb.http.desyncmitigationmode'].[Value=='monitor'][][]
         op: contains
         value: true
-    comment: '0046022000'

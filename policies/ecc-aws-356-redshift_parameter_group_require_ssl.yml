@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-356-redshift_parameter_group_require_ssl
+    comment: '010044062000'
     description: |
       AWS Redshift parameter group not require SSL
     resource: redshift
@@ -14,4 +15,3 @@ policies:
       - type: param
         key: require_ssl
         value: false
-    comment: '0044062000'

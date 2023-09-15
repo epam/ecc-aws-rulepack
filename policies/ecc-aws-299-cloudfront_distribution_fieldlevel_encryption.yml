@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-299-cloudfront_distribution_fieldlevel_encryption
+    comment: '010045022001'
     description: |
       CloudFront distributions do not enforce field-level encryption
     resource: aws.distribution
@@ -14,4 +15,3 @@ policies:
       - type: value
         key: DefaultCacheBehavior.FieldLevelEncryptionId
         value: empty
-    comment: '0045022001'

@@ -7,12 +7,12 @@
 
 policies:
   - name: ecc-aws-471-autoscaling_groups_capacity_rebalancing_enabled
-    resource: aws.asg
+    comment: '010050032000'
     description: |
       Auto Scaling Groups do not use rebalacing capacity
+    resource: aws.asg
     filters:
       - not:
-        - type: value
-          key: CapacityRebalance
-          value: true
-    comment: '0050032000'
+          - type: value
+            key: CapacityRebalance
+            value: true

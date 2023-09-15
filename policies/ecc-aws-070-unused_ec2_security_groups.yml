@@ -7,9 +7,9 @@
 
 policies:
   - name: ecc-aws-070-unused_ec2_security_groups
+    comment: '010018022000'
     description: |
       Unused security groups exist
     resource: security-group
     filters:
       - unused
-    comment: '0018022000'

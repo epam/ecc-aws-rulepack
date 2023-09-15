@@ -7,10 +7,10 @@
 
 policies:
   - name: ecc-aws-148-logging_for_s3_enabled
+    comment: '010019042001'
     description: |
       Logging for S3 bucket is disabled
     resource: s3
     filters:
       - type: bucket-logging
         op: disabled
-    comment: '0019042001'

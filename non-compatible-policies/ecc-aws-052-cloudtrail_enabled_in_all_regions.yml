@@ -6,9 +6,10 @@
 
 policies:
   - name: ecc-aws-052-cloudtrail_enabled_in_all_regions
-    resource: aws.account
+    comment: '010016010301'
     description: |
       CloudTrail is not enabled in all regions
+    resource: aws.account
     filters:
       - type: cloudtrails
         valueList: trailList[?IsMultiRegionTrail == `true`]
@@ -16,4 +17,3 @@ policies:
         selectorList: selectorList[?AdvancedEventSelectors[?FieldSelectors[?Field == 'eventCategory' && Equals[?contains(@, 'Management')==`true`]] && !(FieldSelectors[?Field=='readOnly']) && !(FieldSelectors[?Field=='eventSource'])] || EventSelectors[?IncludeManagementEvents==`true` && ReadWriteType=='All']]
         op: eq
         value: 0
-    comment: '0016010300'

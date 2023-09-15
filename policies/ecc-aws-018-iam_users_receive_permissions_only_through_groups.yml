@@ -7,11 +7,11 @@
 
 policies:
   - name: ecc-aws-018-iam_users_receive_permissions_only_through_groups
-    resource: aws.iam-user
+    comment: '010022000301'
     description: |
       IAM Users receive permissions not only through groups
+    resource: aws.iam-user
     filters:
       - type: policy
         key: 'PolicyName'
         value: present
-    comment: '0022000301'

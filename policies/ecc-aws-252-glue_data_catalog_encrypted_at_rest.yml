@@ -7,10 +7,10 @@
 
 policies:
   - name: ecc-aws-252-glue_data_catalog_encrypted_at_rest
+    comment: '010043052000'
     description: |
       Data catalog encryption is not enabled for AWS Glue
     resource: aws.glue-catalog
     filters:
       - type: glue-security-config
         CatalogEncryptionMode: DISABLED
-    comment: '0043052000'

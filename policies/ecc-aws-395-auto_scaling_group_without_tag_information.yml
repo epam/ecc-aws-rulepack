@@ -7,11 +7,11 @@
 
 policies:
   - name: ecc-aws-395-auto_scaling_group_without_tag_information
-    resource: aws.asg
+    comment: '010010032000'
     description: |
       Auto Scaling Group without tag information
+    resource: aws.asg
     filters:
       - type: tag-count
         op: eq
         count: 0
-    comment: '0010032000'

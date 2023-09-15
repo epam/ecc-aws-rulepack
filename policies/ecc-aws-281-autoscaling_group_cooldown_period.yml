@@ -7,12 +7,12 @@
 
 policies:
   - name: ecc-aws-281-autoscaling_group_cooldown_period
-    resource: aws.asg
+    comment: '010023032000'
     description: |
       Auto Scaling Groups are not utilizing cooldown period
+    resource: aws.asg
     filters:
       - type: value
         key: DefaultCooldown
         op: eq
         value: 0
-    comment: '0023032000'

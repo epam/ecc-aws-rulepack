@@ -7,11 +7,11 @@
 
 policies:
   - name: ecc-aws-199-rds_instance_enhanced_monitoring_enabled
-    resource: aws.rds
+    comment: '010016062000'
     description: |
       Enhanced monitoring is not configured for RDS DB instances
+    resource: aws.rds
     filters:
       - type: value
         key: EnhancedMonitoringResourceArn
         value: null
-    comment: '0016062000'

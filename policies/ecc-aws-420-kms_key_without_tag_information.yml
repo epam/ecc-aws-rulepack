@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-420-kms_key_without_tag_information
+    comment: '010010102000'
     description: |
       Customer manages key without tag information
     resource: aws.kms-key
@@ -17,4 +18,3 @@ policies:
       - type: tag-count
         op: eq
         count: 0
-    comment: '0010102000'

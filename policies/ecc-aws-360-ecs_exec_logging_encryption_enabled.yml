@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-360-ecs_exec_logging_encryption_enabled
+    comment: '010043082000'
     description: |
       ECS Cluster execute command logging encryption is disabled
     resource: ecs
@@ -26,4 +27,3 @@ policies:
               - type: value
                 key: configuration.executeCommandConfiguration.logConfiguration.s3EncryptionEnabled
                 value: false
-    comment: '0043082000'

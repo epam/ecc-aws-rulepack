@@ -7,11 +7,11 @@
 
 policies:
   - name: ecc-aws-339-mq_broker_auto_minor_version_upgrade_enabled
-    resource: aws.message-broker
+    comment: '010021142000'
     description: |
       MQ auto minor version upgrade not enabled
+    resource: aws.message-broker
     filters:
       - type: value
         key: AutoMinorVersionUpgrade
         value: false
-    comment: '0021142000'

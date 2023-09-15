@@ -7,9 +7,10 @@
 
 policies:
   - name: ecc-aws-433-mq_broker_active_deployment_mode
-    resource: aws.message-broker
+    comment: '010050142000'
     description: |
       MQ broker active deployment not enabled
+    resource: aws.message-broker
     filters:
       - not:
           - or:
@@ -19,4 +20,3 @@ policies:
               - type: value
                 key: DeploymentMode
                 value: CLUSTER_MULTI_AZ
-    comment: '0050142000'

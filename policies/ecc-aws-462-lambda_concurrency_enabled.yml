@@ -7,11 +7,11 @@
 
 policies:
   - name: ecc-aws-462-lambda_concurrency_enabled
-    resource: lambda
+    comment: '010031032000'
     description: |
       Lambda reserved concurrency disabled
+    resource: lambda
     filters:
       - type: reserved-concurrency
         key: c7n:FunctionInfo.Concurrency.ReservedConcurrentExecutions
         value: absent
-    comment: '0031032000'

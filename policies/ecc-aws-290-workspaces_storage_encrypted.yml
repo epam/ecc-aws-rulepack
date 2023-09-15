@@ -7,9 +7,10 @@
 
 policies:
   - name: ecc-aws-290-workspaces_storage_encrypted
-    resource: aws.workspaces
+    comment: '010043120600'
     description: |
       Workspaces storage is not encrypted
+    resource: aws.workspaces
     filters:
       - or:
           - not:
@@ -19,4 +20,3 @@ policies:
               - type: value
                 key: UserVolumeEncryptionEnabled
                 value: true
-    comment: '0043120600'

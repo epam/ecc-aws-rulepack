@@ -6,10 +6,10 @@
 
 policies:
   - name: ecc-aws-054-iam_policies_full_administrative_privileges
+    comment: '010022000301'
     description: |
       IAM policies that allow full "*:*" administrative privileges are in use
     resource: iam-policy-all
     filters:
       - type: used
       - type: has-allow-all
-    comment: '0022000301'

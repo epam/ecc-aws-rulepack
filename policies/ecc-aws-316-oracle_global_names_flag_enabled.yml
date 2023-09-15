@@ -7,9 +7,10 @@
 
 policies:
   - name: ecc-aws-316-oracle_global_names_flag_enabled
-    resource: aws.rds
+    comment: '010023061700'
     description: |
       The 'global_names' flag for Oracle is disabled
+    resource: aws.rds
     filters:
       - and:
           - type: value
@@ -20,4 +21,3 @@ policies:
               - type: db-parameter
                 key: global_names
                 value: true
-    comment: '0023061700'

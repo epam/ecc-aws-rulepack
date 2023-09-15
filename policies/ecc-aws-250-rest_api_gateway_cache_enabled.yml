@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-250-rest_api_gateway_cache_enabled
+    comment: '010009022000'
     description: |
       Cache is not enabled for api gateway
     resource: rest-stage
@@ -19,4 +20,3 @@ policies:
           - type: value
             key: cacheClusterStatus
             value: AVAILABLE
-    comment: '0009022000'

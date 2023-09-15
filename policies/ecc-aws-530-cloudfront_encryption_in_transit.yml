@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-530-cloudfront_encryption_in_transit
+    comment: '010044022001'
     description: |
       CloudFront distribution not encrypted in transit
     resource: aws.distribution
@@ -18,4 +19,3 @@ policies:
           - type: value
             key: CacheBehaviors.Items[].ViewerProtocolPolicy
             value: allow-all
-    comment: '0044022001'

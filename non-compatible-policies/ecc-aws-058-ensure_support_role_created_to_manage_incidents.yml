@@ -6,10 +6,10 @@
 
 policies:
   - name: ecc-aws-058-ensure_support_role_created_to_manage_incidents
-    resource: aws.account
+    comment: '010022000301'
     description: |
       Support role has not been created to manage incidents with AWS Support
+    resource: aws.account
     filters:
       - type: account-iam-role-light-filter
         value: AWSSupportAccess
-    comment: '0022000301'

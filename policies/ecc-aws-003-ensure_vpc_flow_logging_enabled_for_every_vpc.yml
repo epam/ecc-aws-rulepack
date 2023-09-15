@@ -7,11 +7,11 @@
 
 policies:
   - name: ecc-aws-003-ensure_vpc_flow_logging_enabled_for_every_vpc
-    resource: aws.vpc
+    comment: '010019010300'
     description: |
       VPC flow logging is not enabled in all VPCs
+    resource: aws.vpc
     filters:
       - not:
           - type: flow-logs
             enabled: true
-    comment: '0019010300'

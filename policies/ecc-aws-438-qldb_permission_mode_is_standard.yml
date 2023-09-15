@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-438-qldb_permission_mode_is_standard
+    comment: '010033062000'
     description: |
       QLDB permission mode is set to 'ALLOW_ALL'
     resource: qldb
@@ -14,4 +15,3 @@ policies:
       - type: value
         key: PermissionsMode
         value: ALLOW_ALL
-    comment: '0033062000'

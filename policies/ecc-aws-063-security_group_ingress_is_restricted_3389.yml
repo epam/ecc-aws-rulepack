@@ -7,9 +7,10 @@
 
 policies:
   - name: ecc-aws-063-security_group_ingress_is_restricted_3389
-    resource: aws.security-group
+    comment: '010042020300'
     description: |
       Security groups allow ingress from 0.0.0.0/0 or ::/0 to remote server administration port (3389)
+    resource: aws.security-group
     filters:
       - or:
           - type: ingress
@@ -24,4 +25,3 @@ policies:
               value:
                 - "::/0"
               op: in
-    comment: '0042020300'

@@ -7,12 +7,12 @@
 
 policies:
   - name: ecc-aws-348-msk_encryption_in_transit_enabled
-    resource: aws.kafka
+    comment: '010044052000'
     description: |
       MSK encryption in transit not set only to 'TLS'.
+    resource: aws.kafka
     filters:
       - not:
           - type: value
             key: EncryptionInfo.EncryptionInTransit.ClientBroker
             value: TLS
-    comment: '0044052000'

@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-195-alb_http_to_https_redirection_enabled
+    comment: '010044022000'
     description: |
       Application Load Balancer is not configured to redirect all HTTP requests to HTTPS
     resource: app-elb
@@ -22,4 +23,3 @@ policies:
           - type: listener
             key: DefaultActions[?Type==`redirect`].RedirectConfig.Protocol
             value: [HTTPS]
-    comment: '0044022000'

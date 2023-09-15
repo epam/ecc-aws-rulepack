@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-228-ecr_immutable_image_tags
+    comment: '010010082000'
     description: |
       Amazon ECR is not configured with immutable tags
     resource: ecr
@@ -14,4 +15,3 @@ policies:
       - type: value
         key: imageTagMutability
         value: MUTABLE
-    comment: '0010082000'

@@ -7,11 +7,11 @@
 
 policies:
   - name: ecc-aws-007-rds_high-availability_zone
-    resource: rds
+    comment: '010050062000'
     description: |
       RDS instances do not have multi-availability zone enabled
+    resource: rds
     filters:
       - type: value
         key: MultiAZ
         value: false
-    comment: '0050062000'

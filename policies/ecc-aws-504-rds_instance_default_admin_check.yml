@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-504-rds_instance_default_admin_check
+    comment: '010023062000'
     description: |
       Amazon RDS instance uses default Admin username
     resource: rds
@@ -18,4 +19,3 @@ policies:
           - type: value
             key: MasterUsername
             value: postgres
-    comment: '0023062000'

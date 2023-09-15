@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-117-api_key_is_required_on_method_request
+    comment: '010033022000'
     description: |
       API Key is not required on Method Request
     resource: rest-resource
@@ -14,4 +15,3 @@ policies:
       - type: rest-method
         key: apiKeyRequired
         value: false
-    comment: '0033022000'

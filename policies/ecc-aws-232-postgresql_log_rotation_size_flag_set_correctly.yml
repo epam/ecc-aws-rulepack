@@ -7,9 +7,10 @@
 
 policies:
   - name: ecc-aws-232-postgresql_log_rotation_size_flag_set_correctly
-    resource: aws.rds
+    comment: '010019061910'
     description: |
       Maximum log file size is not set correctly for PostgreSQL
+    resource: aws.rds
     filters:
       - and:
           - type: value
@@ -20,4 +21,3 @@ policies:
                 key: log_rotation_size
                 op: eq
                 value: 1000000
-    comment: '0019061910'

@@ -7,12 +7,12 @@
 
 policies:
   - name: ecc-aws-347-msk_data_encrypted_with_kms_cmk
-    resource: aws.kafka
+    comment: '010043052000'
     description: |
       MSK not encrypted with KMS CMK
+    resource: aws.kafka
     filters:
       - not:
           - type: kms-key
             key: KeyManager
             value: CUSTOMER
-    comment: '0043052000'

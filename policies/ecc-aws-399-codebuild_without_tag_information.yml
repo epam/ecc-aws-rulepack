@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-399-codebuild_without_tag_information
+    comment: '010010132000'
     description: |
       Amazon Codebuikd without tag information
     resource: codebuild
@@ -14,4 +15,3 @@ policies:
       - type: value
         key: Tags
         value: empty
-    comment: '0010132000'

@@ -7,9 +7,10 @@
 
 policies:
   - name: ecc-aws-167-security_group_ingress_is_restricted_traffic_to_port_143
-    resource: aws.security-group
+    comment: '010042022000'
     description: |
       Security groups allow unrestricted access to IMAP port 143
+    resource: aws.security-group
     filters:
       - type: ingress
         Ports: [143]
@@ -17,4 +18,3 @@ policies:
           value:
             - "0.0.0.0/0"
           op: in
-    comment: '0042022000'

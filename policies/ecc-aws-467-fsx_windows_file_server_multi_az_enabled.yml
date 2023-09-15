@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-467-fsx_windows_file_server_multi_az_enabled
+    comment: '010050042000'
     description: |
       FSx for for Windows File Server file systems do not have Multi-AZ enabled
     resource: aws.fsx
@@ -15,7 +16,6 @@ policies:
         key: FileSystemType
         value: WINDOWS
       - not:
-        - type: value
-          key: WindowsConfiguration.DeploymentType
-          value: MULTI_AZ_1
-    comment: '0050042000'
+          - type: value
+            key: WindowsConfiguration.DeploymentType
+            value: MULTI_AZ_1

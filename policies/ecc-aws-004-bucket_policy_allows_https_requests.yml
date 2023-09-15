@@ -7,9 +7,10 @@
 
 policies:
   - name: ecc-aws-004-bucket_policy_allows_https_requests
-    resource: aws.s3
+    comment: '010022040301'
     description: |
       S3 Bucket Policy allows HTTP requests
+    resource: aws.s3
     filters:
       - not:
           - or:
@@ -34,4 +35,3 @@ policies:
                     Condition:
                       Bool:
                         "aws:SecureTransport": "false"
-    comment: '0022040301'

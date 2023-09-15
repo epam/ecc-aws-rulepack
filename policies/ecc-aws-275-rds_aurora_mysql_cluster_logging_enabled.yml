@@ -7,9 +7,10 @@
 
 policies:
   - name: ecc-aws-275-rds_aurora_mysql_cluster_logging_enabled
-    resource: aws.rds-cluster
+    comment: '010019062000'
     description: |
       Aurora-MySQL cluster logging is disabled
+    resource: aws.rds-cluster
     filters:
       - and:
           - type: value
@@ -46,4 +47,3 @@ policies:
                   - type: db-cluster-parameter
                     key: log_output
                     value: FILE
-    comment: '0019062000'

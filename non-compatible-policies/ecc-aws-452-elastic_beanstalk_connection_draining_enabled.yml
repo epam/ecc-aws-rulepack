@@ -6,6 +6,7 @@
 
 policies:
   - name: ecc-aws-452-elastic_beanstalk_connection_draining_enabled
+    comment: '010031032000'
     description: |
       Elastic Beanstalk connection draining is disabled
     resource: aws.elasticbeanstalk-environment
@@ -14,4 +15,3 @@ policies:
         key: ConnectionDrainingEnabled
         op: eq
         value: "false"
-    comment: '0031032000'

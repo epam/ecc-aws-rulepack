@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-076-ebs_snapshots_not_publicly_restorable
+    comment: '010040040400'
     description: |
       EBS snapshots are publicly restorable
     resource: ebs-snapshot
@@ -16,4 +17,3 @@ policies:
           - type: value
             key: '"c7n:CrossAccountViolations"[0]'
             value: all
-    comment: '0040040400'

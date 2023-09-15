@@ -7,11 +7,11 @@
 
 policies:
   - name: ecc-aws-332-workspaces_web_access_disabled
-    resource: aws.workspaces-directory
+    comment: '010024120600'
     description: |
       Workspaces web access is enabled 
+    resource: aws.workspaces-directory
     filters:
       - type: value
         key: WorkspaceAccessProperties.DeviceTypeWeb
         value: ALLOW
-    comment: '0024120600'

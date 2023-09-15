@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-280-elasticsearch_encrypted_with_kms_cmk
+    comment: '010043052000'
     description: |
       ElasticSearch is not encrypted with KMS CMK
     resource: elasticsearch
@@ -15,4 +16,3 @@ policies:
           - type: kms-key
             key: KeyManager
             value: CUSTOMER
-    comment: '0043052000'

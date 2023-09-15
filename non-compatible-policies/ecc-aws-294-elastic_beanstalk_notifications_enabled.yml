@@ -6,10 +6,10 @@
 
 policies:
   - name: ecc-aws-294-elastic_beanstalk_notifications_enabled
+    comment: '010032032000'
     description: |
       Elastic Beanstalk environments notifications disabled
     resource: aws.elasticbeanstalk-environment
     filters:
       - not:
           - type: describe-configuration-settings-filter
-    comment: '0032032000'

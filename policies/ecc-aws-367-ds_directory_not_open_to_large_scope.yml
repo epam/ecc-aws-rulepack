@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-367-ds_directory_not_open_to_large_scope
+    comment: '010040002000'
     description: |
       DS directory is open to a large scope
     resource: aws.directory
@@ -15,4 +16,3 @@ policies:
         key: length(IpPermissions[?(IpRanges[?CidrIp=='0.0.0.0/0'] || Ipv6Ranges[?CidrIpv6=='::/0']) && !UserIdGroupPairs])
         op: ge
         value: 1
-    comment: '0040002000'

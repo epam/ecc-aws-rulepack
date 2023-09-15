@@ -6,6 +6,7 @@
 
 policies:
   - name: ecc-aws-437-s3_bucket_object_lock_enabled
+    comment: '010047042011'
     description: |
       S3 Bucket object lock disabled
     resource: s3-light
@@ -14,4 +15,3 @@ policies:
           - type: lock-configuration-filter
             mode: COMPLIANCE
             days: 7
-    comment: '0047042011'

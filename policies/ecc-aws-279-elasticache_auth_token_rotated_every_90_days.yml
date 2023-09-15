@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-279-elasticache_auth_token_rotated_every_90_days
+    comment: '010029062000'
     description: |
       Elasticache AUTH token is not rotated every 90 days
     resource: cache-cluster
@@ -16,4 +17,3 @@ policies:
         op: gt
         value_type: age
         value: 90
-    comment: '0029062000'

@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-491-ec2_transit_gateway_auto_vpc_attach_disabled
+    comment: '010024022000'
     description: |
       Transit gateway automatically accept VPC attachment requests
     resource: aws.transit-gateway
@@ -14,4 +15,3 @@ policies:
       - type: value
         key: Options.AutoAcceptSharedAttachments
         value: enable
-    comment: '0024022000'

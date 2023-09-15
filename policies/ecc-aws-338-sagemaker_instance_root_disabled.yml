@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-338-sagemaker_instance_root_disabled
+    comment: '010023112000'
     description: |
       Sagemaker instances root access enabled
     resource: sagemaker-notebook
@@ -14,4 +15,3 @@ policies:
       - type: value
         key: RootAccess
         value: Enabled
-    comment: '0023112000'

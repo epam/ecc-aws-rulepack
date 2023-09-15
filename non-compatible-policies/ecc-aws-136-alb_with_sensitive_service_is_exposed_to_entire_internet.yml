@@ -6,6 +6,7 @@
 
 policies:
   - name: ecc-aws-136-alb_with_sensitive_service_is_exposed_to_entire_internet
+    comment: '010040022000'
     description: |
       Application Load Balancer with sensitive services is exposed to the entire internet
     resource: aws.app-elb
@@ -14,4 +15,3 @@ policies:
         required-ports: 61621, 8140, 2382, 1434, 5900, 5500, 8080, 8000, 4506, 4505, 3020, 3000, 53, 161, 139, 138, 137, 110, 25, 445, 23, 11215, 27018, 11214, 9000, 7001, 5432, 3306, 2484, 2383, 1433, 636, 135
         egress: false
         cidr: ["0.0.0.0/0", "::/0"]
-    comment: '0040022000'

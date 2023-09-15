@@ -7,9 +7,10 @@
 
 policies:
   - name: ecc-aws-285-xray-encrypted_with_kms_cmk
-    resource: aws.account
+    comment: '010043132000'
     description: |
       AWS X-Ray is not encrypted using KMS CMK 
+    resource: aws.account
     filters:
       - or:
           - type: xray-encrypt-key
@@ -19,4 +20,3 @@ policies:
                 key: kms
               - type: xray-encrypt-key
                 key: alias/aws/xray
-    comment: '0043132000'

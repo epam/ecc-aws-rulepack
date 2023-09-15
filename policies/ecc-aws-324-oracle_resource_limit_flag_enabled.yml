@@ -7,9 +7,10 @@
 
 policies:
   - name: ecc-aws-324-oracle_resource_limit_flag_enabled
-    resource: aws.rds
+    comment: '010023061700'
     description: |
       The 'resource_limit' flag for Oracle is disabled
+    resource: aws.rds
     filters:
       - and:
           - type: value
@@ -20,4 +21,3 @@ policies:
               - type: db-parameter
                 key: resource_limit
                 value: true
-    comment: '0023061700'

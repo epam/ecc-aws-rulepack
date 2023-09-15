@@ -7,9 +7,9 @@
 
 policies:
   - name: ecc-aws-113-managed_policies_instead_of_inline_iam_policies
+    comment: '010022002001'
     description: |
       Inline IAM policies are in use
     resource: iam-user
     filters:
       - type: has-inline-policy
-    comment: '0022002001'

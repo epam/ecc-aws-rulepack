@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-226-eks_clusters_security_group_traffic_restricted
+    comment: '010024072000'
     description: |
       Amazon EKS clusters security group traffic is not restricted
     resource: aws.eks
@@ -53,4 +54,3 @@ policies:
                 value_type: swap
                 op: in
                 value: 10250
-    comment: '0024072000'

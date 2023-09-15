@@ -7,15 +7,15 @@
 
 policies:
   - name: ecc-aws-542-glue_job_autoscaling_enabled
+    comment: '010005052000'
     description: |
       Amazon Glue Job with disabled autoscaling
     resource: aws.glue-job
     filters:
       - or:
-        - type: value
-          key: DefaultArguments."--enable-auto-scaling"
-          value: absent
-        - type: value
-          key: DefaultArguments."--enable-auto-scaling"
-          value: "false" 
-    comment: '0005052000'
+          - type: value
+            key: DefaultArguments."--enable-auto-scaling"
+            value: absent
+          - type: value
+            key: DefaultArguments."--enable-auto-scaling"
+            value: "false"

@@ -7,57 +7,57 @@
 
 policies:
   - name: ecc-aws-465-fsx_daily_automatic_backup_enabled
+    comment: '010049042000'
     description: |
       FSx file systems do not have retention period set
     resource: aws.fsx
     filters:
-      - or: 
-        - and:
-          - type: value
-            key: FileSystemType
-            value: LUSTRE
-          - type: value
-            key: LustreConfiguration.DeploymentType
-            op: in
-            value: [PERSISTENT_1, PERSISTENT_2]
-          - or: 
-            - type: value
-              key: LustreConfiguration.AutomaticBackupRetentionDays
-              value: 0
-            - type: value
-              key: LustreConfiguration.AutomaticBackupRetentionDays
-              value: absent
-        - and: 
-            - type: value
-              key: FileSystemType
-              value: OPENZFS
-            - or: 
+      - or:
+          - and:
               - type: value
-                key: OpenZFSConfiguration.AutomaticBackupRetentionDays
-                value: 0
+                key: FileSystemType
+                value: LUSTRE
               - type: value
-                key: OpenZFSConfiguration.AutomaticBackupRetentionDays
-                value: absent
-        - and: 
-            - type: value
-              key: FileSystemType
-              value: ONTAP
-            - or: 
+                key: LustreConfiguration.DeploymentType
+                op: in
+                value: [PERSISTENT_1, PERSISTENT_2]
+              - or:
+                  - type: value
+                    key: LustreConfiguration.AutomaticBackupRetentionDays
+                    value: 0
+                  - type: value
+                    key: LustreConfiguration.AutomaticBackupRetentionDays
+                    value: absent
+          - and:
               - type: value
-                key: OntapConfiguration.AutomaticBackupRetentionDays
-                value: 0
+                key: FileSystemType
+                value: OPENZFS
+              - or:
+                  - type: value
+                    key: OpenZFSConfiguration.AutomaticBackupRetentionDays
+                    value: 0
+                  - type: value
+                    key: OpenZFSConfiguration.AutomaticBackupRetentionDays
+                    value: absent
+          - and:
               - type: value
-                key: OntapConfiguration.AutomaticBackupRetentionDays
-                value: absent
-        - and: 
-            - type: value
-              key: FileSystemType
-              value: WINDOWS 
-            - or:
+                key: FileSystemType
+                value: ONTAP
+              - or:
+                  - type: value
+                    key: OntapConfiguration.AutomaticBackupRetentionDays
+                    value: 0
+                  - type: value
+                    key: OntapConfiguration.AutomaticBackupRetentionDays
+                    value: absent
+          - and:
               - type: value
-                key: WindowsConfiguration.AutomaticBackupRetentionDays
-                value: 0
-              - type: value
-                key: WindowsConfiguration.AutomaticBackupRetentionDays
-                value: absent
-    comment: '0049042000'
+                key: FileSystemType
+                value: WINDOWS
+              - or:
+                  - type: value
+                    key: WindowsConfiguration.AutomaticBackupRetentionDays
+                    value: 0
+                  - type: value
+                    key: WindowsConfiguration.AutomaticBackupRetentionDays
+                    value: absent

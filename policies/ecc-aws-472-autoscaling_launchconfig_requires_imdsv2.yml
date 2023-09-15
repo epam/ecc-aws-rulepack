@@ -7,9 +7,10 @@
 
 policies:
   - name: ecc-aws-472-autoscaling_launchconfig_requires_imdsv2
-    resource: launch-config
+    comment: '010024032000'
     description: |
       Auto Scaling launch configuration IMDSv1 enabled
+    resource: launch-config
     filters:
       - not:
           - type: value
@@ -18,4 +19,3 @@ policies:
           - type: value
             key: MetadataOptions.HttpEndpoint
             value: enabled
-    comment: '0024032000'

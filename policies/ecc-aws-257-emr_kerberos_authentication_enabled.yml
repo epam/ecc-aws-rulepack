@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-257-emr_kerberos_authentication_enabled
+    comment: '010034052000'
     description: |
       Kerberos authentication is not enabled for EMR clusters
     resource: emr
@@ -19,4 +20,3 @@ policies:
           - type: value
             key: KerberosAttributes.Realm
             value: absent
-    comment: '0034052000'

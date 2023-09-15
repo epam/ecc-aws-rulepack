@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-212-rds_aurora_mysql_backtracking_enabled
+    comment: '010049062000'
     description: |
       Amazon Aurora clusters backtracking is disabled
     resource: aws.rds-cluster
@@ -18,4 +19,3 @@ policies:
           - type: value
             key: BacktrackWindow
             value: absent
-    comment: '0049062000'

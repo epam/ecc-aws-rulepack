@@ -7,9 +7,10 @@
 
 policies:
   - name: ecc-aws-206-rds_sql_server_logging_enabled
-    resource: aws.rds
+    comment: '010019062000'
     description: |
       SQL Server database logging is disabled
+    resource: aws.rds
     filters:
       - and:
           - type: value
@@ -28,4 +29,3 @@ policies:
                     op: in
                     value_type: swap
                     value: error
-    comment: '0019062000'

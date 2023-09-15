@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-012-use_secure_ciphers_in_cloudfront_distribution
+    comment: '010023022001'
     description: |
       Cloudfront Distribution uses weak ciphers
     resource: aws.distribution
@@ -16,4 +17,3 @@ policies:
             key: ViewerCertificate.MinimumProtocolVersion
             op: regex
             value: 'TLSv1\.2_*'
-    comment: '0023022001'

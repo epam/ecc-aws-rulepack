@@ -7,15 +7,15 @@
 
 policies:
   - name: ecc-aws-093-ensure_that_sagemaker_in_vpc
+    comment: '010041112000'
     description: |
       SageMaker is not placed in VPC
     resource: aws.sagemaker-notebook
     filters:
       - or:
-        - type: value
-          key: SubnetId
-          value: absent
-        - type: value
-          key: DirectInternetAccess
-          value: Enabled        
-    comment: '0041112000'
+          - type: value
+            key: SubnetId
+            value: absent
+          - type: value
+            key: DirectInternetAccess
+            value: Enabled

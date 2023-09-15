@@ -7,9 +7,9 @@
 
 policies:
   - name: ecc-aws-142-s3_buckets_configured_with_block_public_access
-    resource: aws.s3
+    comment: '010040040301'
     description: |
       S3 Buckets are not configured with 'Block public access' bucket settings
+    resource: aws.s3
     filters:
       - type: check-public-block
-    comment: '0040040301'

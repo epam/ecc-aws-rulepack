@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-040-eks_cluster_version_latest
+    comment: '010021072000'
     description: |
       EKS cluster is not using the latest version
     resource: aws.eks
@@ -15,4 +16,3 @@ policies:
         key: version
         value: "1.25"
         op: lt
-    comment: '0021072000'

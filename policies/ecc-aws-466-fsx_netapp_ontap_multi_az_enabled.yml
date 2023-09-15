@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-466-fsx_netapp_ontap_multi_az_enabled
+    comment: '010050042000'
     description: |
       FSx for NetApp ONTAP file systems do not have Multi-AZ enabled
     resource: aws.fsx
@@ -17,4 +18,3 @@ policies:
       - type: value
         key: OntapConfiguration.DeploymentType
         value: SINGLE_AZ_1
-    comment: '0050042000'

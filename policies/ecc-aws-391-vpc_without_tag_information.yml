@@ -7,11 +7,11 @@
 
 policies:
   - name: ecc-aws-391-vpc_without_tag_information
-    resource: aws.vpc
+    comment: '010010022000'
     description: |
       VPC without tag information
+    resource: aws.vpc
     filters:
       - type: tag-count
         op: eq
         count: 0
-    comment: '0010022000'

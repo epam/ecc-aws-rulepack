@@ -7,15 +7,15 @@
 
 policies:
   - name: ecc-aws-464-ecs_exec_logging_enabled
+    comment: '010019082000'
     description: |
       ECS Cluster execute command logging is disabled
     resource: aws.ecs
     filters:
       - and:
-        - type: value
-          key: configuration.executeCommandConfiguration.logConfiguration.cloudWatchLogGroupName
-          value: absent
-        - type: value
-          key: configuration.executeCommandConfiguration.logConfiguration.s3BucketName
-          value: absent
-    comment: '0019082000'
+          - type: value
+            key: configuration.executeCommandConfiguration.logConfiguration.cloudWatchLogGroupName
+            value: absent
+          - type: value
+            key: configuration.executeCommandConfiguration.logConfiguration.s3BucketName
+            value: absent

@@ -7,9 +7,10 @@
 
 policies:
   - name: ecc-aws-322-oracle_sql92_security_flag_enabled
-    resource: aws.rds
+    comment: '010023061700'
     description: |
       The 'sql92_security' flag for Oracle is disabled
+    resource: aws.rds
     filters:
       - and:
           - type: value
@@ -20,4 +21,3 @@ policies:
               - type: db-parameter
                 key: sql92_security
                 value: true
-    comment: '0023061700'

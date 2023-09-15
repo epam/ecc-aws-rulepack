@@ -7,9 +7,10 @@
 
 policies:
   - name: ecc-aws-326-ebs_volume_encrypted_with_kms_cmk
-    resource: aws.ebs
+    comment: '010043042000'
     description: |
       EBS volume not encrypted with KMS CMK
+    resource: aws.ebs
     filters:
       - or:
           - type: value
@@ -18,4 +19,3 @@ policies:
           - type: kms-alias
             key: "AliasName"
             value: alias/aws/ebs
-    comment: '0043042000'

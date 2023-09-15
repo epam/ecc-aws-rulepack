@@ -7,10 +7,10 @@
 
 policies:
   - name: ecc-aws-515-security_hub_enabled
-    resource: aws.account
+    comment: '010016090300'
     description: |
       Security Hub is not enabled
+    resource: aws.account
     filters:
-     - type: securityhub
-       enabled: false
-    comment: '0016090300'
+      - type: securityhub
+        enabled: false

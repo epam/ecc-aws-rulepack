@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-116-rest_api_gateway_is_set_to_private
+    comment: '010040022000'
     description: |
       API endpoint type in the API gateway is not private and exposed to the public internet
     resource: rest-api
@@ -18,4 +19,3 @@ policies:
           - type: value
             key: endpointConfiguration.types[0]
             value: EDGE
-    comment: '0040022000'

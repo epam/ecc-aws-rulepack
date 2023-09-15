@@ -7,9 +7,10 @@
 
 policies:
   - name: ecc-aws-320-oracle_sec_protocol_error_trace_action_flag_set_to_log
-    resource: aws.rds
+    comment: '010019061700'
     description: |
       The 'sec_protocol_error_trace_action' flag for Oracle is not set to 'LOG'
+    resource: aws.rds
     filters:
       - and:
           - type: value
@@ -20,4 +21,3 @@ policies:
               - type: db-parameter
                 key: sec_protocol_error_trace_action
                 value: LOG
-    comment: '0019061700'

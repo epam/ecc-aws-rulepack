@@ -7,11 +7,11 @@
 
 policies:
   - name: ecc-aws-343-mq_broker_not_publicly_accessible
-    resource: aws.message-broker
+    comment: '010040142000'
     description: |
       MQ is publicly accessible
+    resource: aws.message-broker
     filters:
       - type: value
         key: PubliclyAccessible
         value: true
-    comment: '0040142000'

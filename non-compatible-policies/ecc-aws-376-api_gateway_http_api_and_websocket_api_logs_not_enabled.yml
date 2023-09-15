@@ -6,6 +6,7 @@
 
 policies:
   - name: ecc-aws-376-api_gateway_http_api_and_websocket_api_logs_not_enabled
+    comment: '010019022010'
     description: |
       API Gateway HTTP and WEBSOCKET API does not have logging enabled
     resource: aws.api-stage
@@ -17,4 +18,3 @@ policies:
           - type: value
             key: DefaultRouteSettings.LoggingLevel
             value: "OFF"
-    comment: '0019022010'

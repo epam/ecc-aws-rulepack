@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-448-mwaa_worker_logs_set_correctly
+    comment: '010019142010'
     description: |
       Managed Workflows for Apache Airflow Worker logs not enabled or set correctly
     resource: aws.airflow
@@ -18,4 +19,3 @@ policies:
           - type: value
             key: LoggingConfiguration.WorkerLogs.LogLevel
             value: 'DEBUG'
-    comment: '0019142010'

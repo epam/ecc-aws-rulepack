@@ -7,9 +7,10 @@
 
 policies:
   - name: ecc-aws-231-postgresql_log_rotation_age_flag_set_to_60
-    resource: aws.rds
+    comment: '010019061900'
     description: |
       Maximum log file lifetime is not set correctly for PostgreSQL
+    resource: aws.rds
     filters:
       - and:
           - type: value
@@ -25,4 +26,3 @@ policies:
                     key: log_rotation_age
                     op: eq
                     value: 60
-    comment: '0019061900'

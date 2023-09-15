@@ -7,12 +7,12 @@
 
 policies:
   - name: ecc-aws-520-autoscaling_launch_config_hop_limit
-    resource: launch-config
+    comment: '010024032000'
     description: |
       Auto Scaling launch configuration hop limit is greater than 1
+    resource: launch-config
     filters:
       - type: value
         key: MetadataOptions.HttpPutResponseHopLimit
         op: gt
         value: 1
-    comment: '0024032000'

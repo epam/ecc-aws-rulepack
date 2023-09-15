@@ -7,9 +7,10 @@
 
 policies:
   - name: ecc-aws-364-autoscaling_launch_config_public_ip_disabled
-    resource: launch-config
+    comment: '010040032000'
     description: |
       Auto Scaling launch configuration public ip association is enabled
+    resource: launch-config
     filters:
       - or:
           - type: value
@@ -18,4 +19,3 @@ policies:
           - type: value
             key: AssociatePublicIpAddress
             value: absent
-    comment: '0040032000'

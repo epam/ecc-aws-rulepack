@@ -7,11 +7,11 @@
 
 policies:
   - name: ecc-aws-184-dynamodb_dax_encryption_enabled
-    resource: dax
+    comment: '010043062000'
     description: |
       DynamoDB Accelerator clusters are not encrypted at rest
+    resource: dax
     filters:
       - type: value
         key: SSEDescription.Status
         value: DISABLED
-    comment: '0043062000'

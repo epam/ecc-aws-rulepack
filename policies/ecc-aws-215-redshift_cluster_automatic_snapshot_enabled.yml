@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-215-redshift_cluster_automatic_snapshot_enabled
+    comment: '010049052000'
     description: |
       Amazon Redshift clusters automatic snapshots are disabled
     resource: redshift
@@ -15,4 +16,3 @@ policies:
         key: AutomatedSnapshotRetentionPeriod
         value: 7
         op: lt
-    comment: '0049052000'

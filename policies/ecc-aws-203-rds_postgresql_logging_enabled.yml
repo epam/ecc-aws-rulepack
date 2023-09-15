@@ -7,9 +7,10 @@
 
 policies:
   - name: ecc-aws-203-rds_postgresql_logging_enabled
-    resource: aws.rds
+    comment: '010019062000'
     description: |
       PostgreSQL database logging is disabled
+    resource: aws.rds
     filters:
       - and:
           - type: value
@@ -38,4 +39,3 @@ policies:
                     key: log_statement
                     op: eq
                     value: 'all'
-    comment: '0019062000'

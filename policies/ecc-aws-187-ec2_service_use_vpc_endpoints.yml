@@ -7,6 +7,7 @@
 
 policies:
   - name: ecc-aws-187-ec2_service_use_vpc_endpoints
+    comment: '010039022000'
     description: |
       EC2 is not configured to use VPC endpoints that are created for the EC2 service
     resource: vpc
@@ -16,4 +17,3 @@ policies:
             key: ServiceName
             op: regex
             value: 'com\.amazonaws\.[\-a-z1-5]*\.ec2'
-    comment: '0039022000'

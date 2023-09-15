@@ -7,11 +7,11 @@
 
 policies:
   - name: ecc-aws-073-unused_eip_should_be_removed
+    comment: '010002022000'
     description: |
-       Unused EC2 EIPs exist
+      Unused EC2 EIPs exist
     resource: network-addr
     filters:
       - type: value
         key: AssociationId
         value: absent
-    comment: '0002022000'

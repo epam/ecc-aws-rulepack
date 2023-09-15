@@ -6,13 +6,13 @@
 
 policies:
   - name: ecc-aws-159-rds_critical_cluster_events_notification_exists
-    resource: aws.account
+    comment: '010032062000'
     description: |
       RDS event notifications subscription is not configured for critical cluster events
+    resource: aws.account
     filters:
       - type: rds-sns-subscription-filter
         check_in: cluster
         key: SourceType=='db-cluster' && SourceIdsList==null && ( EventCategoriesList==null || (EventCategoriesList.contains(@, 'failure')==`true` && EventCategoriesList.contains(@'maintenance')==`true`)) && Enabled==`true`
         value: true
         op: eq
-    comment: '0032062000'
