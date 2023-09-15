@@ -4,8 +4,10 @@
         {
             "Effect": "Allow",
             "Action": [
-                "waf:ListActivatedRulesInRuleGroup",
-                "waf:ListRuleGroups"
+                "dynamodb:ListTables",
+                "dynamodb:DescribeTable",
+                "tag:GetResources",
+                "cloudwatch:GetMetricStatistics"
             ],
             "Resource": "*"
         }

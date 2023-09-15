@@ -1,0 +1,42 @@
+{
+    "status_code": 200,
+    "data": {
+        "Table": {
+            "AttributeDefinitions": [
+                {
+                    "AttributeName": "GreenTableHashKey",
+                    "AttributeType": "S"
+                }
+            ],
+            "TableName": "552_dynamodb_table_red",
+            "KeySchema": [
+                {
+                    "AttributeName": "GreenTableHashKey",
+                    "KeyType": "HASH"
+                }
+            ],
+            "TableStatus": "ACTIVE",
+            "CreationDateTime": {
+                "__class__": "datetime",
+                "year": 2023,
+                "month": 2,
+                "day": 15,
+                "hour": 10,
+                "minute": 30,
+                "second": 45,
+                "microsecond": 876000
+            },
+            "ProvisionedThroughput": {
+                "NumberOfDecreasesToday": 0,
+                "ReadCapacityUnits": 1,
+                "WriteCapacityUnits": 1
+            },
+            "TableSizeBytes": 0,
+            "ItemCount": 0,
+            "TableArn": "arn:aws:dynamodb:us-east-1:123456789012:table/552_dynamodb_table_red",
+            "TableId": "0918e866-a87a-42fd-be35-f8d7b4f29632",
+            "DeletionProtectionEnabled": false
+        },
+        "ResponseMetadata": {}
+    }
+}

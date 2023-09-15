@@ -27,6 +27,7 @@
                 "cloudtrail:DescribeTrails",
                 "cloudtrail:GetEventSelectors",
                 "cloudtrail:GetTrailStatus",
+                "cloudwatch:GetMetricStatistics",
                 "cloudwatch:DescribeAlarms",
                 "codebuild:BatchGetProjects",
                 "codebuild:ListProjects",

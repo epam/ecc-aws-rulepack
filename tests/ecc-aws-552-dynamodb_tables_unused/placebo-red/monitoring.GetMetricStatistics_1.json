@@ -1,0 +1,23 @@
+{
+    "status_code": 200,
+    "data": {
+        "Label": "ConsumedWriteCapacityUnits",
+        "Datapoints": [
+            {
+                "Timestamp": {
+                    "__class__": "datetime",
+                    "year": 2023,
+                    "month": 7,
+                    "day": 17,
+                    "hour": 7,
+                    "minute": 35,
+                    "second": 0,
+                    "microsecond": 0
+                },
+                "Maximum": 0.0,
+                "Unit": "Count"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}
