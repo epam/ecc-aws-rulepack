@@ -12,6 +12,14 @@ policies:
       S3 Bucket life cycle is not configured
     resource: s3
     filters:
+    - or:
       - type: value
         key: Lifecycle
         value: null
+      - and:
+        - type: value
+          key: Lifecycle
+          value: present
+        - type: value
+          key: length(Lifecycle.Rules[?Status == 'Enabled']) == `0`
+          value: true
