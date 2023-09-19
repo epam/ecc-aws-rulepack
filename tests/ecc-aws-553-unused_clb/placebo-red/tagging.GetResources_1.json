@@ -1,0 +1,22 @@
+{
+    "status_code": 200,
+    "data": {
+        "PaginationToken": "",
+        "ResourceTagMappingList": [
+            {
+                "ResourceARN": "arn:aws:elasticloadbalancing:us-east-1:123456789123:loadbalancer/clb-553-http-red",
+                "Tags": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-553-unused_clb"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Red"
+                    }
+                ]
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

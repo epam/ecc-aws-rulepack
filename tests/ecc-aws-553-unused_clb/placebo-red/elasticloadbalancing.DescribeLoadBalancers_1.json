@@ -1,0 +1,71 @@
+{
+    "status_code": 200,
+    "data": {
+        "LoadBalancerDescriptions": [
+            {
+                "LoadBalancerName": "clb-553-http-red",
+                "DNSName": "clb-553-http-red-897742492.us-east-1.elb.amazonaws.com",
+                "CanonicalHostedZoneName": "clb-553-http-red-897742492.us-east-1.elb.amazonaws.com",
+                "CanonicalHostedZoneNameID": "Z35SXDFRRQ7X7K",
+                "ListenerDescriptions": [
+                    {
+                        "Listener": {
+                            "Protocol": "HTTP",
+                            "LoadBalancerPort": 80,
+                            "InstanceProtocol": "HTTP",
+                            "InstancePort": 8000
+                        },
+                        "PolicyNames": []
+                    }
+                ],
+                "Policies": {
+                    "AppCookieStickinessPolicies": [],
+                    "LBCookieStickinessPolicies": [],
+                    "OtherPolicies": []
+                },
+                "BackendServerDescriptions": [],
+                "AvailabilityZones": [
+                    "us-east-1a",
+                    "us-east-1b",
+                    "us-east-1c",
+                    "us-east-1d",
+                    "us-east-1e",
+                    "us-east-1f"
+                ],
+                "Subnets": [
+                    "subnet-24287df2a",
+                    "subnet-525874f63",
+                    "subnet-815872abc7"
+                ],
+                "VPCId": "vpc-281517",
+                "Instances": [],
+                "HealthCheck": {
+                    "Target": "TCP:8000",
+                    "Interval": 30,
+                    "Timeout": 5,
+                    "UnhealthyThreshold": 2,
+                    "HealthyThreshold": 10
+                },
+                "SourceSecurityGroup": {
+                    "OwnerAlias": "123456789123",
+                    "GroupName": "default_elb_fc2f8b95-5e14-38b7-80f6-2259e106c533"
+                },
+                "SecurityGroups": [
+                    "sg-0146f212876718644b"
+                ],
+                "CreatedTime": {
+                    "__class__": "datetime",
+                    "year": 2023,
+                    "month": 9,
+                    "day": 18,
+                    "hour": 8,
+                    "minute": 32,
+                    "second": 30,
+                    "microsecond": 990000
+                },
+                "Scheme": "internet-facing"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}
