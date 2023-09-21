@@ -1,6 +1,6 @@
 # Changelog
 
-## [v3.0] - 2023-09-20
+## [v3.10] - 2023-09-20
 ### :sparkles: New Policies
 - [`9f014d6`](https://github.com/epam/ecc-aws-rulepack/commit/9f014d6d7b9d632892456a9fb8c2f43734bc8e4c) - added policy ecc-aws-547-rds_instance_generation
 - [`11ef8ce`](https://github.com/epam/ecc-aws-rulepack/commit/11ef8ce13557dccc76af9693326baa893eafa047) - added policy ecc-aws-552-dynamodb_tables_unused
