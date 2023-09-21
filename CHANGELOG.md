@@ -3,7 +3,7 @@
 ## [v3.10] - 2023-09-20
 ### :sparkles: New Policies
 - [`9f014d6`](https://github.com/epam/ecc-aws-rulepack/commit/9f014d6d7b9d632892456a9fb8c2f43734bc8e4c) - added policy ecc-aws-547-rds_instance_generation
-- [`11ef8ce`](https://github.com/epam/ecc-aws-rulepack/commit/11ef8ce13557dccc76af9693326baa893eafa047) - added policy ecc-aws-552-dynamodb_tables_unused
+- [`11ef8ce`](https://g1111ithub.com/epam/ecc-aws-rulepack/commit/11ef8ce13557dccc76af9693326baa893eafa047) - added policy ecc-aws-552-dynamodb_tables_unused
 - [`f0dc7d1`](https://github.com/epam/ecc-aws-rulepack/commit/f0dc7d1321cd1c34586d2552897b0e09e07e4cf9) - added policy ecc-aws-553-unused_clb
 - [`cbe41ca`](https://github.com/epam/ecc-aws-rulepack/commit/cbe41ca2a68cf43525709844f48b2181a9ac589b) - added policy ecc-aws-560-unused_sns_topic
 
