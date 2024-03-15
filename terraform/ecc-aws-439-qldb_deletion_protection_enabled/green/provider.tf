@@ -2,7 +2,7 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "~> 4"
+      version = "~> 5"
     }
   }
 }
@@ -10,7 +10,7 @@ terraform {
 provider "aws"{
   profile = var.profile
   region  = var.default-region
-  
+
   default_tags {
     tags = {
       CustodianRule    = "ecc-aws-439-qldb_deletion_protection_enabled"
