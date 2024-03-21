@@ -6,7 +6,7 @@
             "Action": [
                 "access-analyzer:ListAnalyzers",
                 "acm:DescribeCertificate",
-                "acm:ListCertificates",
+                "acm:LishtCertificates",
                 "airflow:GetEnvironment",
                 "airflow:ListEnvironments",
                 "apigateway:GET",
