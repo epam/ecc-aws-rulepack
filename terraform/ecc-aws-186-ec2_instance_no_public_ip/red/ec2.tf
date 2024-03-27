@@ -7,7 +7,7 @@ resource "aws_instance" "this" {
   }
 
   tags = {
-    Name = "186_instance_green"
+    Name = "186_instance_red"
   }
 }
 
