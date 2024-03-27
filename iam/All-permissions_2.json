@@ -14,7 +14,9 @@
 				"kafka:ListClustersV2",
 				"cloudformation:ListStacks",
 				"iam:ListVirtualMFADevices",
-                "cloudwatch:DescribeAlarmsForMetric"
+                "cloudwatch:DescribeAlarmsForMetric",
+				"ec2:DescribeLaunchTemplates",
+				"ec2:DescribeLaunchTemplateVersions"
 			],
 			"Resource": "*"
 		}

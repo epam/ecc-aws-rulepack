@@ -1,0 +1,18 @@
+# Copyright (c) 2024 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: ecc-aws-872-autoscaling_launch_template_hop_limit
+    comment: '010024032000'
+    description: |
+      Auto Scaling launch template hop limit is greater than 1
+    resource: aws.launch-template-version
+    filters:
+      - type: value
+        key: LaunchTemplateData.MetadataOptions.HttpPutResponseHopLimit
+        op: gt
+        value: 1
