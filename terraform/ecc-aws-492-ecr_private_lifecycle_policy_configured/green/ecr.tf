@@ -1,5 +1,5 @@
 resource "aws_ecr_repository" "this" {
-  name = "492_ecr_respository_green"
+  name = "492_ecr_repository_green"
 }
 
 resource "aws_ecr_lifecycle_policy" "this" {
