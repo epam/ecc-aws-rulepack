@@ -7,3 +7,4 @@ tf_runner/*
 **/tmp
 /output
 /.idea
+policies/ecc-aws-*/
