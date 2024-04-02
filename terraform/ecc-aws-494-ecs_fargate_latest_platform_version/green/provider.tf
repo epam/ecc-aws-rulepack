@@ -2,7 +2,7 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "~> 4"
+      version = "~> 5"
     }
   }
 }
@@ -14,7 +14,7 @@ provider "aws" {
   default_tags {
     tags = {
       CustodianRule    = "ecc-aws-494-ecs_fargate_latest_platform_version"
-      ComplianceStatus = "Red"
+      ComplianceStatus = "Green"
     }
   }
 }
