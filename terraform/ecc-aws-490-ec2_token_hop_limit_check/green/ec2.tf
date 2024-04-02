@@ -3,7 +3,6 @@ resource "aws_instance" "this" {
   instance_type    = "t2.micro"
   metadata_options {
     http_endpoint               = "enabled"
-    http_put_response_hop_limit = 1
   }
   
 
