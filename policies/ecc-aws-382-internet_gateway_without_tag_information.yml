@@ -15,3 +15,7 @@ policies:
       - type: tag-count
         op: eq
         count: 0
+    actions:
+      - type: tag
+        key: CustodianRule
+        value: ecc-aws-382-internet_gateway_without_tag_information
