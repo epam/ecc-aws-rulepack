@@ -17,4 +17,8 @@ resource "aws_msk_cluster" "this" {
     }
     security_groups = [aws_security_group.this.id]
   }
+
+  lifecycle {
+    prevent_destroy = false
+  }
 }
