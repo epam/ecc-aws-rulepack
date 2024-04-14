@@ -8,3 +8,8 @@ tf_runner/*
 /output
 /.idea
 policies/ecc-aws-*/
+auto_policy_testing/output
+auto_policy_testing/iam
+__pycache__
+.venv
+custodian
