@@ -12,6 +12,7 @@
 				"guardduty:GetDetector",
 				"guardduty:GetMasterAccount",
 				"iam:ListVirtualMFADevices",
+				"iam:ListAttachedRolePolicies",
 				"kafka:ListClustersV2",
 				"lambda:GetFunctionConfiguration",
 				"wafv2:ListWebACLs",

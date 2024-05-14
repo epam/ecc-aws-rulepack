@@ -51,7 +51,8 @@ aws = {
     "parallel": [
         "glue",
         "account",
-        "workspaces"
+        "workspaces",
+        "iam"
     ]
 }
 

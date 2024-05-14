@@ -6,7 +6,8 @@
             "Action": [
                 "iam:ListRoles",
                 "iam:GetRole",
-                "iam:GetPolicy"
+                "iam:GetPolicy",
+                "iam:ListAttachedRolePolicies"
             ],
             "Resource": "*"   
         }
