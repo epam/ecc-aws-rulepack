@@ -1,5 +1,6 @@
 output "resource_prefix" {
   value = {
+    fsx               = "${local.suffix}_${var.resource_type}_fsx_${local.compliance_status}"
     message_broker    = "${local.suffix}_${var.resource_type}_mq_${local.compliance_status}"
     elasticsearch     = "${local.suffix}-elasticsearch-${local.compliance_status}"
     glue_security_configuration = "${local.suffix}_${var.resource_type}_glue_security_configuration_${local.compliance_status}"
