@@ -1,5 +1,6 @@
 output "resource_prefix" {
   value = {
+    eks               = "${local.suffix}_${var.resource_type}_eks_${local.compliance_status}"
     fsx               = "${local.suffix}_${var.resource_type}_fsx_${local.compliance_status}"
     message_broker    = "${local.suffix}_${var.resource_type}_mq_${local.compliance_status}"
     elasticsearch     = "${local.suffix}-elasticsearch-${local.compliance_status}"
