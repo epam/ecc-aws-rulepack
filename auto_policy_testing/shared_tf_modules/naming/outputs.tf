@@ -1,6 +1,10 @@
 output "resource_prefix" {
   value = {
     acm               = "${local.suffix}.${local.compliance_status}"
+    nat_gateway       = "${local.suffix}_${var.resource_type}_ng_${local.compliance_status}"
+    eks               = "${local.suffix}_${var.resource_type}_eks_${local.compliance_status}"
+    fsx               = "${local.suffix}_${var.resource_type}_fsx_${local.compliance_status}"
+    message_broker    = "${local.suffix}_${var.resource_type}_mq_${local.compliance_status}"
     elasticsearch     = "${local.suffix}-elasticsearch-${local.compliance_status}"
     glue_security_configuration = "${local.suffix}_${var.resource_type}_glue_security_configuration_${local.compliance_status}"
     glue_job          = "${local.suffix}_${var.resource_type}_glue_job_${local.compliance_status}"
