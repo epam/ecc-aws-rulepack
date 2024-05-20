@@ -45,7 +45,7 @@
   "event-bus": ["Arn"],
   "firehose": ["DeliveryStreamARN"],
   "fsx": ["ResourceARN"],
-  "fsx-backup": ["FileSystemId"],
+  "fsx-backup": ["ResourceARN"],
   "glacier": ["VaultARN"],
   "glue-catalog": ["CatalogId"],
   "glue-job": ["Name"],
