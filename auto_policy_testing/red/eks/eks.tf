@@ -1,94 +1,61 @@
-resource "aws_eks_cluster" "this" {
-  name     = "${module.naming.resource_prefix.eks}"
+# EKS takes about 10 minutes to deploy
+
+resource "aws_eks_cluster" "this1" {
+  name     = "${module.naming.resource_prefix.eks}-1"
   role_arn = aws_iam_role.this.arn
   version  = "1.27"
-  provider  = aws.provider2
+  provider = aws.provider2
 
   vpc_config {
-    subnet_ids         = [aws_subnet.subnet1.id, aws_subnet.subnet2.id]
-    security_group_ids = [aws_security_group.this.id]
+    endpoint_public_access = true
+    public_access_cidrs    = ["0.0.0.0/0"]
+    subnet_ids             = [data.terraform_remote_state.common.outputs.vpc_subnet_1_id, data.terraform_remote_state.common.outputs.vpc_subnet_3_id]
+    security_group_ids     = [aws_security_group.this.id]
   }
+
   depends_on = [
     aws_iam_role_policy_attachment.Cluster_Policy,
     aws_iam_role_policy_attachment.Service_Policy,
   ]
 }
 
-resource "aws_iam_role" "this" {
-  name = "${module.naming.resource_prefix.eks}"
+resource "aws_eks_cluster" "this2" {
+  name                      = "${module.naming.resource_prefix.eks}-2"
+  role_arn                  = aws_iam_role.this.arn
+  version                   = "1.29"
+  enabled_cluster_log_types = ["api", "audit", "controllerManager", "scheduler"]
 
-  assume_role_policy = <<POLICY
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Effect": "Allow",
-      "Principal": {
-        "Service": "eks.amazonaws.com"
-      },
-      "Action": "sts:AssumeRole"
-    }
-  ]
-}
-POLICY
-}
-
-resource "aws_iam_role_policy_attachment" "Cluster_Policy" {
-  policy_arn = "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
-  role       = aws_iam_role.this.name
-}
-
-resource "aws_iam_role_policy_attachment" "Service_Policy" {
-  policy_arn = "arn:aws:iam::aws:policy/AmazonEKSServicePolicy"
-  role       = aws_iam_role.this.name
-}
-
-
-resource "aws_vpc" "this" {
-  cidr_block           = "10.0.0.0/16"
-  instance_tenancy     = "default"
-  enable_dns_hostnames = true
-}
-
-resource "aws_subnet" "subnet1" {
-  vpc_id            = aws_vpc.this.id
-  cidr_block        = "10.0.1.0/24"
-  availability_zone = "us-east-1a"
-}
-
-resource "aws_subnet" "subnet2" {
-  vpc_id            = aws_vpc.this.id
-  cidr_block        = "10.0.2.0/24"
-  availability_zone = "us-east-1b"
-}
-
-resource "aws_internet_gateway" "this" {
-  vpc_id = aws_vpc.this.id
-}
-
-resource "aws_route_table" "this" {
-  vpc_id = aws_vpc.this.id
-
-  route {
-    cidr_block = "0.0.0.0/0"
-    gateway_id = aws_internet_gateway.this.id
+  vpc_config {
+    subnet_ids         = [data.terraform_remote_state.common.outputs.vpc_subnet_1_id, data.terraform_remote_state.common.outputs.vpc_subnet_3_id]
+    security_group_ids = [aws_security_group.this.id]
   }
-}
 
-resource "aws_route_table_association" "this" {
-  subnet_id      = aws_subnet.subnet1.id
-  route_table_id = aws_route_table.this.id
+  depends_on = [
+    aws_iam_role_policy_attachment.Cluster_Policy,
+    aws_iam_role_policy_attachment.Service_Policy,
+  ]
 }
 
 resource "aws_security_group" "this" {
-  name   = "${module.naming.resource_prefix.eks}"
-  vpc_id = aws_vpc.this.id
+  name   = module.naming.resource_prefix.security_group
+  vpc_id = data.terraform_remote_state.common.outputs.vpc_id
 
   ingress {
     from_port   = 0
     to_port     = 0
     protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  dynamic "ingress" {
+    for_each = [443, 22]
+    content {
+      from_port = ingress.value
+      to_port   = ingress.value
+      protocol  = "tcp"
+      self      = true
+
+    }
   }
 
   egress {

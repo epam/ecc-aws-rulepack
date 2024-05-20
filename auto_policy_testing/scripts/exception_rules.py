@@ -34,6 +34,7 @@ aws = {
         "ecc-aws-288-workspaces_instances_are_healthy",
         "ecc-aws-331-workspaces_images_not_older_than_90_days", 
         "ecc-aws-344-route53_domain_expires_in_30_days",
+        "ecc-aws-497-eks_cluster_oldest_supported_version",
         "ecc-aws-519-vpc_vpn_2_tunnels_up",
         "ecc-aws-536-lambda_function_settings_check",
         "ecc-aws-547-rds_instance_generation",

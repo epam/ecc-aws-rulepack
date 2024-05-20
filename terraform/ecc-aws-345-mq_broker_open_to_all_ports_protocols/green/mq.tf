@@ -15,6 +15,8 @@ resource "aws_mq_broker" "this" {
 }
 
 resource "random_password" "this" {
-  length = 12
+  length           = 12
+  special          = true
+  override_special = "!#$%*()-_=+[]{}:?"
 }
 
