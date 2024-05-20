@@ -12,8 +12,12 @@ policies:
       Unused Workspaces instances are not removed
     resource: aws.workspaces
     filters:
-      - type: connection-status
-        value_type: age
-        key: LastKnownUserConnectionTimestamp
-        op: ge
-        value: 30
+      - or:
+        - type: connection-status
+          key: LastKnownUserConnectionTimestamp
+          value: absent
+        - type: connection-status
+          value_type: age
+          key: LastKnownUserConnectionTimestamp
+          op: ge
+          value: 30

@@ -4,42 +4,42 @@
         "ResponseMetadata": {},
         "BrokerSummaries": [
             {
-                "BrokerArn": "arn:aws:mq:us-east-1:111111111111:broker:mq-broker-rabbit-434-green:b-6bfc14fc-3acb-41d9-9fd4-f4931e15e604",
-                "BrokerId": "b-6bfc14fc-3acb-41d9-9fd4-f4931e15e604",
-                "BrokerName": "mq-broker-rabbit-434-green",
-                "BrokerState": "RUNNING",
-                "Created": {
-                    "__class__": "datetime",
-                    "year": 2023,
-                    "month": 1,
-                    "day": 3,
-                    "hour": 11,
-                    "minute": 46,
-                    "second": 27,
-                    "microsecond": 783000
-                },
-                "DeploymentMode": "SINGLE_INSTANCE",
-                "EngineType": "RabbitMQ",
-                "HostInstanceType": "mq.t3.micro"
-            },
-            {
-                "BrokerArn": "arn:aws:mq:us-east-1:111111111111:broker:mq-broker-active-434-green:b-f403de1b-8969-4297-983d-06e1fa9f7675",
-                "BrokerId": "b-f403de1b-8969-4297-983d-06e1fa9f7675",
+                "BrokerArn": "arn:aws:mq:us-east-1:111111111111:broker:mq-broker-active-434-green:b-200c9daf-2b9a-4069-9082-dcfa081345aa",
+                "BrokerId": "b-200c9daf-2b9a-4069-9082-dcfa081345aa",
                 "BrokerName": "mq-broker-active-434-green",
                 "BrokerState": "RUNNING",
                 "Created": {
                     "__class__": "datetime",
-                    "year": 2023,
-                    "month": 1,
-                    "day": 3,
-                    "hour": 11,
-                    "minute": 46,
-                    "second": 25,
-                    "microsecond": 542000
+                    "year": 2024,
+                    "month": 5,
+                    "day": 19,
+                    "hour": 19,
+                    "minute": 50,
+                    "second": 20,
+                    "microsecond": 66000
                 },
                 "DeploymentMode": "SINGLE_INSTANCE",
                 "EngineType": "ActiveMQ",
                 "HostInstanceType": "mq.t2.micro"
+            },
+            {
+                "BrokerArn": "arn:aws:mq:us-east-1:111111111111:broker:mq-broker-rabbit-434-green:b-86170a63-a56e-4e1e-9001-8cb46c4fe33f",
+                "BrokerId": "b-86170a63-a56e-4e1e-9001-8cb46c4fe33f",
+                "BrokerName": "mq-broker-rabbit-434-green",
+                "BrokerState": "RUNNING",
+                "Created": {
+                    "__class__": "datetime",
+                    "year": 2024,
+                    "month": 5,
+                    "day": 19,
+                    "hour": 19,
+                    "minute": 42,
+                    "second": 11,
+                    "microsecond": 227000
+                },
+                "DeploymentMode": "SINGLE_INSTANCE",
+                "EngineType": "RabbitMQ",
+                "HostInstanceType": "mq.t3.micro"
             }
         ]
     }
