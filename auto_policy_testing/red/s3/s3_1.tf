@@ -4,9 +4,9 @@ resource "random_integer" "this" {
 }
 
 resource "aws_s3_bucket" "this" {
-  bucket        = "${module.naming.resource_prefix.s3_bucket}-${random_integer.this.result}"
+  bucket        = "${module.naming.resource_prefix.s3_bucket}-${random_integer.this.result}-1"
   force_destroy = true
-  provider = aws.provider2
+  provider      = aws.provider2
 }
 
 resource "aws_s3_bucket_ownership_controls" "this" {
@@ -34,8 +34,9 @@ resource "aws_s3_bucket_public_access_block" "this" {
 
 resource "aws_s3_bucket_versioning" "this" {
   bucket = aws_s3_bucket.this.id
-  
+
   versioning_configuration {
-    status = "Enabled"
+    status     = "Enabled"
+    mfa_delete = "Disabled"
   }
 }

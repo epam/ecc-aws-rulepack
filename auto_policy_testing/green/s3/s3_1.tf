@@ -4,7 +4,7 @@ resource "random_integer" "this" {
 }
 
 resource "aws_s3_bucket" "this" {
-  bucket        = "${module.naming.resource_prefix.s3_bucket}-${random_integer.this.result}"
+  bucket        = "${module.naming.resource_prefix.s3_bucket}-${random_integer.this.result}-1"
   force_destroy = true
 }
 
@@ -26,16 +26,10 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "this" {
 
 resource "aws_s3_bucket_ownership_controls" "this" {
   bucket = aws_s3_bucket.this.id
+
   rule {
-    object_ownership = "BucketOwnerPreferred"
+    object_ownership = "BucketOwnerEnforced"
   }
-}
-
-resource "aws_s3_bucket_acl" "this" {
-  depends_on = [aws_s3_bucket_ownership_controls.this]
-
-  bucket = aws_s3_bucket.this.id
-  acl    = "private"
 }
 
 resource "aws_s3_bucket_public_access_block" "this" {
@@ -74,5 +68,21 @@ resource "aws_s3_bucket_lifecycle_configuration" "this" {
     }
 
     status = "Enabled"
+  }
+}
+
+resource "aws_s3_bucket_logging" "this" {
+  bucket        = aws_s3_bucket.this.id
+  target_bucket = aws_s3_bucket.this2.id
+  target_prefix = "log/"
+}
+
+resource "aws_s3_bucket_notification" "this" {
+  bucket = aws_s3_bucket.this.id
+
+  topic {
+    topic_arn     = aws_sns_topic.this.arn
+    events        = ["s3:ObjectCreated:*"]
+    filter_suffix = ".log"
   }
 }

@@ -1,6 +1,7 @@
 aws = {
     "green": [
         "ecc-aws-015-ensure_mfa_is_enabled_for_the_root_account",
+        "ecc-aws-112-s3_bucket_versioning_mfa_delete_enabled", #manual
         "ecc-aws-138-eliminate_use_root_user_for_administrative_and_daily_tasks",
         "ecc-aws-200-rds_cluster_deletion_protection_enabled",
         "ecc-aws-201-rds_instance_deletion_protection_enabled",

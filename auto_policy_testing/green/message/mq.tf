@@ -3,7 +3,7 @@
 resource "random_password" "this" {
   length           = 12
   special          = true
-  override_special = "!#$%*()-_=+[]{}:?"
+  override_special = "!#$%*()-_+[]{}?"
 }
 
 resource "aws_mq_broker" "this" {
