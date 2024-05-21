@@ -25,7 +25,7 @@ resource "aws_security_group" "this" {
 }
 
 resource "aws_msk_cluster" "this" {
-  cluster_name           = "347-msk-cluster-green"
+  cluster_name           = "${module.naming.resource_prefix.kafka}"
   kafka_version          = "2.6.2"
   number_of_broker_nodes = 3
   provider               = aws.provider2
