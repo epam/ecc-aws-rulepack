@@ -39,6 +39,7 @@ jobs:
         with:
           role-to-assume: ${{ secrets.CI_ASSUME_ROLE }}
           role-session-name: ECC-AWS-RULEPACK_CI-GREEN
+          role-duration-seconds: 43200 
           aws-region: ${{ vars.AWS_REGION }}
       - name: Install dependencies
         shell: bash
@@ -79,6 +80,7 @@ jobs:
           role-to-assume: ${{ secrets.CI_ASSUME_ROLE }}
           role-session-name: ECC-AWS-RULEPACK_CI-RED
           aws-region: ${{ vars.AWS_REGION }}
+          role-duration-seconds: 43200
       - name: Install dependencies
         shell: bash
         working-directory: auto_policy_testing/scripts
