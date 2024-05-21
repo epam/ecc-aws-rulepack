@@ -1,14 +1,15 @@
 # resource creation may take about 10 minutes
 resource "aws_fsx_lustre_file_system" "this" {
-  storage_capacity                = 6000
-  subnet_ids                      = [data.terraform_remote_state.common.outputs.vpc_subnet_1_id]
-  kms_key_id                      = data.terraform_remote_state.common.outputs.kms_key_arn
-  automatic_backup_retention_days = 7
-  deployment_type                 = "PERSISTENT_1"
-  storage_type                    = "HDD"
-  drive_cache_type                = "NONE"
-  per_unit_storage_throughput     = 12
-  copy_tags_to_backups            = true
+  storage_capacity                  = 6000
+  subnet_ids                        = [data.terraform_remote_state.common.outputs.vpc_subnet_1_id]
+  kms_key_id                        = data.terraform_remote_state.common.outputs.kms_key_arn
+  automatic_backup_retention_days   = 7
+  daily_automatic_backup_start_time = "18:00"
+  deployment_type                   = "PERSISTENT_1"
+  storage_type                      = "HDD"
+  drive_cache_type                  = "NONE"
+  per_unit_storage_throughput       = 12
+  copy_tags_to_backups              = true
 
   log_configuration {
     level       = "WARN_ERROR"

@@ -1,12 +1,13 @@
 resource "aws_fsx_lustre_file_system" "this" {
-  storage_capacity                = 6000
-  subnet_ids                      = [data.terraform_remote_state.common.outputs.vpc_subnet_1_id]
-  automatic_backup_retention_days = 5
-  deployment_type                 = "PERSISTENT_1"
-  storage_type                    = "HDD"
-  drive_cache_type                = "NONE"
-  per_unit_storage_throughput     = 12
-  provider                        = aws.provider2
+  storage_capacity                  = 6000
+  subnet_ids                        = [data.terraform_remote_state.common.outputs.vpc_subnet_1_id]
+  automatic_backup_retention_days   = 5
+  daily_automatic_backup_start_time = "18:00"
+  deployment_type                   = "PERSISTENT_1"
+  storage_type                      = "HDD"
+  drive_cache_type                  = "NONE"
+  per_unit_storage_throughput       = 12
+  provider                          = aws.provider2
 }
 
 resource "aws_fsx_backup" "this" {
@@ -28,14 +29,14 @@ resource "aws_directory_service_directory" "this" {
 }
 
 resource "aws_fsx_windows_file_system" "this" {
-  active_directory_id = aws_directory_service_directory.this.id
-  storage_type        = "HDD"
-  storage_capacity    = 2000
-  subnet_ids          = [data.terraform_remote_state.common.outputs.vpc_subnet_1_id]
-  throughput_capacity = 8
-  skip_final_backup   = true
+  active_directory_id             = aws_directory_service_directory.this.id
+  storage_type                    = "HDD"
+  storage_capacity                = 2000
+  subnet_ids                      = [data.terraform_remote_state.common.outputs.vpc_subnet_1_id]
+  throughput_capacity             = 8
+  skip_final_backup               = true
   automatic_backup_retention_days = 0
-  deployment_type     = "SINGLE_AZ_2"
+  deployment_type                 = "SINGLE_AZ_2"
 
   tags = {
     Name = "${module.naming.resource_prefix.fsx}-win"

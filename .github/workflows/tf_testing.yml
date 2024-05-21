@@ -22,7 +22,7 @@ env:
   CORE_TESTING_FOLDER: ${{ github.workspace }}
   OUTPUT_DIR: ${{ github.workspace }}/auto_policy_testing/output
   AWS_DEFAULT_REGION: ${{ vars.AWS_REGION }}
-  resource_priority_list: 'fsx'
+  resource_priority_list: ''
   RED: '\033[0;31m'
 
 jobs:

@@ -13,8 +13,8 @@ output "fsx" {
       aws_fsx_openzfs_file_system.this.arn,
       aws_fsx_ontap_file_system.this.arn
     ]
-    fsx-backup = aws_fsx_backup.this.arn
-    ecc-aws-466-fsx_netapp_ontap_multi_az_enabled = aws_fsx_ontap_file_system.this.arn
+    fsx-backup                                           = aws_fsx_backup.this.arn
+    ecc-aws-466-fsx_netapp_ontap_multi_az_enabled        = aws_fsx_ontap_file_system.this.arn
     ecc-aws-467-fsx_windows_file_server_multi_az_enabled = aws_fsx_windows_file_system.this.arn
   }
 }
