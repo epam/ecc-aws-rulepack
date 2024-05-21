@@ -1,5 +1,6 @@
 output "resource_prefix" {
   value = {
+    cloud_trail       = "${local.suffix}_${var.resource_type}_cloudtrail_${local.compliance_status}"
     nat_gateway       = "${local.suffix}_${var.resource_type}_ng_${local.compliance_status}"
     eks               = "${local.suffix}_${var.resource_type}_eks_${local.compliance_status}"
     fsx               = "${local.suffix}_${var.resource_type}_fsx_${local.compliance_status}"
