@@ -1,6 +1,7 @@
 import os
 import json
 import boto3
+import random
 import botocore
 from pathlib import Path
 
@@ -8,14 +9,16 @@ readonly_role_name = "github_ci_readonly_ecc-aws-rulepack"
 ci_role_name = "github_ci_ecc-aws-rulepack"
 policy_name = 'custodian_readonly'
 
-def check_role_exists(color):
+
+def check_role_exists(readonly_role_name_color):
     client = boto3.client('iam')
     try:
-        response = client.get_role(RoleName=f"{readonly_role_name}_{color}")
+        response = client.get_role(RoleName=readonly_role_name_color)
         role_exists = True
     except client.exceptions.NoSuchEntityException:
         role_exists = False
     return role_exists
+
 
 def check_policy_exists(readonly_role_name, policy_name):
     client = boto3.client('iam')
@@ -26,8 +29,10 @@ def check_policy_exists(readonly_role_name, policy_name):
         policy_exists = False
     return policy_exists
 
+
 def create_delete_readonly_role_aws(create=False, delete=False, color = ''):
-    readonly_role_name_color = f"{readonly_role_name}_{color}"
+    role_id = random.randint(100, 999)
+    readonly_role_name_color = f"{readonly_role_name}_{color}_{role_id}"
     sts = boto3.client("sts")
     account_id = sts.get_caller_identity()["Account"]
     client = boto3.client('iam')
@@ -44,7 +49,7 @@ def create_delete_readonly_role_aws(create=False, delete=False, color = ''):
                 }
             ]
         }
-        if not check_role_exists(color):
+        if not check_role_exists(readonly_role_name_color):
             try:
                 role = client.create_role(
                     RoleName=readonly_role_name_color, AssumeRolePolicyDocument=json.dumps(trust_policy)
@@ -67,7 +72,7 @@ def create_delete_readonly_role_aws(create=False, delete=False, color = ''):
             else:
                 return role
     elif delete:
-        if check_role_exists(color):
+        if check_role_exists(readonly_role_name_color):
             try:
                 if check_policy_exists(readonly_role_name_color, policy_name):
                     client.delete_role_policy(RoleName=readonly_role_name_color, PolicyName=policy_name)
@@ -78,16 +83,15 @@ def create_delete_readonly_role_aws(create=False, delete=False, color = ''):
                 raise
 
 
-def set_readonly_role_permissions_aws(resource, color = ''):
+def set_readonly_role_permissions_aws(resource, readonly_role_name):
     root_path = Path(os.getcwd()).parents[1]
     iam_path = os.path.join(root_path, 'auto_policy_testing', 'iam', resource + '.json')
     with open(iam_path, 'r') as f:
         inline_policy = json.load(f)
 
     client = boto3.client('iam')
-    readonly_role_name_color = f"{readonly_role_name}_{color}"
     response = client.put_role_policy(
-        RoleName=readonly_role_name_color,
+        RoleName=readonly_role_name,
         PolicyName=policy_name,
         PolicyDocument=json.dumps(inline_policy)
     )

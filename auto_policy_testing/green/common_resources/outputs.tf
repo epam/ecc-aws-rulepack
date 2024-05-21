@@ -21,3 +21,7 @@ output "vpc_subnet_3_id" {
 output "kms_key_arn" {
   value = aws_kms_key.this.arn
 }
+
+output "wafregional_acl_id" {
+  value = aws_wafregional_web_acl.this.id
+}

@@ -2,6 +2,7 @@ output "resource_prefix" {
   value = {
     acm               = "${local.suffix}.${local.compliance_status}"
     # cloud_trail       = "${local.suffix}_${var.resource_type}_cloudtrail_${local.compliance_status}"
+    launch_config     = "${local.suffix}_${var.resource_type}_launch_config_${local.compliance_status}"
     nat_gateway       = "${local.suffix}_${var.resource_type}_ng_${local.compliance_status}"
     eks               = "${local.suffix}_${var.resource_type}_eks_${local.compliance_status}"
     fsx               = "${local.suffix}_${var.resource_type}_fsx_${local.compliance_status}"

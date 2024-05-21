@@ -49,7 +49,7 @@ def main():
         for resource in resource_priority_list:
             path = os.path.join(RULEPACK_TESTING_PATH, args.infra_color, resource)
             if args.cloud == "AWS" and args.sa:
-                iam_role_aws.set_readonly_role_permissions_aws(resource, color=args.infra_color)
+                iam_role_aws.set_readonly_role_permissions_aws(resource, role.get("Role", {}).get("RoleName", None))
             tf_up_subprocess_result, tf_up_error = tf_up(resource, path, args.cloud, args.infra_color)
             if tf_up_subprocess_result:
                 print("\nScan resources\n")
