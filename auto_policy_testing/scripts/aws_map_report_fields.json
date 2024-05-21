@@ -81,7 +81,7 @@
   "redshift-reserved": ["ReservedNodeId"],
   "rest-api": ["id"],
   "rest-resource": ["id"],
-  "rest-stage": ["stageName"],
+  "rest-stage": ["stageArn"],
   "route-table": ["RouteTableId"],
   "rrset": ["Name", "Type", "c7n:parent-id"],
   "s3": ["Name"],

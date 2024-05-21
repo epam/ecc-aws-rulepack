@@ -1,7 +1,7 @@
 output "resource_prefix" {
   value = {
     acm               = "${local.suffix}.${local.compliance_status}"
-    cloud_trail       = "${local.suffix}_${var.resource_type}_cloudtrail_${local.compliance_status}"
+    # cloud_trail       = "${local.suffix}_${var.resource_type}_cloudtrail_${local.compliance_status}"
     nat_gateway       = "${local.suffix}_${var.resource_type}_ng_${local.compliance_status}"
     eks               = "${local.suffix}_${var.resource_type}_eks_${local.compliance_status}"
     fsx               = "${local.suffix}_${var.resource_type}_fsx_${local.compliance_status}"
@@ -49,6 +49,7 @@ output "resource_prefix" {
     ec2_instance      = "${local.suffix}_${var.resource_type}_instance_${local.compliance_status}"
     apigwv2_stage     = "${local.suffix}_${var.resource_type}_apigwv2_stage_${local.compliance_status}"
     apigwv2           = "${local.suffix}_${var.resource_type}_apigwv2_${local.compliance_status}"
+    apigw             = "${local.suffix}_${var.resource_type}_apigw_${local.compliance_status}"
     cw_log_group      = "${local.suffix}_${var.resource_type}_lg_${local.compliance_status}"
     trail             = "${local.suffix}_${var.resource_type}_trail_${local.compliance_status}"
     s3_bucket         = "${local.suffix}-${var.resource_type}-bucket-${local.compliance_status}"
