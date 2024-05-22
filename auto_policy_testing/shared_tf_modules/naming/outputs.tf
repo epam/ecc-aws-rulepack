@@ -1,5 +1,6 @@
 output "resource_prefix" {
   value = {
+    qldb              = "${local.suffix}-${var.resource_type}-qldb-${local.compliance_status}"
     kafka             = "${local.suffix}_${var.resource_type}_kafka_${local.compliance_status}"
     launch_config     = "${local.suffix}_${var.resource_type}_launch_config_${local.compliance_status}"
     cloud_trail       = "${local.suffix}_${var.resource_type}_cloudtrail_${local.compliance_status}"
