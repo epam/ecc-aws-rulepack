@@ -1,5 +1,6 @@
 output "resource_prefix" {
   value = {
+    cloudwatch_log     = "${local.suffix}-${var.resource_type}_cloudwatch_log_${local.compliance_status}"
     lightsail_instance = "${local.suffix}-${var.resource_type}-lightsail-instance-${local.compliance_status}"
     kinesis           = "${local.suffix}-${var.resource_type}_kinesis_${local.compliance_status}"
     kinesis_video     = "${local.suffix}-${var.resource_type}_kinesis_video_${local.compliance_status}"
