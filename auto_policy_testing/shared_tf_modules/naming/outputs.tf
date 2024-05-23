@@ -1,5 +1,8 @@
 output "resource_prefix" {
   value = {
+    lightsail_instance = "${local.suffix}-${var.resource_type}-lightsail-instance-${local.compliance_status}"
+    kinesis           = "${local.suffix}-${var.resource_type}_kinesis_${local.compliance_status}"
+    kinesis_video     = "${local.suffix}-${var.resource_type}_kinesis_video_${local.compliance_status}"
     sagemaker_endpoint_config = "${local.suffix}-${var.resource_type}-sagemaker-endpoint-config-${local.compliance_status}"
     sagemaker_model = "${local.suffix}-${var.resource_type}-sagemaker-model-${local.compliance_status}"
     sagemaker_notebook = "${local.suffix}-${var.resource_type}-sagemaker-notebook-${local.compliance_status}"
