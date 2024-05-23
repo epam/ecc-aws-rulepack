@@ -1,5 +1,8 @@
 output "resource_prefix" {
   value = {
+    sagemaker_endpoint_config = "${local.suffix}-${var.resource_type}-sagemaker-endpoint-config-${local.compliance_status}"
+    sagemaker_model = "${local.suffix}-${var.resource_type}-sagemaker-model-${local.compliance_status}"
+    sagemaker_notebook = "${local.suffix}-${var.resource_type}-sagemaker-notebook-${local.compliance_status}"
     qldb              = "${local.suffix}-${var.resource_type}-qldb-${local.compliance_status}"
     kafka             = "${local.suffix}_${var.resource_type}_kafka_${local.compliance_status}"
     launch_config     = "${local.suffix}_${var.resource_type}_launch_config_${local.compliance_status}"
