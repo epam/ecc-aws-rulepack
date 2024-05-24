@@ -12,6 +12,10 @@ policies:
       Amazon Beanstalk topic without tag information
     resource: aws.elasticbeanstalk-environment
     filters:
+      - type: value
+        key: Status
+        op: in
+        value: [Updating, Ready]
       - type: tag-count
         op: lt
         count: 4
