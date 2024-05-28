@@ -1,5 +1,7 @@
 output "resource_prefix" {
   value = {
+    redshift_parameter_group = "${local.suffix}-redshift-parameter-group-${local.compliance_status}"
+    redshift_cluster   = "${local.suffix}-redshift-cluster-${local.compliance_status}"
     codebuild          = "${local.suffix}-${var.resource_type}-codebuild-${local.compliance_status}"
     cloudwatch_log     = "${local.suffix}-${var.resource_type}_cloudwatch_log_${local.compliance_status}"
     lightsail_instance = "${local.suffix}-${var.resource_type}-lightsail-instance-${local.compliance_status}"
