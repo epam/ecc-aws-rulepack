@@ -1,5 +1,6 @@
 output "resource_prefix" {
   value = {
+    secrets            = "${local.suffix}-${var.resource_type}-secrets-${local.compliance_status}"
     sqs                = "${local.suffix}-${var.resource_type}-sqs-${local.compliance_status}"
     sns                = "${local.suffix}-${var.resource_type}-sns-${local.compliance_status}"
     redshift_parameter_group = "${local.suffix}-redshift-parameter-group-${local.compliance_status}"
