@@ -20,19 +20,21 @@ def check_role_exists(readonly_role_name_color):
     return role_exists
 
 
-def check_policy_exists(readonly_role_name, policy_name):
+def check_policy_exists(role_name, policy_name):
     client = boto3.client('iam')
     try:
-        response = client.get_role_policy(RoleName=readonly_role_name, PolicyName=policy_name)
+        response = client.get_role_policy(RoleName=role_name, PolicyName=policy_name)
         policy_exists = True
     except client.exceptions.NoSuchEntityException:
         policy_exists = False
     return policy_exists
 
 
-def create_delete_readonly_role_aws(create=False, delete=False, color = ''):
-    role_id = random.randint(100, 999)
-    readonly_role_name_color = f"{readonly_role_name}_{color}_{role_id}"
+def create_delete_readonly_role_aws(create=False, delete=False, color='', role_name=None):
+    if create:
+        role_id = random.randint(1000, 9999)
+        role_name = f"{readonly_role_name}_{color}_{role_id}"
+
     sts = boto3.client("sts")
     account_id = sts.get_caller_identity()["Account"]
     client = boto3.client('iam')
@@ -49,41 +51,41 @@ def create_delete_readonly_role_aws(create=False, delete=False, color = ''):
                 }
             ]
         }
-        if not check_role_exists(readonly_role_name_color):
+        if not check_role_exists(role_name):
             try:
                 role = client.create_role(
-                    RoleName=readonly_role_name_color, AssumeRolePolicyDocument=json.dumps(trust_policy)
+                    RoleName=role_name, AssumeRolePolicyDocument=json.dumps(trust_policy)
                 )
-                print(f"Created role {readonly_role_name_color}.")
+                print(f"Created role {role_name}.")
             except botocore.exceptions.ClientError:
-                print(f"Couldn't create role {readonly_role_name_color}.")
+                print(f"Couldn't create role {role_name}.")
                 raise
             else:
-                return role
+                return role.get("Role", {})
         else:
             try:
                 role = client.update_assume_role_policy(
-                    RoleName=readonly_role_name_color, PolicyDocument=json.dumps(trust_policy)
+                    RoleName=role_name, PolicyDocument=json.dumps(trust_policy)
                 )
-                print(f"Updated trust policy for role {readonly_role_name_color}.")
+                print(f"Updated trust policy for role {role_name}.")
             except botocore.exceptions.ClientError:
-                print(f"Couldn't update trust policy for role {readonly_role_name_color}.")
+                print(f"Couldn't update trust policy for role {role_name}.")
                 raise
             else:
-                return role
+                return role.get("Role", {})
     elif delete:
-        if check_role_exists(readonly_role_name_color):
+        if check_role_exists(role_name):
             try:
-                if check_policy_exists(readonly_role_name_color, policy_name):
-                    client.delete_role_policy(RoleName=readonly_role_name_color, PolicyName=policy_name)
-                client.delete_role(RoleName=readonly_role_name_color)
-                print(f"Deleted role {readonly_role_name_color}.")
+                if check_policy_exists(role_name, policy_name):
+                    client.delete_role_policy(RoleName=role_name, PolicyName=policy_name)
+                client.delete_role(RoleName=role_name)
+                print(f"Deleted role {role_name}.")
             except botocore.exceptions.ClientError:
-                print(f"Couldn't delete role {readonly_role_name_color}.")
+                print(f"Couldn't delete role {role_name}.")
                 raise
 
 
-def set_readonly_role_permissions_aws(resource, readonly_role_name):
+def set_readonly_role_permissions_aws(resource, role_name):
     root_path = Path(os.getcwd()).parents[1]
     iam_path = os.path.join(root_path, 'auto_policy_testing', 'iam', resource + '.json')
     with open(iam_path, 'r') as f:
@@ -91,7 +93,7 @@ def set_readonly_role_permissions_aws(resource, readonly_role_name):
 
     client = boto3.client('iam')
     response = client.put_role_policy(
-        RoleName=readonly_role_name,
+        RoleName=role_name,
         PolicyName=policy_name,
         PolicyDocument=json.dumps(inline_policy)
     )

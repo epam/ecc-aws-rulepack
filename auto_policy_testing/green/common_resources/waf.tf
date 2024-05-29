@@ -1,5 +1,5 @@
 resource "aws_wafregional_ipset" "this" {
-  name =  module.naming.resource_prefix.waf_ip_set
+  name = module.naming.resource_prefix.waf_ip_set
 
   ip_set_descriptor {
     type  = "IPV4"
@@ -19,7 +19,7 @@ resource "aws_wafregional_rule" "this" {
 }
 
 resource "aws_wafregional_web_acl" "this" {
-  name        = "${module.naming.resource_prefix.waf_acl}"
+  name        = module.naming.resource_prefix.waf_acl
   metric_name = "WafACLMetricGreen"
 
   default_action {

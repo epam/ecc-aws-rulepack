@@ -49,7 +49,7 @@ def main():
         for resource in resource_priority_list:
             path = os.path.join(RULEPACK_TESTING_PATH, args.infra_color, resource)
             if args.cloud == "AWS" and args.sa:
-                iam_role_aws.set_readonly_role_permissions_aws(resource, role.get("Role", {}).get("RoleName", None))
+                iam_role_aws.set_readonly_role_permissions_aws(resource, role.get("RoleName", None))
             tf_up_subprocess_result, tf_up_error = tf_up(resource, path, args.cloud, args.infra_color)
             if tf_up_subprocess_result:
                 print("\nScan resources\n")
@@ -71,22 +71,22 @@ def main():
                     sys.exit(1)
             else:
                 print("Error during 'terraform apply' for '" + resource + "': \n" + tf_up_error)
-                tf_failed[resource] = "Error during 'terraform apply' for '" + resource + "': \n" + tf_up_error
+                tf_failed[str(resource)+"_up"] = "Error during 'terraform apply' for '" + resource + "': \n" + tf_up_error
 
             tf_down_subprocess_result, tf_down_error = tf_down(resource, path, args.cloud, args.infra_color)
             if not tf_down_subprocess_result:
                 print("Error during 'terraform destroy' for '" + resource + "': \n" + tf_down_error)
-                tf_failed[resource] = "Error during 'terraform destroy' for '" + resource + "': \n" + tf_down_error
+                tf_failed[str(resource)+"_down"] = "Error during 'terraform destroy' for '" + resource + "': \n" + tf_down_error
     else:
         print("Error during 'terraform apply' for 'common_resources': \n" + tf_up_common_error)
-        tf_failed['common_resources'] = "Error during 'terraform apply' for 'common_resources': \n" + tf_up_common_error
+        tf_failed['common_resources'+"_up"] = "Error during 'terraform apply' for 'common_resources': \n" + tf_up_common_error
 
     tf_down_common_subprocess_result, tf_down_common_error = common_tf_down(RULEPACK_TESTING_PATH, args.infra_color)
 
     if not tf_down_common_subprocess_result:
         print("Error during 'terraform destroy' for 'common_resources': \n" + tf_down_common_error)
         tf_failed[
-            'common_resources'] = "Error during 'terraform destroy' for 'common_resources': \n" + tf_down_common_error
+            'common_resources'+"_down"] = "Error during 'terraform destroy' for 'common_resources': \n" + tf_down_common_error
 
     if tf_up_subprocess_result:
         report.create_report(
@@ -95,7 +95,7 @@ def main():
             cloud=args.cloud)
 
     if args.cloud == "AWS" and args.sa:
-        iam_role_aws.create_delete_readonly_role_aws(delete=True, color=args.infra_color)
+        iam_role_aws.create_delete_readonly_role_aws(delete=True, color=args.infra_color, role_name=role.get("RoleName", None))
 
     with open(os.path.join(OUTPUT_DIR, '.tf_failed'), "w") as failed_file:
         for item, description in tf_failed.items():

@@ -8,5 +8,4 @@ resource "null_resource" "this" {
     when    = destroy
     command = "aws securityhub disable-security-hub"
   }
-
 }
