@@ -22,6 +22,10 @@ output "kms_key_arn" {
   value = aws_kms_key.this.arn
 }
 
+output "sg_1_id" {
+  value = aws_security_group.this.id
+}
+
 output "wafregional_acl_id" {
   value = aws_wafregional_web_acl.this.id
 }

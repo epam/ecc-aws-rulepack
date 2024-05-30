@@ -1,47 +1,22 @@
-resource "aws_vpc" "this" {
-  cidr_block = "192.168.0.0/22"
-}
-
-resource "aws_subnet" "subnet_1" {
-  availability_zone = data.aws_availability_zones.this.names[0]
-  cidr_block        = "192.168.0.0/24"
-  vpc_id            = aws_vpc.this.id
-}
-
-resource "aws_subnet" "subnet_2" {
-  availability_zone = data.aws_availability_zones.this.names[1]
-  cidr_block        = "192.168.1.0/24"
-  vpc_id            = aws_vpc.this.id
-}
-
-resource "aws_subnet" "subnet_3" {
-  availability_zone = data.aws_availability_zones.this.names[2]
-  cidr_block        = "192.168.2.0/24"
-  vpc_id            = aws_vpc.this.id
-}
-
-resource "aws_security_group" "this" {
-  vpc_id = aws_vpc.this.id
-}
+# Takes about 40 min to deploy
 
 resource "aws_msk_cluster" "this" {
   cluster_name           = "${module.naming.resource_prefix.kafka}"
-  kafka_version          = "2.6.2"
-  number_of_broker_nodes = 3
+  kafka_version          = "3.5.1"
+  number_of_broker_nodes = 2
 
   broker_node_group_info {
     instance_type = "kafka.t3.small"
     client_subnets = [
-      aws_subnet.subnet_1.id,
-      aws_subnet.subnet_2.id,
-      aws_subnet.subnet_3.id,
+      data.terraform_remote_state.common.outputs.vpc_subnet_1_id,
+      data.terraform_remote_state.common.outputs.vpc_subnet_2_id
     ]
     storage_info {
       ebs_storage_info {
-        volume_size = 5
+        volume_size = 1
       }
     }
-    security_groups = [aws_security_group.this.id]
+    security_groups = [data.terraform_remote_state.common.outputs.sg_1_id]
   }
 
   encryption_info {

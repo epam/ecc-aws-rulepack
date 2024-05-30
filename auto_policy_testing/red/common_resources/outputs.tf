@@ -17,3 +17,7 @@ output "vpc_subnet_2_id" {
 output "vpc_subnet_3_id" {
   value = aws_subnet.subnet3.id
 }
+
+output "sg_1_id" {
+  value = aws_security_group.this.id
+}

@@ -14,7 +14,7 @@ output "resource_prefix" {
     sagemaker_model = "${local.suffix}-${var.resource_type}-sagemaker-model-${local.compliance_status}"
     sagemaker_notebook = "${local.suffix}-${var.resource_type}-sagemaker-notebook-${local.compliance_status}"
     qldb              = "${local.suffix}-${var.resource_type}-qldb-${local.compliance_status}"
-    kafka             = "${local.suffix}_${var.resource_type}_kafka_${local.compliance_status}"
+    kafka             = "${local.suffix}-${var.resource_type}-kafka-${local.compliance_status}"
     acm               = "${local.suffix}.${local.compliance_status}"
     launch_config     = "${local.suffix}_${var.resource_type}_launch_config_${local.compliance_status}"
     nat_gateway       = "${local.suffix}_${var.resource_type}_ng_${local.compliance_status}"
