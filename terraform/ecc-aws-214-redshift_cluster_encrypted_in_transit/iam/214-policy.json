@@ -4,6 +4,7 @@
         {
             "Effect": "Allow",
             "Action": [
+                "redshift:DescribeClusters",
                 "redshift:DescribeClusterParameters"
             ],
             "Resource": "*"
