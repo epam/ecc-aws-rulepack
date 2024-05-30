@@ -1,9 +1,10 @@
 resource "aws_lightsail_instance" "this" {
+  provider          = aws.provider2
   name              = "${module.naming.resource_prefix.lightsail_instance}-${random_integer.this.result}"
   availability_zone = data.aws_availability_zones.this.names[0]
   blueprint_id      = "amazon_linux_2"
   bundle_id         = "nano_2_0"
-  provider          = aws.provider2
+  
   key_pair_name     = aws_lightsail_key_pair.this.name
 }
 
