@@ -65,7 +65,7 @@
   "lambda": ["FunctionArn"],
   "launch-config": ["LaunchConfigurationName"],
   "lightsail-instance": ["arn"],
-  "log-group": ["arn"],
+  "log-group": ["logGroupArn"],
   "message-broker": ["BrokerArn"],
   "nat-gateway": ["NatGatewayId"],
   "network-acl": ["NetworkAclId"],
