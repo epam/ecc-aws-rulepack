@@ -16,6 +16,9 @@ aws = {
         "ecc-aws-592-reserved_rds_instance_payment_pending",
         "ecc-aws-593-reserved_rds_instance_recent_purchases",
         "ecc-aws-594-underutilized_rds_instance_storage",
+        "ecc-aws-595-reserved_redshift_node_payment_failed",
+        "ecc-aws-596-reserved_redshift_node_payment_pending",
+        "ecc-aws-597-reserved_redshift_node_recent_purchases",
         "ecc-aws-614-idle_rds_instance"
     ],
     "red": [
@@ -48,6 +51,10 @@ aws = {
         "ecc-aws-592-reserved_rds_instance_payment_pending",
         "ecc-aws-593-reserved_rds_instance_recent_purchases",
         "ecc-aws-594-underutilized_rds_instance_storage",
+        "ecc-aws-595-reserved_redshift_node_payment_failed",
+        "ecc-aws-596-reserved_redshift_node_payment_pending",
+        "ecc-aws-597-reserved_redshift_node_recent_purchases",
+        "ecc-aws-598-redshift_instance_generation",
         "ecc-aws-614-idle_rds_instance"
     ],
     "parallel": [

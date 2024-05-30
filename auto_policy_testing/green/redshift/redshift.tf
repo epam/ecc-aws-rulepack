@@ -1,5 +1,7 @@
-resource "aws_redshift_cluster" "this" {
-  cluster_identifier                   = "${module.naming.resource_prefix.redshift_cluster}"
+# Time to deploy about 7 min
+
+resource "aws_redshift_cluster" "this1" {
+  cluster_identifier                   = "${module.naming.resource_prefix.redshift_cluster}-1"
   database_name                        = "redshifttest"
   master_username                      = "root"
   master_password                      = random_password.this.result
@@ -12,21 +14,43 @@ resource "aws_redshift_cluster" "this" {
   allow_version_upgrade                = true
   publicly_accessible                  = false
   enhanced_vpc_routing                 = true
-  cluster_parameter_group_name         = aws_redshift_parameter_group.this.name
+  cluster_parameter_group_name         = aws_redshift_parameter_group.this1.name
   availability_zone_relocation_enabled = true
-
-  logging {
-    enable      = true
-    bucket_name = aws_s3_bucket.this.id
-  }
-
-  depends_on = [
-    aws_s3_bucket_acl.this
-  ]
 }
 
-resource "aws_redshift_parameter_group" "this" {
-  name   = "${module.naming.resource_prefix.redshift_parameter_group}"
+resource "aws_redshift_logging" "this1" {
+  cluster_identifier   = aws_redshift_cluster.this1.id
+  log_destination_type = "s3"
+  bucket_name          = aws_s3_bucket.this.id
+}
+
+resource "aws_redshift_cluster" "this2" {
+  cluster_identifier           = "${module.naming.resource_prefix.redshift_cluster}-2"
+  database_name                = "redshifttest"
+  master_username              = "root"
+  master_password              = random_password.this.result
+  node_type                    = "dc2.large"
+  port                         = 5431
+  skip_final_snapshot          = true
+  allow_version_upgrade        = true
+  publicly_accessible          = false
+  cluster_parameter_group_name = aws_redshift_parameter_group.this2.name
+}
+
+resource "aws_redshift_logging" "this2" {
+  cluster_identifier   = aws_redshift_cluster.this2.id
+  log_destination_type = "cloudwatch"
+  log_exports          = ["connectionlog", "userlog", "useractivitylog"]
+
+  depends_on = [aws_cloudwatch_log_group.this]
+}
+
+resource "aws_cloudwatch_log_group" "this" {
+  name = "/aws/redshift/cluster/${aws_redshift_cluster.this2.id}"
+}
+
+resource "aws_redshift_parameter_group" "this1" {
+  name   = "${module.naming.resource_prefix.redshift_parameter_group}-1"
   family = "redshift-1.0"
 
   parameter {
@@ -40,28 +64,14 @@ resource "aws_redshift_parameter_group" "this" {
   }
 }
 
-resource "aws_s3_bucket" "this" {
-  bucket        = "${module.naming.resource_prefix.redshift_cluster}-${random_integer.this.result}"
-  force_destroy = "true"
-}
+resource "aws_redshift_parameter_group" "this2" {
+  name   = "${module.naming.resource_prefix.redshift_parameter_group}-2"
+  family = "redshift-1.0"
 
-resource "aws_s3_bucket_ownership_controls" "this" {
-  bucket = aws_s3_bucket.this.id
-  rule {
-    object_ownership = "BucketOwnerPreferred"
+  parameter {
+    name  = "enable_user_activity_logging"
+    value = "true"
   }
-}
-
-resource "aws_s3_bucket_acl" "this" {
-  depends_on = [aws_s3_bucket_ownership_controls.this]
-
-  bucket = aws_s3_bucket.this.id
-  acl    = "private"
-}
-
-resource "aws_s3_bucket_policy" "this" {
-  bucket = aws_s3_bucket.this.id
-  policy = data.aws_iam_policy_document.this.json
 }
 
 resource "random_password" "this" {
@@ -69,11 +79,8 @@ resource "random_password" "this" {
   special          = true
   numeric          = true
   min_numeric      = 1
+  min_special      = 1
   override_special = "!#$%*()-_=+[]{}:?"
 }
 
-resource "random_integer" "this" {
-  min = 1
-  max = 10000000
-}
 
