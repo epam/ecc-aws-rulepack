@@ -53,6 +53,8 @@ output "resource_prefix" {
     ebs_snapshot      = "${local.suffix}_${var.resource_type}_snap_${local.compliance_status}"
     security_group    = "${local.suffix}_${var.resource_type}_sg_${local.compliance_status}"
     vpc               = "${local.suffix}_${var.resource_type}_vpc_${local.compliance_status}"
+    nacl              = "${local.suffix}_${var.resource_type}-nacl-${local.compliance_status}"
+    eip               = "${local.suffix}_${var.resource_type}-eip-${local.compliance_status}"
     ecr_repository    = "${local.suffix}_${var.resource_type}_repo_${local.compliance_status}"
     lambda_function   = "${local.suffix}_${var.resource_type}_fun_${local.compliance_status}"
     iam_role          = "${local.suffix}_${var.resource_type}_role_${local.compliance_status}"

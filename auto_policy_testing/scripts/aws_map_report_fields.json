@@ -71,7 +71,7 @@
   "network-acl": ["NetworkAclId"],
   "network-addr": ["AllocationId"],
   "peering-connection": ["VpcPeeringConnectionId"],
-  "qldb": ["EnvironmentArn"],
+  "qldb": ["Arn"],
   "r53domain": ["DomainName"],
   "rds": ["DBInstanceArn"],
   "rds-cluster": ["DBClusterArn"],

@@ -21,6 +21,7 @@ resource "aws_sagemaker_model" "this" {
 }
 
 resource "aws_iam_role" "this" {
+  name = "${module.naming.resource_prefix.sagemaker_notebook}"
   assume_role_policy = data.aws_iam_policy_document.this.json
 }
 
@@ -33,25 +34,6 @@ resource "aws_sagemaker_notebook_instance" "this" {
   security_groups        = [aws_security_group.this.id]
   direct_internet_access = "Disabled"
   root_access            = "Disabled"
-}
-
-resource "aws_iam_role" "this2" {
-  name = "${module.naming.resource_prefix.sagemaker_notebook}"
-
-  assume_role_policy = <<EOF
-{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Effect": "Allow",
-            "Principal": {
-                "Service": "sagemaker.amazonaws.com"
-            },
-            "Action": "sts:AssumeRole"
-        }
-    ]
-}
-EOF
 }
 
 resource "aws_security_group" "this" {
