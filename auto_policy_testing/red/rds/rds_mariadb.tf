@@ -1,7 +1,7 @@
 resource "aws_db_instance" "mariadb" {
   identifier                      = "${module.naming.resource_prefix.rds_instance}-mariadb"
   engine                          = "mariadb"
-  engine_version                  = "10.6.10"
+  engine_version                  = "10.6.17"
   instance_class                  = "db.t3.micro"
   allocated_storage               = 20
   storage_type                    = "gp2"
