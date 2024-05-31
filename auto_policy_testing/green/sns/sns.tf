@@ -1,12 +1,12 @@
 resource "aws_sns_topic" "this" {
   name                           = "${module.naming.resource_prefix.sns}"
   kms_master_key_id              = data.terraform_remote_state.common.outputs.kms_key_arn
-  http_success_feedback_role_arn = aws_iam_role.success.arn
-  http_failure_feedback_role_arn = aws_iam_role.failure.arn
+  http_success_feedback_role_arn = aws_iam_role.this.arn
+  http_failure_feedback_role_arn = aws_iam_role.this.arn
 }
 
 resource "aws_sqs_queue" "this" {
-  name = "${module.naming.resource_prefix.sns}"
+  name = "${module.naming.resource_prefix.sqs}"
 }
 
 resource "aws_sns_topic_subscription" "this" {
@@ -29,20 +29,14 @@ resource "null_resource" "this" {
   depends_on = [aws_sns_topic_subscription.this]
 }
 
-resource "aws_iam_role" "success" {
-  name                = "${module.naming.resource_prefix.sns}-success"
-  assume_role_policy  = data.aws_iam_policy_document.this.json
-  managed_policy_arns = [aws_iam_policy.this.arn]
-}
-
-resource "aws_iam_role" "failure" {
-  name                = "${module.naming.resource_prefix.sns}-failure"
+resource "aws_iam_role" "this" {
+  name                = "${module.naming.resource_prefix.iam_role}"
   assume_role_policy  = data.aws_iam_policy_document.this.json
   managed_policy_arns = [aws_iam_policy.this.arn]
 }
 
 resource "aws_iam_policy" "this" {
-  name = "${module.naming.resource_prefix.sns}"
+  name = "${module.naming.resource_prefix.iam_policy}"
 
   policy = jsonencode({
     Version = "2012-10-17"

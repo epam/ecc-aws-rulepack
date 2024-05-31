@@ -1,10 +1,10 @@
 resource "aws_sqs_queue" "this" {
+  provider = aws.provider2
   name                      = "${module.naming.resource_prefix.sqs}"
   delay_seconds             = 90
   max_message_size          = 2048
   message_retention_seconds = 86400
   receive_wait_time_seconds = 10
-  provider = aws.provider2
 }
 
 resource "aws_sqs_queue_policy" "this" {
