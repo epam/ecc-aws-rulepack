@@ -14,6 +14,20 @@ resource "aws_rds_cluster" "aurora-mysql" {
   backtrack_window                    = 600
   copy_tags_to_snapshot               = true
   port                                = 6033
+  deletion_protection                 = true
+}
+
+resource "null_resource" "this2" {
+  triggers = {
+    rds = aws_rds_cluster.aurora-mysql.cluster_identifier
+  }
+
+  provisioner "local-exec" {
+    when    = destroy
+    command = "aws rds modify-db-cluster --db-cluster-identifier ${self.triggers.rds} --no-deletion-protection"
+  }
+
+  depends_on = [aws_rds_cluster.aurora-mysql]
 }
 
 data "aws_rds_engine_version" "aurora-mysql" {

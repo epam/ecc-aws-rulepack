@@ -29,6 +29,7 @@ resource "aws_db_instance" "mysql" {
   parameter_group_name                = aws_db_parameter_group.mysql.id
   iam_database_authentication_enabled = true
   auto_minor_version_upgrade          = true
+  deletion_protection                 = true
 }
 
 resource "aws_db_parameter_group" "mysql" {
@@ -62,4 +63,17 @@ data "aws_rds_engine_version" "mysql" {
 resource "aws_db_snapshot" "mysql" {
   db_instance_identifier = aws_db_instance.mysql.identifier
   db_snapshot_identifier = "${module.naming.resource_prefix.rds_instance}-mysql"
+}
+
+resource "null_resource" "this1" {
+  triggers = {
+    rds = aws_db_instance.mysql.identifier
+  }
+
+  provisioner "local-exec" {
+    when    = destroy
+    command = "aws rds modify-db-instance --db-instance-identifier ${self.triggers.rds} --no-deletion-protection"
+  }
+
+  depends_on = [aws_db_instance.mysql]
 }

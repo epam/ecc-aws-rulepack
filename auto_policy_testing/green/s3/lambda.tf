@@ -5,6 +5,7 @@ resource "aws_lambda_function" "this" {
   handler       = "func.lambda_handler"
   runtime       = "python3.12"
   depends_on    = [data.archive_file.this]
+  replace_security_groups_on_destroy = true
 }
 
 resource "aws_lambda_permission" "this" {

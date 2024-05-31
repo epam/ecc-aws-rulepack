@@ -20,6 +20,7 @@ resource "aws_lambda_function" "this" {
   runtime                        = "python3.12"
   reserved_concurrent_executions = 1 
   layers                         = ["arn:aws:lambda:${var.region}:580247275435:layer:LambdaInsightsExtension:52"]
+  replace_security_groups_on_destroy = true
 
   vpc_config {
     security_group_ids = [aws_security_group.this.id]

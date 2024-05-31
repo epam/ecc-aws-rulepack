@@ -21,7 +21,8 @@ resource "null_resource" "this" {
       "aws sns publish ",
       "--topic-arn ${aws_sns_topic.this.arn}",
       "--message 'Hello World!'",
-      "--region ${var.region}"
+      "--region ${var.region} ;",
+      "sleep 15m"
       ]
     )
   }

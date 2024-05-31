@@ -45,7 +45,7 @@ output "resource_prefix" {
     backup_plan       = "${local.suffix}_${var.resource_type}_plan_${local.compliance_status}"
     app_flow          = "${local.suffix}-${var.resource_type}-appflow-${local.compliance_status}"
     cfn               = "${local.suffix}-${var.resource_type}-cfn-${local.compliance_status}"
-    sns               = "${local.suffix}_${var.resource_type}_sns_${local.compliance_status}"
+    sns               = "${local.suffix}-${var.resource_type}_sns_${local.compliance_status}"
     sqs               = "${local.suffix}-${var.resource_type}-sqs-${local.compliance_status}"
     kms_key           = "${local.suffix}_${var.resource_type}_key_${local.compliance_status}"
     ami               = "${local.suffix}_${var.resource_type}_ami_${local.compliance_status}"

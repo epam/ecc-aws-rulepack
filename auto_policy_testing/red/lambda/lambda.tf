@@ -10,6 +10,7 @@ resource "aws_lambda_function" "this" {
   role          = aws_iam_role.this.arn
   handler       = "func.lambda_handler"
   runtime       = "python3.8"
+  replace_security_groups_on_destroy = true
 
   vpc_config {
     security_group_ids = [aws_security_group.this.id]
