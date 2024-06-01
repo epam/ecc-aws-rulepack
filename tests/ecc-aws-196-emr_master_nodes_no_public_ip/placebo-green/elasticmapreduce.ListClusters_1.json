@@ -3,8 +3,8 @@
     "data": {
         "Clusters": [
             {
-                "Id": "j-2J9C4X0KGRVUB",
-                "Name": "196_emr_cluster_green",
+                "Id": "j-2QC63KC60CX8T",
+                "Name": "emr_green_169",
                 "Status": {
                     "State": "WAITING",
                     "StateChangeReason": {
@@ -13,28 +13,28 @@
                     "Timeline": {
                         "CreationDateTime": {
                             "__class__": "datetime",
-                            "year": 2021,
-                            "month": 11,
-                            "day": 12,
-                            "hour": 9,
-                            "minute": 21,
-                            "second": 35,
-                            "microsecond": 79000
+                            "year": 2024,
+                            "month": 6,
+                            "day": 1,
+                            "hour": 14,
+                            "minute": 18,
+                            "second": 31,
+                            "microsecond": 26000
                         },
                         "ReadyDateTime": {
                             "__class__": "datetime",
-                            "year": 2021,
-                            "month": 11,
-                            "day": 12,
-                            "hour": 9,
-                            "minute": 32,
-                            "second": 37,
-                            "microsecond": 335000
+                            "year": 2024,
+                            "month": 6,
+                            "day": 1,
+                            "hour": 14,
+                            "minute": 23,
+                            "second": 19,
+                            "microsecond": 544000
                         }
                     }
                 },
                 "NormalizedInstanceHours": 0,
-                "ClusterArn": "arn:aws:elasticmapreduce:us-east-1:111111111111:cluster/j-2J9C4X0KGRVUB"
+                "ClusterArn": "arn:aws:elasticmapreduce:us-east-1:111111111111:cluster/j-2QC63KC60CX8T"
             }
         ],
         "ResponseMetadata": {}
