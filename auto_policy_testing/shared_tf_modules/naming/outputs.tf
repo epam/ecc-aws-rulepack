@@ -77,6 +77,7 @@ output "resource_prefix" {
     rds_param_grp     = "${local.suffix}-${var.resource_type}-paramgroup-${local.compliance_status}"
     rds_option_grp    = "${local.suffix}-${var.resource_type}-optgroup-${local.compliance_status}"
     dax               = "${local.suffix}-${var.resource_type}-${local.compliance_status}"
+    emr               = "${local.suffix}_${var.resource_type}_emr_${local.compliance_status}"
     directory         = "${local.suffix}-${var.resource_type}-${local.compliance_status}"
   }
 }
