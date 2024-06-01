@@ -2,6 +2,7 @@ resource "aws_db_instance" "this" {
   identifier             = module.naming.resource_prefix.rds_instance
   engine                 = "mysql"
   instance_class         = "db.t3.micro"
+  db_name                = "db"
   allocated_storage      = 10
   storage_type           = "gp2"
   username               = "adminaccount"

@@ -33,3 +33,7 @@ resource "aws_lambda_permission" "this" {
   action        = "lambda:InvokeFunction"
   principal     = "secretsmanager.amazonaws.com"
 }
+
+resource "aws_cloudwatch_log_group" "this" {
+  name = "/aws/lambda/${aws_lambda_function.this.function_name}"
+}

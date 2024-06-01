@@ -1,5 +1,5 @@
 resource "aws_secretsmanager_secret" "this" {
-  name                    = module.naming.resource_prefix.secrets
+  name                    = "${module.naming.resource_prefix.secrets}"
   recovery_window_in_days = 0
 
   depends_on = [aws_db_instance.this]
@@ -28,12 +28,20 @@ EOF
 resource "aws_secretsmanager_secret_rotation" "this" {
   secret_id           = aws_secretsmanager_secret.this.id
   rotation_lambda_arn = aws_lambda_function.this.arn
-  rotate_immediately  = true
+  rotate_immediately  = false
   rotation_rules {
     automatically_after_days = 90
   }
-}
 
+  depends_on = [
+    aws_lambda_permission.this,
+    aws_iam_role_policy.this1,
+    aws_iam_role_policy.this2,
+    aws_iam_role_policy.this3,
+    aws_iam_role_policy_attachment.this1,
+    aws_cloudwatch_log_group.this
+  ]
+}
 
 resource "aws_security_group" "this" {
   name   = module.naming.resource_prefix.security_group
@@ -61,16 +69,20 @@ resource "aws_vpc_endpoint" "this" {
   private_dns_enabled = false
 
   subnet_ids = [data.terraform_remote_state.common.outputs.vpc_subnet_1_id, data.terraform_remote_state.common.outputs.vpc_subnet_3_id]
-  security_group_ids = [
-    aws_security_group.this.id
-  ]
+  security_group_ids = [aws_security_group.this.id]
 }
 
 resource "null_resource" "this" {
-
+  triggers = {
+      secret = aws_secretsmanager_secret.this.id
+    }
   provisioner "local-exec" {
-    command = "sleep 5m"
+    command = <<EOF
+sleep 20
+aws secretsmanager rotate-secret --secret-id ${self.triggers.secret}
+sleep 30
+EOF
   }
 
-  depends_on = [aws_lambda_function.this, aws_db_instance.this, aws_secretsmanager_secret_rotation.this]
+  depends_on = [aws_lambda_function.this, aws_secretsmanager_secret_rotation.this, aws_db_instance.this]
 }
