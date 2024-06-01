@@ -33,7 +33,7 @@ aws = {
         "ecc-aws-145-organizations_changes_alarm_exists",
         "ecc-aws-207-rds_aurora_logging_enabled",
         "ecc-aws-253-glue_data_catalog_encrypted_with_kms_customer_master_keys",
-        "ecc-aws-259-emr_clusters_in_vpc resource",
+        "ecc-aws-259-emr_clusters_in_vpc",
         "ecc-aws-288-workspaces_instances_are_healthy",
         "ecc-aws-331-workspaces_images_not_older_than_90_days", 
         "ecc-aws-344-route53_domain_expires_in_30_days",

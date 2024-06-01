@@ -12,6 +12,9 @@ policies:
       FSx Lustre file system does not have retention period set at least to 7 days
     resource: aws.fsx
     filters:
+      - type: value
+        key: FileSystemType
+        value: LUSTRE
       - not:
           - type: value
             key: LustreConfiguration.AutomaticBackupRetentionDays

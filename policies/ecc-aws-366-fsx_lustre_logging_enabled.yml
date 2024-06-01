@@ -12,6 +12,9 @@ policies:
       FSx Lustre file logging is disabled
     resource: aws.fsx
     filters:
+      - type: value
+        key: FileSystemType
+        value: LUSTRE
       - or:
           - type: value
             key: LustreConfiguration.LogConfiguration.Level

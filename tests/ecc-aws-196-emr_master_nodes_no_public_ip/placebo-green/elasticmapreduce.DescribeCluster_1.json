@@ -2,8 +2,8 @@
     "status_code": 200,
     "data": {
         "Cluster": {
-            "Id": "j-2J9C4X0KGRVUB",
-            "Name": "196_emr_cluster_green",
+            "Id": "j-2QC63KC60CX8T",
+            "Name": "emr_green_169",
             "Status": {
                 "State": "WAITING",
                 "StateChangeReason": {
@@ -12,38 +12,38 @@
                 "Timeline": {
                     "CreationDateTime": {
                         "__class__": "datetime",
-                        "year": 2021,
-                        "month": 11,
-                        "day": 12,
-                        "hour": 9,
-                        "minute": 21,
-                        "second": 35,
-                        "microsecond": 79000
+                        "year": 2024,
+                        "month": 6,
+                        "day": 1,
+                        "hour": 14,
+                        "minute": 18,
+                        "second": 31,
+                        "microsecond": 26000
                     },
                     "ReadyDateTime": {
                         "__class__": "datetime",
-                        "year": 2021,
-                        "month": 11,
-                        "day": 12,
-                        "hour": 9,
-                        "minute": 32,
-                        "second": 37,
-                        "microsecond": 335000
+                        "year": 2024,
+                        "month": 6,
+                        "day": 1,
+                        "hour": 14,
+                        "minute": 23,
+                        "second": 19,
+                        "microsecond": 544000
                     }
                 }
             },
             "Ec2InstanceAttributes": {
                 "Ec2KeyName": "",
-                "Ec2SubnetId": "subnet-04ab0028716add8c7",
+                "Ec2SubnetId": "subnet-0159a4626ef4fc069",
                 "RequestedEc2SubnetIds": [
-                    "subnet-04ab0028716add8c7"
+                    "subnet-0159a4626ef4fc069"
                 ],
                 "Ec2AvailabilityZone": "us-east-1a",
                 "RequestedEc2AvailabilityZones": [],
-                "IamInstanceProfile": "arn:aws:iam::111111111111:instance-profile/196_emr_instance_profile_green",
-                "EmrManagedMasterSecurityGroup": "sg-0a090e276ea6deaa8",
-                "EmrManagedSlaveSecurityGroup": "sg-0eb9bcf478a9dbc80",
-                "ServiceAccessSecurityGroup": "sg-055474ab7b139b32c",
+                "IamInstanceProfile": "arn:aws:iam::111111111111:instance-profile/autotest_emr_role_green-profile",
+                "EmrManagedMasterSecurityGroup": "sg-0fddb047fd8580849",
+                "EmrManagedSlaveSecurityGroup": "sg-0f2bed4cd1da87f56",
+                "ServiceAccessSecurityGroup": "sg-05fc036927a5b63fe",
                 "AdditionalMasterSecurityGroups": [
                     ""
                 ],
@@ -52,35 +52,44 @@
                 ]
             },
             "InstanceCollectionType": "INSTANCE_GROUP",
-            "ReleaseLabel": "emr-5.33.0",
+            "LogUri": "s3n://autotest-emr-bucket-green-6135298-1/",
+            "ReleaseLabel": "emr-7.1.0",
             "AutoTerminate": false,
-            "TerminationProtected": false,
+            "TerminationProtected": true,
+            "UnhealthyNodeReplacement": false,
             "VisibleToAllUsers": true,
             "Applications": [
                 {
-                    "Name": "Hadoop",
-                    "Version": "2.10.1"
+                    "Name": "Spark",
+                    "Version": "3.5.0"
                 }
             ],
             "Tags": [
                 {
-                    "Key": "CustodianRule",
-                    "Value": "ecc-aws-196-emr_master_nodes_no_public_ip"
+                    "Key": "for-use-with-amazon-emr-managed-policies",
+                    "Value": "true"
                 },
                 {
                     "Key": "ComplianceStatus",
                     "Value": "Green"
                 }
             ],
-            "ServiceRole": "arn:aws:iam::111111111111:role/196_emr_service_role_green",
+            "ServiceRole": "arn:aws:iam::111111111111:role/autotest_emr_role_green-service",
             "NormalizedInstanceHours": 0,
-            "MasterPublicDnsName": "ip-10-0-1-201.ec2.internal",
+            "MasterPublicDnsName": "ip-10-0-10-225.ec2.internal",
             "Configurations": [],
+            "SecurityConfiguration": "emr_green_169",
             "ScaleDownBehavior": "TERMINATE_AT_TASK_COMPLETION",
-            "KerberosAttributes": {},
-            "ClusterArn": "arn:aws:elasticmapreduce:us-east-1:111111111111:cluster/j-2J9C4X0KGRVUB",
+            "EbsRootVolumeSize": 15,
+            "KerberosAttributes": {
+                "Realm": "EC2.INTERNAL",
+                "KdcAdminPassword": "********",
+                "CrossRealmTrustPrincipalPassword": "********"
+            },
+            "ClusterArn": "arn:aws:elasticmapreduce:us-east-1:111111111111:cluster/j-2QC63KC60CX8T",
             "StepConcurrencyLevel": 1,
-            "PlacementGroups": []
+            "PlacementGroups": [],
+            "OSReleaseLabel": "2023.4.20240528.0"
         },
         "ResponseMetadata": {}
     }
