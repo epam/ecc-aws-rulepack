@@ -5,7 +5,7 @@ data "aws_iam_policy_document" "this1" {
       "ec2:DeleteNetworkInterface",
       "ec2:DescribeNetworkInterfaces",
       "ec2:DetachNetworkInterface"
-      ]
+    ]
     resources = ["*"]
   }
 }
@@ -16,7 +16,7 @@ data "aws_iam_policy_document" "this2" {
       "kms:Decrypt",
       "kms:DescribeKey",
       "kms:GenerateDataKey"
-      ]
+    ]
     resources = ["*"]
   }
 }
@@ -28,7 +28,7 @@ data "aws_iam_policy_document" "this3" {
       "secretsmanager:GetSecretValue",
       "secretsmanager:PutSecretValue",
       "secretsmanager:UpdateSecretVersionStage"
-      ]
+    ]
     resources = ["*"]
   }
   statement {

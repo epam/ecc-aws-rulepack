@@ -1,5 +1,5 @@
 resource "aws_iam_role" "this" {
-  name = "${module.naming.resource_prefix.iam_role}"
+  name = module.naming.resource_prefix.iam_role
 
   assume_role_policy = jsonencode({
     Version = "2012-10-17"

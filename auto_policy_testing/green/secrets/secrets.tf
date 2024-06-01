@@ -1,5 +1,5 @@
 resource "aws_secretsmanager_secret" "this" {
-  name = "${module.naming.resource_prefix.secrets}"
+  name                    = module.naming.resource_prefix.secrets
   recovery_window_in_days = 0
 
   depends_on = [aws_db_instance.this]
@@ -28,7 +28,7 @@ EOF
 resource "aws_secretsmanager_secret_rotation" "this" {
   secret_id           = aws_secretsmanager_secret.this.id
   rotation_lambda_arn = aws_lambda_function.this.arn
-  rotate_immediately = true
+  rotate_immediately  = true
   rotation_rules {
     automatically_after_days = 90
   }
@@ -36,7 +36,7 @@ resource "aws_secretsmanager_secret_rotation" "this" {
 
 
 resource "aws_security_group" "this" {
-  name   = "${module.naming.resource_prefix.security_group}"
+  name   = module.naming.resource_prefix.security_group
   vpc_id = data.terraform_remote_state.common.outputs.vpc_id
 
   ingress {
@@ -66,3 +66,11 @@ resource "aws_vpc_endpoint" "this" {
   ]
 }
 
+resource "null_resource" "this" {
+
+  provisioner "local-exec" {
+    command = "sleep 5m"
+  }
+
+  depends_on = [aws_lambda_function.this, aws_db_instance.this, aws_secretsmanager_secret_rotation.this]
+}
