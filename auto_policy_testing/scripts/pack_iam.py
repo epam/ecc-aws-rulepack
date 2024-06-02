@@ -1,3 +1,4 @@
+import copy
 import os
 import re
 import sys
@@ -5,17 +6,15 @@ import yaml
 import json
 from pathlib import Path
 
+import exception_rules
+
 root_path = Path(os.getcwd()).parents[1]
 tf_path = os.path.join(root_path, 'terraform')
 policies_path = os.path.join(root_path, 'policies')
-iam_path = os.path.join(root_path, 'auto_policy_testing', 'iam')
+policy_testing_dir = 'auto_policy_testing'
+iam_path = os.path.join(root_path, policy_testing_dir, 'iam')
 
 # list of policies that do not have neither green nor red terraform automated
-exception_rules = {
-    "aws": [],
-    "gcp": [],
-    "azure": []
-}
 
 template_full_resource_type_policy = {
     "Version": "2012-10-17",
@@ -37,38 +36,39 @@ def read_yaml_file(filepath: str):
     return content
 
 
-def pack_iam():
-    policies = sorted([file for file in os.listdir(policies_path) if file.endswith('.yml') or file.endswith('.yaml')])
+def aws_pack_iam_policies_per_resource_type(policies):
+    except_rules = getattr(exception_rules, 'aws')
     os.makedirs(iam_path, exist_ok=True)
     cloud = policies[0].split('-')[1]
 
-    green_resource_types = os.listdir(os.path.join(root_path, 'auto_policy_testing', 'green'))
+    green_resource_types = sorted(os.listdir(os.path.join(root_path, policy_testing_dir, 'green')))
     green_resource_types.remove('common_resources')
-    red_resource_types = os.listdir(os.path.join(root_path, 'auto_policy_testing', 'red'))
+    red_resource_types = sorted(os.listdir(os.path.join(root_path, policy_testing_dir, 'red')))
     red_resource_types.remove('common_resources')
 
     resource_types = []
-    if sorted(green_resource_types) != sorted(red_resource_types):
+    if green_resource_types != red_resource_types:
         green_resource_types_set = set(green_resource_types)
         red_resource_types_set = set(red_resource_types)
-        resource_types = list(green_resource_types_set.union(red_resource_types_set))
+        resource_types = sorted(list(green_resource_types_set.union(red_resource_types_set)))
     else:
-        resource_types = green_resource_types
+        resource_types = sorted(green_resource_types)
 
     map_resource_policies = {key: [] for key in resource_types}
 
     for policy in policies:
         policy_content = read_yaml_file(os.path.join(policies_path, policy))
-        policy_resource = policy_content['policies'][0].get('resource')
+        policy_resource = policy_content['policies'][0].get('resource').split('.')[-1]
         policy_name = policy_content['policies'][0].get('name')
         for resource in map_resource_policies:
             if ((policy_resource.startswith(f'aws.{resource}') or policy_resource.startswith(resource))
-                    and policy_name not in exception_rules[cloud]):
+                    and not (policy_name in except_rules.get('green', [])
+                    and policy_name in except_rules.get('red', []))):
                 map_resource_policies[resource].append(policy)
                 break
 
     for resource, policies in map_resource_policies.items():
-        full_resource_type_policy = template_full_resource_type_policy.copy()
+        full_resource_type_policy = copy.deepcopy(template_full_resource_type_policy)
         for policy in policies:
             policy_name = policy.replace(".yml", '').replace(".yaml", '')
             policy_id = policy.split("-")[2]

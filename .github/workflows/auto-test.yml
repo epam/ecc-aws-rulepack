@@ -1,0 +1,88 @@
+name: Auto-testing
+on:
+  push:
+    branches:
+      - 'feature/policy_testing'
+      - 'feature/policy_testing_v2'
+  # Run this workflow manually from the Actions tab
+  # workflow_dispatch:
+  #   inputs:
+  #     resource_priority_list:
+  #       type: string
+  #       description: Priority list for resources (you can remove unnecessary resources during testing)
+  #       default: 'efsdata.terraform_remote_state.common.outputs.sg_1_id'
+  #       required: true
+
+# limits to only one workflow in time 
+concurrency:
+  group: ${{ github.workflow }}
+
+env:
+  TF_VAR_project_name: ${{ secrets.TF_VAR_project }}
+  TF_VAR_region: ${{ vars.AWS_REGION }}
+  TF_DATA_DIR: ${{ github.workspace }}/auto_policy_testing
+  CORE_TESTING_FOLDER: ${{ github.workspace }}
+  OUTPUT_DIR: ${{ github.workspace }}/auto_policy_testing/output
+  AWS_DEFAULT_REGION: ${{ vars.AWS_REGION }}
+  TF_BACKEND_STORAGE_NAME: ${{ secrets.TF_BACKEND_STORAGE_NAME }}
+  TF_CLI_ARGS: "-no-color"
+  resource_priority_list: 'secrets'
+  RED: '\033[0;31m'
+
+jobs:
+  deploy_common_resources:
+    permissions:
+      contents: 'read'
+      id-token: 'write'
+    runs-on: ubuntu-22.04
+    strategy:
+      max-parallel: 10
+      fail-fast: false
+      matrix:
+        compliance: ['green', 'red']
+    steps:
+      - name: Git clone the repository
+        uses: actions/checkout@v4
+      - name: configure aws credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.CI_ASSUME_ROLE }}
+          role-session-name: ECC-AWS-RULEPACK_CI-GREEN
+          role-duration-seconds: 43200 
+          aws-region: ${{ vars.AWS_REGION }}
+      - name: Deploy resources
+        shell: bash
+        working-directory: auto_policy_testing
+        run: |
+          mkdir logs
+          cd ${{ matrix.compliance }}
+          cd common_resources
+          echo "Terraform Init..."
+          terraform init -backend-config="bucket=$TF_BACKEND_STORAGE_NAME" -backend-config="key=common_resources/${{ matrix.compliance }}"  -backend-config="region=$AWS_DEFAULT_REGION"
+          echo "Terraform Validate..."
+          terraform validate
+          echo "Terraform Apply..."
+          terraform apply -auto-approve &> ../../logs/common_resources_${{ matrix.compliance }}_up.txt
+          echo "Terraform State List..."
+          terraform state list
+
+      - name: Destroy resources
+        if: ${{ always() }}
+        timeout-minutes: 180
+        shell: bash
+        working-directory: auto_policy_testing
+        run: |
+          cd ${{ matrix.compliance }}
+          cd common_resources
+          echo "Terraform Destroy..."
+          terraform destroy -auto-approve &> ../../logs/common_resources_${{ matrix.compliance }}_down.txt
+          echo "Terraform State List..."
+          terraform state list
+      
+      - name: Archive loggs to artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: tf_logs_${{ matrix.compliance }}
+          path: |
+            auto_policy_testing/logs
+

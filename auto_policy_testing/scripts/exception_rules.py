@@ -61,6 +61,9 @@ aws = {
         "account",
         "workspaces",
         "iam"
+    ],
+    "sleep_before_scan": [
+        "account"
     ]
 }
 

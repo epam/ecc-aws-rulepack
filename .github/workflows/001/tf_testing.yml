@@ -1,8 +1,9 @@
-name: Terraform testing
+name: Auto-testing
 on:
   push:
     branches:
       - 'feature/policy_testing'
+      - 'feature/policy_testing_v2'
   # Run this workflow manually from the Actions tab
   # workflow_dispatch:
   #   inputs:
@@ -12,6 +13,7 @@ on:
   #       default: 'efsdata.terraform_remote_state.common.outputs.sg_1_id'
   #       required: true
 
+# limits to only one workflow in time 
 concurrency:
   group: ${{ github.workflow }}
 

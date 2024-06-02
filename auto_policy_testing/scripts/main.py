@@ -4,7 +4,7 @@ import scan
 import shutil
 import report
 import argparse
-from pack_iam import pack_iam
+from pack_iam import aws_pack_iam_policies_per_resource_type
 import iam_role_aws
 from terraform_infra import *
 
@@ -37,7 +37,7 @@ def main():
     os.makedirs(OUTPUT_DIR, exist_ok=True)
     sa = args.sa
     if args.cloud == "AWS":
-        pack_iam()
+        aws_pack_iam_policies_per_resource_type(policies)
         if args.sa:
             role = iam_role_aws.create_delete_readonly_role_aws(create=True, color=args.infra_color)
             sa = role.get("Role", {}).get("Arn", None)
