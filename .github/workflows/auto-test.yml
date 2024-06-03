@@ -29,11 +29,12 @@ env:
   resource_priority_list: 'secrets'
   RED: '\033[0;31m'
 
+permissions:
+  contents: 'read'
+  id-token: 'write'
+
 jobs:
   deploy_common_resources:
-    permissions:
-      contents: 'read'
-      id-token: 'write'
     runs-on: ubuntu-22.04
     strategy:
       max-parallel: 10
@@ -43,13 +44,10 @@ jobs:
     steps:
       - name: Git clone the repository
         uses: actions/checkout@v4
-      - name: configure aws credentials
-        uses: aws-actions/configure-aws-credentials@v4
+      - uses: ./.github/workflows/actions/auto-test
         with:
-          role-to-assume: ${{ secrets.CI_ASSUME_ROLE }}
-          role-session-name: ECC-AWS-RULEPACK_CI-GREEN
-          role-duration-seconds: 43200 
-          aws-region: ${{ vars.AWS_REGION }}
+          CI_ASSUME_ROLE: ${{ secrets.CI_ASSUME_ROLE }}
+          AWS_REGION: ${{ vars.AWS_REGION }}
       - name: Deploy resources
         shell: bash
         working-directory: auto_policy_testing
@@ -65,24 +63,115 @@ jobs:
           terraform apply -auto-approve &> ../../logs/common_resources_${{ matrix.compliance }}_up.txt
           echo "Terraform State List..."
           terraform state list
+      # - name: Archive loggs to artifacts
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: tf_logs_common_respurces_deploy_${{ matrix.compliance }}
+      #     path: |
+      #       auto_policy_testing/logs
 
+  pack_iam_policies_per_resource:
+    runs-on: ubuntu-22.04
+    needs: deploy_common_resources
+    steps:
+      - name: Git clone the repository
+        uses: actions/checkout@v4
+      - name: pack_iam_policies
+        shell: bash
+        working-directory: auto_policy_testing
+        run: |
+          cd scripts
+          python pack_iam.py AWS
+      - name: Archive loggs to artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: pack_iam
+          path: |
+            iam
+
+  deploy_resources:
+    runs-on: ubuntu-22.04
+    needs: [ deploy_common_resources, pack_iam_policies_per_resource ]
+    strategy:
+      max-parallel: 10
+      fail-fast: false
+      matrix:
+        compliance: ['green', 'red']
+        resource:
+          - ecr
+          - eni
+    steps:
+      - name: Git clone the repository
+        uses: actions/checkout@v4
+      - uses: ./.github/workflows/actions/auto-test
+        with:
+          CI_ASSUME_ROLE: ${{ secrets.CI_ASSUME_ROLE }}
+          AWS_REGION: ${{ vars.AWS_REGION }}
+      - name: Install dependencies
+        shell: bash
+        working-directory: auto_policy_testing/scripts
+        run: |
+          pip install -r requirements.txt
+          sudo apt-get install -y oathtool
+      - name: Download a single artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: pack_iam
+      - name: terraform_test_policy
+        shell: bash
+        working-directory: auto_policy_testing
+        run: |
+          mkdir logs
+          cd ${{ matrix.compliance }}
+          cd ${{ matrix.resource }}
+
+
+  destroy_common_resources:
+    runs-on: ubuntu-22.04
+    needs: [deploy_common_resources, deploy_resources]
+    if: ${{ always() }}
+    strategy:
+      max-parallel: 10
+      fail-fast: false
+      matrix:
+        compliance: ['green', 'red']
+    steps:
+      - name: Git clone the repository
+        uses: actions/checkout@v4
+      - uses: ./.github/workflows/actions/auto-test
+        with:
+          CI_ASSUME_ROLE: ${{ secrets.CI_ASSUME_ROLE }}
+          AWS_REGION: ${{ vars.AWS_REGION }}
       - name: Destroy resources
         if: ${{ always() }}
         timeout-minutes: 180
         shell: bash
         working-directory: auto_policy_testing
         run: |
+          mkdir logs
           cd ${{ matrix.compliance }}
           cd common_resources
+          echo "Terraform Init..."
+          terraform init -backend-config="bucket=$TF_BACKEND_STORAGE_NAME" -backend-config="key=common_resources/${{ matrix.compliance }}"  -backend-config="region=$AWS_DEFAULT_REGION"
           echo "Terraform Destroy..."
           terraform destroy -auto-approve &> ../../logs/common_resources_${{ matrix.compliance }}_down.txt
           echo "Terraform State List..."
           terraform state list
-      
-      - name: Archive loggs to artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: tf_logs_${{ matrix.compliance }}
-          path: |
-            auto_policy_testing/logs
+      # - name: Archive loggs to artifacts
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: tf_logs_common_respurces_destroy_${{ matrix.compliance }}
+      #     path: |
+      #       auto_policy_testing/logs     
+
+
+  # combine_all_artifacts:
+  #   runs-on: ubuntu-22.04
+  #   needs: deploy_common_resources
+  #   if: ${{ always() }}
+  #   steps:
+  #     - uses: actions/download-artifact@v3
+  #       with:
+  #         name: Build
+  #         path: build
 

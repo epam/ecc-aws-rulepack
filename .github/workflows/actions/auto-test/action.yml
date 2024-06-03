@@ -1,0 +1,17 @@
+name: "Setup cloud credentials"
+description: "Setup cloud credentials"
+inputs:
+  CI_ASSUME_ROLE:
+    required: true
+  AWS_REGION:
+    required: true
+runs:
+  using: "composite"
+  steps: 
+    - name: configure aws credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        role-to-assume: ${{ inputs.CI_ASSUME_ROLE }}
+        role-session-name: ECC-AWS-RULEPACK_CI-GREEN
+        role-duration-seconds: 43200 
+        aws-region: ${{ inputs.AWS_REGION }}

@@ -14,6 +14,8 @@ policies_path = os.path.join(root_path, 'policies')
 policy_testing_dir = 'auto_policy_testing'
 iam_path = os.path.join(root_path, policy_testing_dir, 'iam')
 
+# list of policies that do not have neither green nor red terraform automated
+
 template_full_resource_type_policy = {
     "Version": "2012-10-17",
     "Statement": [
@@ -61,7 +63,7 @@ def aws_pack_iam_policies_per_resource_type(policies):
         for resource in map_resource_policies:
             if ((policy_resource.startswith(f'aws.{resource}') or policy_resource.startswith(resource))
                     and not (policy_name in except_rules.get('green', [])
-                             and policy_name in except_rules.get('red', []))):
+                    and policy_name in except_rules.get('red', []))):
                 map_resource_policies[resource].append(policy)
                 break
 
@@ -88,14 +90,6 @@ def aws_pack_iam_policies_per_resource_type(policies):
         resource_type_iam_path = os.path.join(iam_path, resource + '.json')
         with open(resource_type_iam_path, "w") as iam_file:
             json.dump(full_resource_type_policy, iam_file)
-
-
-def main():
-    policies = sorted([file for file in os.listdir(os.path.join(policies_path)) if
-                       file.endswith('.yml') or file.endswith('.yaml')])
-    cloud = sys.argv[1].lower()
-    func = globals()[cloud + "_pack_iam_policies_per_resource_type"]
-    func(policies)
 
 
 if __name__ == "__main__":
