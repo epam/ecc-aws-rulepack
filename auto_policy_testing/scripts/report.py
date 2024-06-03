@@ -153,7 +153,7 @@ def create_report(policy_execution_outputs: dict,
         tf_resource_name_status = {}
         tf_resource_id = policy_execution_outputs_test[entity['policy_name']]['resource_id']
 
-        with open(cloud.lower() + '_map_report_fields.json', 'r') as file:
+        with open(cloud + '_map_report_fields.json', 'r') as file:
             map_report_fields = json.load(file)
         resource_field = map_report_fields[policy_execution_outputs_test[entity['policy_name']]['policy_resource']]
         resource_field_value = ""

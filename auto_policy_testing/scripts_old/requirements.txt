@@ -1,8 +1,0 @@
-regex
-pytablewriter
-PyYAML
-c7n
-c7n_gcp
-botocore
-boto3
-requests

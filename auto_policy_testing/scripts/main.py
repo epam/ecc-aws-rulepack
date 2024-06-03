@@ -4,19 +4,16 @@ import scan
 import shutil
 import report
 import argparse
-# from pack_iam import aws_pack_iam_policies_per_resource_type
-import aws_iam_readonly_role
-# from terraform_infra import *
-
 
 parser = argparse.ArgumentParser()
 
-parser.add_argument('--cloud', choices=['GCP', 'Azure', 'AWS', 'OpenStack', 'Kubernetes'], help="Choose a Cloud",
+parser.add_argument('--cloud', choices=['gcp', 'azure', 'aws', 'OpenStack', 'Kubernetes'], help="Choose a Cloud",
                     type=str, required=True)
 parser.add_argument('--infra_color', choices=['green', 'red'], help="Choose an infrastructure", type=str, required=True)
 parser.add_argument('--resource', type=str, help='resource to scan', required=True)
 parser.add_argument('--base_dir', type=str, help='BASE_DIR path to the the rulepack repository ', required=True)
 parser.add_argument('--output_dir', type=str, help='OUTPUT_DIR path to the the report results', required=True)
+parser.add_argument('--auto_test_dir', help='Full path to auto-test directory', type=str, required=True)
 parser.add_argument('--regions', help="Please use ';' as separator", type=str)
 parser.add_argument('--sa', help="For GCP - Service Account for scanning, for AWS - IAM role", type=str, default="")
 args = parser.parse_args()
@@ -32,16 +29,19 @@ def main():
         shutil.rmtree(args.output_dir)
     os.makedirs(args.output_dir, exist_ok=True)
     sa = args.sa
-    if args.cloud == "AWS":
-        if args.sa:
-            role = aws_iam_readonly_role.create_delete_readonly_role_aws(create=True, color=args.infra_color)
-            sa = role.get("Role", {}).get("Arn", None)
-    if args.cloud == "GCP":
+
+    if args.cloud == "aws":
+        if not args.sa:
+            print('Please use --sa param for AWS to set IAM role for Custodian scans')
+            sys.exit(1)
+        session_policy_path = os.path.join(args.auto_test_dir, 'iam', args.resource + '.json')
+        if not os.path.exists(session_policy_path):
+            print(f"Missing IAM policy for {args.resource} in {session_policy_path}")
+            sys.exit(1)
+    if args.cloud == "gcp":
         sa = args.sa
 
     path = os.path.join(RULEPACK_TESTING_PATH, args.infra_color, args.resource)
-    if args.cloud == "AWS" and args.sa:
-        aws_iam_readonly_role.set_readonly_role_permissions_aws(args.resource, role.get("RoleName", None))
 
     print("\nScan resources\n")
     try:
@@ -54,8 +54,9 @@ def main():
             path=path,
             policies=policies,
             regions=args.regions,
-            sa=sa if sa else None,
-            color=args.infra_color
+            sa=args.sa if args.sa else None,
+            color=args.infra_color,
+            session_policy_file=session_policy_path if 'session_policy_path' in locals() else None
         ))
     except Exception as error:
         print("An exception occurred:", error)
@@ -65,9 +66,6 @@ def main():
         policy_execution_outputs, output_dir=args.output_dir,
         infra_color=args.infra_color,
         cloud=args.cloud)
-
-    if args.cloud == "AWS" and args.sa:
-        aws_iam_readonly_role.create_delete_readonly_role_aws(delete=True, color=args.infra_color, role_name=role.get("RoleName", None))
 
 if __name__ == "__main__":
     main()

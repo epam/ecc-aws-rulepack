@@ -1,0 +1,15 @@
+name: "Publish logs to S3"
+description: "Publish logs to S3"
+inputs:
+  bucket:
+    required: true
+  local_path:
+    required: true
+
+
+runs:
+  using: "composite"
+  steps: 
+    - shell: bash
+      run: |
+          aws s3 cp ${{ inputs.local_path }} s3://${{ inputs.bucket }}/logs --recursive

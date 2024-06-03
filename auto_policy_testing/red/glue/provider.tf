@@ -5,6 +5,12 @@ terraform {
       version = "~> 5"
     }
   }
+  
+  backend "s3" {
+    bucket = ""
+    key    = ""
+    region = ""
+  }
 }
 
 provider "aws" {
@@ -14,7 +20,3 @@ provider "aws" {
   }
 }
 
-provider "aws" {
-  region = var.region
-  alias  = "provider2"
-}

@@ -1,6 +1,8 @@
 import os
+import sys
 import json
 import timer
+import traceback
 import subprocess
 
 
@@ -90,19 +92,29 @@ def green_red_infrastructures_up_down(path, infra_color, up=False, down=False, v
 
 def output(path, policy_name, resource):
     # Run the Terraform command to get output in JSON format
-    process = subprocess.Popen(['terraform', 'output', '-json'], stdout=subprocess.PIPE, stderr=subprocess.PIPE, cwd=f"{path}")
-    output, error = process.communicate()
+    try:
+        process = subprocess.Popen(['terraform', 'output', '-json'], stdout=subprocess.PIPE, stderr=subprocess.PIPE, cwd=f"{path}")
+        output, error = process.communicate()
 
-    # Check if there's any error
-    if process.returncode != 0:
-        raise RuntimeError(f"Terraform command failed with error: {error.decode()}")
+        # Check if there's any error
+        if process.returncode != 0:
+            raise RuntimeError(f"Terraform command failed with error: {error.decode()}")
 
-    # Load the JSON output into a variable
-    terraform_output = json.loads(output.decode())
-    terraform_output = terraform_output[next(iter(terraform_output))]['value']
-    resource_id = ""
-    if policy_name in terraform_output:
-        resource_id = terraform_output[policy_name]
-    elif resource in terraform_output:
-        resource_id = terraform_output[resource]
-    return resource_id
+        # Load the JSON output into a variable
+        terraform_output = json.loads(output.decode())
+        if terraform_output:
+            terraform_output = terraform_output[next(iter(terraform_output))]['value']
+        else:
+            print(f"Terraform output is empty for policy: {policy_name}")
+            sys.exit(1)
+        resource_id = ""
+        if policy_name in terraform_output:
+            resource_id = terraform_output[policy_name]
+        elif resource in terraform_output:
+            resource_id = terraform_output[resource]
+        return resource_id
+    except Exception:
+        print(f"An exception occurred with policy {policy_name}")
+        traceback.print_exc()
+        sys.exit(1)
+

@@ -1,17 +1,37 @@
-name: "Setup cloud credentials"
-description: "Setup cloud credentials"
+name: "Install python dependencies"
+description: "Install python dependencies"
 inputs:
-  CI_ASSUME_ROLE:
-    required: true
-  AWS_REGION:
-    required: true
+  aws_assume_role:
+    description: AWS IAM Role for which to fetch credentials.
+  aws_region:
+    description: Which AWS region to use
+  service_account:
+    description: Email address or unique identifier of the Google Cloud service account for which to impersonate and generate credentials.
+  workload_identity_provider:
+    description: The full GCP identifier of the Workload Identity Provider, including the project number, pool name, and provider name. If provided, this must be the full identifier which includes all parts
+  step:
+    description: 'CI step that assumes permissions, must be 1 or 2 words split by "_". Or color of infra [GREEN, RED]'
+    
 runs:
   using: "composite"
   steps: 
-    - name: configure aws credentials
-      uses: aws-actions/configure-aws-credentials@v4
+    - uses: ./.github/workflows/actions/auto-test-light
       with:
-        role-to-assume: ${{ inputs.CI_ASSUME_ROLE }}
-        role-session-name: ECC-AWS-RULEPACK_CI-GREEN
-        role-duration-seconds: 43200 
-        aws-region: ${{ inputs.AWS_REGION }}
+        aws_assume_role: ${{ inputs.aws_assume_role }}
+        aws_region: ${{ inputs.aws_region }}
+        service_account: ${{ inputs.service_account }}
+        workload_identity_provider: ${{ inputs.workload_identity_provider }}
+        step: ${{ inputs.step }}
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.10' 
+    - name: Install dependencies
+      shell: bash
+      working-directory: auto_policy_testing/scripts
+      run: |
+        sudo apt-get install -y oathtool jq
+        pip install --upgrade pip
+        python3.10 -m venv .venv
+        source .venv/bin/activate
+        pip install -r requirements.txt
+        

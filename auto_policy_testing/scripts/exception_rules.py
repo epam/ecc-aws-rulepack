@@ -56,7 +56,8 @@ aws = {
         "ecc-aws-598-redshift_instance_generation",
         "ecc-aws-614-idle_rds_instance"
     ],
-    "parallel": [
+    "not-parallel": [
+        "eni",
         "glue",
         "account",
         "workspaces",
@@ -67,3 +68,6 @@ aws = {
     ]
 }
 
+gcp = {}
+
+azure = {}

@@ -6,7 +6,7 @@
         "Effect": "Allow",
         "Action": [
           "states:DescribeStateMachine",
-          "states:ListStateMachine"
+          "states:ListStateMachines"
         ],
         "Resource": "*"
       }

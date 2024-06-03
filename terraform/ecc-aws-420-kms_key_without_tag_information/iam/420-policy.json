@@ -7,7 +7,7 @@
                 "kms:DescribeKey",
                 "kms:ListAliases",
                 "kms:ListKeys",
-                "tagging:GetResources"
+                "tag:GetResources"
             ],
             "Resource": "*"
         }

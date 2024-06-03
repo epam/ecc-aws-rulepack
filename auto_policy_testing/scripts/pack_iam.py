@@ -93,7 +93,7 @@ def aws_pack_iam_policies_per_resource_type(policies):
 def main():
     policies = sorted([file for file in os.listdir(os.path.join(policies_path)) if
                        file.endswith('.yml') or file.endswith('.yaml')])
-    cloud = sys.argv[1].lower()
+    cloud = sys.argv[1].split('-')[-2]
     func = globals()[cloud + "_pack_iam_policies_per_resource_type"]
     func(policies)
 
