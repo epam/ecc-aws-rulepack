@@ -1,0 +1,42 @@
+name: "Custodian scan"
+description: "Custodian scan"
+inputs:
+  readonly_role_name:
+    description: 'AWS: ReadOnly role for scans'
+  GOOGLE_IMPERSONATE_SERVICE_ACCOUNT:
+    desctiption: 'GCP: Service account for scan'
+
+runs:
+  using: "composite"
+  steps: 
+    - name: Custodian scan
+      shell: bash
+      working-directory: ${{ env.AUTO_TEST_DIR }}/scripts
+      run: |
+        export OUTPUT_DIR="${{ github.workspace }}/${AUTO_TEST_DIR}/output"
+        echo "Running scan..."
+        export cloud=$(echo "${{ github.repository }}" | cut -d'-' -f 2)
+
+        if [ ${{ github.repository }} == 'epam/ecc-aws-rulepack' ]; then
+          sa="arn:aws:iam::$(aws sts get-caller-identity --query Account --output text):role/${{ inputs.readonly_role_name }}"
+        elif [ ${{ github.repository }} == 'epam/ecc-gcp-rulepack' ]; then
+          sa= ${{ inputs.GOOGLE_IMPERSONATE_SERVICE_ACCOUNT }}
+        elif [ ${{ github.repository }} == 'epam/ecc-azure-rulepack' ]; then
+          sa=''
+        fi
+
+        source .venv/bin/activate
+        python main.py \
+        --cloud $cloud \
+        --infra_color $COMPLINCE \
+        --base_dir ${{ github.workspace }} \
+        --output_dir $OUTPUT_DIR \
+        --sa $sa \
+        --regions $AWS_DEFAULT_REGION \
+        --resource $RESOURCE \
+        --auto_test_dir "${{ github.workspace }}/${AUTO_TEST_DIR}"
+        
+        echo "Failed policies:"
+        cat ${OUTPUT_DIR}/.failed
+        test -s ${OUTPUT_DIR}/.failed && exit 1
+        exit 0

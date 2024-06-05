@@ -1,0 +1,48 @@
+name: "Setup cloud credentials"
+description: "Setup cloud credentials"
+inputs:
+  aws_assume_role:
+    description: 'AWS: AWS IAM Role for which to fetch credentials.'
+  service_account:
+    description: 'GCP: Email address or unique identifier of the Google Cloud service account for which to impersonate and generate credentials.'
+  workload_identity_provider:
+    description: 'GCP: The full GCP identifier of the Workload Identity Provider, including the project number, pool name, and provider name. If provided, this must be the full identifier which includes all parts'
+  step:
+    description: 'ALL: CI step that assumes permissions, must be 1 or 2 words split by "_". Or color of infra [GREEN, RED]. Used to name role session.'
+
+runs:
+  using: "composite"
+  steps: 
+    - name: Set globals
+      id: globals
+      shell: bash
+      run: |
+        echo "cloud=$(echo "${{ github.repository }}" | cut -d'-' -f 2)" >> "${GITHUB_OUTPUT}"
+
+    - name: Authenticate with AWS Cloud
+      # if: github.repository == 'epam/ecc-aws-rulepack'
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        role-to-assume: ${{ inputs.aws_assume_role }}
+        role-session-name: ECC-RULEPACK-CI-${{ inputs.step }}-${{ steps.globals.outputs.cloud }}
+        role-duration-seconds: 43200 
+        aws-region: ${{ env.AWS_DEFAULT_REGION }}
+        mask-aws-account-id: true
+    - name: Authenticate with Google Cloud
+      if: github.repository == 'epam/ecc-gcp-rulepack'
+      uses: google-github-actions/auth@v2
+      with:
+          service_account: ${{ inputs.service_account }}
+          workload_identity_provider: ${{ inputs.workload_identity_provider }}
+          token_format: 'access_token'
+    - name: 'Set up Cloud SDK'
+      if: github.repository == 'epam/ecc-gcp-rulepack'
+      uses: 'google-github-actions/setup-gcloud@v2'
+    - uses: actions/setup-node@v2
+      if: github.repository == 'epam/ecc-gcp-rulepack'
+      with:
+        node-version: '20'
+    - uses: hashicorp/setup-terraform@v3
+      if: github.repository == 'epam/ecc-gcp-rulepack'
+      with:
+        terraform_version: "1.5.0"

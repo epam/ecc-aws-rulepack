@@ -41,56 +41,29 @@ jobs:
       fail-fast: false
       matrix:
         compliance: ['green', 'red']
+    env:
+      COMPLINCE: ${{ matrix.compliance }}
+      RESOURCE: common_resources
     steps:
       - name: Git clone the repository
         uses: actions/checkout@v4
-
-      - uses: ./.github/workflows/actions/auto-test-light
-        if: github.repository == 'epam/ecc-aws-rulepack'
+      - uses: ./.github/workflows/actions/set-up-cloud-creds
         with:
           aws_assume_role: ${{ secrets.CI_ASSUME_ROLE }}
-          aws_region: ${{ vars.AWS_REGION }}
-          step: common_${{ matrix.compliance }}
-      - uses: ./.github/workflows/actions/auto-test-light
-        if: github.repository == 'epam/ecc-gcp-rulepack'
-        with:
           service_account: ${{ secrets.SERVICE_ACCOUNT }}
           workload_identity_provider: ${{ secrets.WORKLOAD_IDENTITY_PROVIDER }}
           step: common_${{ matrix.compliance }}
-      - uses: ./.github/workflows/actions/auto-test-light
-        if: github.repository == 'epam/ecc-azure-rulepack'
-        # TO DO
-
-      - name: Deploy common resources
+      - name: Clean old S3 logs
         shell: bash
-        working-directory: ${{ env.AUTO_TEST_DIR }}
         run: |
-          mkdir -p logs/common_resources
-          # clean old logs
           aws s3 rm s3://$TF_BACKEND_STORAGE_NAME/logs --recursive
-          cd ${{ matrix.compliance }}
-          cd common_resources
-
-          echo "Terraform Init..."
-          if [ ${{ github.repository }} == 'epam/ecc-aws-rulepack' ]; then
-            terraform init -backend-config="bucket=$TF_BACKEND_STORAGE_NAME" -backend-config="key=states/common_resources/${{ matrix.compliance }}.tfstate"  -backend-config="region=$AWS_DEFAULT_REGION"
-          elif [ ${{ github.repository }} == 'epam/ecc-gcp-rulepack' ]; then
-            echo 'TO DO'
-          elif [ ${{ github.repository }} == 'epam/ecc-azure-rulepack' ]; then
-            echo 'TO DO'
-          fi
-
-          echo "Terraform Validate..."
-          terraform validate
-          echo "Terraform Apply..."
-          terraform apply -auto-approve &> "${{ github.workspace }}/${{ env.AUTO_TEST_DIR }}/logs/common_resources/${{ matrix.compliance }}_up.txt"
-          echo "Terraform State List..."
-          terraform state list
+      - name: Deploy common resources
+        uses: ./.github/workflows/actions/tf-init-apply
       - uses: ./.github/workflows/actions/publish-logs-to-s3
         if: ${{ always() }}
         with:
-          bucket: $TF_BACKEND_STORAGE_NAME
           local_path: "${{ github.workspace }}/${{ env.AUTO_TEST_DIR }}/logs"
+          remote_path: "logs"
 
   create_readonly_role_for_scans:
     if: github.repository == 'epam/ecc-aws-rulepack'
@@ -101,19 +74,13 @@ jobs:
     steps:
       - name: Git clone the repository
         uses: actions/checkout@v4
-      - uses: ./.github/workflows/actions/auto-test
-        if: github.repository == 'epam/ecc-aws-rulepack'
+      - uses: ./.github/workflows/actions/set-up-cloud-creds
         with:
           aws_assume_role: ${{ secrets.CI_ASSUME_ROLE }}
-          aws_region: ${{ vars.AWS_REGION }}
-          step: readonly_role
-      - uses: ./.github/workflows/actions/auto-test
-        if: github.repository == 'epam/ecc-gcp-rulepack'
-        with:
           service_account: ${{ secrets.SERVICE_ACCOUNT }}
           workload_identity_provider: ${{ secrets.WORKLOAD_IDENTITY_PROVIDER }}
-          step: readonly_role
-
+          step: common_${{ matrix.compliance }}
+      - uses: ./.github/workflows/actions/install-dependencies
       - name: create AWS readonly role
         id: create-AWS-readonly-role
         shell: bash
@@ -185,7 +152,7 @@ jobs:
           echo "parallel_resources_to_scan=$parallel_resources_to_scan" >> "$GITHUB_OUTPUT"
           echo "not_parallel_resources_to_scan=$not_parallel_resources_to_scan" >> "$GITHUB_OUTPUT"
 
-  deploy_and_scan:
+  deploy_and_scan_parallel_resources:
     runs-on: ubuntu-22.04
     needs: [ deploy_common_resources, pack_iam_policies_per_resource, create_readonly_role_for_scans, prepare_matrix_resources]
     strategy:
@@ -194,24 +161,22 @@ jobs:
       matrix:
         compliance: ['green', 'red']
         resource: ${{fromJson(needs.prepare_matrix_resources.outputs.parallel_resources_list)}}
+    env:
+      COMPLINCE: ${{ matrix.compliance }}
+      RESOURCE: ${{ matrix.resource }}
+      TF_VAR_remote_state_key: "states/common_resources/${{ matrix.compliance }}.tfstate"
+      
     steps:
       - name: Git clone the repository
         uses: actions/checkout@v4
-      - uses: ./.github/workflows/actions/auto-test
-        if: github.repository == 'epam/ecc-aws-rulepack'
+
+      - uses: ./.github/workflows/actions/set-up-cloud-creds
         with:
           aws_assume_role: ${{ secrets.CI_ASSUME_ROLE }}
-          aws_region: ${{ vars.AWS_REGION }}
-          step: ${{ matrix.resource }}_${{ matrix.compliance }}
-      - uses: ./.github/workflows/actions/auto-test
-        if: github.repository == 'epam/ecc-gcp-rulepack'
-        with:
           service_account: ${{ secrets.SERVICE_ACCOUNT }}
           workload_identity_provider: ${{ secrets.WORKLOAD_IDENTITY_PROVIDER }}
-          step: ${{ matrix.resource }}_${{ matrix.compliance }}
-      - uses: ./.github/workflows/actions/auto-test
-        if: github.repository == 'epam/ecc-azure-rulepack'
-        # TO DO
+          step: common_${{ matrix.compliance }}
+      - uses: ./.github/workflows/actions/install-dependencies
       - name: Download a single artifact
         uses: actions/download-artifact@v4
         with:
@@ -219,108 +184,98 @@ jobs:
           path: ${{ env.AUTO_TEST_DIR }}/iam
 
       - name: Deploy terraform resources
-        shell: bash
-        working-directory: ${{ env.AUTO_TEST_DIR }}
-        run: |
-          mkdir -p logs/${{ matrix.resource }}
-          cd ${{ matrix.compliance }}
-          cd ${{ matrix.resource }}
-
-          echo "Terraform Init..."
-          if [ ${{ github.repository }} == 'epam/ecc-aws-rulepack' ]; then
-            export TF_VAR_remote_state_region=$AWS_DEFAULT_REGION
-            export TF_VAR_remote_state_bucket=$TF_BACKEND_STORAGE_NAME
-            export TF_VAR_remote_state_key="states/common_resources/${{ matrix.compliance }}.tfstate"
-            terraform init -backend-config="bucket=$TF_BACKEND_STORAGE_NAME" -backend-config="key=states/${{ matrix.resource }}/${{ matrix.compliance }}.tfstate"  -backend-config="region=$AWS_DEFAULT_REGION"
-          elif [ ${{ github.repository }} == 'epam/ecc-gcp-rulepack' ]; then
-            echo 'TO DO'
-          elif [ ${{ github.repository }} == 'epam/ecc-azure-rulepack' ]; then
-            echo 'TO DO'
-          fi
-          echo "Terraform Validate..."
-          terraform validate
-          echo "Terraform Apply..."
-          terraform apply -auto-approve &> "${{ github.workspace }}/${{ env.AUTO_TEST_DIR }}/logs/${{ matrix.resource }}/${{ matrix.compliance }}_up.txt"
-          echo "Terraform State List..."
-          terraform state list
-
+        uses: ./.github/workflows/actions/tf-init-apply
 
       - name: Custodian scan
-        shell: bash
-        working-directory: ${{ env.AUTO_TEST_DIR }}/scripts
-        run: |
-          OUTPUT_DIR="${{ github.workspace }}/${{ env.AUTO_TEST_DIR }}/output"
-          echo "Running scan..."
-          cloud=$(echo "${{ github.repository }}" | cut -d'-' -f 2)
-
-          if [ ${{ github.repository }} == 'epam/ecc-aws-rulepack' ]; then
-            sa="arn:aws:iam::$(aws sts get-caller-identity --query Account --output text):role/${{ needs.create_readonly_role_for_scans.outputs.readonly_role_name }}"
-          elif [ ${{ github.repository }} == 'epam/ecc-gcp-rulepack' ]; then
-            sa= ${{ secrets.GOOGLE_IMPERSONATE_SERVICE_ACCOUNT }}
-          elif [ ${{ github.repository }} == 'epam/ecc-azure-rulepack' ]; then
-            sa=''
-          fi
-
-          source .venv/bin/activate
-          python main.py \
-          --cloud $cloud \
-          --infra_color ${{ matrix.compliance }} \
-          --base_dir ${{ github.workspace }} \
-          --output_dir $OUTPUT_DIR \
-          --sa $sa \
-          --regions $AWS_DEFAULT_REGION \
-          --resource ${{ matrix.resource }} \
-          --auto_test_dir "${{ github.workspace }}/${{ env.AUTO_TEST_DIR }}"
-          
-          echo "Failed policies:"
-          cat $OUTPUT_DIR/.failed
-          test -s $OUTPUT_DIR/.failed && exit 1
-          exit 0
+        uses: ./.github/workflows/actions/c7n-scan
+        with:
+          readonly_role_name: ${{ needs.create_readonly_role_for_scans.outputs.readonly_role_name }}
+          GOOGLE_IMPERSONATE_SERVICE_ACCOUNT: ${{ secrets.GOOGLE_IMPERSONATE_SERVICE_ACCOUNT }}
 
       - name: Destroy terraform resources
-        shell: bash
+        uses: ./.github/workflows/actions/tf-destroy
         if: ${{ always() }}
-        working-directory: ${{ env.AUTO_TEST_DIR }}
-        run: |
-          mkdir -p logs/${{ matrix.resource }}
 
-          cd ${{ matrix.compliance }}
-          cd ${{ matrix.resource }}
-
-          echo "Terraform Destroy..."
-          export TF_VAR_remote_state_region=$AWS_DEFAULT_REGION
-          export TF_VAR_remote_state_bucket=$TF_BACKEND_STORAGE_NAME
-          export TF_VAR_remote_state_key="states/common_resources/${{ matrix.compliance }}.tfstate"
-          terraform destroy -auto-approve &> "${{ github.workspace }}/${{ env.AUTO_TEST_DIR }}/logs/${{ matrix.resource }}/${{ matrix.compliance }}_down.txt"
-          echo "Terraform State List..."
-          terraform state list
-      
       - uses: ./.github/workflows/actions/publish-logs-to-s3
         if: ${{ always() }}
         with:
-          bucket: $TF_BACKEND_STORAGE_NAME
           local_path: "${{ github.workspace }}/${{ env.AUTO_TEST_DIR }}/logs"
+          remote_path: "logs"
+      - uses: ./.github/workflows/actions/publish-logs-to-s3
+        if: ${{ always() }}
+        with:
+          local_path: "${{ github.workspace }}/${{ env.AUTO_TEST_DIR }}/output"
+          remote_path: "policy_output"
 
+  deploy_and_scan_not_parallel_resources:
+    runs-on: ubuntu-22.04
+    needs: [ deploy_common_resources, pack_iam_policies_per_resource, create_readonly_role_for_scans, prepare_matrix_resources]
+    strategy:
+      max-parallel: 1
+      fail-fast: false
+      matrix:
+        compliance: ['green', 'red']
+        resource: ${{fromJson(needs.prepare_matrix_resources.outputs.not_parallel_resources_list)}}
+    env:
+      COMPLINCE: ${{ matrix.compliance }}
+      RESOURCE: ${{ matrix.resource }}
+      TF_VAR_remote_state_key: "states/common_resources/${{ matrix.compliance }}.tfstate"
+      
+    steps:
+      - name: Git clone the repository
+        uses: actions/checkout@v4
+
+      - uses: ./.github/workflows/actions/set-up-cloud-creds
+        with:
+          aws_assume_role: ${{ secrets.CI_ASSUME_ROLE }}
+          service_account: ${{ secrets.SERVICE_ACCOUNT }}
+          workload_identity_provider: ${{ secrets.WORKLOAD_IDENTITY_PROVIDER }}
+          step: common_${{ matrix.compliance }}
+      - uses: ./.github/workflows/actions/install-dependencies
+      - name: Download a single artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: pack_iam
+          path: ${{ env.AUTO_TEST_DIR }}/iam
+
+      - name: Deploy terraform resources
+        uses: ./.github/workflows/actions/tf-init-apply
+
+      - name: Custodian scan
+        uses: ./.github/workflows/actions/c7n-scan
+        with:
+          readonly_role_name: ${{ needs.create_readonly_role_for_scans.outputs.readonly_role_name }}
+          GOOGLE_IMPERSONATE_SERVICE_ACCOUNT: ${{ secrets.GOOGLE_IMPERSONATE_SERVICE_ACCOUNT }}
+
+      - name: Destroy terraform resources
+        uses: ./.github/workflows/actions/tf-destroy
+        if: ${{ always() }}
+
+      - uses: ./.github/workflows/actions/publish-logs-to-s3
+        if: ${{ always() }}
+        with:
+          local_path: "${{ github.workspace }}/${{ env.AUTO_TEST_DIR }}/logs"
+          remote_path: "logs"
+      - uses: ./.github/workflows/actions/publish-logs-to-s3
+        if: ${{ always() }}
+        with:
+          local_path: "${{ github.workspace }}/${{ env.AUTO_TEST_DIR }}/output"
+          remote_path: "policy_output"
 
   remove_readonly_role_for_scans:
     if: ${{ always() }}
     runs-on: ubuntu-22.04
-    needs: [deploy_and_scan, create_readonly_role_for_scans]
+    needs: [deploy_and_scan_parallel_resources, create_readonly_role_for_scans, deploy_and_scan_not_parallel_resources]
     steps:
       - name: Git clone the repository
         uses: actions/checkout@v4
-      - uses: ./.github/workflows/actions/auto-test
-        if: github.repository == 'epam/ecc-aws-rulepack'
+      - uses: ./.github/workflows/actions/set-up-cloud-creds
         with:
           aws_assume_role: ${{ secrets.CI_ASSUME_ROLE }}
-          aws_region: ${{ vars.AWS_REGION }}
-          step: readonly_role
-      - uses: ./.github/workflows/actions/auto-test
-        if: github.repository == 'epam/ecc-gcp-rulepack'
-        with:
           service_account: ${{ secrets.SERVICE_ACCOUNT }}
           workload_identity_provider: ${{ secrets.WORKLOAD_IDENTITY_PROVIDER }}
-          step: readonly_role
+          step: common_${{ matrix.compliance }}
+      - uses: ./.github/workflows/actions/install-dependencies
       - name: remove-AWS-readonly-role
         shell: bash
         if: ${{ github.repository == 'epam/ecc-aws-rulepack' && always() }}
@@ -338,57 +293,33 @@ jobs:
 
   destroy_common_resources:
     runs-on: ubuntu-22.04
-    needs: [deploy_common_resources, deploy_and_scan]
+    needs: [deploy_common_resources, deploy_and_scan_parallel_resources,deploy_and_scan_not_parallel_resources]
     if: ${{ always() }}
     strategy:
       max-parallel: 10
       fail-fast: false
       matrix:
         compliance: ['green', 'red']
+    env:
+      COMPLINCE: ${{ matrix.compliance }}
+      RESOURCE: common_resources
     steps:
       - name: Git clone the repository
         uses: actions/checkout@v4
 
-      - uses: ./.github/workflows/actions/auto-test-light
-        if: github.repository == 'epam/ecc-aws-rulepack'
+      - uses: ./.github/workflows/actions/set-up-cloud-creds
         with:
           aws_assume_role: ${{ secrets.CI_ASSUME_ROLE }}
-          aws_region: ${{ vars.AWS_REGION }}
-          step: common_${{ matrix.compliance }}
-      - uses: ./.github/workflows/actions/auto-test-light
-        if: github.repository == 'epam/ecc-gcp-rulepack'
-        with:
           service_account: ${{ secrets.SERVICE_ACCOUNT }}
           workload_identity_provider: ${{ secrets.WORKLOAD_IDENTITY_PROVIDER }}
           step: common_${{ matrix.compliance }}
-      - uses: ./.github/workflows/actions/auto-test-light
-        if: github.repository == 'epam/ecc-azure-rulepack'
-        # TO DO
-        
+
       - name: Destroy common resources
         if: ${{ always() }}
-        timeout-minutes: 180
-        shell: bash
-        working-directory: ${{ env.AUTO_TEST_DIR }}
-        run: |
-          mkdir -p logs/common_resources
-          cd ${{ matrix.compliance }}
-          cd common_resources
-          echo "Terraform Init..."
-          if [ ${{ github.repository }} == 'epam/ecc-aws-rulepack' ]; then
-            terraform init -backend-config="bucket=$TF_BACKEND_STORAGE_NAME" -backend-config="key=states/common_resources/${{ matrix.compliance }}.tfstate"  -backend-config="region=$AWS_DEFAULT_REGION"
-          elif [ ${{ github.repository }} == 'epam/ecc-gcp-rulepack' ]; then
-            echo 'TO DO'
-          elif [ ${{ github.repository }} == 'epam/ecc-azure-rulepack' ]; then
-            echo 'TO DO'
-          fi
-          echo "Terraform Destroy..."
-          terraform destroy -auto-approve &> "${{ github.workspace }}/${{ env.AUTO_TEST_DIR }}/logs/common_resources/${{ matrix.compliance }}_down.txt"
-          echo "Terraform State List..."
-          terraform state list
+        uses: ./.github/workflows/actions/tf-destroy
 
       - uses: ./.github/workflows/actions/publish-logs-to-s3
         if: ${{ always() }}
         with:
-          bucket: $TF_BACKEND_STORAGE_NAME
           local_path: "${{ github.workspace }}/${{ env.AUTO_TEST_DIR }}/logs"
+          remote_path: "logs"

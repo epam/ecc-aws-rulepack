@@ -1,0 +1,31 @@
+name: "Init and deploy terraform configuration"
+description: "Init and deploy terraform configuration"
+
+runs:
+  using: "composite"
+  steps: 
+    - name: Init and deploy terraform infra
+      shell: bash
+      working-directory: ${{ env.AUTO_TEST_DIR }}
+      run: |
+        mkdir -p logs/$RESOURCE
+        cd $COMPLINCE
+        cd $RESOURCE
+
+        echo "Terraform Init..."
+        if [ ${{ github.repository }} == 'epam/ecc-aws-rulepack' ]; then
+          export TF_VAR_remote_state_region=$AWS_DEFAULT_REGION
+          export TF_VAR_remote_state_bucket=$TF_BACKEND_STORAGE_NAME
+          terraform init -backend-config="bucket=$TF_BACKEND_STORAGE_NAME" -backend-config="key=states/$RESOURCE/$COMPLINCE.tfstate"  -backend-config="region=$AWS_DEFAULT_REGION"
+        elif [ ${{ github.repository }} == 'epam/ecc-gcp-rulepack' ]; then
+          echo 'TO DO'
+        elif [ ${{ github.repository }} == 'epam/ecc-azure-rulepack' ]; then
+          echo 'TO DO'
+        fi
+
+        echo "Terraform Validate..."
+        terraform validate
+        echo "Terraform Apply..."
+        terraform apply -auto-approve &> "${{ github.workspace }}/${AUTO_TEST_DIR}/logs/${RESOURCE}/${COMPLINCE}_up.txt"
+        echo "Terraform State List..."
+        terraform state list
