@@ -11,4 +11,5 @@ runs:
   steps: 
     - shell: bash
       run: |
-          aws s3 cp ${{ inputs.local_path }} s3://${TF_BACKEND_STORAGE_NAME}/${{ inputs.remote_path }} --recursive
+        cloud=$(echo "${{ github.repository }}" | cut -d'-' -f 2)
+        aws s3 cp ${{ inputs.local_path }} s3://${TF_BACKEND_STORAGE_NAME}/$cloud/${{ inputs.remote_path }} --recursive

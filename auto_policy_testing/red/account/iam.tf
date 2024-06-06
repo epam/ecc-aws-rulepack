@@ -1,3 +1,5 @@
+data "aws_caller_identity" "this" {}
+
 resource "aws_iam_account_password_policy" "this" {
   require_lowercase_characters = false
   require_uppercase_characters = false

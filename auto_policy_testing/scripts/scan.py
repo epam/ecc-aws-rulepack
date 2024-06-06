@@ -69,7 +69,7 @@ def custodian_run(policy_execution_outputs: dict,
                         or policy_resource.startswith(resource)):
                     if policy_in_exception(policy.split('.')[0], cloud, color):
                         continue
-
+                    time.sleep(5)
                     command = (f"custodian run {os.path.join(POLICY_DIR, policy)} --dry-run --output-dir={os.path.join(OUTPUT_DIR, region)} \
                                --cache-period=0 {region_param if region_param else ''} \
                                {f'--assume {sa}'  if sa and CLOUD in ['gcp','aws'] else ''} \

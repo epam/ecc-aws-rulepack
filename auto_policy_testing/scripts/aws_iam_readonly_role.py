@@ -28,12 +28,15 @@ def remove_attached_policies(role_name):
         client.delete_role_policy(RoleName=role_name, PolicyName=policy)
 
 
-def create_delete_readonly_role_aws(ci_role_name, readonly_role_name, create=False, delete=False, color=''):
+def create_delete_readonly_role_aws(ci_role_name, readonly_role_name, create=False, delete=False, color='', role=False, user=False):
     # if create:
     #     role_id = random.randint(1000, 9999)
     #     # role_name = f"{readonly_role_name}_{color}_{role_id}"
     #     readonly_role_name = f"{readonly_role_name}_{role_id}"
-
+    if role:
+        type='role'
+    elif user:
+        type='user'
     sts = boto3.client("sts")
     account_id = sts.get_caller_identity()["Account"]
     client = boto3.client('iam')
@@ -44,7 +47,7 @@ def create_delete_readonly_role_aws(ci_role_name, readonly_role_name, create=Fal
                 {
                     "Effect": "Allow",
                     "Principal": {
-                        "AWS": f"arn:aws:iam::{account_id}:role/{ci_role_name}"
+                        "AWS": f"arn:aws:iam::{account_id}:{type}/{ci_role_name}"
                     },
                     "Action": "sts:AssumeRole"
                 }
@@ -129,13 +132,18 @@ def main():
     exclusive_group.add_argument('--create', action='store_true')
     exclusive_group.add_argument('--delete', action='store_true')
 
+    exclusive_group2 = parser.add_mutually_exclusive_group(required=False)
+    exclusive_group2.add_argument('--role', action='store_true')
+    exclusive_group2.add_argument('--user', action='store_true')
+
     args = parser.parse_args()
     ci_exec_role_name = args.ci_exec_role_name.split('/')[-1]
+
 
     if args.ci_readonly_role_name:
 
         role = create_delete_readonly_role_aws(ci_exec_role_name, args.ci_readonly_role_name, create=args.create,
-                                               delete=args.delete)
+                                               delete=args.delete, role=args.role, user=args.user)
         if args.create:
             set_readonly_permissions_global(role.get("RoleName", None))
     else:

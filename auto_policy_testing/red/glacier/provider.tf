@@ -5,6 +5,12 @@ terraform {
       version = "~> 5"
     }
   }
+
+   backend "s3" {
+    bucket = ""
+    key    = ""
+    region = ""
+  }
 }
 
 provider "aws" {
@@ -13,7 +19,6 @@ provider "aws" {
     tags = module.naming.default_tags
   }
 }
-
 
 provider "aws" {
   region = var.region

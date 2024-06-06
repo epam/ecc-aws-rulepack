@@ -16,7 +16,7 @@ runs:
         if [ ${{ github.repository }} == 'epam/ecc-aws-rulepack' ]; then
           export TF_VAR_remote_state_region=$AWS_DEFAULT_REGION
           export TF_VAR_remote_state_bucket=$TF_BACKEND_STORAGE_NAME
-          terraform init -backend-config="bucket=$TF_BACKEND_STORAGE_NAME" -backend-config="key=states/$RESOURCE/$COMPLINCE.tfstate"  -backend-config="region=$AWS_DEFAULT_REGION"
+          terraform init -backend-config="bucket=$TF_BACKEND_STORAGE_NAME" -backend-config="key=aws/states/$RESOURCE/$COMPLINCE.tfstate"  -backend-config="region=$AWS_DEFAULT_REGION"
         elif [ ${{ github.repository }} == 'epam/ecc-gcp-rulepack' ]; then
           echo 'TO DO'
         elif [ ${{ github.repository }} == 'epam/ecc-azure-rulepack' ]; then

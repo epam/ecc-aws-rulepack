@@ -19,13 +19,13 @@ concurrency:
 
 env:
   AUTO_TEST_DIR: "auto_policy_testing"
-  TF_VAR_project_name: ${{ secrets.TF_VAR_project }}
-  TF_VAR_region: ${{ vars.AWS_REGION }}
+  TF_VAR_project: ${{ secrets.TF_VAR_project }}
+  TF_VAR_region: ${{ secrets.AWS_REGION }}
   TF_VAR_zone: ${{ secrets.TF_VAR_zone }}
   TF_BACKEND_STORAGE_NAME: ${{ secrets.TF_BACKEND_STORAGE_NAME }}
   TF_CLI_ARGS: "-no-color"
-  AWS_DEFAULT_REGION: ${{ vars.AWS_REGION }}
-  default_resource_priority_list: '["ecr", "eni", "glue", "account", "iam", "acm", "ami"]'
+  AWS_DEFAULT_REGION: ${{ secrets.AWS_REGION }}
+  default_resource_priority_list: '["account", "acm", "ami", "apigwv2", "app-flow", "backup", "cfn", "cloudtrail", "dax", "directory", "dlm", "dynamodb", "ebs", "ecr", "efs", "eip", "eks", "elasticache", "elasticbeanstalk", "elasticsearch", "emr", "eni", "event", "firehose", "fsx", "glacier", "glue", "graphql", "hostedzone", "iam", "internet", "kafka", "key", "kinesis", "kms", "lambda", "launch", "lightsail", "log", "message", "nat", "network", "peering", "qldb", "r53domain", "rds", "redshift", "rest", "route", "rrset", "s3", "sagemaker", "secrets", "security-group", "sns", "sqs", "subnet", "transit", "vpc", "vpn", "waf"]' #'["ecr"]' #, "iam"]' #, "eni", "glue", "account", "iam", "acm", "ami"]'
   RED: '\033[0;31m'
 
 permissions:
@@ -37,7 +37,6 @@ jobs:
   deploy_common_resources:
     runs-on: ubuntu-22.04
     strategy:
-      max-parallel: 10
       fail-fast: false
       matrix:
         compliance: ['green', 'red']
@@ -56,8 +55,9 @@ jobs:
       - name: Clean old S3 logs
         shell: bash
         run: |
-          aws s3 rm s3://$TF_BACKEND_STORAGE_NAME/logs --recursive
-          aws s3 rm s3://$TF_BACKEND_STORAGE_NAME/policy_output --recursive
+          cloud=$(echo "${{ github.repository }}" | cut -d'-' -f 2)
+          aws s3 rm s3://$TF_BACKEND_STORAGE_NAME/$cloud/logs --recursive
+          aws s3 rm s3://$TF_BACKEND_STORAGE_NAME/$cloud/policy_output --recursive
       - name: Deploy common resources
         uses: ./.github/workflows/actions/tf-init-apply
       - uses: ./.github/workflows/actions/publish-logs-to-s3
@@ -96,7 +96,7 @@ jobs:
             python aws_iam_readonly_role.py \
             --ci_exec_role_name ${{ secrets.CI_ASSUME_ROLE }} \
             --ci_readonly_role_name $readonly_role_name\
-            --create
+            --create --role
           elif [ ${{ github.repository }} == 'epam/ecc-gcp-rulepack' ]; then
             echo 'TO DO'
           elif [ ${{ github.repository }} == 'epam/ecc-azure-rulepack' ]; then
@@ -165,7 +165,7 @@ jobs:
     env:
       COMPLINCE: ${{ matrix.compliance }}
       RESOURCE: ${{ matrix.resource }}
-      TF_VAR_remote_state_key: "states/common_resources/${{ matrix.compliance }}.tfstate"
+      TF_VAR_remote_state_key: "aws/states/common_resources/${{ matrix.compliance }}.tfstate"
       
     steps:
       - name: Git clone the repository
@@ -206,11 +206,12 @@ jobs:
         if: ${{ always() }}
         with:
           local_path: "${{ github.workspace }}/${{ env.AUTO_TEST_DIR }}/output"
-          remote_path: "policy_output"
+          remote_path: "policy_output/${{ matrix.compliance }}"
 
   deploy_and_scan_not_parallel_resources:
     runs-on: ubuntu-22.04
     needs: [ deploy_common_resources, pack_iam_policies_per_resource, create_readonly_role_for_scans, prepare_matrix_resources]
+    if: ${{ needs.prepare_matrix_resources.outputs.not_parallel_resources_list != '[]' }}
     strategy:
       max-parallel: 1
       fail-fast: false
@@ -220,7 +221,7 @@ jobs:
     env:
       COMPLINCE: ${{ matrix.compliance }}
       RESOURCE: ${{ matrix.resource }}
-      TF_VAR_remote_state_key: "states/common_resources/${{ matrix.compliance }}.tfstate"
+      TF_VAR_remote_state_key: "aws/states/common_resources/${{ matrix.compliance }}.tfstate"
       
     steps:
       - name: Git clone the repository
@@ -261,7 +262,7 @@ jobs:
         if: ${{ always() }}
         with:
           local_path: "${{ github.workspace }}/${{ env.AUTO_TEST_DIR }}/output"
-          remote_path: "policy_output"
+          remote_path: "policy_output/${{ matrix.compliance }}"
 
   remove_readonly_role_for_scans:
     if: ${{ always() }}
@@ -289,7 +290,7 @@ jobs:
             python aws_iam_readonly_role.py \
             --ci_exec_role_name ${{ secrets.CI_ASSUME_ROLE }} \
             --ci_readonly_role_name "$readonly_role_name"\
-            --delete 
+            --delete --role
           fi
 
   destroy_common_resources:
