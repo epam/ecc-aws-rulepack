@@ -25,7 +25,7 @@ env:
   TF_BACKEND_STORAGE_NAME: ${{ secrets.TF_BACKEND_STORAGE_NAME }}
   TF_CLI_ARGS: "-no-color"
   AWS_DEFAULT_REGION: ${{ vars.AWS_REGION }}
-  default_resource_priority_list: '["ecr", "eni"]'
+  default_resource_priority_list: '["ecr", "eni", "glue", "account", "iam", "acm", "ami"]'
   RED: '\033[0;31m'
 
 permissions:
@@ -57,6 +57,7 @@ jobs:
         shell: bash
         run: |
           aws s3 rm s3://$TF_BACKEND_STORAGE_NAME/logs --recursive
+          aws s3 rm s3://$TF_BACKEND_STORAGE_NAME/policy_output --recursive
       - name: Deploy common resources
         uses: ./.github/workflows/actions/tf-init-apply
       - uses: ./.github/workflows/actions/publish-logs-to-s3

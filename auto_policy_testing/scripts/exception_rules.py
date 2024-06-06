@@ -57,7 +57,6 @@ aws = {
         "ecc-aws-614-idle_rds_instance"
     ],
     "not-parallel": [
-        "eni",
         "glue",
         "account",
         "workspaces",
