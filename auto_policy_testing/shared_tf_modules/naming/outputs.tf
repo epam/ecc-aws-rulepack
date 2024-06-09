@@ -1,5 +1,8 @@
 output "resource_prefix" {
   value = {
+    ecs               = "${local.suffix}-${var.resource_type}-ecs-${local.compliance_status}"
+    ecs_service       = "${local.suffix}-${var.resource_type}-ecs-service-${local.compliance_status}"
+    ecs_task_definition = "${local.suffix}-${var.resource_type}-ecs-task-definition-${local.compliance_status}"
     ec2                = "${local.suffix}-${var.resource_type}-ec2-${local.compliance_status}"
     secrets            = "${local.suffix}-${var.resource_type}-secrets-${local.compliance_status}"
     sqs                = "${local.suffix}-${var.resource_type}-sqs-${local.compliance_status}"
