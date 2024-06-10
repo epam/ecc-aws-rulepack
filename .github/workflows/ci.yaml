@@ -119,3 +119,33 @@ jobs:
         with:
           name: Release ${{ github.ref_name }}
           body: ${{ steps.changelog.outputs.changes }}
+  
+  create-wiki:
+    runs-on: ubuntu-22.04
+    container: python:3.8
+    steps: 
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Checkout wiki code
+        uses: actions/checkout@v4
+        with:
+            repository: ${{github.repository}}.wiki
+            path: ${{github.repository}}.wiki
+            
+      - name: Update markdown
+        shell: bash
+        run: |
+          python3.8 -m venv .venv && source .venv/bin/activate
+          pip install ruamel.yaml
+          pip install py-markdown-table 
+          python3 generate_list_of_rules.py --dir_to_rules $GITHUB_WORKSPACE/policies --output_dir $GITHUB_WORKSPACE/${{github.repository}}.wiki --file_name List-of-Rules-by-AWS.md
+        working-directory: ./.github/workflows/scripts
+        
+      - name: Push to wiki
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .
+          git diff-index --quiet HEAD || git commit -m "Add changes" && git push
+        working-directory: ${{github.repository}}.wiki
