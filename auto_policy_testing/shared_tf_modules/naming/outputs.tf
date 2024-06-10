@@ -1,5 +1,6 @@
 output "resource_prefix" {
   value = {
+    step_function     = "${local.suffix}-${var.resource_type}_step_function_${local.compliance_status}"
     ecs               = "${local.suffix}-${var.resource_type}-ecs-${local.compliance_status}"
     ecs_service       = "${local.suffix}-${var.resource_type}-ecs-service-${local.compliance_status}"
     ecs_task_definition = "${local.suffix}-${var.resource_type}-ecs-task-definition-${local.compliance_status}"
