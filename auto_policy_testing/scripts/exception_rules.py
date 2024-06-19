@@ -64,7 +64,7 @@ aws = {
     ],
     "sleep_before_scan": [
         "account",
-        "ecr",
+        # "ecr",
         "iam"
     ]
 }

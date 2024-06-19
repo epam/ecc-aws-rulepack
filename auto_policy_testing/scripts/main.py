@@ -34,10 +34,10 @@ def main():
         if not args.sa:
             print('Please use --sa param for AWS to set IAM role for Custodian scans')
             sys.exit(1)
-        session_policy_path = os.path.join(args.auto_test_dir, 'iam', args.resource + '.json')
-        if not os.path.exists(session_policy_path):
-            print(f"Missing IAM policy for {args.resource} in {session_policy_path}")
-            sys.exit(1)
+        # session_policy_path = os.path.join(args.auto_test_dir, 'iam', args.resource + '.json')
+        # if not os.path.exists(session_policy_path):
+        #     print(f"Missing IAM policy for {args.resource} in {session_policy_path}")
+        #     sys.exit(1)
     if args.cloud == "gcp":
         sa = args.sa
 
@@ -55,8 +55,8 @@ def main():
             policies=policies,
             regions=args.regions,
             sa=args.sa if args.sa else None,
-            color=args.infra_color,
-            session_policy_file=session_policy_path if 'session_policy_path' in locals() else None
+            color=args.infra_color
+            # session_policy_file=session_policy_path if 'session_policy_path' in locals() else None
         ))
     except Exception as error:
         print("An exception occurred:", error)

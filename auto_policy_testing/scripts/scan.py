@@ -23,6 +23,14 @@ def policy_in_exception(policy_name, cloud, color):
     else:
         return False
 
+def aws_get_session_policy_path(TF_DIR, policy_name):
+    policy_id = policy_name.split("-")[2]
+    session_policy_path = os.path.join(TF_DIR, policy_name, 'iam', policy_id + '-policy.json')
+
+    if not os.path.exists(session_policy_path):
+        print(f"Missing IAM policy for {policy_name} in {session_policy_path}")
+        sys.exit(1)
+    return session_policy_path
 
 @timer.time_decorator
 def custodian_run(policy_execution_outputs: dict,
@@ -39,6 +47,7 @@ def custodian_run(policy_execution_outputs: dict,
 
     # Declare directories
     POLICY_DIR = os.path.join(base_dir, 'policies')
+    TF_DIR = os.path.join(base_dir, 'terraform')
     OUTPUT_DIR = output_dir
     REGIONS = regions
     CLOUD = cloud
@@ -61,15 +70,19 @@ def custodian_run(policy_execution_outputs: dict,
         region_param = '--region=' + region if region != "default" else ""
         for policy in policies:
             try:
+                policy_name_w_o_extension = policy.split('.')[0]
                 policy_content = read_yaml_file(os.path.join(POLICY_DIR, policy))
                 policy_resource = policy_content['policies'][0].get('resource')
                 if (policy_resource.startswith(f'aws.{resource}')
                         or policy_resource.startswith(f'gcp.{resource}')
                         or policy_resource.startswith(f'azure.{resource}')
                         or policy_resource.startswith(resource)):
-                    if policy_in_exception(policy.split('.')[0], cloud, color):
+                    if policy_in_exception(policy_name_w_o_extension, cloud, color):
                         continue
                     time.sleep(5)
+                    if CLOUD == 'aws':
+                        session_policy_file = aws_get_session_policy_path(TF_DIR, policy_name_w_o_extension)
+
                     command = (f"custodian run {os.path.join(POLICY_DIR, policy)} --dry-run --output-dir={os.path.join(OUTPUT_DIR, region)} \
                                --cache-period=0 {region_param if region_param else ''} \
                                {f'--assume {sa}'  if sa and CLOUD in ['gcp','aws'] else ''} \
@@ -78,7 +91,7 @@ def custodian_run(policy_execution_outputs: dict,
                     process = subprocess.Popen([command], shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
                     process.wait()
                     policy_resource = policy_resource.split('.')[1] if "." in policy_resource else policy_resource
-                    cloud_resource_id = output(path, policy_name=policy.split('.')[0], resource=policy_resource)
+                    cloud_resource_id = output(path, policy_name=policy_name_w_o_extension, resource=policy_resource)
                     policy_execution_outputs[policy.split('.')[0]] = {'scan_result': process.stdout.read().decode('utf-8'),
                                                                       'resource_id': cloud_resource_id,
                                                                       'policy_resource': policy_resource}
