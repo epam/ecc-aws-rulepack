@@ -25,8 +25,7 @@ env:
   TF_BACKEND_STORAGE_NAME: ${{ secrets.TF_BACKEND_STORAGE_NAME }}
   TF_CLI_ARGS: "-no-color"
   AWS_DEFAULT_REGION: ${{ secrets.AWS_REGION }}
-  default_resource_priority_list: '["app-flow"]'
-    #'["account", "acm", "ami", "apigwv2", "app-flow", "backup", "cfn", "cloudtrail", "dax", "directory", "dlm", "dynamodb", "ebs", "ecr", "efs", "eip", "eks", "elasticache", "elasticbeanstalk", "elasticsearch", "emr", "eni", "event", "firehose", "fsx", "glacier", "glue", "graphql", "hostedzone", "iam", "internet", "kafka", "key", "kinesis", "kms", "lambda", "launch", "lightsail", "log", "message", "nat", "network", "peering", "qldb", "r53domain", "rds", "redshift", "rest", "route", "rrset", "s3", "sagemaker", "secrets", "security-group", "sns", "sqs", "subnet", "transit", "vpc", "vpn", "waf"]' #'["ecr"]' #, "iam"]' #, "eni", "glue", "account", "iam", "acm", "ami"]'
+  default_resource_priority_list: '["account", "acm", "ami", "apigwv2", "app-flow", "backup", "cfn", "cloudtrail", "dax", "directory", "dlm", "dynamodb", "ebs", "ecr", "efs", "eip", "eks", "elasticache", "elasticbeanstalk", "elasticsearch", "emr", "eni", "event", "firehose", "fsx", "glacier", "glue", "graphql", "hostedzone", "iam", "internet", "kafka", "key", "kinesis", "kms", "lambda", "launch", "lightsail", "log", "message", "nat", "network", "peering", "qldb", "r53domain", "rds", "redshift", "rest", "route", "rrset", "s3", "sagemaker", "secrets", "security-group", "sns", "sqs", "subnet", "transit", "vpc", "vpn", "waf"]' #'["ecr"]' #, "iam"]' #, "eni", "glue", "account", "iam", "acm", "ami"]'
   RED: '\033[0;31m'
 
 permissions:

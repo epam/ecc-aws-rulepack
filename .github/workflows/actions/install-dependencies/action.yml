@@ -15,5 +15,8 @@ runs:
         pip install --upgrade pip
         python3.10 -m venv .venv
         source .venv/bin/activate
+        pip install c7n
+        pip install c7n-azure
+        pip install c7n-gcp
         pip install -r requirements.txt
         
