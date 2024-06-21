@@ -1,15 +1,15 @@
 {
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Effect": "Allow",
-            "Action": [
-                "elasticmapreduce:DescribeSecurityConfiguration",
-                "elasticmapreduce:ListClusters",
-                "elasticmapreduce:DescribeCluster",
-                "elasticmapreduce:ListSecurityConfigurations"
-            ],
-            "Resource": "*"
-        }
-    ]
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Effect": "Allow",
+			"Action": [
+				"elasticmapreduce:ListClusters",
+				"elasticmapreduce:DescribeCluster",
+				"elasticmapreduce:ListSecurityConfigurations",
+				"elasticmapreduce:DescribeSecurityConfiguration"
+			],
+			"Resource": "*"
+		}
+	]
 }

@@ -6,7 +6,8 @@
             "Effect": "Allow",
             "Action": [
                 "mq:DescribeBroker",
-                "mq:ListBrokers"
+                "mq:ListBrokers",
+                "ec2:DescribeSecurityGroups"
             ],
             "Resource": "*"
         }

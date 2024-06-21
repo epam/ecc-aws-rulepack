@@ -1,12 +1,14 @@
 {
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Effect": "Allow",
-            "Action": [
-                "es:DescribeElasticsearchDomain"
-            ],
-            "Resource": "*"
-        }
-    ]
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Effect": "Allow",
+			"Action": [
+				"es:DescribeDomains",
+				"es:ListDomainNames",
+				"es:ListTags"
+			],
+			"Resource": "*"
+		}
+	]
 }

@@ -1,15 +1,16 @@
 {
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Effect": "Allow",
-            "Action": [
-                "kms:DescribeKey",
-                "kms:ListKeys",
-                "kms:GetKeyRotationStatus",
-                "tag:GetResources"
-            ],
-            "Resource": "*"   
-        }
-    ]
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Effect": "Allow",
+			"Action": [
+				"kms:DescribeKey",
+				"kms:ListKeys",
+				"kms:GetKeyRotationStatus",
+				"tag:GetResources",
+				"kms:ListAliases"
+			],
+			"Resource": "*"
+		}
+	]
 }

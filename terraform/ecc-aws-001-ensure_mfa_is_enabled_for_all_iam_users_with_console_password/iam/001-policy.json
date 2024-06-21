@@ -4,8 +4,7 @@
         {
             "Effect": "Allow",
             "Action": [
-                "iam:ListMFADevices",
-                "iam:GetAccountPasswordPolicy",
+                "iam:GetCredentialReport",
                 "iam:ListUsers",
                 "iam:GetUser"
             ],
