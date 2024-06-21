@@ -7,10 +7,14 @@ resource "aws_vpc" "this" {
   }
 }
 
+data "aws_availability_zone" "public1" {
+  zone_id = "use1-az2"
+}
+
 resource "aws_subnet" "public1" {
   vpc_id                  = aws_vpc.this.id
   cidr_block              = "10.0.1.0/24"
-  availability_zone_id    = "use1-az2"
+  availability_zone_id    = data.aws_availability_zone.public1.zone_id
   map_public_ip_on_launch = "true"
 }
 
@@ -19,6 +23,10 @@ resource "aws_subnet" "public2" {
   cidr_block              = "10.0.2.0/24"
   availability_zone       = data.aws_availability_zones.this.names[0]
   map_public_ip_on_launch = "true"
+}
+
+data "aws_availability_zone" "public3" {
+  zone_id = "use1-az4"
 }
 
 resource "aws_subnet" "public3" {
