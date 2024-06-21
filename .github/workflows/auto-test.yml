@@ -25,7 +25,7 @@ env:
   TF_BACKEND_STORAGE_NAME: ${{ secrets.TF_BACKEND_STORAGE_NAME }}
   TF_CLI_ARGS: "-no-color"
   AWS_DEFAULT_REGION: ${{ secrets.AWS_REGION }}
-  default_resource_priority_list: '["account", "ami", "cloudtrail", "efs", "elasticache", "elasticsearch", "emr", "iam", "internet", "kafka", "key", "kms", "log", "message", "rds", "s3", "secrets", "sns", "subnet", "vpc"]' #'["ecr"]' 
+  default_resource_priority_list: '["account", "cloudtrail", "iam", "kafka", "message", "rds"]' #'["ecr"]' 
   RED: '\033[0;31m'
 
 permissions:
