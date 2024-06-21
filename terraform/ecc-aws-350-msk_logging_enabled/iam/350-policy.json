@@ -4,7 +4,7 @@
         {
             "Effect": "Allow",
             "Action": [
-                "kafka:ListClusters"
+                "kafka:ListClustersV2"
             ],
             "Resource": "*"
         }

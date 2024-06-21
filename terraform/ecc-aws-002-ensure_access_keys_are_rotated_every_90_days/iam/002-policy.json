@@ -6,7 +6,9 @@
             "Effect": "Allow",
             "Action": [
                 "iam:ListUsers",
-                "iam:GetUser"
+                "iam:GetUser",
+                "iam:GenerateCredentialReport",
+                "iam:GetCredentialReport"
             ],
             "Resource": "*"
         }

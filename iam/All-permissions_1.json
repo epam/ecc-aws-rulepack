@@ -214,7 +214,6 @@
                 "states:DescribeStateMachine",
                 "states:ListStateMachine",
                 "tag:GetResources",
-                "tagging:GetResources",
                 "waf-regional:ListResourcesForWebACL",
                 "waf-regional:ListWebACLs",
                 "waf-regional:GetWebACL",

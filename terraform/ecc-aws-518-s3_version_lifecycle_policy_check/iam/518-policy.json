@@ -12,11 +12,9 @@
                 "s3:GetBucketWebsite",
                 "s3:GetBucketNotification",
                 "s3:GetBucketVersioning",
-                "s3:GetBucketLifecycle",
                 "s3:GetLifecycleConfiguration",
                 "s3:GetReplicationConfiguration",
-                "s3:GetBucketPolicy",
-				"s3:GetEncryptionConfiguration"
+                "s3:GetBucketPolicy"
             ],
             "Resource": "*"
         }
