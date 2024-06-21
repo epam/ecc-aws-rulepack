@@ -5,6 +5,7 @@
             "Effect": "Allow",
             "Action": [
                 "ec2:DescribeInstances",
+                "ec2:DescribeImages",
                 "autoscaling:DescribeAutoScalingGroups",
                 "autoscaling:DescribeLaunchConfigurations",
                 "ec2:DescribeTags"

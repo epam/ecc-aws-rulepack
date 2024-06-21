@@ -4,8 +4,7 @@
         {
             "Effect": "Allow",
             "Action": [
-                "rds:DescribeDBSnapshots",
-                "tag:GetResources"
+                "rds:DescribeDBSnapshots"
             ],
             "Resource": "*"
         }

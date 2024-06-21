@@ -7,8 +7,8 @@
                 "iam:ListAccountAliases",
                 "rds:DescribeEventSubscriptions",
                 "rds:DescribeDBInstances",
-                "SNS:ListTopics",
-                "SNS:GetTopicAttributes"
+                "sns:ListTopics",
+                "sns:GetTopicAttributes"
             ],
             "Resource": "*"
         }

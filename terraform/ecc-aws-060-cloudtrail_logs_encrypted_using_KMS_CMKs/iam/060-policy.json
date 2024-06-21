@@ -1,14 +1,13 @@
 {
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Effect": "Allow",
-            "Action": [
-                "cloudtrail:DescribeTrails",
-                "cloudtrail:GetTrailStatus",
-                "iam:ListAccountAliases"
-            ],
-            "Resource": "*"   
-        }
-    ]
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Effect": "Allow",
+			"Action": [
+				"tag:GetResources",
+				"cloudtrail:DescribeTrails"
+			],
+			"Resource": "*"
+		}
+	]
 }
