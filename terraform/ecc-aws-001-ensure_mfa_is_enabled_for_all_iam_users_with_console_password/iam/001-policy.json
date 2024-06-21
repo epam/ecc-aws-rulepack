@@ -5,6 +5,7 @@
             "Effect": "Allow",
             "Action": [
                 "iam:GetCredentialReport",
+                "iam:GenerateCredentialReport",
                 "iam:ListUsers",
                 "iam:GetUser"
             ],

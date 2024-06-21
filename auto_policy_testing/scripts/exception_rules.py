@@ -60,7 +60,8 @@ aws = {
         "glue",
         "account",
         "workspaces",
-        "iam"
+        "iam",
+        "cloudtrail"
     ],
     "sleep_before_scan": [
         "account",

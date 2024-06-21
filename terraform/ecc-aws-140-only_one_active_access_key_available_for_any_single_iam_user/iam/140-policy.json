@@ -6,7 +6,8 @@
             "Action": [ 
                 "iam:ListAccessKeys",
                 "iam:GetUser",
-                "iam:ListAccessKeys"
+                "iam:ListAccessKeys",
+                "iam:ListUsers"
             ],
             "Resource": "*"
         }

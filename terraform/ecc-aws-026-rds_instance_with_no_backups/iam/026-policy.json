@@ -4,7 +4,7 @@
         {
             "Effect": "Allow",
             "Action": [
-                "tag:GetResources"
+                "rds:DescribeDBInstances"
             ],
             "Resource": "*"
         }
