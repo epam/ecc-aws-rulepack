@@ -6,7 +6,6 @@
             "Effect": "Allow",
             "Action": [
                 "iam:GenerateCredentialReport",
-                "iam:ListAccountAliases",
                 "iam:ListUsers",
                 "iam:GetUser",
                 "iam:GetCredentialReport"

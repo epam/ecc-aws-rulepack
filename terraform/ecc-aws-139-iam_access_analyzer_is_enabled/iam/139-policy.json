@@ -4,7 +4,10 @@
         {
             "Sid": "VisualEditor0",
             "Effect": "Allow",
-            "Action": "access-analyzer:ListAnalyzers",
+            "Action": [
+                "access-analyzer:ListAnalyzers",
+                "iam:ListAccountAliases"
+            ],
             "Resource": "*"
         }
     ]
