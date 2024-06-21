@@ -4,9 +4,8 @@
         {
             "Effect": "Allow",
             "Action": [
-                "dms:ListTagsForResource",
                 "dms:DescribeReplicationInstances",
-                "kms:DescribeKey",
+                "dms:ListTagsForResource",
                 "kms:ListAliases",
                 "tag:GetResources"
             ],
