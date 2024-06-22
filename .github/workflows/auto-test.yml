@@ -10,7 +10,7 @@ on:
       resource_priority_list:
         type: string
         description: Priority list for resources (you can remove unnecessary resources during testing)
-        default: '["ecr", "eni"]'
+        default:  '["account", "acm", "ami", "apigwv2", "app-flow", "backup", "cfn", "cloudtrail", "dax", "directory", "dlm", "dynamodb", "ebs", "ecr", "efs", "eip", "eks", "elasticache", "elasticbeanstalk", "elasticsearch", "emr", "eni", "event", "firehose", "fsx", "glacier", "glue", "graphql", "hostedzone", "iam", "internet", "kafka", "key", "kinesis", "kms", "lambda", "launch", "lightsail", "log", "message", "nat", "network", "peering", "qldb", "r53domain", "rds", "redshift", "rest", "route", "rrset", "s3", "sagemaker", "secrets", "security-group", "sns", "sqs", "subnet", "transit", "vpc", "vpn", "waf"]'
         required: true
 
 # limits to only one workflow in time 
