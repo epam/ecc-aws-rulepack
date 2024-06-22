@@ -1,21 +1,21 @@
 {
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Effect": "Allow",
-            "Action": [
-                "ec2:DescribeSecurityGroups",
-                "ec2:DescribeRegions",
-                "ec2:DescribeNetworkInterfaces",
-                "lambda:ListFunctions",
-                "autoscaling:DescribeLaunchConfigurations",
-                "events:ListRules",
-                "events:ListTargetsByRule",
-                "codebuild:ListProjects",
-                "batch:DescribeComputeEnvironments",
-                "ec2:DescribeSecurityGroupReferences"
-                      ],
-            "Resource": "*"
-        }
-    ]
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Effect": "Allow",
+			"Action": [
+				"ec2:DescribeSecurityGroupReferences",
+				"ec2:DescribeRegions",
+				"events:ListTargetsByRule",
+				"ec2:DescribeSecurityGroups",
+				"ec2:DescribeNetworkInterfaces",
+				"lambda:ListFunctions",
+				"autoscaling:DescribeLaunchConfigurations",
+				"events:ListRules",
+				"codebuild:ListProjects",
+				"batch:DescribeComputeEnvironments"
+			],
+			"Resource": "*"
+		}
+	]
 }

@@ -3,11 +3,9 @@
     "Statement": [
         {
             "Effect": "Allow",
-            "Action": [ 
-                "iam:ListAccessKeys",
+            "Action": [
                 "iam:GetUser",
-                "iam:ListAccessKeys",
-                "iam:ListUsers"
+                "iam:ListAccessKeys"
             ],
             "Resource": "*"
         }
