@@ -25,7 +25,7 @@ env:
   TF_BACKEND_STORAGE_NAME: ${{ secrets.TF_BACKEND_STORAGE_NAME }}
   TF_CLI_ARGS: "-no-color"
   AWS_DEFAULT_REGION: ${{ secrets.AWS_REGION }}
-  default_resource_priority_list: '["account", "cloudtrail", "iam", "kafka", "message", "rds"]' #'["ecr"]' 
+  default_resource_priority_list: '["iam"]' #'["ecr"]' 
   RED: '\033[0;31m'
 
 permissions:
@@ -35,6 +35,7 @@ permissions:
 jobs:
 
   deploy_common_resources:
+    name: Deploy common
     runs-on: ubuntu-22.04
     strategy:
       fail-fast: false
@@ -154,6 +155,7 @@ jobs:
           echo "not_parallel_resources_to_scan=$not_parallel_resources_to_scan" >> "$GITHUB_OUTPUT"
 
   deploy_and_scan_parallel_resources:
+    name: Scan P
     runs-on: ubuntu-22.04
     needs: [ deploy_common_resources, pack_iam_policies_per_resource, create_readonly_role_for_scans, prepare_matrix_resources]
     strategy:
@@ -209,6 +211,7 @@ jobs:
           remote_path: "policy_output/${{ matrix.compliance }}"
 
   deploy_and_scan_not_parallel_resources:
+    name: Scan N/P
     runs-on: ubuntu-22.04
     needs: [ deploy_common_resources, pack_iam_policies_per_resource, create_readonly_role_for_scans, prepare_matrix_resources]
     if: ${{ needs.prepare_matrix_resources.outputs.not_parallel_resources_list != '[]' }}
@@ -294,6 +297,7 @@ jobs:
           fi
 
   destroy_common_resources:
+    name: Destroy common
     runs-on: ubuntu-22.04
     needs: [deploy_common_resources, deploy_and_scan_parallel_resources,deploy_and_scan_not_parallel_resources]
     if: ${{ always() }}

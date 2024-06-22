@@ -1,4 +1,3 @@
-# ecc-aws-140-only_one_active_access_key_available_for_any_single_iam_user
 resource "aws_iam_user" "red1" {
   provider      = aws.provider2
   name          = "autotest_iam_user_red-1"

@@ -64,8 +64,10 @@ def custodian_run(policy_execution_outputs: dict,
         print('Please use --regions param or setup the AWS_DEFAULT_REGION environment variable')
         sys.exit(1)
     regions = REGIONS.split(';')
-    if resource in getattr(exception_rules, cloud).get("sleep_before_scan", []):
+    if resource in getattr(exception_rules, cloud).get("sleep_before_scan_3min", []):
         time.sleep(180)
+    elif resource in getattr(exception_rules, cloud).get("sleep_before_scan_5min", []):
+        time.sleep(300)
     for region in regions:
         region_param = '--region=' + region if region != "default" else ""
         for policy in policies:

@@ -21,9 +21,9 @@ aws = {
     ],
     "red": [
         "ecc-aws-002-ensure_access_keys_are_rotated_every_90_days",
-        "ecc-aws-017-credentials_unused_for_45_days",
+        "ecc-aws-016-ensure_hardware_mfa_is_enabled_for_root_account",  
+        "ecc-aws-017-credentials_unused_for_45_days",      
         "ecc-aws-022-ebs_volumes_too_old_snapshots",
-        "ecc-aws-016-ensure_hardware_mfa_is_enabled_for_root_account",
         "ecc-aws-046-ensure_no_root_account_access_key_exists",
         "ecc-aws-059-config_enabled_all_regions",
         "ecc-aws-115-expired_certificates_are_removed_from_acm",
@@ -63,9 +63,11 @@ aws = {
         "iam",
         "cloudtrail"
     ],
-    "sleep_before_scan": [
+    "sleep_before_scan_3min": [
         "account",
-        "ecr",
+        "ecr"
+    ],
+    "sleep_before_scan_5min": [
         "iam"
     ]
 }

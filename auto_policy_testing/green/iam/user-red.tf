@@ -3,11 +3,10 @@
 # There won't be necessary to wait 4 hour difference to see red user in the report.
 # For policies:
 # ecc-aws-001-ensure_mfa_is_enabled_for_all_iam_users_with_console_password
-# ecc-aws-140-only_one_active_access_key_available_for_any_single_iam_user
 # ecc-aws-514-inactive_iam_access_keys_are_not_deleted
 
 
-# ecc-aws-140-only_one_active_access_key_available_for_any_single_iam_user
+# ecc-aws-001-ensure_mfa_is_enabled_for_all_iam_users_with_console_password
 resource "aws_iam_user" "red1" {
   name          = "autotest_iam_user_red-1"
   path          = "/"

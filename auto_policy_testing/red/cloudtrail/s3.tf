@@ -1,5 +1,5 @@
-resource "aws_s3_bucket" "this" {
-  bucket        = "${module.naming.resource_prefix.s3_bucket}-${random_integer.this.result}"
+resource "aws_s3_bucket" "this1" {
+  bucket        = "${module.naming.resource_prefix.s3_bucket}-${random_integer.this.result}-1"
   force_destroy = true
 }
 
@@ -8,33 +8,41 @@ resource "random_integer" "this" {
   max = 10000000
 }
 
-resource "aws_s3_bucket_policy" "this" {
-  bucket = aws_s3_bucket.this.id
-  policy = data.aws_iam_policy_document.this.json
+resource "aws_s3_bucket_policy" "this1" {
+  bucket = aws_s3_bucket.this1.id
+  policy = data.aws_iam_policy_document.this1.json
+}
+
+
+
+resource "aws_s3_bucket" "this2" {
+  bucket        = "${module.naming.resource_prefix.s3_bucket}-${random_integer.this.result}-2"
+  force_destroy = true
+}
+
+resource "aws_s3_bucket_policy" "this2" {
+  bucket = aws_s3_bucket.this2.id
+  policy = data.aws_iam_policy_document.this2.json
 }
 
 resource "aws_s3_bucket_policy" "deny" {
-  bucket = aws_s3_bucket.this.id
+  bucket = aws_s3_bucket.this2.id
   policy = data.aws_iam_policy_document.deny.json
 
   depends_on = [
-    aws_s3_bucket_policy.this,
-    aws_s3_bucket.this,
-    aws_cloudtrail.this1,
+    aws_s3_bucket_policy.this2,
+    aws_s3_bucket.this2,
     aws_cloudtrail.this2
   ]
 }
 
 resource "null_resource" "this" {
   depends_on = [
-    aws_s3_bucket_policy.this,
     aws_s3_bucket_policy.deny,
-    aws_s3_bucket.this,
-    aws_cloudtrail.this1,
     aws_cloudtrail.this2
   ]
   triggers = {
-    s3_name = aws_s3_bucket.this.id
+    s3_name = aws_s3_bucket.this2.id
   }
   provisioner "local-exec" {
     interpreter = ["/bin/bash", "-c"]
