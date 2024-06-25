@@ -3,12 +3,16 @@
     "data": {
         "TagList": [
             {
-                "Key": "CustodianRule",
-                "Value": "ecc-aws-310-dms_latest_version"
-            },
-            {
                 "Key": "ComplianceStatus",
                 "Value": "Green"
+            },
+            {
+                "Key": "Owner",
+                "Value": "c7n-ci"
+            },
+            {
+                "Key": "ResourceType",
+                "Value": "dms"
             }
         ],
         "ResponseMetadata": {}
