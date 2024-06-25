@@ -7,7 +7,8 @@
                 "dms:DescribeReplicationInstances",
                 "dms:ListTagsForResource",
                 "kms:ListAliases",
-                "tag:GetResources"
+                "tag:GetResources",
+                "kms:DescribeKey"
             ],
             "Resource": "*"
         }
