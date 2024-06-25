@@ -79,6 +79,7 @@ output "resource_prefix" {
     dax               = "${local.suffix}-${var.resource_type}-${local.compliance_status}"
     emr               = "${local.suffix}_${var.resource_type}_emr_${local.compliance_status}"
     directory         = "${local.suffix}-${var.resource_type}-${local.compliance_status}"
+    dms               = "${local.suffix}-${var.resource_type}-dms-${local.compliance_status}"
   }
 }
 

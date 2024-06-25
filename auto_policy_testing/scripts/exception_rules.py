@@ -61,7 +61,8 @@ aws = {
         "account",
         "workspaces",
         "iam",
-        "cloudtrail"
+        "cloudtrail",
+        "dms"
     ],
     "sleep_before_scan_3min": [
         "account",
