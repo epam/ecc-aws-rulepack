@@ -35,3 +35,12 @@ resource "aws_wafregional_web_acl" "this" {
     rule_id  = aws_wafregional_rule.this.id
   }
 }
+
+resource "aws_waf_web_acl" "this" {
+  name        = module.naming.resource_prefix.waf_acl
+  metric_name = "WafACLMetricGreen"
+
+  default_action {
+    type = "ALLOW"
+  }
+}
