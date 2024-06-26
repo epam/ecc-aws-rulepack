@@ -5,8 +5,8 @@
             "Effect": "Allow",
             "Action": [ 
                 "sns:GetTopicAttributes",
-				"sns:ListTagsForResource",
-				"sns:ListTopics"
+				"sns:ListTopics",
+                "tag:GetResources"
             ],
             "Resource": "*"
         }

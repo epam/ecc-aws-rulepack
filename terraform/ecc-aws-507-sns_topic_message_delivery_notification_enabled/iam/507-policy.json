@@ -6,7 +6,8 @@
             "Action": [
                 "sns:ListTopics",
                 "sns:GetTopicAttributes",
-                "sns:ListTagsForResource"
+                "sns:ListTagsForResource",
+                "tag:GetResources"
             ],
             "Resource": "*"
         }

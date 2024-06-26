@@ -4,6 +4,8 @@
         {
             "Effect": "Allow",
             "Action": [ 
+                "iam:ListAccessKeys",
+                "iam:GetUser",
                 "iam:ListAccessKeys"
             ],
             "Resource": "*"
