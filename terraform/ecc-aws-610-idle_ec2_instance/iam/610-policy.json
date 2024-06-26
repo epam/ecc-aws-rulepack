@@ -5,7 +5,8 @@
             "Effect": "Allow",
             "Action": [ 
                 "cloudwatch:GetMetricStatistics",
-                "ec2:DescribeInstances"
+                "ec2:DescribeInstances",
+                "ec2:DescribeTags"
             ],
             "Resource": "*"
         }
