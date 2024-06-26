@@ -3,8 +3,10 @@
     "Statement": [
         {
             "Effect": "Allow",
-            "Action": [ 
-                "codebuild:ListProjects"
+            "Action": [
+                "codebuild:ListProjects",
+                "codebuild:BatchGetProjects",
+                "tag:GetResources"
             ],
             "Resource": "*"
         }

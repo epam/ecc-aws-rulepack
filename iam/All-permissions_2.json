@@ -47,7 +47,7 @@
                 "ssm:DescribeInstanceInformation",
                 "ssm:ListResourceComplianceSummaries",
                 "states:DescribeStateMachine",
-                "states:ListStateMachine",
+                "states:ListStateMachines",
                 "tag:GetResources",
                 "waf-regional:GetWebACL",
                 "waf-regional:ListResourcesForWebACL",
