@@ -20,7 +20,7 @@ variable "remote_state_key" {
 
 variable "github_location" {
   type        = string
-  default     = "https://github.com/mitchellh/packer.git"
+  default     = "https://github.com/cloud-custodian/cloud-custodian"
 }
 
 variable "bitbucket_location" {

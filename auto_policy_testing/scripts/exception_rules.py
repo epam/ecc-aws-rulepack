@@ -1,6 +1,7 @@
 aws = {
     "green": [
         "ecc-aws-015-ensure_mfa_is_enabled_for_the_root_account",
+        "ecc-aws-071-codebuild_project_source_repo_url_check", # require update
         "ecc-aws-112-s3_bucket_versioning_mfa_delete_enabled", #manual
         "ecc-aws-138-eliminate_use_root_user_for_administrative_and_daily_tasks",
         "ecc-aws-207-rds_aurora_logging_enabled",
@@ -26,6 +27,7 @@ aws = {
         "ecc-aws-022-ebs_volumes_too_old_snapshots",
         "ecc-aws-046-ensure_no_root_account_access_key_exists",
         "ecc-aws-059-config_enabled_all_regions",
+        "ecc-aws-071-codebuild_project_source_repo_url_check", # require update
         "ecc-aws-115-expired_certificates_are_removed_from_acm",
         "ecc-aws-128-expired_route53_domain_names",
         "ecc-aws-138-eliminate_use_root_user_for_administrative_and_daily_tasks",

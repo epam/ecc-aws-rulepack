@@ -25,7 +25,7 @@ env:
   TF_BACKEND_STORAGE_NAME: ${{ secrets.TF_BACKEND_STORAGE_NAME }}
   TF_CLI_ARGS: "-no-color"
   AWS_DEFAULT_REGION: ${{ secrets.AWS_REGION }}
-  default_resource_priority_list: '[ "distribution"]'
+  default_resource_priority_list: '[ "codebuild"]'
   RED: '\033[0;31m'
 
 permissions:
@@ -167,7 +167,6 @@ jobs:
     env:
       COMPLINCE: ${{ matrix.compliance }}
       RESOURCE: ${{ matrix.resource }}
-      TF_VAR_remote_state_key: "aws/states/common_resources/${{ matrix.compliance }}.tfstate"
       
     steps:
       - name: Git clone the repository
@@ -224,7 +223,6 @@ jobs:
     env:
       COMPLINCE: ${{ matrix.compliance }}
       RESOURCE: ${{ matrix.resource }}
-      TF_VAR_remote_state_key: "aws/states/common_resources/${{ matrix.compliance }}.tfstate"
       
     steps:
       - name: Git clone the repository

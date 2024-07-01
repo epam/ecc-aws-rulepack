@@ -1,38 +1,32 @@
-resource "aws_s3_bucket" "input_bucket" {
-  bucket        = "${module.naming.resource_prefix.codebuild}-${random_integer.this.result}"
-  force_destroy = true
-}
-resource "aws_s3_bucket" "output_bucket" {
-  bucket        = "${module.naming.resource_prefix.codebuild}-${random_integer.this.result}-2"
-  force_destroy = true
-}
+# CodeBuild only allows a single credential to be saved in a given AWS account in a given region
 
-resource "random_integer" "this" {
-  min = 1
-  max = 10000000
+resource "aws_codebuild_source_credential" "github" {
+  auth_type   = "PERSONAL_ACCESS_TOKEN"
+  server_type = "GITHUB"
+  token       = "test"
 }
 
-resource "aws_s3_object" "object" {
-  bucket = aws_s3_bucket.input_bucket.id
-  key    = "MessageUtil.zip"
-  source = "MessageUtil.zip"
+resource "aws_codebuild_source_credential" "bitbucket_passw" {
+  auth_type   = "BASIC_AUTH"
+  server_type = "BITBUCKET"
+  token       = "password-test"
+  user_name   = "username-test"
 }
 
-resource "aws_codebuild_project" "this" {
-  name = "${module.naming.resource_prefix.codebuild}"
-
-  service_role = aws_iam_role.this.arn
+resource "aws_codebuild_project" "this1" {
   provider     = aws.provider2
-
+  name = "${module.naming.resource_prefix.codebuild}-1"
+  service_role = aws_iam_role.this.arn
+  
   artifacts {
     type                = "S3"
-    location            = aws_s3_bucket.output_bucket.id
+    location            = aws_s3_bucket.this.id
     encryption_disabled = true
   }
 
   environment {
     compute_type    = "BUILD_GENERAL1_SMALL"
-    image           = "aws/codebuild/amazonlinux2-x86_64-standard:3.0"
+    image           = "aws/codebuild/standard:7.0"
     type            = "LINUX_CONTAINER"
     privileged_mode = true
 
@@ -50,20 +44,63 @@ resource "aws_codebuild_project" "this" {
     cloudwatch_logs {
       status = "DISABLED"
     }
-
     s3_logs {
-      status   = "ENABLED"
-      location = "${aws_s3_bucket.output_bucket.id}/build-log"
+      status   = "DISABLED"
+    }
+  }
+
+  source {
+    type       = "GITHUB"
+    location   = var.github_location
+  }
+
+  secondary_sources {
+    source_identifier = "test1"
+    type       = "BITBUCKET"
+    location   = var.bitbucket_location
+  }
+  secondary_sources {
+    source_identifier = "test2"
+    type       = "GITLAB"
+    location   = "https://gitlab.com/test/test.git"
+  }
+}
+
+resource "aws_codebuild_project" "this2" {
+  name = "${module.naming.resource_prefix.codebuild}-2"
+  service_role = aws_iam_role.this.arn
+
+  artifacts {
+    type = "NO_ARTIFACTS"
+  }
+
+  environment {
+    compute_type    = "BUILD_GENERAL1_SMALL"
+    image           = "aws/codebuild/standard:7.0"
+    type            = "LINUX_CONTAINER"
+  }
+  
+  logs_config {
+    cloudwatch_logs {
+      status = "DISABLED"
+    }
+    s3_logs {
+      status              = "ENABLED"
+      location            = "${aws_s3_bucket.this.id}/build-log"
       encryption_disabled = true
     }
   }
 
   source {
-    type     = "S3"
-    location = "${aws_s3_bucket.input_bucket.id}/MessageUtil.zip"
+    type       = "BITBUCKET"
+    location   = var.bitbucket_location
   }
 
-  depends_on = [aws_s3_bucket.input_bucket, aws_s3_bucket.output_bucket]
+  secondary_sources {
+    source_identifier = "test1"
+    type       = "BITBUCKET"
+    location   = "https://username:token@bitbucket.org/test1/test.git"
+  }
 }
 
 resource "aws_iam_role" "this" {

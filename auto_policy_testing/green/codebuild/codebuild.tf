@@ -1,24 +1,23 @@
-resource "aws_codebuild_project" "a" {
-  name         = "${module.naming.resource_prefix.codebuild}"
+# An OAUTH connection is not supported by the API and must be created using the CodeBuild console.
 
+# https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html#access-tokens-github
+
+
+resource "aws_codebuild_project" "this1" {
+  name         = "${module.naming.resource_prefix.codebuild}-1"
   service_role = aws_iam_role.this.arn
 
   artifacts {
-    location            = aws_s3_bucket.this.bucket
+    location            = aws_s3_bucket.this.id
     type                = "S3"
     path                = "/"
     packaging           = "ZIP"
     encryption_disabled = false
   }
 
-  cache {
-    type     = "S3"
-    location = aws_s3_bucket.this.bucket
-  }
-
   environment {
     compute_type    = "BUILD_GENERAL1_SMALL"
-    image           = "aws/codebuild/standard:1.0"
+    image           = "aws/codebuild/standard:7.0"
     type            = "LINUX_CONTAINER"
     privileged_mode = false
 
@@ -32,56 +31,34 @@ resource "aws_codebuild_project" "a" {
   logs_config {
     cloudwatch_logs {
       status      = "ENABLED"
-      group_name  = "log-group-482-green"
-      stream_name = "log-stream-482-green"
-    }
-
-    s3_logs {
-      status              = "ENABLED"
-      location            = "${aws_s3_bucket.this.id}/build-log"
-      encryption_disabled = false
+      group_name  = aws_cloudwatch_log_group.this.name
     }
   }
 
   source {
-    type       = "GITHUB"
-    location   = var.github_location
+    type       = "BITBUCKET"
+    location   = var.bitbucket_location
   }
 }
 
-resource "aws_codebuild_project" "b" {
+resource "aws_codebuild_project" "this2" {
   name         = "${module.naming.resource_prefix.codebuild}-2"
-
   service_role = aws_iam_role.this.arn
 
   artifacts {
-    location            = aws_s3_bucket.this.bucket
-    type                = "S3"
-    path                = "/"
-    packaging           = "ZIP"
-    encryption_disabled = false
+    type = "NO_ARTIFACTS"
   }
 
   environment {
     compute_type    = "BUILD_GENERAL1_SMALL"
-    image           = "aws/codebuild/standard:1.0"
+    image           = "aws/codebuild/standard:7.0"
     type            = "LINUX_CONTAINER"
-    privileged_mode = false
-
-    
-    environment_variable {
-      name  = "SOME_KEY1"
-      value = "SOME_VALUE1"
-    }
   }
 
   logs_config {
     cloudwatch_logs {
-      status      = "ENABLED"
-      group_name  = "log-group-482-green"
-      stream_name = "log-stream-482-green"
+      status = "DISABLED"
     }
-
     s3_logs {
       status              = "ENABLED"
       location            = "${aws_s3_bucket.this.id}/build-log"
@@ -94,7 +71,6 @@ resource "aws_codebuild_project" "b" {
     location   = var.bitbucket_location
   }
 }
-
 
 resource "aws_iam_role" "this" {
   name = "${module.naming.resource_prefix.codebuild}"
@@ -115,12 +91,6 @@ resource "aws_iam_role" "this" {
 EOF
 }
 
-resource "aws_s3_bucket" "this" {
-  bucket        = "${module.naming.resource_prefix.codebuild}-${random_integer.this.result}"
-  force_destroy = true
-}
-
-resource "random_integer" "this" {
-  min = 1
-  max = 10000000
+resource "aws_cloudwatch_log_group" "this" {
+  name = "${module.naming.resource_prefix.cw_log_group}"
 }
