@@ -12,10 +12,11 @@ policies:
       CodeBuild project logging in disabled
     resource: codebuild
     filters:
-      - or:
+      - not:
+        - or:
           - type: value
             key: logsConfig.s3Logs.status
-            value: "DISABLED"
+            value: "ENABLED"
           - type: value
             key: logsConfig.cloudWatchLogs.status
-            value: "DISABLED"
+            value: "ENABLED"

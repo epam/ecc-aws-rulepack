@@ -82,8 +82,7 @@
                         "streamName": "log-stream-482-green"
                     },
                     "s3Logs": {
-                        "status": "ENABLED",
-                        "location": "482-bucket-green/build-log",
+                        "status": "DISABLED",
                         "encryptionDisabled": false
                     }
                 },

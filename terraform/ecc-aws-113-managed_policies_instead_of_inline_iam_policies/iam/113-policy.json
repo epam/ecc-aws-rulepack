@@ -5,6 +5,7 @@
             "Effect": "Allow",
             "Action": [ 
                 "iam:ListUsers",
+                "iam:GetUser",
                 "iam:ListUserPolicies"
             ],
             "Resource": "*"

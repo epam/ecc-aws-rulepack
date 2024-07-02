@@ -22,7 +22,7 @@
                 },
                 "cache": {
                     "type": "S3",
-                    "location": "482-bucket-red"
+                    "location": "482-bucket-5277232-red"
                 },
                 "environment": {
                     "type": "LINUX_CONTAINER",
@@ -45,7 +45,7 @@
                 "tags": [
                     {
                         "key": "CustodianRule",
-                        "Value": "ecc-aws-482-codebuild_project_logging_enabled"
+                        "value": "ecc-aws-482-codebuild_project_logging_enabled"
                     },
                     {
                         "key": "ComplianceStatus",
@@ -54,23 +54,23 @@
                 ],
                 "created": {
                     "__class__": "datetime",
-                    "year": 2022,
-                    "month": 11,
-                    "day": 21,
-                    "hour": 13,
-                    "minute": 19,
-                    "second": 7,
-                    "microsecond": 64000
+                    "year": 2024,
+                    "month": 7,
+                    "day": 1,
+                    "hour": 10,
+                    "minute": 21,
+                    "second": 19,
+                    "microsecond": 894000
                 },
                 "lastModified": {
                     "__class__": "datetime",
-                    "year": 2022,
-                    "month": 11,
-                    "day": 21,
-                    "hour": 13,
-                    "minute": 28,
-                    "second": 20,
-                    "microsecond": 247000
+                    "year": 2024,
+                    "month": 7,
+                    "day": 1,
+                    "hour": 10,
+                    "minute": 54,
+                    "second": 21,
+                    "microsecond": 207000
                 },
                 "badge": {
                     "badgeEnabled": false

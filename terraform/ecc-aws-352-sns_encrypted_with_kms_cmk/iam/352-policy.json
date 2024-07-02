@@ -5,10 +5,10 @@
             "Effect": "Allow",
             "Action": [ 
                 "sns:GetTopicAttributes",
-				"sns:ListTagsForResource",
 				"sns:ListTopics",
                 "kms:DescribeKey",
-                "kms:listAliases"
+                "kms:listAliases",
+                "tag:GetResources"
             ],
             "Resource": "*"
         }

@@ -15,4 +15,4 @@ policies:
       - not:
           - type: value
             key: EngineVersion
-            value: '3.5.2'
+            value: '3.5.3'

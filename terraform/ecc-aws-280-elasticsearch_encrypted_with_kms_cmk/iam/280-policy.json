@@ -4,8 +4,8 @@
         {
             "Effect": "Allow",
             "Action": [
+                "es:DescribeDomains",
                 "es:ListDomainNames",
-                "es:DescribeElasticsearchDomains",
                 "es:ListTags",
 				"kms:DescribeKey",
                 "kms:ListAliases",
