@@ -14,5 +14,9 @@ policies:
     filters:
       - not:
           - type: value
+            key: State.Name
+            value: terminated
+      - not:
+          - type: value
             key: MetadataOptions.HttpPutResponseHopLimit
             value: 1

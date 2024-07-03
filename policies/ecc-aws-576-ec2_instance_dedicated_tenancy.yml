@@ -12,6 +12,10 @@ policies:
       Amazon EC2 instances with dedicated tenancy
     resource: aws.ec2
     filters:
+      - not:
+          - type: value
+            key: State.Name
+            value: terminated
       - type: value
         key: Placement.Tenancy
         op: in
