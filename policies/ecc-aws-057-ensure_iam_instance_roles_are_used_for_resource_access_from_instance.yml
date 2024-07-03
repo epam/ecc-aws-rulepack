@@ -12,6 +12,10 @@ policies:
       IAM instance roles are not used for AWS resource access from instances
     resource: aws.ec2
     filters:
+      - not:
+        - type: value
+          key: State.Name
+          value: terminated
       - type: value
         key: IamInstanceProfile
         value: absent

@@ -9,9 +9,12 @@ policies:
   - name: ecc-aws-494-ecs_fargate_latest_platform_version
     comment: '010021082000'
     description: |
-      ECS Fargate not latest platform version
+      ECS service with Fargate does not have latest platform version
     resource: ecs-service
     filters:
+      - type: value
+        key: launchType
+        value: FARGATE
       - not:
           - type: value
             key: platformVersion
