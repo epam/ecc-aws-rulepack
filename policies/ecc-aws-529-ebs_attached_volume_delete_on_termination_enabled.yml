@@ -12,6 +12,10 @@ policies:
       EBS volumes attached to an EC2 instance is not marked for deletion upon instance termination
     resource: aws.ec2
     filters:
+      - not:
+        - type: value
+          key: State.Name
+          value: terminated
       - type: value
         key: BlockDeviceMappings[].Ebs.DeleteOnTermination
         op: contains
