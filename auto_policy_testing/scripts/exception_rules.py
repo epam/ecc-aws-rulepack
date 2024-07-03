@@ -1,8 +1,8 @@
 aws = {
     "green": [
         "ecc-aws-015-ensure_mfa_is_enabled_for_the_root_account",
-        "ecc-aws-071-codebuild_project_source_repo_url_check", # require update
-        "ecc-aws-112-s3_bucket_versioning_mfa_delete_enabled", #manual
+        "ecc-aws-071-codebuild_project_source_repo_url_check",  # require update
+        "ecc-aws-112-s3_bucket_versioning_mfa_delete_enabled",  #manual
         "ecc-aws-138-eliminate_use_root_user_for_administrative_and_daily_tasks",
         "ecc-aws-207-rds_aurora_logging_enabled",
         "ecc-aws-286-workspaces_unused_instances",
@@ -27,12 +27,13 @@ aws = {
         "ecc-aws-022-ebs_volumes_too_old_snapshots",
         "ecc-aws-046-ensure_no_root_account_access_key_exists",
         "ecc-aws-059-config_enabled_all_regions",
-        "ecc-aws-071-codebuild_project_source_repo_url_check", # require update
+        "ecc-aws-071-codebuild_project_source_repo_url_check",  # require update
         "ecc-aws-115-expired_certificates_are_removed_from_acm",
         "ecc-aws-128-expired_route53_domain_names",
         "ecc-aws-138-eliminate_use_root_user_for_administrative_and_daily_tasks",
         "ecc-aws-141-expired_ssl_tls_certificates_stored_in_aws_iam_are_removed",
         "ecc-aws-145-organizations_changes_alarm_exists",
+        "ecc-aws-185-ec2_stopped_instance",  # checks 30 days old instance
         "ecc-aws-207-rds_aurora_logging_enabled",
         "ecc-aws-253-glue_data_catalog_encrypted_with_kms_customer_master_keys",
         "ecc-aws-259-emr_clusters_in_vpc",
@@ -64,14 +65,16 @@ aws = {
         "workspaces",
         "iam",
         "cloudtrail",
-        "dms"
+        "dms",
+        "codebuild"
     ],
     "sleep_before_scan_3min": [
         "account",
         "ecr"
     ],
     "sleep_before_scan_5min": [
-        "iam"
+        "iam",
+        "ec2"
     ]
 }
 
