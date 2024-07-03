@@ -12,13 +12,12 @@ policies:
       Instances managed by Systems Manager do not have association compliance status of COMPLIANT
     resource: aws.ec2
     filters:
-      - and:
-          - type: value
-            key: State.Name
-            op: in
-            value: [running, stopped]
-          - type: ssm-compliance
-            compliance_types:
-              - Association
-            states:
-              - NON_COMPLIANT
+      - not:
+        - type: value
+          key: State.Name
+          value: terminated
+      - type: ssm-compliance
+        compliance_types:
+          - Association
+        states:
+          - NON_COMPLIANT
