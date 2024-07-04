@@ -11,9 +11,9 @@ variable "remote_state_region" {
 }
 
 variable "remote_state_bucket" {
-  type        = string
+  type = string
 }
 
 variable "remote_state_key" {
-  type        = string
+  type = string
 }

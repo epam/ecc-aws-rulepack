@@ -11,8 +11,8 @@ resource "aws_instance" "this1" {
 
   metadata_options {
     http_endpoint               = "enabled"
-    http_tokens = "optional"
-    http_put_response_hop_limit = 5 
+    http_tokens                 = "optional"
+    http_put_response_hop_limit = 5
   }
 
   root_block_device {
@@ -22,7 +22,7 @@ resource "aws_instance" "this1" {
 }
 
 resource "aws_network_interface" "this" {
-  subnet_id   = data.terraform_remote_state.common.outputs.vpc_subnet_1_id
+  subnet_id = data.terraform_remote_state.common.outputs.vpc_subnet_1_id
 
   attachment {
     instance     = aws_instance.this1.id
@@ -31,9 +31,9 @@ resource "aws_network_interface" "this" {
 }
 
 resource "aws_instance" "this2" {
-  ami           = data.aws_ami.this.id
-  instance_type = "t3.nano"
-  tenancy       = "dedicated"
+  ami                  = data.aws_ami.this.id
+  instance_type        = "t3.micro"
+  tenancy              = "dedicated"
   iam_instance_profile = aws_iam_instance_profile.this.name
 
   tags = {
@@ -41,3 +41,4 @@ resource "aws_instance" "this2" {
     "Patch Group" = "${module.naming.resource_prefix.ec2}-patch-group"
   }
 }
+

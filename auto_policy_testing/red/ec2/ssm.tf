@@ -1,7 +1,6 @@
 
 resource "aws_ssm_patch_baseline" "this" {
-  name                                 = "${module.naming.resource_prefix.ec2}"
-  description                          = "Patch Baseline Description 091 red"
+  name                                 = module.naming.resource_prefix.ec2
   operating_system                     = "AMAZON_LINUX_2"
   approved_patches_enable_non_security = true
   rejected_patches                     = ["amazon-ssm-agent"]
@@ -45,11 +44,11 @@ resource "aws_ssm_patch_baseline" "this" {
 
 resource "aws_ssm_patch_group" "this" {
   baseline_id = aws_ssm_patch_baseline.this.id
-  patch_group = "Patch_Group_091_red"
+  patch_group = "${module.naming.resource_prefix.ec2}-patch-group"
 }
 
 resource "aws_ssm_maintenance_window" "this" {
-  name     = "${module.naming.resource_prefix.ec2}"
+  name     = module.naming.resource_prefix.ec2
   schedule = "rate(5 minutes)"
   duration = 3
   cutoff   = 1
@@ -57,7 +56,7 @@ resource "aws_ssm_maintenance_window" "this" {
 
 resource "aws_ssm_maintenance_window_target" "this" {
   window_id     = aws_ssm_maintenance_window.this.id
-  name          = "${module.naming.resource_prefix.ec2}"
+  name          = module.naming.resource_prefix.ec2
   resource_type = "INSTANCE"
 
   targets {
@@ -67,7 +66,7 @@ resource "aws_ssm_maintenance_window_target" "this" {
 }
 
 resource "aws_ssm_maintenance_window_task" "this" {
-  name             = "${module.naming.resource_prefix.ec2}"
+  name             = module.naming.resource_prefix.ec2
   max_concurrency  = 2
   max_errors       = 1
   priority         = 1
@@ -97,14 +96,14 @@ resource "aws_ssm_maintenance_window_task" "this" {
 
 resource "aws_ssm_association" "this" {
   name                = "AWS-ConfigureAWSPackage"
-  association_name    = "${module.naming.resource_prefix.ec2}"
+  association_name    = module.naming.resource_prefix.ec2
   compliance_severity = "MEDIUM"
   schedule_expression = "rate(30 minutes)"
 
   parameters = {
-    action = "Install"
+    action           = "Install"
     installationType = "In-place update"
-    name = "AmazonCloudWatchAgent"
+    name             = "AmazonCloudWatchAgent"
   }
 
   targets {

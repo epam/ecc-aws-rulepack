@@ -2,12 +2,17 @@ aws = {
     "green": [
         "ecc-aws-015-ensure_mfa_is_enabled_for_the_root_account",
         "ecc-aws-071-codebuild_project_source_repo_url_check",  # require update
-        "ecc-aws-112-s3_bucket_versioning_mfa_delete_enabled",  #manual
+        "ecc-aws-112-s3_bucket_versioning_mfa_delete_enabled",  # manual
         "ecc-aws-138-eliminate_use_root_user_for_administrative_and_daily_tasks",
         "ecc-aws-207-rds_aurora_logging_enabled",
         "ecc-aws-286-workspaces_unused_instances",
-        "ecc-aws-331-workspaces_images_not_older_than_90_days", 
+        "ecc-aws-331-workspaces_images_not_older_than_90_days",
         "ecc-aws-519-vpc_vpn_2_tunnels_up",
+        "ecc-aws-577-reserved_ec2_instance_payment_failed",
+        "ecc-aws-578-reserved_ec2_instance_payment_pending",
+        "ecc-aws-579-reserved_ec2_instance_recent_purchases",
+        "ecc-aws-580-reserved_instance_lease_expiration_in_30_days",
+        "ecc-aws-581-reserved_instance_lease_expiration_in_7_days",
         "ecc-aws-587-elasticsearch_reserved_instance_payment_failed",
         "ecc-aws-588-elasticsearch_reserved_instance_payment_pending",
         "ecc-aws-589-elasticsearch_reserved_instance_recent_purchases",
@@ -18,12 +23,13 @@ aws = {
         "ecc-aws-595-reserved_redshift_node_payment_failed",
         "ecc-aws-596-reserved_redshift_node_payment_pending",
         "ecc-aws-597-reserved_redshift_node_recent_purchases",
+        "ecc-aws-610-idle_ec2_instance",
         "ecc-aws-614-idle_rds_instance"
     ],
     "red": [
         "ecc-aws-002-ensure_access_keys_are_rotated_every_90_days",
-        "ecc-aws-016-ensure_hardware_mfa_is_enabled_for_root_account",  
-        "ecc-aws-017-credentials_unused_for_45_days",      
+        "ecc-aws-016-ensure_hardware_mfa_is_enabled_for_root_account",
+        "ecc-aws-017-credentials_unused_for_45_days",
         "ecc-aws-022-ebs_volumes_too_old_snapshots",
         "ecc-aws-046-ensure_no_root_account_access_key_exists",
         "ecc-aws-059-config_enabled_all_regions",
@@ -38,7 +44,7 @@ aws = {
         "ecc-aws-253-glue_data_catalog_encrypted_with_kms_customer_master_keys",
         "ecc-aws-259-emr_clusters_in_vpc",
         "ecc-aws-288-workspaces_instances_are_healthy",
-        "ecc-aws-331-workspaces_images_not_older_than_90_days", 
+        "ecc-aws-331-workspaces_images_not_older_than_90_days",
         "ecc-aws-344-route53_domain_expires_in_30_days",
         "ecc-aws-497-eks_cluster_oldest_supported_version",
         "ecc-aws-519-vpc_vpn_2_tunnels_up",
@@ -46,6 +52,11 @@ aws = {
         "ecc-aws-547-rds_instance_generation",
         "ecc-aws-552-dynamodb_tables_unused",
         "ecc-aws-571-stopped_rds_instances_removed",
+        "ecc-aws-577-reserved_ec2_instance_payment_failed",
+        "ecc-aws-578-reserved_ec2_instance_payment_pending",
+        "ecc-aws-579-reserved_ec2_instance_recent_purchases",
+        "ecc-aws-580-reserved_instance_lease_expiration_in_30_days",
+        "ecc-aws-581-reserved_instance_lease_expiration_in_7_days",
         "ecc-aws-587-elasticsearch_reserved_instance_payment_failed",
         "ecc-aws-588-elasticsearch_reserved_instance_payment_pending",
         "ecc-aws-589-elasticsearch_reserved_instance_recent_purchases",
@@ -57,6 +68,7 @@ aws = {
         "ecc-aws-596-reserved_redshift_node_payment_pending",
         "ecc-aws-597-reserved_redshift_node_recent_purchases",
         "ecc-aws-598-redshift_instance_generation",
+        "ecc-aws-610-idle_ec2_instance",
         "ecc-aws-614-idle_rds_instance"
     ],
     "not-parallel": [
@@ -68,14 +80,19 @@ aws = {
         "dms",
         "codebuild"
     ],
-    "sleep_before_scan_3min": [
-        "account",
-        "ecr"
-    ],
-    "sleep_before_scan_5min": [
-        "iam",
-        "ec2"
-    ]
+    "sleep_before_scan": {
+        "3m": [
+            "account",
+            "ecr"
+        ],
+        "5m": [
+            "iam"
+
+        ],
+        "10m": [
+            "ec2"
+        ]
+    }
 }
 
 gcp = {}

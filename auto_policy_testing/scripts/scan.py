@@ -64,10 +64,16 @@ def custodian_run(policy_execution_outputs: dict,
         print('Please use --regions param or setup the AWS_DEFAULT_REGION environment variable')
         sys.exit(1)
     regions = REGIONS.split(';')
-    if resource in getattr(exception_rules, cloud).get("sleep_before_scan_3min", []):
-        time.sleep(180)
-    elif resource in getattr(exception_rules, cloud).get("sleep_before_scan_5min", []):
-        time.sleep(300)
+    for time_limit, resource_types_with_limit in getattr(exception_rules, cloud).get("sleep_before_scan", {}).items():
+        if resource in resource_types_with_limit:
+            if time_limit.endswith('m'):
+                time_limit_in_sec = int(time_limit[:-1]) * 60
+                time.sleep(time_limit_in_sec)
+            else:
+                print(f"Incorrect time format for delay in exception_rules.py {time_limit}:")
+                sys.exit(1)
+            break
+
     for region in regions:
         region_param = '--region=' + region if region != "default" else ""
         for policy in policies:

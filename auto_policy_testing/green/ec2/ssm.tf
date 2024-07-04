@@ -43,11 +43,11 @@ resource "aws_ssm_patch_baseline" "this" {
 
 resource "aws_ssm_patch_group" "this" {
   baseline_id = aws_ssm_patch_baseline.this.id
-  patch_group = "${module.naming.resource_prefix.ec2}"
+  patch_group = "${module.naming.resource_prefix.ec2}-patch-group"
 }
 
 resource "aws_ssm_maintenance_window" "this" {
-  name     = "${module.naming.resource_prefix.ec2}"
+  name     = module.naming.resource_prefix.ec2
   schedule = "rate(5 minutes)"
   duration = 3
   cutoff   = 1
@@ -55,17 +55,17 @@ resource "aws_ssm_maintenance_window" "this" {
 
 resource "aws_ssm_maintenance_window_target" "this" {
   window_id     = aws_ssm_maintenance_window.this.id
-  name          = "${module.naming.resource_prefix.ec2}"
+  name          = module.naming.resource_prefix.ec2
   resource_type = "INSTANCE"
 
   targets {
     key    = "InstanceIds"
-    values = [aws_instance.this.id]
+    values = [aws_instance.this1.id]
   }
 }
 
 resource "aws_ssm_maintenance_window_task" "this" {
-  name             = "${module.naming.resource_prefix.ec2}"
+  name             = module.naming.resource_prefix.ec2
   max_concurrency  = 2
   max_errors       = 1
   priority         = 1
@@ -76,7 +76,7 @@ resource "aws_ssm_maintenance_window_task" "this" {
 
   targets {
     key    = "InstanceIds"
-    values = [aws_instance.this.id]
+    values = [aws_instance.this1.id]
   }
 
   task_invocation_parameters {
@@ -91,15 +91,15 @@ resource "aws_ssm_maintenance_window_task" "this" {
 
 resource "aws_ssm_association" "this" {
   name                = "AWS-UpdateSSMAgent"
-  association_name    = "${module.naming.resource_prefix.ec2}"
+  association_name    = module.naming.resource_prefix.ec2
   compliance_severity = "MEDIUM"
   schedule_expression = "rate(30 minutes)"
 
   targets {
     key    = "InstanceIds"
-    values = [aws_instance.this.id]
+    values = [aws_instance.this1.id]
   }
 
-  depends_on = [aws_instance.this]
+  depends_on = [aws_instance.this1]
 }
 

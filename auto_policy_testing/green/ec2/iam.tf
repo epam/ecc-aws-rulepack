@@ -1,5 +1,5 @@
 resource "aws_iam_role" "this" {
-  name = "${module.naming.resource_prefix.iam_role}"
+  name = module.naming.resource_prefix.iam_role
 
   assume_role_policy = <<EOF
 {
@@ -18,7 +18,7 @@ EOF
 }
 
 resource "aws_iam_instance_profile" "this" {
-  name = "${module.naming.resource_prefix.ec2}"
+  name = module.naming.resource_prefix.ec2
   role = aws_iam_role.this.name
 }
 

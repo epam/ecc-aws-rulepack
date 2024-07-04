@@ -1,15 +1,14 @@
-resource "aws_instance" "this" {
-  ami                  = data.aws_ami.this.id
-  instance_type        = "t2.micro"
-  disable_api_termination = true
-  iam_instance_profile = aws_iam_instance_profile.this.name
-  monitoring           = true
-  subnet_id     = data.terraform_remote_state.common.outputs.vpc_subnet_private_1_id
-  associate_public_ip_address = false
-  
+resource "aws_instance" "this1" {
+  ami                         = data.aws_ami.this.id
+  instance_type               = "t2.micro"
+  disable_api_termination     = true
+  iam_instance_profile        = aws_iam_instance_profile.this.name
+  monitoring                  = true
+  subnet_id                   = data.terraform_remote_state.common.outputs.vpc_subnet_1_id
+
   metadata_options {
-    http_endpoint = "enabled"
-    http_tokens   = "required"
+    http_endpoint               = "enabled"
+    http_tokens                 = "required"
     http_put_response_hop_limit = 1
   }
 
@@ -24,10 +23,17 @@ resource "aws_instance" "this" {
   }
 }
 
+resource "aws_instance" "this2" {
+  ami                         = data.aws_ami.this.id
+  instance_type               = "t2.micro"
+  iam_instance_profile        = aws_iam_instance_profile.this.name
+  subnet_id                   = data.terraform_remote_state.common.outputs.vpc_subnet_private_1_id
+  associate_public_ip_address = false
+}
 
 resource "null_resource" "this1" {
   triggers = {
-    instance = aws_instance.this.id
+    instance = aws_instance.this1.id
   }
 
   provisioner "local-exec" {
@@ -35,5 +41,5 @@ resource "null_resource" "this1" {
     command = "aws ec2 modify-instance-attribute --instance-id  ${self.triggers.instance} --no-disable-api-termination"
   }
 
-  depends_on = [aws_instance.this]
+  depends_on = [aws_instance.this1]
 }
