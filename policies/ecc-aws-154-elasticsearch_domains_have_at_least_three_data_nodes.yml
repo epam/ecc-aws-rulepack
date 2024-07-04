@@ -1,0 +1,33 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+policies:
+  - name: ecc-aws-154-elasticsearch_domains_have_at_least_three_data_nodes
+    comment: '010050052000'
+    description: |
+      Elasticsearch domains have less than three data nodes
+    resource: aws.elasticsearch
+    filters:
+      - or:
+          - not:
+              - and:
+                  - type: value
+                    key: ElasticsearchClusterConfig.InstanceCount
+                    value: 3
+                    op: gte
+                  - type: value
+                    key: ElasticsearchClusterConfig.ZoneAwarenessEnabled
+                    value: true
+          - and:
+              - type: value
+                key: ElasticsearchClusterConfig.ZoneAwarenessConfig.AvailabilityZoneCount
+                value: 3
+                op: eq
+              - not:
+                  - type: value
+                    key: ElasticsearchClusterConfig.InstanceCount
+                    op: mod
+                    value: 3
