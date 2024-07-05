@@ -41,6 +41,9 @@ jobs:
         env:
           PROJECT_TOKEN: ${{ secrets.ECC_CHANGELOG_ACTION }}
 
+      - name: Create wiki
+        uses: ./ecc-actions/generate-list-of-rules
+        
       - name: Release action
         uses: ./ecc-actions/release-rulepack-action
         with:
