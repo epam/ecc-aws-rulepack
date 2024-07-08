@@ -1,14 +1,15 @@
 {
-    "Version": "2012-10-17",
-    "Statement": [
-      {
-        "Sid": "VisualEditor0",
-        "Effect": "Allow",
-        "Action": [
-          "states:DescribeStateMachine",
-          "states:ListStateMachines"
-        ],
-        "Resource": "*"
-      }
-    ]
-  }
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Sid": "VisualEditor0",
+			"Effect": "Allow",
+			"Action": [
+				"states:DescribeStateMachine",
+				"states:ListStateMachines",
+				"tag:GetResources"
+			],
+			"Resource": "*"
+		}
+	]
+}
