@@ -1,8 +1,15 @@
 output "ecs" {
   value = {
-    ecs = aws_ecs_cluster.this.id
-    ecs-service = aws_ecs_service.this.id
-    ecs-task-definition = aws_ecs_task_definition.this.arn 
-    ecc-aws-521-ecs_containers_readonly_access_AND_ecc-aws-495-ecs_task_definition_memory_hard_limit = aws_ecs_task_definition.this2.arn 
-  }
+    ecs = aws_ecs_cluster.this1.id
+    ecc-aws-360-ecs_exec_logging_encryption_enabled = [aws_ecs_cluster.this1.id, aws_ecs_cluster.this2.id]
+    ecc-aws-464-ecs_exec_logging_enabled = [aws_ecs_cluster.this1.id, aws_ecs_cluster.this2.id]
+
+    ecs-service = aws_ecs_service.this1.id
+    ecc-aws-582-ecs_service_placement_strategy = [aws_ecs_service.this1.id, aws_ecs_service.this2.id]
+
+    ecs-task-definition = aws_ecs_task_definition.this1.arn 
+    ecc-aws-190-ecs_task_definitions_secure_networking_modes_and_user_definitions = [aws_ecs_task_definition.this1, aws_ecs_task_definition.this2]
+    ecc-aws-496-ecs_task_definition_pid_mode_check = [aws_ecs_task_definition.this1, aws_ecs_task_definition.this2]
+    ecc-aws-537-ecs_containers_nonprivileged = [aws_ecs_task_definition.this1, aws_ecs_task_definition.this2, aws_ecs_task_definition.this3]
+    }
 }

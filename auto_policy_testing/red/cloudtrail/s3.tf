@@ -4,8 +4,8 @@ resource "aws_s3_bucket" "this1" {
 }
 
 resource "random_integer" "this" {
-  min = 1
-  max = 10000000
+  min = 10000
+  max = 99999
 }
 
 resource "aws_s3_bucket_policy" "this1" {

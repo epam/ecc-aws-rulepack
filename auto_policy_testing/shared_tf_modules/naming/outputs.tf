@@ -84,6 +84,7 @@ output "resource_prefix" {
     waf_group                   = "${local.suffix}_${var.resource_type}_waf_grp_${local.compliance_status}"
     waf_ip_set                  = "${local.suffix}_${var.resource_type}_ipset_${local.compliance_status}"
     waf_rule                    = "${local.suffix}_${var.resource_type}_waf_rule_${local.compliance_status}"
+    general                     = "${local.suffix}-${var.resource_type}-${local.compliance_status}"
   }
 }
 

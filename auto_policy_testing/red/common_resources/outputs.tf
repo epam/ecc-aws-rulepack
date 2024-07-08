@@ -29,6 +29,26 @@ output "az_subnet_priv_1" {
   }
 }
 
+output "az_subnet_pub_1" {
+  value = {
+    az_name = data.aws_availability_zone.public1.name
+    az_id = data.aws_availability_zone.public1.zone_id
+  }
+}
+
+output "az_subnet_pub_2" {
+  value = {
+    az_name = data.aws_availability_zones.this.names[0]
+    az_id = data.aws_availability_zones.this.zone_ids[0]
+  }
+}
+
+output "az_subnet_pub_3" {
+  value = {
+    az_name = data.aws_availability_zone.public3.name
+    az_id = data.aws_availability_zone.public3.zone_id
+  }
+}
 
 output "sg_1_id" {
   value = aws_security_group.this.id

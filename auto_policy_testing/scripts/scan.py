@@ -67,6 +67,7 @@ def custodian_run(policy_execution_outputs: dict,
     for time_limit, resource_types_with_limit in getattr(exception_rules, cloud).get("sleep_before_scan", {}).items():
         if resource in resource_types_with_limit:
             if time_limit.endswith('m'):
+                print(f"Delay for {time_limit}")
                 time_limit_in_sec = int(time_limit[:-1]) * 60
                 time.sleep(time_limit_in_sec)
             else:

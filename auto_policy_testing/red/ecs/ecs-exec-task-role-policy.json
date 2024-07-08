@@ -47,13 +47,6 @@
                 "s3:GetEncryptionConfiguration"
             ],
             "Resource": "${bucket_arn}"
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "kms:Decrypt"
-            ],
-            "Resource": "${kms_key_arn}"
         }
     ]
 }

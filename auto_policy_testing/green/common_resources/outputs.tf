@@ -58,10 +58,10 @@ output "sg_1_id" {
   value = aws_security_group.this.id
 }
 
-output "wafregional_acl_id" {
-  value = aws_wafregional_web_acl.this.id
-}
+# output "wafregional_acl_id" {
+#   value = aws_wafregional_web_acl.this.id
+# }
 
-output "waf_web_acl_id" {
-  value = aws_waf_web_acl.this.id
-}
+# output "waf_web_acl_id" {
+#   value = aws_waf_web_acl.this.id
+# }
