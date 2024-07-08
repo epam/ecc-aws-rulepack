@@ -94,7 +94,7 @@ jobs:
             readonly_role_name="github-ci-readonly-ecc-rulepack-$random_number"
             echo "readonly_role_name=$readonly_role_name" >> "$GITHUB_OUTPUT"
 
-            python aws_iam_readonly_role.py \
+            python -u aws_iam_readonly_role.py \
             --ci_exec_role_name ${{ secrets.CI_ASSUME_ROLE }} \
             --ci_readonly_role_name $readonly_role_name\
             --create --role
@@ -115,7 +115,7 @@ jobs:
         working-directory: ${{ env.AUTO_TEST_DIR }}
         run: |
           cd scripts
-          python pack_iam.py ${{ github.repository }}
+          python -u pack_iam.py ${{ github.repository }}
       - name: Archive loggs to artifacts
         uses: actions/upload-artifact@v4
         with:
@@ -288,7 +288,7 @@ jobs:
           if [ ${{ github.repository }} == 'epam/ecc-aws-rulepack' ]; then
             readonly_role_name="${{ needs.create_readonly_role_for_scans.outputs.readonly_role_name }}"
             echo $readonly_role_name
-            python aws_iam_readonly_role.py \
+            python -u aws_iam_readonly_role.py \
             --ci_exec_role_name ${{ secrets.CI_ASSUME_ROLE }} \
             --ci_readonly_role_name "$readonly_role_name"\
             --delete --role
