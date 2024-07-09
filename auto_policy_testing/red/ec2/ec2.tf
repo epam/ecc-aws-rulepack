@@ -1,5 +1,5 @@
 # Instance autotest-ec2-ec2-red-DO-NOT-DELETE-1 with ID i-05ad287ff3ed2b9f5 was created to test policy - ecc-aws-185-ec2_stopped_instance
-# Instance autotest-ec2-ec2-red-DO-NOT-DELETE-2 with ID i-06b3071238012ecfb was created to test policy - ecc-aws-610-idle_ec2_instance
+# Instance autotest-ec2-ec2-red-DO-NOT-DELETE-2 with ID i-03331c1b91e6fffe8 was created to test policy - ecc-aws-610-idle_ec2_instance
 
 
 
