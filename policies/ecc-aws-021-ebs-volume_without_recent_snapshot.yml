@@ -12,6 +12,10 @@ policies:
     resource: aws.ebs
     filters:
       - not:
-          - type: snapshot-age
-            op: le
-            days: 14
+        - type: snapshots
+          attrs:
+            - type: value
+              key: StartTime
+              value_type: age
+              value: 14
+              op: less-than
