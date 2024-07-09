@@ -27,4 +27,7 @@ policies:
                 value: 3
                 op: eq
               - not:
-                  - type: elasticsearch-domain-filter
+                  - type: value
+                    key: ElasticsearchClusterConfig.InstanceCount
+                    op: mod
+                    value: 3

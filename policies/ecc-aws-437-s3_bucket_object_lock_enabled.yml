@@ -9,9 +9,12 @@ policies:
     comment: '010047042011'
     description: |
       S3 Bucket object lock disabled
-    resource: s3-light
+    resource: aws.s3
     filters:
       - not:
-          - type: lock-configuration-filter
-            mode: COMPLIANCE
-            days: 7
+          - type: value
+            key: ObjectLockConfiguration.RuleDefaultRetention.Mode
+            value: COMPLIANCE
+          - type: value
+            key: ObjectLockConfiguration.Rule.DefaultRetention.Days
+            value: 7
