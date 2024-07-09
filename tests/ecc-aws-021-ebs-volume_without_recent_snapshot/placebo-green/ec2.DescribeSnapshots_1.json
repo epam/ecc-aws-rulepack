@@ -1,0 +1,39 @@
+{
+    "status_code": 200,
+    "data": {
+        "Snapshots": [
+            {
+                "Description": "",
+                "Encrypted": false,
+                "OwnerId": "644160558196",
+                "Progress": "100%",
+                "SnapshotId": "snap-0eab7d3cde4606d0c",
+                "StartTime": {
+                    "__class__": "datetime",
+                    "year": 2024,
+                    "month": 7,
+                    "day": 9,
+                    "hour": 12,
+                    "minute": 20,
+                    "second": 3,
+                    "microsecond": 913000
+                },
+                "State": "completed",
+                "VolumeId": "vol-074730e9ef69065df",
+                "VolumeSize": 8,
+                "Tags": [
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    },
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-021-ebs-volume_without_recent_snapshot"
+                    }
+                ],
+                "StorageTier": "standard"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}
