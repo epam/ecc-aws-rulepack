@@ -1,0 +1,39 @@
+{
+    "status_code": 200,
+    "data": {
+        "Policies": [
+            {
+                "PolicyName": "054_policy_green",
+                "PolicyId": "ANPAXPHGII4ABWRFZ5DIA",
+                "Arn": "arn:aws:iam::111111111111:policy/054_policy_green",
+                "Path": "/",
+                "DefaultVersionId": "v1",
+                "AttachmentCount": 1,
+                "PermissionsBoundaryUsageCount": 0,
+                "IsAttachable": true,
+                "CreateDate": {
+                    "__class__": "datetime",
+                    "year": 2024,
+                    "month": 7,
+                    "day": 9,
+                    "hour": 16,
+                    "minute": 20,
+                    "second": 34,
+                    "microsecond": 0
+                },
+                "UpdateDate": {
+                    "__class__": "datetime",
+                    "year": 2024,
+                    "month": 7,
+                    "day": 9,
+                    "hour": 16,
+                    "minute": 20,
+                    "second": 34,
+                    "microsecond": 0
+                }
+            }
+        ],
+        "IsTruncated": true,
+        "ResponseMetadata": {}
+    }
+}

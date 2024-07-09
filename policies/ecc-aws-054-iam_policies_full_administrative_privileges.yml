@@ -9,7 +9,10 @@ policies:
     comment: '010022002501'
     description: |
       IAM policies that allow full "*:*" administrative privileges are in use
-    resource: iam-policy-all
+    resource: iam-policy
     filters:
       - type: used
       - type: has-allow-all
+    query:
+      - Name: Scope
+        Value: All
