@@ -11,7 +11,6 @@
                 "route53domains:ListDomains",
                 "route53domains:ListTagsForDomain",
                 "s3:GetBucketAcl",
-                "s3:GetBucketLifecycle",
                 "s3:GetBucketLocation",
                 "s3:GetBucketLogging",
                 "s3:GetBucketNotification",
