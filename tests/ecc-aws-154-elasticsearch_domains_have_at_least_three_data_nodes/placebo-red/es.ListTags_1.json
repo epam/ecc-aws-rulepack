@@ -1,0 +1,16 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "TagList": [
+            {
+                "Key": "CustodianRule",
+                "Value": "ecc-aws-154-elasticsearch_domains_have_at_least_three_data_nodes"
+            },
+            {
+                "Key": "ComplianceStatus",
+                "Value": "Red1"
+            }
+        ]
+    }
+}

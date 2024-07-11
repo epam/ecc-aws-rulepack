@@ -1,5 +1,5 @@
 resource "aws_elasticsearch_domain" "this" {
-  domain_name = "domain-154-red"
+  domain_name = "domain-154-red2"
 
   elasticsearch_version = "7.10"
   cluster_config {
