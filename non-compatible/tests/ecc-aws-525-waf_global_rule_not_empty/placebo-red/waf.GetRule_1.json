@@ -1,0 +1,12 @@
+{
+    "status_code": 200,
+    "data": {
+        "Rule": {
+            "RuleId": "e88d9cd4-b87c-454b-b2d5-de3b841bfa65",
+            "Name": "525_waf_rule_red",
+            "MetricName": "525WafRuleMetricred",
+            "Predicates": []
+        },
+        "ResponseMetadata": {}
+    }
+}

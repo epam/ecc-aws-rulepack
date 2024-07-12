@@ -1,0 +1,42 @@
+{
+    "status_code": 200,
+    "data": {
+        "ConfigurationSettings": [
+            {
+                "SolutionStackName": "64bit Amazon Linux 2 v3.3.13 running Python 3.8",
+                "PlatformArn": "arn:aws:elasticbeanstalk:us-east-1::platform/Python 3.8 running on 64bit Amazon Linux 2/3.3.13",
+                "ApplicationName": "451-beanstalk-application-red",
+                "EnvironmentName": "451-beanstalk-environment-red",
+                "DeploymentStatus": "deployed",
+                "DateCreated": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 9,
+                    "day": 2,
+                    "hour": 8,
+                    "minute": 44,
+                    "second": 31,
+                    "microsecond": 0
+                },
+                "DateUpdated": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 9,
+                    "day": 2,
+                    "hour": 8,
+                    "minute": 44,
+                    "second": 31,
+                    "microsecond": 0
+                },
+                "OptionSettings": [
+                    {
+                        "Namespace": "aws:elasticbeanstalk:xray",
+                        "OptionName": "XRayEnabled",
+                        "Value": "false"
+                    }
+                ]
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

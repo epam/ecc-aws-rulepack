@@ -1,0 +1,22 @@
+{
+    "status_code": 200,
+    "data": {
+        "User": {
+            "Path": "/",
+            "UserName": "056_user_green",
+            "UserId": "AIDAXPHGII4ANLWCKL3SM",
+            "Arn": "arn:aws:iam::this:user/056_user_green",
+            "CreateDate": {
+                "__class__": "datetime",
+                "year": 2021,
+                "month": 9,
+                "day": 29,
+                "hour": 10,
+                "minute": 57,
+                "second": 57,
+                "microsecond": 0
+            }
+        },
+        "ResponseMetadata": {}
+    }
+}

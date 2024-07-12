@@ -1,0 +1,70 @@
+{
+    "status_code": 200,
+    "data": {
+        "CacheClusters": [
+            {
+                "CacheClusterId": "c7n-264-elasticache-memcached-cluster-red",
+                "ConfigurationEndpoint": {
+                    "Address": "c7n-264-elasticache-memcached-cluster-red.ps5uie.cfg.use1.cache.amazonaws.com",
+                    "Port": 11211
+                },
+                "ClientDownloadLandingPage": "https://console.aws.amazon.com/elasticache/home#client-download:",
+                "CacheNodeType": "cache.t2.micro",
+                "Engine": "memcached",
+                "EngineVersion": "1.5.16",
+                "CacheClusterStatus": "available",
+                "NumCacheNodes": 1,
+                "PreferredAvailabilityZone": "us-east-1e",
+                "CacheClusterCreateTime": {
+                    "__class__": "datetime",
+                    "year": 2021,
+                    "month": 12,
+                    "day": 17,
+                    "hour": 11,
+                    "minute": 29,
+                    "second": 47,
+                    "microsecond": 899000
+                },
+                "PreferredMaintenanceWindow": "thu:05:30-thu:06:30",
+                "PendingModifiedValues": {},
+                "CacheSecurityGroups": [],
+                "CacheParameterGroup": {
+                    "CacheParameterGroupName": "default.memcached1.5",
+                    "ParameterApplyStatus": "in-sync",
+                    "CacheNodeIdsToReboot": []
+                },
+                "CacheSubnetGroupName": "default",
+                "CacheNodes": [
+                    {
+                        "CacheNodeId": "0001",
+                        "CacheNodeStatus": "available",
+                        "CacheNodeCreateTime": {
+                            "__class__": "datetime",
+                            "year": 2021,
+                            "month": 12,
+                            "day": 17,
+                            "hour": 11,
+                            "minute": 29,
+                            "second": 47,
+                            "microsecond": 899000
+                        },
+                        "Endpoint": {
+                            "Address": "c7n-264-elasticache-memcached-cluster-red.ps5uie.0001.use1.cache.amazonaws.com",
+                            "Port": 11211
+                        },
+                        "ParameterGroupStatus": "in-sync",
+                        "CustomerAvailabilityZone": "us-east-1e"
+                    }
+                ],
+                "AutoMinorVersionUpgrade": true,
+                "AuthTokenEnabled": false,
+                "TransitEncryptionEnabled": false,
+                "AtRestEncryptionEnabled": false,
+                "ARN": "arn:aws:elasticache:us-east-1:this:cluster:c7n-264-elasticache-memcached-cluster-red",
+                "ReplicationGroupLogDeliveryEnabled": false,
+                "LogDeliveryConfigurations": []
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}
