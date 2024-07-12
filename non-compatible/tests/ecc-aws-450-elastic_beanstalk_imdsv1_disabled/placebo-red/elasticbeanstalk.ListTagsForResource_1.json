@@ -1,0 +1,29 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResourceArn": "arn:aws:elasticbeanstalk:us-east-1:644160558196:environment/450-beanstalk-application-red/450-beanstalk-environment-red",
+        "ResourceTags": [
+            {
+                "Key": "CustodianRule",
+                "Value": "epam-aws-450-elastic_beanstalk_imdsv1_disabled"
+            },
+            {
+                "Key": "elasticbeanstalk:environment-id",
+                "Value": "e-tmcascicp3"
+            },
+            {
+                "Key": "ComplianceStatus",
+                "Value": "Red"
+            },
+            {
+                "Key": "elasticbeanstalk:environment-name",
+                "Value": "450-beanstalk-environment-red"
+            },
+            {
+                "Key": "Name",
+                "Value": "450-beanstalk-environment-red"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

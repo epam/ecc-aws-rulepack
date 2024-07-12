@@ -1,0 +1,10 @@
+{
+    "status_code": 200,
+    "data": {
+        "PolicyNames": [
+            "086_policy_red"
+        ],
+        "IsTruncated": false,
+        "ResponseMetadata": {}
+    }
+}

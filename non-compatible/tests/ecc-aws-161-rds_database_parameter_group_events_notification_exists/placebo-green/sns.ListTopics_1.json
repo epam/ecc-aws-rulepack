@@ -1,0 +1,14 @@
+{
+    "status_code": 200,
+    "data": {
+        "Topics": [
+            {
+                "TopicArn": "arn:aws:sns:us-east-1:644160558196:161_sns_topic_green"
+            },
+            {
+                "TopicArn": "arn:aws:sns:us-east-1:644160558196:Default_CloudWatch_Alarms_Topic"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

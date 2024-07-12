@@ -1,0 +1,29 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResourceArn": "arn:aws:elasticbeanstalk:us-east-1:644160558196:environment/292-beanstalk-application-green/292-beanstalk-environment-green",
+        "ResourceTags": [
+            {
+                "Key": "CustodianRule",
+                "Value": "epam-aws-292-elastic_beanstalk_access_logs_enabled"
+            },
+            {
+                "Key": "elasticbeanstalk:environment-id",
+                "Value": "e-kjsis2me3g"
+            },
+            {
+                "Key": "ComplianceStatus",
+                "Value": "Green"
+            },
+            {
+                "Key": "elasticbeanstalk:environment-name",
+                "Value": "292-beanstalk-environment-green"
+            },
+            {
+                "Key": "Name",
+                "Value": "292-beanstalk-environment-green"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

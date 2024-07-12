@@ -1,0 +1,23 @@
+{
+    "status_code": 200,
+    "data": {
+        "clusters": [
+            {
+                "clusterArn": "arn:aws:ecs:us-east-1:644160558196:cluster/110_ecs_cluster_green",
+                "clusterName": "110_ecs_cluster_green",
+                "status": "ACTIVE",
+                "registeredContainerInstancesCount": 1,
+                "runningTasksCount": 0,
+                "pendingTasksCount": 0,
+                "activeServicesCount": 0,
+                "statistics": [],
+                "tags": [],
+                "settings": [],
+                "capacityProviders": [],
+                "defaultCapacityProviderStrategy": []
+            }
+        ],
+        "failures": [],
+        "ResponseMetadata": {}
+    }
+}
