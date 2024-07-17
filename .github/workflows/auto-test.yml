@@ -10,7 +10,7 @@ on:
       resource_priority_list:
         type: string
         description: Priority list for resources (you can remove unnecessary resources during testing)
-        default: '[ "security-group"]'
+        default: '[ "app-elb"]'
         required: true
 
 # limits to only one workflow in time 
@@ -25,7 +25,7 @@ env:
   TF_BACKEND_STORAGE_NAME: ${{ secrets.TF_BACKEND_STORAGE_NAME }}
   TF_CLI_ARGS: "-no-color"
   AWS_DEFAULT_REGION: ${{ secrets.AWS_REGION }}
-  default_resource_priority_list: '[ "ecs"]'
+  default_resource_priority_list: '[ "app-elb" ]'
   RED: '\033[0;31m'
 
 permissions:
@@ -181,6 +181,8 @@ jobs:
           workload_identity_provider: ${{ secrets.WORKLOAD_IDENTITY_PROVIDER }}
           step: common_${{ matrix.compliance }}
       - uses: ./.github/workflows/actions/install-dependencies
+        env:
+            PROJECT_TOKEN: ${{ secrets.CLOUDCUSTODIAN_CORE }}
       - name: Download a single artifact
         uses: actions/download-artifact@v4
         with:
@@ -237,6 +239,8 @@ jobs:
           workload_identity_provider: ${{ secrets.WORKLOAD_IDENTITY_PROVIDER }}
           step: common_${{ matrix.compliance }}
       - uses: ./.github/workflows/actions/install-dependencies
+        env:
+            PROJECT_TOKEN: ${{ secrets.CLOUDCUSTODIAN_CORE }}
       - name: Download a single artifact
         uses: actions/download-artifact@v4
         with:
@@ -281,6 +285,8 @@ jobs:
           workload_identity_provider: ${{ secrets.WORKLOAD_IDENTITY_PROVIDER }}
           step: common_${{ matrix.compliance }}
       - uses: ./.github/workflows/actions/install-dependencies
+        env:
+            PROJECT_TOKEN: ${{ secrets.CLOUDCUSTODIAN_CORE }}
       - name: remove-AWS-readonly-role
         shell: bash
         if: ${{ github.repository == 'epam/ecc-aws-rulepack' && always() }}

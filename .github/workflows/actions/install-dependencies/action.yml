@@ -15,7 +15,8 @@ runs:
         pip install --upgrade pip
         python3.10 -m venv .venv
         source .venv/bin/activate
-
+        pip install -r requirements.txt
+        
         git clone https://$PROJECT_TOKEN@git.epam.com/epmc-eoos/cloudcustodian-sre-core.git --depth 1 --branch 'non-compatible-policies/all'
         cd cloudcustodian-sre-core
         pip install poetry
@@ -24,9 +25,9 @@ runs:
         # pip install c7n
         # pip install c7n-azure
         # pip install c7n-gcp
-        # pip install -r requirements.txt
+        
 
-        cd ..
+        cd ../../..
         cp -r  non-compatible-policies/. policies
 
         
