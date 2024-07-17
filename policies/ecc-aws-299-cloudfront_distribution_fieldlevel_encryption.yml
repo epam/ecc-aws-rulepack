@@ -15,3 +15,6 @@ policies:
       - type: value
         key: DefaultCacheBehavior.FieldLevelEncryptionId
         value: empty
+      - type: value
+        key: CacheBehaviors.Items[?FieldLevelEncryptionId!='']
+        value: empty

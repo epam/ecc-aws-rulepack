@@ -8,7 +8,7 @@ policies:
   - name: ecc-aws-154-elasticsearch_domains_have_at_least_three_data_nodes
     comment: '010050052000'
     description: |
-      Elasticsearch domains have less than three data nodes
+      OpenSearch domains have less than three data nodes
     resource: aws.elasticsearch
     filters:
       - or:
@@ -26,5 +26,7 @@ policies:
                 key: ElasticsearchClusterConfig.ZoneAwarenessConfig.AvailabilityZoneCount
                 value: 3
                 op: eq
-              - not:
-                  - type: elasticsearch-domain-filter
+              - type: value
+                key: ElasticsearchClusterConfig.InstanceCount
+                op: mod
+                value: 3
