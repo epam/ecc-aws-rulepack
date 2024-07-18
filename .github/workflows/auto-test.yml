@@ -25,7 +25,7 @@ env:
   TF_BACKEND_STORAGE_NAME: ${{ secrets.TF_BACKEND_STORAGE_NAME }}
   TF_CLI_ARGS: "-no-color"
   AWS_DEFAULT_REGION: ${{ secrets.AWS_REGION }}
-  default_resource_priority_list: '[ "sqs", "sns", "sqs", "sns" ]'
+  default_resource_priority_list: '[ "sqs" ]'
   RED: '\033[0;31m'
 
 permissions:
@@ -106,24 +106,24 @@ jobs:
             echo 'TO DO'
           fi
             
-  pack_iam_policies_per_resource:
-    runs-on: ubuntu-22.04
-    needs: deploy_common_resources
-    steps:
-      - name: Git clone the repository
-        uses: actions/checkout@v4
-      - name: pack_iam_policies
-        shell: bash
-        working-directory: ${{ env.AUTO_TEST_DIR }}
-        run: |
-          cd scripts
-          python -u pack_iam.py ${{ github.repository }}
-      - name: Archive loggs to artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: pack_iam
-          path: |
-            ${{ env.AUTO_TEST_DIR }}/iam
+  # pack_iam_policies_per_resource:
+  #   runs-on: ubuntu-22.04
+  #   needs: deploy_common_resources
+  #   steps:
+  #     - name: Git clone the repository
+  #       uses: actions/checkout@v4
+  #     - name: pack_iam_policies
+  #       shell: bash
+  #       working-directory: ${{ env.AUTO_TEST_DIR }}
+  #       run: |
+  #         cd scripts
+  #         python -u pack_iam.py ${{ github.repository }}
+  #     - name: Archive loggs to artifacts
+  #       uses: actions/upload-artifact@v4
+  #       with:
+  #         name: pack_iam
+  #         path: |
+  #           ${{ env.AUTO_TEST_DIR }}/iam
 
   prepare_matrix_resources:
     runs-on: ubuntu-22.04
@@ -159,7 +159,7 @@ jobs:
   deploy_and_scan_parallel_resources:
     name: Scan P
     runs-on: ubuntu-22.04
-    needs: [ deploy_common_resources, pack_iam_policies_per_resource, create_readonly_role_for_scans, prepare_matrix_resources]
+    needs: [ deploy_common_resources,create_readonly_role_for_scans, prepare_matrix_resources] # pack_iam_policies_per_resource, 
     strategy:
       max-parallel: 10
       fail-fast: false
@@ -183,11 +183,11 @@ jobs:
       - uses: ./.github/workflows/actions/install-dependencies
         env:
             PROJECT_TOKEN: ${{ secrets.CLOUDCUSTODIAN_CORE }}
-      - name: Download a single artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: pack_iam
-          path: ${{ env.AUTO_TEST_DIR }}/iam
+      # - name: Download a single artifact
+      #   uses: actions/download-artifact@v4
+      #   with:
+      #     name: pack_iam
+      #     path: ${{ env.AUTO_TEST_DIR }}/iam
 
       - name: Deploy terraform resources
         uses: ./.github/workflows/actions/tf-init-apply
@@ -216,7 +216,7 @@ jobs:
   deploy_and_scan_not_parallel_resources:
     name: Scan N/P
     runs-on: ubuntu-22.04
-    needs: [ deploy_common_resources, pack_iam_policies_per_resource, create_readonly_role_for_scans, prepare_matrix_resources]
+    needs: [ deploy_common_resources, create_readonly_role_for_scans, prepare_matrix_resources] #, pack_iam_policies_per_resource
     if: ${{ needs.prepare_matrix_resources.outputs.not_parallel_resources_list != '[]' }}
     strategy:
       max-parallel: 1
@@ -241,11 +241,11 @@ jobs:
       - uses: ./.github/workflows/actions/install-dependencies
         env:
             PROJECT_TOKEN: ${{ secrets.CLOUDCUSTODIAN_CORE }}
-      - name: Download a single artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: pack_iam
-          path: ${{ env.AUTO_TEST_DIR }}/iam
+      # - name: Download a single artifact
+      #   uses: actions/download-artifact@v4
+      #   with:
+      #     name: pack_iam
+      #     path: ${{ env.AUTO_TEST_DIR }}/iam
 
       - name: Deploy terraform resources
         uses: ./.github/workflows/actions/tf-init-apply

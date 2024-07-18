@@ -74,10 +74,8 @@ aws = {
     "not-parallel": [
         "glue",
         "account",
-        "sns",
         "workspaces",
         "iam",
-        "sns",
         "cloudtrail",
         "dms",
         "codebuild"
