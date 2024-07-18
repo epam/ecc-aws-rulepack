@@ -25,7 +25,7 @@ env:
   TF_BACKEND_STORAGE_NAME: ${{ secrets.TF_BACKEND_STORAGE_NAME }}
   TF_CLI_ARGS: "-no-color"
   AWS_DEFAULT_REGION: ${{ secrets.AWS_REGION }}
-  default_resource_priority_list: '[ "app-elb" ]'
+  default_resource_priority_list: '[ "sqs", "sns", "sqs", "sns" ]'
   RED: '\033[0;31m'
 
 permissions:
