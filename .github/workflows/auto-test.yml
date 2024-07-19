@@ -2,7 +2,6 @@ name: Auto-testing
 on:
   push:
     branches:
-      - 'feature/policy_testing'
       - 'feature/policy_testing_v2'
   # Run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -25,7 +24,7 @@ env:
   TF_BACKEND_STORAGE_NAME: ${{ secrets.TF_BACKEND_STORAGE_NAME }}
   TF_CLI_ARGS: "-no-color"
   AWS_DEFAULT_REGION: ${{ secrets.AWS_REGION }}
-  default_resource_priority_list: '[ "sqs" ]'
+  default_resource_priority_list: '[ "app-elb" ]'
   RED: '\033[0;31m'
 
 permissions:
