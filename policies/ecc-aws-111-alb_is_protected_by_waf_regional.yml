@@ -18,3 +18,5 @@ policies:
         op: in
       - type: waf-enabled
         state: false
+      - type: wafv2-enabled
+        state: false

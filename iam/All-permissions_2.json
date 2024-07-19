@@ -58,6 +58,7 @@
                 "waf:ListRules",
                 "waf:ListWebACLs",
                 "wafv2:ListWebACLs",
+                "wafv2:ListResourcesForWebACL",
                 "workspaces:DescribeWorkspaceDirectories",
                 "workspaces:DescribeWorkspaceImages",
                 "workspaces:DescribeWorkspaces",

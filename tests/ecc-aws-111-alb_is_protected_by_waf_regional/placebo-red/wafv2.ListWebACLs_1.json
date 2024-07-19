@@ -1,7 +1,7 @@
 {
     "status_code": 200,
     "data": {
-        "NextMarker": "e3da2ebc-b3f9-40d7-b39a-db58cbcbcbf3",
+        "NextMarker": "GreenWAFRegionalACL",
         "WebACLs": [],
         "ResponseMetadata": {}
     }
