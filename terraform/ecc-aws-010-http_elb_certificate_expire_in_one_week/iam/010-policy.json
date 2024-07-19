@@ -7,11 +7,8 @@
                 "elasticloadbalancing:DescribeLoadBalancers",
                 "elasticloadbalancing:DescribeTags",
                 "elasticloadbalancing:DescribeListeners",
-                "elasticloadbalancing:DescribeLoadBalancerAttributes",
                 "elasticloadbalancing:DescribeListenerCertificates",
-                "acm:DescribeCertificate",
-                "tag:GetResources",
-                "ec2:DescribeRegions"
+                "acm:DescribeCertificate"
             ],
             "Resource": "*"
         }
