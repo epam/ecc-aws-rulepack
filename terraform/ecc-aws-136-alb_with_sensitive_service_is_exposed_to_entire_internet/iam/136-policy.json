@@ -3,12 +3,10 @@
     "Statement": [
         {
             "Effect": "Allow",
-            "Action": [ 
+            "Action": [
                 "elasticloadbalancing:DescribeLoadBalancers",
                 "elasticloadbalancing:DescribeTags",
-                "ec2:DescribeSecurityGroups",
-                "ec2:DescribeRegions",
-                "ec2:DescribeSecurityGroupRules"
+                "ec2:DescribeSecurityGroups"
             ],
             "Resource": "*"
         }
