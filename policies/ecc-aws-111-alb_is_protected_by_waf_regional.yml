@@ -9,7 +9,7 @@ policies:
   - name: ecc-aws-111-alb_is_protected_by_waf_regional
     comment: '010027022000'
     description: |
-      ALB is not protected by WAF regional
+      Application Load Balancer is not protected by WAF regional
     resource: app-elb
     filters:
       - type: value
