@@ -20,3 +20,4 @@ policies:
         state: false
       - type: wafv2-enabled
         state: false
+
