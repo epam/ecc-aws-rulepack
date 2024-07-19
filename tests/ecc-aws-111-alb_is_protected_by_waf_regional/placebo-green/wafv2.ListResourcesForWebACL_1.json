@@ -2,7 +2,7 @@
     "status_code": 200,
     "data": {
         "ResourceArns": [
-            "arn:aws:elasticloadbalancing:us-east-1:111111111111:loadbalancer/app/alb-111-green/9b41a6cc9ee798c6"
+            "arn:aws:elasticloadbalancing:us-east-1:111111111111:loadbalancer/app/alb-111-green2/b1cd2ca5741a7bda"
         ],
         "ResponseMetadata": {}
     }
