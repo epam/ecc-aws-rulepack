@@ -8,7 +8,7 @@ policies:
   - name: ecc-aws-011-http_elb_certificate_expire_in_one_month
     comment: '010029022000'
     description: |
-      Application or Network Load balancer SSL certificate expire in less than a month
+      Application or Network Load balancer SSL certificate expires in less than a month
     resource: app-elb
     filters:
       - not:
@@ -16,7 +16,12 @@ policies:
             key: Type
             value: "gateway"
             op: in
-      - type: appelb-acm-filter
-        key: 'NotAfter'
-        op: lt
-        value: 30
+      - or:
+        - type: appelb-acm-filter
+          key: 'NotAfter'
+          op: lt
+          value: 30
+        - type: appelb-iam-cert-filter
+          key: ServerCertificateMetadata.Expiration
+          op: lt
+          value: 30

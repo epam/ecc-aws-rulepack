@@ -4,6 +4,7 @@
         {
             "Effect": "Allow",
             "Action": [
+                "iam:GetServerCertificate",
                 "route53:ListHostedZones",
                 "route53:ListQueryLoggingConfigs",
                 "route53:ListResourceRecordSets",
