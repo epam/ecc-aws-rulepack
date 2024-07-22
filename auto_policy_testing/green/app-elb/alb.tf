@@ -83,22 +83,22 @@ resource "null_resource" "this1" {
   depends_on = [aws_lb.this1]
 }
 
-# resource "aws_lb_listener" "this4" {
-#   load_balancer_arn = aws_lb.this4.arn
-#   port              = "443"
-#   protocol          = "HTTPS"
-#   certificate_arn   = aws_iam_server_certificate.this.arn
+resource "aws_lb_listener" "this4" {
+  load_balancer_arn = aws_lb.this4.arn
+  port              = "443"
+  protocol          = "HTTPS"
+  certificate_arn   = aws_iam_server_certificate.this.arn
 
-#   default_action {
-#     type = "fixed-response"
+  default_action {
+    type = "fixed-response"
 
-#     fixed_response {
-#       content_type = "text/plain"
-#       message_body = "Fixed response content"
-#       status_code  = "200"
-#     }
-#   }
-# }
+    fixed_response {
+      content_type = "text/plain"
+      message_body = "Fixed response content"
+      status_code  = "200"
+    }
+  }
+}
 
 resource "aws_lb_listener" "this5" {
   load_balancer_arn = aws_lb.this4.arn
@@ -117,7 +117,7 @@ resource "aws_lb_listener" "this5" {
   }
 }
 
-# resource "aws_lb_listener_certificate" "this" {
-#   listener_arn    = aws_lb_listener.this4.arn
-#   certificate_arn = aws_acm_certificate.this.arn
-# }
+resource "aws_lb_listener_certificate" "this" {
+  listener_arn    = aws_lb_listener.this4.arn
+  certificate_arn = aws_acm_certificate.this.arn
+}

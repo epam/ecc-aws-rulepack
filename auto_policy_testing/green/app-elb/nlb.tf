@@ -26,7 +26,7 @@ resource "aws_lb_listener" "this2" {
   port              = "443"
   protocol          = "TLS"
   ssl_policy        = "ELBSecurityPolicy-TLS13-1-2-2021-06"
-  certificate_arn   = aws_acm_certificate.this.arn #aws_iam_server_certificate.this.arn
+  certificate_arn   = aws_iam_server_certificate.this.arn
 
   default_action {
     type             = "forward"
