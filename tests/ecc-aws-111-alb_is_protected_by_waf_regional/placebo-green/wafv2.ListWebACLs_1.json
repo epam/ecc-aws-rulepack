@@ -1,0 +1,16 @@
+{
+    "status_code": 200,
+    "data": {
+        "NextMarker": "GreenWAFRegionalACL",
+        "WebACLs": [
+            {
+                "Name": "GreenWAFRegionalACL",
+                "Id": "18622f9d-89a3-4c5c-b2f4-523ae621d91d",
+                "Description": "",
+                "LockToken": "bb9f0cde-1112-4146-acee-a1fa84314f9c",
+                "ARN": "arn:aws:wafv2:us-east-1:111111111111:regional/webacl/GreenWAFRegionalACL/18622f9d-89a3-4c5c-b2f4-523ae621d91d"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

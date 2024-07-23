@@ -4,7 +4,7 @@
         {
             "Effect": "Allow",
             "Action": [
-                "elasticloadbalancing:DescribeLoadBalancerAttributes",
+                "elasticloadbalancing:DescribeLoadBalancers",
 				"elasticloadbalancing:DescribeTags"
             ],
             "Resource": "*"
