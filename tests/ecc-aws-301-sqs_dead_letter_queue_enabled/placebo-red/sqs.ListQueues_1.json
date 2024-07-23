@@ -1,0 +1,9 @@
+{
+    "status_code": 200,
+    "data": {
+        "QueueUrls": [
+            "https://sqs.us-east-1.amazonaws.com/111111111111/301_sqs_red"
+        ],
+        "ResponseMetadata": {}
+    }
+}

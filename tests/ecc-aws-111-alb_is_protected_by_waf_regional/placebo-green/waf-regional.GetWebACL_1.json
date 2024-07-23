@@ -2,7 +2,7 @@
     "status_code": 200,
     "data": {
         "WebACL": {
-            "WebACLId": "4d7100e7-9fc9-4ebe-bf08-69aa8e71202c",
+            "WebACLId": "e3da2ebc-b3f9-40d7-b39a-db58cbcbcbf3",
             "Name": "GreenWAFRegionalACL",
             "MetricName": "GreenWAFRegionalACL",
             "DefaultAction": {
@@ -11,14 +11,14 @@
             "Rules": [
                 {
                     "Priority": 1,
-                    "RuleId": "40f46797-a8ed-4c3e-b300-7a04d071989b",
+                    "RuleId": "0d09f20a-a6e1-4ebb-9eb6-c6fc383382ca",
                     "Action": {
                         "Type": "BLOCK"
                     },
                     "Type": "REGULAR"
                 }
             ],
-            "WebACLArn": "arn:aws:waf-regional:us-east-1:111111111111:webacl/4d7100e7-9fc9-4ebe-bf08-69aa8e71202c"
+            "WebACLArn": "arn:aws:waf-regional:us-east-1:111111111111:webacl/e3da2ebc-b3f9-40d7-b39a-db58cbcbcbf3"
         },
         "ResponseMetadata": {}
     }

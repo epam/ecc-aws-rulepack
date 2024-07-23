@@ -12,11 +12,10 @@ policies:
       EC2 instances are not managed by AWS Systems Manager
     resource: aws.ec2
     filters:
-      - and:
-          - type: value
-            key: State.Name
-            op: in
-            value: [running, stopped]
-          - type: ssm
-            key: InstanceId
-            value: empty
+      - not:
+        - type: value
+          key: State.Name
+          value: terminated
+      - type: ssm
+        key: InstanceId
+        value: empty

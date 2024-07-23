@@ -1,0 +1,20 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "Owner": {
+            "DisplayName": "test",
+            "ID": "316649624eede3be95749ed51c2a2a"
+        },
+        "Grants": [
+            {
+                "Grantee": {
+                    "DisplayName": "test",
+                    "ID": "316649624eede3b5749ed51c2a2a",
+                    "Type": "CanonicalUser"
+                },
+                "Permission": "FULL_CONTROL"
+            }
+        ]
+    }
+}

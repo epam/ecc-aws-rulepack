@@ -1,0 +1,222 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "DomainStatusList": [
+            {
+                "DomainId": "111111111111/domain-154-green1",
+                "DomainName": "domain-154-green1",
+                "ARN": "arn:aws:es:us-east-1:111111111111:domain/domain-154-green1",
+                "Created": true,
+                "Deleted": false,
+                "Endpoint": "search-domain-154-green1-puzojnffrvxgmov6piylxuijve.us-east-1.es.amazonaws.com",
+                "Processing": false,
+                "UpgradeProcessing": false,
+                "ElasticsearchVersion": "7.10",
+                "ElasticsearchClusterConfig": {
+                    "InstanceType": "t3.small.elasticsearch",
+                    "InstanceCount": 4,
+                    "DedicatedMasterEnabled": false,
+                    "ZoneAwarenessEnabled": true,
+                    "ZoneAwarenessConfig": {
+                        "AvailabilityZoneCount": 2
+                    },
+                    "WarmEnabled": false,
+                    "ColdStorageOptions": {
+                        "Enabled": false
+                    }
+                },
+                "EBSOptions": {
+                    "EBSEnabled": true,
+                    "VolumeType": "gp3",
+                    "VolumeSize": 10,
+                    "Iops": 3000,
+                    "Throughput": 125
+                },
+                "AccessPolicies": "",
+                "SnapshotOptions": {
+                    "AutomatedSnapshotStartHour": 0
+                },
+                "CognitoOptions": {
+                    "Enabled": false
+                },
+                "EncryptionAtRestOptions": {
+                    "Enabled": false
+                },
+                "NodeToNodeEncryptionOptions": {
+                    "Enabled": false
+                },
+                "AdvancedOptions": {
+                    "override_main_response_version": "false",
+                    "rest.action.multi.allow_explicit_index": "true"
+                },
+                "ServiceSoftwareOptions": {
+                    "CurrentVersion": "Elasticsearch_7_10_R20240502-P2",
+                    "NewVersion": "",
+                    "UpdateAvailable": false,
+                    "Cancellable": false,
+                    "UpdateStatus": "COMPLETED",
+                    "Description": "There is no software update available for this domain.",
+                    "AutomatedUpdateDate": {
+                        "__class__": "datetime",
+                        "year": 1970,
+                        "month": 1,
+                        "day": 1,
+                        "hour": 2,
+                        "minute": 0,
+                        "second": 0,
+                        "microsecond": 0
+                    },
+                    "OptionalDeployment": true
+                },
+                "DomainEndpointOptions": {
+                    "EnforceHTTPS": false,
+                    "TLSSecurityPolicy": "Policy-Min-TLS-1-2-2019-07",
+                    "CustomEndpointEnabled": false
+                },
+                "AdvancedSecurityOptions": {
+                    "Enabled": false,
+                    "InternalUserDatabaseEnabled": false,
+                    "AnonymousAuthEnabled": false
+                },
+                "AutoTuneOptions": {
+                    "State": "DISABLED"
+                },
+                "ChangeProgressDetails": {
+                    "ChangeId": "3ac8cc65-2133-4a15-aa7d-cc361e39dce4",
+                    "ConfigChangeStatus": "Completed",
+                    "StartTime": {
+                        "__class__": "datetime",
+                        "year": 2024,
+                        "month": 7,
+                        "day": 11,
+                        "hour": 12,
+                        "minute": 16,
+                        "second": 12,
+                        "microsecond": 139000
+                    },
+                    "LastUpdatedTime": {
+                        "__class__": "datetime",
+                        "year": 2024,
+                        "month": 7,
+                        "day": 11,
+                        "hour": 12,
+                        "minute": 37,
+                        "second": 55,
+                        "microsecond": 395000
+                    },
+                    "InitiatedBy": "CUSTOMER"
+                },
+                "DomainProcessingStatus": "Active",
+                "ModifyingProperties": []
+            },
+            {
+                "DomainId": "111111111111/domain-154-green",
+                "DomainName": "domain-154-green",
+                "ARN": "arn:aws:es:us-east-1:111111111111:domain/domain-154-green",
+                "Created": true,
+                "Deleted": false,
+                "Endpoint": "search-domain-154-green-hf4vodepwpp5b72lbtehi2pfoq.us-east-1.es.amazonaws.com",
+                "Processing": false,
+                "UpgradeProcessing": false,
+                "ElasticsearchVersion": "7.10",
+                "ElasticsearchClusterConfig": {
+                    "InstanceType": "t3.small.elasticsearch",
+                    "InstanceCount": 3,
+                    "DedicatedMasterEnabled": false,
+                    "ZoneAwarenessEnabled": true,
+                    "ZoneAwarenessConfig": {
+                        "AvailabilityZoneCount": 3
+                    },
+                    "WarmEnabled": false,
+                    "ColdStorageOptions": {
+                        "Enabled": false
+                    }
+                },
+                "EBSOptions": {
+                    "EBSEnabled": true,
+                    "VolumeType": "gp3",
+                    "VolumeSize": 10,
+                    "Iops": 3000,
+                    "Throughput": 125
+                },
+                "AccessPolicies": "",
+                "SnapshotOptions": {
+                    "AutomatedSnapshotStartHour": 0
+                },
+                "CognitoOptions": {
+                    "Enabled": false
+                },
+                "EncryptionAtRestOptions": {
+                    "Enabled": false
+                },
+                "NodeToNodeEncryptionOptions": {
+                    "Enabled": false
+                },
+                "AdvancedOptions": {
+                    "override_main_response_version": "false",
+                    "rest.action.multi.allow_explicit_index": "true"
+                },
+                "ServiceSoftwareOptions": {
+                    "CurrentVersion": "Elasticsearch_7_10_R20240502-P2",
+                    "NewVersion": "",
+                    "UpdateAvailable": false,
+                    "Cancellable": false,
+                    "UpdateStatus": "COMPLETED",
+                    "Description": "There is no software update available for this domain.",
+                    "AutomatedUpdateDate": {
+                        "__class__": "datetime",
+                        "year": 1970,
+                        "month": 1,
+                        "day": 1,
+                        "hour": 2,
+                        "minute": 0,
+                        "second": 0,
+                        "microsecond": 0
+                    },
+                    "OptionalDeployment": true
+                },
+                "DomainEndpointOptions": {
+                    "EnforceHTTPS": false,
+                    "TLSSecurityPolicy": "Policy-Min-TLS-1-2-2019-07",
+                    "CustomEndpointEnabled": false
+                },
+                "AdvancedSecurityOptions": {
+                    "Enabled": false,
+                    "InternalUserDatabaseEnabled": false,
+                    "AnonymousAuthEnabled": false
+                },
+                "AutoTuneOptions": {
+                    "State": "DISABLED"
+                },
+                "ChangeProgressDetails": {
+                    "ChangeId": "c080d003-f805-471f-9c08-ef9e35305bc8",
+                    "ConfigChangeStatus": "Completed",
+                    "StartTime": {
+                        "__class__": "datetime",
+                        "year": 2024,
+                        "month": 7,
+                        "day": 11,
+                        "hour": 12,
+                        "minute": 15,
+                        "second": 55,
+                        "microsecond": 565000
+                    },
+                    "LastUpdatedTime": {
+                        "__class__": "datetime",
+                        "year": 2024,
+                        "month": 7,
+                        "day": 11,
+                        "hour": 12,
+                        "minute": 37,
+                        "second": 45,
+                        "microsecond": 807000
+                    },
+                    "InitiatedBy": "CUSTOMER"
+                },
+                "DomainProcessingStatus": "Active",
+                "ModifyingProperties": []
+            }
+        ]
+    }
+}

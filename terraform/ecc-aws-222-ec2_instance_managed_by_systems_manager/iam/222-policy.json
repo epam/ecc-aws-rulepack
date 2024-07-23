@@ -5,6 +5,7 @@
             "Effect": "Allow",
             "Action": [
                 "ec2:DescribeInstances",
+				"ec2:DescribeTags",
                 "tag:GetResources",
                 "ssm:DescribeInstanceInformation"
             ],

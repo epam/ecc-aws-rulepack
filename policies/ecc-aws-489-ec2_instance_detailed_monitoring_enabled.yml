@@ -12,6 +12,10 @@ policies:
       EC2 instances detailed monitoring disabled
     resource: aws.ec2
     filters:
+      - not:
+        - type: value
+          key: State.Name
+          value: terminated
       - type: value
         key: Monitoring.State
         value: disabled
