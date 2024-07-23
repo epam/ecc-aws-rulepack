@@ -7,6 +7,22 @@ resource "aws_lb" "this1" {
   desync_mitigation_mode     = "monitor"
 }
 
+resource "aws_lb_listener" "this1" {
+  load_balancer_arn = aws_lb.this1.arn
+  port              = "80"
+  protocol          = "HTTP"
+
+  default_action {
+    type = "redirect"
+
+    redirect {
+      port        = "81"
+      protocol    = "HTTP"
+      status_code = "HTTP_301"
+    }
+  }
+}
+
 resource "aws_lb_listener" "this3" {
   load_balancer_arn = aws_lb.this1.arn
   port              = "443"
