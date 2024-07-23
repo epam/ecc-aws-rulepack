@@ -1,0 +1,36 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "analyzers": [
+            {
+                "arn": "arn:aws:access-analyzer:us-east-1:644160558196:analyzer/accessanalyzer-278-red",
+                "createdAt": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 1,
+                    "day": 10,
+                    "hour": 9,
+                    "minute": 40,
+                    "second": 1,
+                    "microsecond": 0
+                },
+                "lastResourceAnalyzed": "arn:aws:iam::644160558196:role/dms-cloudwatch-logs-role",
+                "lastResourceAnalyzedAt": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 1,
+                    "day": 10,
+                    "hour": 11,
+                    "minute": 5,
+                    "second": 7,
+                    "microsecond": 858000
+                },
+                "name": "accessanalyzer-278-red",
+                "status": "ACTIVE",
+                "tags": {},
+                "type": "ACCOUNT"
+            }
+        ]
+    }
+}

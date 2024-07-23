@@ -1,0 +1,22 @@
+{
+    "status_code": 200,
+    "data": {
+        "PaginationToken": "",
+        "ResourceTagMappingList": [
+            {
+                "ResourceARN": "arn:aws:workspaces:us-east-1:644160558196:workspace/ws-2kl4hch4j",
+                "Tags": [
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Red"
+                    },
+                    {
+                        "Key": "CustodiaRule",
+                        "Value": "epam-aws-371-workspaces_primary_interface_ports_not_open_to_all_inbound_traffic"
+                    }
+                ]
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

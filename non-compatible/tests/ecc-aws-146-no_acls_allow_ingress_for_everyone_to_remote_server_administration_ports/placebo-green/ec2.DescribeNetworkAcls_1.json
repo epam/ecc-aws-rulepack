@@ -1,0 +1,45 @@
+{
+    "status_code": 200,
+    "data": {
+        "NetworkAcls": [
+            {
+                "Associations": [],
+                "Entries": [
+                    {
+                        "CidrBlock": "0.0.0.0/0",
+                        "Egress": true,
+                        "Protocol": "-1",
+                        "RuleAction": "deny",
+                        "RuleNumber": 32767
+                    },
+                    {
+                        "CidrBlock": "0.0.0.0/0",
+                        "Egress": false,
+                        "Protocol": "-1",
+                        "RuleAction": "deny",
+                        "RuleNumber": 32767
+                    }
+                ],
+                "IsDefault": true,
+                "NetworkAclId": "acl-05e8078f8344df9be",
+                "Tags": [
+                    {
+                        "Key": "Name",
+                        "Value": "146_default_network_acl_green"
+                    },
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "epam-aws-146-no_acls_allow_ingress_0.0.0.0/0_to_remote_server_administration_ports"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    }
+                ],
+                "VpcId": "vpc-018edcb2181c67c96",
+                "OwnerId": "this"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

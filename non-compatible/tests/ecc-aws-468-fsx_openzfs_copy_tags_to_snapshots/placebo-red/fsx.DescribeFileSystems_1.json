@@ -1,0 +1,62 @@
+{
+    "status_code": 200,
+    "data": {
+        "FileSystems": [
+            {
+                "OwnerId": "644160558196",
+                "CreationTime": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 8,
+                    "day": 29,
+                    "hour": 23,
+                    "minute": 28,
+                    "second": 19,
+                    "microsecond": 899000
+                },
+                "FileSystemId": "fs-01accac1e0a595e5e",
+                "FileSystemType": "OPENZFS",
+                "Lifecycle": "AVAILABLE",
+                "StorageCapacity": 64,
+                "StorageType": "SSD",
+                "VpcId": "vpc-ad9744d0",
+                "SubnetIds": [
+                    "subnet-cd7af8ec"
+                ],
+                "NetworkInterfaceIds": [
+                    "eni-08a662ce07b07a454"
+                ],
+                "DNSName": "fs-01accac1e0a595e5e.fsx.us-east-1.amazonaws.com",
+                "KmsKeyId": "arn:aws:kms:us-east-1:644160558196:key/dd9fb145-9e61-4b40-a1d5-b079e1d5ccdd",
+                "ResourceARN": "arn:aws:fsx:us-east-1:644160558196:file-system/fs-01accac1e0a595e5e",
+                "Tags": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "epam-aws-468-fsx_openzfs_copy_tags_to_snapshots"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Red"
+                    },
+                    {
+                        "Key": "Name",
+                        "Value": "468_fsx_openzfs_file_system_red"
+                    }
+                ],
+                "OpenZFSConfiguration": {
+                    "CopyTagsToBackups": false,
+                    "CopyTagsToVolumes": false,
+                    "DeploymentType": "SINGLE_AZ_1",
+                    "ThroughputCapacity": 64,
+                    "WeeklyMaintenanceStartTime": "2:09:00",
+                    "DiskIopsConfiguration": {
+                        "Mode": "AUTOMATIC",
+                        "Iops": 192
+                    },
+                    "RootVolumeId": "fsvol-0669e7efb988e9009"
+                }
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

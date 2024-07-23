@@ -10,22 +10,15 @@ policies:
     comment: '010048132200'
     description: |
       CodeBuild GitHub or Bitbucket source repository URLs do not use OAuth
-    resource: aws.codebuild
+    resource: aws.codebuild-credential
     filters:
-      - or:
-          - and:
-              - type: value
-                key: source.type
-                value: GITHUB
-              - type: value
-                key: source.auth.resource
-                op: regex
-                value: '^.*token.*$'
-          - and:
-              - type: value
-                key: source.type
-                value: BITBUCKET
-              - type: value
-                key: source.auth.resource
-                op: regex
-                value: '^.*token.*$'
+      - type: value
+        key: serverType
+        op: in
+        value:
+          - BITBUCKET
+          - GITHUB
+      - type: value
+        key: authType
+        op: ne
+        value: OAUTH 

@@ -1,0 +1,31 @@
+{
+    "status_code": 200,
+    "data": {
+        "SecurityGroups": [
+            {
+                "Description": "Managed by Terraform",
+                "GroupName": "163_security_group_red",
+                "IpPermissions": [
+                    {
+                        "FromPort": 3306,
+                        "IpProtocol": "tcp",
+                        "IpRanges": [
+                            {
+                                "CidrIp": "10.0.0.0/16"
+                            }
+                        ],
+                        "Ipv6Ranges": [],
+                        "PrefixListIds": [],
+                        "ToPort": 3306,
+                        "UserIdGroupPairs": []
+                    }
+                ],
+                "OwnerId": "644160558196",
+                "GroupId": "sg-0105ba25744130d19",
+                "IpPermissionsEgress": [],
+                "VpcId": "vpc-05ce5c54de4e4c638"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

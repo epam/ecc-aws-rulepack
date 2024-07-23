@@ -1,5 +1,5 @@
 resource "aws_wafregional_ipset" "this" {
-  name = module.naming.resource_prefix.waf_ip_set
+  name = "${module.naming.resource_prefix.waf_ip_set}-${random_integer.this.result}"
 
   ip_set_descriptor {
     type  = "IPV4"
@@ -8,7 +8,7 @@ resource "aws_wafregional_ipset" "this" {
 }
 
 resource "aws_wafregional_rule" "this" {
-  name        = module.naming.resource_prefix.waf_rule
+  name        = "${module.naming.resource_prefix.waf_rule}-${random_integer.this.result}"
   metric_name = "WafRuleMetricGreen"
 
   predicate {
@@ -19,7 +19,7 @@ resource "aws_wafregional_rule" "this" {
 }
 
 resource "aws_wafregional_web_acl" "this" {
-  name        = module.naming.resource_prefix.waf_acl
+  name        = "${module.naming.resource_prefix.waf_acl}-${random_integer.this.result}"
   metric_name = "WafACLMetricGreen"
 
   default_action {
@@ -37,7 +37,7 @@ resource "aws_wafregional_web_acl" "this" {
 }
 
 resource "aws_waf_web_acl" "this" {
-  name        = module.naming.resource_prefix.waf_acl
+  name        = "${module.naming.resource_prefix.waf_acl}-${random_integer.this.result}"
   metric_name = "WafACLMetricGreen"
 
   default_action {

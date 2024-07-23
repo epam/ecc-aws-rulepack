@@ -1,0 +1,21 @@
+{
+    "status_code": 200,
+    "data": {
+        "EventSubscriptionsList": [
+            {
+                "CustomerAwsId": "644160558196",
+                "CustSubscriptionId": "db-event-subscription-161-red",
+                "SnsTopicArn": "arn:aws:sns:us-east-1:644160558196:161_sns_topic_red",
+                "Status": "active",
+                "SubscriptionCreationTime": "2022-02-09 07:57:10.993",
+                "SourceType": "db-parameter-group",
+                "SourceIdsList": [
+                    "db-parameter-group-161-red"
+                ],
+                "Enabled": true,
+                "EventSubscriptionArn": "arn:aws:rds:us-east-1:644160558196:es:db-event-subscription-161-red"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

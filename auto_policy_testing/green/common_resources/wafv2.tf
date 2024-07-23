@@ -1,12 +1,12 @@
 resource "aws_wafv2_ip_set" "this" {
-  name = module.naming.resource_prefix.waf_ip_set
+  name = "${module.naming.resource_prefix.waf_ip_set}-${random_integer.this.result}"
   scope              = "REGIONAL"
   ip_address_version = "IPV4"
   addresses          = ["192.0.7.0/24"]
 }
 
 resource "aws_wafv2_rule_group" "this" {
-  name     = module.naming.resource_prefix.waf_rule
+  name     = "${module.naming.resource_prefix.waf_rule}-${random_integer.this.result}"
   scope    = "REGIONAL"
   capacity = 1
 
@@ -40,7 +40,7 @@ resource "aws_wafv2_rule_group" "this" {
 }
 
 resource "aws_wafv2_web_acl" "this" {
-  name  = "${module.naming.resource_prefix.waf_acl}-v2"
+  name  = "${module.naming.resource_prefix.waf_acl}-v2-${random_integer.this.result}"
   scope = "REGIONAL"
 
   default_action {
