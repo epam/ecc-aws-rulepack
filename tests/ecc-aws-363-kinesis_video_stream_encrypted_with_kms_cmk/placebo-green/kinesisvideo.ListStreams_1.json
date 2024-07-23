@@ -1,0 +1,27 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "StreamInfoList": [
+            {
+                "StreamName": "363_kinesis_stream_green",
+                "StreamARN": "arn:aws:kinesisvideo:us-east-1:111111111111:stream/363_kinesis_stream_green/1721763498192",
+                "MediaType": "video/h264",
+                "KmsKeyId": "67b8d9c7-a725-4d6c-bac0-a973fafe9c7c",
+                "Version": "z66BinJZ61ue7kZT4zFi",
+                "Status": "ACTIVE",
+                "CreationTime": {
+                    "__class__": "datetime",
+                    "year": 2024,
+                    "month": 7,
+                    "day": 23,
+                    "hour": 22,
+                    "minute": 38,
+                    "second": 18,
+                    "microsecond": 192000
+                },
+                "DataRetentionInHours": 1
+            }
+        ]
+    }
+}
