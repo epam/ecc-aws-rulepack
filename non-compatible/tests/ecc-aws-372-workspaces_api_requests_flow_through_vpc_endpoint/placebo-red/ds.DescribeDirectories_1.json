@@ -1,0 +1,56 @@
+{
+    "status_code": 200,
+    "data": {
+        "DirectoryDescriptions": [
+            {
+                "DirectoryId": "d-9067b08ddc",
+                "Name": "workspaces.red2-example.com",
+                "ShortName": "workspaces",
+                "Size": "Small",
+                "Alias": "d-9067b08ddc",
+                "AccessUrl": "d-9067b08ddc.awsapps.com",
+                "DnsIpAddrs": [
+                    "10.0.1.91",
+                    "10.0.2.197"
+                ],
+                "Stage": "Active",
+                "LaunchTime": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 7,
+                    "day": 7,
+                    "hour": 9,
+                    "minute": 56,
+                    "second": 2,
+                    "microsecond": 416000
+                },
+                "StageLastUpdatedDateTime": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 7,
+                    "day": 7,
+                    "hour": 10,
+                    "minute": 2,
+                    "second": 43,
+                    "microsecond": 403000
+                },
+                "Type": "SimpleAD",
+                "VpcSettings": {
+                    "VpcId": "vpc-0427a0e7163786aa8",
+                    "SubnetIds": [
+                        "subnet-0829a38914ab5c1d3",
+                        "subnet-0400e8348cda25e15"
+                    ],
+                    "SecurityGroupId": "sg-02b7216870b7dfdb3",
+                    "AvailabilityZones": [
+                        "us-east-1c",
+                        "us-east-1d"
+                    ]
+                },
+                "SsoEnabled": false,
+                "DesiredNumberOfDomainControllers": 0
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

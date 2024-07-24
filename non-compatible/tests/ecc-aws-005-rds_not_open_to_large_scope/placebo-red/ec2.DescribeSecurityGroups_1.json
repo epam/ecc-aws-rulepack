@@ -1,0 +1,31 @@
+{
+    "status_code": 200,
+    "data": {
+        "SecurityGroups": [
+            {
+                "Description": "Allow all inbound traffic",
+                "GroupName": "c7n_005_red",
+                "IpPermissions": [
+                    {
+                        "FromPort": 22,
+                        "IpProtocol": "tcp",
+                        "IpRanges": [
+                            {
+                                "CidrIp": "0.0.0.0/0"
+                            }
+                        ],
+                        "Ipv6Ranges": [],
+                        "PrefixListIds": [],
+                        "ToPort": 22,
+                        "UserIdGroupPairs": []
+                    }
+                ],
+                "OwnerId": "this",
+                "GroupId": "sg-1212121212121212",
+                "IpPermissionsEgress": [],
+                "VpcId": "vpc-1212121"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

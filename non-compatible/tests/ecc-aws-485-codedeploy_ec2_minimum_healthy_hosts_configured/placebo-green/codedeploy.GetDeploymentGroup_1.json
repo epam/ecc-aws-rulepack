@@ -1,0 +1,23 @@
+{
+    "status_code": 200,
+    "data": {
+        "deploymentGroupInfo": {
+            "applicationName": "485_codedeploy-app_green",
+            "deploymentGroupId": "d3e99e70-6313-4468-abfb-7c7d573423a3",
+            "deploymentGroupName": "485_codedeploy_deployment_group_green",
+            "deploymentConfigName": "485_deployment-config_green",
+            "ec2TagFilters": [],
+            "onPremisesInstanceTagFilters": [],
+            "autoScalingGroups": [],
+            "serviceRoleArn": "arn:aws:iam::644160558196:role/485_AWSCodeDeployRoleForLambda_green",
+            "triggerConfigurations": [],
+            "deploymentStyle": {
+                "deploymentType": "IN_PLACE",
+                "deploymentOption": "WITHOUT_TRAFFIC_CONTROL"
+            },
+            "outdatedInstancesStrategy": "UPDATE",
+            "computePlatform": "Server"
+        },
+        "ResponseMetadata": {}
+    }
+}

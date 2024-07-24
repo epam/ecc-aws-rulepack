@@ -1,0 +1,22 @@
+{
+    "status_code": 200,
+    "data": {
+        "PaginationToken": "",
+        "ResourceTagMappingList": [
+            {
+                "ResourceARN": "arn:aws:workspaces:us-east-1:644160558196:directory/d-9067b08c43",
+                "Tags": [
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    },
+                    {
+                        "Key": "CustodiaRule",
+                        "Value": "epam-aws-372-workspaces_api_requests_flow_through_vpc_endpoint"
+                    }
+                ]
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

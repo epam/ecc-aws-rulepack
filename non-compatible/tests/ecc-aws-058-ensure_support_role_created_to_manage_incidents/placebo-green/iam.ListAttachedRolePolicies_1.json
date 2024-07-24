@@ -1,0 +1,13 @@
+{
+    "status_code": 200,
+    "data": {
+        "AttachedPolicies": [
+            {
+                "PolicyName": "AWSSupportAccess",
+                "PolicyArn": "arn:aws:iam::aws:policy/AWSSupportAccess"
+            }
+        ],
+        "IsTruncated": false,
+        "ResponseMetadata": {}
+    }
+}

@@ -1,0 +1,170 @@
+{
+    "status_code": 200,
+    "data": {
+        "SecurityGroups": [
+            {
+                "Description": "Amazon WorkSpaces Security Group",
+                "GroupName": "d-90674cc9a1_workspacesMembers",
+                "IpPermissions": [],
+                "OwnerId": "644160558196",
+                "GroupId": "sg-0409f8de56ef6d316",
+                "IpPermissionsEgress": [
+                    {
+                        "IpProtocol": "-1",
+                        "IpRanges": [
+                            {
+                                "CidrIp": "0.0.0.0/0"
+                            }
+                        ],
+                        "Ipv6Ranges": [],
+                        "PrefixListIds": [],
+                        "UserIdGroupPairs": []
+                    }
+                ],
+                "Tags": [
+                    {
+                        "Key": "Created by Amazon WorkSpaces",
+                        "Value": "Amazon WorkSpaces"
+                    }
+                ],
+                "VpcId": "vpc-0aef940e9ce813af1"
+            },
+            {
+                "Description": "Managed by Terraform",
+                "GroupName": "workstation_security_group3",
+                "IpPermissions": [
+                    {
+                        "IpProtocol": "-1",
+                        "IpRanges": [],
+                        "Ipv6Ranges": [],
+                        "PrefixListIds": [],
+                        "UserIdGroupPairs": [
+                            {
+                                "GroupId": "sg-0a2d122a65e992419",
+                                "UserId": "644160558196"
+                            }
+                        ]
+                    },
+                    {
+                        "FromPort": 22,
+                        "IpProtocol": "udp",
+                        "IpRanges": [
+                            {
+                                "CidrIp": "0.0.0.0/0"
+                            }
+                        ],
+                        "Ipv6Ranges": [
+                            {
+                                "CidrIpv6": "::/0"
+                            }
+                        ],
+                        "PrefixListIds": [],
+                        "ToPort": 22,
+                        "UserIdGroupPairs": [
+                            {
+                                "GroupId": "sg-0dfa59e50240f5e1d",
+                                "UserId": "644160558196"
+                            }
+                        ]
+                    }
+                ],
+                "OwnerId": "644160558196",
+                "GroupId": "sg-0a2d122a65e992419",
+                "IpPermissionsEgress": [],
+                "Tags": [
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    },
+                    {
+                        "Key": "CustodiaRule",
+                        "Value": "epam-aws-371-workspaces_primary_interface_ports_not_open_to_all_inbound_traffic"
+                    }
+                ],
+                "VpcId": "vpc-0aef940e9ce813af1"
+            },
+            {
+                "Description": "Managed by Terraform",
+                "GroupName": "workstation_security_group2",
+                "IpPermissions": [
+                    {
+                        "IpProtocol": "-1",
+                        "IpRanges": [
+                            {
+                                "CidrIp": "10.0.0.0/16"
+                            }
+                        ],
+                        "Ipv6Ranges": [],
+                        "PrefixListIds": [],
+                        "UserIdGroupPairs": [
+                            {
+                                "GroupId": "sg-0dfa59e50240f5e1d",
+                                "UserId": "644160558196"
+                            }
+                        ]
+                    }
+                ],
+                "OwnerId": "644160558196",
+                "GroupId": "sg-000421c5480bbadef",
+                "IpPermissionsEgress": [],
+                "Tags": [
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    },
+                    {
+                        "Key": "CustodiaRule",
+                        "Value": "epam-aws-371-workspaces_primary_interface_ports_not_open_to_all_inbound_traffic"
+                    }
+                ],
+                "VpcId": "vpc-0aef940e9ce813af1"
+            },
+            {
+                "Description": "Managed by Terraform",
+                "GroupName": "workstation_security_group",
+                "IpPermissions": [
+                    {
+                        "FromPort": 22,
+                        "IpProtocol": "tcp",
+                        "IpRanges": [
+                            {
+                                "CidrIp": "10.0.0.0/16"
+                            }
+                        ],
+                        "Ipv6Ranges": [],
+                        "PrefixListIds": [],
+                        "ToPort": 22,
+                        "UserIdGroupPairs": []
+                    }
+                ],
+                "OwnerId": "644160558196",
+                "GroupId": "sg-0dfa59e50240f5e1d",
+                "IpPermissionsEgress": [
+                    {
+                        "IpProtocol": "-1",
+                        "IpRanges": [
+                            {
+                                "CidrIp": "0.0.0.0/0"
+                            }
+                        ],
+                        "Ipv6Ranges": [],
+                        "PrefixListIds": [],
+                        "UserIdGroupPairs": []
+                    }
+                ],
+                "Tags": [
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    },
+                    {
+                        "Key": "CustodiaRule",
+                        "Value": "epam-aws-371-workspaces_primary_interface_ports_not_open_to_all_inbound_traffic"
+                    }
+                ],
+                "VpcId": "vpc-0aef940e9ce813af1"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

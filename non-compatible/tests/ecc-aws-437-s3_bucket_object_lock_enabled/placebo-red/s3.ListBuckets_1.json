@@ -1,0 +1,25 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "Buckets": [
+            {
+                "Name": "437-bucket-red",
+                "CreationDate": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 9,
+                    "day": 20,
+                    "hour": 8,
+                    "minute": 44,
+                    "second": 46,
+                    "microsecond": 0
+                }
+            }
+        ],
+        "Owner": {
+            "DisplayName": "epmcsec-lab10",
+            "ID": "316649624eede3b1599b4b2324bfb9e161398514ca1779742e95749ed51c2a2a"
+        }
+    }
+}
