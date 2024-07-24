@@ -4,6 +4,7 @@
         {
             "Effect": "Allow",
             "Action": [
+                "iam:GetServerCertificate",
                 "route53:ListHostedZones",
                 "route53:ListQueryLoggingConfigs",
                 "route53:ListResourceRecordSets",
@@ -11,7 +12,6 @@
                 "route53domains:ListDomains",
                 "route53domains:ListTagsForDomain",
                 "s3:GetBucketAcl",
-                "s3:GetBucketLifecycle",
                 "s3:GetBucketLocation",
                 "s3:GetBucketLogging",
                 "s3:GetBucketNotification",
@@ -59,6 +59,7 @@
                 "waf:ListRules",
                 "waf:ListWebACLs",
                 "wafv2:ListWebACLs",
+                "wafv2:ListResourcesForWebACL",
                 "workspaces:DescribeWorkspaceDirectories",
                 "workspaces:DescribeWorkspaceImages",
                 "workspaces:DescribeWorkspaces",
