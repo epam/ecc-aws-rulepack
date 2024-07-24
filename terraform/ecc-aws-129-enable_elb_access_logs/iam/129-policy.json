@@ -3,8 +3,10 @@
     "Statement": [
         {
             "Effect": "Allow",
-            "Action": [ 
-                "elasticloadbalancing:DescribeLoadBalancerAttributes"
+            "Action": [
+                "elasticloadbalancing:DescribeLoadBalancerAttributes",
+                "elasticloadbalancing:DescribeLoadBalancers",
+                "elasticloadbalancing:DescribeTags"
             ],
             "Resource": "*"
         }

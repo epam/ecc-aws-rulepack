@@ -4,6 +4,8 @@
         {
             "Effect": "Allow",
             "Action": [
+                "iam:GetServerCertificate",
+                "codebuild:ListSourceCredentials",
                 "route53:ListHostedZones",
                 "route53:ListQueryLoggingConfigs",
                 "route53:ListResourceRecordSets",
@@ -58,6 +60,7 @@
                 "waf:ListRules",
                 "waf:ListWebACLs",
                 "wafv2:ListWebACLs",
+                "wafv2:ListResourcesForWebACL",
                 "workspaces:DescribeWorkspaceDirectories",
                 "workspaces:DescribeWorkspaceImages",
                 "workspaces:DescribeWorkspaces",

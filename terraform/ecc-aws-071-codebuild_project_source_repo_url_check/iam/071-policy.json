@@ -4,9 +4,7 @@
         {
             "Effect": "Allow",
             "Action": [
-                "codebuild:ListProjects",
-                "codebuild:BatchGetProjects",
-                "tag:GetResources"
+                "codebuild:ListSourceCredentials"
             ],
             "Resource": "*"
         }
