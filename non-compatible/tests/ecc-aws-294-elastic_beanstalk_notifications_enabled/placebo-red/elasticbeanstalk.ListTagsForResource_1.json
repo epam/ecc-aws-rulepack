@@ -1,0 +1,29 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResourceArn": "arn:aws:elasticbeanstalk:us-east-1:644160558196:environment/294-beanstalk-application-red/294-beanstalk-environment-red",
+        "ResourceTags": [
+            {
+                "Key": "elasticbeanstalk:environment-id",
+                "Value": "e-ubdpjtptr9"
+            },
+            {
+                "Key": "CustodianRule",
+                "Value": "epam-aws-294-elastic_beanstalk_notifications_enabled"
+            },
+            {
+                "Key": "ComplianceStatus",
+                "Value": "Red"
+            },
+            {
+                "Key": "elasticbeanstalk:environment-name",
+                "Value": "294-beanstalk-environment-red"
+            },
+            {
+                "Key": "Name",
+                "Value": "294-beanstalk-environment-red"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

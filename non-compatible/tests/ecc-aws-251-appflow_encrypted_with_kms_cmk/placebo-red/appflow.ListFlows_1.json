@@ -1,0 +1,39 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "flows": [
+            {
+                "flowArn": "arn:aws:appflow:us-east-1:644160558196:flow/251-appflow-red",
+                "flowName": "251-appflow-red",
+                "flowStatus": "Active",
+                "sourceConnectorType": "S3",
+                "destinationConnectorType": "S3",
+                "triggerType": "OnDemand",
+                "createdAt": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 1,
+                    "day": 11,
+                    "hour": 11,
+                    "minute": 36,
+                    "second": 21,
+                    "microsecond": 792000
+                },
+                "lastUpdatedAt": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 1,
+                    "day": 11,
+                    "hour": 11,
+                    "minute": 36,
+                    "second": 21,
+                    "microsecond": 792000
+                },
+                "createdBy": "arn:aws:iam::644160558196:user/Anna_Shcherbak",
+                "lastUpdatedBy": "arn:aws:iam::644160558196:user/Anna_Shcherbak",
+                "tags": {}
+            }
+        ]
+    }
+}

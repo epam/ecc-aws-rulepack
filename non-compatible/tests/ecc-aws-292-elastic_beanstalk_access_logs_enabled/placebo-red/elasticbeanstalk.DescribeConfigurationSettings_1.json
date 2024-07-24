@@ -1,0 +1,48 @@
+{
+    "status_code": 200,
+    "data": {
+        "ConfigurationSettings": [
+            {
+                "SolutionStackName": "64bit Amazon Linux 2 v3.3.13 running Python 3.8",
+                "PlatformArn": "arn:aws:elasticbeanstalk:us-east-1::platform/Python 3.8 running on 64bit Amazon Linux 2/3.3.13",
+                "ApplicationName": "292-beanstalk-application-red",
+                "EnvironmentName": "292-beanstalk-environment-red",
+                "DeploymentStatus": "deployed",
+                "DateCreated": {
+                    "__class__": "datetime",
+                    "year": 2023,
+                    "month": 1,
+                    "day": 13,
+                    "hour": 12,
+                    "minute": 21,
+                    "second": 3,
+                    "microsecond": 0
+                },
+                "DateUpdated": {
+                    "__class__": "datetime",
+                    "year": 2023,
+                    "month": 1,
+                    "day": 13,
+                    "hour": 12,
+                    "minute": 21,
+                    "second": 3,
+                    "microsecond": 0
+                },
+                "OptionSettings": [
+                    {
+                        "Namespace": "aws:elasticbeanstalk:environment",
+                        "OptionName": "LoadBalancerType",
+                        "Value": "application"
+                    },
+                    {
+                        "ResourceName": "AWSEBV2LoadBalancer",
+                        "Namespace": "aws:elbv2:loadbalancer",
+                        "OptionName": "AccessLogsS3Enabled",
+                        "Value": "false"
+                    }
+                ]
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

@@ -1,0 +1,51 @@
+{
+    "status_code": 200,
+    "data": {
+        "Directories": [
+            {
+                "DirectoryId": "d-9067b08c43",
+                "Alias": "d-9067b08c43",
+                "DirectoryName": "workspaces.green-example.com",
+                "RegistrationCode": "SLiad+2E52NA",
+                "SubnetIds": [
+                    "subnet-0adb74da2954b4ef3",
+                    "subnet-0267bd372914b0019"
+                ],
+                "DnsIpAddresses": [
+                    "10.0.1.180",
+                    "10.0.2.193"
+                ],
+                "CustomerUserName": "Administrator",
+                "IamRoleId": "arn:aws:iam::644160558196:role/workspaces_DefaultRole",
+                "DirectoryType": "SIMPLE_AD",
+                "WorkspaceSecurityGroupId": "sg-075dda8c2674c9103",
+                "State": "REGISTERED",
+                "WorkspaceCreationProperties": {
+                    "EnableWorkDocs": false,
+                    "EnableInternetAccess": true,
+                    "UserEnabledAsLocalAdministrator": true,
+                    "EnableMaintenanceMode": true
+                },
+                "WorkspaceAccessProperties": {
+                    "DeviceTypeWindows": "ALLOW",
+                    "DeviceTypeOsx": "ALLOW",
+                    "DeviceTypeWeb": "DENY",
+                    "DeviceTypeIos": "ALLOW",
+                    "DeviceTypeAndroid": "ALLOW",
+                    "DeviceTypeChromeOs": "ALLOW",
+                    "DeviceTypeZeroClient": "ALLOW",
+                    "DeviceTypeLinux": "DENY"
+                },
+                "Tenancy": "SHARED",
+                "SelfservicePermissions": {
+                    "RestartWorkspace": "ENABLED",
+                    "IncreaseVolumeSize": "DISABLED",
+                    "ChangeComputeType": "DISABLED",
+                    "SwitchRunningMode": "DISABLED",
+                    "RebuildWorkspace": "DISABLED"
+                }
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

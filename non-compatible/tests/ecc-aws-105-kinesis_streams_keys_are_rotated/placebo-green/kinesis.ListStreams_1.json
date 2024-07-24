@@ -1,0 +1,10 @@
+{
+    "status_code": 200,
+    "data": {
+        "StreamNames": [
+            "green-kinesis-stream-105"
+        ],
+        "HasMoreStreams": false,
+        "ResponseMetadata": {}
+    }
+}

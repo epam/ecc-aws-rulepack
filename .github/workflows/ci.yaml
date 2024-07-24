@@ -26,6 +26,8 @@ jobs:
         env:
           PROJECT_TOKEN: ${{ secrets.ECC_CHANGELOG_ACTION }}
       - uses: ./ecc-actions/flight-test-dependencies
+        env:
+            PROJECT_TOKEN: ${{ secrets.CLOUDCUSTODIAN_CORE }}
       - uses: ./ecc-actions/flight-test-action
         env:
           COMPLIANCE: ${{ matrix.compliance }}

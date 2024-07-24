@@ -1,0 +1,109 @@
+{
+    "status_code": 200,
+    "data": {
+        "DBInstances": [
+            {
+                "DBInstanceIdentifier": "terraform-20210909072108085300000001",
+                "DBInstanceClass": "db.t3.micro",
+                "Engine": "mysql",
+                "DBInstanceStatus": "stopped",
+                "MasterUsername": "root",
+                "DBName": "database163red",
+                "Endpoint": {
+                    "Address": "terraform-20210909072108085300000001.chhajgiktbgu.us-east-1.rds.amazonaws.com",
+                    "Port": 3306,
+                    "HostedZoneId": "Z2R2ITUGPM61AM"
+                },
+                "AllocatedStorage": 10,
+                "InstanceCreateTime": {
+                    "__class__": "datetime",
+                    "year": 2021,
+                    "month": 9,
+                    "day": 9,
+                    "hour": 7,
+                    "minute": 24,
+                    "second": 59,
+                    "microsecond": 166000
+                },
+                "PreferredBackupWindow": "08:45-09:15",
+                "BackupRetentionPeriod": 0,
+                "DBSecurityGroups": [],
+                "VpcSecurityGroups": [
+                    {
+                        "VpcSecurityGroupId": "sg-0105ba25744130d19",
+                        "Status": "active"
+                    }
+                ],
+                "DBParameterGroups": [
+                    {
+                        "DBParameterGroupName": "default.mysql5.7",
+                        "ParameterApplyStatus": "in-sync"
+                    }
+                ],
+                "AvailabilityZone": "us-east-1b",
+                "DBSubnetGroup": {
+                    "DBSubnetGroupName": "subnet-group-163-red",
+                    "DBSubnetGroupDescription": "Managed by Terraform",
+                    "VpcId": "vpc-05ce5c54de4e4c638",
+                    "SubnetGroupStatus": "Complete",
+                    "Subnets": [
+                        {
+                            "SubnetIdentifier": "subnet-07b2034c08cc11757",
+                            "SubnetAvailabilityZone": {
+                                "Name": "us-east-1b"
+                            },
+                            "SubnetOutpost": {},
+                            "SubnetStatus": "Active"
+                        },
+                        {
+                            "SubnetIdentifier": "subnet-0f5e77fe9053a9c34",
+                            "SubnetAvailabilityZone": {
+                                "Name": "us-east-1a"
+                            },
+                            "SubnetOutpost": {},
+                            "SubnetStatus": "Active"
+                        }
+                    ]
+                },
+                "PreferredMaintenanceWindow": "wed:09:28-wed:09:58",
+                "PendingModifiedValues": {},
+                "MultiAZ": false,
+                "EngineVersion": "5.7.33",
+                "AutoMinorVersionUpgrade": true,
+                "ReadReplicaDBInstanceIdentifiers": [],
+                "LicenseModel": "general-public-license",
+                "OptionGroupMemberships": [
+                    {
+                        "OptionGroupName": "default:mysql-5-7",
+                        "Status": "in-sync"
+                    }
+                ],
+                "PubliclyAccessible": false,
+                "StorageType": "gp2",
+                "DbInstancePort": 0,
+                "StorageEncrypted": false,
+                "DbiResourceId": "db-3FIXQPU4OLSRIUPW7O2RMUTS4Y",
+                "CACertificateIdentifier": "rds-ca-2019",
+                "DomainMemberships": [],
+                "CopyTagsToSnapshot": false,
+                "MonitoringInterval": 0,
+                "DBInstanceArn": "arn:aws:rds:us-east-1:this:db:terraform-20210909072108085300000001",
+                "IAMDatabaseAuthenticationEnabled": false,
+                "PerformanceInsightsEnabled": false,
+                "DeletionProtection": false,
+                "AssociatedRoles": [],
+                "TagList": [
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Red"
+                    },
+                    {
+                        "Key": "CsutodianRule",
+                        "Value": "epam-aws-163-rds_database_instance_engine_no_default_ports"
+                    }
+                ]
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

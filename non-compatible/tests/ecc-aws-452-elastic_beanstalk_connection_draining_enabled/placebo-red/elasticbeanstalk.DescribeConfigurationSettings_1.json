@@ -1,0 +1,43 @@
+{
+    "status_code": 200,
+    "data": {
+        "ConfigurationSettings": [
+            {
+                "SolutionStackName": "64bit Amazon Linux 2 v3.3.7 running Python 3.8",
+                "PlatformArn": "arn:aws:elasticbeanstalk:us-east-1::platform/Python 3.8 running on 64bit Amazon Linux 2/3.3.7",
+                "ApplicationName": "452_application_red",
+                "EnvironmentName": "environment-452-red",
+                "DeploymentStatus": "deployed",
+                "DateCreated": {
+                    "__class__": "datetime",
+                    "year": 2023,
+                    "month": 1,
+                    "day": 11,
+                    "hour": 10,
+                    "minute": 35,
+                    "second": 56,
+                    "microsecond": 0
+                },
+                "DateUpdated": {
+                    "__class__": "datetime",
+                    "year": 2023,
+                    "month": 1,
+                    "day": 11,
+                    "hour": 10,
+                    "minute": 35,
+                    "second": 56,
+                    "microsecond": 0
+                },
+                "OptionSettings": [
+                    {
+                        "ResourceName": "AWSEBLoadBalancer",
+                        "Namespace": "aws:elb:policies",
+                        "OptionName": "ConnectionDrainingEnabled",
+                        "Value": "false"
+                    }
+                ]
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

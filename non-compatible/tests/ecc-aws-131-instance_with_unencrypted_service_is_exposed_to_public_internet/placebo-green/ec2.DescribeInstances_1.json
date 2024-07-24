@@ -1,0 +1,162 @@
+{
+    "status_code": 200,
+    "data": {
+        "Reservations": [   
+            {
+                "Groups": [],
+                "Instances": [
+                    {
+                        "AmiLaunchIndex": 0,
+                        "ImageId": "ami-0d94ba1e0556bb684",
+                        "InstanceId": "i-08a9e63c733d35ab9",
+                        "InstanceType": "t2.micro",
+                        "LaunchTime": {
+                            "__class__": "datetime",
+                            "year": 2021,
+                            "month": 8,
+                            "day": 20,
+                            "hour": 10,
+                            "minute": 43,
+                            "second": 50,
+                            "microsecond": 0
+                        },
+                        "Monitoring": {
+                            "State": "disabled"
+                        },
+                        "Placement": {
+                            "AvailabilityZone": "us-east-1a",
+                            "GroupName": "",
+                            "Tenancy": "default"
+                        },
+                        "PrivateDnsName": "ip-10-0-1-106.ec2.internal",
+                        "PrivateIpAddress": "10.0.1.106",
+                        "ProductCodes": [],
+                        "PublicDnsName": "",
+                        "State": {
+                            "Code": 16,
+                            "Name": "running"
+                        },
+                        "StateTransitionReason": "",
+                        "SubnetId": "subnet-032d8507fc8ee0bad",
+                        "VpcId": "vpc-00633271f367e6e44",
+                        "Architecture": "x86_64",
+                        "BlockDeviceMappings": [
+                            {
+                                "DeviceName": "/dev/xvda",
+                                "Ebs": {
+                                    "AttachTime": {
+                                        "__class__": "datetime",
+                                        "year": 2021,
+                                        "month": 8,
+                                        "day": 20,
+                                        "hour": 10,
+                                        "minute": 43,
+                                        "second": 51,
+                                        "microsecond": 0
+                                    },
+                                    "DeleteOnTermination": true,
+                                    "Status": "attached",
+                                    "VolumeId": "vol-097f18161c736924e"
+                                }
+                            }
+                        ],
+                        "ClientToken": "8028DC8B-03A2-4B74-8581-25C648C2E98C",
+                        "EbsOptimized": false,
+                        "EnaSupport": true,
+                        "Hypervisor": "xen",
+                        "NetworkInterfaces": [
+                            {
+                                "Attachment": {
+                                    "AttachTime": {
+                                        "__class__": "datetime",
+                                        "year": 2021,
+                                        "month": 8,
+                                        "day": 20,
+                                        "hour": 10,
+                                        "minute": 43,
+                                        "second": 50,
+                                        "microsecond": 0
+                                    },
+                                    "AttachmentId": "eni-attach-01823fa720767b759",
+                                    "DeleteOnTermination": true,
+                                    "DeviceIndex": 0,
+                                    "Status": "attached",
+                                    "NetworkCardIndex": 0
+                                },
+                                "Description": "",
+                                "Groups": [
+                                    {
+                                        "GroupName": "131_c7n_security_group2_green",
+                                        "GroupId": "sg-01c7d3d00907c27df"
+                                    },
+                                    {
+                                        "GroupName": "131_c7n_security_group1_green",
+                                        "GroupId": "sg-06742323845b489ff"
+                                    }
+                                ],
+                                "Ipv6Addresses": [],
+                                "MacAddress": "0e:b6:95:88:49:53",
+                                "NetworkInterfaceId": "eni-0f13a1f4f82830595",
+                                "OwnerId": "this",
+                                "PrivateIpAddress": "10.0.1.106",
+                                "PrivateIpAddresses": [
+                                    {
+                                        "Primary": true,
+                                        "PrivateIpAddress": "10.0.1.106"
+                                    }
+                                ],
+                                "SourceDestCheck": true,
+                                "Status": "in-use",
+                                "SubnetId": "subnet-032d8507fc8ee0bad",
+                                "VpcId": "vpc-00633271f367e6e44",
+                                "InterfaceType": "interface"
+                            }
+                        ],
+                        "RootDeviceName": "/dev/xvda",
+                        "RootDeviceType": "ebs",
+                        "SecurityGroups": [
+                            {
+                                "GroupName": "131_c7n_security_group2_green",
+                                "GroupId": "sg-01c7d3d00907c27df"
+                            },
+                            {
+                                "GroupName": "131_c7n_security_group1_green",
+                                "GroupId": "sg-06742323845b489ff"
+                            }
+                        ],
+                        "SourceDestCheck": true,
+                        "Tags": [
+                            {
+                                "Key": "Name",
+                                "Value": "131_c7n_ec2_green"
+                            }
+                        ],
+                        "VirtualizationType": "hvm",
+                        "CpuOptions": {
+                            "CoreCount": 1,
+                            "ThreadsPerCore": 1
+                        },
+                        "CapacityReservationSpecification": {
+                            "CapacityReservationPreference": "open"
+                        },
+                        "HibernationOptions": {
+                            "Configured": false
+                        },
+                        "MetadataOptions": {
+                            "State": "applied",
+                            "HttpTokens": "optional",
+                            "HttpPutResponseHopLimit": 1,
+                            "HttpEndpoint": "enabled"
+                        },
+                        "EnclaveOptions": {
+                            "Enabled": false
+                        }
+                    }
+                ],
+                "OwnerId": "this",
+                "ReservationId": "r-0a2ef9a727b6ef1a3"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

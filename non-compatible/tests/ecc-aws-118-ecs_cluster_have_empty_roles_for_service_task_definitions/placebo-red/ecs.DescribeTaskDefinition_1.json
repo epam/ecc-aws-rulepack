@@ -1,0 +1,42 @@
+{
+    "status_code": 200,
+    "data": {
+        "taskDefinition": {
+            "taskDefinitionArn": "arn:aws:ecs:us-east-1:644160558196:task-definition/service:25",
+            "containerDefinitions": [
+                {
+                    "name": "mysql",
+                    "image": "mysql",
+                    "cpu": 2,
+                    "memory": 10,
+                    "portMappings": [],
+                    "essential": true,
+                    "environment": [],
+                    "mountPoints": [],
+                    "volumesFrom": []
+                }
+            ],
+            "family": "service",
+            "revision": 25,
+            "volumes": [],
+            "status": "ACTIVE",
+            "placementConstraints": [],
+            "compatibilities": [
+                "EXTERNAL",
+                "EC2"
+            ],
+            "registeredAt": {
+                "__class__": "datetime",
+                "year": 2022,
+                "month": 3,
+                "day": 8,
+                "hour": 11,
+                "minute": 55,
+                "second": 25,
+                "microsecond": 26000
+            },
+            "registeredBy": "arn:aws:iam::644160558196:user/Vladyslav_Yevsiukov"
+        },
+        "ResponseMetadata": {}
+    }
+}

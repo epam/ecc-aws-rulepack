@@ -1,0 +1,24 @@
+{
+    "status_code": 200,
+    "data": {
+        "Rules": [
+            {
+                "Name": "369_cloudwatch_rule_green",
+                "Arn": "arn:aws:events:us-east-1:644160558196:rule/369_cloudwatch_rule_green",
+                "EventPattern": "{\"detail-type\":[\"WorkSpaces Access\"],\"source\":[\"aws.workspaces\"]}",
+                "State": "ENABLED",
+                "EventBusName": "default"
+            },
+            {
+                "Name": "AutoScalingManagedRule",
+                "Arn": "arn:aws:events:us-east-1:644160558196:rule/AutoScalingManagedRule",
+                "EventPattern": "{\"source\":[\"aws.ec2\"],\"detail-type\":[\"EC2 Instance Rebalance Recommendation\",\"EC2 Spot Instance Interruption Warning\"]}",
+                "State": "ENABLED",
+                "Description": "This rule is used to route Instance notifications to EC2 Auto Scaling",
+                "ManagedBy": "autoscaling.amazonaws.com",
+                "EventBusName": "default"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}
