@@ -1,0 +1,295 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "DomainStatusList": [
+            {
+                "DomainId": "111111111111/domain-154-red2",
+                "DomainName": "domain-154-red2",
+                "ARN": "arn:aws:es:us-east-1:111111111111:domain/domain-154-red2",
+                "Created": true,
+                "Deleted": false,
+                "Processing": true,
+                "UpgradeProcessing": false,
+                "ElasticsearchVersion": "7.10",
+                "ElasticsearchClusterConfig": {
+                    "InstanceType": "t3.small.elasticsearch",
+                    "InstanceCount": 4,
+                    "DedicatedMasterEnabled": false,
+                    "ZoneAwarenessEnabled": true,
+                    "ZoneAwarenessConfig": {
+                        "AvailabilityZoneCount": 3
+                    },
+                    "WarmEnabled": false,
+                    "ColdStorageOptions": {
+                        "Enabled": false
+                    }
+                },
+                "EBSOptions": {
+                    "EBSEnabled": true,
+                    "VolumeType": "gp3",
+                    "VolumeSize": 10,
+                    "Iops": 3000,
+                    "Throughput": 125
+                },
+                "AccessPolicies": "",
+                "SnapshotOptions": {
+                    "AutomatedSnapshotStartHour": 0
+                },
+                "CognitoOptions": {
+                    "Enabled": false
+                },
+                "EncryptionAtRestOptions": {
+                    "Enabled": false
+                },
+                "NodeToNodeEncryptionOptions": {
+                    "Enabled": false
+                },
+                "AdvancedOptions": {
+                    "override_main_response_version": "false",
+                    "rest.action.multi.allow_explicit_index": "true"
+                },
+                "ServiceSoftwareOptions": {
+                    "CurrentVersion": "Elasticsearch_7_10_R20240502-P2",
+                    "NewVersion": "",
+                    "UpdateAvailable": false,
+                    "Cancellable": false,
+                    "UpdateStatus": "COMPLETED",
+                    "Description": "There is no software update available for this domain.",
+                    "AutomatedUpdateDate": {
+                        "__class__": "datetime",
+                        "year": 1970,
+                        "month": 1,
+                        "day": 1,
+                        "hour": 2,
+                        "minute": 0,
+                        "second": 0,
+                        "microsecond": 0
+                    },
+                    "OptionalDeployment": true
+                },
+                "DomainEndpointOptions": {
+                    "EnforceHTTPS": false,
+                    "TLSSecurityPolicy": "Policy-Min-TLS-1-2-2019-07",
+                    "CustomEndpointEnabled": false
+                },
+                "AdvancedSecurityOptions": {
+                    "Enabled": false,
+                    "InternalUserDatabaseEnabled": false,
+                    "AnonymousAuthEnabled": false
+                },
+                "AutoTuneOptions": {
+                    "State": "DISABLED"
+                },
+                "ChangeProgressDetails": {
+                    "ChangeId": "d9bf2cea-0c85-482d-8767-a15f86d3ce72",
+                    "ConfigChangeStatus": "ApplyingChanges",
+                    "StartTime": {
+                        "__class__": "datetime",
+                        "year": 2024,
+                        "month": 7,
+                        "day": 11,
+                        "hour": 12,
+                        "minute": 18,
+                        "second": 28,
+                        "microsecond": 945000
+                    },
+                    "LastUpdatedTime": {
+                        "__class__": "datetime",
+                        "year": 2024,
+                        "month": 7,
+                        "day": 11,
+                        "hour": 12,
+                        "minute": 27,
+                        "second": 35,
+                        "microsecond": 560000
+                    },
+                    "InitiatedBy": "CUSTOMER"
+                },
+                "DomainProcessingStatus": "Creating",
+                "ModifyingProperties": [
+                    {
+                        "Name": "AIMLOptions.NaturalLanguageQueryGenerationOptions",
+                        "ActiveValue": "",
+                        "PendingValue": "{\"CurrentState\":\"NOT_ENABLED\",\"DesiredState\":\"DISABLED\"}",
+                        "ValueType": "STRINGIFIED_JSON"
+                    },
+                    {
+                        "Name": "AdvancedOptions",
+                        "ActiveValue": "",
+                        "PendingValue": "{\"override_main_response_version\":\"false\",\"rest.action.multi.allow_explicit_index\":\"true\"}",
+                        "ValueType": "STRINGIFIED_JSON"
+                    },
+                    {
+                        "Name": "AdvancedSecurityOptions.AnonymousAuthDisableDate",
+                        "ActiveValue": "",
+                        "PendingValue": "false",
+                        "ValueType": "PLAIN_TEXT"
+                    },
+                    {
+                        "Name": "AdvancedSecurityOptions.AnonymousAuthEnabled",
+                        "ActiveValue": "",
+                        "PendingValue": "false",
+                        "ValueType": "PLAIN_TEXT"
+                    },
+                    {
+                        "Name": "AdvancedSecurityOptions.InternalUserDatabaseEnabled",
+                        "ActiveValue": "",
+                        "PendingValue": "false",
+                        "ValueType": "PLAIN_TEXT"
+                    },
+                    {
+                        "Name": "AdvancedSecurityOptions.JWTOptions",
+                        "ActiveValue": "",
+                        "PendingValue": "false",
+                        "ValueType": "PLAIN_TEXT"
+                    },
+                    {
+                        "Name": "AdvancedSecurityOptions.MasterUserOptions",
+                        "ActiveValue": "",
+                        "PendingValue": "false",
+                        "ValueType": "PLAIN_TEXT"
+                    },
+                    {
+                        "Name": "AdvancedSecurityOptions.SAMLOptions",
+                        "ActiveValue": "",
+                        "PendingValue": "false",
+                        "ValueType": "PLAIN_TEXT"
+                    },
+                    {
+                        "Name": "ElasticsearchClusterConfig.ColdStorageOptions",
+                        "ActiveValue": "",
+                        "PendingValue": "{\"Enabled\":false}",
+                        "ValueType": "STRINGIFIED_JSON"
+                    },
+                    {
+                        "Name": "ElasticsearchClusterConfig.DedicatedMasterCount",
+                        "ActiveValue": "",
+                        "PendingValue": "",
+                        "ValueType": "PLAIN_TEXT"
+                    },
+                    {
+                        "Name": "ElasticsearchClusterConfig.DedicatedMasterEnabled",
+                        "ActiveValue": "",
+                        "PendingValue": "false",
+                        "ValueType": "PLAIN_TEXT"
+                    },
+                    {
+                        "Name": "ElasticsearchClusterConfig.DedicatedMasterType",
+                        "ActiveValue": "",
+                        "PendingValue": "",
+                        "ValueType": "PLAIN_TEXT"
+                    },
+                    {
+                        "Name": "ElasticsearchClusterConfig.InstanceCount",
+                        "ActiveValue": "",
+                        "PendingValue": "4",
+                        "ValueType": "PLAIN_TEXT"
+                    },
+                    {
+                        "Name": "ElasticsearchClusterConfig.InstanceType",
+                        "ActiveValue": "",
+                        "PendingValue": "t3.small.elasticsearch",
+                        "ValueType": "PLAIN_TEXT"
+                    },
+                    {
+                        "Name": "ElasticsearchClusterConfig.MultiAZWithStandbyEnabled",
+                        "ActiveValue": "",
+                        "PendingValue": "false",
+                        "ValueType": "PLAIN_TEXT"
+                    },
+                    {
+                        "Name": "ElasticsearchClusterConfig.WarmCount",
+                        "ActiveValue": "",
+                        "PendingValue": "",
+                        "ValueType": "PLAIN_TEXT"
+                    },
+                    {
+                        "Name": "ElasticsearchClusterConfig.WarmEnabled",
+                        "ActiveValue": "",
+                        "PendingValue": "false",
+                        "ValueType": "PLAIN_TEXT"
+                    },
+                    {
+                        "Name": "ElasticsearchClusterConfig.WarmStorage",
+                        "ActiveValue": "",
+                        "PendingValue": "",
+                        "ValueType": "PLAIN_TEXT"
+                    },
+                    {
+                        "Name": "ElasticsearchClusterConfig.WarmType",
+                        "ActiveValue": "",
+                        "PendingValue": "",
+                        "ValueType": "PLAIN_TEXT"
+                    },
+                    {
+                        "Name": "ElasticsearchClusterConfig.ZoneAwarenessEnabled",
+                        "ActiveValue": "",
+                        "PendingValue": "true",
+                        "ValueType": "PLAIN_TEXT"
+                    },
+                    {
+                        "Name": "ElasticsearchVersion",
+                        "ActiveValue": "",
+                        "PendingValue": "7.10",
+                        "ValueType": "PLAIN_TEXT"
+                    },
+                    {
+                        "Name": "IPAddressType",
+                        "ActiveValue": "",
+                        "PendingValue": "ipv4",
+                        "ValueType": "PLAIN_TEXT"
+                    },
+                    {
+                        "Name": "TAGS",
+                        "ActiveValue": "",
+                        "PendingValue": "{\"CustodianRule\":\"ecc-aws-154-elasticsearch_domains_have_at_least_three_data_nodes\",\"ComplianceStatus\":\"Red1\"}",
+                        "ValueType": "STRINGIFIED_JSON"
+                    },
+                    {
+                        "Name": "DomainEndpointOptions",
+                        "ActiveValue": "",
+                        "PendingValue": "{\"CustomEndpointEnabled\":false,\"EnforceHTTPS\":false,\"TLSSecurityPolicy\":\"Policy-Min-TLS-1-2-2019-07\"}",
+                        "ValueType": "STRINGIFIED_JSON"
+                    },
+                    {
+                        "Name": "EBSOptions",
+                        "ActiveValue": "",
+                        "PendingValue": "{\"EBSEnabled\":true,\"Iops\":3000,\"Throughput\":125,\"VolumeSize\":10,\"VolumeType\":\"gp3\"}",
+                        "ValueType": "STRINGIFIED_JSON"
+                    },
+                    {
+                        "Name": "EncryptionAtRestOptions",
+                        "ActiveValue": "",
+                        "PendingValue": "{\"Enabled\":false}",
+                        "ValueType": "STRINGIFIED_JSON"
+                    },
+                    {
+                        "Name": "NodeToNodeEncryptionOptions",
+                        "ActiveValue": "",
+                        "PendingValue": "{\"Enabled\":false}",
+                        "ValueType": "STRINGIFIED_JSON"
+                    },
+                    {
+                        "Name": "OffPeakWindowOptions",
+                        "ActiveValue": "",
+                        "PendingValue": "{\"Enabled\":true,\"OffPeakWindow\":{\"WindowStartTime\":{\"Hours\":2,\"Minutes\":0}}}",
+                        "ValueType": "STRINGIFIED_JSON"
+                    },
+                    {
+                        "Name": "SnapshotOptions",
+                        "ActiveValue": "",
+                        "PendingValue": "{\"AutomatedSnapshotStartHour\":0}",
+                        "ValueType": "STRINGIFIED_JSON"
+                    },
+                    {
+                        "Name": "SoftwareUpdateOptions",
+                        "ActiveValue": "",
+                        "PendingValue": "{\"AutoSoftwareUpdateEnabled\":false}",
+                        "ValueType": "STRINGIFIED_JSON"
+                    }
+                ]
+            }
+        ]
+    }
+}

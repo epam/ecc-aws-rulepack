@@ -9,7 +9,7 @@ policies:
     comment: '010033042001'
     description: |
       S3 bucket allows all actions from all principals
-    resource: aws.s3-light
+    resource: aws.s3
     filters:
       - type: has-statement
         statements:

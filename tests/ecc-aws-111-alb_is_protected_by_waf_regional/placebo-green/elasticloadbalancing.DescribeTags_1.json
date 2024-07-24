@@ -3,7 +3,20 @@
     "data": {
         "TagDescriptions": [
             {
-                "ResourceArn": "arn:aws:elasticloadbalancing:us-east-1:111111111111:loadbalancer/app/alb-111-green/41dba721f54b3251",
+                "ResourceArn": "arn:aws:elasticloadbalancing:us-east-1:111111111111:loadbalancer/app/alb-111-green/9b41a6cc9ee798c6",
+                "Tags": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-111-alb_is_protected_by_waf_regional"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    }
+                ]
+            },
+            {
+                "ResourceArn": "arn:aws:elasticloadbalancing:us-east-1:111111111111:loadbalancer/app/alb-111-green2/b1cd2ca5741a7bda",
                 "Tags": [
                     {
                         "Key": "CustodianRule",

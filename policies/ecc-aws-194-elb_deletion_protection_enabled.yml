@@ -9,7 +9,7 @@ policies:
   - name: ecc-aws-194-elb_deletion_protection_enabled
     comment: '010047022000'
     description: |
-      Application, Network or Gateway Load Balancer deletion protection is not enabled
+      Application, Network, or Gateway Load Balancer deletion protection is not enabled
     resource: aws.app-elb
     filters:
       - type: attributes

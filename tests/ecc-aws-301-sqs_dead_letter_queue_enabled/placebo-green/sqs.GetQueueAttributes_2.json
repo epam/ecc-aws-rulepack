@@ -1,0 +1,21 @@
+{
+    "status_code": 200,
+    "data": {
+        "Attributes": {
+            "QueueArn": "arn:aws:sqs:us-east-1:111111111111:301_sqs_green1",
+            "ApproximateNumberOfMessages": "3",
+            "ApproximateNumberOfMessagesNotVisible": "0",
+            "ApproximateNumberOfMessagesDelayed": "0",
+            "CreatedTimestamp": "1720722867",
+            "LastModifiedTimestamp": "1720768599",
+            "VisibilityTimeout": "30",
+            "MaximumMessageSize": "262144",
+            "MessageRetentionPeriod": "345600",
+            "DelaySeconds": "0",
+            "RedriveAllowPolicy": "{\"redrivePermission\":\"byQueue\",\"sourceQueueArns\":[\"arn:aws:sqs:us-east-1:111111111111:301_sqs_green\"]}",
+            "ReceiveMessageWaitTimeSeconds": "0",
+            "SqsManagedSseEnabled": "true"
+        },
+        "ResponseMetadata": {}
+    }
+}

@@ -4,7 +4,9 @@
         {
             "Effect": "Allow",
             "Action": [
-                "es:DescribeElasticsearchDomains"
+                "es:ListDomainNames",
+                "es:DescribeDomains",
+                "es:ListTags"
             ],
             "Resource": "*"
         }

@@ -11,4 +11,8 @@ policies:
       SQS Queue dead letter queue is disabled
     resource: sqs
     filters:
-      - type: redrive-policy-sqs-filter
+      - not:
+        - type: dead-letter
+      - type: value
+        key: RedrivePolicy
+        value: absent
