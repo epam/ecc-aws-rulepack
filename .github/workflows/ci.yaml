@@ -22,7 +22,7 @@ jobs:
     steps: 
       - uses: actions/checkout@v4
       - name: Checkout ecc-actions
-        run: git clone -b support_fork_for_flight_tests "https://git:$PROJECT_TOKEN@git.epam.com/epmc-sec/cloudlab/cloud_custodian/ecc-actions.git" ecc-actions
+        run: git clone -b main "https://git:$PROJECT_TOKEN@git.epam.com/epmc-sec/cloudlab/cloud_custodian/ecc-actions.git" ecc-actions
         env:
           PROJECT_TOKEN: ${{ secrets.ECC_CHANGELOG_ACTION }}
       - uses: ./ecc-actions/flight-test-dependencies
