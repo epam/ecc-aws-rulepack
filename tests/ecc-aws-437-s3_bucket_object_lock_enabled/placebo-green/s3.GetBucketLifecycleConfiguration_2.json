@@ -1,0 +1,11 @@
+{
+    "status_code": 404,
+    "data": {
+        "Error": {
+            "Code": "NoSuchLifecycleConfiguration",
+            "Message": "The lifecycle configuration does not exist",
+            "BucketName": "437-bucket-58627-green-2"
+        },
+        "ResponseMetadata": {}
+    }
+}

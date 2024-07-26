@@ -1,0 +1,86 @@
+{
+    "status_code": 200,
+    "data": {
+        "Certificate": {
+            "CertificateArn": "arn:aws:acm:us-east-1:121212121212:certificate/a6545ce6-77ff-4595-b236-8939283c0d39",
+            "DomainName": "example.com",
+            "SubjectAlternativeNames": [
+                "example.com"
+            ],
+            "DomainValidationOptions": [
+                {
+                    "DomainName": "example.com"
+                }
+            ],
+            "Serial": "74:bc:e8:f3:0e:54:3d:12:91:da:f0:96:88:85:91:54",
+            "Subject": "O=ACME Examples\\, Inc,CN=example.com",
+            "Issuer": "ACME Examples\\, Inc",
+            "CreatedAt": {
+                "__class__": "datetime",
+                "year": 2021,
+                "month": 6,
+                "day": 29,
+                "hour": 12,
+                "minute": 50,
+                "second": 37,
+                "microsecond": 0
+            },
+            "ImportedAt": {
+                "__class__": "datetime",
+                "year": 2021,
+                "month": 6,
+                "day": 29,
+                "hour": 12,
+                "minute": 50,
+                "second": 37,
+                "microsecond": 0
+            },
+            "Status": "ISSUED",
+            "NotBefore": {
+                "__class__": "datetime",
+                "year": 2021,
+                "month": 6,
+                "day": 29,
+                "hour": 12,
+                "minute": 50,
+                "second": 36,
+                "microsecond": 0
+            },
+            "NotAfter": {
+                "__class__": "datetime",
+                "year": 2021,
+                "month": 8,
+                "day": 2,
+                "hour": 16,
+                "minute": 50,
+                "second": 36,
+                "microsecond": 0
+            },
+            "KeyAlgorithm": "RSA-2048",
+            "SignatureAlgorithm": "SHA256WITHRSA",
+            "InUseBy": [
+                "arn:aws:elasticloadbalancing:us-east-1:121212121212:loadbalancer/app/alb-https-011-green/c912d9390442c4ea"
+            ],
+            "Type": "IMPORTED",
+            "KeyUsages": [
+                {
+                    "Name": "DIGITAL_SIGNATURE"
+                },
+                {
+                    "Name": "KEY_ENCIPHERMENT"
+                }
+            ],
+            "ExtendedKeyUsages": [
+                {
+                    "Name": "TLS_WEB_SERVER_AUTHENTICATION",
+                    "OID": "1.3.6.1.5.5.7.3.1"
+                }
+            ],
+            "RenewalEligibility": "INELIGIBLE",
+            "Options": {
+                "CertificateTransparencyLoggingPreference": "DISABLED"
+            }
+        },
+        "ResponseMetadata": {}
+    }
+}

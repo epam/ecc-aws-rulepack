@@ -1,0 +1,52 @@
+{
+    "status_code": 200,
+    "data": {
+        "Parameters": [
+            {
+                "ParameterName": "general_log",
+                "ParameterValue": "1",
+                "Description": "Whether the general query log is enabled",
+                "Source": "user",
+                "ApplyType": "dynamic",
+                "DataType": "boolean",
+                "AllowedValues": "0,1",
+                "IsModifiable": true,
+                "ApplyMethod": "immediate",
+                "SupportedEngineModes": [
+                    "provisioned",
+                    "serverless"
+                ]
+            },
+            {
+                "ParameterName": "log_output",
+                "ParameterValue": "FILE",
+                "Description": "Controls where to store query logs",
+                "Source": "user",
+                "ApplyType": "dynamic",
+                "DataType": "string",
+                "AllowedValues": "TABLE,FILE,NONE",
+                "IsModifiable": true,
+                "ApplyMethod": "immediate",
+                "SupportedEngineModes": [
+                    "provisioned"
+                ]
+            },  
+            {
+                "ParameterName": "slow_query_log",
+                "ParameterValue": "0",
+                "Description": "Enable or disable the slow query log",
+                "Source": "user",
+                "ApplyType": "dynamic",
+                "DataType": "boolean",
+                "AllowedValues": "0,1",
+                "IsModifiable": true,
+                "ApplyMethod": "immediate",
+                "SupportedEngineModes": [
+                    "provisioned",
+                    "serverless"
+                ]
+            }          
+        ],
+        "ResponseMetadata": {}
+    }
+}

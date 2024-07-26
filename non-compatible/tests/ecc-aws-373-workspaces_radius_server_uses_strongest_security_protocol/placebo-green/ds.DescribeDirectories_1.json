@@ -1,0 +1,74 @@
+{
+    "status_code": 200,
+    "data": {
+        "DirectoryDescriptions": [
+            {
+                "DirectoryId": "d-9067b0a5fb",
+                "Name": "workspaces.373RadiusServerGreen.com",
+                "ShortName": "workspaces",
+                "Size": "Small",
+                "Edition": "Standard",
+                "Alias": "d-9067b0a5fb",
+                "AccessUrl": "d-9067b0a5fb.awsapps.com",
+                "DnsIpAddrs": [
+                    "10.0.1.13",
+                    "10.0.2.80"
+                ],
+                "Stage": "Active",
+                "LaunchTime": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 7,
+                    "day": 6,
+                    "hour": 14,
+                    "minute": 29,
+                    "second": 30,
+                    "microsecond": 289000
+                },
+                "StageLastUpdatedDateTime": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 7,
+                    "day": 6,
+                    "hour": 14,
+                    "minute": 55,
+                    "second": 32,
+                    "microsecond": 43000
+                },
+                "Type": "MicrosoftAD",
+                "VpcSettings": {
+                    "VpcId": "vpc-0e9242291c37a97b2",
+                    "SubnetIds": [
+                        "subnet-07e6199227cd8adfb",
+                        "subnet-0cb3d536c103c80d2"
+                    ],
+                    "SecurityGroupId": "sg-080cf1d3494665d42",
+                    "AvailabilityZones": [
+                        "us-east-1d",
+                        "us-east-1c"
+                    ]
+                },
+                "RadiusSettings": {
+                    "RadiusServers": [
+                        "127.0.0.1"
+                    ],
+                    "RadiusPort": 1812,
+                    "RadiusTimeout": 1,
+                    "RadiusRetries": 4,
+                    "SharedSecret": "",
+                    "AuthenticationProtocol": "MS-CHAPv2",
+                    "DisplayLabel": "526_green",
+                    "UseSameUsername": false
+                },
+                "RadiusStatus": "Failed",
+                "SsoEnabled": false,
+                "DesiredNumberOfDomainControllers": 2,
+                "RegionsInfo": {
+                    "PrimaryRegion": "us-east-1",
+                    "AdditionalRegions": []
+                }
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

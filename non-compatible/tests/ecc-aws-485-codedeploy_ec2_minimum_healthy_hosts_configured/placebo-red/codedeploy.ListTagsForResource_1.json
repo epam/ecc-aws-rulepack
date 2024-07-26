@@ -1,0 +1,16 @@
+{
+    "status_code": 200,
+    "data": {
+        "Tags": [
+            {
+                "Key": "CustodianRule",
+                "Value": "epam-aws-485-codedeploy_ec2_minimum_healthy_hosts_configured"
+            },
+            {
+                "Key": "ComplianceStatus",
+                "Value": "Red"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

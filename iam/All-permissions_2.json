@@ -5,6 +5,7 @@
             "Effect": "Allow",
             "Action": [
                 "iam:GetServerCertificate",
+                "codebuild:ListSourceCredentials",
                 "route53:ListHostedZones",
                 "route53:ListQueryLoggingConfigs",
                 "route53:ListResourceRecordSets",

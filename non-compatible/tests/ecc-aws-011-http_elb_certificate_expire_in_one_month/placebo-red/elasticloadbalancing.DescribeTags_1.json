@@ -1,0 +1,12 @@
+{
+    "status_code": 200,
+    "data": {
+        "TagDescriptions": [
+            {
+                "ResourceArn": "arn:aws:elasticloadbalancing:us-east-1:1212121212:loadbalancer/app/alb-https-011-red/b541d23e2a5980b9",
+                "Tags": []
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

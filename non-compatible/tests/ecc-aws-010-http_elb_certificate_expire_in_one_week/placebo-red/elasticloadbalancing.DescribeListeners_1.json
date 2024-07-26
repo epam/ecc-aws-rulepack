@@ -1,0 +1,38 @@
+{
+    "status_code": 200,
+    "data": {
+        "Listeners": [
+            {
+                "ListenerArn": "arn:aws:elasticloadbalancing:us-east-1:1212121212:listener/app/alb-https-010-red/b541d23e2a5980b9/2f23efe31cd50e38",
+                "LoadBalancerArn": "arn:aws:elasticloadbalancing:us-east-1:1212121212:loadbalancer/app/alb-https-010-red/b541d23e2a5980b9",
+                "Port": 443,
+                "Protocol": "HTTPS",
+                "Certificates": [
+                    {
+                        "CertificateArn": "arn:aws:acm:us-east-1:1212121212:certificate/109369bd-42ff-4cb9-9fd9-d98e622cff43"
+                    }
+                ],
+                "SslPolicy": "ELBSecurityPolicy-2016-08",
+                "DefaultActions": [
+                    {
+                        "Type": "forward",
+                        "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:1212121212:targetgroup/alb-010-red/1772fdc48100e931",
+                        "Order": 1,
+                        "ForwardConfig": {
+                            "TargetGroups": [
+                                {
+                                    "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:1212121212:targetgroup/alb-010-red/1772fdc48100e931",
+                                    "Weight": 1
+                                }
+                            ],
+                            "TargetGroupStickinessConfig": {
+                                "Enabled": false
+                            }
+                        }
+                    }
+                ]
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

@@ -1,0 +1,20 @@
+{
+    "status_code": 200,
+    "data": {
+        "trailList": [
+            {
+                "Name": "c7n-green-trail-084ggg",
+                "S3BucketName": "c7n-green-bucket-084ggg",
+                "IncludeGlobalServiceEvents": true,
+                "IsMultiRegionTrail": true,
+                "HomeRegion": "us-east-1",
+                "TrailARN": "arn:aws:cloudtrail:us-east-1:1212121212:trail/c7n-green-trail-084ggg",
+                "LogFileValidationEnabled": false,
+                "HasCustomEventSelectors": false,
+                "HasInsightSelectors": false,
+                "IsOrganizationTrail": false
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

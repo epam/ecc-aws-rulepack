@@ -1,0 +1,79 @@
+{
+    "status_code": 200,
+    "data": {
+        "NetworkInterfaces": [
+            {
+                "Association": {
+                    "IpOwnerId": "644160558196",
+                    "PublicDnsName": "ec2-18-233-14-186.compute-1.amazonaws.com",
+                    "PublicIp": "18.233.14.186"
+                },
+                "Attachment": {
+                    "AttachTime": {
+                        "__class__": "datetime",
+                        "year": 2022,
+                        "month": 5,
+                        "day": 23,
+                        "hour": 10,
+                        "minute": 12,
+                        "second": 20,
+                        "microsecond": 0
+                    },
+                    "AttachmentId": "eni-attach-01eefdf2f8e724883",
+                    "DeleteOnTermination": false,
+                    "DeviceIndex": 1,
+                    "NetworkCardIndex": 0,
+                    "InstanceOwnerId": "644160558196",
+                    "Status": "attached"
+                },
+                "AvailabilityZone": "us-east-1c",
+                "Description": "Created By Amazon Workspaces for AWS Account ID 644160558196",
+                "Groups": [
+                    {
+                        "GroupName": "workstation_security_group3",
+                        "GroupId": "sg-0a2d122a65e992419"
+                    },
+                    {
+                        "GroupName": "workstation_security_group",
+                        "GroupId": "sg-0dfa59e50240f5e1d"
+                    },
+                    {
+                        "GroupName": "workstation_security_group2",
+                        "GroupId": "sg-000421c5480bbadef"
+                    },
+                    {
+                        "GroupName": "d-90674cc9a1_workspacesMembers",
+                        "GroupId": "sg-0409f8de56ef6d316"
+                    }
+                ],
+                "InterfaceType": "interface",
+                "Ipv6Addresses": [],
+                "MacAddress": "12:7c:08:36:a1:1d",
+                "NetworkInterfaceId": "eni-050dfd9bd0822e161",
+                "OwnerId": "644160558196",
+                "PrivateDnsName": "ip-10-0-1-215.ec2.internal",
+                "PrivateIpAddress": "10.0.1.215",
+                "PrivateIpAddresses": [
+                    {
+                        "Association": {
+                            "IpOwnerId": "644160558196",
+                            "PublicDnsName": "ec2-18-233-14-186.compute-1.amazonaws.com",
+                            "PublicIp": "18.233.14.186"
+                        },
+                        "Primary": true,
+                        "PrivateDnsName": "ip-10-0-1-215.ec2.internal",
+                        "PrivateIpAddress": "10.0.1.215"
+                    }
+                ],
+                "RequesterId": "AROAXPHGII4AJZ6FQEGXM:WorkSpace-Creation",
+                "RequesterManaged": false,
+                "SourceDestCheck": true,
+                "Status": "in-use",
+                "SubnetId": "subnet-014f50caf7d83d8f2",
+                "TagSet": [],
+                "VpcId": "vpc-0aef940e9ce813af1"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

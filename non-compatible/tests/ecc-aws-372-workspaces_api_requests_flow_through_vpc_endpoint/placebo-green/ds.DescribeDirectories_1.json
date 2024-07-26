@@ -1,0 +1,56 @@
+{
+    "status_code": 200,
+    "data": {
+        "DirectoryDescriptions": [
+            {
+                "DirectoryId": "d-9067b08c43",
+                "Name": "workspaces.green-example.com",
+                "ShortName": "workspaces",
+                "Size": "Small",
+                "Alias": "d-9067b08c43",
+                "AccessUrl": "d-9067b08c43.awsapps.com",
+                "DnsIpAddrs": [
+                    "10.0.1.180",
+                    "10.0.2.193"
+                ],
+                "Stage": "Active",
+                "LaunchTime": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 7,
+                    "day": 7,
+                    "hour": 9,
+                    "minute": 55,
+                    "second": 59,
+                    "microsecond": 78000
+                },
+                "StageLastUpdatedDateTime": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 7,
+                    "day": 7,
+                    "hour": 10,
+                    "minute": 2,
+                    "second": 52,
+                    "microsecond": 303000
+                },
+                "Type": "SimpleAD",
+                "VpcSettings": {
+                    "VpcId": "vpc-075929f398c4009f4",
+                    "SubnetIds": [
+                        "subnet-0267bd372914b0019",
+                        "subnet-0adb74da2954b4ef3"
+                    ],
+                    "SecurityGroupId": "sg-028a5b2ce722a3863",
+                    "AvailabilityZones": [
+                        "us-east-1d",
+                        "us-east-1c"
+                    ]
+                },
+                "SsoEnabled": false,
+                "DesiredNumberOfDomainControllers": 0
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}
