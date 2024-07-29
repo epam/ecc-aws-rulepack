@@ -78,6 +78,7 @@ aws = {
         "iam",
         "cloudtrail",
         "dms",
+        "eks",
         "codebuild"
     ],
     "sleep_before_scan": {
