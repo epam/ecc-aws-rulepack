@@ -5,6 +5,7 @@
             "Effect": "Allow",
             "Action": [
                 "elasticloadbalancing:DescribeLoadBalancers",
+                "tag:GetResources",
                 "elasticloadbalancing:DescribeLoadBalancerAttributes"
             ],
             "Resource": "*"

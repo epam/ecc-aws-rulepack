@@ -9,7 +9,7 @@ policies:
   - name: ecc-aws-013-remove_weak_ciphers_for_clb
     comment: '010023022000'
     description: |
-      Classic Load Balancer uses weak ciphers
+      Classic Load Balancer does not enforce the latest TLS policy
     resource: elb
     filters:
       - type: ssl-policy
