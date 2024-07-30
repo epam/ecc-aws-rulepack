@@ -15,7 +15,9 @@
                 "elasticloadbalancing:DescribeTargetGroups",
                 "ec2:DescribeSnapshots",
                 "ec2:DescribeImages",
-                "elasticloadbalancing:DescribeTargetHealth"
+                "elasticloadbalancing:DescribeTargetHealth",
+                "autoscaling:DescribeLaunchConfigurations",
+                "tag:GetResources"
             ],
             "Resource": "*"
         }

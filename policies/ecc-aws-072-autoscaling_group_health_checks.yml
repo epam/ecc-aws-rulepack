@@ -12,10 +12,15 @@ policies:
       Auto scaling groups associated with a load balancer do not use health checks
     resource: asg
     filters:
+      - or:
+        - type: value
+          key: LoadBalancerNames
+          value: not-null
+        - type: value
+          key: TargetGroupARNs
+          value: not-null
+
       - not:
           - type: value
             key: HealthCheckType
             value: ELB
-          - type: value
-            key: HealthCheckGracePeriod
-            value: 300
