@@ -164,7 +164,7 @@ jobs:
   deploy_and_scan_not_parallel_resources:
     name: Scan N/P
     runs-on: ubuntu-22.04
-    needs: [deploy_common_resources, create_readonly_role_for_scans, prepare_resource_matrix]
+    needs: [deploy_common_resources, create_readonly_role_for_scans, prepare_resource_matrix] # pack_iam_policies_per_resource,
     if: ${{ needs.prepare_resource_matrix.outputs.not_parallel_resources_list != '[]' }}
     strategy:
       max-parallel: 1
@@ -224,7 +224,6 @@ jobs:
     name: Destroy common
     runs-on: ubuntu-22.04
     needs: [delete_readonly_role_for_scans]
-    #needs: [deploy_common_resources, deploy_and_scan_parallel_resources,deploy_and_scan_not_parallel_resources]
     if: ${{ always() }}
     strategy:
       max-parallel: 10
