@@ -13,6 +13,7 @@ aws = {
         "ecc-aws-579-reserved_ec2_instance_recent_purchases",
         "ecc-aws-580-reserved_instance_lease_expiration_in_30_days",
         "ecc-aws-581-reserved_instance_lease_expiration_in_7_days",
+        "ecc-aws-583-elb_classic", # terraform must create CLB, the policy checks their absence, not possible to satisfy both cases
         "ecc-aws-587-elasticsearch_reserved_instance_payment_failed",
         "ecc-aws-588-elasticsearch_reserved_instance_payment_pending",
         "ecc-aws-589-elasticsearch_reserved_instance_recent_purchases",
