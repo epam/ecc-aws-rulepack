@@ -39,7 +39,7 @@
   "elasticbeanstalk-environment": ["EnvironmentArn"],
   "elasticsearch": ["ARN"],
   "elasticsearch-reserved": ["ReservedElasticsearchInstanceId"],
-  "elb": ["LoadBalancerArn"],
+  "elb": ["LoadBalancerName"],
   "emr": ["ClusterArn"],
   "eni": ["NetworkInterfaceId"],
   "event-bus": ["Arn"],

@@ -21,7 +21,7 @@ resource "tls_self_signed_cert" "this" {
 }
 
 resource "aws_iam_server_certificate" "this" {
-  name             = "${module.naming.resource_prefix.acm}"
+  name             = module.naming.resource_prefix.acm
   certificate_body = tls_self_signed_cert.this.cert_pem
   private_key      = tls_private_key.this.private_key_pem
 }
