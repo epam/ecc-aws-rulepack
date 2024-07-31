@@ -127,19 +127,22 @@ jobs:
         id: prepare-resource-matrix
         uses: ./ecc-actions/auto-test-actions/prepare-resource-matrix
 
-  deploy_and_scan_parallel_resources:
-    name: Scan P
+  deploy_and_scan_parallel_resources_red:
+    name: Scan P (red)
     runs-on: ubuntu-22.04
-    needs: [deploy_common_resources, create_readonly_role_for_scans, prepare_resource_matrix] # pack_iam_policies_per_resource,
-    if: ${{ needs.prepare_resource_matrix.outputs.parallel_resources_list != '[]' }}
+    needs: [
+        deploy_common_resources,
+        create_readonly_role_for_scans,
+        prepare_resource_matrix,
+      ] # pack_iam_policies_per_resource,
+    if: ${{ always() && needs.prepare_resource_matrix.outputs.parallel_resources_list != '[]' }}
     strategy:
       max-parallel: 10
       fail-fast: false
       matrix:
-        compliance: ['green', 'red']
         resource: ${{fromJson(needs.prepare_resource_matrix.outputs.parallel_resources_list)}}
     env:
-      COMPLINCE: ${{ matrix.compliance }}
+      COMPLINCE: red
       RESOURCE: ${{ matrix.resource }}
     steps:
       - name: Git clone the repository
@@ -150,57 +153,142 @@ jobs:
         env:
           PROJECT_TOKEN: ${{ secrets.ECC_CHANGELOG_ACTION }}
           ACTIONS_REPO_BRANCH: ${{ env.ACTIONS_REPO_BRANCH }}
-          
+
       - name: Deploy and scan parallel resources
         uses: ./ecc-actions/auto-test-actions/deploy-and-scan-resources
         with:
           CI_ASSUME_ROLE: ${{ secrets.CI_ASSUME_ROLE }}
           SERVICE_ACCOUNT: ${{ secrets.SERVICE_ACCOUNT }}
           WORKLOAD_IDENTITY_PROVIDER: ${{ secrets.WORKLOAD_IDENTITY_PROVIDER }}
-          COMPLIANCE: ${{ matrix.compliance }}
+          COMPLIANCE: red
           PROJECT_TOKEN: ${{ secrets.CLOUDCUSTODIAN_CORE }}
           READONLY_ROLE_NAME: ${{ needs.create_readonly_role_for_scans.outputs.readonly_role_name }}
           GOOGLE_IMPERSONATE_SERVICE_ACCOUNT: ${{ secrets.GOOGLE_IMPERSONATE_SERVICE_ACCOUNT }}
 
-  deploy_and_scan_not_parallel_resources:
-    name: Scan N/P
+  deploy_and_scan_parallel_resources_green:
+    name: Scan P (green)
     runs-on: ubuntu-22.04
-    needs: [deploy_common_resources, create_readonly_role_for_scans, prepare_resource_matrix] # pack_iam_policies_per_resource,
-    if: ${{ needs.prepare_resource_matrix.outputs.not_parallel_resources_list != '[]' }}
+    needs: [
+        deploy_common_resources,
+        create_readonly_role_for_scans,
+        prepare_resource_matrix,
+      ] # pack_iam_policies_per_resource,
+    if: ${{ always() && needs.prepare_resource_matrix.outputs.parallel_resources_list != '[]' }}
+    strategy:
+      max-parallel: 10
+      fail-fast: false
+      matrix:
+        resource: ${{fromJson(needs.prepare_resource_matrix.outputs.parallel_resources_list)}}
+    env:
+      COMPLINCE: green
+      RESOURCE: ${{ matrix.resource }}
+    steps:
+      - name: Git clone the repository
+        uses: actions/checkout@v4
+
+      - name: Checkout ecc-actions
+        run: git clone -b $ACTIONS_REPO_BRANCH "https://git:$PROJECT_TOKEN@git.epam.com/epmc-sec/cloudlab/cloud_custodian/ecc-actions.git" ecc-actions
+        env:
+          PROJECT_TOKEN: ${{ secrets.ECC_CHANGELOG_ACTION }}
+          ACTIONS_REPO_BRANCH: ${{ env.ACTIONS_REPO_BRANCH }}
+
+      - name: Deploy and scan parallel resources
+        uses: ./ecc-actions/auto-test-actions/deploy-and-scan-resources
+        with:
+          CI_ASSUME_ROLE: ${{ secrets.CI_ASSUME_ROLE }}
+          SERVICE_ACCOUNT: ${{ secrets.SERVICE_ACCOUNT }}
+          WORKLOAD_IDENTITY_PROVIDER: ${{ secrets.WORKLOAD_IDENTITY_PROVIDER }}
+          COMPLIANCE: green
+          PROJECT_TOKEN: ${{ secrets.CLOUDCUSTODIAN_CORE }}
+          READONLY_ROLE_NAME: ${{ needs.create_readonly_role_for_scans.outputs.readonly_role_name }}
+          GOOGLE_IMPERSONATE_SERVICE_ACCOUNT: ${{ secrets.GOOGLE_IMPERSONATE_SERVICE_ACCOUNT }}
+
+  deploy_and_scan_not_parallel_resources_red:
+    name: Scan N/P (red)
+    runs-on: ubuntu-22.04
+    needs: [
+        deploy_common_resources,
+        create_readonly_role_for_scans,
+        prepare_resource_matrix,
+      ] # pack_iam_policies_per_resource,
+    if: ${{ always() && needs.prepare_resource_matrix.outputs.not_parallel_resources_list != '[]' }}
     strategy:
       max-parallel: 1
       fail-fast: false
       matrix:
-        compliance: ['green', 'red']
         resource: ${{fromJson(needs.prepare_resource_matrix.outputs.not_parallel_resources_list)}}
     env:
-      COMPLINCE: ${{ matrix.compliance }}
+      COMPLINCE: red
       RESOURCE: ${{ matrix.resource }}
     steps:
-    - name: Git clone the repository
-      uses: actions/checkout@v4
+      - name: Git clone the repository
+        uses: actions/checkout@v4
 
-    - name: Checkout ecc-actions
-      run: git clone -b $ACTIONS_REPO_BRANCH "https://git:$PROJECT_TOKEN@git.epam.com/epmc-sec/cloudlab/cloud_custodian/ecc-actions.git" ecc-actions
-      env:
-        PROJECT_TOKEN: ${{ secrets.ECC_CHANGELOG_ACTION }}
-        ACTIONS_REPO_BRANCH: ${{ env.ACTIONS_REPO_BRANCH }}
-    - name: Deploy and scan non-parallel resources
-      uses: ./ecc-actions/auto-test-actions/deploy-and-scan-resources
-      with:
-        CI_ASSUME_ROLE: ${{ secrets.CI_ASSUME_ROLE }}
-        SERVICE_ACCOUNT: ${{ secrets.SERVICE_ACCOUNT }}
-        WORKLOAD_IDENTITY_PROVIDER: ${{ secrets.WORKLOAD_IDENTITY_PROVIDER }}
-        COMPLIANCE: ${{ matrix.compliance }}
-        PROJECT_TOKEN: ${{ secrets.CLOUDCUSTODIAN_CORE }}
-        READONLY_ROLE_NAME: ${{ needs.create_readonly_role_for_scans.outputs.readonly_role_name }}
-        GOOGLE_IMPERSONATE_SERVICE_ACCOUNT: ${{ secrets.GOOGLE_IMPERSONATE_SERVICE_ACCOUNT }}
+      - name: Checkout ecc-actions
+        run: git clone -b $ACTIONS_REPO_BRANCH "https://git:$PROJECT_TOKEN@git.epam.com/epmc-sec/cloudlab/cloud_custodian/ecc-actions.git" ecc-actions
+        env:
+          PROJECT_TOKEN: ${{ secrets.ECC_CHANGELOG_ACTION }}
+          ACTIONS_REPO_BRANCH: ${{ env.ACTIONS_REPO_BRANCH }}
+      - name: Deploy and scan non-parallel resources
+        uses: ./ecc-actions/auto-test-actions/deploy-and-scan-resources
+        with:
+          CI_ASSUME_ROLE: ${{ secrets.CI_ASSUME_ROLE }}
+          SERVICE_ACCOUNT: ${{ secrets.SERVICE_ACCOUNT }}
+          WORKLOAD_IDENTITY_PROVIDER: ${{ secrets.WORKLOAD_IDENTITY_PROVIDER }}
+          COMPLIANCE: red
+          PROJECT_TOKEN: ${{ secrets.CLOUDCUSTODIAN_CORE }}
+          READONLY_ROLE_NAME: ${{ needs.create_readonly_role_for_scans.outputs.readonly_role_name }}
+          GOOGLE_IMPERSONATE_SERVICE_ACCOUNT: ${{ secrets.GOOGLE_IMPERSONATE_SERVICE_ACCOUNT }}
+
+  deploy_and_scan_not_parallel_resources_green:
+    name: Scan N/P (green)
+    runs-on: ubuntu-22.04
+    needs: [
+        deploy_common_resources,
+        create_readonly_role_for_scans,
+        prepare_resource_matrix,
+      ] # pack_iam_policies_per_resource,
+    if: ${{ always() && needs.prepare_resource_matrix.outputs.not_parallel_resources_list != '[]' }}
+    strategy:
+      max-parallel: 1
+      fail-fast: false
+      matrix:
+        resource: ${{fromJson(needs.prepare_resource_matrix.outputs.not_parallel_resources_list)}}
+    env:
+      COMPLINCE: green
+      RESOURCE: ${{ matrix.resource }}
+    steps:
+      - name: Git clone the repository
+        uses: actions/checkout@v4
+
+      - name: Checkout ecc-actions
+        run: git clone -b $ACTIONS_REPO_BRANCH "https://git:$PROJECT_TOKEN@git.epam.com/epmc-sec/cloudlab/cloud_custodian/ecc-actions.git" ecc-actions
+        env:
+          PROJECT_TOKEN: ${{ secrets.ECC_CHANGELOG_ACTION }}
+          ACTIONS_REPO_BRANCH: ${{ env.ACTIONS_REPO_BRANCH }}
+      - name: Deploy and scan non-parallel resources
+        uses: ./ecc-actions/auto-test-actions/deploy-and-scan-resources
+        with:
+          CI_ASSUME_ROLE: ${{ secrets.CI_ASSUME_ROLE }}
+          SERVICE_ACCOUNT: ${{ secrets.SERVICE_ACCOUNT }}
+          WORKLOAD_IDENTITY_PROVIDER: ${{ secrets.WORKLOAD_IDENTITY_PROVIDER }}
+          COMPLIANCE: green
+          PROJECT_TOKEN: ${{ secrets.CLOUDCUSTODIAN_CORE }}
+          READONLY_ROLE_NAME: ${{ needs.create_readonly_role_for_scans.outputs.readonly_role_name }}
+          GOOGLE_IMPERSONATE_SERVICE_ACCOUNT: ${{ secrets.GOOGLE_IMPERSONATE_SERVICE_ACCOUNT }}
 
   delete_readonly_role_for_scans:
     name: Delete readonly role for scans
     if: ${{ always() }}
     runs-on: ubuntu-22.04
-    needs: [ create_readonly_role_for_scans, deploy_and_scan_parallel_resources, deploy_and_scan_not_parallel_resources ]
+    needs:
+      [
+        create_readonly_role_for_scans,
+        deploy_and_scan_parallel_resources_red,
+        deploy_and_scan_parallel_resources_green,
+        deploy_and_scan_not_parallel_resources_red,
+        deploy_and_scan_not_parallel_resources_green
+      ]
     steps:
       - name: Git clone the repository
         uses: actions/checkout@v4
