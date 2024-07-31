@@ -31,3 +31,9 @@ resource "aws_acm_certificate" "this" {
   private_key      = tls_private_key.this.private_key_pem
   certificate_body = tls_self_signed_cert.this.cert_pem
 }
+
+resource "time_sleep" "wait_10_seconds" {
+  depends_on = [aws_iam_server_certificate.this, aws_acm_certificate.this]
+
+  destroy_duration = "10s"
+}

@@ -29,6 +29,8 @@ resource "aws_elb" "this1" {
     interval            = 30
   }
   instances = ["${aws_instance.this.id}"]
+
+  depends_on = [time_sleep.wait_10_seconds]
 }
 resource "aws_load_balancer_policy" "this1" {
   load_balancer_name = aws_elb.this1.name

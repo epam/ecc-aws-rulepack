@@ -45,6 +45,8 @@ resource "aws_elb" "this1" {
   }
 
   instances = ["${aws_instance.this.id}"]
+
+  depends_on = [time_sleep.wait_10_seconds]
 }
 
 resource "aws_load_balancer_policy" "this1" {
