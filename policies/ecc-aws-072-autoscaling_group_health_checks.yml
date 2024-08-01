@@ -9,7 +9,7 @@ policies:
   - name: ecc-aws-072-autoscaling_group_health_checks
     comment: '010018032200'
     description: |
-      Auto scaling groups associated with a load balancer do not use health checks
+      Auto Scaling groups associated with a load balancer do not use ELB health checks
     resource: asg
     filters:
       - or:
