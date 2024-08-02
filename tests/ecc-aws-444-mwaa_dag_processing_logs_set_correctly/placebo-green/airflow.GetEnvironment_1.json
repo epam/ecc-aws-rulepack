@@ -3,56 +3,51 @@
     "data": {
         "ResponseMetadata": {},
         "Environment": {
-            "AirflowConfigurationOptions": {
-                "core.default_task_retries": "16",
-                "core.parallelism": "1"
-            },
-            "AirflowVersion": "2.2.2",
+            "AirflowVersion": "2.8.1",
             "Arn": "arn:aws:airflow:us-east-1:111111111111:environment/mwaa_444_green",
             "CreatedAt": {
                 "__class__": "datetime",
-                "year": 2022,
-                "month": 7,
-                "day": 20,
-                "hour": 9,
-                "minute": 34,
-                "second": 17,
+                "year": 2024,
+                "month": 8,
+                "day": 2,
+                "hour": 20,
+                "minute": 4,
+                "second": 40,
                 "microsecond": 0
             },
             "DagS3Path": "dags/",
+            "EndpointManagement": "SERVICE",
             "EnvironmentClass": "mw1.small",
-            "ExecutionRoleArn": "arn:aws:iam::111111111111:role/444_role_green",
+            "ExecutionRoleArn": "arn:aws:iam::111111111111:role/autotest_airflow_role_red",
             "LastUpdate": {
                 "CreatedAt": {
                     "__class__": "datetime",
-                    "year": 2022,
-                    "month": 7,
-                    "day": 20,
-                    "hour": 9,
-                    "minute": 34,
-                    "second": 17,
+                    "year": 2024,
+                    "month": 8,
+                    "day": 2,
+                    "hour": 20,
+                    "minute": 4,
+                    "second": 40,
                     "microsecond": 0
                 },
-                "Status": "SUCCESS"
+                "Status": "PENDING"
             },
             "LoggingConfiguration": {
                 "DagProcessingLogs": {
-                    "CloudWatchLogGroupArn": "arn:aws:logs:us-east-1:111111111111:log-group:airflow-mwaa_444_green-DAGProcessing",
                     "Enabled": true,
-                    "LogLevel": "DEBUG"
-                },
-                "SchedulerLogs": {
-                    "Enabled": false,
                     "LogLevel": "INFO"
                 },
-                "TaskLogs": {
-                    "CloudWatchLogGroupArn": "arn:aws:logs:us-east-1:111111111111:log-group:airflow-mwaa_444_green-Task",
+                "SchedulerLogs": {
                     "Enabled": true,
+                    "LogLevel": "ERROR"
+                },
+                "TaskLogs": {
+                    "Enabled": false,
                     "LogLevel": "INFO"
                 },
                 "WebserverLogs": {
-                    "Enabled": false,
-                    "LogLevel": "INFO"
+                    "Enabled": true,
+                    "LogLevel": "WARNING"
                 },
                 "WorkerLogs": {
                     "Enabled": false,
@@ -64,24 +59,20 @@
             "Name": "mwaa_444_green",
             "NetworkConfiguration": {
                 "SecurityGroupIds": [
-                    "sg-09fe7e43cc25cd3c1"
+                    "sg-06c209da1e5eb78a8"
                 ],
                 "SubnetIds": [
-                    "subnet-044d74bb28b111bcf",
-                    "subnet-05c1353f5033b6404"
+                    "subnet-0f98c9e90d38f3c1e",
+                    "subnet-0965c03195abbca4e"
                 ]
             },
             "Schedulers": 2,
             "ServiceRoleArn": "arn:aws:iam::111111111111:role/aws-service-role/airflow.amazonaws.com/AWSServiceRoleForAmazonMWAA",
-            "SourceBucketArn": "arn:aws:s3:::444-bucket-green",
-            "Status": "AVAILABLE",
-            "Tags": {
-                "CustodianRule": "ecc-aws-444-mwaa_dag_processing_logs_set_correctly",
-                "ComplianceStatus": "Green"
-            },
+            "SourceBucketArn": "arn:aws:s3:::autotest-airflow-bucket-red-26586-1",
+            "Status": "CREATING",
+            "Tags": {},
             "WebserverAccessMode": "PRIVATE_ONLY",
-            "WebserverUrl": "e53defd8-e818-4b4a-a315-ae2c7a94b4c5-vpce.c7.us-east-1.airflow.amazonaws.com",
-            "WeeklyMaintenanceWindowStart": "FRI:22:30"
+            "WeeklyMaintenanceWindowStart": "TUE:08:30"
         }
     }
 }
