@@ -3,34 +3,31 @@
     "data": {
         "ResponseMetadata": {},
         "Environment": {
-            "AirflowConfigurationOptions": {
-                "core.default_task_retries": "16",
-                "core.parallelism": "1"
-            },
-            "AirflowVersion": "2.2.2",
+            "AirflowVersion": "2.8.1",
             "Arn": "arn:aws:airflow:us-east-1:111111111111:environment/mwaa_444_red",
             "CreatedAt": {
                 "__class__": "datetime",
-                "year": 2022,
-                "month": 7,
-                "day": 20,
-                "hour": 9,
-                "minute": 46,
-                "second": 27,
+                "year": 2024,
+                "month": 8,
+                "day": 2,
+                "hour": 20,
+                "minute": 4,
+                "second": 40,
                 "microsecond": 0
             },
             "DagS3Path": "dags/",
+            "EndpointManagement": "SERVICE",
             "EnvironmentClass": "mw1.small",
-            "ExecutionRoleArn": "arn:aws:iam::111111111111:role/444_role_red",
+            "ExecutionRoleArn": "arn:aws:iam::111111111111:role/autotest_airflow_role_red",
             "LastUpdate": {
                 "CreatedAt": {
                     "__class__": "datetime",
-                    "year": 2022,
-                    "month": 7,
-                    "day": 20,
-                    "hour": 9,
-                    "minute": 46,
-                    "second": 27,
+                    "year": 2024,
+                    "month": 8,
+                    "day": 2,
+                    "hour": 20,
+                    "minute": 4,
+                    "second": 40,
                     "microsecond": 0
                 },
                 "Status": "PENDING"
@@ -41,16 +38,16 @@
                     "LogLevel": "INFO"
                 },
                 "SchedulerLogs": {
-                    "Enabled": false,
-                    "LogLevel": "INFO"
+                    "Enabled": true,
+                    "LogLevel": "ERROR"
                 },
                 "TaskLogs": {
-                    "Enabled": true,
+                    "Enabled": false,
                     "LogLevel": "INFO"
                 },
                 "WebserverLogs": {
-                    "Enabled": false,
-                    "LogLevel": "INFO"
+                    "Enabled": true,
+                    "LogLevel": "WARNING"
                 },
                 "WorkerLogs": {
                     "Enabled": false,
@@ -62,23 +59,20 @@
             "Name": "mwaa_444_red",
             "NetworkConfiguration": {
                 "SecurityGroupIds": [
-                    "sg-0bdd285cb21f4d509"
+                    "sg-06c209da1e5eb78a8"
                 ],
                 "SubnetIds": [
-                    "subnet-079db14b7c4fb3a18",
-                    "subnet-0c20c29225a1db03b"
+                    "subnet-0f98c9e90d38f3c1e",
+                    "subnet-0965c03195abbca4e"
                 ]
             },
             "Schedulers": 2,
             "ServiceRoleArn": "arn:aws:iam::111111111111:role/aws-service-role/airflow.amazonaws.com/AWSServiceRoleForAmazonMWAA",
-            "SourceBucketArn": "arn:aws:s3:::444-bucket-red",
+            "SourceBucketArn": "arn:aws:s3:::autotest-airflow-bucket-red-26586-1",
             "Status": "CREATING",
-            "Tags": {
-                "CustodianRule": "ecc-aws-444-mwaa_dag_processing_logs_set_correctly",
-                "ComplianceStatus": "Red"
-            },
+            "Tags": {},
             "WebserverAccessMode": "PRIVATE_ONLY",
-            "WeeklyMaintenanceWindowStart": "TUE:18:00"
+            "WeeklyMaintenanceWindowStart": "TUE:08:30"
         }
     }
 }

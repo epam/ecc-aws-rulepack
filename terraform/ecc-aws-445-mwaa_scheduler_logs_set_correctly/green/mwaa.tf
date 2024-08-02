@@ -12,7 +12,7 @@ resource "aws_mwaa_environment" "this" {
   logging_configuration {
     scheduler_logs {
       enabled   = true
-      log_level = "DEBUG"
+      log_level = "INFO"
     }
   }
 
