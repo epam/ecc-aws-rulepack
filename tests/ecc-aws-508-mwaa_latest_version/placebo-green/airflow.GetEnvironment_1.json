@@ -7,7 +7,7 @@
                 "core.default_task_retries": "16",
                 "core.parallelism": "1"
             },
-            "AirflowVersion": "2.7.2",
+            "AirflowVersion": "2.9.2",
             "Arn": "arn:aws:airflow:us-east-1:111111111111:environment/mwaa_508_green",
             "CreatedAt": {
                 "__class__": "datetime",

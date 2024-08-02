@@ -3,37 +3,34 @@
     "data": {
         "ResponseMetadata": {},
         "Environment": {
-            "AirflowConfigurationOptions": {
-                "core.default_task_retries": "16",
-                "core.parallelism": "1"
-            },
-            "AirflowVersion": "2.2.2",
+            "AirflowVersion": "2.8.1",
             "Arn": "arn:aws:airflow:us-east-1:111111111111:environment/mwaa_447_red",
             "CreatedAt": {
                 "__class__": "datetime",
-                "year": 2022,
-                "month": 7,
-                "day": 25,
-                "hour": 7,
-                "minute": 50,
-                "second": 51,
+                "year": 2024,
+                "month": 8,
+                "day": 2,
+                "hour": 20,
+                "minute": 4,
+                "second": 40,
                 "microsecond": 0
             },
             "DagS3Path": "dags/",
+            "EndpointManagement": "SERVICE",
             "EnvironmentClass": "mw1.small",
-            "ExecutionRoleArn": "arn:aws:iam::111111111111:role/447_role_red",
+            "ExecutionRoleArn": "arn:aws:iam::111111111111:role/autotest_airflow_role_red",
             "LastUpdate": {
                 "CreatedAt": {
                     "__class__": "datetime",
-                    "year": 2022,
-                    "month": 7,
-                    "day": 25,
-                    "hour": 7,
-                    "minute": 50,
-                    "second": 51,
+                    "year": 2024,
+                    "month": 8,
+                    "day": 2,
+                    "hour": 20,
+                    "minute": 4,
+                    "second": 40,
                     "microsecond": 0
                 },
-                "Status": "SUCCESS"
+                "Status": "PENDING"
             },
             "LoggingConfiguration": {
                 "DagProcessingLogs": {
@@ -41,17 +38,16 @@
                     "LogLevel": "INFO"
                 },
                 "SchedulerLogs": {
-                    "Enabled": false,
-                    "LogLevel": "INFO"
+                    "Enabled": true,
+                    "LogLevel": "ERROR"
                 },
                 "TaskLogs": {
-                    "CloudWatchLogGroupArn": "arn:aws:logs:us-east-1:111111111111:log-group:airflow-mwaa_447_red-Task",
-                    "Enabled": true,
+                    "Enabled": false,
                     "LogLevel": "INFO"
                 },
                 "WebserverLogs": {
-                    "Enabled": false,
-                    "LogLevel": "INFO"
+                    "Enabled": true,
+                    "LogLevel": "WARNING"
                 },
                 "WorkerLogs": {
                     "Enabled": false,
@@ -63,24 +59,20 @@
             "Name": "mwaa_447_red",
             "NetworkConfiguration": {
                 "SecurityGroupIds": [
-                    "sg-0d0bf3d535420cd71"
+                    "sg-06c209da1e5eb78a8"
                 ],
                 "SubnetIds": [
-                    "subnet-02bed26f3cc218e0a",
-                    "subnet-019038d21a97e6607"
+                    "subnet-0f98c9e90d38f3c1e",
+                    "subnet-0965c03195abbca4e"
                 ]
             },
             "Schedulers": 2,
             "ServiceRoleArn": "arn:aws:iam::111111111111:role/aws-service-role/airflow.amazonaws.com/AWSServiceRoleForAmazonMWAA",
-            "SourceBucketArn": "arn:aws:s3:::447-bucket-red",
-            "Status": "AVAILABLE",
-            "Tags": {
-                "CustodianRule": "ecc-aws-447-mwaa_webserver_logs_set_correctly",
-                "ComplianceStatus": "Red"
-            },
+            "SourceBucketArn": "arn:aws:s3:::autotest-airflow-bucket-red-26586-1",
+            "Status": "CREATING",
+            "Tags": {},
             "WebserverAccessMode": "PRIVATE_ONLY",
-            "WebserverUrl": "307cfc45-9be8-4920-bbdf-2e60239211da-vpce.c0.us-east-1.airflow.amazonaws.com",
-            "WeeklyMaintenanceWindowStart": "THU:17:00"
+            "WeeklyMaintenanceWindowStart": "TUE:08:30"
         }
     }
 }

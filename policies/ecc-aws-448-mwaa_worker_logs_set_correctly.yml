@@ -18,4 +18,4 @@ policies:
             value: true
           - type: value
             key: LoggingConfiguration.WorkerLogs.LogLevel
-            value: 'DEBUG'
+            value: 'INFO'
