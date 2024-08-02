@@ -2,6 +2,7 @@ output "resource_prefix" {
   value = {
     acm                         = "${local.suffix}.${local.compliance_status}"
     ami                         = "${local.suffix}_${var.resource_type}_ami_${local.compliance_status}"
+    airflow_env                 = "${local.suffix}_${var.resource_type}-airflow-env-${local.compliance_status}"
     apigw                       = "${local.suffix}_${var.resource_type}_apigw_${local.compliance_status}"
     apigwv2                     = "${local.suffix}_${var.resource_type}_apigwv2_${local.compliance_status}"
     apigwv2_stage               = "${local.suffix}_${var.resource_type}_apigwv2_stage_${local.compliance_status}"

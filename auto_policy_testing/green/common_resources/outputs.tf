@@ -38,6 +38,13 @@ output "az_subnet_priv_1" {
   }
 }
 
+output "az_subnet_priv_2" {
+  value = {
+    az_name = data.aws_availability_zones.this.names[1]
+    az_id = data.aws_availability_zones.this.zone_ids[1]
+  }
+}
+
 output "vpc_subnet_2_id" {
   value = aws_subnet.public2.id
 }
@@ -50,9 +57,13 @@ output "vpc_subnet_private_1_id" {
   value = aws_subnet.private1.id
 }
 
-# output "kms_key_arn" {
-#   value = aws_kms_key.this.arn
-# }
+output "vpc_subnet_private_2_id" {
+  value = aws_subnet.private2.id
+}
+
+output "kms_key_arn" {
+  value = aws_kms_key.this.arn
+}
 
 output "sg_1_id" {
   value = aws_security_group.this.id

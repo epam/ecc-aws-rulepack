@@ -29,6 +29,17 @@ output "az_subnet_priv_1" {
   }
 }
 
+output "vpc_subnet_private_2_id" {
+  value = aws_subnet.private2.id
+}
+
+output "az_subnet_priv_2" {
+  value = {
+    az_name = data.aws_availability_zones.this.names[1]
+    az_id = data.aws_availability_zones.this.zone_ids[1]
+  }
+}
+
 output "az_subnet_pub_1" {
   value = {
     az_name = data.aws_availability_zone.public1.name

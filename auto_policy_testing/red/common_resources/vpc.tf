@@ -54,6 +54,15 @@ resource "aws_subnet" "private1" {
   }
 }
 
+resource "aws_subnet" "private2" {
+  vpc_id            = aws_vpc.this.id
+  cidr_block        = "10.0.20.0/24"
+  availability_zone = data.aws_availability_zones.this.names[1]
+  tags = {
+    Name = "${module.naming.resource_prefix.general}-private-2"
+  }
+}
+
 resource "aws_internet_gateway" "this" {
   vpc_id = aws_vpc.this.id
   tags = {
@@ -87,36 +96,42 @@ resource "aws_route_table_association" "this3" {
   route_table_id = aws_route_table.this.id
 }
 
-# resource "aws_eip" "this" {
-#   domain     = "vpc"
-#   depends_on = [aws_internet_gateway.this]
-#   tags = {
-#       Name = "${module.naming.resource_prefix.eip}"
-#     }
-# }
 
-# resource "aws_nat_gateway" "this" {
-#   allocation_id = aws_eip.this.id
-#   subnet_id     = aws_subnet.subnet1.id
-#   depends_on    = [aws_eip.this]
-#   tags = {
-#     Name = "${module.naming.resource_prefix.vpn_gtw}"
-#   }
-# }
+resource "aws_eip" "this" {
+  domain     = "vpc"
+  depends_on = [aws_internet_gateway.this]
+  tags = {
+    Name = "${module.naming.resource_prefix.eip}"
+  }
+}
 
-# resource "aws_route_table" "route_table_nat_gateway" {
-#   vpc_id = aws_vpc.this.id
+resource "aws_nat_gateway" "this" {
+  allocation_id = aws_eip.this.id
+  subnet_id     = aws_subnet.subnet1.id
+  depends_on    = [aws_eip.this]
+  tags = {
+    Name = "${module.naming.resource_prefix.vpn_gtw}"
+  }
+}
 
-#   route {
-#     cidr_block     = "0.0.0.0/0"
-#     nat_gateway_id = aws_nat_gateway.this.id
-#   }
-#   tags = {
-#     Name = "${module.naming.resource_prefix.vpn_gtw}-nat"
-#   }
-# }
+resource "aws_route_table" "route_table_nat_gateway" {
+  vpc_id = aws_vpc.this.id
 
-# resource "aws_route_table_association" "route_table_nat_gateway" {
-#   subnet_id      = aws_subnet.private1.id
-#   route_table_id = aws_route_table.route_table_nat_gateway.id
-# }
+  route {
+    cidr_block     = "0.0.0.0/0"
+    nat_gateway_id = aws_nat_gateway.this.id
+  }
+  tags = {
+    Name = "${module.naming.resource_prefix.vpn_gtw}-nat"
+  }
+}
+
+resource "aws_route_table_association" "route_table_nat_gateway1" {
+  subnet_id      = aws_subnet.private1.id
+  route_table_id = aws_route_table.route_table_nat_gateway.id
+}
+
+resource "aws_route_table_association" "route_table_nat_gateway2" {
+  subnet_id      = aws_subnet.private2.id
+  route_table_id = aws_route_table.route_table_nat_gateway.id
+}
