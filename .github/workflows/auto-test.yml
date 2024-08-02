@@ -24,7 +24,7 @@ env:
   TF_BACKEND_STORAGE_NAME: ${{ secrets.TF_BACKEND_STORAGE_NAME }}
   TF_CLI_ARGS: "-no-color"
   AWS_DEFAULT_REGION: ${{ secrets.AWS_REGION }}
-  default_resource_priority_list: '[ "asg" ]'
+  default_resource_priority_list: '[ "airflow" ]'
   RED: '\033[0;31m'
   ACTIONS_REPO_BRANCH: "main"
 
