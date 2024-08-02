@@ -55,6 +55,7 @@ output "resource_prefix" {
     kms_key                     = "${local.suffix}_${var.resource_type}_key_${local.compliance_status}"
     lambda_function             = "${local.suffix}_${var.resource_type}_fun_${local.compliance_status}"
     launch_config               = "${local.suffix}_${var.resource_type}_launch_config_${local.compliance_status}"
+    launch_template             = "${local.suffix}_${var.resource_type}_launch_template_${local.compliance_status}"
     lb                          = "${local.suffix}-${var.resource_type}-lb-${local.compliance_status}"
     lightsail_instance          = "${local.suffix}-${var.resource_type}-lightsail-instance-${local.compliance_status}"
     message_broker              = "${local.suffix}_${var.resource_type}_mq_${local.compliance_status}"

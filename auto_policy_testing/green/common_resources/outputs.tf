@@ -50,22 +50,22 @@ output "vpc_subnet_private_1_id" {
   value = aws_subnet.private1.id
 }
 
-output "kms_key_arn" {
-  value = aws_kms_key.this.arn
-}
+# output "kms_key_arn" {
+#   value = aws_kms_key.this.arn
+# }
 
 output "sg_1_id" {
   value = aws_security_group.this.id
 }
 
-output "wafregional_acl_id" {
-  value = aws_wafregional_web_acl.this.id
-}
+# output "wafregional_acl_id" {
+#   value = aws_wafregional_web_acl.this.id
+# }
 
-output "waf_web_acl_id" {
-  value = aws_waf_web_acl.this.id
-}
+# output "waf_web_acl_id" {
+#   value = aws_waf_web_acl.this.id
+# }
 
-output "wafv2_web_acl_arn" {
-  value = aws_wafv2_web_acl.this.arn
-}
+# output "wafv2_web_acl_arn" {
+#   value = aws_wafv2_web_acl.this.arn
+# }
