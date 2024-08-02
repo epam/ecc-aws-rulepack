@@ -100,5 +100,13 @@ resource "aws_autoscaling_group" "this1" {
         value               = "c7n-ci"
         propagate_at_launch = false
   } 
-  
+}
+
+resource "null_resource" "this1" {
+  triggers = {
+    asg = aws_autoscaling_group.this1.name
+  }
+  provisioner "local-exec" {
+    command = "aws autoscaling update-auto-scaling-group --auto-scaling-group-name ${self.triggers.asg} --default-cooldown 0"
+  }
 }
