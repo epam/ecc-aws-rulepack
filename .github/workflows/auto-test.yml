@@ -9,7 +9,7 @@ on:
       resource_priority_list:
         type: string
         description: Priority list for resources (you can remove unnecessary resources during testing)
-        default: '[ "app-elb" ]'
+        default: '[ ]'
         required: true
 
 # limits to only one workflow in time
@@ -24,7 +24,7 @@ env:
   TF_BACKEND_STORAGE_NAME: ${{ secrets.TF_BACKEND_STORAGE_NAME }}
   TF_CLI_ARGS: "-no-color"
   AWS_DEFAULT_REGION: ${{ secrets.AWS_REGION }}
-  default_resource_priority_list: '[ "airflow" ]'
+  default_resource_priority_list: '[ "codedeploy" ]'
   RED: '\033[0;31m'
   ACTIONS_REPO_BRANCH: "main"
 
