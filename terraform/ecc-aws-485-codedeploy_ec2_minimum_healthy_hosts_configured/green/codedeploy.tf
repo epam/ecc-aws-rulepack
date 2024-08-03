@@ -9,7 +9,7 @@ resource "aws_codedeploy_deployment_config" "this" {
 
   minimum_healthy_hosts {
     type  = "FLEET_PERCENT"
-    value = "50"
+    value = "70"
   }
 
   depends_on = [aws_codedeploy_app.this]
