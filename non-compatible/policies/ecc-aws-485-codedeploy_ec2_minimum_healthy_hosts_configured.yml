@@ -8,7 +8,7 @@ policies:
   - name: ecc-aws-485-codedeploy_ec2_minimum_healthy_hosts_configured
     comment: '010031132010'
     description: |
-      CodeDeploy deployment config of application does not meet the requirements
+      CodeDeploy deployment groups for EC2 are not configured with a minimum healthy hosts 
     resource: aws.codedeploy-group
     filters:
       - type: value
@@ -22,7 +22,7 @@ policies:
               - type: deployment-config-filter
                 key: minimumHealthyHosts.value
                 op: lt
-                value: 50
+                value: 66
           - and:
               - type: deployment-config-filter
                 key: minimumHealthyHosts.type
