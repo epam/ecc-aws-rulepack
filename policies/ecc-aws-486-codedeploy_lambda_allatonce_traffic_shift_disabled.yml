@@ -9,7 +9,7 @@ policies:
   - name: ecc-aws-486-codedeploy_lambda_allatonce_traffic_shift_disabled
     comment: '010020132000'
     description: |
-      CodeDeploy Lambda AllAtOnce traffic shift disabled
+      CodeDeploy deployment groups Lambda AllAtOnce traffic shift should be disabled
     resource: aws.codedeploy-group
     filters:
       - and:
