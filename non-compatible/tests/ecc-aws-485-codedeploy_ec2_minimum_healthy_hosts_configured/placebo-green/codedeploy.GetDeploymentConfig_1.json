@@ -6,7 +6,7 @@
             "deploymentConfigName": "485_deployment-config_green",
             "minimumHealthyHosts": {
                 "type": "FLEET_PERCENT",
-                "value": 50
+                "value": 66
             },
             "createTime": {
                 "__class__": "datetime",
