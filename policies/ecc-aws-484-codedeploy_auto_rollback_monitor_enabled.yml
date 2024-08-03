@@ -12,11 +12,10 @@ policies:
       CodeDeploy AutoRollbackConfiguration or AlarmConfiguration has not been configured or is not enabled. 
     resource: aws.codedeploy-group
     filters:
-      - or:
-          - not:
-              - type: value
-                key: autoRollbackConfiguration.enabled
-                value: true
-              - type: value
-                key: alarmConfiguration.enabled
-                value: true
+      - not:
+          - type: value
+            key: autoRollbackConfiguration.enabled
+            value: true
+          - type: value
+            key: alarmConfiguration.enabled
+            value: true
