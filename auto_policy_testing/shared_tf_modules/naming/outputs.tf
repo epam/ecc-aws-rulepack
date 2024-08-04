@@ -16,6 +16,7 @@ output "resource_prefix" {
     cloudwatch_log              = "${local.suffix}-${var.resource_type}_cloudwatch_log_${local.compliance_status}"
     codebuild                   = "${local.suffix}-${var.resource_type}-codebuild-${local.compliance_status}"
     codedeploy                  = "${local.suffix}-${var.resource_type}-codedeploy-${local.compliance_status}"
+    codepipeline                = "${local.suffix}-${var.resource_type}-codepipeline-${local.compliance_status}"
     cw_log_group                = "${local.suffix}_${var.resource_type}-lg-${local.compliance_status}"
     cw_alarm                    = "${local.suffix}_${var.resource_type}-alarm-${local.compliance_status}"
     dax                         = "${local.suffix}-${var.resource_type}-${local.compliance_status}"
