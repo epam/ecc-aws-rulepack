@@ -13,6 +13,6 @@ policies:
     filters:
       - type: rds-sns-subscription-filter
         check_in: rds
-        key: SourceType=='db-parameter-group' && SourceIdsList==null && ( EventCategoriesList==null || EventCategoriesList.contains(@, 'configuration change')==`true`) && Enabled==`true`
+        key: (SourceType=='db-parameter-group' || !contains(keys(@), 'SourceType')) && SourceIdsList==null && ( EventCategoriesList==null || EventCategoriesList.contains(@, 'configuration change')==`true`) && Enabled==`true`
         value: true
         op: eq
