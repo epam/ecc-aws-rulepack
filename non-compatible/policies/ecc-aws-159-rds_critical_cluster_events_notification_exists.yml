@@ -13,6 +13,6 @@ policies:
     filters:
       - type: rds-sns-subscription-filter
         check_in: cluster
-        key: SourceType=='db-cluster' && SourceIdsList==null && ( EventCategoriesList==null || (EventCategoriesList.contains(@, 'failure')==`true` && EventCategoriesList.contains(@'maintenance')==`true`)) && Enabled==`true`
+        key: (SourceType=='db-cluster' || !contains(keys(@), 'SourceType')) && SourceIdsList==null && ( EventCategoriesList==null || (EventCategoriesList.contains(@, 'failure')==`true` && EventCategoriesList.contains(@, 'maintenance')==`true`)) && Enabled==`true`
         value: true
         op: eq
