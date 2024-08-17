@@ -13,6 +13,6 @@ policies:
     filters:
       - type: rds-sns-subscription-filter
         check_in: rds
-        key: SourceType=='db-security-group' && Enabled==`true` && SourceIdsList==null && ( EventCategoriesList==null || length(EventCategoriesList[])==`2`)
+        key: (SourceType=='db-security-group' || !contains(keys(@), 'SourceType')) && Enabled==`true` && SourceIdsList==null && ( EventCategoriesList==null || length(EventCategoriesList[])==`2`)
         value: true
         op: eq
