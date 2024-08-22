@@ -27,7 +27,7 @@ env:
   AWS_DEFAULT_REGION: ${{ secrets.AWS_REGION }}
   default_resource_priority_list: '[ "sqs", "sns" ]'
   RED: '\033[0;31m'
-  ACTIONS_REPO_BRANCH: "fix/auto-tests-action"
+  ACTIONS_REPO_BRANCH: "fix_auto-test-ci"
 
 permissions:
   contents: "read"
