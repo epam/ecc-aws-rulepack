@@ -7,7 +7,7 @@
 
 policies:
   - name: ecc-aws-140-only_one_active_access_key_available_for_any_single_iam_user
-    comment: '010022002501'
+    comment: '010022002901'
     description: |
       More than one active access key is available for a single IAM user
     resource: iam-user

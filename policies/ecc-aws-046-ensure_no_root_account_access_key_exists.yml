@@ -7,7 +7,7 @@
 
 policies:
   - name: ecc-aws-046-ensure_no_root_account_access_key_exists
-    comment: '010035002501'
+    comment: '010035002901'
     description: |
       Root user account access key exists
     resource: aws.account

@@ -6,7 +6,7 @@
 
 policies:
   - name: ecc-aws-079-iam_policy_changes_alarm_exist
-    comment: '010016012500'
+    comment: '010016012900'
     description: |
       Log metric filter and alarm do not exist for IAM policy changes
     resource: aws.account

@@ -6,7 +6,7 @@
 
 policies:
   - name: ecc-aws-078-root_usage_alarm_exists
-    comment: '010016012500'
+    comment: '010016012900'
     description: |
       Log metric filter and alarm do not exist for usage of "root" account
     resource: aws.account

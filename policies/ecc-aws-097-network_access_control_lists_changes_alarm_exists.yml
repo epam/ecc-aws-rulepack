@@ -6,7 +6,7 @@
 
 policies:
   - name: ecc-aws-097-network_access_control_lists_changes_alarm_exists
-    comment: '010016012500'
+    comment: '010016012900'
     description: |
       Log metric filter and alarm do not exist for changes to Network Access Control Lists (NACL)
     resource: aws.account

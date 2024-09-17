@@ -6,7 +6,7 @@
 
 policies:
   - name: ecc-aws-077-sign_in_without_mfa_alarm_exist
-    comment: '010016012500'
+    comment: '010016012900'
     description: |
       Log metric filter and alarm do not exist for Management Console sign-in without MFA
     resource: aws.account

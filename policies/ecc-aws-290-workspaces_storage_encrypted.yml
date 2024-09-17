@@ -7,7 +7,7 @@
 
 policies:
   - name: ecc-aws-290-workspaces_storage_encrypted
-    comment: '010043120600'
+    comment: '010043123100'
     description: |
       Workspaces storage is not encrypted
     resource: aws.workspaces

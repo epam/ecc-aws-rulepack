@@ -6,7 +6,7 @@
 
 policies:
   - name: ecc-aws-099-route_table_changes_alarm_exists
-    comment: '010016012500'
+    comment: '010016012900'
     description: |
       Log metric filter and alarm do not exist for route table changes
     resource: aws.account
