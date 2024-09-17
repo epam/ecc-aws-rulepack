@@ -7,7 +7,7 @@
 
 policies:
   - name: ecc-aws-141-expired_ssl_tls_certificates_stored_in_aws_iam_are_removed
-    comment: '010029102501'
+    comment: '010029102901'
     description: |
       Expired SSL/TLS certificates stored in IAM are not removed
     resource: iam-certificate

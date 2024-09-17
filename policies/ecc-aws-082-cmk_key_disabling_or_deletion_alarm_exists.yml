@@ -6,7 +6,7 @@
 
 policies:
   - name: ecc-aws-082-cmk_key_disabling_or_deletion_alarm_exists
-    comment: '010016012500'
+    comment: '010016012900'
     description: |
       Log metric filter and alarm do not exist for disabling or scheduled deletion of customer created CMKs
     resource: aws.account

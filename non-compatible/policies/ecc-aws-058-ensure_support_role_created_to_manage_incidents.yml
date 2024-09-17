@@ -6,7 +6,7 @@
 
 policies:
   - name: ecc-aws-058-ensure_support_role_created_to_manage_incidents
-    comment: '010022002501'
+    comment: '010022002901'
     description: |
       Support role has not been created to manage incidents with AWS Support
     resource: aws.account

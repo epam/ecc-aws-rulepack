@@ -7,7 +7,7 @@
 
 policies:
   - name: ecc-aws-321-oracle_sec_return_server_release_banner_flag_disabled
-    comment: '010023061700'
+    comment: '010023063300'
     description: |
       The 'sec_return_server_release_banner' flag for Oracle is enabled
     resource: aws.rds

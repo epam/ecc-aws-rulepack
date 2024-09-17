@@ -6,7 +6,7 @@
 
 policies:
   - name: ecc-aws-146-no_acls_allow_ingress_for_everyone_to_remote_server_administration_ports
-    comment: '010024022500'
+    comment: '010024022900'
     description: |
       Network ACLs allow ingress from 0.0.0.0/0 to remote server administration ports
     resource: aws.network-acl

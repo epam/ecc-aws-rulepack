@@ -7,7 +7,7 @@
 
 policies:
   - name: ecc-aws-123-efs_is_encrypted
-    comment: '010043042500'
+    comment: '010043042900'
     description: |
       Amazon EFS file systems are not encrypted
     resource: efs
