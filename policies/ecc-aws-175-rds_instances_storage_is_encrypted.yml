@@ -7,7 +7,7 @@
 
 policies:
   - name: ecc-aws-175-rds_instances_storage_is_encrypted
-    comment: '010043062500'
+    comment: '010043062900'
     description: |
       RDS instances storage not encrypted
     resource: rds

@@ -6,7 +6,7 @@
 
 policies:
   - name: ecc-aws-052-cloudtrail_enabled_in_all_regions
-    comment: '010016012501'
+    comment: '010016012901'
     description: |
       CloudTrail is not enabled in all regions
     resource: aws.account

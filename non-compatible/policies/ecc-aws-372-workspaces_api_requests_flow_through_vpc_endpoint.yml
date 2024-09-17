@@ -6,7 +6,7 @@
 
 policies:
   - name: ecc-aws-372-workspaces_api_requests_flow_through_vpc_endpoint
-    comment: '010040120600'
+    comment: '010040123100'
     description: |
       WorkSpaces API requests do not flow through a VPC Endpoint
     resource: aws.workspaces-directory

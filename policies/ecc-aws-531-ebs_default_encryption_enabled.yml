@@ -7,7 +7,7 @@
 
 policies:
   - name: ecc-aws-531-ebs_default_encryption_enabled
-    comment: '010043042500'
+    comment: '010043042900'
     description: |
       EBS volume default encryption disabled
     resource: aws.account
