@@ -7,7 +7,7 @@
 
 policies:
   - name: ecc-aws-872-access_to_cloudshell_restricted
-    comment: '010022002501'
+    comment: '010022002901'
     description: |
       Access to cloudshell not restricted
     resource: iam-role

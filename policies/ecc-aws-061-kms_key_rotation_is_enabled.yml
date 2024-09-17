@@ -7,7 +7,7 @@
 
 policies:
   - name: ecc-aws-061-kms_key_rotation_is_enabled
-    comment: '010029092500'
+    comment: '010029092900'
     description: |
       Rotation for symmetric customer-created CMKs is not enabled
     resource: aws.kms-key

@@ -6,7 +6,7 @@
 
 policies:
   - name: ecc-aws-080-cloudtrail_configuration_changes_alarm_exists
-    comment: '010016012500'
+    comment: '010016012900'
     description: |
       Log metric filter and alarm do not exist for CloudTrail configuration changes
     resource: aws.account

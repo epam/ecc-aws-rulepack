@@ -7,7 +7,7 @@
 
 policies:
   - name: ecc-aws-331-workspaces_images_not_older_than_90_days
-    comment: '010021120600'
+    comment: '010021123100'
     description: |
       Workspaces images are older than 90 days 
     resource: aws.workspaces-image
