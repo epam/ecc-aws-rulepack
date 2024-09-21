@@ -44,3 +44,39 @@ data "aws_iam_policy_document" "this1" {
     }
   }
 }
+
+
+resource "aws_s3_bucket" "this2" {
+  bucket        = "${module.naming.resource_prefix.s3_bucket}-${random_integer.this.result}-2"
+  force_destroy = true
+}
+
+resource "aws_s3_bucket_policy" "this2" {
+  bucket = aws_s3_bucket.this2.id
+  policy = data.aws_iam_policy_document.this2.json
+}
+
+data "aws_iam_policy_document" "this2" {
+  statement {
+    principals {
+      type        = "AWS"
+      identifiers = ["*"]
+    }
+
+    actions = [
+      "s3:ListBucket"
+    ]
+
+    resources = [
+      "${aws_s3_bucket.this2.arn}",
+    ]
+    condition {
+      test     = "StringEquals"
+      variable = "aws:PrincipalArn"
+
+      values = [
+        "arn:aws:iam::000000000000:user/00000000"
+      ]
+    }
+  }
+}

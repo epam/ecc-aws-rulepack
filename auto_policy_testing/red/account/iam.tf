@@ -1,5 +1,11 @@
 data "aws_caller_identity" "this" {}
 
+resource "aws_accessanalyzer_analyzer" "this" {
+  analyzer_name = module.naming.resource_prefix.iam_analyzer
+
+  depends_on = [ aws_s3_bucket.this2, aws_sns_topic.this1 ]
+}
+
 resource "aws_iam_account_password_policy" "this" {
   require_lowercase_characters = false
   require_uppercase_characters = false
@@ -50,3 +56,4 @@ resource "aws_iam_role_policy" "this" {
   }
   POLICY
 }
+

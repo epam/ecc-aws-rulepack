@@ -6,6 +6,18 @@ resource "aws_cloudwatch_log_group" "this2" {
   name = "${module.naming.resource_prefix.cw_log_group}-2"
 }
 
+resource "aws_cloudwatch_event_rule" "this" {
+  name = module.naming.resource_prefix.event_rule
+  event_pattern = <<EOF
+{
+  "detail-type": [
+    "AWS Console Sign In via CloudTrail"
+  ]
+}
+EOF
+}
+
+
 # wrong pattern
 resource "aws_cloudwatch_log_metric_filter" "this1" {
   name    = "${module.naming.resource_prefix.cw_log_group}-067"

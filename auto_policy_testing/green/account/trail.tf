@@ -12,6 +12,26 @@ resource "aws_cloudtrail" "this1" {
       equals = ["Management"]
     }
   }
+  advanced_event_selector {
+    field_selector {
+      field  = "eventCategory"
+      equals = ["Data"]
+    }
+    field_selector {
+      field  = "resources.type"
+      equals = ["AWS::S3::Object"]
+    }
+  }
+  advanced_event_selector {
+    field_selector {
+      field  = "eventCategory"
+      equals = ["Data"]
+    }
+    field_selector {
+      field  = "resources.type"
+      equals = ["AWS::DynamoDB::Table"]
+    }
+  }
 
   depends_on = [
     aws_s3_bucket.this,
@@ -31,6 +51,11 @@ resource "aws_cloudtrail" "this2" {
   event_selector {
     read_write_type           = "All"
     include_management_events = true
+
+    data_resource {
+      type   = "AWS::S3::Object"
+      values = ["arn:aws:s3"]
+    }
   }
 
   depends_on = [

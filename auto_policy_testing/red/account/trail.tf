@@ -13,6 +13,16 @@ resource "aws_cloudtrail" "this1" {
       equals = ["Management"]
     }
   }
+  advanced_event_selector {
+    field_selector {
+      field  = "eventCategory"
+      equals = ["Data"]
+    }
+    field_selector {
+      field  = "resources.type"
+      equals = ["AWS::DynamoDB::Table"]
+    }
+  }
 
   depends_on = [
     aws_s3_bucket.this1,

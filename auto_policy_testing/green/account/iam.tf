@@ -12,6 +12,8 @@ resource "aws_iam_account_password_policy" "this" {
 
 resource "aws_accessanalyzer_analyzer" "this" {
   analyzer_name = module.naming.resource_prefix.iam_analyzer
+
+  depends_on = [ aws_s3_bucket.this ]
 }
 
 resource "aws_iam_role" "this" {
@@ -53,4 +55,13 @@ resource "aws_iam_role_policy" "this" {
     ]
   }
   POLICY
+}
+
+data "aws_iam_policy" "this" {
+  arn = "arn:aws:iam::aws:policy/AWSSupportAccess"
+}
+
+resource "aws_iam_role_policy_attachment" "this" {
+  role       = aws_iam_role.this.name
+  policy_arn = data.aws_iam_policy.this.arn
 }

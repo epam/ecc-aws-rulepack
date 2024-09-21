@@ -13,3 +13,4 @@ data "terraform_remote_state" "common" {
     region = var.remote_state_region
   }
 }
+
