@@ -107,7 +107,7 @@ resource "aws_route_table_association" "this3" {
 # resource "aws_nat_gateway" "this" {
 #   allocation_id = aws_eip.this.id
 #   subnet_id     = aws_subnet.public1.id
-#   depends_on    = [aws_eip.this]
+#   depends_on    = [aws_eip.this, aws_vpc.this]
 #   tags = {
 #     Name = "${module.naming.resource_prefix.vpn_gtw}"
 #   }
