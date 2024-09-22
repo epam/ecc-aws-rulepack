@@ -7,7 +7,7 @@
 
 policies:
   - name: ecc-aws-064-default_security_group_every_vpc_restricts_all_traffic
-    comment: '010042022500'
+    comment: '010042022900'
     description: |
       VPC default security group does not restrict all traffic
     resource: aws.security-group

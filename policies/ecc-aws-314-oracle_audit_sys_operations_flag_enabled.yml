@@ -7,7 +7,7 @@
 
 policies:
   - name: ecc-aws-314-oracle_audit_sys_operations_flag_enabled
-    comment: '010019061700'
+    comment: '010019063300'
     description: |
       The 'audit_sys_operations' flag for Oracle is disabled
     resource: aws.rds

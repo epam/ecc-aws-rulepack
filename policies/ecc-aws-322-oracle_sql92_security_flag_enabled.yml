@@ -7,7 +7,7 @@
 
 policies:
   - name: ecc-aws-322-oracle_sql92_security_flag_enabled
-    comment: '010023061700'
+    comment: '010023063300'
     description: |
       The 'sql92_security' flag for Oracle is disabled
     resource: aws.rds

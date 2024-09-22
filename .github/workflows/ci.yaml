@@ -1,0 +1,79 @@
+name: test-custodian-policies
+on:
+  push:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 7 * * 1"
+  pull_request_review:
+    types: 
+      - submitted
+jobs:
+  test_policy_flights:
+    runs-on: ubuntu-22.04
+    strategy:
+      fail-fast: false
+      matrix:
+        compliance: ['red', 'green']
+    container:
+      image: python:3.8
+      env:
+        COMPLIANCE: ${{ matrix.compliance }}
+    if: github.event_name == 'push' || github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || (github.event_name == 'pull_request_review' && github.event.review.state == 'approved')
+    steps: 
+      - uses: actions/checkout@v4
+      - name: Checkout ecc-actions
+        run: git clone -b main "https://git:$PROJECT_TOKEN@git.epam.com/epmc-sec/cloudlab/cloud_custodian/ecc-actions.git" ecc-actions
+        env:
+          PROJECT_TOKEN: ${{ secrets.ECC_CHANGELOG_ACTION }}
+      - uses: ./ecc-actions/flight-test-dependencies
+        env:
+            PROJECT_TOKEN: ${{ secrets.CLOUDCUSTODIAN_CORE }}
+      - uses: ./ecc-actions/flight-test-action
+        env:
+          COMPLIANCE: ${{ matrix.compliance }}
+
+  build:
+    name: create_release
+    runs-on: ubuntu-latest
+    needs: [test_policy_flights]
+    if: startsWith(github.ref, 'refs/tags/v')
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Checkout ecc-actions
+        run: git clone -b main "https://git:$PROJECT_TOKEN@git.epam.com/epmc-sec/cloudlab/cloud_custodian/ecc-actions.git" ecc-actions
+        env:
+          PROJECT_TOKEN: ${{ secrets.ECC_CHANGELOG_ACTION }}
+
+      - name: Create wiki
+        uses: ./ecc-actions/generate-list-of-rules
+        
+      - name: Release action
+        uses: ./ecc-actions/release-rulepack-action
+        with:
+          token: ${{ github.token }}
+          tag: ${{ github.ref_name }}
+
+  ruleset_release:
+    name: ruleset_release
+    runs-on: ubuntu-latest
+    needs: [test_policy_flights]
+    if: startsWith(github.ref, 'refs/tags/v') || github.ref == 'refs/heads/main'
+    steps:
+      - name: Checkout ecc-actions
+        run: git clone -b main "https://git:$PROJECT_TOKEN@git.epam.com/epmc-sec/cloudlab/cloud_custodian/ecc-actions.git" ecc-actions
+        env:
+          PROJECT_TOKEN: ${{ secrets.ECC_CHANGELOG_ACTION }}
+      - name: Release ruleset on QA
+        uses: ./ecc-actions/release-ruleset-action
+        if: github.ref == 'refs/heads/main'
+        env:
+          C7N_CREDS: ${{ secrets.C7N_CREDS }}
+          C7N_ENV: QA
+      - name: Release ruleset on PROD
+        uses: ./ecc-actions/release-ruleset-action
+        if: startsWith(github.ref, 'refs/tags/v')
+        with:
+          C7N_CREDS: ${{ secrets.C7N_CREDS }}
+          C7N_ENV: PROD

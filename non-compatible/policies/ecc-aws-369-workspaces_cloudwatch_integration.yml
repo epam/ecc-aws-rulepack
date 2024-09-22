@@ -6,7 +6,7 @@
 
 policies:
   - name: ecc-aws-369-workspaces_cloudwatch_integration
-    comment: '010019120600'
+    comment: '010019123100'
     description: |
       CloudWatch Events is not set up for successful logins to WorkSpaces
     resource: account

@@ -1,4 +1,3 @@
-# If Cooldown period hasn't been set from the first time, run "terraform apply" again, it should be updated.
 resource "aws_launch_template" "this" {
   name_prefix   = "281_launch_template_red"
   image_id      = data.aws_ami.this.id
@@ -40,4 +39,13 @@ resource "aws_autoscaling_group" "this" {
         propagate_at_launch = true
   }  
   
+}
+
+resource "null_resource" "this" {
+  triggers = {
+    asg = aws_autoscaling_group.this.name
+  }
+  provisioner "local-exec" {
+    command = "aws autoscaling update-auto-scaling-group --auto-scaling-group-name ${self.triggers.asg} --default-cooldown 0"
+  }
 }

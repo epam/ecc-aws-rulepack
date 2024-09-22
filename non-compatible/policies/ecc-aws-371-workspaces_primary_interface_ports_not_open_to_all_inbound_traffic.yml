@@ -6,7 +6,7 @@
 
 policies:
   - name: ecc-aws-371-workspaces_primary_interface_ports_not_open_to_all_inbound_traffic
-    comment: '010040120600'
+    comment: '010040123100'
     description: |
       Primary interface ports for Workspaces are open to all inbound traffic
     resource: aws.workspaces

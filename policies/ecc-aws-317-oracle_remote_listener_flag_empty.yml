@@ -7,7 +7,7 @@
 
 policies:
   - name: ecc-aws-317-oracle_remote_listener_flag_empty
-    comment: '010023061700'
+    comment: '010023063300'
     description: |
       The 'remote_listener' flag for Oracle is not empty
     resource: aws.rds
