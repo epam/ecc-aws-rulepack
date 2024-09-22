@@ -4,10 +4,10 @@
         {
             "Effect": "Allow",
             "Action": [
+                "iam:ListAccountAliases",
                 "rds:DescribeEventSubscriptions",
-				"iam:ListAccountAliases",
-                "rds:DescribeDBInstances",
                 "sns:ListTopics",
+                "rds:DescribeDBClusters",
                 "sns:GetTopicAttributes"
             ],
             "Resource": "*"
