@@ -14,10 +14,10 @@ data "terraform_remote_state" "common" {
   }
 }
 
-data "terraform_remote_state" "common" {
-  backend = "local"
+# data "terraform_remote_state" "common" {
+#   backend = "local"
 
-  config = {
-    path = "../common_resources/terraform.tfstate"
-  }
-}
+#   config = {
+#     path = "../common_resources/terraform.tfstate"
+#   }
+# }
