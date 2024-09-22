@@ -6,7 +6,8 @@
             "Action": [ 
                 "iam:ListAccountAliases",
                 "cloudtrail:DescribeTrails",
-                "cloudtrail:GetEventSelectors"
+                "cloudtrail:GetEventSelectors",
+                "cloudtrail:GetTrailStatus"
             ],
             "Resource": "*"
         }
