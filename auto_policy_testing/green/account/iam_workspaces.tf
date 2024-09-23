@@ -1,5 +1,5 @@
 resource "aws_iam_role" "workspaces-default" {
-  name               = "workspaces_DefaultRole"
+  name               = "${module.naming.resource_prefix.iam_role}-workspaces_DefaultRole"
   assume_role_policy = data.aws_iam_policy_document.workspaces.json
 }
 

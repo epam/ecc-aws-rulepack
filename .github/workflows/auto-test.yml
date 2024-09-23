@@ -24,7 +24,8 @@ env:
   TF_BACKEND_STORAGE_NAME: ${{ secrets.TF_BACKEND_STORAGE_NAME }}
   TF_CLI_ARGS: "-no-color"
   AWS_DEFAULT_REGION: ${{ secrets.AWS_REGION }}
-  default_resource_priority_list: '[ "account", "acm", "airflow", "ami", "apigwv2", "app-elb", "app-flow", "asg", "backup", "cfn", "cloudtrail", "codebuild", "codedeploy", "codepipeline", "common_resources", "dax", "directory", "distribution", "dlm", "dms", "dynamodb", "ebs", "ec2", "ecr", "ecs", "efs", "eip", "eks", "elasticache", "elasticbeanstalk", "elasticsearch", "elb", "emr", "eni", "event", "firehose", "fsx", "glacier", "glue", "graphql", "hostedzone", "iam", "internet", "kafka", "key", "kinesis", "kms", "lambda", "launch", "lightsail", "log", "message", "nat", "network", "peering", "qldb", "r53domain", "rds", "redshift", "rest", "route", "rrset", "s3", "sagemaker", "secrets", "security-group", "sns", "sqs", "step", "subnet", "transit", "vpc", "vpn", "waf", "workspaces" ]'
+  default_resource_priority_list: "['account']"
+  #'[ "account", "acm", "airflow", "ami", "apigwv2", "app-elb", "app-flow", "asg", "backup", "cfn", "cloudtrail", "codebuild", "codedeploy", "codepipeline", "dax", "directory", "distribution", "dlm", "dms", "dynamodb", "ebs", "ec2", "ecr", "ecs", "efs", "eip", "eks", "elasticache", "elasticbeanstalk", "elasticsearch", "elb", "emr", "eni", "event", "firehose", "fsx", "glacier", "glue", "graphql", "hostedzone", "iam", "internet", "kafka", "key", "kinesis", "kms", "lambda", "launch", "lightsail", "log", "message", "nat", "network", "peering", "r53domain", "rds", "redshift", "rest", "route", "rrset", "s3", "sagemaker", "secrets", "security-group", "sns", "sqs", "step", "subnet", "transit", "vpc", "vpn", "waf"]'
   RED: '\033[0;31m'
   ACTIONS_REPO_BRANCH: "upd_aws_autotests" 
 
@@ -201,7 +202,7 @@ jobs:
   deploy_and_scan_sequential_resources:
     name: Scan S
     runs-on: ubuntu-22.04
-    needs: [deploy_common_resources, prepare_resource_matrix]
+    needs: [deploy_common_resources, create_readonly_role_for_scans, prepare_resource_matrix]
     if: ${{ needs.prepare_resource_matrix.outputs.sequential_resources_list != '[]' }}
     strategy:
       fail-fast: false

@@ -1,5 +1,5 @@
 resource "aws_security_group" "this" {
-  name   = "workstation_security_group"
+  name   = "${module.naming.resource_prefix.security_group}-1"
   vpc_id = data.terraform_remote_state.common.outputs.vpc_id
 
   ingress {
@@ -14,10 +14,13 @@ resource "aws_security_group" "this" {
     protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
+  tags = {
+    Name = "${module.naming.resource_prefix.security_group}-1"
+  }
 }
 
 resource "aws_security_group" "this2" {
-  name   = "workstation_security_group2"
+  name   = "${module.naming.resource_prefix.security_group}-2"
   vpc_id = data.terraform_remote_state.common.outputs.vpc_id
 
 
@@ -26,5 +29,8 @@ resource "aws_security_group" "this2" {
     to_port     = 80
     protocol    = "tcp"
     cidr_blocks = [data.terraform_remote_state.common.outputs.vpc_cidr_block]
+  }
+  tags = {
+    Name = "${module.naming.resource_prefix.security_group}-2"
   }
 }
