@@ -1,0 +1,35 @@
+{
+    "status_code": 200,
+    "data": {
+        "Role": {
+            "Path": "/",
+            "RoleName": "058_role_red",
+            "RoleId": "AROAXPHGII4AMILI3XT3L",
+            "Arn": "arn:aws:iam::111111111111:role/058_role_red",
+            "CreateDate": {
+                "__class__": "datetime",
+                "year": 2024,
+                "month": 9,
+                "day": 23,
+                "hour": 18,
+                "minute": 53,
+                "second": 12,
+                "microsecond": 0
+            },
+            "AssumeRolePolicyDocument": "%7B%22Version%22%3A%222012-10-17%22%2C%22Statement%22%3A%5B%7B%22Sid%22%3A%22%22%2C%22Effect%22%3A%22Allow%22%2C%22Principal%22%3A%7B%22AWS%22%3A%22arn%3Aaws%3Aiam%3A%3A876320341958%3Aroot%22%7D%2C%22Action%22%3A%22sts%3AAssumeRole%22%7D%5D%7D",
+            "MaxSessionDuration": 3600,
+            "Tags": [
+                {
+                    "Key": "ComplianceStatus",
+                    "Value": "Red"
+                },
+                {
+                    "Key": "CustodianRule",
+                    "Value": "ecc-aws-058-ensure_support_role_created_to_manage_incidents"
+                }
+            ],
+            "RoleLastUsed": {}
+        },
+        "ResponseMetadata": {}
+    }
+}

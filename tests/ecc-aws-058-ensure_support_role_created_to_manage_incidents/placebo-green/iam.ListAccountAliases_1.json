@@ -1,7 +1,9 @@
 {
     "status_code": 200,
     "data": {
-        "AttachedPolicies": [],
+        "AccountAliases": [
+            "test"
+        ],
         "IsTruncated": false,
         "ResponseMetadata": {}
     }
