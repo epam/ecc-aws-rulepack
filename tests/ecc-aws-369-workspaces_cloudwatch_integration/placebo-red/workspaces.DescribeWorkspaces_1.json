@@ -3,20 +3,24 @@
     "data": {
         "Workspaces": [
             {
-                "WorkspaceId": "ws-2kl4hch4j",
-                "DirectoryId": "d-90674cc9a1",
+                "WorkspaceId": "ws-3zwmywlx2",
+                "DirectoryId": "d-9067d5a5a6",
                 "UserName": "Administrator",
-                "IpAddress": "10.0.1.215",
-                "State": "STOPPED",
+                "IpAddress": "10.0.1.117",
+                "State": "AVAILABLE",
                 "BundleId": "wsb-8pmj7b7pq",
-                "SubnetId": "subnet-014f50caf7d83d8f2",
-                "ComputerName": "A-346MMO8DR51LL",
+                "SubnetId": "subnet-0775dd66f3d1d0c93",
+                "ComputerName": "A-3IONU2C6Z2WZY",
                 "WorkspaceProperties": {
                     "RunningMode": "AUTO_STOP",
                     "RunningModeAutoStopTimeoutInMinutes": 60,
                     "RootVolumeSizeGib": 80,
                     "UserVolumeSizeGib": 10,
-                    "ComputeTypeName": "STANDARD"
+                    "ComputeTypeName": "STANDARD",
+                    "Protocols": [
+                        "PCOIP"
+                    ],
+                    "OperatingSystemName": "AMAZON_LINUX_2"
                 },
                 "ModificationStates": []
             }
