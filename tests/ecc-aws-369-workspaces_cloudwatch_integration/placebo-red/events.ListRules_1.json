@@ -1,0 +1,15 @@
+{
+    "status_code": 200,
+    "data": {
+        "Rules": [
+            {
+                "Name": "369_cloudwatch_rule_red",
+                "Arn": "arn:aws:events:us-east-1:111111111111:rule/369_cloudwatch_rule_red",
+                "EventPattern": "{\"source\":[\"aws.appflow\"],\"detail-type\":[\"AppFlow Start Flow Run Report\"]}",
+                "State": "ENABLED",
+                "EventBusName": "default"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

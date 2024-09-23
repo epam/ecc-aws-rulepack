@@ -1,0 +1,22 @@
+{
+    "status_code": 200,
+    "data": {
+        "PaginationToken": "",
+        "ResourceTagMappingList": [
+            {
+                "ResourceARN": "arn:aws:events:us-east-1:111111111111:rule/369_cloudwatch_rule_red",
+                "Tags": [
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Red"
+                    },
+                    {
+                        "Key": "CustodiaRule",
+                        "Value": "ecc-aws-541-workspaces_cloudwatch_integration"
+                    }
+                ]
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}
