@@ -1,0 +1,15 @@
+{
+    "status_code": 200,
+    "data": {
+        "Rules": [
+            {
+                "Name": "369_cloudwatch_rule_green",
+                "Arn": "arn:aws:events:us-east-1:111111111111:rule/369_cloudwatch_rule_green",
+                "EventPattern": "{\"detail-type\":[\"WorkSpaces Access\"],\"source\":[\"aws.workspaces\"]}",
+                "State": "ENABLED",
+                "EventBusName": "default"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}
