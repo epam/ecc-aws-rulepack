@@ -1,0 +1,39 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+policies:
+  - name: ecc-aws-369-workspaces_cloudwatch_integration
+    comment: '010019123100'
+    description: |
+      CloudWatch Events is not set up for successful logins to WorkSpaces
+    resource: account
+    filters:
+      - not:
+        - type: missing
+          policy:
+            resource: workspaces
+      - type: missing
+        policy:
+          resource: aws.event-rule
+          filters:
+            - type: value
+              key: EventPattern
+              value: not-null
+            - type: value
+              key: from_json(EventPattern)."source"
+              op: in
+              value_type: swap
+              value: "aws.workspaces"
+            - or:
+              - type: value
+                key: from_json(EventPattern)."detail-type"
+                op: in
+                value_type: swap
+                value: "WorkSpaces Access"
+              - type: value
+                key: from_json(EventPattern)."detail-type"
+                value: absent
+

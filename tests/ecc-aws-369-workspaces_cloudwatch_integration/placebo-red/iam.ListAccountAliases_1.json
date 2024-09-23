@@ -2,7 +2,7 @@
     "status_code": 200,
     "data": {
         "AccountAliases": [
-            "epmcsec-lab10"
+            "test"
         ],
         "IsTruncated": false,
         "ResponseMetadata": {}
