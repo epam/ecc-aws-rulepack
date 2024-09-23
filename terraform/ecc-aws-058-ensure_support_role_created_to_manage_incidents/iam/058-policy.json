@@ -5,8 +5,9 @@
             "Effect": "Allow",
             "Action": [
                 "iam:ListRoles",
-                "iam:ListAttachedRolePolicies",
-                "iam:ListAccountAliases"
+                "iam:ListAccountAliases",
+                "iam:GetRole",
+                "iam:ListAttachedRolePolicies"
             ],
             "Resource": "*"
         }
