@@ -11,5 +11,9 @@ policies:
       Support role has not been created to manage incidents with AWS Support
     resource: aws.account
     filters:
-      - type: account-iam-role-light-filter
-        value: AWSSupportAccess
+      - type: missing
+        policy:
+          resource: aws.iam-role
+          filters:
+            - type: has-specific-managed-policy
+              value: AWSSupportAccess
