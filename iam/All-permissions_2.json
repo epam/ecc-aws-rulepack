@@ -20,7 +20,6 @@
                 "s3:GetBucketOwnershipControls",
                 "s3:GetBucketPolicy",
                 "s3:GetBucketPublicAccessBlock",
-                "s3:GetBucketReplication",
                 "s3:GetBucketTagging",
                 "s3:GetBucketVersioning",
                 "s3:GetBucketWebsite",
