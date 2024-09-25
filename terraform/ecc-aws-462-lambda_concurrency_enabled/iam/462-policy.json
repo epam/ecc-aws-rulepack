@@ -7,8 +7,6 @@
             "Action": [
                 "tag:GetResources",
                 "lambda:ListFunctions",
-                "lambda:GetFunctionConcurrency",
-                "lambda:GetFunctionConfiguration",
                 "lambda:GetFunction"
             ],
             "Resource": "*"
