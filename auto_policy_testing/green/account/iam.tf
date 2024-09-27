@@ -10,6 +10,15 @@ resource "aws_iam_account_password_policy" "this" {
   max_password_age             = 90
 }
 
+# resource "null_resource" "disable_password_policy" {
+#   provisioner "local-exec" {
+#     when    = destroy
+#     command = "aws iam delete-account-password-policy"
+#   }
+
+#   depends_on = [aws_iam_account_password_policy.this]
+# }
+
 resource "aws_accessanalyzer_analyzer" "this" {
   analyzer_name = module.naming.resource_prefix.iam_analyzer
 

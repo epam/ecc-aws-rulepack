@@ -260,17 +260,17 @@ jobs:
         env:
           PROJECT_TOKEN: ${{ secrets.ECC_CHANGELOG_ACTION }}
           ACTIONS_REPO_BRANCH: ${{ env.ACTIONS_REPO_BRANCH }}
-      # - name: Delete readonly role for scans
-      #   uses: ./ecc-actions/auto-test-actions/readonly-role-for-scans
-      #   with:
-      #     CI_ASSUME_ROLE: ${{ secrets.CI_ASSUME_ROLE }}
-      #     SERVICE_ACCOUNT: ${{ secrets.SERVICE_ACCOUNT }}
-      #     WORKLOAD_IDENTITY_PROVIDER: ${{ secrets.WORKLOAD_IDENTITY_PROVIDER }}
-      #     COMPLIANCE: ${{ matrix.compliance }}
-      #     PROJECT_TOKEN: ${{ secrets.CLOUDCUSTODIAN_CORE }}
-      #     ROLE_ACTION: "delete"
-      #   env:
-      #     created_role_name: ${{ needs.create_readonly_role_for_scans.outputs.readonly_role_name }}
+      - name: Delete readonly role for scans
+        uses: ./ecc-actions/auto-test-actions/readonly-role-for-scans
+        with:
+          CI_ASSUME_ROLE: ${{ secrets.CI_ASSUME_ROLE }}
+          SERVICE_ACCOUNT: ${{ secrets.SERVICE_ACCOUNT }}
+          WORKLOAD_IDENTITY_PROVIDER: ${{ secrets.WORKLOAD_IDENTITY_PROVIDER }}
+          COMPLIANCE: ${{ matrix.compliance }}
+          PROJECT_TOKEN: ${{ secrets.CLOUDCUSTODIAN_CORE }}
+          ROLE_ACTION: "delete"
+        env:
+          created_role_name: ${{ needs.create_readonly_role_for_scans.outputs.readonly_role_name }}
 
   destroy_common_resources:
     name: Destroy common
