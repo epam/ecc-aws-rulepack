@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - "feature/policy_testing_v2"
+      - "feature/deploy_and_scan_sequential_parallel_resources"
   # Run this workflow manually from the Actions tab
   workflow_dispatch:
     inputs:
@@ -14,7 +15,7 @@ on:
 
 # limits to only one workflow in time
 concurrency:
-  group: ${{ github.workflow }}
+  group: ${{ github.workflow }}-${{ github.ref }}
 
 env:
   AUTO_TEST_DIR: "auto_policy_testing"
@@ -27,7 +28,7 @@ env:
   default_resource_priority_list: "['account', 'glue', 'sns']"
   #'[ "account", "acm", "airflow", "ami", "apigwv2", "app-elb", "app-flow", "asg", "backup", "cfn", "cloudtrail", "codebuild", "codedeploy", "codepipeline", "dax", "directory", "distribution", "dlm", "dms", "dynamodb", "ebs", "ec2", "ecr", "ecs", "efs", "eip", "eks", "elasticache", "elasticbeanstalk", "elasticsearch", "elb", "emr", "eni", "event", "firehose", "fsx", "glacier", "glue", "graphql", "hostedzone", "iam", "internet", "kafka", "key", "kinesis", "kms", "lambda", "launch", "lightsail", "log", "message", "nat", "network", "peering", "r53domain", "rds", "redshift", "rest", "route", "rrset", "s3", "sagemaker", "secrets", "security-group", "sns", "sqs", "step", "subnet", "transit", "vpc", "vpn", "waf"]'
   RED: '\033[0;31m'
-  ACTIONS_REPO_BRANCH: "main" 
+  ACTIONS_REPO_BRANCH: "feature/deploy_and_scan_sequential_parallel_resources" 
 
 permissions:
   contents: "read"
@@ -112,10 +113,12 @@ jobs:
     runs-on: ubuntu-22.04
     needs: deploy_common_resources
     outputs:
+      action_repo_name: ${{ steps.prepare-resource-matrix.outputs.action_repo_name }}
       parallel_resources_list: ${{ steps.prepare-resource-matrix.outputs.parallel_resources_to_scan }}
       not_parallel_resources_list: ${{ steps.prepare-resource-matrix.outputs.not_parallel_resources_to_scan }}
       sequential_resources_list: ${{ steps.prepare-resource-matrix.outputs.sequential_resources_to_scan }}
       sequential_resources_length: ${{ steps.prepare-resource-matrix.outputs.sequential_resources_length }}
+      sequential_parallel_resources_list: ${{ steps.prepare-resource-matrix.outputs.sequential_parallel_resources_to_scan }}
     steps:
       - name: Git clone the repository
         uses: actions/checkout@v4
@@ -129,6 +132,8 @@ jobs:
       - name: Prepare resource matrix
         id: prepare-resource-matrix
         uses: ./ecc-actions/auto-test-actions/prepare-resource-matrix
+        env:
+          ACTIONS_REPO_BRANCH: ${{ env.ACTIONS_REPO_BRANCH }}
 
   deploy_and_scan_parallel_resources:
     name: Scan P
@@ -247,11 +252,30 @@ jobs:
         READONLY_ROLE_NAME: ${{ needs.create_readonly_role_for_scans.outputs.readonly_role_name }}
         GOOGLE_IMPERSONATE_SERVICE_ACCOUNT: ${{ secrets.GOOGLE_IMPERSONATE_SERVICE_ACCOUNT }}
 
+  deploy_and_scan_sequential_parallel_resources:
+    name: Scan S/P
+    needs: [deploy_common_resources, create_readonly_role_for_scans, prepare_resource_matrix]
+    strategy:
+      max-parallel: 1
+      fail-fast: false
+      matrix:
+        resource: ['glue']
+        # resource: ${{fromJson(needs.prepare_resource_matrix.outputs.sequential_parallel_resources_list)}}
+    uses: ./.github/workflows/sequential_parallel_scan.yml
+    secrets: inherit
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.run_id }}-sequential-parallel
+    with:
+      RESOURCE: ${{ matrix.resource }}
+      ACTIONS_REPO_BRANCH: ${{ needs.prepare_resource_matrix.outputs.action_repo_name }}
+      READONLY_ROLE_NAME: ${{ needs.create_readonly_role_for_scans.outputs.readonly_role_name }}
+
   delete_readonly_role_for_scans:
     name: Delete readonly role for scans
     if: ${{ always() }}
     runs-on: ubuntu-22.04
-    needs: [ create_readonly_role_for_scans, deploy_and_scan_parallel_resources, deploy_and_scan_not_parallel_resources, deploy_and_scan_sequential_resources ]
+    needs: [ create_readonly_role_for_scans, deploy_and_scan_parallel_resources, deploy_and_scan_not_parallel_resources, deploy_and_scan_sequential_resources, deploy_and_scan_sequential_parallel_resources ]
+    # needs: [ create_readonly_role_for_scans, deploy_and_scan_sequential_parallel_resources ]
     steps:
       - name: Git clone the repository
         uses: actions/checkout@v4

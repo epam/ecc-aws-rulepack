@@ -1,0 +1,57 @@
+name: Deploy and scan sequential parallel resources
+
+on:
+  workflow_call:
+    inputs:
+      RESOURCE:
+        type: string
+      ACTIONS_REPO_BRANCH:
+        type: string
+      READONLY_ROLE_NAME:
+        type: string
+
+env:
+  AUTO_TEST_DIR: "auto_policy_testing"
+  TF_VAR_project: ${{ secrets.TF_VAR_project }}
+  TF_VAR_region: ${{ secrets.AWS_REGION }}
+  TF_VAR_zone: ${{ secrets.TF_VAR_zone }}
+  TF_BACKEND_STORAGE_NAME: ${{ secrets.TF_BACKEND_STORAGE_NAME }}
+  TF_CLI_ARGS: "-no-color"
+  AWS_DEFAULT_REGION: ${{ secrets.AWS_REGION }}
+      
+jobs:
+  deploy_and_scan_sequential_parallel_resources:
+    name: Scan S/P
+    runs-on: ubuntu-22.04
+    # concurrency:
+    #   group: ${{ github.workflow }}-${{ github.run_id }}-nested
+    strategy:
+      max-parallel: 2
+      fail-fast: false
+      matrix:
+        compliance: ['green', 'red']
+    env: 
+      COMPLINCE: ${{ matrix.compliance }}
+      RESOURCE: ${{ inputs.RESOURCE }}
+    steps:
+      - name: Git clone the repository
+        uses: actions/checkout@v4
+
+      - name: Checkout ecc-actions
+        run: git clone -b $ACTIONS_REPO_BRANCH "https://git:$PROJECT_TOKEN@git.epam.com/epmc-sec/cloudlab/cloud_custodian/ecc-actions.git" ecc-actions
+        env:
+          PROJECT_TOKEN: ${{ secrets.ECC_CHANGELOG_ACTION }}
+          ACTIONS_REPO_BRANCH: ${{ inputs.ACTIONS_REPO_BRANCH }}
+
+      - name: Deploy and scan sequential parallel resources
+        uses: ./ecc-actions/auto-test-actions/deploy-and-scan-resources
+        with:
+          CI_ASSUME_ROLE: ${{ secrets.CI_ASSUME_ROLE }}
+          SERVICE_ACCOUNT: ${{ secrets.SERVICE_ACCOUNT }}
+          WORKLOAD_IDENTITY_PROVIDER: ${{ secrets.WORKLOAD_IDENTITY_PROVIDER }}
+          COMPLIANCE: ${{ matrix.compliance }}
+          PROJECT_TOKEN: ${{ secrets.CLOUDCUSTODIAN_CORE }}
+          READONLY_ROLE_NAME: ${{ inputs.READONLY_ROLE_NAME }}
+          GOOGLE_IMPERSONATE_SERVICE_ACCOUNT: ${{ secrets.GOOGLE_IMPERSONATE_SERVICE_ACCOUNT }}
+
+      
