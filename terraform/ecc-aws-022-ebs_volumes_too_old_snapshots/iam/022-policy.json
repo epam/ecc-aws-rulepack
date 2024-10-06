@@ -6,7 +6,8 @@
             "Action": [
                 "ec2:DescribeSnapshots",
                 "ec2:DescribeImages",
-                "autoscaling:DescribeAutoScalingGroups"
+                "autoscaling:DescribeAutoScalingGroups",
+                "ec2:DescribeLaunchTemplateVersions"
             ],
             "Effect": "Allow",
             "Resource": "*"

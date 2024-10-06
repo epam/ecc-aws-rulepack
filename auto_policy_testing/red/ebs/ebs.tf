@@ -5,6 +5,7 @@ resource "aws_ebs_volume" "this" {
   size              = 4
   type              = "io1"
   iops              = 100
+  encrypted         = false
 
   tags = {
     Name = "${module.naming.resource_prefix.ebs_volume}"
@@ -29,6 +30,7 @@ resource "aws_ebs_snapshot" "this" {
   volume_id = aws_ebs_volume.default_volume.id
   provider  = aws.provider2
 }
+
 
 resource "null_resource" "this" {
   provisioner "local-exec" {

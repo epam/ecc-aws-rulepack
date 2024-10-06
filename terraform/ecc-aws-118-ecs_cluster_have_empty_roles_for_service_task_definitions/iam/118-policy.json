@@ -3,9 +3,11 @@
     "Statement": [
         {
             "Effect": "Allow",
-            "Action": [ 
+            "Action": [
                 "ecs:ListTaskDefinitions",
-                "ecs:DescribeTaskDefinition"
+                "ecs:DescribeTaskDefinition",
+                "ecs:ListClusters",
+                "ecs:ListServices"
             ],
             "Resource": "*"
         }
