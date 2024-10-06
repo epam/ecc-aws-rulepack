@@ -1,0 +1,91 @@
+{
+    "status_code": 200,
+    "data": {
+        "SecurityGroups": [
+            {
+                "Description": "Managed by Terraform",
+                "GroupName": "135_c7n_security_group2_red",
+                "IpPermissions": [
+                    {
+                        "FromPort": 7199,
+                        "IpProtocol": "tcp",
+                        "IpRanges": [
+                            {
+                                "CidrIp": "0.0.0.0/0"
+                            }
+                        ],
+                        "Ipv6Ranges": [],
+                        "PrefixListIds": [],
+                        "ToPort": 7199,
+                        "UserIdGroupPairs": []
+                    },
+                    {
+                        "FromPort": 7000,
+                        "IpProtocol": "tcp",
+                        "IpRanges": [
+                            {
+                                "CidrIp": "0.0.0.0/0"
+                            }
+                        ],
+                        "Ipv6Ranges": [],
+                        "PrefixListIds": [],
+                        "ToPort": 7000,
+                        "UserIdGroupPairs": []
+                    }
+                ],
+                "OwnerId": "this",
+                "GroupId": "sg-083f00cce0ffd4074",
+                "IpPermissionsEgress": [
+                    {
+                        "IpProtocol": "-1",
+                        "IpRanges": [
+                            {
+                                "CidrIp": "0.0.0.0/0"
+                            }
+                        ],
+                        "Ipv6Ranges": [],
+                        "PrefixListIds": [],
+                        "UserIdGroupPairs": []
+                    }
+                ],
+                "Tags": [
+                    {
+                        "Key": "Name",
+                        "Value": "135_c7n_security_group2_red"
+                    }
+                ],
+                "VpcId": "vpc-02a45a8433317c53f"
+            },
+            {
+                "Description": "Managed by Terraform",
+                "GroupName": "135_c7n_security_group1_red",
+                "IpPermissions": [
+                    {
+                        "FromPort": 22,
+                        "IpProtocol": "tcp",
+                        "IpRanges": [
+                            {
+                                "CidrIp": "0.0.0.0/0"
+                            }
+                        ],
+                        "Ipv6Ranges": [],
+                        "PrefixListIds": [],
+                        "ToPort": 22,
+                        "UserIdGroupPairs": []
+                    }
+                ],
+                "OwnerId": "this",
+                "GroupId": "sg-0e6a76f964cde2d21",
+                "IpPermissionsEgress": [],
+                "Tags": [
+                    {
+                        "Key": "Name",
+                        "Value": "135_c7n_security_group1_red"
+                    }
+                ],
+                "VpcId": "vpc-02a45a8433317c53f"    
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}
