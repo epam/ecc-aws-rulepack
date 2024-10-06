@@ -58,6 +58,9 @@ resource "aws_ecs_task_definition" "this2" {
   task_role_arn            = aws_iam_role.task-role.arn
   requires_compatibilities = ["EC2"]
   pid_mode                 = "task"
+  runtime_platform {
+    operating_system_family = "LINUX"
+  }
 
   cpu    = 256
   memory = 512

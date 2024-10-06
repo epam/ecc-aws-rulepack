@@ -15,6 +15,7 @@ resource "aws_cloudfront_distribution" "this2" {
   default_root_object = "index.html"
 
   default_cache_behavior {
+    field_level_encryption_id = aws_cloudfront_field_level_encryption_config.this.id
     allowed_methods  = ["DELETE", "GET", "HEAD", "OPTIONS", "PATCH", "POST", "PUT"]
     cached_methods   = ["GET", "HEAD"]
     target_origin_id = "${module.naming.resource_prefix.cloudfront}-2"
@@ -27,7 +28,7 @@ resource "aws_cloudfront_distribution" "this2" {
       }
     }
 
-    viewer_protocol_policy = "allow-all"
+    viewer_protocol_policy = "https-only"
   }
 
   restrictions {

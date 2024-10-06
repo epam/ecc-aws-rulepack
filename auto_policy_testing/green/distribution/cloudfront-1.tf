@@ -42,7 +42,6 @@ resource "aws_cloudfront_distribution" "this1" {
   web_acl_id          = data.terraform_remote_state.common.outputs.waf_web_acl_id
 
   default_cache_behavior {
-    field_level_encryption_id = aws_cloudfront_field_level_encryption_config.this.id
     target_origin_id         = "${module.naming.resource_prefix.cloudfront}-1"
     compress                 = true
     allowed_methods          = ["GET", "HEAD", "OPTIONS"]

@@ -28,7 +28,6 @@ resource "aws_cloudtrail" "this" {
 resource "aws_s3_bucket" "this" {
   bucket        = "${module.naming.resource_prefix.s3_bucket}-${random_integer.this.result}"
   force_destroy = true
-  
 }
 
 resource "random_integer" "this" {
@@ -43,4 +42,14 @@ resource "aws_s3_bucket_policy" "this" {
 
 resource "aws_cloudwatch_log_group" "this" {
   name = "${module.naming.resource_prefix.cw_log_group}"
+}
+
+resource "aws_s3_bucket_logging" "this" {
+  bucket        = aws_s3_bucket.this.id
+  target_bucket = aws_s3_bucket.bucket_for_logging.id
+  target_prefix = "log/"
+}
+
+resource "aws_s3_bucket" "bucket_for_logging" {
+  bucket = "${module.naming.resource_prefix.s3_bucket}-${random_integer.this.result}-logs"
 }

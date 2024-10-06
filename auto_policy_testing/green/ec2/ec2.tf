@@ -5,6 +5,7 @@ resource "aws_instance" "this1" {
   iam_instance_profile        = aws_iam_instance_profile.this.name
   monitoring                  = true
   subnet_id                   = data.terraform_remote_state.common.outputs.vpc_subnet_1_id
+  security_groups = [aws_security_group.this.id]
 
   metadata_options {
     http_endpoint               = "enabled"
@@ -29,6 +30,7 @@ resource "aws_instance" "this2" {
   iam_instance_profile        = aws_iam_instance_profile.this.name
   subnet_id                   = data.terraform_remote_state.common.outputs.vpc_subnet_private_1_id
   associate_public_ip_address = false
+  security_groups = [aws_security_group.this.id]
 }
 
 resource "null_resource" "this1" {

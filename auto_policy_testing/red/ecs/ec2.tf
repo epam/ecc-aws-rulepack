@@ -16,7 +16,7 @@ resource "aws_launch_template" "this" {
     name = aws_iam_instance_profile.ecs-agent.name
   }
   network_interfaces {
-    associate_public_ip_address = false
+    associate_public_ip_address = true
     device_index                = 0
     security_groups             = [aws_security_group.this.id]
     delete_on_termination       = true
@@ -44,7 +44,7 @@ resource "aws_autoscaling_group" "this" {
     create_before_destroy = true
   }
   desired_capacity          = 1
-  min_size                  = 0
+  min_size                  = 1
   max_size                  = 1
   health_check_grace_period = 300
   health_check_type         = "EC2"

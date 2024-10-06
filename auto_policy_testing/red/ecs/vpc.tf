@@ -7,12 +7,6 @@ resource "aws_security_group" "this" {
     protocol  = "-1"
     self      = true
   }
-  ingress {
-    from_port = 80
-    to_port   = 8000
-    protocol  = "tcp"
-    self      = true
-  }
   egress {
     from_port   = 0
     to_port     = 0

@@ -1,6 +1,7 @@
 output "ecs" {
   value = {
     ecs = aws_ecs_cluster.this1.arn
+    ecc-aws-110-ecs_cluster_at_rest_encryption = aws_ecs_cluster.this2.arn
     ecc-aws-360-ecs_exec_logging_encryption_enabled = [aws_ecs_cluster.this1.arn, aws_ecs_cluster.this2.arn]
     ecc-aws-464-ecs_exec_logging_enabled = [aws_ecs_cluster.this1.arn, aws_ecs_cluster.this2.arn]
 

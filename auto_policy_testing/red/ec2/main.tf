@@ -13,3 +13,11 @@ data "terraform_remote_state" "common" {
     region = var.remote_state_region
   }
 }
+
+# data "terraform_remote_state" "common" {
+#   backend = "local"
+
+#   config = {
+#     path = "../common_resources/terraform.tfstate"
+#   }
+# }

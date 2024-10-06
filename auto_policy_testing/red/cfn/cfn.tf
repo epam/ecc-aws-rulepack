@@ -1,5 +1,5 @@
 resource "aws_cloudformation_stack" "this" {
-  name     = module.naming.resource_prefix.cfn
+  name     = "${module.naming.resource_prefix.cfn}-1"
   provider = aws.provider2
 
   template_body = <<STACK
@@ -33,7 +33,7 @@ resource "time_sleep" "this" {
 
 resource "null_resource" "this" {
   provisioner "local-exec" {
-    command = "aws s3api put-bucket-versioning --bucket ${module.naming.resource_prefix.s3_bucket}-${random_integer.this.result} --versioning-configuration Status=Suspended && aws cloudformation detect-stack-drift --stack-name ${module.naming.resource_prefix.cfn}"
+    command = "aws s3api put-bucket-versioning --bucket ${module.naming.resource_prefix.s3_bucket}-${random_integer.this.result} --versioning-configuration Status=Suspended && aws cloudformation detect-stack-drift --stack-name ${module.naming.resource_prefix.cfn}-1"
     # interpreter = ["bash", "-c"]
   }
 

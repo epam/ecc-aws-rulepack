@@ -10,20 +10,21 @@ resource "aws_launch_template" "this" {
       delete_on_termination = true
       volume_size           = 30
       volume_type           = "gp2"
+      encrypted             = true
     }
   }
   iam_instance_profile {
     name = aws_iam_instance_profile.ecs-agent.name
   }
   network_interfaces {
-    associate_public_ip_address = false
+    associate_public_ip_address = true
     device_index                = 0
     security_groups             = [aws_security_group.this.id]
     delete_on_termination       = true
-    subnet_id = data.terraform_remote_state.common.outputs.vpc_subnet_private_1_id
+    subnet_id = data.terraform_remote_state.common.outputs.vpc_subnet_1_id
   }
   placement {
-    availability_zone = data.terraform_remote_state.common.outputs.az_subnet_priv_1.az_name
+    availability_zone = data.terraform_remote_state.common.outputs.az_subnet_pub_1.az_name
   }
   tag_specifications {
     resource_type = "instance"
@@ -35,7 +36,7 @@ resource "aws_launch_template" "this" {
 
 resource "aws_autoscaling_group" "this" {
   name               = "${module.naming.resource_prefix.ec2}-asg"
-  availability_zones = [data.terraform_remote_state.common.outputs.az_subnet_priv_1.az_name]
+  availability_zones = [data.terraform_remote_state.common.outputs.az_subnet_pub_1.az_name]
   launch_template {
     id      = aws_launch_template.this.id
     version = "$Latest"

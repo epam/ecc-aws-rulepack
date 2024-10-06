@@ -65,23 +65,38 @@ resource "aws_ecs_task_definition" "this1" {
 TASK_DEFINITION
 }
 
-resource "aws_security_group" "this" {
-  name   = module.naming.resource_prefix.security_group
-  vpc_id = data.terraform_remote_state.common.outputs.vpc_id
-  ingress {
-    from_port = 0
-    to_port   = 0
-    protocol  = "-1"
-    self      = true
-  }
-  egress {
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
 
-  tags = {
-    Name = "${module.naming.resource_prefix.security_group}"
+resource "aws_ecs_service" "this5" {
+  name             = "${module.naming.resource_prefix.ecs_service}-5"
+  cluster          = aws_ecs_cluster.this1.id
+  task_definition  = aws_ecs_task_definition.this5.arn
+  desired_count    = 1
+  launch_type      = "FARGATE"
+  network_configuration {
+    security_groups  = [aws_security_group.this.id]
+    subnets          = [data.terraform_remote_state.common.outputs.vpc_subnet_1_id]
+    assign_public_ip = false
   }
+}
+
+resource "aws_ecs_task_definition" "this5" {
+    family                   = "${module.naming.resource_prefix.ecs_task_definition}-5"
+    requires_compatibilities = ["FARGATE"]
+    network_mode             = "awsvpc"
+    cpu    = 256
+    memory = 512
+
+  container_definitions = <<TASK_DEFINITION
+[
+  {
+    "name": "httpd",
+      "image": "httpd",
+      "entryPoint": ["sh", "-c"],
+      "command": ["while true; do sleep 1000; done"],
+      "linuxParameters": {
+          "initProcessEnabled": true
+      }
+  }
+]
+TASK_DEFINITION
 }

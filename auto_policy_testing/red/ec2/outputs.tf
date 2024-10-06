@@ -6,5 +6,7 @@ output "ec2" {
     ecc-aws-223-ec2_managed_instance_association_compliance_status_check = aws_instance.this2.id
     ecc-aws-576-ec2_instance_dedicated_tenancy                           = aws_instance.this2.id
     ecc-aws-610-idle_ec2_instance                                        = "i-03331c1b91e6fffe8"
+    ecc-aws-131-instance_with_unencrypted_service_is_exposed_to_public_internet = [aws_instance.this1.id, aws_instance.this3.id]
+    ecc-aws-132-public_instance_with_sensitive_service_is_exposed_to_entire_internet = [aws_instance.this1.id, aws_instance.this3.id]
   }
 }

@@ -32,6 +32,9 @@ resource "aws_ecs_service" "this2" {
 
 resource "aws_ecs_task_definition" "this2" {
   family                   = "${module.naming.resource_prefix.ecs_task_definition}-2"
+  runtime_platform {
+    operating_system_family = "LINUX"
+  }
   network_mode             = "host"
   execution_role_arn       = aws_iam_role.task-execution-role.arn
   task_role_arn            = aws_iam_role.task-role.arn
@@ -83,6 +86,7 @@ TASK_DEFINITION
 
 resource "time_sleep" "wait_60_seconds" {
   create_duration = "60s"
+  depends_on = [aws_autoscaling_group.this]
 }
 
 resource "aws_ecs_cluster_capacity_providers" "this" {

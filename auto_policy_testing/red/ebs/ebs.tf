@@ -2,7 +2,7 @@
 # ecc-aws-570-ebs_volumes_are_of_type_gp3_instead_of_io1
 resource "aws_ebs_volume" "this" {
   availability_zone = data.aws_availability_zones.this.names[0]
-  size              = 8
+  size              = 4
   type              = "io1"
   iops              = 100
 

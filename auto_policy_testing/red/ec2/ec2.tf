@@ -1,13 +1,12 @@
 # Instance autotest-ec2-ec2-red-DO-NOT-DELETE-1 with ID i-05ad287ff3ed2b9f5 was created to test policy - ecc-aws-185-ec2_stopped_instance
 # Instance autotest-ec2-ec2-red-DO-NOT-DELETE-2 with ID i-03331c1b91e6fffe8 was created to test policy - ecc-aws-610-idle_ec2_instance
 
-
-
 resource "aws_instance" "this1" {
   provider      = aws.provider2
   ami           = data.aws_ami.this.id
   instance_type = "t1.micro"
-  subnet_id     = data.terraform_remote_state.common.outputs.vpc_subnet_1_id
+  security_groups = [aws_security_group.this1.id]
+  subnet_id     = data.terraform_remote_state.common.outputs.vpc_subnet_private_1_id
 
   metadata_options {
     http_endpoint               = "enabled"
@@ -22,7 +21,7 @@ resource "aws_instance" "this1" {
 }
 
 resource "aws_network_interface" "this" {
-  subnet_id = data.terraform_remote_state.common.outputs.vpc_subnet_1_id
+  subnet_id = data.terraform_remote_state.common.outputs.vpc_subnet_private_1_id
 
   attachment {
     instance     = aws_instance.this1.id
@@ -42,3 +41,19 @@ resource "aws_instance" "this2" {
   }
 }
 
+
+resource "aws_instance" "this3" {
+  ami           = data.aws_ami.this.id
+  instance_type = "t1.micro"
+  security_groups = [aws_security_group.this2.id]
+  subnet_id     = data.terraform_remote_state.common.outputs.vpc_subnet_private_1_id
+
+  root_block_device {
+    delete_on_termination = false
+    volume_size           = 8
+  }
+
+  tags = {
+    Name          = "${module.naming.resource_prefix.ec2}-3"
+  }
+}

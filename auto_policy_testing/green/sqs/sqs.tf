@@ -1,31 +1,18 @@
 resource "aws_sqs_queue" "this" {
-  name                              = "${module.naming.resource_prefix.sqs}"
+  name                              = "${module.naming.resource_prefix.sqs}-1"
   delay_seconds                     = 90
   max_message_size                  = 2048
   message_retention_seconds         = 86400
   receive_wait_time_seconds         = 10
   kms_master_key_id                 = data.terraform_remote_state.common.outputs.kms_key_arn
   kms_data_key_reuse_period_seconds = 300
+
+  redrive_policy = jsonencode({
+    deadLetterTargetArn = aws_sqs_queue.this2.arn
+    maxReceiveCount     = 4
+  })
 }
 
-resource "aws_sqs_queue_policy" "this" {
-  queue_url = aws_sqs_queue.this.id
-
-  policy = <<POLICY
-{
-  "Version": "2012-10-17",
-  "Id": "sqspolicy",
-  "Statement": [
-    {
-      "Sid": "${module.naming.resource_prefix.sqs}",
-      "Effect": "Allow",
-      "Principal": {
-        "AWS": "arn:aws:iam::${data.aws_caller_identity.this.account_id}:root"
-      },
-      "Action": "sqs:*",
-      "Resource": "${aws_sqs_queue.this.arn}"
-    }
-  ]
-}
-POLICY
+resource "aws_sqs_queue" "this2" {
+  name                              = "${module.naming.resource_prefix.sqs}-2"
 }

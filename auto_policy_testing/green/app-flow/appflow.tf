@@ -1,5 +1,6 @@
 resource "aws_appflow_flow" "this" {
   name = module.naming.resource_prefix.app_flow
+  kms_arn = data.terraform_remote_state.common.outputs.kms_key_arn
 
   source_flow_config {
     connector_type = "S3"
@@ -32,7 +33,6 @@ resource "aws_appflow_flow" "this" {
     connector_operator {
       s3 = "NO_OP"
     }
-
   }
 
   trigger_config {
