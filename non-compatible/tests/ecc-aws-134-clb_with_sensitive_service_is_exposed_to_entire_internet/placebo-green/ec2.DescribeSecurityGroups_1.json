@@ -1,0 +1,104 @@
+{
+    "status_code": 200,
+    "data": {
+        "SecurityGroups": [
+            {
+                "Description": "Managed by Terraform",
+                "GroupName": "134_c7n_security_group1_green",
+                "IpPermissions": [
+                    {
+                        "FromPort": 23,
+                        "IpProtocol": "tcp",
+                        "IpRanges": [
+                            {
+                                "CidrIp": "10.0.0.0/16"
+                            }
+                        ],
+                        "Ipv6Ranges": [],
+                        "PrefixListIds": [],
+                        "ToPort": 23,
+                        "UserIdGroupPairs": []
+                    }
+                ],
+                "OwnerId": "this",
+                "GroupId": "sg-01f8c94ee4b4f7b7a",
+                "IpPermissionsEgress": [],
+                "Tags": [
+                    {
+                        "Key": "Name",
+                        "Value": "134_c7n_security_group1_green"
+                    }
+                ],
+                "VpcId": "vpc-09fc631a5851c5c87"
+            },
+            {
+                "Description": "Managed by Terraform",
+                "GroupName": "134_c7n_security_group2_green",
+                "IpPermissions": [
+                    {
+                        "FromPort": 80,
+                        "IpProtocol": "tcp",
+                        "IpRanges": [
+                            {
+                                "CidrIp": "0.0.0.0/0"
+                            }
+                        ],
+                        "Ipv6Ranges": [],
+                        "PrefixListIds": [],
+                        "ToPort": 80,
+                        "UserIdGroupPairs": []
+                    },
+                    {
+                        "FromPort": 110,
+                        "IpProtocol": "tcp",
+                        "IpRanges": [
+                            {
+                                "CidrIp": "10.0.0.0/16"
+                            }
+                        ],
+                        "Ipv6Ranges": [],
+                        "PrefixListIds": [],
+                        "ToPort": 110,
+                        "UserIdGroupPairs": []
+                    },
+                    {
+                        "FromPort": 25,
+                        "IpProtocol": "tcp",
+                        "IpRanges": [
+                            {
+                                "CidrIp": "10.0.0.0/16"
+                            }
+                        ],
+                        "Ipv6Ranges": [],
+                        "PrefixListIds": [],
+                        "ToPort": 25,
+                        "UserIdGroupPairs": []
+                    }
+                ],
+                "OwnerId": "this",
+                "GroupId": "sg-0f4527d318bc483f7",
+                "IpPermissionsEgress": [
+                    {
+                        "IpProtocol": "-1",
+                        "IpRanges": [
+                            {
+                                "CidrIp": "0.0.0.0/0"
+                            }
+                        ],
+                        "Ipv6Ranges": [],
+                        "PrefixListIds": [],
+                        "UserIdGroupPairs": []
+                    }
+                ],
+                "Tags": [
+                    {
+                        "Key": "Name",
+                        "Value": "134_c7n_security_group2_green"
+                    }
+                ],
+                "VpcId": "vpc-09fc631a5851c5c87"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

@@ -1,0 +1,67 @@
+{
+    "status_code": 200,
+    "data": {
+        "LoadBalancerDescriptions": [
+            {
+                "LoadBalancerName": "c7n-134-elb-green",
+                "DNSName": "c7n-134-elb-green-474763723.us-east-1.elb.amazonaws.com",
+                "CanonicalHostedZoneName": "c7n-134-elb-green-474763723.us-east-1.elb.amazonaws.com",
+                "CanonicalHostedZoneNameID": "Z35SXDOTRQ7X7K",
+                "ListenerDescriptions": [
+                    {
+                        "Listener": {
+                            "Protocol": "HTTP",
+                            "LoadBalancerPort": 80,
+                            "InstanceProtocol": "HTTP",
+                            "InstancePort": 8000
+                        },
+                        "PolicyNames": []
+                    }
+                ],
+                "Policies": {
+                    "AppCookieStickinessPolicies": [],
+                    "LBCookieStickinessPolicies": [],
+                    "OtherPolicies": []
+                },
+                "BackendServerDescriptions": [],
+                "AvailabilityZones": [
+                    "us-east-1b",
+                    "us-east-1a"
+                ],
+                "Subnets": [
+                    "subnet-06677597d7a9876e1",
+                    "subnet-0f6e7c3c32d2293d7"
+                ],
+                "VPCId": "vpc-09fc631a5851c5c87",
+                "Instances": [],
+                "HealthCheck": {
+                    "Target": "TCP:8000",
+                    "Interval": 30,
+                    "Timeout": 5,
+                    "UnhealthyThreshold": 2,
+                    "HealthyThreshold": 10
+                },
+                "SourceSecurityGroup": {
+                    "OwnerAlias": "this",
+                    "GroupName": "134_c7n_security_group2_green"
+                },
+                "SecurityGroups": [
+                    "sg-0f4527d318bc483f7",
+                    "sg-01f8c94ee4b4f7b7a"
+                ],
+                "CreatedTime": {
+                    "__class__": "datetime",
+                    "year": 2021,
+                    "month": 8,
+                    "day": 18,
+                    "hour": 6,
+                    "minute": 46,
+                    "second": 26,
+                    "microsecond": 280000
+                },
+                "Scheme": "internet-facing"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}
