@@ -26,18 +26,22 @@ resource "aws_dynamodb_table_item" "this" {
 ITEM
 }
 
-resource "aws_dynamodb_table" "this2" {
-  name           = "${module.naming.resource_prefix.dynamodb_table}-2-DO-NOT-DELETE"
-  hash_key       = "GreenTableHashKey"
-  billing_mode   = "PROVISIONED"
-  read_capacity  = 1
-  write_capacity = 1
+# Tables created for rule ecc-aws-552-dynamodb_tables_unused
+# Table must be older than 60 days for this rule to work
+# Do not uncomment these lines, uncomment them only if you need to remove tables
 
-  attribute {
-    name = "GreenTableHashKey"
-    type = "S"
-  }
-}
+# resource "aws_dynamodb_table" "this2" {
+#   name           = "${module.naming.resource_prefix.dynamodb_table}-2-DO-NOT-DELETE"
+#   hash_key       = "GreenTableHashKey"
+#   billing_mode   = "PROVISIONED"
+#   read_capacity  = 1
+#   write_capacity = 1
+
+#   attribute {
+#     name = "GreenTableHashKey"
+#     type = "S"
+#   }
+# }
 
 # resource "aws_dynamodb_table" "this3" {
 #   name           = "${module.naming.resource_prefix.dynamodb_table}-3-DO-NOT-DELETE"
