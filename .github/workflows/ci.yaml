@@ -15,7 +15,7 @@ jobs:
       matrix:
         compliance: ['red', 'green']
     container:
-      image: python:3.8
+      image: python:3.10
       env:
         COMPLIANCE: ${{ matrix.compliance }}
     if: github.event_name == 'push' || github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || (github.event_name == 'pull_request_review' && github.event.review.state == 'approved')
