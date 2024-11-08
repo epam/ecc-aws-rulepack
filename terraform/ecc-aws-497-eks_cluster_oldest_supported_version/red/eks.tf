@@ -1,7 +1,7 @@
 resource "aws_eks_cluster" "this" {
-  name     = "497_eks_cluster_green"
+  name     = "497_eks_cluster_red"
   role_arn = aws_iam_role.this.arn
-  version  = "1.30"
+  version  = "1.27"
 
   vpc_config {
     subnet_ids = [aws_subnet.subnet1.id, aws_subnet.subnet2.id]
@@ -13,7 +13,7 @@ resource "aws_eks_cluster" "this" {
 }
 
 resource "aws_iam_role" "this" {
-  name = "eks-497-cluster-green"
+  name = "eks-497-cluster-red"
   assume_role_policy = <<POLICY
 {
   "Version": "2012-10-17",
