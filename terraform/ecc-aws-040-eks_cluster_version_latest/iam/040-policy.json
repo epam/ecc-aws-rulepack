@@ -1,14 +1,13 @@
 {
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Effect": "Allow",
-            "Action": [ 
-                "eks:DescribeCluster",
-                "eks:ListClusters",
-                "ec2:DescribeVpcs"
-            ],
-            "Resource": "*"
-        }
-    ]
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Effect": "Allow",
+			"Action": [
+				"eks:ListClusters",
+				"eks:DescribeCluster"
+			],
+			"Resource": "*"
+		}
+	]
 }

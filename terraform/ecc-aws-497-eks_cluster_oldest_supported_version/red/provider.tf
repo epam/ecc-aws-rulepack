@@ -14,7 +14,7 @@ provider "aws"{
   default_tags {
     tags = {
       CustodianRule    = "ecc-aws-497-eks_cluster_oldest_supported_version"
-      ComplianceStatus = "Green"
+      ComplianceStatus = "Red"
     }
   }
 }
