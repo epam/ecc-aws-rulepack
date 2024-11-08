@@ -6,23 +6,23 @@
             "Marker": "",
             "MaxItems": 100,
             "IsTruncated": false,
-            "Quantity": 4,
+            "Quantity": 1,
             "Items": [
                 {
-                    "Id": "E32QEHSIE8V7TF",
-                    "ARN": "arn:aws:cloudfront::111111111111:distribution/E32QEHSIE8V7TF",
+                    "Id": "E3153VPXBPXF29",
+                    "ARN": "arn:aws:cloudfront::644160558196:distribution/E3153VPXBPXF29",
                     "Status": "Deployed",
                     "LastModifiedTime": {
                         "__class__": "datetime",
-                        "year": 2022,
-                        "month": 5,
-                        "day": 20,
-                        "hour": 13,
-                        "minute": 32,
-                        "second": 12,
-                        "microsecond": 356000
+                        "year": 2024,
+                        "month": 11,
+                        "day": 7,
+                        "hour": 20,
+                        "minute": 33,
+                        "second": 52,
+                        "microsecond": 982000
                     },
-                    "DomainName": "d2ohku0rzi86fg.cloudfront.net",
+                    "DomainName": "d13h6bfmht7o6q.cloudfront.net",
                     "Aliases": {
                         "Quantity": 0
                     },
@@ -31,7 +31,7 @@
                         "Items": [
                             {
                                 "Id": "myEC2Origin",
-                                "DomainName": "ec2-3-84-182-11.compute-1.amazonaws.com",
+                                "DomainName": "ec2-54-160-178-196.compute-1.amazonaws.com",
                                 "OriginPath": "",
                                 "CustomHeaders": {
                                     "Quantity": 0
@@ -43,7 +43,7 @@
                                     "OriginSslProtocols": {
                                         "Quantity": 1,
                                         "Items": [
-                                            "TLSv1.1"
+                                            "SSLv3"
                                         ]
                                     },
                                     "OriginReadTimeout": 30,
@@ -53,7 +53,8 @@
                                 "ConnectionTimeout": 10,
                                 "OriginShield": {
                                     "Enabled": false
-                                }
+                                },
+                                "OriginAccessControlId": ""
                             }
                         ]
                     },
@@ -135,16 +136,17 @@
                             "RestrictionType": "whitelist",
                             "Quantity": 4,
                             "Items": [
-                                "US",
                                 "CA",
+                                "DE",
                                 "GB",
-                                "DE"
+                                "US"
                             ]
                         }
                     },
                     "WebACLId": "",
                     "HttpVersion": "HTTP2",
-                    "IsIPV6Enabled": false
+                    "IsIPV6Enabled": false,
+                    "Staging": false
                 }
             ]
         }
