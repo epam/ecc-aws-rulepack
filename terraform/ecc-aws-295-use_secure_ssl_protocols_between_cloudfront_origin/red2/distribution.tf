@@ -1,11 +1,6 @@
 resource "aws_instance" "this" {
   ami           = data.aws_ami.this.id
   instance_type = "t2.micro"
-
-  tags = {
-    CustodianRule    = "ecc-aws-295-use_secure_ssl_protocols_between_cloudfront_origin"
-    ComplianceStatus = "Red"
-  }
 }
 
 data "aws_ami" "this" {
@@ -27,10 +22,10 @@ resource "aws_cloudfront_distribution" "this" {
     domain_name = aws_instance.this.public_dns
     origin_id   = local.ec2_origin_id
     custom_origin_config {
-      origin_protocol_policy = "https-only"
       http_port              = "80"
       https_port             = "443"
-      origin_ssl_protocols   = ["SSLv3"]
+      origin_protocol_policy = "match-viewer"
+      origin_ssl_protocols   = ["TLSv1.2", "SSLv3"]
     }
   }
 
