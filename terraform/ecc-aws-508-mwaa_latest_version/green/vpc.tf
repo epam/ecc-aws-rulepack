@@ -40,11 +40,11 @@ resource "aws_subnet" "private2" {
 }
 
 resource "aws_eip" "this1" {
-  vpc        = true
+  domain   = "vpc"
   depends_on = [aws_internet_gateway.this]
 }
 resource "aws_eip" "this2" {
-  vpc        = true
+  domain   = "vpc"
   depends_on = [aws_internet_gateway.this]
 }
 

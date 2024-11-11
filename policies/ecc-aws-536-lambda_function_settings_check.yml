@@ -9,7 +9,7 @@ policies:
   - name: ecc-aws-536-lambda_function_settings_check
     comment: '010028030400'
     description: |
-      Lambda functions should not use no longer supported runtimes
+      Lambda functions should not use deprecated runtimes
     resource: aws.lambda
     filters:
       - type: value
@@ -19,4 +19,4 @@ policies:
           - type: value
             key: Runtime
             op: in
-            value: [dotnet8, dotnet6, java21, java17, java11, java8.al2, nodejs20.x, nodejs18.x, nodejs16.x, python3.12, python3.11, python3.10, python3.9, python3.8, ruby3.3, ruby3.2]
+            value: [nodejs20.x, nodejs18.x, python3.12, python3.11, python3.10, python3.9, java21, java17, java11, java8.al2, dotnet8, dotnet6, ruby3.3, ruby3.2, provided.al2023, provided.al2]

@@ -18,7 +18,7 @@ policies:
                   - type: value
                     key: EngineVersion
                     op: regex
-                    value: 3.12.*
+                    value: 3.13.*
                   - type: value
                     key: EngineType
                     value: RabbitMQ
@@ -26,7 +26,7 @@ policies:
                   - type: value
                     key: EngineVersion
                     op: regex
-                    value: 5.17.*
+                    value: 5.18.*
                   - type: value
                     key: EngineType
                     value: ActiveMQ

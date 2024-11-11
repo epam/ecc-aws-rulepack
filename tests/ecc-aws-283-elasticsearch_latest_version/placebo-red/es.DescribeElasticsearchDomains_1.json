@@ -4,12 +4,12 @@
         "ResponseMetadata": {},
         "DomainStatusList": [
             {
-                "DomainId": "111111111111/elasticsearch-283-red",
+                "DomainId": "644160558196/elasticsearch-283-red",
                 "DomainName": "elasticsearch-283-red",
-                "ARN": "arn:aws:es:us-east-1:111111111111:domain/elasticsearch-283-red",
+                "ARN": "arn:aws:es:us-east-1:644160558196:domain/elasticsearch-283-red",
                 "Created": true,
                 "Deleted": false,
-                "Endpoint": "search-elasticsearch-283-red-h6asndcluofgetahpb7h6ule24.us-east-1.es.amazonaws.com",
+                "Endpoint": "search-elasticsearch-283-red-nn7tkpnvpivxzn7yukfzhwq26m.us-east-1.es.amazonaws.com",
                 "Processing": false,
                 "UpgradeProcessing": false,
                 "ElasticsearchVersion": "7.4",
@@ -46,7 +46,7 @@
                     "rest.action.multi.allow_explicit_index": "true"
                 },
                 "ServiceSoftwareOptions": {
-                    "CurrentVersion": "R20211203-P2",
+                    "CurrentVersion": "Elasticsearch_7_4_R20241003",
                     "NewVersion": "",
                     "UpdateAvailable": false,
                     "Cancellable": false,
@@ -54,28 +54,56 @@
                     "Description": "There is no software update available for this domain.",
                     "AutomatedUpdateDate": {
                         "__class__": "datetime",
-                        "year": 2021,
-                        "month": 12,
-                        "day": 15,
-                        "hour": 22,
-                        "minute": 7,
+                        "year": 1970,
+                        "month": 1,
+                        "day": 1,
+                        "hour": 0,
+                        "minute": 0,
                         "second": 0,
                         "microsecond": 0
                     },
-                    "OptionalDeployment": false
+                    "OptionalDeployment": true
                 },
                 "DomainEndpointOptions": {
                     "EnforceHTTPS": false,
-                    "TLSSecurityPolicy": "Policy-Min-TLS-1-0-2019-07",
+                    "TLSSecurityPolicy": "Policy-Min-TLS-1-2-2019-07",
                     "CustomEndpointEnabled": false
                 },
                 "AdvancedSecurityOptions": {
                     "Enabled": false,
-                    "InternalUserDatabaseEnabled": false
+                    "InternalUserDatabaseEnabled": false,
+                    "AnonymousAuthEnabled": false
                 },
                 "AutoTuneOptions": {
-                    "State": "ENABLED"
-                }
+                    "State": "DISABLED"
+                },
+                "ChangeProgressDetails": {
+                    "ChangeId": "32b8249b-cd0a-41f2-b5a4-1c477bab158c",
+                    "ConfigChangeStatus": "Completed",
+                    "StartTime": {
+                        "__class__": "datetime",
+                        "year": 2024,
+                        "month": 11,
+                        "day": 11,
+                        "hour": 10,
+                        "minute": 34,
+                        "second": 58,
+                        "microsecond": 817000
+                    },
+                    "LastUpdatedTime": {
+                        "__class__": "datetime",
+                        "year": 2024,
+                        "month": 11,
+                        "day": 11,
+                        "hour": 10,
+                        "minute": 55,
+                        "second": 52,
+                        "microsecond": 458000
+                    },
+                    "InitiatedBy": "CUSTOMER"
+                },
+                "DomainProcessingStatus": "Active",
+                "ModifyingProperties": []
             }
         ]
     }

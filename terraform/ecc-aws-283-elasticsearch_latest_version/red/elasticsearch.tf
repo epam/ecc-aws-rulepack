@@ -1,3 +1,5 @@
+# takes about 20 min to deploy
+
 resource "aws_elasticsearch_domain" "this" {
   domain_name           = "elasticsearch-283-red"
   elasticsearch_version = "7.4"

@@ -4,7 +4,8 @@
         "ResponseMetadata": {},
         "DomainNames": [
             {
-                "DomainName": "elasticsearch-283-red"
+                "DomainName": "elasticsearch-283-red",
+                "EngineType": "Elasticsearch"
             }
         ]
     }

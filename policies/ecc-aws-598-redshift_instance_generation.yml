@@ -15,4 +15,4 @@ policies:
       - type: value
         key: NodeType
         op: regex
-        value: '(dc1|ds2).[^\s]+'
+        value: '(dc1|ds1|ds2).[^\s]+'

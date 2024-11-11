@@ -4,38 +4,38 @@
         "ResponseMetadata": {},
         "BrokerSummaries": [
             {
-                "BrokerArn": "arn:aws:mq:us-east-1:111111111111:broker:mq-broker-active-434-green:b-200c9daf-2b9a-4069-9082-dcfa081345aa",
-                "BrokerId": "b-200c9daf-2b9a-4069-9082-dcfa081345aa",
+                "BrokerArn": "arn:aws:mq:us-east-1:644160558196:broker:mq-broker-active-434-green:b-096a2262-c87f-461a-9e17-a0f75899ac20",
+                "BrokerId": "b-096a2262-c87f-461a-9e17-a0f75899ac20",
                 "BrokerName": "mq-broker-active-434-green",
                 "BrokerState": "RUNNING",
                 "Created": {
                     "__class__": "datetime",
                     "year": 2024,
-                    "month": 5,
-                    "day": 19,
-                    "hour": 19,
-                    "minute": 50,
-                    "second": 20,
-                    "microsecond": 66000
+                    "month": 11,
+                    "day": 11,
+                    "hour": 12,
+                    "minute": 2,
+                    "second": 42,
+                    "microsecond": 955457
                 },
                 "DeploymentMode": "SINGLE_INSTANCE",
                 "EngineType": "ActiveMQ",
                 "HostInstanceType": "mq.t2.micro"
             },
             {
-                "BrokerArn": "arn:aws:mq:us-east-1:111111111111:broker:mq-broker-rabbit-434-green:b-86170a63-a56e-4e1e-9001-8cb46c4fe33f",
-                "BrokerId": "b-86170a63-a56e-4e1e-9001-8cb46c4fe33f",
+                "BrokerArn": "arn:aws:mq:us-east-1:644160558196:broker:mq-broker-rabbit-434-green:b-7bf2f8b1-58a7-4006-91ad-e1dded61024d",
+                "BrokerId": "b-7bf2f8b1-58a7-4006-91ad-e1dded61024d",
                 "BrokerName": "mq-broker-rabbit-434-green",
                 "BrokerState": "RUNNING",
                 "Created": {
                     "__class__": "datetime",
                     "year": 2024,
-                    "month": 5,
-                    "day": 19,
-                    "hour": 19,
-                    "minute": 42,
-                    "second": 11,
-                    "microsecond": 227000
+                    "month": 11,
+                    "day": 11,
+                    "hour": 12,
+                    "minute": 2,
+                    "second": 41,
+                    "microsecond": 845960
                 },
                 "DeploymentMode": "SINGLE_INSTANCE",
                 "EngineType": "RabbitMQ",
