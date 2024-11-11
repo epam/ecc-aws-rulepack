@@ -1,9 +1,11 @@
+# takes 30 min to deploy, 20 min to destroy
+
 resource "aws_mwaa_environment" "this" {
   dag_s3_path        = "dags/"
   execution_role_arn = aws_iam_role.this.arn
   name               = "mwaa_508_red"
   max_workers        = 1
-  airflow_version    = "2.0.2"
+  airflow_version    = "2.8.1"
   network_configuration {
     security_group_ids = [aws_security_group.this.id]
     subnet_ids         = [aws_subnet.private1.id, aws_subnet.private2.id]

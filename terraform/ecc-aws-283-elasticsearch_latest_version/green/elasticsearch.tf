@@ -1,6 +1,8 @@
+# takes about 20 min to deploy
+
 resource "aws_elasticsearch_domain" "this" {
   domain_name           = "elasticsearch-283-green"
-  elasticsearch_version = "OpenSearch_2.11"
+  elasticsearch_version = "OpenSearch_2.15"
 
   ebs_options {
     ebs_enabled = true

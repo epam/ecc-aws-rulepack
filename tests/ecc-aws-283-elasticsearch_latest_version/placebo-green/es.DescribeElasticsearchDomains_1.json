@@ -4,15 +4,15 @@
         "ResponseMetadata": {},
         "DomainStatusList": [
             {
-                "DomainId": "111111111111/elasticsearch-283-green",
+                "DomainId": "644160558196/elasticsearch-283-green",
                 "DomainName": "elasticsearch-283-green",
-                "ARN": "arn:aws:es:us-east-1:111111111111:domain/elasticsearch-283-green",
+                "ARN": "arn:aws:es:us-east-1:644160558196:domain/elasticsearch-283-green",
                 "Created": true,
                 "Deleted": false,
-                "Endpoint": "search-elasticsearch-283-green-sqrl5fumngl6zniiccpgcym4py.us-east-1.es.amazonaws.com",
+                "Endpoint": "search-elasticsearch-283-green-5dqs3erm5dk3a6t37elyi3tmai.us-east-1.es.amazonaws.com",
                 "Processing": false,
                 "UpgradeProcessing": false,
-                "ElasticsearchVersion": "OpenSearch_2.11",
+                "ElasticsearchVersion": "OpenSearch_2.15",
                 "ElasticsearchClusterConfig": {
                     "InstanceType": "m4.large.elasticsearch",
                     "InstanceCount": 1,
@@ -46,7 +46,7 @@
                     "rest.action.multi.allow_explicit_index": "true"
                 },
                 "ServiceSoftwareOptions": {
-                    "CurrentVersion": "R20221114-P1",
+                    "CurrentVersion": "OpenSearch_2_15_R20240904-P4",
                     "NewVersion": "",
                     "UpdateAvailable": false,
                     "Cancellable": false,
@@ -57,7 +57,7 @@
                         "year": 1970,
                         "month": 1,
                         "day": 1,
-                        "hour": 2,
+                        "hour": 0,
                         "minute": 0,
                         "second": 0,
                         "microsecond": 0
@@ -66,7 +66,7 @@
                 },
                 "DomainEndpointOptions": {
                     "EnforceHTTPS": false,
-                    "TLSSecurityPolicy": "Policy-Min-TLS-1-0-2019-07",
+                    "TLSSecurityPolicy": "Policy-Min-TLS-1-2-2019-07",
                     "CustomEndpointEnabled": false
                 },
                 "AdvancedSecurityOptions": {
@@ -75,8 +75,35 @@
                     "AnonymousAuthEnabled": false
                 },
                 "AutoTuneOptions": {
-                    "State": "ENABLED"
-                }
+                    "State": "DISABLED"
+                },
+                "ChangeProgressDetails": {
+                    "ChangeId": "9cd23c15-2b90-443e-b7e7-f149c351c4d8",
+                    "ConfigChangeStatus": "Completed",
+                    "StartTime": {
+                        "__class__": "datetime",
+                        "year": 2024,
+                        "month": 11,
+                        "day": 11,
+                        "hour": 10,
+                        "minute": 41,
+                        "second": 51,
+                        "microsecond": 700000
+                    },
+                    "LastUpdatedTime": {
+                        "__class__": "datetime",
+                        "year": 2024,
+                        "month": 11,
+                        "day": 11,
+                        "hour": 11,
+                        "minute": 1,
+                        "second": 40,
+                        "microsecond": 516000
+                    },
+                    "InitiatedBy": "CUSTOMER"
+                },
+                "DomainProcessingStatus": "Active",
+                "ModifyingProperties": []
             }
         ]
     }
