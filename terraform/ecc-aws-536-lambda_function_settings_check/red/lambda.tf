@@ -1,5 +1,5 @@
 resource "aws_iam_role" "this" {
-  name = "536_role_green"
+  name = "536_role_red"
 
   assume_role_policy = <<EOF
 {
@@ -19,7 +19,7 @@ EOF
 }
 
 resource "aws_iam_role_policy" "this" {
-  name = "536_policy_green"
+  name = "536_policy_red"
   role = aws_iam_role.this.id
 
   policy = <<-EOF
@@ -34,7 +34,7 @@ resource "aws_iam_role_policy" "this" {
                 "ec2:DeleteNetworkInterface",
                 "ec2:DescribeInstances",
                 "ec2:AttachNetworkInterface"
-            ],
+                ],
             "Resource": "*"
         }
     ]
@@ -43,9 +43,9 @@ resource "aws_iam_role_policy" "this" {
 }
 
 resource "aws_lambda_function" "this" {
-  filename                       = "func.zip"
-  function_name                  = "536_lambda_green"
-  role                           = aws_iam_role.this.arn
-  handler                        = "func.py"
-  runtime                        = "python3.12"
+  filename      = "func.zip"
+  function_name = "536_lambda_red"
+  role          = aws_iam_role.this.arn
+  handler       = "lambda.py"
+  runtime       = "python3.8"
 }

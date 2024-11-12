@@ -4,28 +4,28 @@
         "ResponseMetadata": {},
         "cluster": {
             "name": "040_eks_cluster_green",
-            "arn": "arn:aws:eks:us-east-1:111111111111:cluster/040_eks_cluster_green",
+            "arn": "arn:aws:eks:us-east-1:644160558196:cluster/040_eks_cluster_green",
             "createdAt": {
                 "__class__": "datetime",
                 "year": 2024,
-                "month": 5,
-                "day": 20,
-                "hour": 10,
-                "minute": 52,
-                "second": 28,
-                "microsecond": 667000
+                "month": 11,
+                "day": 8,
+                "hour": 15,
+                "minute": 44,
+                "second": 27,
+                "microsecond": 853000
             },
-            "version": "1.29",
-            "endpoint": "https://B85326B0FA2C4339003CE8EDF274DFD6.gr7.us-east-1.eks.amazonaws.com",
-            "roleArn": "arn:aws:iam::111111111111:role/eks-040-cluster-green",
+            "version": "1.31",
+            "endpoint": "https://20370F362F18CA6C8AD640B86E70F675.sk1.us-east-1.eks.amazonaws.com",
+            "roleArn": "arn:aws:iam::644160558196:role/eks-040-cluster-green",
             "resourcesVpcConfig": {
                 "subnetIds": [
-                    "subnet-0a798bcc1005916c3",
-                    "subnet-08d42a8b71b0d8706"
+                    "subnet-0d0c23061da0dc26d",
+                    "subnet-0321ad0b92de8311e"
                 ],
                 "securityGroupIds": [],
-                "clusterSecurityGroupId": "sg-07d377b01e9251a79",
-                "vpcId": "vpc-02afad6f2487a54f6",
+                "clusterSecurityGroupId": "sg-026eab2361121a56e",
+                "vpcId": "vpc-0b4bc9243302538d4",
                 "endpointPublicAccess": true,
                 "endpointPrivateAccess": false,
                 "publicAccessCidrs": [
@@ -52,14 +52,14 @@
             },
             "identity": {
                 "oidc": {
-                    "issuer": "https://oidc.eks.us-east-1.amazonaws.com/id/B85326B0FA2C4339003CE8EDF274DFD6"
+                    "issuer": "https://oidc.eks.us-east-1.amazonaws.com/id/2037075"
                 }
             },
             "status": "ACTIVE",
             "certificateAuthority": {
-                "data": "LS0tLS1CRUdJTiBDR"
+                "data": "LS0tLS1"
             },
-            "platformVersion": "eks.7",
+            "platformVersion": "eks.10",
             "tags": {
                 "CustodianRule": "ecc-aws-040-eks_cluster_version_latest",
                 "ComplianceStatus": "Green"

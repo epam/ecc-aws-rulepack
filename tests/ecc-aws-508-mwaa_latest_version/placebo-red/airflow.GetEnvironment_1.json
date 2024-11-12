@@ -3,37 +3,35 @@
     "data": {
         "ResponseMetadata": {},
         "Environment": {
-            "AirflowConfigurationOptions": {
-                "core.default_task_retries": "16",
-                "core.parallelism": "1"
-            },
-            "AirflowVersion": "2.7.2",
-            "Arn": "arn:aws:airflow:us-east-1:111111111111:environment/mwaa_508_red",
+            "Name": "mwaa_508_red",
+            "Status": "AVAILABLE",
+            "Arn": "arn:aws:airflow:us-east-1:644160558196:environment/mwaa_508_red",
             "CreatedAt": {
                 "__class__": "datetime",
-                "year": 2022,
-                "month": 7,
-                "day": 26,
-                "hour": 8,
-                "minute": 2,
-                "second": 4,
+                "year": 2024,
+                "month": 11,
+                "day": 11,
+                "hour": 18,
+                "minute": 26,
+                "second": 47,
                 "microsecond": 0
             },
+            "WebserverUrl": "vpce.c66.us-east-1.airflow.amazonaws.com",
+            "ExecutionRoleArn": "arn:aws:iam::644160558196:role/508_role_red",
+            "ServiceRoleArn": "arn:aws:iam::644160558196:role/aws-service-role/airflow.amazonaws.com/AWSServiceRoleForAmazonMWAA",
+            "AirflowVersion": "2.8.1",
+            "SourceBucketArn": "arn:aws:s3:::508-bucket-8414316-red",
             "DagS3Path": "dags/",
             "EnvironmentClass": "mw1.small",
-            "ExecutionRoleArn": "arn:aws:iam::111111111111:role/508_role_red",
-            "LastUpdate": {
-                "CreatedAt": {
-                    "__class__": "datetime",
-                    "year": 2022,
-                    "month": 7,
-                    "day": 26,
-                    "hour": 8,
-                    "minute": 2,
-                    "second": 4,
-                    "microsecond": 0
-                },
-                "Status": "SUCCESS"
+            "MaxWorkers": 1,
+            "NetworkConfiguration": {
+                "SubnetIds": [
+                    "subnet-1111111",
+                    "subnet-1111111111"
+                ],
+                "SecurityGroupIds": [
+                    "sg-1111111111"
+                ]
             },
             "LoggingConfiguration": {
                 "DagProcessingLogs": {
@@ -44,11 +42,6 @@
                     "Enabled": false,
                     "LogLevel": "INFO"
                 },
-                "TaskLogs": {
-                    "CloudWatchLogGroupArn": "arn:aws:logs:us-east-1:111111111111:log-group:airflow-mwaa_508_red-Task",
-                    "Enabled": true,
-                    "LogLevel": "INFO"
-                },
                 "WebserverLogs": {
                     "Enabled": false,
                     "LogLevel": "INFO"
@@ -56,31 +49,40 @@
                 "WorkerLogs": {
                     "Enabled": false,
                     "LogLevel": "INFO"
+                },
+                "TaskLogs": {
+                    "Enabled": true,
+                    "LogLevel": "INFO",
+                    "CloudWatchLogGroupArn": "arn:aws:logs:us-east-1:644160558196:log-group:airflow-mwaa_508_red-Task"
                 }
             },
-            "MaxWorkers": 1,
-            "MinWorkers": 1,
-            "Name": "mwaa_508_red",
-            "NetworkConfiguration": {
-                "SecurityGroupIds": [
-                    "sg-017a210f6ba04013d"
-                ],
-                "SubnetIds": [
-                    "subnet-05ec904bc017cd5ae",
-                    "subnet-0b8f6fc77c91daefd"
-                ]
+            "LastUpdate": {
+                "Status": "SUCCESS",
+                "CreatedAt": {
+                    "__class__": "datetime",
+                    "year": 2024,
+                    "month": 11,
+                    "day": 11,
+                    "hour": 18,
+                    "minute": 26,
+                    "second": 47,
+                    "microsecond": 0
+                }
             },
-            "Schedulers": 2,
-            "ServiceRoleArn": "arn:aws:iam::111111111111:role/aws-service-role/airflow.amazonaws.com/AWSServiceRoleForAmazonMWAA",
-            "SourceBucketArn": "arn:aws:s3:::508-bucket-red",
-            "Status": "AVAILABLE",
+            "WeeklyMaintenanceWindowStart": "TUE:04:30",
             "Tags": {
                 "CustodianRule": "ecc-aws-508-mwaa_latest_version",
                 "ComplianceStatus": "Red"
             },
             "WebserverAccessMode": "PRIVATE_ONLY",
-            "WebserverUrl": "c18882a7-c9e4-4757-b435-9f36afab5e43-vpce.c59.us-east-1.airflow.amazonaws.com",
-            "WeeklyMaintenanceWindowStart": "WED:09:00"
+            "MinWorkers": 1,
+            "Schedulers": 2,
+            "WebserverVpcEndpointService": "com.amazonaws.vpce.us-east-1.vpce-svc",
+            "DatabaseVpcEndpointService": "com.amazonaws.vpce.us-east-1.vpce-svc",
+            "CeleryExecutorQueue": "arn:aws:sqs:us-east-1:644160558196:airflow-celery",
+            "EndpointManagement": "SERVICE",
+            "MinWebservers": 2,
+            "MaxWebservers": 2
         }
     }
 }

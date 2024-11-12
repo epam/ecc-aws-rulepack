@@ -1,3 +1,5 @@
+# takes 30 min to deploy, 20 min to destroy
+
 resource "aws_mwaa_environment" "this" {
   dag_s3_path        = "dags/"
   execution_role_arn = aws_iam_role.this.arn

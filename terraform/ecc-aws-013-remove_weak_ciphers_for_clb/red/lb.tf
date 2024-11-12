@@ -15,7 +15,7 @@ data "aws_ami" "this" {
 
 resource "aws_elb" "this" {
   name               = "elb-013-http-red"
-  availability_zones = ["us-east-1a", "us-east-1b", "us-east-1c"]
+  availability_zones = [data.aws_availability_zones.this.names[0], data.aws_availability_zones.this.names[1]]
 
   listener {
     instance_port      = 8000
@@ -30,6 +30,14 @@ resource "aws_elb" "this" {
   idle_timeout                = 400
   connection_draining         = true
   connection_draining_timeout = 400
+  security_groups = [aws_security_group.this.id]
+}
+
+resource "aws_load_balancer_listener_policy" "this" {
+  load_balancer_name = aws_elb.this.name
+  load_balancer_port = 443
+
+  policy_names = ["ELBSecurityPolicy-2016-08"]
 }
 
 resource "tls_private_key" "this" {

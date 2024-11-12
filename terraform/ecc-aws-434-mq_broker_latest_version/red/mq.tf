@@ -1,7 +1,9 @@
+# takes about 10 min to deploy
+
 resource "aws_mq_broker" "this" {
   broker_name                = "mq-broker-active-434-red"
   engine_type                = "ActiveMQ"
-  engine_version             = "5.15.9"
+  engine_version             = "5.17.6"
   host_instance_type         = "mq.t2.micro"
 
   user {
@@ -13,7 +15,7 @@ resource "aws_mq_broker" "this" {
 resource "aws_mq_broker" "this1" {
   broker_name                = "mq-broker-rabbit-434-red"
   engine_type                = "RabbitMQ"
-  engine_version             = "3.8.30"
+  engine_version             = "3.11.28"
   host_instance_type         = "mq.t3.micro"
   publicly_accessible        = true
   user {

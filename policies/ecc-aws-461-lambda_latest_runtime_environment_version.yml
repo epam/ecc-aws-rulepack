@@ -15,8 +15,8 @@ policies:
       - type: value
         key: PackageType
         value: Zip
-      - not:
-          - type: value
-            key: Runtime
-            op: regex
-            value: '(nodejs20.x|python3.12|java21|dotnetcore3.1|dotnet6|go1.x|ruby3.2)'
+      - type: value
+        key: Runtime
+        op: in
+        value: [nodejs18.x, python3.11, python3.10, python3.9, java17, java11, java8.al2, dotnet6, ruby3.2, provided.al2]
+

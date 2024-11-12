@@ -7,13 +7,14 @@ terraform {
   }
 }
 
-provider "aws" {
+provider "aws"{
   profile = var.profile
   region  = var.default-region
+  
   default_tags {
     tags = {
-      CustodianRule    = "ecc-aws-508-mwaa_latest_version"
-      ComplianceStatus = "Green"
+      CustodianRule    = "ecc-aws-497-eks_cluster_oldest_supported_version"
+      ComplianceStatus = "Red"
     }
   }
 }
