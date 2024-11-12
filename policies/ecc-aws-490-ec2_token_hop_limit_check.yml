@@ -16,6 +16,9 @@ policies:
           - type: value
             key: State.Name
             value: terminated
+      - type: value
+        key: MetadataOptions.HttpEndpoint
+        value: enabled
       - not:
           - type: value
             key: MetadataOptions.HttpPutResponseHopLimit
