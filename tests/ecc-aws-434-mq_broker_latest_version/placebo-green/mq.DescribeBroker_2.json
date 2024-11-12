@@ -3,14 +3,14 @@
     "data": {
         "ResponseMetadata": {},
         "AuthenticationStrategy": "simple",
-        "AutoMinorVersionUpgrade": false,
-        "BrokerArn": "arn:aws:mq:us-east-1:111111111111:broker:mq-broker-rabbit-434-green:b-86170a63-a56e-4e1e-9001-8cb46c4fe33f",
-        "BrokerId": "b-86170a63-a56e-4e1e-9001-8cb46c4fe33f",
+        "AutoMinorVersionUpgrade": true,
+        "BrokerArn": "arn:aws:mq:us-east-1:644160558196:broker:mq-broker-rabbit-434-green:b-91ad-e1dded61024d",
+        "BrokerId": "b-91ad-e1dded61024d",
         "BrokerInstances": [
             {
-                "ConsoleURL": "https://b-86170a63-a56e-4e1e-9001-8cb46c4fe33f.mq.us-east-1.amazonaws.com",
+                "ConsoleURL": "https://b-91ad-e1dded61024d.mq.us-east-1.amazonaws.com",
                 "Endpoints": [
-                    "amqps://b-86170a63-a56e-4e1e-9001-8cb46c4fe33f.mq.us-east-1.amazonaws.com:5671"
+                    "amqps://b-91ad-e1dded61024d.mq.us-east-1.amazonaws.com:5671"
                 ]
             }
         ],
@@ -18,7 +18,7 @@
         "BrokerState": "RUNNING",
         "Configurations": {
             "Current": {
-                "Id": "c-9abc4c54-2583-4669-826e-c79270883c6c",
+                "Id": "c-f56d9f32-17fe-4c96-a4da-8ab927adcbb9",
                 "Revision": 1
             },
             "History": []
@@ -26,27 +26,27 @@
         "Created": {
             "__class__": "datetime",
             "year": 2024,
-            "month": 5,
-            "day": 19,
-            "hour": 19,
-            "minute": 42,
-            "second": 11,
-            "microsecond": 227000
+            "month": 11,
+            "day": 11,
+            "hour": 12,
+            "minute": 2,
+            "second": 41,
+            "microsecond": 845960
         },
         "DeploymentMode": "SINGLE_INSTANCE",
         "EncryptionOptions": {
             "UseAwsOwnedKey": true
         },
         "EngineType": "RabbitMQ",
-        "EngineVersion": "3.12.13",
+        "EngineVersion": "3.13.6",
         "HostInstanceType": "mq.t3.micro",
         "Logs": {
             "General": false,
-            "GeneralLogGroup": "/aws/amazonmq/broker/b-86170a63-a56e-4e1e-9001-8cb46c4fe33f/general"
+            "GeneralLogGroup": "/aws/amazonmq/broker/b-91ad-e1dded61024d/general"
         },
         "MaintenanceWindowStartTime": {
-            "DayOfWeek": "TUESDAY",
-            "TimeOfDay": "17:00",
+            "DayOfWeek": "THURSDAY",
+            "TimeOfDay": "20:00",
             "TimeZone": "UTC"
         },
         "PubliclyAccessible": true,

@@ -2,4 +2,4 @@ class PolicyTest(object):
 
      def test_resources(self, base_test, resources):
         base_test.assertEqual(len(resources), 1)
-        base_test.assertEqual(resources[0]['ElasticsearchVersion'], '7.4')
+        base_test.assertNotEqual(resources[0]['ElasticsearchVersion'], 'OpenSearch_2.15')

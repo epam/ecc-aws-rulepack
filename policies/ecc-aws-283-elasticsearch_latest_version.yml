@@ -9,10 +9,10 @@ policies:
   - name: ecc-aws-283-elasticsearch_latest_version
     comment: '010021052000'
     description: |
-      ElasticSearch is not using the latest OpenSearch version
+      OpenSearch is not using the latest engine version
     resource: elasticsearch
     filters:
       - not:
           - type: value
             key: ElasticsearchVersion
-            value: 'OpenSearch_2.11'
+            value: 'OpenSearch_2.15'

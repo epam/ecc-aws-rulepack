@@ -4,19 +4,19 @@
         "ResponseMetadata": {},
         "BrokerSummaries": [
             {
-                "BrokerArn": "arn:aws:mq:us-east-1:111111111111:broker:mq-broker-rabbit-434-red:b-3147bbc4-8ebd-4bbe-b2d6-286249deeec2",
-                "BrokerId": "b-3147bbc4-8ebd-4bbe-b2d6-286249deeec2",
+                "BrokerArn": "arn:aws:mq:us-east-1:644160558196:broker:mq-broker-rabbit-434-red:b-ef5d7457-a11c-43a9-bb15-ab9ff7bdd1ec",
+                "BrokerId": "b-ef5d7457-a11c-43a9-bb15-ab9ff7bdd1ec",
                 "BrokerName": "mq-broker-rabbit-434-red",
                 "BrokerState": "RUNNING",
                 "Created": {
                     "__class__": "datetime",
-                    "year": 2022,
-                    "month": 7,
-                    "day": 4,
-                    "hour": 9,
-                    "minute": 3,
-                    "second": 22,
-                    "microsecond": 69000
+                    "year": 2024,
+                    "month": 11,
+                    "day": 11,
+                    "hour": 12,
+                    "minute": 2,
+                    "second": 35,
+                    "microsecond": 639111
                 },
                 "DeploymentMode": "SINGLE_INSTANCE",
                 "EngineType": "RabbitMQ",
