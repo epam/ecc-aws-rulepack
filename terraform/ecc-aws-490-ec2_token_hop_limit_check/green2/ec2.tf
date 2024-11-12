@@ -2,13 +2,13 @@ resource "aws_instance" "this" {
   ami              = data.aws_ami.this.id
   instance_type    = "t2.micro"
   metadata_options {
-    http_endpoint               = "enabled"
-    http_put_response_hop_limit = 2
+    http_endpoint = "disabled"
+    # `http_put_response_hop_limit` - Defaults to 1
   }
   
 
   tags = {
-    Name = "490_instance_red"
+    Name = "490_instance_green2"
   }
 }
 

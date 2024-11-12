@@ -2,7 +2,7 @@ resource "aws_instance" "this" {
   ami              = data.aws_ami.this.id
   instance_type    = "t2.micro"
   metadata_options {
-    http_endpoint               = "enabled"
+    http_endpoint = "enabled"
   }
   
 
