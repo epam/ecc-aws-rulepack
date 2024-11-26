@@ -17,6 +17,7 @@ policies:
               - type: has-statement
                 statements:
                   - Effect: Deny
+                    Principal: "*"
                     Action: 's3:*'
                     Condition:
                       Bool:
@@ -24,6 +25,17 @@ policies:
               - type: has-statement
                 statements:
                   - Effect: Deny
+                    Principal:
+                      AWS: "*"
+                    Action: 's3:*'
+                    Condition:
+                      Bool:
+                        "aws:SecureTransport": "false"
+
+              - type: has-statement
+                statements:
+                  - Effect: Deny
+                    Principal: "*"
                     Action: '*'
                     Condition:
                       Bool:
@@ -31,7 +43,81 @@ policies:
               - type: has-statement
                 statements:
                   - Effect: Deny
-                    Action: 's3:GetObject'
+                    Principal:
+                      AWS: "*"
+                    Action: '*'
                     Condition:
                       Bool:
                         "aws:SecureTransport": "false"
+
+              - type: has-statement
+                statements:
+                  - Effect: Deny
+                    Principal: "*"
+                    Action: 's3:*'
+                    Condition:
+                      NumericLessThan:
+                        "s3:TlsVersion": "1.2"
+              - type: has-statement
+                statements:
+                  - Effect: Deny
+                    Principal:
+                      AWS: "*"
+                    Action: 's3:*'
+                    Condition:
+                      NumericLessThan:
+                        "s3:TlsVersion": "1.2"   
+
+              - type: has-statement
+                statements:
+                  - Effect: Deny
+                    Principal: "*"
+                    Action: '*'
+                    Condition:
+                      NumericLessThan:
+                        "s3:TlsVersion": "1.2"
+              - type: has-statement
+                statements:
+                  - Effect: Deny
+                    Principal:
+                      AWS: "*"
+                    Action: '*'
+                    Condition:
+                      NumericLessThan:
+                        "s3:TlsVersion": "1.2" 
+
+              - type: has-statement
+                statements:
+                  - Effect: Deny
+                    Action: 's3:*'
+                    Principal: "*"
+                    Condition:
+                      NumericLessThan:
+                        "s3:TlsVersion": "1.3"
+              - type: has-statement
+                statements:
+                  - Effect: Deny
+                    Principal:
+                      AWS: "*"
+                    Action: 's3:*'
+                    Condition:
+                      NumericLessThan:
+                        "s3:TlsVersion": "1.3"
+
+              - type: has-statement
+                statements:
+                  - Effect: Deny
+                    Action: '*'
+                    Principal: "*"
+                    Condition:
+                      NumericLessThan:
+                        "s3:TlsVersion": "1.3"
+              - type: has-statement
+                statements:
+                  - Effect: Deny
+                    Principal:
+                      AWS: "*"
+                    Action: '*'
+                    Condition:
+                      NumericLessThan:
+                        "s3:TlsVersion": "1.3"
