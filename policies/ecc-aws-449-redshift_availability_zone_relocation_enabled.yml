@@ -7,7 +7,7 @@
 
 policies:
   - name: ecc-aws-449-redshift_availability_zone_relocation_enabled
-    comment: '010050062000'
+    comment: '010050052000'
     description: |
       Amazon Redshift clusters availability zone relocation not enabled
     resource: redshift

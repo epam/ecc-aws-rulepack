@@ -7,7 +7,7 @@
 
 policies:
   - name: ecc-aws-598-redshift_instance_generation
-    comment: '010006062000'
+    comment: '010006052000'
     description: |
       Amazon Redshift uses previous generation instances
     resource: redshift

@@ -7,7 +7,7 @@
 
 policies:
   - name: ecc-aws-429-redshift_clusters_without_tag_information
-    comment: '010010062000'
+    comment: '010010052000'
     description: |
       Amazon Redshift clusters without tag information
     resource: redshift
