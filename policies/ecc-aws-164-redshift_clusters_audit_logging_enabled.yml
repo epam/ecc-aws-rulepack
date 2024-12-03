@@ -9,14 +9,23 @@ policies:
   - name: ecc-aws-164-redshift_clusters_audit_logging_enabled
     comment: '010019052000'
     description: |
-      Redshift clusters audit logging is disabled
+      Amazon Redshift clusters have audit logging disabled
     resource: redshift
     filters:
-      - or:
+      - not:
           - type: logging
             key: LoggingEnabled
-            value: false
-          - type: param
-            key: enable_user_activity_logging
-            value: false
-            op: eq
+            value: true
+          - or: 
+            - type: logging
+              key: BucketName
+              value: present
+            - and:
+              - type: logging
+                key: LogExports
+                value: "connectionlog"
+                op: contains 
+              - type: logging
+                key: LogExports
+                value: "userlog"
+                op: contains 

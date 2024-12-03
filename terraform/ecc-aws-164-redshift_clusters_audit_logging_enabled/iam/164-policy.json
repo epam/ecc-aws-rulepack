@@ -5,8 +5,7 @@
             "Effect": "Allow",
             "Action": [
                 "redshift:DescribeClusters",
-                "redshift:DescribeLoggingStatus",
-                "redshift:DescribeClusterParameters"
+                "redshift:DescribeLoggingStatus"
             ],
             "Resource": "*"
         }

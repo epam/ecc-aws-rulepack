@@ -2,17 +2,22 @@
     "status_code": 200,
     "data": {
         "LoggingEnabled": true,
-        "BucketName": "bucket-164-green",
         "LastSuccessfulDeliveryTime": {
             "__class__": "datetime",
-            "year": 2022,
-            "month": 7,
-            "day": 19,
-            "hour": 12,
-            "minute": 1,
-            "second": 36,
-            "microsecond": 418000
+            "year": 2024,
+            "month": 12,
+            "day": 2,
+            "hour": 20,
+            "minute": 29,
+            "second": 48,
+            "microsecond": 528000
         },
+        "LogDestinationType": "cloudwatch",
+        "LogExports": [
+            "connectionlog",
+            "useractivitylog",
+            "userlog"
+        ],
         "ResponseMetadata": {}
     }
 }

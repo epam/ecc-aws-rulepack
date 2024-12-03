@@ -6,10 +6,7 @@ class PolicyTest(object):
         redshift_id = resources[0]['ClusterIdentifier']
         result = client.describe_logging_status(
             ClusterIdentifier=redshift_id)
-        base_test.assertFalse(result["LoggingEnabled"])
-        paramName = resources[0]['ClusterParameterGroups'][0]['ParameterGroupName']
-        param = local_session.client("redshift").describe_cluster_parameters(ParameterGroupName=paramName)
-        parameters=param["Parameters"]
-        for parameter in parameters:
-          if parameter["ParameterName"]=="enable_user_activity_logging":
-             base_test.assertEqual(parameter['ParameterValue'], 'false')
+        base_test.assertTrue(result["LoggingEnabled"])
+        base_test.assertIn("userlog", result["LogExports"])
+        base_test.assertNotIn("connectionlog", result["LogExports"])
+        
