@@ -7,16 +7,24 @@
 
 policies:
   - name: ecc-aws-353-redshift_user_activity_logging_enabled
-    comment: '010019062000'
+    comment: '010019052000'
     description: |
-      AWS Redshift user activity logging is disabled
+      Amazon Redshift clusters have user activity logging disabled
     resource: redshift
     filters:
-      - and:
+      - not:
           - type: logging
             key: LoggingEnabled
-            value: false
+            value: true
           - type: param
             key: enable_user_activity_logging
-            value: false
+            value: true
             op: eq
+          - or: 
+            - type: logging
+              key: BucketName
+              value: present
+            - type: logging
+              key: LogExports
+              value: "useractivitylog"
+              op: contains 

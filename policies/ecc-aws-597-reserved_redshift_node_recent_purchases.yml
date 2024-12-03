@@ -7,7 +7,7 @@
 
 policies:
   - name: ecc-aws-597-reserved_redshift_node_recent_purchases
-    comment: '010008062000'
+    comment: '010008052000'
     description: |
       Amazon Redshift reserved instance recent purchases
     resource: aws.redshift-reserved

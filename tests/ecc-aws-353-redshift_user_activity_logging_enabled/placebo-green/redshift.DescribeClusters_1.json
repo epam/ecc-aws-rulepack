@@ -8,55 +8,55 @@
                 "ClusterStatus": "available",
                 "ClusterAvailabilityStatus": "Available",
                 "MasterUsername": "root",
-                "DBName": "redshift_353_green_db",
+                "DBName": "redshift353green",
                 "Endpoint": {
-                    "Address": "redshift-353-green.cqwaglj6btcm.us-east-1.redshift.amazonaws.com",
+                    "Address": "redshift-353-green.us-east-1.redshift.amazonaws.com",
                     "Port": 5439
                 },
                 "ClusterCreateTime": {
                     "__class__": "datetime",
-                    "year": 2022,
-                    "month": 10,
-                    "day": 21,
-                    "hour": 13,
-                    "minute": 45,
-                    "second": 23,
-                    "microsecond": 280000
+                    "year": 2024,
+                    "month": 12,
+                    "day": 3,
+                    "hour": 8,
+                    "minute": 25,
+                    "second": 56,
+                    "microsecond": 358000
                 },
                 "AutomatedSnapshotRetentionPeriod": 1,
                 "ManualSnapshotRetentionPeriod": -1,
                 "ClusterSecurityGroups": [],
                 "VpcSecurityGroups": [
                     {
-                        "VpcSecurityGroupId": "sg-a5befc90",
+                        "VpcSecurityGroupId": "sg-",
                         "Status": "active"
                     }
                 ],
                 "ClusterParameterGroups": [
                     {
-                        "ParameterGroupName": "parameter-group-redshift-353-green",
+                        "ParameterGroupName": "parameter-group-353-green",
                         "ParameterApplyStatus": "in-sync"
                     }
                 ],
                 "ClusterSubnetGroupName": "default",
-                "VpcId": "vpc-12345asdfg",
-                "AvailabilityZone": "us-east-1e",
-                "PreferredMaintenanceWindow": "tue:06:00-tue:06:30",
+                "VpcId": "vpc-",
+                "AvailabilityZone": "us-east-1d",
+                "PreferredMaintenanceWindow": "sat:06:30-sat:07:00",
                 "PendingModifiedValues": {},
                 "ClusterVersion": "1.0",
                 "AllowVersionUpgrade": true,
                 "NumberOfNodes": 1,
                 "PubliclyAccessible": true,
                 "Encrypted": false,
-                "ClusterPublicKey": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCsrWWvPOkcNfRhBH/CwE71GXfM6r1ELgVa7ATKnzXKWNHmv9hJJ3n9wOwtl7idjpFdsFiQ5VCBid+vc1YDMI1Wcie54jCNUMmnC12ktE4Nfgc5Zb2mE+T8gSV0Fd9O3uQVVhG4IOm5dkZD7vSAXYE3zYOWGCRLepwp6timSbUqJI+DTECt5tZ/Dhf5Xtv69BY0Pc1jq8RC7n1eVdfT2eSU3upeLEIyT2FfWVqfpnPWPQw5b6Dt90esFVmnGtZrOZHbZsDzXan7S5r285OUv10+KjWCwWJuXSRJS5gdvPAp/P9dmXUu6GkMtXrUyoR0is3Z+TRXmdW0Q7BJYEJqthHL Amazon-Redshift\n",
+                "ClusterPublicKey": "ssh-rsa Amazon-Redshift\n",
                 "ClusterNodes": [
                     {
                         "NodeRole": "SHARED",
-                        "PrivateIPAddress": "172.31.52.236",
-                        "PublicIPAddress": "3.232.1.230"
+                        "PrivateIPAddress": "172.31.183",
+                        "PublicIPAddress": "98.85.200"
                     }
                 ],
-                "ClusterRevisionNumber": "41881",
+                "ClusterRevisionNumber": "79229",
                 "Tags": [
                     {
                         "Key": "CustodianRule",
@@ -73,21 +73,109 @@
                 "DeferredMaintenanceWindows": [],
                 "NextMaintenanceWindowStartTime": {
                     "__class__": "datetime",
-                    "year": 2022,
-                    "month": 10,
-                    "day": 25,
+                    "year": 2024,
+                    "month": 12,
+                    "day": 7,
                     "hour": 6,
-                    "minute": 0,
+                    "minute": 30,
                     "second": 0,
                     "microsecond": 0
                 },
                 "AvailabilityZoneRelocationStatus": "disabled",
-                "ClusterNamespaceArn": "arn:aws:redshift:us-east-1:111111111111:namespace:91e72797-9248-441b-a333-5afda1965a9e",
+                "ClusterNamespaceArn": "arn:aws:redshift:us-east-1:644160558196:namespace:e8dd6a73-bd0d-dc36541baa5f",
+                "AquaConfiguration": {
+                    "AquaStatus": "disabled",
+                    "AquaConfigurationStatus": "auto"
+                },
+                "MultiAZ": "Disabled"
+            },
+            {
+                "ClusterIdentifier": "redshift-353-green2",
+                "NodeType": "dc2.large",
+                "ClusterStatus": "available",
+                "ClusterAvailabilityStatus": "Available",
+                "MasterUsername": "root",
+                "DBName": "redshift353green",
+                "Endpoint": {
+                    "Address": "redshift-353-green2.us-east-1.redshift.amazonaws.com",
+                    "Port": 5439
+                },
+                "ClusterCreateTime": {
+                    "__class__": "datetime",
+                    "year": 2024,
+                    "month": 12,
+                    "day": 3,
+                    "hour": 8,
+                    "minute": 26,
+                    "second": 22,
+                    "microsecond": 426000
+                },
+                "AutomatedSnapshotRetentionPeriod": 1,
+                "ManualSnapshotRetentionPeriod": -1,
+                "ClusterSecurityGroups": [],
+                "VpcSecurityGroups": [
+                    {
+                        "VpcSecurityGroupId": "sg-",
+                        "Status": "active"
+                    }
+                ],
+                "ClusterParameterGroups": [
+                    {
+                        "ParameterGroupName": "parameter-group-353-green2",
+                        "ParameterApplyStatus": "in-sync"
+                    }
+                ],
+                "ClusterSubnetGroupName": "default",
+                "VpcId": "vpc-",
+                "AvailabilityZone": "us-east-1c",
+                "PreferredMaintenanceWindow": "tue:05:30-tue:06:00",
+                "PendingModifiedValues": {},
+                "ClusterVersion": "1.0",
+                "AllowVersionUpgrade": true,
+                "NumberOfNodes": 1,
+                "PubliclyAccessible": true,
+                "Encrypted": false,
+                "ClusterPublicKey": "ssh-rsa Amazon-Redshift\n",
+                "ClusterNodes": [
+                    {
+                        "NodeRole": "SHARED",
+                        "PrivateIPAddress": "172.31.29.97",
+                        "PublicIPAddress": "52.21.231.5"
+                    }
+                ],
+                "ClusterRevisionNumber": "79229",
+                "Tags": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-353-redshift_user_activity_logging_enabled"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    }
+                ],
+                "EnhancedVpcRouting": false,
+                "IamRoles": [],
+                "MaintenanceTrackName": "current",
+                "DeferredMaintenanceWindows": [],
+                "NextMaintenanceWindowStartTime": {
+                    "__class__": "datetime",
+                    "year": 2024,
+                    "month": 12,
+                    "day": 10,
+                    "hour": 5,
+                    "minute": 30,
+                    "second": 0,
+                    "microsecond": 0
+                },
+                "AvailabilityZoneRelocationStatus": "disabled",
+                "ClusterNamespaceArn": "arn:aws:redshift:us-east-1:644160558196:namespace:cdbfd036c36d",
                 "TotalStorageCapacityInMegaBytes": 400000,
                 "AquaConfiguration": {
                     "AquaStatus": "disabled",
                     "AquaConfigurationStatus": "auto"
-                }
+                },
+                "MultiAZ": "Disabled"
             }
         ],
         "ResponseMetadata": {}
