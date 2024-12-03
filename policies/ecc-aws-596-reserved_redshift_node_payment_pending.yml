@@ -7,7 +7,7 @@
 
 policies:
   - name: ecc-aws-596-reserved_redshift_node_payment_pending
-    comment: '010008062000'
+    comment: '010008052000'
     description: |
       Amazon Redshift reserved instance payment pending
     resource: aws.redshift-reserved
