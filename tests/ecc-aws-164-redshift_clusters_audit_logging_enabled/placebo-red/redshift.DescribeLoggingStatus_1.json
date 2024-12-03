@@ -1,7 +1,12 @@
 {
     "status_code": 200,
     "data": {
-        "LoggingEnabled": false,
+        "LoggingEnabled": true,
+        "LogDestinationType": "cloudwatch",
+        "LogExports": [
+            "useractivitylog",
+            "userlog"
+        ],
         "ResponseMetadata": {}
     }
 }

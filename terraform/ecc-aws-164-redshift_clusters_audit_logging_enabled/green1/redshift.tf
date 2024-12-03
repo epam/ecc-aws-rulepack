@@ -8,19 +8,22 @@ resource "aws_redshift_cluster" "this" {
   node_type                    = "dc2.large"
   skip_final_snapshot          = true
   cluster_parameter_group_name = aws_redshift_parameter_group.this.name
+}
 
-  logging {
-    enable      = true
-    bucket_name = aws_s3_bucket.this.id
-  }
+resource "aws_redshift_logging" "this" {
+  cluster_identifier   = aws_redshift_cluster.this.id
+  log_destination_type = "s3"
+  bucket_name          = aws_s3_bucket.this.id
+  s3_key_prefix        = "/"
+
   depends_on = [
-    aws_s3_bucket_acl.this
+    aws_s3_bucket_policy.this
   ]
 }
 
 resource "random_integer" "this" {
-  min = 1
-  max = 10000000
+  min = 10000
+  max = 99999
 }
 
 resource "aws_redshift_parameter_group" "this" {
@@ -35,20 +38,6 @@ resource "aws_redshift_parameter_group" "this" {
 resource "aws_s3_bucket" "this" {
   bucket        = "164-bucket-${random_integer.this.result}-green"
   force_destroy = "true"
-}
-
-resource "aws_s3_bucket_ownership_controls" "this" {
-  bucket = aws_s3_bucket.this.id
-  rule {
-    object_ownership = "BucketOwnerPreferred"
-  }
-}
-
-resource "aws_s3_bucket_acl" "this" {
-  depends_on = [aws_s3_bucket_ownership_controls.this]
-
-  bucket = aws_s3_bucket.this.id
-  acl    = "private"
 }
 
 resource "aws_s3_bucket_policy" "this" {
@@ -89,5 +78,7 @@ resource "random_password" "this" {
   special          = true
   numeric          = true
   min_numeric      = 1
+  min_upper        = 1
+  min_lower        = 1
   override_special = "!#$%*()-_=+[]{}:?"
 }

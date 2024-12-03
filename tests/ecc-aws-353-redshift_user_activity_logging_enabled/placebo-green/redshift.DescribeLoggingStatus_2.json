@@ -8,9 +8,9 @@
             "month": 12,
             "day": 3,
             "hour": 8,
-            "minute": 43,
-            "second": 54,
-            "microsecond": 871000
+            "minute": 44,
+            "second": 29,
+            "microsecond": 775000
         },
         "LogDestinationType": "cloudwatch",
         "LogExports": [
