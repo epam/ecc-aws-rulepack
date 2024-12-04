@@ -9,7 +9,7 @@ policies:
   - name: ecc-aws-088-s3_bucket_cross_region_replication_enabled
     comment: '010049042001'
     description: |
-      S3 bucket cross-region replication is disabled
+      S3 general purpose buckets without cross-region replication 
     resource: s3
     filters:
       - type: value
