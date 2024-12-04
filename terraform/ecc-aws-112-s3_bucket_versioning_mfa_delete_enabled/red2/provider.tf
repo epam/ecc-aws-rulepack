@@ -14,7 +14,7 @@ provider "aws" {
   default_tags {
     tags = {
       CustodianRule    = "ecc-aws-112-s3_bucket_versioning_mfa_delete_enabled"
-      ComplianceStatus = "Red"
+      ComplianceStatus = "Red1"
     }
   }
 }

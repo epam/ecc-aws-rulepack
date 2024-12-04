@@ -9,7 +9,7 @@ policies:
   - name: ecc-aws-042-s3_encrypted_using_kms
     comment: '010043042001'
     description: |
-      S3 is not using a KMS key for encryption
+      S3 general purpose buckets are not using a KMS key for encryption
     resource: s3
     filters:
       - type: bucket-encryption

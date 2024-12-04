@@ -4,7 +4,7 @@
         "Error": {
             "Code": "ReplicationConfigurationNotFoundError",
             "Message": "The replication configuration was not found",
-            "BucketName": "112-bucket-green"
+            "BucketName": "112-bucket-3654769-green1"
         },
         "ResponseMetadata": {}
     }
