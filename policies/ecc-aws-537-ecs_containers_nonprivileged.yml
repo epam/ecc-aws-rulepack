@@ -9,7 +9,7 @@ policies:
   - name: ecc-aws-537-ecs_containers_nonprivileged
     comment: '010022082000'
     description: |
-      ECS containers should not run in privileged parameter
+      ECS containers should not run in privileged mode
     resource: ecs-task-definition
     filters:
       - not:
