@@ -4,7 +4,7 @@
         "Error": {
             "Code": "NoSuchLifecycleConfiguration",
             "Message": "The lifecycle configuration does not exist",
-            "BucketName": "112-bucket-623595-green1"
+            "BucketName": "112-bucket-3654769-green2"
         },
         "ResponseMetadata": {}
     }
