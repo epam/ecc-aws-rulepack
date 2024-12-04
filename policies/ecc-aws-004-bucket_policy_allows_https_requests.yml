@@ -9,7 +9,7 @@ policies:
   - name: ecc-aws-004-bucket_policy_allows_https_requests
     comment: '010022042901'
     description: |
-      S3 Bucket Policy allows HTTP requests
+      S3 general purpose buckets policy allows HTTP requests
     resource: aws.s3
     filters:
       - not:

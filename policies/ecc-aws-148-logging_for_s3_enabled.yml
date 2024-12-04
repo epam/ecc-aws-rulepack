@@ -9,7 +9,7 @@ policies:
   - name: ecc-aws-148-logging_for_s3_enabled
     comment: '010019042001'
     description: |
-      Logging for S3 bucket is disabled
+      S3 general purpose buckets with disabled server access logging
     resource: s3
     filters:
       - type: bucket-logging
