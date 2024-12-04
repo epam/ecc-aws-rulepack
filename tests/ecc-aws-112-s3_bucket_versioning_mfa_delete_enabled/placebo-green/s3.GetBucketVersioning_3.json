@@ -2,7 +2,7 @@
     "status_code": 200,
     "data": {
         "ResponseMetadata": {},
-        "Status": "Suspended",
-        "MFADelete": "Disabled"
+        "Status": "Enabled",
+        "MFADelete": "Enabled"
     }
 }
