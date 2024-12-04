@@ -9,7 +9,7 @@ policies:
   - name: ecc-aws-516-s3_event_notifications_enabled
     comment: '010019042001'
     description: |
-      S3 buckets should have event notifications enabled
+      S3 general purpose buckets with disabled event notifications
     resource: aws.s3
     filters:
       - not:

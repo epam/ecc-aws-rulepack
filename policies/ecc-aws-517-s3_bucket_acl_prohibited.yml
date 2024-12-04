@@ -9,7 +9,7 @@ policies:
   - name: ecc-aws-517-s3_bucket_acl_prohibited
     comment: '010033042001'
     description: |
-      S3 access control lists (ACLs) are used to manage user access to buckets
+      S3 general purpose buckets with enabled access control lists
     resource: aws.s3
     filters:
       - not:

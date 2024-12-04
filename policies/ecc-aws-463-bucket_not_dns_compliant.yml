@@ -9,7 +9,7 @@ policies:
   - name: ecc-aws-463-bucket_not_dns_compliant
     comment: '010020042001'
     description: |
-      S3 bucket is not DNS compliant
+      S3 general purpose buckets are not DNS compliant
     resource: s3
     filters:
       - not:
