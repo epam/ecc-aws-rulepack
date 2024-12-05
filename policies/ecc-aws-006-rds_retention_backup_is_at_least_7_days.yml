@@ -9,10 +9,19 @@ policies:
   - name: ecc-aws-006-rds_retention_backup_is_at_least_7_days
     comment: '010049062010'
     description: |
-      RDS retention policy is less than 7 days
-    resource: rds
+      RDS instances with backup retention policy less than 7 days
+    resource: aws.rds
     filters:
+      - not:
+        - type: value
+          key: StatusInfos[].StatusType
+          value: read replication
+          op: contains
       - type: value
         key: BackupRetentionPeriod
         value: 7
         op: lt
+      - type: value
+        key: BackupRetentionPeriod
+        op: ne
+        value: 0
