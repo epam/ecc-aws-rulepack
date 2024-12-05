@@ -6,15 +6,15 @@ resource "random_password" "this" {
 }
 
 resource "aws_db_instance" "this" {
-  engine                  = "mysql"
-  identifier              = "database-006-red"
+  allocated_storage       = 20
+  identifier              = "database-006-green2"
   instance_class          = "db.t4g.micro"
-  allocated_storage       = 10
   storage_type            = "gp2"
-  db_name                 = "database006red"
+  engine                  = "mysql"
+  db_name                 = "rds006green"
   username                = "root"
   password                = random_password.this.result
-  multi_az                = true
-  backup_retention_period = 5
+  storage_encrypted       = true
+  backup_retention_period = "0"
   skip_final_snapshot     = true
 }
