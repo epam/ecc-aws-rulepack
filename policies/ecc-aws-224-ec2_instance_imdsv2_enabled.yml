@@ -17,5 +17,12 @@ policies:
           key: State.Name
           value: terminated
       - type: value
-        key: MetadataOptions.HttpTokens
-        value: optional
+        key: MetadataOptions.HttpEndpoint
+        value: enabled
+      - not:
+        - type: value
+          key: MetadataOptions.HttpTokens
+          value: required
+        - type: value
+          key: MetadataOptions.State 
+          value: applied 

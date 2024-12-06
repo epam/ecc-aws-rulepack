@@ -27,20 +27,6 @@ resource "aws_s3_bucket_logging" "this" {
   target_prefix = "log/"
 }
 
-resource "aws_s3_bucket_ownership_controls" "this" {
-  bucket = aws_s3_bucket.this.id
-  rule {
-    object_ownership = "BucketOwnerPreferred"
-  }
-}
-
-resource "aws_s3_bucket_acl" "this" {
-  depends_on = [aws_s3_bucket_ownership_controls.this]
-
-  bucket = aws_s3_bucket.bucket_for_logging.id
-  acl    = "log-delivery-write"
-}
-
 resource "aws_s3_bucket_policy" "this" {
   bucket = aws_s3_bucket.this.id
   policy = data.aws_iam_policy_document.this.json
@@ -75,6 +61,35 @@ data "aws_iam_policy_document" "this" {
       
       values = [
         "bucket-owner-full-control"
+      ]
+    }
+  }
+}
+
+
+
+resource "aws_s3_bucket_policy" "bucket_for_logging" {
+  bucket = aws_s3_bucket.bucket_for_logging.id
+  policy = data.aws_iam_policy_document.bucket_for_logging.json
+}
+
+data "aws_iam_policy_document" "bucket_for_logging" {
+  statement {
+    effect = "Allow"
+
+    principals {
+      type        = "Service"
+      identifiers = ["logging.s3.amazonaws.com"]
+    }
+
+    actions = ["s3:PutObject"]
+    resources = ["${aws_s3_bucket.bucket_for_logging.arn}/*"]
+    condition {
+      test     = "StringEquals"
+      variable = "aws:SourceAccount"
+      
+      values = [
+        data.aws_caller_identity.this.account_id
       ]
     }
   }
