@@ -1,0 +1,27 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:GetBucketPublicAccessBlock",
+                "s3:GetLifecycleConfiguration",
+                "s3:GetBucketTagging",
+                "tag:GetResources",
+                "s3:GetBucketWebsite",
+                "s3:GetBucketLogging",
+                "cloudtrail:GetTrailStatus",
+                "s3:ListBucket",
+                "s3:GetBucketVersioning",
+                "s3:GetBucketAcl",
+                "s3:GetBucketNotification",
+                "s3:GetBucketPolicy",
+                "s3:GetReplicationConfiguration",
+                "cloudtrail:DescribeTrails",
+                "s3:ListAllMyBuckets",
+                "s3:GetBucketLocation"
+            ],
+            "Resource": "*"
+        }
+    ]
+}

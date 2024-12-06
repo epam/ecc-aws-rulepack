@@ -1,0 +1,9 @@
+tf_runner/*
+*.tfstate*
+.terraform/*
+*.log
+*report.csv
+*.terraform*
+**/tmp
+/output
+/.idea
