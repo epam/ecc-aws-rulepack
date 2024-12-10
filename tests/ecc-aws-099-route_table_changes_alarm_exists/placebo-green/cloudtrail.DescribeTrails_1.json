@@ -4,7 +4,7 @@
         "trailList": [
             {
                 "Name": "cloudtrail-099-green",
-                "S3BucketName": "099-bucket-7317549-green",
+                "S3BucketName": "099-bucket-8478669-green",
                 "IncludeGlobalServiceEvents": true,
                 "IsMultiRegionTrail": true,
                 "HomeRegion": "us-east-1",
