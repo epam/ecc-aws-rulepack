@@ -9,7 +9,7 @@ resource "aws_cloudwatch_log_stream" "this" {
 
 resource "aws_cloudwatch_log_metric_filter" "this" {
   name           = "099_Route_Table_Changes_green"
-  pattern        = "{($.eventName = CreateRoute) || ($.eventName = CreateRouteTable) || ($.eventName = ReplaceRoute) || ($.eventName = ReplaceRouteTableAssociation) || ($.eventName = DeleteRouteTable) || ($.eventName = DeleteRoute) || ($.eventName = DisassociateRouteTable)}"
+  pattern        = "{  ($.eventSource = ec2.amazonaws.com)  && ($.eventName = \"CreateRoute\") || ($.eventName = CreateRouteTable) || ($.eventName = ReplaceRoute) || ($.eventName = ReplaceRouteTableAssociation) || ($.eventName = DeleteRouteTable) || ($.eventName = DeleteRoute) || ($.eventName = DisassociateRouteTable)}"
   log_group_name = aws_cloudwatch_log_group.this.name
 
   metric_transformation {

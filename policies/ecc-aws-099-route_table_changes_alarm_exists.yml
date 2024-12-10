@@ -18,5 +18,5 @@ policies:
         log-metric-filter-pattern:
             type: value
             op: regex
-            value: '{ ?\(? ?\$\.eventName ?= ?\"?CreateRoute\"? ?\)? ?\|\| ?\(? ?\$\.eventName ?= ?\"?CreateRouteTable\"? ?\)? ?\|\| ?\(? ?\$\.eventName ?= ?\"?ReplaceRoute\"? ?\)? ?\|\| ?\(? ?\$\.eventName ?= ?\"?ReplaceRouteTableAssociation\"? ?\)? ?\|\| ?\(? ?\$\.eventName ?= ?\"?DeleteRouteTable\"? ?\)? ?\|\| ?\(?\$\.eventName ?= ?\"?DeleteRoute\"? ?(\)) ?\|\| ?\(? ?\$\.eventName ?= ?\"?DisassociateRouteTable\"? ?\)? ?}'
+            value: '{ *\(? *\$\.eventSource *= *\"?ec2\.amazonaws\.com\"? *\)? *&& *\(? *\$\.eventName *= *\"?CreateRoute\"? *\)? *\|\| *\(? *\$\.eventName *= *\"?CreateRouteTable\"? *\)? *\|\| *\(? *\$\.eventName *= *\"?ReplaceRoute\"? *\)? *\|\| *\(? *\$\.eventName *= *\"?ReplaceRouteTableAssociation\"? *\)? *\|\| *\(? *\$\.eventName *= *\"?DeleteRouteTable\"? *\)? *\|\| *\(?\$\.eventName *= *\"?DeleteRoute\"? *(\)) *\|\| *\(? *\$\.eventName *= *\"?DisassociateRouteTable\"? *\)? *}'
 
