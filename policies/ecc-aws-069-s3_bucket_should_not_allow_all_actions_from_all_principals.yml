@@ -8,7 +8,7 @@ policies:
   - name: ecc-aws-069-s3_bucket_should_not_allow_all_actions_from_all_principals
     comment: '010033042001'
     description: |
-      S3 bucket allows all actions from all principals
+      S3 general purpose buckets allow all actions from all principals
     resource: aws.s3
     filters:
       - type: has-statement
