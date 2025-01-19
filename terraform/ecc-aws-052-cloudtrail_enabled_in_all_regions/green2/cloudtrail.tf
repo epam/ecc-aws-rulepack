@@ -1,21 +1,20 @@
 data "aws_caller_identity" "this" {}
 
-resource "random_integer" "this" {
-  min = 1
-  max = 10000000
-}
-
 resource "aws_cloudtrail" "this" {
-  name                          = "cloudtrail-052-red"
+  name                          = "cloudtrail-052-green2"
   s3_bucket_name                = aws_s3_bucket.this.id
   include_global_service_events = true
-  is_multi_region_trail         = false
-  enable_logging                = true
+  is_multi_region_trail         = true
 }
 
 resource "aws_s3_bucket" "this" {
-  bucket        = "052-bucket-${random_integer.this.result}-red"
+  bucket        = "052-bucket-${random_integer.this.result}-green2"
   force_destroy = true
+}
+
+resource "random_integer" "this" {
+  min = 1
+  max = 10000000
 }
 
 resource "aws_s3_bucket_policy" "this" {
