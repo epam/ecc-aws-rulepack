@@ -1,0 +1,32 @@
+{
+    "status_code": 200,
+    "data": {
+        "trailList": [
+            {
+                "Name": "cloudtrail-052-green1",
+                "S3BucketName": "052-bucket-8833456-green1",
+                "IncludeGlobalServiceEvents": true,
+                "IsMultiRegionTrail": true,
+                "HomeRegion": "us-east-1",
+                "TrailARN": "arn:aws:cloudtrail:us-east-1:644160558196:trail/cloudtrail-052-green1",
+                "LogFileValidationEnabled": false,
+                "HasCustomEventSelectors": true,
+                "HasInsightSelectors": false,
+                "IsOrganizationTrail": false
+            },
+            {
+                "Name": "cloudtrail-052-green2",
+                "S3BucketName": "052-bucket-8317677-green2",
+                "IncludeGlobalServiceEvents": true,
+                "IsMultiRegionTrail": true,
+                "HomeRegion": "us-east-1",
+                "TrailARN": "arn:aws:cloudtrail:us-east-1:644160558196:trail/cloudtrail-052-green2",
+                "LogFileValidationEnabled": false,
+                "HasCustomEventSelectors": false,
+                "HasInsightSelectors": false,
+                "IsOrganizationTrail": false
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

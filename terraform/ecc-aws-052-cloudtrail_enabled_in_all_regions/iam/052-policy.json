@@ -4,11 +4,11 @@
         {
             "Effect": "Allow",
             "Action": [
+                "tag:GetResources",
                 "iam:ListAccountAliases",
                 "cloudtrail:DescribeTrails",
-                "cloudtrail:GetTrailStatus",
-                "cloudtrail:GetEventSelectors",
-                "cloudtrail:DescribeTrails"
+				"cloudtrail:GetTrailStatus",
+				"cloudtrail:GetEventSelectors"
             ],
             "Resource": "*"
         }
