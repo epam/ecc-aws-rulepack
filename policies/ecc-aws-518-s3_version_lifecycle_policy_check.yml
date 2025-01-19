@@ -9,7 +9,7 @@ policies:
   - name: ecc-aws-518-s3_version_lifecycle_policy_check
     comment: '010001042001'
     description: |
-      S3 buckets with versioning enabled do not have lifecycle policies configured
+      S3 general purpose buckets with versioning enabled do not have lifecycle policies configured
     resource: aws.s3
     filters:
       - type: value

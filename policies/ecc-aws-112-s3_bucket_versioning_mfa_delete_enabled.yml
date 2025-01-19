@@ -9,9 +9,12 @@ policies:
   - name: ecc-aws-112-s3_bucket_versioning_mfa_delete_enabled
     comment: '010047042901'
     description: |
-      S3 bucket versioning MFA delete is disabled
+      S3 general purpose buckets with versioning have MFA delete disabled
     resource: s3
     filters:
+      - type: value
+        key: Versioning.Status
+        value: Enabled
       - or:
           - type: value
             key: Versioning.MFADelete

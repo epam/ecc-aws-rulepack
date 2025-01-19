@@ -4,7 +4,7 @@
         "metricFilters": [
             {
                 "filterName": "099_Route_Table_Changes_green",
-                "filterPattern": "{($.eventName = CreateRoute) || ($.eventName = CreateRouteTable) || ($.eventName = ReplaceRoute) || ($.eventName = ReplaceRouteTableAssociation) || ($.eventName = DeleteRouteTable) || ($.eventName = DeleteRoute) || ($.eventName = DisassociateRouteTable)}",
+                "filterPattern": "{  ($.eventSource = ec2.amazonaws.com)  && ($.eventName = \"CreateRoute\") || ($.eventName = CreateRouteTable) || ($.eventName = ReplaceRoute) || ($.eventName = ReplaceRouteTableAssociation) || ($.eventName = DeleteRouteTable) || ($.eventName = DeleteRoute) || ($.eventName = DisassociateRouteTable)}",
                 "metricTransformations": [
                     {
                         "metricName": "099_Route_Table_Changes_green",
@@ -13,7 +13,7 @@
                         "unit": "None"
                     }
                 ],
-                "creationTime": 1702547522642,
+                "creationTime": 1733743681511,
                 "logGroupName": "099_log_group_green"
             }
         ],

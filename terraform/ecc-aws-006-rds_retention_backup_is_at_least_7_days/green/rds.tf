@@ -7,8 +7,8 @@ resource "random_password" "this" {
 
 resource "aws_db_instance" "this" {
   engine                  = "mysql"
-  engine_version          = "5.7"
-  instance_class          = "db.t2.micro"
+  identifier              = "database-006-green"
+  instance_class          = "db.t4g.micro"
   allocated_storage       = 10
   storage_type            = "gp2"
   db_name                 = "database006green"
@@ -19,3 +19,13 @@ resource "aws_db_instance" "this" {
   skip_final_snapshot     = true
 }
 
+
+resource "aws_db_instance" "this-replica" {
+  replicate_source_db     = aws_db_instance.this.identifier
+  identifier              = "database-006-green-replica"
+  instance_class          = "db.t4g.micro"
+  storage_type            = "gp2"
+  storage_encrypted       = true
+  backup_retention_period = "2"
+  skip_final_snapshot     = true
+}

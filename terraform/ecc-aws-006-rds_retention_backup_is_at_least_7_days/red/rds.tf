@@ -7,8 +7,8 @@ resource "random_password" "this" {
 
 resource "aws_db_instance" "this" {
   engine                  = "mysql"
-  engine_version          = "5.7"
-  instance_class          = "db.t2.micro"
+  identifier              = "database-006-red"
+  instance_class          = "db.t4g.micro"
   allocated_storage       = 10
   storage_type            = "gp2"
   db_name                 = "database006red"

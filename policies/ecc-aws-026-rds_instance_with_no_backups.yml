@@ -10,11 +10,13 @@ policies:
     comment: '010049062000'
     description: |
       RDS instances without automated backups
-    resource: rds
+    resource: aws.rds
     filters:
       - not:
-          - type: value
-            key: BackupRetentionPeriod
-            value_type: swap
-            op: ne
-            value: 0
+        - type: value
+          key: StatusInfos[].StatusType
+          value: read replication
+          op: contains
+      - type: value
+        key: BackupRetentionPeriod
+        value: 0
