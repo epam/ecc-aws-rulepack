@@ -1,0 +1,29 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+policies:
+  - name: ecc-aws-052-cloudtrail_enabled_in_all_regions
+    comment: '010016012901'
+    description: |
+      CloudTrail is not enabled in all regions
+    resource: aws.account
+    filters:
+      - type: missing
+        policy:
+          resource: aws.cloudtrail
+          filters:
+            - type: value
+              key: IsMultiRegionTrail
+              value: true
+            - type: value
+              key: IncludeGlobalServiceEvents
+              value: true
+            - type: status
+              key: IsLogging
+              value: true
+            - type: event-selectors
+              key: AdvancedEventSelectors[? FieldSelectors && length(FieldSelectors)==`1` && FieldSelectors[?Field == 'eventCategory' && Equals[?contains(@, 'Management')==`true`]]] || EventSelectors[?IncludeManagementEvents==`true` && ReadWriteType=='All'  && !DataResources && !ExcludeManagementEventSources]
+              value: not-null
