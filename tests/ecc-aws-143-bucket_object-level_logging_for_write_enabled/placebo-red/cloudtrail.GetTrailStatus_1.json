@@ -1,0 +1,23 @@
+{
+    "status_code": 200,
+    "data": {
+        "IsLogging": true,
+        "StartLoggingTime": {
+            "__class__": "datetime",
+            "year": 2025,
+            "month": 1,
+            "day": 20,
+            "hour": 21,
+            "minute": 44,
+            "second": 42,
+            "microsecond": 139000
+        },
+        "LatestDeliveryAttemptTime": "",
+        "LatestNotificationAttemptTime": "",
+        "LatestNotificationAttemptSucceeded": "",
+        "LatestDeliveryAttemptSucceeded": "",
+        "TimeLoggingStarted": "2025-01-20T21:44:42Z",
+        "TimeLoggingStopped": "",
+        "ResponseMetadata": {}
+    }
+}

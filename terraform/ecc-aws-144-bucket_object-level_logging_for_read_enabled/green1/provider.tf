@@ -14,7 +14,7 @@ provider "aws" {
   default_tags {
     tags = {
       CustodianRule    = "ecc-aws-144-bucket_object-level_logging_for_read_enabled"
-      ComplianceStatus = "Green1"
+      ComplianceStatus = "Green"
     }
   }
 }

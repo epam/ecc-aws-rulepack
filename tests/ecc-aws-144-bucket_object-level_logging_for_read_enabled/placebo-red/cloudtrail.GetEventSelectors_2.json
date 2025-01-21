@@ -1,0 +1,28 @@
+{
+    "status_code": 200,
+    "data": {
+        "TrailARN": "arn:aws:cloudtrail:us-east-1:644160558196:trail/144_cloudtrail_red2",
+        "EventSelectors": [
+            {
+                "ReadWriteType": "ReadOnly",
+                "IncludeManagementEvents": false,
+                "DataResources": [
+                    {
+                        "Type": "AWS::S3::Object",
+                        "Values": [
+                            "arn:aws:s3:::144-bucket-93682-red2/"
+                        ]
+                    },
+                    {
+                        "Type": "AWS::Lambda::Function",
+                        "Values": [
+                            "arn:aws:lambda"
+                        ]
+                    }
+                ],
+                "ExcludeManagementEventSources": []
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}
