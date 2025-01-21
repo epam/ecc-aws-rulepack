@@ -1,0 +1,26 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+policies:
+  - name: ecc-aws-143-bucket_object-level_logging_for_write_enabled
+    comment: '010019012901'
+    description: |
+      Object-level logging for write events is disabled for S3 bucket
+    resource: aws.account
+    filters:
+      - type: missing
+        policy:
+          resource: aws.cloudtrail
+          filters:
+            - type: value
+              key: IsMultiRegionTrail
+              value: true
+            - type: status
+              key: IsLogging
+              value: true
+            - type: event-selectors
+              key: EventSelectors[?DataResources[?Type=='AWS::S3::Object' && contains(Values, 'arn:aws:s3')] && (ReadWriteType=='All' || ReadWriteType=='WriteOnly' )] || AdvancedEventSelectors[?FieldSelectors[?Field == 'resources.type' && contains(Equals, 'AWS::S3::Object')==`true`] &&  FieldSelectors[?Field == 'eventCategory' && contains(Equals, 'Data')==`true`] &&  !(FieldSelectors[?Field=='resources.ARN']) &&  !(FieldSelectors[?Field=='eventName'])  && ( !(FieldSelectors[?Field=='readOnly']) || (FieldSelectors[?Field=='readOnly' && contains(Equals, 'false')] ))]
+              value: not-null

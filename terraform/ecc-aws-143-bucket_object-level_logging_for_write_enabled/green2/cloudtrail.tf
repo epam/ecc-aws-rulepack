@@ -1,71 +1,34 @@
 data "aws_caller_identity" "this" {}
 
 resource "aws_cloudtrail" "this" {
-  name                          = "144_cloudtrail_green1"
+  name                          = "143_cloudtrail_green2"
   s3_bucket_name                = aws_s3_bucket.this.id
   include_global_service_events = true
   is_multi_region_trail         = true
 
-  advanced_event_selector {
-    field_selector {
-      field  = "eventCategory"
-      equals = ["Data"]
-    }
-    field_selector {
-      field  = "resources.type"
-      equals = ["AWS::S3::Object"]
-    }
-    field_selector {
-      field  = "readOnly"
-      equals = ["true"]
-    }
-  }
-  advanced_event_selector {
-    field_selector {
-      field  = "eventCategory"
-      equals = ["Data"]
-    }
-    field_selector {
-      field  = "resources.type"
-      equals = ["AWS::S3::Object"]
-    }
-    field_selector {
-      field = "eventName"
+  event_selector {
+    read_write_type           = "WriteOnly"
+    include_management_events = false
 
-      equals = [
-        "PutObject",
-        "DeleteObject"
-      ]
+    data_resource {
+      type   = "AWS::S3::Object"
+      values = ["arn:aws:s3", "${aws_s3_bucket.this.arn}/"]
+    }
+    data_resource {
+      type   = "AWS::Lambda::Function"
+      values = ["arn:aws:lambda"]
     }
   }
-  advanced_event_selector {
-    field_selector {
-      field  = "eventCategory"
-      equals = ["Management"]
-    }
-    field_selector {
-      field  = "readOnly"
-      equals = ["false"]
-    }
-  }
-  advanced_event_selector {
-    field_selector {
-      field  = "eventCategory"
-      equals = ["Management"]
-    }
-    field_selector {
-      field  = "eventSource"
-      not_equals = ["rdsdata.amazonaws.com"]
-    }
-  }
+
   depends_on = [
     aws_s3_bucket_policy.this,
     aws_s3_bucket.this
   ]
+
 }
 
 resource "aws_s3_bucket" "this" {
-  bucket        = "144-bucket-${random_integer.this.result}-green1"
+  bucket        = "143-bucket-${random_integer.this.result}-green2"
   force_destroy = true
 }
 
@@ -109,7 +72,7 @@ data "aws_iam_policy_document" "this" {
       test     = "StringEquals"
       variable = "aws:SourceArn"
       values = [
-        "arn:aws:cloudtrail:${var.default-region}:${data.aws_caller_identity.this.account_id}:trail/144_cloudtrail_green1"
+        "arn:aws:cloudtrail:${var.default-region}:${data.aws_caller_identity.this.account_id}:trail/143_cloudtrail_green2"
       ]
     }
   }

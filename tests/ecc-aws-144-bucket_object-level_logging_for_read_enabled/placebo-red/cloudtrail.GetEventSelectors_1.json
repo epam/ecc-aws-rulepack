@@ -1,0 +1,92 @@
+{
+    "status_code": 200,
+    "data": {
+        "TrailARN": "arn:aws:cloudtrail:us-east-1:644160558196:trail/144_cloudtrail_red1",
+        "AdvancedEventSelectors": [
+            {
+                "FieldSelectors": [
+                    {
+                        "Field": "eventCategory",
+                        "Equals": [
+                            "Data"
+                        ]
+                    },
+                    {
+                        "Field": "resources.ARN",
+                        "Equals": [
+                            "arn:aws:s3:::144-bucket-31842-red1/"
+                        ]
+                    },
+                    {
+                        "Field": "readOnly",
+                        "Equals": [
+                            "true"
+                        ]
+                    },
+                    {
+                        "Field": "resources.type",
+                        "Equals": [
+                            "AWS::S3::Object"
+                        ]
+                    }
+                ]
+            },
+            {
+                "FieldSelectors": [
+                    {
+                        "Field": "eventCategory",
+                        "Equals": [
+                            "Data"
+                        ]
+                    },
+                    {
+                        "Field": "eventName",
+                        "Equals": [
+                            "PutObject",
+                            "DeleteObject"
+                        ]
+                    },
+                    {
+                        "Field": "resources.type",
+                        "Equals": [
+                            "AWS::S3::Object"
+                        ]
+                    }
+                ]
+            },
+            {
+                "FieldSelectors": [
+                    {
+                        "Field": "eventCategory",
+                        "Equals": [
+                            "Management"
+                        ]
+                    },
+                    {
+                        "Field": "readOnly",
+                        "Equals": [
+                            "false"
+                        ]
+                    }
+                ]
+            },
+            {
+                "FieldSelectors": [
+                    {
+                        "Field": "eventCategory",
+                        "Equals": [
+                            "Management"
+                        ]
+                    },
+                    {
+                        "Field": "eventSource",
+                        "NotEquals": [
+                            "rdsdata.amazonaws.com"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}
