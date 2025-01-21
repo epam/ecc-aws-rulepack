@@ -3,11 +3,12 @@
     "Statement": [
         {
             "Effect": "Allow",
-            "Action": [ 
+            "Action": [
+                "tag:GetResources",
                 "iam:ListAccountAliases",
                 "cloudtrail:DescribeTrails",
-                "cloudtrail:GetTrailStatus",
-                "cloudtrail:GetEventSelectors"
+				"cloudtrail:GetTrailStatus",
+				"cloudtrail:GetEventSelectors"
             ],
             "Resource": "*"
         }

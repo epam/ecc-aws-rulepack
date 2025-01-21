@@ -1,0 +1,22 @@
+{
+    "status_code": 200,
+    "data": {
+        "PaginationToken": "",
+        "ResourceTagMappingList": [
+            {
+                "ResourceARN": "arn:aws:cloudtrail:us-east-1:644160558196:trail/143_cloudtrail_red1",
+                "Tags": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-143-bucket_object-level_logging_for_write_enabled"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Red1"
+                    }
+                ]
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}
