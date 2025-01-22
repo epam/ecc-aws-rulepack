@@ -13,7 +13,7 @@ resource "aws_cloudtrail" "this" {
   enable_logging                = true
   event_selector {
     read_write_type           = "All"
-    include_management_events = true
+    include_management_events = false
 
     data_resource {
       type   = "AWS::Lambda::Function"
@@ -27,7 +27,7 @@ resource "aws_cloudtrail" "this" {
   }
   event_selector {
     read_write_type           = "ReadOnly"
-    include_management_events = false
+    include_management_events = true
     data_resource {
       type   = "AWS::Lambda::Function"
       values = ["arn:aws:lambda"]

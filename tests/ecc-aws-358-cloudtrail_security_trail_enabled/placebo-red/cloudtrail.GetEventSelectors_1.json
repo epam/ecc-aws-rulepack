@@ -1,0 +1,17 @@
+{
+    "status_code": 200,
+    "data": {
+        "TrailARN": "arn:aws:cloudtrail:us-east-1:644160558196:trail/cloudtrail-358-red2",
+        "EventSelectors": [
+            {
+                "ReadWriteType": "All",
+                "IncludeManagementEvents": true,
+                "DataResources": [],
+                "ExcludeManagementEventSources": [
+                    "kms.amazonaws.com"
+                ]
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "status_code": 200,
+    "data": {
+        "PaginationToken": "",
+        "ResourceTagMappingList": [
+            {
+                "ResourceARN": "arn:aws:cloudtrail:us-east-1:644160558196:trail/cloudtrail-358-red2",
+                "Tags": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-523-cloudtrail_security_trail_enabled"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Red2"
+                    }
+                ]
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}
