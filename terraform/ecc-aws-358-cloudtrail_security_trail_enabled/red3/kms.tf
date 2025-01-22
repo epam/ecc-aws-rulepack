@@ -1,5 +1,3 @@
-data "aws_caller_identity" "this" {}
-
 resource "aws_kms_key" "this" {
   description             = "Key to encrypt and decrypt"
   key_usage               = "ENCRYPT_DECRYPT"
@@ -10,7 +8,7 @@ resource "aws_kms_key" "this" {
 }
 
 resource "aws_kms_alias" "this" {
-  name          = "alias/358-green1"
+  name          = "alias/358-red3"
   target_key_id = aws_kms_key.this.key_id
 }
 

@@ -1,0 +1,20 @@
+{
+    "status_code": 200,
+    "data": {
+        "trailList": [
+            {
+                "Name": "cloudtrail-358-red2",
+                "S3BucketName": "358-bucket-73683-red2",
+                "IncludeGlobalServiceEvents": false,
+                "IsMultiRegionTrail": false,
+                "HomeRegion": "us-east-1",
+                "TrailARN": "arn:aws:cloudtrail:us-east-1:644160558196:trail/cloudtrail-358-red2",
+                "LogFileValidationEnabled": true,
+                "HasCustomEventSelectors": true,
+                "HasInsightSelectors": false,
+                "IsOrganizationTrail": false
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

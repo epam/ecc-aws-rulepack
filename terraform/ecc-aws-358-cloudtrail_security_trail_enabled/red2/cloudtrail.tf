@@ -1,5 +1,5 @@
 resource "aws_cloudtrail" "this" {
-  name                          = "cloudtrail-358-red2"
+  name                          = local.trail_name
   s3_bucket_name                = aws_s3_bucket.this.id
   include_global_service_events = false
   is_multi_region_trail         = false
@@ -11,8 +11,5 @@ resource "aws_cloudtrail" "this" {
       equals = ["Management"]
     }
   }
-  depends_on = [
-    aws_s3_bucket_acl.this
-  ]
 }
 

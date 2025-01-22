@@ -25,5 +25,5 @@ policies:
               key: IsLogging
               value: true
             - type: event-selectors
-              key: AdvancedEventSelectors[? FieldSelectors && length(FieldSelectors)==`1` && FieldSelectors[?Field == 'eventCategory' && Equals[?contains(@, 'Management')==`true`]]] || EventSelectors[?IncludeManagementEvents==`true` && ReadWriteType=='All'  && !DataResources && !ExcludeManagementEventSources]
+              key: AdvancedEventSelectors[? FieldSelectors && length(FieldSelectors)==`1` && FieldSelectors[?Field == 'eventCategory' && contains(Equals, 'Management')]] || EventSelectors[?IncludeManagementEvents==`true` && ReadWriteType=='All'  && !ExcludeManagementEventSources]
               value: not-null
