@@ -1,19 +1,17 @@
 {
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Effect": "Allow",
-            "Action": [
-                "elasticloadbalancing:DescribeLoadBalancers",
-                "elasticloadbalancing:DescribeTags",
-                "elasticloadbalancing:DescribeListeners",
-                "elasticloadbalancing:DescribeLoadBalancerAttributes",
-                "elasticloadbalancing:DescribeListenerCertificates",
-                "acm:DescribeCertificate",
-                "tag:GetResources",
-                "ec2:DescribeRegions"
-            ],
-            "Resource": "*"
-        }
-    ]
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Effect": "Allow",
+			"Action": [
+				"elasticloadbalancing:DescribeLoadBalancers",
+				"elasticloadbalancing:DescribeTags",
+				"elasticloadbalancing:DescribeListeners",
+				"elasticloadbalancing:DescribeListenerCertificates",
+				"acm:DescribeCertificate",
+				"iam:GetServerCertificate"
+			],
+			"Resource": "*"
+		}
+	]
 }

@@ -10,20 +10,10 @@ variable "profile" {
 
 variable "github_location" {
   type        = string
+  default     = "https://github.com/cloud-custodian/cloud-custodian"
 }
 
 variable "bitbucket_location" {
   type        = string
-}
-
-variable "token" {
-  type        = string
-}
-
-variable "user_password" {
-  type        = string
-}
-
-variable "user_name" {
-  type        = string
+  default     = "https://bitbucket.org/test/test"
 }

@@ -3,40 +3,78 @@
     "data": {
         "LoadBalancers": [
             {
-                "LoadBalancerArn": "arn:aws:elasticloadbalancing:us-east-1:111111111111:loadbalancer/app/alb-111-green/41dba721f54b3251",
-                "DNSName": "alb-111-green-1591800723.us-east-1.elb.amazonaws.com",
+                "LoadBalancerArn": "arn:aws:elasticloadbalancing:us-east-1:111111111111:loadbalancer/app/alb-111-green2/b1cd2ca5741a7bda",
+                "DNSName": "alb-111-green2-1611216836.us-east-1.elb.amazonaws.com",
                 "CanonicalHostedZoneId": "Z35SXDOTRQ7X7K",
                 "CreatedTime": {
                     "__class__": "datetime",
-                    "year": 2023,
-                    "month": 8,
-                    "day": 12,
-                    "hour": 7,
-                    "minute": 37,
-                    "second": 9,
-                    "microsecond": 0
+                    "year": 2024,
+                    "month": 7,
+                    "day": 19,
+                    "hour": 9,
+                    "minute": 51,
+                    "second": 55,
+                    "microsecond": 620000
                 },
-                "LoadBalancerName": "alb-111-green",
+                "LoadBalancerName": "alb-111-green2",
                 "Scheme": "internet-facing",
-                "VpcId": "vpc-07af2051b56f38259",
+                "VpcId": "vpc-ad9744d0",
                 "State": {
                     "Code": "active"
                 },
                 "Type": "application",
                 "AvailabilityZones": [
                     {
-                        "ZoneName": "us-east-1b",
-                        "SubnetId": "subnet-086bc3426f4a1f9b1",
+                        "ZoneName": "us-east-1c",
+                        "SubnetId": "subnet-cd7af8ec",
                         "LoadBalancerAddresses": []
                     },
                     {
-                        "ZoneName": "us-east-1a",
-                        "SubnetId": "subnet-08cf4a25a622d8f8c",
+                        "ZoneName": "us-east-1d",
+                        "SubnetId": "subnet-fa9dcab7",
                         "LoadBalancerAddresses": []
                     }
                 ],
                 "SecurityGroups": [
-                    "sg-00d8750f4fe5612f0"
+                    "sg-a5befc90"
+                ],
+                "IpAddressType": "ipv4"
+            },
+            {
+                "LoadBalancerArn": "arn:aws:elasticloadbalancing:us-east-1:111111111111:loadbalancer/app/alb-111-green/9b41a6cc9ee798c6",
+                "DNSName": "alb-111-green-538658146.us-east-1.elb.amazonaws.com",
+                "CanonicalHostedZoneId": "Z35SXDOTRQ7X7K",
+                "CreatedTime": {
+                    "__class__": "datetime",
+                    "year": 2024,
+                    "month": 7,
+                    "day": 19,
+                    "hour": 9,
+                    "minute": 48,
+                    "second": 51,
+                    "microsecond": 730000
+                },
+                "LoadBalancerName": "alb-111-green",
+                "Scheme": "internet-facing",
+                "VpcId": "vpc-ad9744d0",
+                "State": {
+                    "Code": "active"
+                },
+                "Type": "application",
+                "AvailabilityZones": [
+                    {
+                        "ZoneName": "us-east-1c",
+                        "SubnetId": "subnet-cd7af8ec",
+                        "LoadBalancerAddresses": []
+                    },
+                    {
+                        "ZoneName": "us-east-1d",
+                        "SubnetId": "subnet-fa9dcab7",
+                        "LoadBalancerAddresses": []
+                    }
+                ],
+                "SecurityGroups": [
+                    "sg-a5befc90"
                 ],
                 "IpAddressType": "ipv4"
             }
