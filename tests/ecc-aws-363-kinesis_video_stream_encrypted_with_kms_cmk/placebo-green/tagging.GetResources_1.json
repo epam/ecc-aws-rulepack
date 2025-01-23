@@ -1,0 +1,22 @@
+{
+    "status_code": 200,
+    "data": {
+        "PaginationToken": "",
+        "ResourceTagMappingList": [
+            {
+                "ResourceARN": "arn:aws:kinesisvideo:us-east-1:111111111111:stream/363_kinesis_stream_green/1721763498192",
+                "Tags": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-363-kinesis_video_stream_encrypted_with_kms_cmk"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    }
+                ]
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}
