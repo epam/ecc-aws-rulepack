@@ -2,7 +2,7 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "~> 4"
+      version = "~> 5"
     }
   }
 }
@@ -13,7 +13,7 @@ provider "aws" {
 
   default_tags {
     tags = {
-      CustodiaRule     = "ecc-aws-523-cloudtrail_security_trail_enabled"
+      CustodianRule    = "ecc-aws-523-cloudtrail_security_trail_enabled"
       ComplianceStatus = "Red2"
     }
   }

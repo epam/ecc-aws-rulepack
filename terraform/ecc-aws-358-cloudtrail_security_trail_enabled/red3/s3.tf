@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "this" {
-  bucket        = "358-bucket-${random_integer.this.result}-red1"
+  bucket        = "358-bucket-${random_integer.this.result}-red3"
   force_destroy = true
 }
 
