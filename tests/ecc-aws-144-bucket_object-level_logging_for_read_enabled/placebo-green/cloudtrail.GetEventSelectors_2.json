@@ -1,0 +1,29 @@
+{
+    "status_code": 200,
+    "data": {
+        "TrailARN": "arn:aws:cloudtrail:us-east-1:644160558196:trail/144_cloudtrail_green2",
+        "EventSelectors": [
+            {
+                "ReadWriteType": "ReadOnly",
+                "IncludeManagementEvents": false,
+                "DataResources": [
+                    {
+                        "Type": "AWS::S3::Object",
+                        "Values": [
+                            "arn:aws:s3",
+                            "arn:aws:s3:::amzn-s3-demo-bucket1/"
+                        ]
+                    },
+                    {
+                        "Type": "AWS::Lambda::Function",
+                        "Values": [
+                            "arn:aws:lambda"
+                        ]
+                    }
+                ],
+                "ExcludeManagementEventSources": []
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

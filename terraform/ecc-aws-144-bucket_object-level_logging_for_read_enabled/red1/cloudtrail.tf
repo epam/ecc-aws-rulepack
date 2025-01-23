@@ -17,7 +17,14 @@ resource "aws_cloudtrail" "this" {
     }
     field_selector {
       field  = "readOnly"
-      equals = ["false"]
+      equals = ["true"]
+    }
+    field_selector {
+      field = "resources.ARN"
+
+      equals = [
+        "${aws_s3_bucket.this.arn}/"
+      ]
     }
   }
   advanced_event_selector {
@@ -27,18 +34,40 @@ resource "aws_cloudtrail" "this" {
     }
     field_selector {
       field  = "resources.type"
-      equals = ["AWS::DynamoDB::Table"]
+      equals = ["AWS::S3::Object"]
+    }
+    field_selector {
+      field = "eventName"
+
+      equals = [
+        "PutObject",
+        "DeleteObject"
+      ]
+    }
+  }
+  advanced_event_selector {
+    field_selector {
+      field  = "eventCategory"
+      equals = ["Management"]
     }
     field_selector {
       field  = "readOnly"
-      equals = ["true"]
+      equals = ["false"]
     }
   }
-
+  advanced_event_selector {
+    field_selector {
+      field  = "eventCategory"
+      equals = ["Management"]
+    }
+    field_selector {
+      field  = "eventSource"
+      not_equals = ["rdsdata.amazonaws.com"]
+    }
+  }
   depends_on = [
     aws_s3_bucket_policy.this,
-    aws_s3_bucket.this,
-    aws_s3_bucket_acl.this
+    aws_s3_bucket.this
   ]
 }
 
@@ -47,28 +76,14 @@ resource "aws_s3_bucket" "this" {
   force_destroy = true
 }
 
-resource "random_integer" "this" {
-  min = 1
-  max = 10000000
-}
-
-resource "aws_s3_bucket_ownership_controls" "this" {
-  bucket = aws_s3_bucket.this.id
-  rule {
-    object_ownership = "BucketOwnerPreferred"
-  }
-}
-
-resource "aws_s3_bucket_acl" "this" {
-  depends_on = [aws_s3_bucket_ownership_controls.this]
-
-  bucket = aws_s3_bucket.this.id
-  acl    = "private"
-}
-
 resource "aws_s3_bucket_policy" "this" {
   bucket = aws_s3_bucket.this.id
   policy = data.aws_iam_policy_document.this.json
+}
+
+resource "random_integer" "this" {
+  min = 10000
+  max = 99999
 }
 
 data "aws_iam_policy_document" "this" {
