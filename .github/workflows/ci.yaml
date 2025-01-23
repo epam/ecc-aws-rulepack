@@ -74,6 +74,6 @@ jobs:
       - name: Release ruleset on PROD
         uses: ./ecc-actions/release-ruleset-action
         if: startsWith(github.ref, 'refs/tags/v')
-        with:
+        env:
           C7N_CREDS: ${{ secrets.C7N_CREDS }}
           C7N_ENV: PROD
