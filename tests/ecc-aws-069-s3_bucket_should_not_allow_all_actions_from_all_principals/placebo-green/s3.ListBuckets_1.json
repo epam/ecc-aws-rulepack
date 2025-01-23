@@ -1,0 +1,38 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "Buckets": [
+            {
+                "Name": "069-bucket1-9902134-green",
+                "CreationDate": {
+                    "__class__": "datetime",
+                    "year": 2024,
+                    "month": 7,
+                    "day": 10,
+                    "hour": 14,
+                    "minute": 5,
+                    "second": 57,
+                    "microsecond": 0
+                }
+            },
+            {
+                "Name": "069-bucket2-9902134-green",
+                "CreationDate": {
+                    "__class__": "datetime",
+                    "year": 2024,
+                    "month": 7,
+                    "day": 10,
+                    "hour": 14,
+                    "minute": 5,
+                    "second": 57,
+                    "microsecond": 0
+                }
+            }
+        ],
+        "Owner": {
+            "DisplayName": "epmcsec-lab10",
+            "ID": "316649624eede3b1599b4b2324bfb9e161398514ca1779742e95749ed51c2a2a"
+        }
+    }
+}

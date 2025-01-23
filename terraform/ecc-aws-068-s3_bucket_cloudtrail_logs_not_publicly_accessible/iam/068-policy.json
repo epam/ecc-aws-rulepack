@@ -15,7 +15,6 @@
                 "s3:GetBucketVersioning",
                 "s3:GetBucketAcl",
                 "s3:GetBucketNotification",
-                "s3:GetBucketLifecycle",
                 "s3:GetBucketPolicy",
                 "s3:GetReplicationConfiguration",
                 "cloudtrail:DescribeTrails",

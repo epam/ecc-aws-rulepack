@@ -4,8 +4,16 @@
         {
             "Effect": "Allow",
             "Action": [ 
-                "s3:ListBucket",
                 "s3:ListAllMyBuckets",
+                "s3:GetBucketAcl",
+                "s3:GetBucketLocation",
+                "s3:GetBucketLogging",
+                "s3:GetBucketTagging",
+                "s3:GetBucketWebsite",
+                "s3:GetBucketNotification",
+                "s3:GetBucketVersioning",
+                "s3:GetLifecycleConfiguration",
+                "s3:GetReplicationConfiguration",
                 "s3:GetBucketPolicy"
             ],
             "Resource": "*"

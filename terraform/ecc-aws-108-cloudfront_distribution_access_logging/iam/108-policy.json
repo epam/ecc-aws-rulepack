@@ -1,12 +1,14 @@
 {
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Effect": "Allow",
-            "Action": [ 
-                "cloudfront:GetDistributionConfig"
-            ],
-            "Resource": "*"
-        }
-    ]
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Effect": "Allow",
+			"Action": [
+				"cloudfront:ListDistributions",
+				"cloudfront:GetDistributionConfig",
+				"tag:GetResources"
+			],
+			"Resource": "*"
+		}
+	]
 }

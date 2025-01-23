@@ -13,7 +13,6 @@ provider "aws"{
   
   default_tags {
     tags = {
-	  Name = "100_ebs_volume_red"
       CustodianRule    = "ecc-aws-021-ebs-volume_without_recent_snapshot"
       ComplianceStatus = "Red"
     }
