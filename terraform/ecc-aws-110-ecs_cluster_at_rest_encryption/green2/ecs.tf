@@ -2,7 +2,8 @@ resource "aws_ecs_cluster" "this" {
   name = local.cluster_name
   configuration {
     managed_storage_configuration {
-      kms_key_id = data.aws_kms_key.this_default.id
+      kms_key_id                           = data.aws_kms_key.this_default.id
+      fargate_ephemeral_storage_kms_key_id = aws_kms_key.this.id
     }
   }
 }
@@ -12,11 +13,11 @@ data "aws_kms_key" "this_default" {
 }
 
 resource "aws_cloudwatch_log_group" "this" {
-  name = "/ecs/110_ecs-logs_red"
+  name = "/ecs/110_ecs-logs_green2"
 }
 
 resource "aws_ecs_task_definition" "this" {
-  family                   = "110_task_red"
+  family                   = "110_task_green2"
   requires_compatibilities = ["FARGATE"]
   network_mode             = "awsvpc"
   runtime_platform {
@@ -56,7 +57,7 @@ resource "aws_ecs_task_definition" "this" {
     "logConfiguration": {
                 "logDriver": "awslogs",
                 "options": {
-                    "awslogs-group": "/ecs/110_ecs-logs_red",
+                    "awslogs-group": "/ecs/110_ecs-logs_green2",
                     "awslogs-region": "${var.default-region}",
                     "awslogs-stream-prefix": "ecs"
                 }
@@ -67,7 +68,7 @@ DEFINITION
 }
 
 resource "aws_ecs_service" "this" {
-  name                    = "110_ecs-service_red"
+  name                    = "110_ecs-service_green2"
   cluster                 = aws_ecs_cluster.this.id
   task_definition         = aws_ecs_task_definition.this.arn
   enable_ecs_managed_tags = true

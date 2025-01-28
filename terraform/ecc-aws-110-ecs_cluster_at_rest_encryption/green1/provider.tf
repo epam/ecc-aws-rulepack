@@ -14,7 +14,7 @@ provider "aws" {
   default_tags {
     tags = {
       CustodianRule    = "ecc-aws-110-ecs_cluster_at_rest_encryption"
-      ComplianceStatus = "Green"
+      ComplianceStatus = "Green1"
     }
   }
 }

@@ -9,6 +9,6 @@ variable "profile" {
 }
 
 locals {
-  cluster_name = "110_ecs_cluster_red"
-  volume_name  = "110_service-ebs-volume_red"
+  cluster_name = "110_ecs_cluster_green1"
+  volume_name  = "110_service-ebs-volume_green1"
 }

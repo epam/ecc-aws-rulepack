@@ -4,12 +4,7 @@
         {
             "Effect": "Allow",
             "Action": [ 
-                "ec2:DescribeRegions",
                 "ecs:ListClusters",
-                "ecs:ListContainerInstances",
-                "ecs:DescribeContainerInstances",
-                "ec2:DescribeInstances",
-                "ec2:DescribeVolumes",
                 "ecs:DescribeClusters"
             ],
             "Resource": "*"
