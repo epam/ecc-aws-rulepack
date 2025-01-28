@@ -31,7 +31,7 @@ resource "aws_iam_policy" "this" {
         "logs:PutLogEvents",
         "logs:DescribeLogStreams"
       ],
-      "Resource": "${aws_cloudwatch_log_group.this.arn}/*"
+      "Resource": "${aws_cloudwatch_log_group.this.arn}:*"
     }
   ]
 }

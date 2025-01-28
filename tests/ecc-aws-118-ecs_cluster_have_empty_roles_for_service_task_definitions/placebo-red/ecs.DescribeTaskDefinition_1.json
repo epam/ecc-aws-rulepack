@@ -1,0 +1,70 @@
+{
+    "status_code": 200,
+    "data": {
+        "taskDefinition": {
+            "taskDefinitionArn": "arn:aws:ecs:us-east-1:644160558196:task-definition/118_task_red:4",
+            "containerDefinitions": [
+                {
+                    "name": "sample-app",
+                    "image": "public.ecr.aws/docker/library/nginx:latest",
+                    "cpu": 0,
+                    "portMappings": [],
+                    "essential": true,
+                    "environment": [],
+                    "mountPoints": [],
+                    "volumesFrom": [],
+                    "systemControls": []
+                }
+            ],
+            "family": "118_task_red",
+            "networkMode": "awsvpc",
+            "revision": 4,
+            "volumes": [],
+            "status": "ACTIVE",
+            "requiresAttributes": [
+                {
+                    "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+                },
+                {
+                    "name": "ecs.capability.task-eni"
+                }
+            ],
+            "placementConstraints": [],
+            "compatibilities": [
+                "EC2",
+                "FARGATE"
+            ],
+            "runtimePlatform": {
+                "cpuArchitecture": "X86_64",
+                "operatingSystemFamily": "LINUX"
+            },
+            "requiresCompatibilities": [
+                "FARGATE"
+            ],
+            "cpu": "256",
+            "memory": "512",
+            "registeredAt": {
+                "__class__": "datetime",
+                "year": 2025,
+                "month": 1,
+                "day": 28,
+                "hour": 15,
+                "minute": 49,
+                "second": 27,
+                "microsecond": 660000
+            },
+            "registeredBy": "arn:aws:sts::644160558196:assumed-role/000/aws-go-sdk-1738079363727196193"
+        },
+        "tags": [
+            {
+                "key": "CustodianRule",
+                "value": "ecc-aws-118-ecs_cluster_have_empty_roles_for_service_task_definitions"
+            },
+            {
+                "key": "ComplianceStatus",
+                "value": "Red"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}
