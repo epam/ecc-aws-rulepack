@@ -1,0 +1,134 @@
+{
+    "status_code": 200,
+    "data": {
+        "DBClusters": [
+            {
+                "AllocatedStorage": 20,
+                "AvailabilityZones": [
+                    "us-east-1a",
+                    "us-east-1b",
+                    "us-east-1f"
+                ],
+                "BackupRetentionPeriod": 1,
+                "DBClusterIdentifier": "cluster-873-red",
+                "DBClusterParameterGroup": "default.mysql8.0",
+                "DBSubnetGroup": "default",
+                "Status": "available",
+                "EarliestRestorableTime": {
+                    "__class__": "datetime",
+                    "year": 2025,
+                    "month": 1,
+                    "day": 28,
+                    "hour": 22,
+                    "minute": 25,
+                    "second": 0,
+                    "microsecond": 0
+                },
+                "Endpoint": "cluster-873-red.cluster-0000000000.us-east-1.rds.amazonaws.com",
+                "ReaderEndpoint": "cluster-873-red.cluster-ro-0000000000.us-east-1.rds.amazonaws.com",
+                "MultiAZ": true,
+                "Engine": "mysql",
+                "EngineVersion": "8.0.40",
+                "LatestRestorableTime": {
+                    "__class__": "datetime",
+                    "year": 2025,
+                    "month": 1,
+                    "day": 29,
+                    "hour": 22,
+                    "minute": 25,
+                    "second": 0,
+                    "microsecond": 0
+                },
+                "Port": 3306,
+                "MasterUsername": "root",
+                "PreferredBackupWindow": "03:17-03:47",
+                "PreferredMaintenanceWindow": "sun:03:53-sun:04:23",
+                "ReadReplicaIdentifiers": [],
+                "DBClusterMembers": [
+                    {
+                        "DBInstanceIdentifier": "cluster-873-red-instance-1",
+                        "IsClusterWriter": true,
+                        "DBClusterParameterGroupStatus": "in-sync",
+                        "PromotionTier": 1
+                    },
+                    {
+                        "DBInstanceIdentifier": "cluster-873-red-instance-2",
+                        "IsClusterWriter": false,
+                        "DBClusterParameterGroupStatus": "in-sync",
+                        "PromotionTier": 1
+                    },
+                    {
+                        "DBInstanceIdentifier": "cluster-873-red-instance-3",
+                        "IsClusterWriter": false,
+                        "DBClusterParameterGroupStatus": "in-sync",
+                        "PromotionTier": 1
+                    }
+                ],
+                "VpcSecurityGroups": [
+                    {
+                        "VpcSecurityGroupId": "sg-0000000000",
+                        "Status": "active"
+                    }
+                ],
+                "HostedZoneId": "Z2R2ITUGPM61AM",
+                "StorageEncrypted": true,
+                "KmsKeyId": "arn:aws:kms:us-east-1:644160558196:key/0000000000",
+                "DbClusterResourceId": "cluster-LT4W2TCLM3ZPKAATI7WMKRFQJ4",
+                "DBClusterArn": "arn:aws:rds:us-east-1:644160558196:cluster:cluster-873-red",
+                "AssociatedRoles": [],
+                "IAMDatabaseAuthenticationEnabled": false,
+                "ClusterCreateTime": {
+                    "__class__": "datetime",
+                    "year": 2025,
+                    "month": 1,
+                    "day": 29,
+                    "hour": 22,
+                    "minute": 15,
+                    "second": 55,
+                    "microsecond": 657000
+                },
+                "EngineMode": "provisioned",
+                "DeletionProtection": false,
+                "HttpEndpointEnabled": false,
+                "ActivityStreamStatus": "stopped",
+                "CopyTagsToSnapshot": false,
+                "CrossAccountClone": false,
+                "DomainMemberships": [],
+                "TagList": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-873-rds_database_cluster_engine_no_default_ports"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Red"
+                    }
+                ],
+                "DBClusterInstanceClass": "db.c6gd.large",
+                "StorageType": "gp3",
+                "Iops": 3000,
+                "PubliclyAccessible": true,
+                "AutoMinorVersionUpgrade": true,
+                "MonitoringInterval": 0,
+                "PerformanceInsightsEnabled": false,
+                "NetworkType": "IPV4",
+                "StorageThroughput": 125,
+                "CertificateDetails": {
+                    "CAIdentifier": "rds-ca-rsa2048-g1",
+                    "ValidTill": {
+                        "__class__": "datetime",
+                        "year": 2026,
+                        "month": 1,
+                        "day": 29,
+                        "hour": 22,
+                        "minute": 19,
+                        "second": 46,
+                        "microsecond": 0
+                    }
+                },
+                "EngineLifecycleSupport": "open-source-rds-extended-support-disabled"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

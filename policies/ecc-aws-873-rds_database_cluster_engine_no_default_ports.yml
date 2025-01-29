@@ -1,0 +1,30 @@
+# Copyright (c) 2025 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+policies:
+  - name: ecc-aws-873-rds_database_cluster_engine_no_default_ports
+    comment: '010024062000'
+    description: |
+      RDS database cluster is using database engine default port
+    resource: aws.rds-cluster
+    filters:
+      - or:
+        - and:
+          - type: value
+            key: Engine
+            value: ["mysql", "aurora-mysql"]
+            op: in
+          - type: value
+            key: Port
+            value: 3306
+        - and:
+          - type: value
+            key: Engine
+            value: ["postgres", "aurora-postgresql"]
+            op: in
+          - type: value
+            key: Port
+            value: 5432
