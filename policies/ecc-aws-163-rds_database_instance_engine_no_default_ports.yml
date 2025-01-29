@@ -1,0 +1,57 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+policies:
+  - name: ecc-aws-163-rds_database_instance_engine_no_default_ports
+    comment: '010024062000'
+    description: |
+      RDS database instance is using database engine default port
+    resource: aws.rds
+    filters:
+      - type: value
+        key: DBClusterIdentifier
+        value: empty
+      - or:
+        - and:
+          - type: value
+            key: Engine
+            value: "^sqlserver-.*$"
+            op: regex
+          - type: value
+            key: Endpoint.Port
+            value: 1433
+        - and:
+          - type: value
+            key: Engine
+            value: "^(custom-oracle|oracle)-.*$"
+            op: regex
+          - type: value
+            key: Endpoint.Port
+            value: 1521
+        - and:
+          - type: value
+            key: Engine
+            value: ["mariadb", "mysql", "aurora-mysql"]
+            op: in
+          - type: value
+            key: Endpoint.Port
+            value: 3306
+        - and:
+          - type: value
+            key: Engine
+            value: ["postgres", "aurora-postgresql"]
+            op: in
+          - type: value
+            key: Endpoint.Port
+            value: 5432
+        - and:
+          - type: value
+            key: Engine
+            value: "^db2-.*$"
+            op: regex
+          - type: value
+            key: Endpoint.Port
+            value: 50000
