@@ -1,0 +1,162 @@
+{
+    "status_code": 200,
+    "data": {
+        "DBInstances": [
+            {
+                "DBInstanceIdentifier": "database-163-green",
+                "DBInstanceClass": "db.t3.micro",
+                "Engine": "mysql",
+                "DBInstanceStatus": "available",
+                "MasterUsername": "root",
+                "DBName": "database163green",
+                "Endpoint": {
+                    "Address": "database-163-green.cmo86o9wwc.us-east-1.rds.amazonaws.com",
+                    "Port": 3333,
+                    "HostedZoneId": "Z2M61A2IGTURPM"
+                },
+                "AllocatedStorage": 10,
+                "InstanceCreateTime": {
+                    "__class__": "datetime",
+                    "year": 2025,
+                    "month": 1,
+                    "day": 29,
+                    "hour": 18,
+                    "minute": 22,
+                    "second": 39,
+                    "microsecond": 419000
+                },
+                "PreferredBackupWindow": "09:11-09:41",
+                "BackupRetentionPeriod": 0,
+                "DBSecurityGroups": [],
+                "VpcSecurityGroups": [
+                    {
+                        "VpcSecurityGroupId": "sg-000000000",
+                        "Status": "active"
+                    }
+                ],
+                "DBParameterGroups": [
+                    {
+                        "DBParameterGroupName": "default.mysql8.0",
+                        "ParameterApplyStatus": "in-sync"
+                    }
+                ],
+                "AvailabilityZone": "us-east-1b",
+                "DBSubnetGroup": {
+                    "DBSubnetGroupName": "default",
+                    "DBSubnetGroupDescription": "default",
+                    "VpcId": "vpc-000000000",
+                    "SubnetGroupStatus": "Complete",
+                    "Subnets": [
+                        {
+                            "SubnetIdentifier": "subnet-000000000",
+                            "SubnetAvailabilityZone": {
+                                "Name": "us-east-1b"
+                            },
+                            "SubnetOutpost": {},
+                            "SubnetStatus": "Active"
+                        },
+                        {
+                            "SubnetIdentifier": "subnet-000000000",
+                            "SubnetAvailabilityZone": {
+                                "Name": "us-east-1a"
+                            },
+                            "SubnetOutpost": {},
+                            "SubnetStatus": "Active"
+                        },
+                        {
+                            "SubnetIdentifier": "subnet-000000000",
+                            "SubnetAvailabilityZone": {
+                                "Name": "us-east-1f"
+                            },
+                            "SubnetOutpost": {},
+                            "SubnetStatus": "Active"
+                        },
+                        {
+                            "SubnetIdentifier": "subnet-000000000",
+                            "SubnetAvailabilityZone": {
+                                "Name": "us-east-1e"
+                            },
+                            "SubnetOutpost": {},
+                            "SubnetStatus": "Active"
+                        },
+                        {
+                            "SubnetIdentifier": "subnet-000000000",
+                            "SubnetAvailabilityZone": {
+                                "Name": "us-east-1d"
+                            },
+                            "SubnetOutpost": {},
+                            "SubnetStatus": "Active"
+                        },
+                        {
+                            "SubnetIdentifier": "subnet-000000000",
+                            "SubnetAvailabilityZone": {
+                                "Name": "us-east-1c"
+                            },
+                            "SubnetOutpost": {},
+                            "SubnetStatus": "Active"
+                        }
+                    ]
+                },
+                "PreferredMaintenanceWindow": "sat:04:47-sat:05:17",
+                "PendingModifiedValues": {},
+                "MultiAZ": false,
+                "EngineVersion": "8.0.40",
+                "AutoMinorVersionUpgrade": true,
+                "ReadReplicaDBInstanceIdentifiers": [],
+                "LicenseModel": "general-public-license",
+                "OptionGroupMemberships": [
+                    {
+                        "OptionGroupName": "default:mysql-8-0",
+                        "Status": "in-sync"
+                    }
+                ],
+                "PubliclyAccessible": false,
+                "StorageType": "gp2",
+                "DbInstancePort": 0,
+                "StorageEncrypted": false,
+                "DbiResourceId": "db-NGTX2BAVRWWT2WYRQZG73344PM",
+                "CACertificateIdentifier": "rds-ca-rsa2048-g1",
+                "DomainMemberships": [],
+                "CopyTagsToSnapshot": false,
+                "MonitoringInterval": 0,
+                "DBInstanceArn": "arn:aws:rds:us-east-1:644160558196:db:database-163-green",
+                "IAMDatabaseAuthenticationEnabled": false,
+                "PerformanceInsightsEnabled": false,
+                "DeletionProtection": false,
+                "AssociatedRoles": [],
+                "TagList": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-163-rds_database_instance_engine_no_default_ports"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    }
+                ],
+                "CustomerOwnedIpEnabled": false,
+                "ActivityStreamStatus": "stopped",
+                "BackupTarget": "region",
+                "NetworkType": "IPV4",
+                "StorageThroughput": 0,
+                "CertificateDetails": {
+                    "CAIdentifier": "rds-ca-rsa2048-g1",
+                    "ValidTill": {
+                        "__class__": "datetime",
+                        "year": 2026,
+                        "month": 1,
+                        "day": 29,
+                        "hour": 18,
+                        "minute": 21,
+                        "second": 19,
+                        "microsecond": 0
+                    }
+                },
+                "DedicatedLogVolume": false,
+                "IsStorageConfigUpgradeAvailable": false,
+                "EngineLifecycleSupport": "open-source-rds-extended-support-disabled"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}
