@@ -11,7 +11,7 @@ resource "random_password" "this" {
   override_special = "!#$%*()-_=+[]{}:?"
 }
 
-resource "aws_db_instance" "default" {
+resource "aws_db_instance" "this" {
   identifier               = "database-163-red"
   allocated_storage        = 10
   engine                   = "mysql"

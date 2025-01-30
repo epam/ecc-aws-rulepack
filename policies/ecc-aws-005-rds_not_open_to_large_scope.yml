@@ -6,14 +6,14 @@
 
 policies:
   - name: ecc-aws-005-rds_not_open_to_large_scope
-    comment: '010024062000'
+    comment: '010042062000'
     description: |
       RDS is open to a large scope
     resource: aws.rds
     filters:
-      - type: rds-vpc-filter
-        key: SecurityGroups[].IpPermissions[].IpRanges[].CidrIp
-        op: in
+      - type: security-group
+        key: '[IpPermissions[].IpRanges[].CidrIp,IpPermissions[].Ipv6Ranges[].CidrIpv6][]'
+        op: intersect
         value:
           - "0.0.0.0/0"
           - "::/0"
