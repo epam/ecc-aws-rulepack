@@ -1,0 +1,16 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+policies:
+  - name: ecc-aws-146-no_acls_allow_ingress_for_everyone_to_remote_server_administration_ports
+    comment: '010024022900'
+    description: |
+      VPC Network ACL allows ingress from 0.0.0.0/0 to remote server administration ports (22 or 3389)
+    resource: aws.network-acl
+    filters:
+      - type: value
+        key: min(Entries[?Egress==`false` && RuleAction=='allow' && contains(['-1', '6', '17'],Protocol) && (CidrBlock=='0.0.0.0/0' || Ipv6CidrBlock=='::/0') && (!PortRange || (PortRange.From <= `3389` && PortRange.To >= `3389`) || (PortRange.From <= `22` && PortRange.To >= `22`))].RuleNumber)>min(Entries[?Egress==`false` && RuleAction=='deny' && contains(['-1', '6', '17'],Protocol) && (CidrBlock=='0.0.0.0/0' || Ipv6CidrBlock=='::/0') && (!PortRange || (PortRange.From <= `3389` && PortRange.To >= `3389`) || (PortRange.From <= `22` && PortRange.To >= `22`))].RuleNumber)
+        value: false

@@ -1,0 +1,63 @@
+{
+    "status_code": 200,
+    "data": {
+        "NetworkAcls": [
+            {
+                "Associations": [],
+                "Entries": [
+                    {
+                        "CidrBlock": "0.0.0.0/0",
+                        "Egress": true,
+                        "Protocol": "-1",
+                        "RuleAction": "deny",
+                        "RuleNumber": 32767
+                    },
+                    {
+                        "CidrBlock": "0.0.0.0/0",
+                        "Egress": false,
+                        "PortRange": {
+                            "From": 20,
+                            "To": 26
+                        },
+                        "Protocol": "6",
+                        "RuleAction": "allow",
+                        "RuleNumber": 1
+                    },
+                    {
+                        "CidrBlock": "0.0.0.0/0",
+                        "Egress": false,
+                        "Protocol": "-1",
+                        "RuleAction": "deny",
+                        "RuleNumber": 100
+                    },
+                    {
+                        "CidrBlock": "0.0.0.0/0",
+                        "Egress": false,
+                        "Protocol": "-1",
+                        "RuleAction": "deny",
+                        "RuleNumber": 32767
+                    }
+                ],
+                "IsDefault": true,
+                "NetworkAclId": "acl-0f2734ccec361b16c",
+                "Tags": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-146-no_acls_allow_ingress_for_everyone_to_remote_server_administration_ports"
+                    },
+                    {
+                        "Key": "Name",
+                        "Value": "146_default_network_acl_red2"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Red"
+                    }
+                ],
+                "VpcId": "vpc-085de0467f9f9bcd9",
+                "OwnerId": "644160558196"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

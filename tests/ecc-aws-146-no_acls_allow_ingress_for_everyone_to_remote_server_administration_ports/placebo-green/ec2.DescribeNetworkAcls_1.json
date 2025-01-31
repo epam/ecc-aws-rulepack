@@ -1,0 +1,103 @@
+{
+    "status_code": 200,
+    "data": {
+        "NetworkAcls": [
+            {
+                "Associations": [],
+                "Entries": [
+                    {
+                        "CidrBlock": "0.0.0.0/0",
+                        "Egress": true,
+                        "Protocol": "-1",
+                        "RuleAction": "deny",
+                        "RuleNumber": 32767
+                    },
+                    {
+                        "CidrBlock": "0.0.0.0/0",
+                        "Egress": false,
+                        "PortRange": {
+                            "From": 123,
+                            "To": 300
+                        },
+                        "Protocol": "17",
+                        "RuleAction": "allow",
+                        "RuleNumber": 1
+                    },
+                    {
+                        "CidrBlock": "10.0.0.0/24",
+                        "Egress": false,
+                        "PortRange": {
+                            "From": 22,
+                            "To": 22
+                        },
+                        "Protocol": "17",
+                        "RuleAction": "allow",
+                        "RuleNumber": 2
+                    },
+                    {
+                        "Egress": false,
+                        "Ipv6CidrBlock": "fe80::/10",
+                        "PortRange": {
+                            "From": 22,
+                            "To": 22
+                        },
+                        "Protocol": "6",
+                        "RuleAction": "allow",
+                        "RuleNumber": 3
+                    },
+                    {
+                        "CidrBlock": "10.0.0.0/24",
+                        "Egress": false,
+                        "PortRange": {
+                            "From": 1,
+                            "To": 65535
+                        },
+                        "Protocol": "17",
+                        "RuleAction": "allow",
+                        "RuleNumber": 4
+                    },
+                    {
+                        "CidrBlock": "0.0.0.0/0",
+                        "Egress": false,
+                        "Protocol": "47",
+                        "RuleAction": "allow",
+                        "RuleNumber": 5
+                    },
+                    {
+                        "CidrBlock": "0.0.0.0/0",
+                        "Egress": false,
+                        "Protocol": "47",
+                        "RuleAction": "allow",
+                        "RuleNumber": 6
+                    },
+                    {
+                        "CidrBlock": "0.0.0.0/0",
+                        "Egress": false,
+                        "Protocol": "-1",
+                        "RuleAction": "deny",
+                        "RuleNumber": 32767
+                    }
+                ],
+                "IsDefault": true,
+                "NetworkAclId": "acl-0c17da31758edbf21",
+                "Tags": [
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    },
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-146-no_acls_allow_ingress_for_everyone_to_remote_server_administration_ports"
+                    },
+                    {
+                        "Key": "Name",
+                        "Value": "146_default_network_acl_green1"
+                    }
+                ],
+                "VpcId": "vpc-0e0f0ad99e5b15e89",
+                "OwnerId": "644160558196"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}
