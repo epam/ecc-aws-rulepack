@@ -3,10 +3,6 @@
     "data": {
         "EventBuses": [
             {
-                "Name": "default",
-                "Arn": "arn:aws:events:us-east-1:111111111111:event-bus/default"
-            },
-            {
                 "Name": "304_event_bus_red",
                 "Arn": "arn:aws:events:us-east-1:111111111111:event-bus/304_event_bus_red",
                 "Policy": "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Sid\":\"304_event_bus_policy_red\",\"Effect\":\"Allow\",\"Principal\":\"*\",\"Action\":\"events:DescribeEventBus\",\"Resource\":\"arn:aws:events:us-east-1:111111111111:event-bus/304_event_bus_red\"}]}"

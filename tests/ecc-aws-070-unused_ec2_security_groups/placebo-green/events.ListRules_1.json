@@ -1,7 +1,16 @@
 {
     "status_code": 200,
     "data": {
-        "Rules": [],
+        "Rules": [
+            {
+                "Name": "cloudtrail",
+                "Arn": "arn:aws:events:us-east-1:644160558196:rule/cloudtrail",
+                "EventPattern": "{\n    \"detail-type\": [\n      \"AWS API Call via CloudTrail\"\n    ],\n    \"source\": [\n      \"aws.cloudtrail\"\n    ],\n    \"detail\": {\n      \"eventSource\": [\n        \"cloudtrail.amazonaws.com\"\n      ],\n      \"eventName\": [\n        \"CreateTrail\",\n        \"UpdateTrail\",\n        \"DeleteTrail\",\n        \"StartLogging\",\n        \"StopLogging\"\n      ]\n    }\n  }",
+                "State": "ENABLED",
+                "RoleArn": "arn:aws:iam::644160558196:role/test",
+                "EventBusName": "default"
+            }
+        ],
         "ResponseMetadata": {}
     }
 }
