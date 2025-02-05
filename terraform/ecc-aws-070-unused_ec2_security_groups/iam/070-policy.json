@@ -13,7 +13,8 @@
 				"autoscaling:DescribeLaunchConfigurations",
 				"events:ListRules",
 				"codebuild:ListProjects",
-				"batch:DescribeComputeEnvironments"
+				"batch:DescribeComputeEnvironments",
+				"events:ListEventBuses"
 			],
 			"Resource": "*"
 		}

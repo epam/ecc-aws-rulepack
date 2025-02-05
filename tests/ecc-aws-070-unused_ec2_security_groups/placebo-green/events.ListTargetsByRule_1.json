@@ -1,7 +1,13 @@
 {
     "status_code": 200,
     "data": {
-        "Targets": [],
+        "Targets": [
+            {
+                "Id": "test",
+                "Arn": "arn:aws:events:eu-west-1:644160558196:event-bus/test",
+                "RoleArn": "arn:aws:iam::644160558196:role/test"
+            }
+        ],
         "ResponseMetadata": {}
     }
 }

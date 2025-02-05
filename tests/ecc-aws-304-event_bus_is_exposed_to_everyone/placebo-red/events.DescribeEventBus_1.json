@@ -1,0 +1,29 @@
+{
+    "status_code": 200,
+    "data": {
+        "Name": "304_event_bus_red",
+        "Arn": "arn:aws:events:us-east-1:644160558196:event-bus/304_event_bus_red",
+        "Policy": "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Sid\":\"304_event_bus_policy_red\",\"Effect\":\"Allow\",\"Principal\":\"*\",\"Action\":\"events:DescribeEventBus\",\"Resource\":\"arn:aws:events:us-east-1:111111111111:event-bus/304_event_bus_red\"}]}",
+        "CreationTime": {
+            "__class__": "datetime",
+            "year": 2025,
+            "month": 2,
+            "day": 5,
+            "hour": 18,
+            "minute": 37,
+            "second": 10,
+            "microsecond": 458000
+        },
+        "LastModifiedTime": {
+            "__class__": "datetime",
+            "year": 2025,
+            "month": 2,
+            "day": 5,
+            "hour": 18,
+            "minute": 37,
+            "second": 11,
+            "microsecond": 58000
+        },
+        "ResponseMetadata": {}
+    }
+}

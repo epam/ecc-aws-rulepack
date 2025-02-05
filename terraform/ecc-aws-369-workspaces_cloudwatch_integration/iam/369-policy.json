@@ -5,6 +5,7 @@
             "Effect": "Allow",
             "Action": [
                 "events:ListRules",
+                "events:ListEventBuses",
                 "tag:GetResources",
                 "iam:ListAccountAliases",
                 "workspaces:DescribeWorkspaces"
