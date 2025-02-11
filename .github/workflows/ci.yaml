@@ -4,7 +4,6 @@ on:
   workflow_dispatch:
   schedule:
     - cron: "0 7 * * 1"
-    - cron: "20 16 * * *"
   pull_request_review:
     types: 
       - submitted
