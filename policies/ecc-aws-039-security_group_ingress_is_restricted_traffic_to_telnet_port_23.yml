@@ -9,12 +9,28 @@ policies:
   - name: ecc-aws-039-security_group_ingress_is_restricted_traffic_to_telnet_port_23
     comment: '010042022000'
     description: |
-      Security group rule allows internet traffic to Telnet port (23)
+      Security group rule allows unrestricted inbound access to TCP Telnet port (23)
     resource: aws.security-group
     filters:
+    - or:
       - type: ingress
         Ports: [23]
+        IpProtocol: "tcp"
         Cidr:
-          value:
-            - "0.0.0.0/0"
-          op: in
+          value: "0.0.0.0/0"
+      - type: ingress
+        Ports: [23]
+        IpProtocol: "-1"
+        Cidr:
+          value: "0.0.0.0/0"
+
+      - type: ingress
+        Ports: [23]
+        IpProtocol: "tcp"
+        CidrV6:
+          value: "::/0"
+      - type: ingress
+        Ports: [23]
+        IpProtocol: "-1"
+        CidrV6:
+          value: "::/0"

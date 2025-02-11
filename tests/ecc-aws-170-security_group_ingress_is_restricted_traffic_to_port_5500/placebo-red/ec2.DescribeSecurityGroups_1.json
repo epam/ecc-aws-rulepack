@@ -3,49 +3,51 @@
     "data": {
         "SecurityGroups": [
             {
-                "Description": "Managed by Terraform",
-                "GroupName": "170_security_group_red",
-                "IpPermissions": [
-                    {
-                        "FromPort": 5500,
-                        "IpProtocol": "tcp",
-                        "IpRanges": [
-                            {
-                                "CidrIp": "0.0.0.0/0"
-                            }
-                        ],
-                        "Ipv6Ranges": [],
-                        "PrefixListIds": [],
-                        "ToPort": 5500,
-                        "UserIdGroupPairs": []
-                    }
-                ],
-                "OwnerId": "111111111111",
-                "GroupId": "sg-1234567asdfg",
+                "GroupId": "sg-0e24cbbe76e4a9028",
                 "IpPermissionsEgress": [
                     {
                         "IpProtocol": "-1",
+                        "UserIdGroupPairs": [],
                         "IpRanges": [
                             {
                                 "CidrIp": "0.0.0.0/0"
                             }
                         ],
                         "Ipv6Ranges": [],
-                        "PrefixListIds": [],
-                        "UserIdGroupPairs": []
+                        "PrefixListIds": []
                     }
                 ],
                 "Tags": [
+                    {
+                        "Key": "Name",
+                        "Value": "029_security_group_red"
+                    },
                     {
                         "Key": "ComplianceStatus",
                         "Value": "Red"
                     },
                     {
                         "Key": "CustodianRule",
-                        "Value": "ecc-aws-170-security_group_ingress_is_restricted_traffic_to_port_5500"
+                        "Value": "ecc-aws-029-security_group_ingress_is_restricted_traffic_to_ftp_port_21"
                     }
                 ],
-                "VpcId": "vpc-12345asdfg"
+                "VpcId": "vpc-000",
+                "OwnerId": "644160558196",
+                "GroupName": "029_security_group_red",
+                "Description": "Managed by Terraform",
+                "IpPermissions": [
+                    {
+                        "IpProtocol": "-1",
+                        "UserIdGroupPairs": [],
+                        "IpRanges": [
+                            {
+                                "CidrIp": "0.0.0.0/0"
+                            }
+                        ],
+                        "Ipv6Ranges": [],
+                        "PrefixListIds": []
+                    }
+                ]
             }
         ],
         "ResponseMetadata": {}

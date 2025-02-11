@@ -4,11 +4,9 @@
         {
             "Effect": "Allow",
             "Action": [
-                "ec2:DescribeSecurityGroups",
-                "ec2:DescribeRegions",
-                "ec2:DescribeSecurityGroupRules"
+                "ec2:DescribeSecurityGroups"
             ],
             "Resource": "*"
         }
     ]
-}
+}a

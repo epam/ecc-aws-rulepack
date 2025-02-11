@@ -3,49 +3,37 @@
     "data": {
         "SecurityGroups": [
             {
-                "Description": "Managed by Terraform",
-                "GroupName": "171_security_group_red",
-                "IpPermissions": [
-                    {
-                        "FromPort": 5601,
-                        "IpProtocol": "tcp",
-                        "IpRanges": [
-                            {
-                                "CidrIp": "0.0.0.0/0"
-                            }
-                        ],
-                        "Ipv6Ranges": [],
-                        "PrefixListIds": [],
-                        "ToPort": 5601,
-                        "UserIdGroupPairs": []
-                    }
-                ],
-                "OwnerId": "this",
-                "GroupId": "sg-1234567asdfg",
-                "IpPermissionsEgress": [
-                    {
-                        "IpProtocol": "-1",
-                        "IpRanges": [
-                            {
-                                "CidrIp": "0.0.0.0/0"
-                            }
-                        ],
-                        "Ipv6Ranges": [],
-                        "PrefixListIds": [],
-                        "UserIdGroupPairs": []
-                    }
-                ],
+                "GroupId": "sg-0be3d1d06e30fdebc",
+                "IpPermissionsEgress": [],
                 "Tags": [
                     {
-                        "Key": "CustodianRule",
-                        "Value": "ecc-aws-171-security_group_ingress_is_restricted_traffic_to_port_5601"
+                        "Key": "Name",
+                        "Value": "security_group_red"
                     },
                     {
                         "Key": "ComplianceStatus",
                         "Value": "Red"
                     }
                 ],
-                "VpcId": "vpc-12345asdfg"
+                "VpcId": "vpc-000",
+                "OwnerId": "644160558196",
+                "GroupName": "security_group_red",
+                "Description": "Managed by Terraform",
+                "IpPermissions": [
+                    {
+                        "IpProtocol": "tcp",
+                        "FromPort": 5000,
+                        "ToPort": 6000,
+                        "UserIdGroupPairs": [],
+                        "IpRanges": [
+                            {
+                                "CidrIp": "0.0.0.0/0"
+                            }
+                        ],
+                        "Ipv6Ranges": [],
+                        "PrefixListIds": []
+                    }
+                ]
             }
         ],
         "ResponseMetadata": {}

@@ -4,7 +4,7 @@
         {
             "Effect": "Allow",
             "Action": [
-                "ec2:DescribeSecurityGroups"              
+                "ec2:DescribeSecurityGroups"
             ],
             "Resource": "*"
         }

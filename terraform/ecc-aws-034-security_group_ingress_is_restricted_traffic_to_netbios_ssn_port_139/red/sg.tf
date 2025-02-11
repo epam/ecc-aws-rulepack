@@ -1,21 +1,18 @@
-resource "aws_vpc" "this" {
-  cidr_block = "10.0.0.0/16"
+data "aws_vpc" "default" {
+  default = true
 }
 
 resource "aws_security_group" "this" {
   name   = "034_security_group_red"
-  vpc_id = aws_vpc.this.id
+  vpc_id = data.aws_vpc.default.id
+  tags = {
+    Name = "034_security_group_red"
+  }
 
   ingress {
-    from_port   = 139
-    to_port     = 139
+    from_port   = 130
+    to_port     = 137
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-  egress {
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
-    cidr_blocks = ["0.0.0.0/0"]
+    ipv6_cidr_blocks = ["::/0"]
   }
 }

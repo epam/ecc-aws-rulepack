@@ -3,40 +3,42 @@
     "data": {
         "SecurityGroups": [
             {
-                "Description": "test-red-netbios",
-                "GroupName": "test-red-netbios",
+                "GroupId": "sg-0cebf5524a225a4b7",
+                "IpPermissionsEgress": [],
+                "Tags": [
+                  {
+                    "Key": "ComplianceStatus",
+                    "Value": "Red"
+                  },
+                  {
+                    "Key": "Name",
+                    "Value": "034_security_group_red"
+                  },
+                  {
+                    "Key": "CustodianRule",
+                    "Value": "ecc-aws-034-security_group_ingress_is_restricted_traffic_to_netbios_ssn_port_139"
+                  }
+                ],
+                "VpcId": "vpc-000",
+                "OwnerId": "471112502226",
+                "GroupName": "security_group_red",
+                "Description": "Managed by Terraform",
                 "IpPermissions": [
-                    {
-                        "FromPort": 139,
-                        "IpProtocol": "tcp",
-                        "IpRanges": [
-                            {
-                                "CidrIp": "0.0.0.0/0"
-                            }
-                        ],
-                        "Ipv6Ranges": [],
-                        "PrefixListIds": [],
-                        "ToPort": 139,
-                        "UserIdGroupPairs": []
-                    }
-                ],
-                "OwnerId": "123456789123",
-                "GroupId": "sg-123456abcdef",
-                "IpPermissionsEgress": [
-                    {
-                        "IpProtocol": "-1",
-                        "IpRanges": [
-                            {
-                                "CidrIp": "0.0.0.0/0"
-                            }
-                        ],
-                        "Ipv6Ranges": [],
-                        "PrefixListIds": [],
-                        "UserIdGroupPairs": []
-                    }
-                ],
-                "VpcId": "vpc-ad123456"
-            }
+                  {
+                    "IpProtocol": "tcp",
+                    "FromPort": 130,
+                    "ToPort": 137,
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [],
+                    "Ipv6Ranges": [
+                      {
+                        "CidrIpv6": "::/0"
+                      }
+                    ],
+                    "PrefixListIds": []
+                  }
+                ]
+              }
         ],
         "ResponseMetadata": {}
     }

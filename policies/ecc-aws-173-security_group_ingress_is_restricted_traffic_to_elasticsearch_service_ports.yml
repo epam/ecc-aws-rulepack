@@ -9,12 +9,28 @@ policies:
   - name: ecc-aws-173-security_group_ingress_is_restricted_traffic_to_elasticsearch_service_ports
     comment: '010042022000'
     description: |
-      Security groups allow unrestricted access to Elasticsearch service ports 9200, 9300
+      Security group rule allows unrestricted inbound access to TCP OpenSearch ports (9200, 9300)
     resource: aws.security-group
     filters:
+    - or:
       - type: ingress
         Ports: [9200, 9300]
+        IpProtocol: "tcp"
         Cidr:
-          value:
-            - "0.0.0.0/0"
-          op: in
+          value: "0.0.0.0/0"
+      - type: ingress
+        Ports: [9200, 9300]
+        IpProtocol: "-1"
+        Cidr:
+          value: "0.0.0.0/0"
+
+      - type: ingress
+        Ports: [9200, 9300]
+        IpProtocol: "tcp"
+        CidrV6:
+          value: "::/0"
+      - type: ingress
+        Ports: [9200, 9300]
+        IpProtocol: "-1"
+        CidrV6:
+          value: "::/0"

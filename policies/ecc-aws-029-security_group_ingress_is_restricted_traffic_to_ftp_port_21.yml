@@ -9,12 +9,27 @@ policies:
   - name: ecc-aws-029-security_group_ingress_is_restricted_traffic_to_ftp_port_21
     comment: '010042022000'
     description: |
-      Security group rule allows internet traffic to FTP port (21)
+      Security group rule allows unrestricted inbound access to TCP FTP ports (20, 21)
     resource: aws.security-group
     filters:
-      - type: ingress
-        Ports: [21]
-        Cidr:
-          value:
-            - "0.0.0.0/0"
-          op: in
+      - or:
+        - type: ingress
+          Ports: [20, 21]
+          IpProtocol: "tcp"
+          Cidr:
+            value: "0.0.0.0/0"
+        - type: ingress
+          Ports: [20, 21]
+          IpProtocol: "-1"
+          Cidr:
+            value: "0.0.0.0/0"
+        - type: ingress
+          Ports: [20, 21]
+          IpProtocol: "tcp"
+          CidrV6:
+            value: "::/0"
+        - type: ingress
+          Ports: [20, 21]
+          IpProtocol: "-1"
+          CidrV6:
+            value: "::/0"

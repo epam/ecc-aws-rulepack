@@ -36,39 +36,6 @@
                     }
                 ],
                 "VpcId": "vpc-ad1234d0"
-            },
-            {
-                "Description": "c7n-test",
-                "GroupName": "c7n-test",
-                "IpPermissions": [
-                    {
-                        "IpProtocol": "-1",
-                        "IpRanges": [
-                            {
-                                "CidrIp": "192.168.2.1/32"
-                            }
-                        ],
-                        "Ipv6Ranges": [],
-                        "PrefixListIds": [],
-                        "UserIdGroupPairs": []
-                    }
-                ],
-                "OwnerId": "123456789112",
-                "GroupId": "sg-0ebf9083850c47100",
-                "IpPermissionsEgress": [
-                    {
-                        "IpProtocol": "-1",
-                        "IpRanges": [
-                            {
-                                "CidrIp": "0.0.0.0/0"
-                            }
-                        ],
-                        "Ipv6Ranges": [],
-                        "PrefixListIds": [],
-                        "UserIdGroupPairs": []
-                    }
-                ],
-                "VpcId": "vpc-ad1234d0"
             }
         ],
         "ResponseMetadata": {}

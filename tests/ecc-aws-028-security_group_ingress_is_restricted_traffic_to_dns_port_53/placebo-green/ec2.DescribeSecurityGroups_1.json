@@ -3,39 +3,68 @@
     "data": {
         "SecurityGroups": [
             {
-                "Description": "test-green-dns",
-                "GroupName": "test-green-dns",
-                "IpPermissions": [
+                "GroupId": "sg-0acf47c8f07d6e038",
+                "IpPermissionsEgress": [],
+                "Tags": [
                     {
-                        "FromPort": 53,
-                        "IpProtocol": "tcp",
-                        "IpRanges": [
-                            {
-                                "CidrIp": "192.168.2.1/32"
-                            }
-                        ],
-                        "Ipv6Ranges": [],
-                        "PrefixListIds": [],
-                        "ToPort": 53,
-                        "UserIdGroupPairs": []
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-028-security_group_ingress_is_restricted_traffic_to_dns_port_53"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
                     }
                 ],
-                "OwnerId": "012345678912",
-                "GroupId": "sg-0d12c3b12345e1234",
-                "IpPermissionsEgress": [
+                "VpcId": "vpc-00000",
+                "OwnerId": "644160558196",
+                "GroupName": "027_security_group_green1",
+                "Description": "Managed by Terraform",
+                "IpPermissions": [
                     {
                         "IpProtocol": "-1",
+                        "UserIdGroupPairs": [],
+                        "IpRanges": [
+                            {
+                                "CidrIp": "10.10.10.0/32"
+                            },
+                            {
+                                "CidrIp": "10.0.0.0/32"
+                            }
+                        ],
+                        "Ipv6Ranges": [
+                            {
+                                "CidrIpv6": "fe80::/10"
+                            }
+                        ],
+                        "PrefixListIds": []
+                    },
+                    {
+                        "IpProtocol": "udp",
+                        "FromPort": 1000,
+                        "ToPort": 1050,
+                        "UserIdGroupPairs": [],
                         "IpRanges": [
                             {
                                 "CidrIp": "0.0.0.0/0"
                             }
                         ],
                         "Ipv6Ranges": [],
-                        "PrefixListIds": [],
-                        "UserIdGroupPairs": []
+                        "PrefixListIds": []
+                    },
+                    {
+                        "IpProtocol": "tcp",
+                        "FromPort": 1000,
+                        "ToPort": 1000,
+                        "UserIdGroupPairs": [],
+                        "IpRanges": [
+                            {
+                                "CidrIp": "0.0.0.0/0"
+                            }
+                        ],
+                        "Ipv6Ranges": [],
+                        "PrefixListIds": []
                     }
-                ],
-                "VpcId": "vpc-ad1234d0"
+                ]
             }
         ],
         "ResponseMetadata": {}

@@ -9,12 +9,38 @@ policies:
   - name: ecc-aws-034-security_group_ingress_is_restricted_traffic_to_netbios_ssn_port_139
     comment: '010042022000'
     description: |
-      Security group rule allows internet traffic to NetBIOS-SSN port (139)
+      Security group rule allows unrestricted inbound access to NetBIOS ports (137-139)
     resource: aws.security-group
     filters:
+    - or:
       - type: ingress
-        Ports: [139]
+        Ports: [137, 138]
+        IpProtocol: "udp"
         Cidr:
-          value:
-            - "0.0.0.0/0"
-          op: in
+          value: "0.0.0.0/0"
+      - type: ingress
+        Ports: [137, 139]
+        IpProtocol: "tcp"
+        Cidr:
+          value: "0.0.0.0/0"
+      - type: ingress
+        Ports: [137, 138, 139]
+        IpProtocol: "-1"
+        Cidr:
+          value: "0.0.0.0/0"
+
+      - type: ingress
+        Ports: [137, 138]
+        IpProtocol: "udp"
+        CidrV6:
+          value: "::/0"
+      - type: ingress
+        Ports: [137, 139]
+        IpProtocol: "tcp"
+        CidrV6:
+          value: "::/0"
+      - type: ingress
+        Ports: [137, 138, 139]
+        IpProtocol: "-1"
+        CidrV6:
+          value: "::/0"

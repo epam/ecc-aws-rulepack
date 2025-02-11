@@ -3,46 +3,72 @@
     "data": {
         "SecurityGroups": [
             {
-                "Description": "Managed by Terraform",
-                "GroupName": "green-allow-http-121",
-                "IpPermissions": [
-                    {
-                        "FromPort": 80,
-                        "IpProtocol": "tcp",
-                        "IpRanges": [
-                            {
-                                "CidrIp": "10.0.0.0/16",
-                                "Description": "HTTP from VPC"
-                            }
-                        ],
-                        "Ipv6Ranges": [],
-                        "PrefixListIds": [],
-                        "ToPort": 80,
-                        "UserIdGroupPairs": []
-                    }
-                ],
-                "OwnerId": "111111111111",
-                "GroupId": "sg-1234567asdfg",
+                "GroupId": "sg-09688f3f65179b146",
                 "IpPermissionsEgress": [
                     {
-                        "IpProtocol": "-1",
+                        "IpProtocol": "tcp",
+                        "FromPort": 80,
+                        "ToPort": 80,
+                        "UserIdGroupPairs": [],
                         "IpRanges": [
                             {
-                                "CidrIp": "10.0.0.0/16"
+                                "CidrIp": "0.0.0.0/0"
                             }
                         ],
                         "Ipv6Ranges": [],
-                        "PrefixListIds": [],
-                        "UserIdGroupPairs": []
+                        "PrefixListIds": []
+                    },
+                    {
+                        "IpProtocol": "-1",
+                        "UserIdGroupPairs": [
+                            {
+                                "UserId": "644160558196",
+                                "GroupId": "sg-09688f3f65179b146"
+                            }
+                        ],
+                        "IpRanges": [
+                            {
+                                "CidrIp": "172.31.0.0/16"
+                            }
+                        ],
+                        "Ipv6Ranges": [],
+                        "PrefixListIds": []
                     }
                 ],
                 "Tags": [
                     {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-121-restrict_outbound_traffic"
+                    },
+                    {
                         "Key": "Name",
-                        "Value": "allow_http"
+                        "Value": "121_security_group_green"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
                     }
                 ],
-                "VpcId": "vpc-12345asdfg"
+                "VpcId": "vpc-0000",
+                "OwnerId": "644160558196",
+                "GroupName": "121_security_group_green",
+                "Description": "Managed by Terraform",
+                "IpPermissions": [
+                    {
+                        "IpProtocol": "tcp",
+                        "FromPort": 80,
+                        "ToPort": 80,
+                        "UserIdGroupPairs": [],
+                        "IpRanges": [
+                            {
+                                "Description": "HTTP from VPC",
+                                "CidrIp": "172.31.0.0/16"
+                            }
+                        ],
+                        "Ipv6Ranges": [],
+                        "PrefixListIds": []
+                    }
+                ]
             }
         ],
         "ResponseMetadata": {}

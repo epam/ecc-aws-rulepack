@@ -9,12 +9,37 @@ policies:
   - name: ecc-aws-028-security_group_ingress_is_restricted_traffic_to_dns_port_53
     comment: '010042022000'
     description: |
-      Security group rule allows internet traffic to DNS port (53)
+      Security group rule allows unrestricted inbound access to TCP and UDP DNS port (53)
     resource: aws.security-group
     filters:
+    - or:
       - type: ingress
         Ports: [53]
+        IpProtocol: "udp"
         Cidr:
-          value:
-            - "0.0.0.0/0"
-          op: in
+          value: "0.0.0.0/0"
+      - type: ingress
+        Ports: [53]
+        IpProtocol: "tcp"
+        Cidr:
+          value: "0.0.0.0/0"
+      - type: ingress
+        Ports: [53]
+        IpProtocol: "-1"
+        Cidr:
+          value: "0.0.0.0/0"
+      - type: ingress
+        Ports: [53]
+        IpProtocol: "udp"
+        CidrV6:
+          value: "::/0"
+      - type: ingress
+        Ports: [53]
+        IpProtocol: "tcp"
+        CidrV6:
+          value: "::/0"
+      - type: ingress
+        Ports: [53]
+        IpProtocol: "-1"
+        CidrV6:
+          value: "::/0"
