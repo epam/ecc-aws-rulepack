@@ -1,0 +1,46 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+policies:
+  - name: ecc-aws-132-security_group_unrestricted_ingress_traffic_common_to_db_services_ports
+    comment: '010042022000'
+    description: |
+      Security group rule allows unrestricted inbound access to common database service ports
+    resource: aws.security-group
+    filters:
+    - or:
+      - type: ingress
+        Ports: [7473, 8529, 28015, 29015]
+        IpProtocol: "udp"
+        Cidr:
+          value: "0.0.0.0/0"
+      - type: ingress
+        Ports: [2382, 2383, 5984, 7210, 5005, 7473, 7474, 6379, 8529, 8020, 28015, 29015, 50070, 50470, 7000, 7001, 7199, 9042, 9160, 61620, 61621]
+        IpProtocol: "tcp"
+        Cidr:
+          value: "0.0.0.0/0"
+      - type: ingress
+        Ports: [2382, 2383, 5984, 7210, 5005, 7473, 7474, 6379, 8529, 8020, 28015, 29015, 50070, 50470, 7000, 7001, 7199, 9042, 9160, 61620, 61621]
+        IpProtocol: "-1"
+        Cidr:
+          value: "0.0.0.0/0"
+
+      - type: ingress
+        Ports: [7473, 8529, 28015, 29015]
+        IpProtocol: "udp"
+        CidrV6:
+          value: "::/0"
+      - type: ingress
+        Ports: [2382, 2383, 5984, 7210, 5005, 7473, 7474, 6379, 8529, 8020, 28015, 29015, 50070, 50470, 7000, 7001, 7199, 9042, 9160, 61620, 61621]
+        IpProtocol: "tcp"
+        CidrV6:
+          value: "::/0"
+      - type: ingress
+        Ports: [2382, 2383, 5984, 7210, 5005, 7473, 7474, 6379, 8529, 8020, 28015, 29015, 50070, 50470, 7000, 7001, 7199, 9042, 9160, 61620, 61621]
+        IpProtocol: "-1"
+        CidrV6:
+          value: "::/0"
+

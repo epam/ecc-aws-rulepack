@@ -1,0 +1,46 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+policies:
+  - name: ecc-aws-134-security_group_unrestricted_ingress_traffic_to_ldap_ports
+    comment: '010042022000'
+    description: |
+      Security group rule allows unrestricted inbound access to TCP and UDP LDAP port (389, 636)
+    resource: aws.security-group
+    filters:
+    - or:
+      - type: ingress
+        Ports: [389]
+        IpProtocol: "udp"
+        Cidr:
+          value: "0.0.0.0/0"
+      - type: ingress
+        Ports: [389, 636]
+        IpProtocol: "tcp"
+        Cidr:
+          value: "0.0.0.0/0"
+      - type: ingress
+        Ports: [389, 636]
+        IpProtocol: "-1"
+        Cidr:
+          value: "0.0.0.0/0"
+
+      - type: ingress
+        Ports: [389]
+        IpProtocol: "udp"
+        CidrV6:
+          value: "::/0"
+      - type: ingress
+        Ports: [389, 636]
+        IpProtocol: "tcp"
+        CidrV6:
+          value: "::/0"
+      - type: ingress
+        Ports: [389, 636]
+        IpProtocol: "-1"
+        CidrV6:
+          value: "::/0"
+
