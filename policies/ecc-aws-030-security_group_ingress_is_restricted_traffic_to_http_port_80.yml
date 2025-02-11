@@ -9,12 +9,28 @@ policies:
   - name: ecc-aws-030-security_group_ingress_is_restricted_traffic_to_http_port_80
     comment: '010042022000'
     description: |
-      Security group rule allows internet traffic to HTTP port (80)
+      Security group rule allows unrestricted inbound access to TCP HTTP port (80)
     resource: aws.security-group
     filters:
+    - or:
       - type: ingress
         Ports: [80]
+        IpProtocol: "tcp"
         Cidr:
-          value:
-            - "0.0.0.0/0"
-          op: in
+          value: "0.0.0.0/0"
+      - type: ingress
+        Ports: [80]
+        IpProtocol: "-1"
+        Cidr:
+          value: "0.0.0.0/0"
+
+      - type: ingress
+        Ports: [80]
+        IpProtocol: "tcp"
+        CidrV6:
+          value: "::/0"
+      - type: ingress
+        Ports: [80]
+        IpProtocol: "-1"
+        CidrV6:
+          value: "::/0"

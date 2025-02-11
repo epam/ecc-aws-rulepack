@@ -9,19 +9,28 @@ policies:
   - name: ecc-aws-063-security_group_ingress_is_restricted_3389
     comment: '010042022900'
     description: |
-      Security groups allow ingress from 0.0.0.0/0 or ::/0 to remote server administration port (3389)
+      Security group rule allows unrestricted inbound access to remote server administration TCP RDP port (3389)
     resource: aws.security-group
     filters:
-      - or:
-          - type: ingress
-            Ports: [3389]
-            Cidr:
-              value:
-                - "0.0.0.0/0"
-              op: in
-          - type: ingress
-            Ports: [3389]
-            CidrV6:
-              value:
-                - "::/0"
-              op: in
+    - or:
+      - type: ingress
+        Ports: [3389]
+        IpProtocol: "tcp"
+        Cidr:
+          value: "0.0.0.0/0"
+      - type: ingress
+        Ports: [3389]
+        IpProtocol: "-1"
+        Cidr:
+          value: "0.0.0.0/0"
+
+      - type: ingress
+        Ports: [3389]
+        IpProtocol: "tcp"
+        CidrV6:
+          value: "::/0"
+      - type: ingress
+        Ports: [3389]
+        IpProtocol: "-1"
+        CidrV6:
+          value: "::/0"

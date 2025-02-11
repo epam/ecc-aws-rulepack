@@ -3,40 +3,38 @@
     "data": {
         "SecurityGroups": [
             {
-                "Description": "test-red-oracledb",
-                "GroupName": "test-red-oracledb",
+                "GroupId": "sg-0cebf5524a225a4b7",
+                "IpPermissionsEgress": [],
+                "Tags": [
+                  {
+                    "Key": "ComplianceStatus",
+                    "Value": "Red"
+                  },
+                  {
+                    "Key": "Name",
+                    "Value": "035_security_group_red"
+                  }
+                ],
+                "VpcId": "vpc-000",
+                "OwnerId": "471112502226",
+                "GroupName": "security_group_red",
+                "Description": "Managed by Terraform",
                 "IpPermissions": [
-                    {
-                        "FromPort": 1521,
-                        "IpProtocol": "tcp",
-                        "IpRanges": [
-                            {
-                                "CidrIp": "0.0.0.0/0"
-                            }
-                        ],
-                        "Ipv6Ranges": [],
-                        "PrefixListIds": [],
-                        "ToPort": 1521,
-                        "UserIdGroupPairs": []
-                    }
-                ],
-                "OwnerId": "123456789123",
-                "GroupId": "sg-123456abcdef",
-                "IpPermissionsEgress": [
-                    {
-                        "IpProtocol": "-1",
-                        "IpRanges": [
-                            {
-                                "CidrIp": "0.0.0.0/0"
-                            }
-                        ],
-                        "Ipv6Ranges": [],
-                        "PrefixListIds": [],
-                        "UserIdGroupPairs": []
-                    }
-                ],
-                "VpcId": "vpc-ad123456"
-            }
+                  {
+                    "IpProtocol": "tcp",
+                    "FromPort": 1521,
+                    "ToPort": 2483,
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [],
+                    "Ipv6Ranges": [
+                      {
+                        "CidrIpv6": "::/0"
+                      }
+                    ],
+                    "PrefixListIds": []
+                  }
+                ]
+              }
         ],
         "ResponseMetadata": {}
     }

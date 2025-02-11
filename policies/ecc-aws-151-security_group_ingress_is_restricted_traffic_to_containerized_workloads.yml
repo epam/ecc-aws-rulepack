@@ -1,0 +1,36 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: ecc-aws-151-security_group_ingress_is_restricted_traffic_to_containerized_workloads
+    comment: '010042022000'
+    description: |
+      Security group rule allows unrestricted inbound access to common containerized workloads ports
+    resource: aws.security-group
+    filters:
+    - or:
+      - type: ingress
+        Ports: [2181, 2888, 2375, 2376, 2379, 2380, 6443, 8300, 8301, 8302, 9090, 9092, 9093, 10250, 10259]
+        IpProtocol: "tcp"
+        Cidr:
+          value: "0.0.0.0/0"
+      - type: ingress
+        Ports: [2181, 2888, 2375, 2376, 2379, 2380, 6443, 8300, 8301, 8302, 9090, 9092, 9093, 10250, 10259]
+        IpProtocol: "-1"
+        Cidr:
+          value: "0.0.0.0/0"
+
+      - type: ingress
+        Ports: [2181, 2888, 2375, 2376, 2379, 2380, 6443, 8300, 8301, 8302, 9090, 9092, 9093, 10250, 10259]
+        IpProtocol: "tcp"
+        CidrV6:
+          value: "::/0"
+      - type: ingress
+        Ports: [2181, 2888, 2375, 2376, 2379, 2380, 6443, 8300, 8301, 8302, 9090, 9092, 9093, 10250, 10259]
+        IpProtocol: "-1"
+        CidrV6:
+          value: "::/0"

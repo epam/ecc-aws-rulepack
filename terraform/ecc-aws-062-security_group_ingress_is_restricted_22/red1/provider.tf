@@ -14,7 +14,7 @@ provider "aws"{
   default_tags {
     tags = {
       CustodianRule    = "ecc-aws-062-security_group_ingress_is_restricted_22"
-      ComplianceStatus = "Red1"
+      ComplianceStatus = "Red"
     }
   }
 }

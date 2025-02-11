@@ -3,39 +3,53 @@
     "data": {
         "SecurityGroups": [
             {
-                "Description": "test-red-ftp",
-                "GroupName": "test-red-ftp",
-                "IpPermissions": [
-                    {
-                        "FromPort": 21,
-                        "IpProtocol": "tcp",
-                        "IpRanges": [
-                            {
-                                "CidrIp": "0.0.0.0/0"
-                            }
-                        ],
-                        "Ipv6Ranges": [],
-                        "PrefixListIds": [],
-                        "ToPort": 21,
-                        "UserIdGroupPairs": []
-                    }
-                ],
-                "OwnerId": "123456789112",
-                "GroupId": "sg-123412b1225fc12de",
+                "GroupId": "sg-0e24cbbe76e4a9028",
                 "IpPermissionsEgress": [
                     {
                         "IpProtocol": "-1",
+                        "UserIdGroupPairs": [],
                         "IpRanges": [
                             {
                                 "CidrIp": "0.0.0.0/0"
                             }
                         ],
                         "Ipv6Ranges": [],
-                        "PrefixListIds": [],
-                        "UserIdGroupPairs": []
+                        "PrefixListIds": []
                     }
                 ],
-                "VpcId": "vpc-ad1234d0"
+                "Tags": [
+                    {
+                        "Key": "Name",
+                        "Value": "029_security_group_red"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Red"
+                    },
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-029-security_group_ingress_is_restricted_traffic_to_ftp_port_21"
+                    }
+                ],
+                "VpcId": "vpc-000",
+                "OwnerId": "644160558196",
+                "GroupName": "029_security_group_red",
+                "Description": "Managed by Terraform",
+                "IpPermissions": [
+                    {
+                        "IpProtocol": "tcp",
+                        "FromPort": 20,
+                        "ToPort": 20,
+                        "UserIdGroupPairs": [],
+                        "IpRanges": [
+                            {
+                                "CidrIp": "0.0.0.0/0"
+                            }
+                        ],
+                        "Ipv6Ranges": [],
+                        "PrefixListIds": []
+                    }
+                ]
             }
         ],
         "ResponseMetadata": {}

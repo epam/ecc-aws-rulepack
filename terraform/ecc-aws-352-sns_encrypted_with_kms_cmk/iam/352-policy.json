@@ -7,7 +7,7 @@
                 "sns:GetTopicAttributes",
 				"sns:ListTopics",
                 "kms:DescribeKey",
-                "kms:listAliases",
+                "kms:ListAliases",
                 "tag:GetResources"
             ],
             "Resource": "*"

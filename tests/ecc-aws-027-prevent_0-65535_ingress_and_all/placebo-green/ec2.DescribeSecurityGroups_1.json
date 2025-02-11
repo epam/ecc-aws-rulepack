@@ -3,39 +3,53 @@
     "data": {
         "SecurityGroups": [
             {
-                "Description": "test-c7n",
-                "GroupName": "test-c7n",
+                "GroupId": "sg-01f3784d76b62c9e4",
+                "IpPermissionsEgress": [],
+                "Tags": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-027-prevent_0-65535_ingress_and_all"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    }
+                ],
+                "VpcId": "vpc-000000000",
+                "OwnerId": "644160558196",
+                "GroupName": "027_security_group_green",
+                "Description": "Managed by Terraform",
                 "IpPermissions": [
                     {
-                        "FromPort": 21,
-                        "IpProtocol": "tcp",
-                        "IpRanges": [
+                        "IpProtocol": "udp",
+                        "FromPort": 10,
+                        "ToPort": 200,
+                        "UserIdGroupPairs": [],
+                        "IpRanges": [],
+                        "Ipv6Ranges": [
                             {
-                                "CidrIp": "192.168.2.2/32"
+                                "CidrIpv6": "fe80::/10"
                             }
                         ],
-                        "Ipv6Ranges": [],
-                        "PrefixListIds": [],
-                        "ToPort": 21,
-                        "UserIdGroupPairs": []
-                    }
-                ],
-                "OwnerId": "123456789112",
-                "GroupId": "sg-01c1e44a433d03d17",
-                "IpPermissionsEgress": [
+                        "PrefixListIds": []
+                    },
                     {
-                        "IpProtocol": "-1",
+                        "IpProtocol": "tcp",
+                        "FromPort": 1,
+                        "ToPort": 65535,
+                        "UserIdGroupPairs": [],
                         "IpRanges": [
                             {
-                                "CidrIp": "0.0.0.0/0"
+                                "CidrIp": "10.10.10.0/32"
+                            },
+                            {
+                                "CidrIp": "10.0.0.0/32"
                             }
                         ],
                         "Ipv6Ranges": [],
-                        "PrefixListIds": [],
-                        "UserIdGroupPairs": []
+                        "PrefixListIds": []
                     }
-                ],
-                "VpcId": "vpc-ad1234d0"
+                ]
             }
         ],
         "ResponseMetadata": {}

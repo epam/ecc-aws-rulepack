@@ -9,12 +9,28 @@ policies:
   - name: ecc-aws-172-security_group_ingress_is_restricted_traffic_to_port_8080
     comment: '010042022000'
     description: |
-      Security groups allow unrestricted access to proxy port 8080
+      Security group rule allows unrestricted inbound access to common web application ports
     resource: aws.security-group
     filters:
+    - or:
       - type: ingress
-        Ports: [8080]
+        Ports: [3000, 5000, 8000, 8080, 8888, 9000]
+        IpProtocol: "tcp"
         Cidr:
-          value:
-            - "0.0.0.0/0"
-          op: in
+          value: "0.0.0.0/0"
+      - type: ingress
+        Ports: [3000, 5000, 8000, 8080, 8888, 9000]
+        IpProtocol: "-1"
+        Cidr:
+          value: "0.0.0.0/0"
+
+      - type: ingress
+        Ports: [3000, 5000, 8000, 8080, 8888, 9000]
+        IpProtocol: "tcp"
+        CidrV6:
+          value: "::/0"
+      - type: ingress
+        Ports: [3000, 5000, 8000, 8080, 8888, 9000]
+        IpProtocol: "-1"
+        CidrV6:
+          value: "::/0"

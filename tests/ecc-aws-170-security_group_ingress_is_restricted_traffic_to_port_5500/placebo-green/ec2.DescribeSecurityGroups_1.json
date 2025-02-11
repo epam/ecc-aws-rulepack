@@ -3,49 +3,64 @@
     "data": {
         "SecurityGroups": [
             {
-                "Description": "Managed by Terraform",
-                "GroupName": "170_security_group_green",
-                "IpPermissions": [
+                "GroupId": "sg-0acf47c8f07d6e038",
+                "IpPermissionsEgress": [],
+                "Tags": [
                     {
-                        "FromPort": 5500,
-                        "IpProtocol": "tcp",
-                        "IpRanges": [
-                            {
-                                "CidrIp": "10.0.0.0/16"
-                            }
-                        ],
-                        "Ipv6Ranges": [],
-                        "PrefixListIds": [],
-                        "ToPort": 5500,
-                        "UserIdGroupPairs": []
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
                     }
                 ],
-                "OwnerId": "111111111111",
-                "GroupId": "sg-1234567asdfg",
-                "IpPermissionsEgress": [
+                "VpcId": "vpc-00000",
+                "OwnerId": "644160558196",
+                "GroupName": "security_group_green",
+                "Description": "Managed by Terraform",
+                "IpPermissions": [
                     {
                         "IpProtocol": "-1",
+                        "UserIdGroupPairs": [],
+                        "IpRanges": [
+                            {
+                                "CidrIp": "10.10.10.0/32"
+                            },
+                            {
+                                "CidrIp": "10.0.0.0/32"
+                            }
+                        ],
+                        "Ipv6Ranges": [
+                            {
+                                "CidrIpv6": "fe80::/10"
+                            }
+                        ],
+                        "PrefixListIds": []
+                    },
+                    {
+                        "IpProtocol": "udp",
+                        "FromPort": 1000,
+                        "ToPort": 10050,
+                        "UserIdGroupPairs": [],
                         "IpRanges": [
                             {
                                 "CidrIp": "0.0.0.0/0"
                             }
                         ],
                         "Ipv6Ranges": [],
-                        "PrefixListIds": [],
-                        "UserIdGroupPairs": []
-                    }
-                ],
-                "Tags": [
-                    {
-                        "Key": "CustodianRule",
-                        "Value": "ecc-aws-170-security_group_ingress_is_restricted_traffic_to_port_5500"
+                        "PrefixListIds": []
                     },
                     {
-                        "Key": "ComplianceStatus",
-                        "Value": "Green"
+                        "IpProtocol": "tcp",
+                        "FromPort": 1000,
+                        "ToPort": 1000,
+                        "UserIdGroupPairs": [],
+                        "IpRanges": [
+                            {
+                                "CidrIp": "0.0.0.0/0"
+                            }
+                        ],
+                        "Ipv6Ranges": [],
+                        "PrefixListIds": []
                     }
-                ],
-                "VpcId": "vpc-12345asdfg"
+                ]
             }
         ],
         "ResponseMetadata": {}

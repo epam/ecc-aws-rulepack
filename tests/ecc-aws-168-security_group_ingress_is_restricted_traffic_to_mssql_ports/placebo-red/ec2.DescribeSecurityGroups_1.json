@@ -3,62 +3,37 @@
     "data": {
         "SecurityGroups": [
             {
-                "Description": "Managed by Terraform",
-                "GroupName": "168_security_group_red",
-                "IpPermissions": [
-                    {
-                        "FromPort": 1433,
-                        "IpProtocol": "tcp",
-                        "IpRanges": [
-                            {
-                                "CidrIp": "0.0.0.0/0"
-                            }
-                        ],
-                        "Ipv6Ranges": [],
-                        "PrefixListIds": [],
-                        "ToPort": 1433,
-                        "UserIdGroupPairs": []
-                    },
-                    {
-                        "FromPort": 1434,
-                        "IpProtocol": "tcp",
-                        "IpRanges": [
-                            {
-                                "CidrIp": "0.0.0.0/0"
-                            }
-                        ],
-                        "Ipv6Ranges": [],
-                        "PrefixListIds": [],
-                        "ToPort": 1434,
-                        "UserIdGroupPairs": []
-                    }
-                ],
-                "OwnerId": "111111111111",
-                "GroupId": "sg-1234567asdfg",
-                "IpPermissionsEgress": [
-                    {
-                        "IpProtocol": "-1",
-                        "IpRanges": [
-                            {
-                                "CidrIp": "0.0.0.0/0"
-                            }
-                        ],
-                        "Ipv6Ranges": [],
-                        "PrefixListIds": [],
-                        "UserIdGroupPairs": []
-                    }
-                ],
+                "GroupId": "sg-0be3d1d06e30fdebc",
+                "IpPermissionsEgress": [],
                 "Tags": [
+                    {
+                        "Key": "Name",
+                        "Value": "security_group_red"
+                    },
                     {
                         "Key": "ComplianceStatus",
                         "Value": "Red"
-                    },
-                    {
-                        "Key": "CustodianRule",
-                        "Value": "ecc-aws-168-security_group_ingress_is_restricted_traffic_to_mssql_ports"
                     }
                 ],
-                "VpcId": "vpc-12345asdfg"
+                "VpcId": "vpc-000",
+                "OwnerId": "644160558196",
+                "GroupName": "security_group_red",
+                "Description": "Managed by Terraform",
+                "IpPermissions": [
+                    {
+                        "IpProtocol": "tcp",
+                        "FromPort": 1433,
+                        "ToPort": 1434,
+                        "UserIdGroupPairs": [],
+                        "IpRanges": [
+                            {
+                                "CidrIp": "0.0.0.0/0"
+                            }
+                        ],
+                        "Ipv6Ranges": [],
+                        "PrefixListIds": []
+                    }
+                ]
             }
         ],
         "ResponseMetadata": {}

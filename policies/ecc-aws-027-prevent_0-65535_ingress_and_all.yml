@@ -9,21 +9,11 @@ policies:
   - name: ecc-aws-027-prevent_0-65535_ingress_and_all
     comment: '010042022000'
     description: |
-      Security groups do not prevent all incoming traffic from 0-65535
+      Security groups allows inbound access to all ports
     resource: aws.security-group
     filters:
-      - or:
-          - and:
-              - type: value
-                value_type: swap
-                key: IpPermissions[].FromPort
-                value: 0
-                op: in
-              - type: value
-                value_type: swap
-                key: IpPermissions[].ToPort
-                value: 65535
-                op: in
-          - and:
-              - type: ingress
-                IpProtocol: "-1"
+      - type: value
+        key: IpPermissions[?( (ToPort==`65535` && FromPort==`0`) || IpProtocol=='-1')]
+        value_type: size
+        op: gt
+        value: 0
