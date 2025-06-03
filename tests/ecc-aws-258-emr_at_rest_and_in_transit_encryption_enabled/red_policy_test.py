@@ -5,6 +5,6 @@ class PolicyTest(object):
         emr_client = local_session.client("emr")
         config_name = resources[0]['SecurityConfiguration']
         configuration = emr_client.describe_security_configuration(Name=config_name)
-        base_test.assertRegexpMatches(configuration['SecurityConfiguration'], r'\"EnableInTransitEncryption\": false')
-        base_test.assertRegexpMatches(configuration['SecurityConfiguration'], r'EncryptionKeyProviderType\": \"AwsKms\"')
-        base_test.assertNotRegexpMatches(configuration['SecurityConfiguration'], r'EncryptionMode\": \"SSE-KMS\"')        
+        base_test.assertRegex(configuration['SecurityConfiguration'], r'\"EnableInTransitEncryption\": false')
+        base_test.assertRegex(configuration['SecurityConfiguration'], r'EncryptionKeyProviderType\": \"AwsKms\"')
+        base_test.assertNotRegex(configuration['SecurityConfiguration'], r'EncryptionMode\": \"SSE-KMS\"')        
