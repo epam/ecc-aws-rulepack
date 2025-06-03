@@ -5,5 +5,5 @@ class PolicyTest(object):
         glacier_client = local_session.client("glacier")
         Name = resources[0]['VaultName']
         policy = glacier_client.get_vault_access_policy(accountId='-', vaultName=Name)['policy']['Policy']
-        base_test.assertRegexpMatches(policy, ".*\\\"Principal\\\":\\\"[*]\\\".*")
+        base_test.assertRegex(policy, ".*\\\"Principal\\\":\\\"[*]\\\".*")
         
