@@ -1,0 +1,39 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "analyzers": [
+            {
+                "arn": "arn:aws:access-analyzer:us-east-1:644160558196:analyzer/accessanalyzer-278-green",
+                "name": "accessanalyzer-278-green",
+                "type": "ACCOUNT",
+                "createdAt": {
+                    "__class__": "datetime",
+                    "year": 2025,
+                    "month": 7,
+                    "day": 21,
+                    "hour": 20,
+                    "minute": 18,
+                    "second": 52,
+                    "microsecond": 0
+                },
+                "lastResourceAnalyzed": "arn:aws:s3:::278-bucket-6931-green",
+                "lastResourceAnalyzedAt": {
+                    "__class__": "datetime",
+                    "year": 2025,
+                    "month": 7,
+                    "day": 21,
+                    "hour": 20,
+                    "minute": 21,
+                    "second": 3,
+                    "microsecond": 963000
+                },
+                "tags": {
+                    "CustodianRule": "ecc-aws-278-iam_access_analyzer_findings_are_reviewed_and_resolved",
+                    "ComplianceStatus": "Green"
+                },
+                "status": "ACTIVE"
+            }
+        ]
+    }
+}
