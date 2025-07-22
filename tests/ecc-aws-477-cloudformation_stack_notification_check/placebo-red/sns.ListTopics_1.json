@@ -1,0 +1,14 @@
+{
+    "status_code": 200,
+    "data": {
+        "Topics": [
+            {
+                "TopicArn": "arn:aws:sns:us-east-1:644160558196:477_sns_red1_1"
+            },
+            {
+                "TopicArn": "arn:aws:sns:us-east-1:644160558196:477_sns_red1_2"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

@@ -8,7 +8,7 @@ policies:
   - name: ecc-aws-477-cloudformation_stack_notification_check
     comment: '010032132000'
     description: |
-      CloudFormation Stack notifications do not enabled
+      CloudFormation Stack notifications are disabled
     resource: aws.cfn
     filters:
       - type: value
@@ -16,10 +16,12 @@ policies:
         op: in
         value: ["CREATE_COMPLETE", "UPDATE_COMPLETE", "UPDATE_ROLLBACK_COMPLETE", "UPDATE_ROLLBACK_FAILED"]
       - or:
-          - type: subscription
-            key: SubscriptionsConfirmed
-            op: eq
-            value: "0"
+          - type: topic
+            attrs:
+            - type: value
+              key: SubscriptionsConfirmed
+              value: 0
+              value_type: integer
           - type: value
             key: NotificationARNs
             value: empty
