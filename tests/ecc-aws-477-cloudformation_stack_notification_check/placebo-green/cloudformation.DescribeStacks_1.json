@@ -1,0 +1,52 @@
+{
+    "status_code": 200,
+    "data": {
+        "Stacks": [
+            {
+                "StackId": "arn:aws:cloudformation:us-east-1:644160558196:stack/stack-477-green/765e9f",
+                "StackName": "stack-477-green",
+                "CreationTime": {
+                    "__class__": "datetime",
+                    "year": 2025,
+                    "month": 7,
+                    "day": 22,
+                    "hour": 9,
+                    "minute": 39,
+                    "second": 59,
+                    "microsecond": 540000
+                },
+                "LastUpdatedTime": {
+                    "__class__": "datetime",
+                    "year": 2025,
+                    "month": 7,
+                    "day": 22,
+                    "hour": 9,
+                    "minute": 43,
+                    "second": 15,
+                    "microsecond": 856000
+                },
+                "RollbackConfiguration": {},
+                "StackStatus": "UPDATE_COMPLETE",
+                "DisableRollback": false,
+                "NotificationARNs": [
+                    "arn:aws:sns:us-east-1:644160558196:477_sns_green1"
+                ],
+                "Tags": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-477-cloudformation_stack_notification_check"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    }
+                ],
+                "EnableTerminationProtection": false,
+                "DriftInformation": {
+                    "StackDriftStatus": "NOT_CHECKED"
+                }
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}
