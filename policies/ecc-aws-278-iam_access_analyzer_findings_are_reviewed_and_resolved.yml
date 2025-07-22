@@ -8,7 +8,14 @@ policies:
   - name: ecc-aws-278-iam_access_analyzer_findings_are_reviewed_and_resolved
     comment: '010016002000'
     description: |
-      IAM Access Analyzer findings are not reviewed and resolved
+      Account with IAM Access Analyzer findings not reviewed and resolved
     resource: account
     filters:
-      - type: analyzer-findings-filter
+    - not:
+      - type: missing
+        policy:
+          resource: access-analyzer-finding
+          filters:
+            - type: value
+              key: status
+              value: ACTIVE
