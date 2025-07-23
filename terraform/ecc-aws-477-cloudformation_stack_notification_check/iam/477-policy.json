@@ -4,8 +4,11 @@
         {
             "Effect": "Allow",
             "Action": [
-                "sns:GetTopicAttributes",
-                "cloudformation:DescribeStacks"
+                "SNS:ListTopics",
+                "SNS:GetTopicAttributes",
+                "cloudformation:ListStacks",
+                "cloudformation:DescribeStacks",
+                "tag:GetResources"
             ],
             "Resource": "*"
         }

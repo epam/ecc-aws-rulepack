@@ -3,7 +3,7 @@ resource "aws_cloudformation_stack" "this" {
   template_body = <<STACK
 {
   "Resources" : {
-    "SecurotyGroup476Green": {
+    "SecurityGroup476Green": {
       "Type" : "AWS::EC2::SecurityGroup",
       "Properties" : {
         "GroupDescription" : "Enable HTTP access via port 80 locked down to the load balancer + SSH access",
