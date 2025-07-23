@@ -1,0 +1,17 @@
+{
+    "status_code": 200,
+    "data": {
+        "AttachedPolicies": [
+            {
+                "PolicyName": "AmazonAthenaFullAccess",
+                "PolicyArn": "arn:aws:iam::aws:policy/AmazonAthenaFullAccess"
+            },
+            {
+                "PolicyName": "AmazonBedrockReadOnly",
+                "PolicyArn": "arn:aws:iam::aws:policy/AmazonBedrockReadOnly"
+            }
+        ],
+        "IsTruncated": false,
+        "ResponseMetadata": {}
+    }
+}

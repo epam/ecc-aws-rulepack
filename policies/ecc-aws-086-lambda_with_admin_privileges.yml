@@ -1,0 +1,27 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+policies:
+  - name: ecc-aws-086-lambda_with_admin_privileges
+    comment: '010033030400'
+    description: |
+      Lambda function with overly permissive IAM permissions
+    resource: lambda
+    filters:
+      - or:
+        - type: has-specific-managed-policy
+          op: in
+          value:
+            - AdministratorAccess
+            - PowerUserAccess
+        - type: has-specific-managed-policy
+          op: regex
+          value: '.*(FullAccess|Admin).*'
+        - type: check-permissions
+          match: allowed
+          actions:
+            - "*:*"
+

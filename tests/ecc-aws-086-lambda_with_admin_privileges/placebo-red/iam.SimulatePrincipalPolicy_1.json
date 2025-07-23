@@ -1,0 +1,25 @@
+{
+    "status_code": 200,
+    "data": {
+        "EvaluationResults": [
+            {
+                "EvalActionName": "*:*",
+                "EvalResourceName": "*",
+                "EvalDecision": "implicitDeny",
+                "MatchedStatements": [],
+                "MissingContextValues": [
+                    "iam:PermissionsBoundary",
+                    "aws:CalledViaLast"
+                ],
+                "OrganizationsDecisionDetail": {
+                    "AllowedByOrganizations": true
+                },
+                "PermissionsBoundaryDecisionDetail": {
+                    "AllowedByPermissionsBoundary": true
+                }
+            }
+        ],
+        "IsTruncated": false,
+        "ResponseMetadata": {}
+    }
+}

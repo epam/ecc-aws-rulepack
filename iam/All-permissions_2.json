@@ -67,7 +67,8 @@
                 "workspaces:DescribeWorkspacesConnectionStatus",
                 "xray:GetEncryptionConfig",
                 "guardduty:GetAdministratorAccount",
-                "events:DescribeEventBus"
+                "events:DescribeEventBus",
+                "iam:SimulatePrincipalPolicy"
             ],
             "Resource": "*"
         }
