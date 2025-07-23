@@ -6,6 +6,7 @@
             "Action": [
                 "codedeploy:ListApplications",
                 "codedeploy:ListDeploymentGroups",
+                "codedeploy:ListDeploymentConfigs",
                 "codedeploy:GetDeploymentGroup",
                 "codedeploy:GetDeploymentConfig",
                 "codedeploy:ListTagsForResource"

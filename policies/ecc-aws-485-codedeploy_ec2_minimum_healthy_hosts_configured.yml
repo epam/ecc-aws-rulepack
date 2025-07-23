@@ -16,18 +16,18 @@ policies:
         value: Server
       - or:
           - and:
-              - type: deployment-config-filter
+              - type: config
                 key: minimumHealthyHosts.type
                 value: "FLEET_PERCENT"
-              - type: deployment-config-filter
+              - type: config
                 key: minimumHealthyHosts.value
                 op: lt
                 value: 66
           - and:
-              - type: deployment-config-filter
+              - type: config
                 key: minimumHealthyHosts.type
                 value: "HOST_COUNT"
-              - type: deployment-config-filter
+              - type: config
                 key: minimumHealthyHosts.value
                 op: lt
                 value: 1

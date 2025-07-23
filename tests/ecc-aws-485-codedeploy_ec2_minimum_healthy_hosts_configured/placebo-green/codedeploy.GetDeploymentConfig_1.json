@@ -1,0 +1,25 @@
+{
+    "status_code": 200,
+    "data": {
+        "deploymentConfigInfo": {
+            "deploymentConfigId": "767cf32",
+            "deploymentConfigName": "485_deployment-config_green",
+            "minimumHealthyHosts": {
+                "type": "FLEET_PERCENT",
+                "value": 70
+            },
+            "createTime": {
+                "__class__": "datetime",
+                "year": 2025,
+                "month": 7,
+                "day": 22,
+                "hour": 23,
+                "minute": 7,
+                "second": 27,
+                "microsecond": 168000
+            },
+            "computePlatform": "Server"
+        },
+        "ResponseMetadata": {}
+    }
+}

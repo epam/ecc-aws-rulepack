@@ -1,0 +1,26 @@
+{
+    "status_code": 200,
+    "data": {
+        "deploymentConfigsList": [
+            "485_deployment-config_green",
+            "CodeDeployDefault.LambdaCanary10Percent30Minutes",
+            "CodeDeployDefault.OneAtATime",
+            "CodeDeployDefault.LambdaCanary10Percent10Minutes",
+            "CodeDeployDefault.AllAtOnce",
+            "CodeDeployDefault.LambdaLinear10PercentEvery10Minutes",
+            "CodeDeployDefault.LambdaCanary10Percent15Minutes",
+            "CodeDeployDefault.ECSCanary10Percent15Minutes",
+            "CodeDeployDefault.ECSLinear10PercentEvery1Minutes",
+            "CodeDeployDefault.ECSLinear10PercentEvery3Minutes",
+            "CodeDeployDefault.ECSCanary10Percent5Minutes",
+            "CodeDeployDefault.LambdaAllAtOnce",
+            "CodeDeployDefault.LambdaLinear10PercentEvery2Minutes",
+            "CodeDeployDefault.LambdaLinear10PercentEvery3Minutes",
+            "CodeDeployDefault.LambdaLinear10PercentEvery1Minute",
+            "CodeDeployDefault.ECSAllAtOnce",
+            "CodeDeployDefault.HalfAtATime",
+            "CodeDeployDefault.LambdaCanary10Percent5Minutes"
+        ],
+        "ResponseMetadata": {}
+    }
+}
