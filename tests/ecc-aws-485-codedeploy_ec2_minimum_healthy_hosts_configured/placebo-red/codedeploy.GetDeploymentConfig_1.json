@@ -1,0 +1,25 @@
+{
+    "status_code": 200,
+    "data": {
+        "deploymentConfigInfo": {
+            "deploymentConfigId": "861e88c",
+            "deploymentConfigName": "485_deployment-config_red",
+            "minimumHealthyHosts": {
+                "type": "FLEET_PERCENT",
+                "value": 30
+            },
+            "createTime": {
+                "__class__": "datetime",
+                "year": 2025,
+                "month": 7,
+                "day": 22,
+                "hour": 23,
+                "minute": 23,
+                "second": 54,
+                "microsecond": 565000
+            },
+            "computePlatform": "Server"
+        },
+        "ResponseMetadata": {}
+    }
+}
