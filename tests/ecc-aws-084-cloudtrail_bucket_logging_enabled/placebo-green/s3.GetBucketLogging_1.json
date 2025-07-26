@@ -1,0 +1,10 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "LoggingEnabled": {
+            "TargetBucket": "c7n-084-bucket-for-logging-7294007-green",
+            "TargetPrefix": "log/"
+        }
+    }
+}

@@ -3,12 +3,12 @@ data "aws_caller_identity" "this" {}
 resource "aws_cloudtrail" "this" {
   name                          = "c7n-084-cloudtrail-green"
   s3_bucket_name                = aws_s3_bucket.this.id
-  include_global_service_events = true
   is_multi_region_trail         = true
 }
 
 resource "aws_s3_bucket" "bucket_for_logging" {
-  bucket = "c7n-084-bucket-for-logging-green"
+  bucket = "c7n-084-bucket-for-logging-${random_integer.this.result}-green"
+  force_destroy = true
 }
 
 resource "aws_s3_bucket" "this" {
