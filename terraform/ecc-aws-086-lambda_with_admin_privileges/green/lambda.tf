@@ -42,6 +42,11 @@ resource "aws_iam_role_policy" "this" {
   EOF
 }
 
+resource "aws_iam_role_policy_attachment" "this" {
+  role       = aws_iam_role.this.name
+  policy_arn = "arn:aws:iam::aws:policy/AmazonBedrockReadOnly"
+}
+
 resource "aws_lambda_function" "this" {
   filename      = "func.zip"
   function_name = "086_lambda_green"
