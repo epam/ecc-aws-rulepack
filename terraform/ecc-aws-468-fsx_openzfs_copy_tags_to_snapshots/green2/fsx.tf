@@ -8,21 +8,20 @@ resource "aws_fsx_openzfs_file_system" "this" {
   throughput_capacity             = 64
   automatic_backup_retention_days = 0
   skip_final_backup               = true
-  delete_options = ["DELETE_CHILD_VOLUMES_AND_SNAPSHOTS"]
-  
+
   root_volume_configuration {
     copy_tags_to_snapshots = true
     data_compression_type = "LZ4"
   }
 
   tags = {
-    Name = "468_fsx_openzfs_file_system_red"
+    Name = "468_fsx_openzfs_file_system_green2"
   }
 }
 
 resource "aws_fsx_openzfs_volume" "this" {
-  name             = "468_fsx_openzfs_volume_red"
+  name             = "468_fsx_openzfs_volume_green2"
   parent_volume_id = aws_fsx_openzfs_file_system.this.root_volume_id
-  copy_tags_to_snapshots = false
+  copy_tags_to_snapshots = true
   data_compression_type = "NONE"
 }

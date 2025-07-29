@@ -1,0 +1,22 @@
+{
+    "status_code": 200,
+    "data": {
+        "PaginationToken": "",
+        "ResourceTagMappingList": [
+            {
+                "ResourceARN": "arn:aws:fsx:us-east-1:644160558196:volume/fs-0d4e849c90b38bed6/fsvol-0c78828d5bec92785",
+                "Tags": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-468-fsx_openzfs_copy_tags_to_snapshots"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green1"
+                    }
+                ]
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

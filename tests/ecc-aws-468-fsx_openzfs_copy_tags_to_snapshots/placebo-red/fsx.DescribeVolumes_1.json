@@ -1,0 +1,103 @@
+{
+    "status_code": 200,
+    "data": {
+        "Volumes": [
+            {
+                "CreationTime": {
+                    "__class__": "datetime",
+                    "year": 2025,
+                    "month": 7,
+                    "day": 29,
+                    "hour": 16,
+                    "minute": 18,
+                    "second": 35,
+                    "microsecond": 844000
+                },
+                "FileSystemId": "fs-02b86c23e96bcc7b2",
+                "Lifecycle": "AVAILABLE",
+                "Name": "fsx",
+                "ResourceARN": "arn:aws:fsx:us-east-1:644160558196:volume/fs-02b86c23e96bcc7b2/fsvol-0784bb7618eaa4002",
+                "VolumeId": "fsvol-0784bb7618eaa4002",
+                "VolumeType": "OPENZFS",
+                "OpenZFSConfiguration": {
+                    "VolumePath": "/fsx",
+                    "StorageCapacityReservationGiB": 0,
+                    "StorageCapacityQuotaGiB": 64,
+                    "RecordSizeKiB": 128,
+                    "DataCompressionType": "LZ4",
+                    "CopyTagsToSnapshots": true,
+                    "ReadOnly": false,
+                    "NfsExports": [
+                        null
+                    ],
+                    "UserAndGroupQuotas": [
+                        {
+                            "Type": "GROUP",
+                            "Id": 0,
+                            "StorageCapacityQuotaGiB": 0
+                        },
+                        {
+                            "Type": "USER",
+                            "Id": 0,
+                            "StorageCapacityQuotaGiB": 0
+                        }
+                    ]
+                }
+            },
+            {
+                "CreationTime": {
+                    "__class__": "datetime",
+                    "year": 2025,
+                    "month": 7,
+                    "day": 29,
+                    "hour": 16,
+                    "minute": 23,
+                    "second": 32,
+                    "microsecond": 995000
+                },
+                "FileSystemId": "fs-02b86c23e96bcc7b2",
+                "Lifecycle": "AVAILABLE",
+                "Name": "468_fsx_openzfs_volume_red",
+                "ResourceARN": "arn:aws:fsx:us-east-1:644160558196:volume/fs-02b86c23e96bcc7b2/fsvol-02998488c2ea23516",
+                "VolumeId": "fsvol-02998488c2ea23516",
+                "VolumeType": "OPENZFS",
+                "OpenZFSConfiguration": {
+                    "ParentVolumeId": "fsvol-0784bb7618eaa4002",
+                    "VolumePath": "/fsx/468_fsx_openzfs_volume_red",
+                    "StorageCapacityReservationGiB": 0,
+                    "StorageCapacityQuotaGiB": 64,
+                    "RecordSizeKiB": 128,
+                    "DataCompressionType": "NONE",
+                    "CopyTagsToSnapshots": false,
+                    "ReadOnly": false,
+                    "NfsExports": [
+                        {
+                            "ClientConfigurations": [
+                                {
+                                    "Clients": "*",
+                                    "Options": [
+                                        "rw",
+                                        "crossmnt"
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "UserAndGroupQuotas": [
+                        {
+                            "Type": "GROUP",
+                            "Id": 0,
+                            "StorageCapacityQuotaGiB": 0
+                        },
+                        {
+                            "Type": "USER",
+                            "Id": 0,
+                            "StorageCapacityQuotaGiB": 0
+                        }
+                    ]
+                }
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

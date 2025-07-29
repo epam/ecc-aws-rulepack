@@ -8,13 +8,10 @@ policies:
   - name: ecc-aws-468-fsx_openzfs_copy_tags_to_snapshots
     comment: '010010042000'
     description: |
-      FSx OpenZFS file system does not copy tags to snapshots
-    resource: aws.fsx
+      FSx OpenZFS volume does not copy tags to snapshots
+    resource: aws.fsx-volume
     filters:
       - type: value
-        key: FileSystemType
-        value: OPENZFS
-      - type: attached-volume-filter
         key: OpenZFSConfiguration.CopyTagsToSnapshots
-        value: false
         op: eq
+        value: false
