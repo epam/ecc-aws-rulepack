@@ -14,7 +14,7 @@ provider "aws" {
   default_tags {
     tags = {
       CustodianRule    = "ecc-aws-468-fsx_openzfs_copy_tags_to_snapshots"
-      ComplianceStatus = "Red"
+      ComplianceStatus = "Green2"
     }
   }
 }

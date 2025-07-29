@@ -4,8 +4,8 @@
         {
             "Effect": "Allow",
             "Action": [
-                "fsx:DescribeFileSystems",
-                "fsx:DescribeVolumes"
+                "fsx:DescribeVolumes",
+                "tag:GetResources"
             ],
             "Resource": "*"
         }
