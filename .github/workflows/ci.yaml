@@ -13,6 +13,7 @@ on:
         default: 'main'
         required: false
         type: string
+      
   schedule:
     - cron: "0 7 * * 1"
   pull_request_review:
@@ -26,7 +27,7 @@ jobs:
       matrix:
         compliance: ['red', 'green']
     container:
-      image: python:3.12
+      image: python:3.13
       env:
         COMPLIANCE: ${{ matrix.compliance }}
     if: github.event_name == 'push' || github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || (github.event_name == 'pull_request_review' && github.event.review.state == 'approved')
@@ -45,7 +46,7 @@ jobs:
         env:
           COMPLIANCE: ${{ matrix.compliance }}
 
-  build:
+  github_release:
     name: create_release
     runs-on: ubuntu-latest
     needs: [test_policy_flights]
@@ -68,8 +69,8 @@ jobs:
           token: ${{ github.token }}
           tag: ${{ github.ref_name }}
 
-  ruleset_release:
-    name: ruleset_release
+  ruleset_release_qa:
+    name: ruleset_release_qa
     runs-on: ubuntu-latest
     needs: [test_policy_flights]
     if: (startsWith(github.ref, 'refs/tags/v') || github.ref == 'refs/heads/main') && github.event_name != 'schedule'
@@ -84,9 +85,25 @@ jobs:
         env:
           C7N_CREDS: ${{ secrets.C7N_CREDS }}
           C7N_ENV: QA
+        with:
+          ecc_branch: ${{ inputs.ECC_BRANCH || 'develop' }}
+
+
+  ruleset_release_prod:
+    name: ruleset_release_prod
+    runs-on: ubuntu-latest
+    needs: [test_policy_flights, github_release]
+    if: (startsWith(github.ref, 'refs/tags/v') || github.ref == 'refs/heads/main') && github.event_name != 'schedule'
+    steps:
+      - name: Checkout ecc-actions
+        run: git clone -b ${{ inputs.ECC_ACTIONS_BRANCH || 'main' }} "https://git:$PROJECT_TOKEN@git.epam.com/epmc-sec/cloudlab/cloud_custodian/ecc-actions.git" ecc-actions
+        env:
+          PROJECT_TOKEN: ${{ secrets.ECC_CHANGELOG_ACTION }}
       - name: Release ruleset on PROD
         uses: ./ecc-actions/release-ruleset-action
         if: startsWith(github.ref, 'refs/tags/v')
         env:
           C7N_CREDS: ${{ secrets.C7N_CREDS }}
           C7N_ENV: PROD
+        with:
+          ecc_branch: ${{ inputs.ECC_BRANCH || 'develop' }}
