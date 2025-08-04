@@ -1,0 +1,18 @@
+{
+    "status_code": 200,
+    "data": {
+        "EventSubscriptionsList": [
+            {
+                "CustomerAwsId": "644160558196",
+                "CustSubscriptionId": "db-event-subscription-159-green1",
+                "SnsTopicArn": "arn:aws:sns:us-east-1:644160558196:159-sns-topic-green1",
+                "Status": "active",
+                "SubscriptionCreationTime": "2025-08-04 18:11:37.286",
+                "SourceType": "db-cluster",
+                "Enabled": true,
+                "EventSubscriptionArn": "arn:aws:rds:us-east-1:644160558196:es:db-event-subscription-159-green1"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

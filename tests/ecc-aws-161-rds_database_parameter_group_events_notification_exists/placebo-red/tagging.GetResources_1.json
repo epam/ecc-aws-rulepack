@@ -1,0 +1,22 @@
+{
+    "status_code": 200,
+    "data": {
+        "PaginationToken": "",
+        "ResourceTagMappingList": [
+            {
+                "ResourceARN": "arn:aws:rds:us-east-1:644160558196:es:db-event-subscription-161-red",
+                "Tags": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-161-rds_database_parameter_group_events_notification_exists"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "red"
+                    }
+                ]
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}
