@@ -2,7 +2,7 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "~> 5"
+      version = "~> 6"
     }
   }
 }
@@ -14,7 +14,7 @@ provider "aws" {
   default_tags {
     tags = {
       CustodianRule    = "ecc-aws-159-rds_critical_cluster_events_notification_exists"
-      ComplianceStatus = "Green1"
+      ComplianceStatus = "Green"
     }
   }
 }

@@ -1,0 +1,95 @@
+{
+    "status_code": 200,
+    "data": {
+        "DBClusters": [
+            {
+                "AllocatedStorage": 1,
+                "AvailabilityZones": [
+                    "us-east-1d",
+                    "us-east-1b",
+                    "us-east-1c"
+                ],
+                "BackupRetentionPeriod": 1,
+                "DatabaseName": "cluster159red",
+                "DBClusterIdentifier": "cluster-159-red",
+                "DBClusterParameterGroup": "default.aurora-postgresql16",
+                "DBSubnetGroup": "default",
+                "Status": "available",
+                "EarliestRestorableTime": {
+                    "__class__": "datetime",
+                    "year": 2025,
+                    "month": 8,
+                    "day": 4,
+                    "hour": 17,
+                    "minute": 40,
+                    "second": 46,
+                    "microsecond": 317000
+                },
+                "Endpoint": "cluster-159-red.cluster-cawcomo.us-east-1.rds.amazonaws.com",
+                "ReaderEndpoint": "cluster-159-red.cluster-ro-cwcomo.us-east-1.rds.amazonaws.com",
+                "MultiAZ": false,
+                "Engine": "aurora-postgresql",
+                "EngineVersion": "16.6",
+                "LatestRestorableTime": {
+                    "__class__": "datetime",
+                    "year": 2025,
+                    "month": 8,
+                    "day": 4,
+                    "hour": 17,
+                    "minute": 40,
+                    "second": 46,
+                    "microsecond": 317000
+                },
+                "Port": 5432,
+                "MasterUsername": "root",
+                "PreferredBackupWindow": "04:05-04:35",
+                "PreferredMaintenanceWindow": "tue:08:13-tue:08:43",
+                "ReadReplicaIdentifiers": [],
+                "DBClusterMembers": [],
+                "VpcSecurityGroups": [
+                    {
+                        "VpcSecurityGroupId": "sg-111111111",
+                        "Status": "active"
+                    }
+                ],
+                "HostedZoneId": "Z2R2ITUGPM61AM",
+                "StorageEncrypted": false,
+                "DbClusterResourceId": "cluster-UWRWXXU5CAKZZPCMC36RDTAITI",
+                "DBClusterArn": "arn:aws:rds:us-east-1:644160558196:cluster:cluster-159-red",
+                "AssociatedRoles": [],
+                "IAMDatabaseAuthenticationEnabled": false,
+                "ClusterCreateTime": {
+                    "__class__": "datetime",
+                    "year": 2025,
+                    "month": 8,
+                    "day": 4,
+                    "hour": 17,
+                    "minute": 40,
+                    "second": 12,
+                    "microsecond": 447000
+                },
+                "EngineMode": "provisioned",
+                "DeletionProtection": false,
+                "HttpEndpointEnabled": false,
+                "ActivityStreamStatus": "stopped",
+                "CopyTagsToSnapshot": false,
+                "CrossAccountClone": false,
+                "DomainMemberships": [],
+                "TagList": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-159-rds_critical_cluster_events_notification_exists"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Red"
+                    }
+                ],
+                "AutoMinorVersionUpgrade": true,
+                "NetworkType": "IPV4",
+                "LocalWriteForwardingStatus": "disabled"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

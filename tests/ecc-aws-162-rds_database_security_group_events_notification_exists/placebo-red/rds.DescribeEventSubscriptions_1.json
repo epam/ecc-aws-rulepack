@@ -1,0 +1,22 @@
+{
+    "status_code": 200,
+    "data": {
+        "EventSubscriptionsList": [
+            {
+                "CustomerAwsId": "644160558196",
+                "CustSubscriptionId": "db-event-subscription-162-red",
+                "SnsTopicArn": "arn:aws:sns:us-east-1:644160558196:162-sns-topic-red",
+                "Status": "active",
+                "SubscriptionCreationTime": "2025-08-04 19:44:51.098",
+                "SourceType": "db-security-group",
+                "EventCategoriesList": [
+                    "configuration change",
+                    "failure"
+                ],
+                "Enabled": false,
+                "EventSubscriptionArn": "arn:aws:rds:us-east-1:644160558196:es:db-event-subscription-162-red"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

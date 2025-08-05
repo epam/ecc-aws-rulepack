@@ -2,7 +2,7 @@ resource "aws_db_instance" "default" {
   identifier           = "instance-160-green1"
   allocated_storage    = 10
   engine               = "mysql"
-  engine_version       = "5.7"
+  engine_version       = "8.4"
   instance_class       = "db.t3.micro"
   db_name              = "database160green1"
   username             = "root"
@@ -26,12 +26,15 @@ resource "aws_sns_topic" "this" {
   name = "160-sns-topic-green1"
 }
 
-resource "aws_sns_topic_subscription" "this" {
-  topic_arn = aws_sns_topic.this.arn
-  protocol  = "email"
-  endpoint  = var.test-email
+resource "aws_sqs_queue" "this" {
+  name = "160-sqs-green1"
 }
 
+resource "aws_sns_topic_subscription" "this" {
+  topic_arn = aws_sns_topic.this.arn
+  protocol  = "sqs"
+  endpoint  = aws_sqs_queue.this.arn
+}
 resource "aws_db_event_subscription" "this" {
   name      = "db-event-subscription-160-green1"
   sns_topic = aws_sns_topic.this.arn

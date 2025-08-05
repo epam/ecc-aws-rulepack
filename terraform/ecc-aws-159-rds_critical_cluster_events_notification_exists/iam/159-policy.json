@@ -8,7 +8,8 @@
                 "rds:DescribeEventSubscriptions",
                 "sns:ListTopics",
                 "rds:DescribeDBClusters",
-                "sns:GetTopicAttributes"
+                "sns:GetTopicAttributes",
+                "tag:GetResources"
             ],
             "Resource": "*"
         }

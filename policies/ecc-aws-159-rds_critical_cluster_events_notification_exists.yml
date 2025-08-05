@@ -1,0 +1,32 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+policies:
+  - name: ecc-aws-159-rds_critical_cluster_events_notification_exists
+    comment: '010032062000'
+    description: |
+      RDS event notification is not configured for critical cluster events
+    resource: aws.account
+    filters:
+    - not:
+      - type: missing
+        policy:
+          resource: aws.rds-cluster
+    - type: missing
+      policy:
+        resource: aws.rds-subscription
+        filters:
+          - type: topic
+            key: SubscriptionsConfirmed
+            op: ne
+            value: 0
+            value_type: integer
+          - type: value
+            key: (SourceType=='db-cluster' || !contains(keys(@), 'SourceType')) && SourceIdsList==null && ( EventCategoriesList==null || (EventCategoriesList.contains(@, 'failure')==`true` && EventCategoriesList.contains(@, 'maintenance')==`true`)) && Enabled==`true`
+            value: true
+            op: eq
+          
+
