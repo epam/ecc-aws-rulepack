@@ -8,8 +8,16 @@ policies:
   - name: ecc-aws-264-elasticache_no_default_ports
     comment: '010024062000'
     description: |
-      Elasticache is using default ports
-    resource: cache-cluster
+      Elasticache self-designed cluster is using default port
+    resource: aws.cache-cluster
+    query:
+      - Name: ShowCacheNodeInfo
+        Value: true
     filters:
-      - type: redis-memcache-filter
-        port: ["11211", "6379"]
+      - type: list-item
+        key: CacheNodes
+        attrs:
+          - type: value
+            key: Endpoint.Port
+            op: in
+            value: [11211, 6379]
