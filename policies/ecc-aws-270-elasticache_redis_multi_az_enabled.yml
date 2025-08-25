@@ -9,7 +9,7 @@ policies:
   - name: ecc-aws-270-elasticache_redis_multi_az_enabled
     comment: '010050062000'
     description: |
-      Elasticache Redis Multi-AZ is not enabled
+      Elasticache self-designed replication group does not have Multi-AZ enabled
     resource: elasticache-group
     filters:
       - type: value

@@ -1,0 +1,93 @@
+{
+    "status_code": 200,
+    "data": {
+        "ReplicationGroups": [
+            {
+                "ReplicationGroupId": "elasticache-group-redis-271",
+                "Description": "elasticache-group-redis-271",
+                "GlobalReplicationGroupInfo": {},
+                "Status": "available",
+                "PendingModifiedValues": {},
+                "MemberClusters": [
+                    "elasticache-group-redis-271-0001-001",
+                    "elasticache-group-redis-271-0001-002"
+                ],
+                "NodeGroups": [
+                    {
+                        "NodeGroupId": "0001",
+                        "Status": "available",
+                        "Slots": "0-16383",
+                        "NodeGroupMembers": [
+                            {
+                                "CacheClusterId": "elasticache-group-redis-271-0001-001",
+                                "CacheNodeId": "0001",
+                                "PreferredAvailabilityZone": "us-east-1c"
+                            },
+                            {
+                                "CacheClusterId": "elasticache-group-redis-271-0001-002",
+                                "CacheNodeId": "0001",
+                                "PreferredAvailabilityZone": "us-east-1d"
+                            }
+                        ]
+                    }
+                ],
+                "AutomaticFailover": "enabled",
+                "MultiAZ": "disabled",
+                "ConfigurationEndpoint": {
+                    "Address": "clustercfg.elasticache-group-redis-271.hbtfhb.use1.cache.amazonaws.com",
+                    "Port": 6379
+                },
+                "SnapshotRetentionLimit": 0,
+                "SnapshotWindow": "10:00-11:00",
+                "ClusterEnabled": true,
+                "CacheNodeType": "cache.t2.micro",
+                "AuthTokenEnabled": true,
+                "AuthTokenLastModifiedDate": {
+                    "__class__": "datetime",
+                    "year": 2025,
+                    "month": 8,
+                    "day": 25,
+                    "hour": 18,
+                    "minute": 25,
+                    "second": 12,
+                    "microsecond": 419000
+                },
+                "TransitEncryptionEnabled": true,
+                "AtRestEncryptionEnabled": true,
+                "KmsKeyId": "arn:aws:kms:us-east-1:644160558196:key/1d55c1d2-72-2188b3f327ba",
+                "ARN": "arn:aws:elasticache:us-east-1:644160558196:replicationgroup:elasticache-group-redis-271",
+                "LogDeliveryConfigurations": [
+                    {
+                        "LogType": "engine-log",
+                        "DestinationType": "cloudwatch-logs",
+                        "DestinationDetails": {
+                            "CloudWatchLogsDetails": {
+                                "LogGroup": "453-log-group-green"
+                            }
+                        },
+                        "LogFormat": "text",
+                        "Status": "active"
+                    }
+                ],
+                "ReplicationGroupCreateTime": {
+                    "__class__": "datetime",
+                    "year": 2025,
+                    "month": 8,
+                    "day": 25,
+                    "hour": 17,
+                    "minute": 36,
+                    "second": 9,
+                    "microsecond": 126000
+                },
+                "DataTiering": "disabled",
+                "AutoMinorVersionUpgrade": true,
+                "NetworkType": "ipv4",
+                "IpDiscovery": "ipv4",
+                "TransitEncryptionMode": "required",
+                "ClusterMode": "enabled",
+                "Engine": "redis"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

@@ -1,0 +1,69 @@
+{
+    "status_code": 200,
+    "data": {
+        "ReplicationGroups": [
+            {
+                "ReplicationGroupId": "elasticache-group-valkey-125-green",
+                "Description": "elasticache-group-125-green",
+                "GlobalReplicationGroupInfo": {},
+                "Status": "available",
+                "PendingModifiedValues": {},
+                "MemberClusters": [
+                    "elasticache-group-valkey-125-green-0001-001",
+                    "elasticache-group-valkey-125-green-0001-002"
+                ],
+                "NodeGroups": [
+                    {
+                        "NodeGroupId": "0001",
+                        "Status": "available",
+                        "Slots": "0-16383",
+                        "NodeGroupMembers": [
+                            {
+                                "CacheClusterId": "elasticache-group-valkey-125-green-0001-001",
+                                "CacheNodeId": "0001",
+                                "PreferredAvailabilityZone": "us-east-1b"
+                            },
+                            {
+                                "CacheClusterId": "elasticache-group-valkey-125-green-0001-002",
+                                "CacheNodeId": "0001",
+                                "PreferredAvailabilityZone": "us-east-1d"
+                            }
+                        ]
+                    }
+                ],
+                "AutomaticFailover": "enabled",
+                "MultiAZ": "disabled",
+                "ConfigurationEndpoint": {
+                    "Address": "elasticache-group-valkey-125-green.nonmo.clustercfg.use1.cache.amazonaws.com",
+                    "Port": 6379
+                },
+                "SnapshotRetentionLimit": 0,
+                "SnapshotWindow": "03:00-04:00",
+                "ClusterEnabled": true,
+                "CacheNodeType": "cache.t2.micro",
+                "AuthTokenEnabled": false,
+                "TransitEncryptionEnabled": false,
+                "AtRestEncryptionEnabled": true,
+                "ARN": "arn:aws:elasticache:us-east-1:644160558196:replicationgroup:elasticache-group-valkey-125-green",
+                "LogDeliveryConfigurations": [],
+                "ReplicationGroupCreateTime": {
+                    "__class__": "datetime",
+                    "year": 2025,
+                    "month": 8,
+                    "day": 25,
+                    "hour": 12,
+                    "minute": 29,
+                    "second": 44,
+                    "microsecond": 260000
+                },
+                "DataTiering": "disabled",
+                "AutoMinorVersionUpgrade": true,
+                "NetworkType": "ipv4",
+                "IpDiscovery": "ipv4",
+                "ClusterMode": "enabled",
+                "Engine": "valkey"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

@@ -2,7 +2,21 @@
     "status_code": 200,
     "data": {
         "PaginationToken": "",
-        "ResourceTagMappingList": [],
+        "ResourceTagMappingList": [
+            {
+                "ResourceARN": "arn:aws:elasticache:us-east-1:644160558196:replicationgroup:elasticache-group-redis-266-red",
+                "Tags": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-266-elasticache_automatic_backups"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "red"
+                    }
+                ]
+            }
+        ],
         "ResponseMetadata": {}
     }
 }

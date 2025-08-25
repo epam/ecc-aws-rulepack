@@ -9,12 +9,9 @@ policies:
   - name: ecc-aws-271-elasticache_redis_auth_enabled
     comment: '010022062000'
     description: |
-      Elasticache redis Auth is not enabled
-    resource: cache-cluster
+      Elasticache self-designed replication group AuthToken is not enabled
+    resource: aws.elasticache-group
     filters:
       - type: value
         key: AuthTokenEnabled
         value: false
-      - type: value
-        key: Engine
-        value: "redis"

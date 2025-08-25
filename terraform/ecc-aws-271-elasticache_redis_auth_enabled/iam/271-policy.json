@@ -4,7 +4,7 @@
         {
             "Effect": "Allow",
             "Action": [
-                "elasticache:DescribeCacheClusters",
+                "elasticache:DescribeReplicationGroups", 
                 "tag:GetResources"
             ],
             "Resource": "*"

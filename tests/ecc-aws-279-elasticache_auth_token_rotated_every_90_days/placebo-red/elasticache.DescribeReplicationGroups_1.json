@@ -1,0 +1,102 @@
+{
+    "status_code": 200,
+    "data": {
+        "ReplicationGroups": [
+            {
+                "ReplicationGroupId": "elasticache-group-valkey",
+                "Description": "elasticache-group-valkey",
+                "GlobalReplicationGroupInfo": {},
+                "Status": "available",
+                "PendingModifiedValues": {},
+                "MemberClusters": [
+                    "elasticache-group-valkey-0001-001",
+                    "elasticache-group-valkey-0001-002"
+                ],
+                "NodeGroups": [
+                    {
+                        "NodeGroupId": "0001",
+                        "Status": "available",
+                        "Slots": "0-16383",
+                        "NodeGroupMembers": [
+                            {
+                                "CacheClusterId": "elasticache-group-valkey-0001-001",
+                                "CacheNodeId": "0001",
+                                "PreferredAvailabilityZone": "us-east-1c"
+                            },
+                            {
+                                "CacheClusterId": "elasticache-group-valkey-0001-002",
+                                "CacheNodeId": "0001",
+                                "PreferredAvailabilityZone": "us-east-1e"
+                            }
+                        ]
+                    }
+                ],
+                "AutomaticFailover": "enabled",
+                "MultiAZ": "disabled",
+                "ConfigurationEndpoint": {
+                    "Address": "elasticache-group-valkey.hdtyjnh.clustercfg.use1.cache.amazonaws.com",
+                    "Port": 6379
+                },
+                "SnapshotRetentionLimit": 0,
+                "SnapshotWindow": "04:30-05:30",
+                "ClusterEnabled": true,
+                "CacheNodeType": "cache.t2.micro",
+                "AuthTokenEnabled": true,
+                "AuthTokenLastModifiedDate": {
+                    "__class__": "datetime",
+                    "year": 2021,
+                    "month": 9,
+                    "day": 2,
+                    "hour": 9,
+                    "minute": 24,
+                    "second": 23,
+                    "microsecond": 646000
+                },
+                "TransitEncryptionEnabled": true,
+                "AtRestEncryptionEnabled": true,
+                "ARN": "arn:aws:elasticache:us-east-1:644160558196:replicationgroup:elasticache-group-valkey",
+                "LogDeliveryConfigurations": [
+                    {
+                        "LogType": "engine-log",
+                        "DestinationType": "cloudwatch-logs",
+                        "DestinationDetails": {
+                            "CloudWatchLogsDetails": {
+                                "LogGroup": "453-log-group"
+                            }
+                        },
+                        "LogFormat": "text",
+                        "Status": "active"
+                    },
+                    {
+                        "LogType": "slow-log",
+                        "DestinationType": "cloudwatch-logs",
+                        "DestinationDetails": {
+                            "CloudWatchLogsDetails": {
+                                "LogGroup": "453-log-group"
+                            }
+                        },
+                        "LogFormat": "text",
+                        "Status": "active"
+                    }
+                ],
+                "ReplicationGroupCreateTime": {
+                    "__class__": "datetime",
+                    "year": 2025,
+                    "month": 8,
+                    "day": 25,
+                    "hour": 17,
+                    "minute": 36,
+                    "second": 5,
+                    "microsecond": 318000
+                },
+                "DataTiering": "disabled",
+                "AutoMinorVersionUpgrade": true,
+                "NetworkType": "ipv4",
+                "IpDiscovery": "ipv4",
+                "ClusterMode": "enabled",
+                "Engine": "valkey"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}
