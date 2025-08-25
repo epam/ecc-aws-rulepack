@@ -1,0 +1,39 @@
+{
+    "status_code": 200,
+    "data": {
+        "Vpcs": [
+            {
+                "OwnerId": "644160558196",
+                "InstanceTenancy": "default",
+                "CidrBlockAssociationSet": [
+                    {
+                        "AssociationId": "vpc-cidr-assoc-0d729537d4d0f5513",
+                        "CidrBlock": "10.0.0.0/16",
+                        "CidrBlockState": {
+                            "State": "associated"
+                        }
+                    }
+                ],
+                "IsDefault": false,
+                "Tags": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-269-elasticache_not_using_default_vpc"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    }
+                ],
+                "BlockPublicAccessStates": {
+                    "InternetGatewayBlockMode": "off"
+                },
+                "VpcId": "vpc-111111111",
+                "State": "available",
+                "CidrBlock": "10.0.0.0/16",
+                "DhcpOptionsId": "dopt-01cf28cd5cfad8f87"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

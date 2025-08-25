@@ -8,10 +8,9 @@ policies:
   - name: ecc-aws-269-elasticache_not_using_default_vpc
     comment: '010024062000'
     description: |
-      Elasticache is using default VPC
+      Elasticache self-designed cluster in default VPC
     resource: cache-cluster
     filters:
-      - type: vpc-elastic-cache-filter
+      - type: vpc
         key: IsDefault
-        op: eq
         value: true

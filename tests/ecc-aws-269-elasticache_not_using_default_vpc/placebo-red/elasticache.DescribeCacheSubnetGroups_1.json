@@ -1,0 +1,73 @@
+{
+    "status_code": 200,
+    "data": {
+        "CacheSubnetGroups": [
+            {
+                "CacheSubnetGroupName": "default",
+                "CacheSubnetGroupDescription": "Default CacheSubnetGroup",
+                "VpcId": "vpc-1111111",
+                "Subnets": [
+                    {
+                        "SubnetIdentifier": "subnet-bb",
+                        "SubnetAvailabilityZone": {
+                            "Name": "us-east-1b"
+                        },
+                        "SupportedNetworkTypes": [
+                            "ipv4"
+                        ]
+                    },
+                    {
+                        "SubnetIdentifier": "subnet-b",
+                        "SubnetAvailabilityZone": {
+                            "Name": "us-east-1a"
+                        },
+                        "SupportedNetworkTypes": [
+                            "ipv4"
+                        ]
+                    },
+                    {
+                        "SubnetIdentifier": "subnet-92e10",
+                        "SubnetAvailabilityZone": {
+                            "Name": "us-east-1f"
+                        },
+                        "SupportedNetworkTypes": [
+                            "ipv4"
+                        ]
+                    },
+                    {
+                        "SubnetIdentifier": "subnet-21d4",
+                        "SubnetAvailabilityZone": {
+                            "Name": "us-east-1e"
+                        },
+                        "SupportedNetworkTypes": [
+                            "ipv4"
+                        ]
+                    },
+                    {
+                        "SubnetIdentifier": "subnet-dec",
+                        "SubnetAvailabilityZone": {
+                            "Name": "us-east-1d"
+                        },
+                        "SupportedNetworkTypes": [
+                            "ipv4"
+                        ]
+                    },
+                    {
+                        "SubnetIdentifier": "subnet-6641",
+                        "SubnetAvailabilityZone": {
+                            "Name": "us-east-1c"
+                        },
+                        "SupportedNetworkTypes": [
+                            "ipv4"
+                        ]
+                    }
+                ],
+                "ARN": "arn:aws:elasticache:us-east-1:644160558196:subnetgroup:default",
+                "SupportedNetworkTypes": [
+                    "ipv4"
+                ]
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

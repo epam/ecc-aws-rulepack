@@ -1,0 +1,152 @@
+{
+    "status_code": 200,
+    "data": {
+        "PaginationToken": "",
+        "ResourceTagMappingList": [
+            {
+                "ResourceARN": "arn:aws:elasticache:us-east-1:644160558196:cluster:elasticache-group-redis-269-green-1-001",
+                "Tags": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-269-elasticache_not_using_default_vpc"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    }
+                ]
+            },
+            {
+                "ResourceARN": "arn:aws:elasticache:us-east-1:644160558196:cluster:elasticache-group-redis-269-green-2-0001-001",
+                "Tags": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-269-elasticache_not_using_default_vpc"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    }
+                ]
+            },
+            {
+                "ResourceARN": "arn:aws:elasticache:us-east-1:644160558196:cluster:elasticache-group-redis-269-green-2-0001-002",
+                "Tags": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-269-elasticache_not_using_default_vpc"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    }
+                ]
+            },
+            {
+                "ResourceARN": "arn:aws:elasticache:us-east-1:644160558196:cluster:elasticache-group-redis-269-green-2-0002-001",
+                "Tags": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-269-elasticache_not_using_default_vpc"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    }
+                ]
+            },
+            {
+                "ResourceARN": "arn:aws:elasticache:us-east-1:644160558196:cluster:elasticache-group-redis-269-green-2-0002-002",
+                "Tags": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-269-elasticache_not_using_default_vpc"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    }
+                ]
+            },
+            {
+                "ResourceARN": "arn:aws:elasticache:us-east-1:644160558196:cluster:elasticache-group-valkey-269-green-0001-001",
+                "Tags": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-269-elasticache_not_using_default_vpc"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    }
+                ]
+            },
+            {
+                "ResourceARN": "arn:aws:elasticache:us-east-1:644160558196:cluster:elasticache-group-valkey-269-green-0001-002",
+                "Tags": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-269-elasticache_not_using_default_vpc"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    }
+                ]
+            },
+            {
+                "ResourceARN": "arn:aws:elasticache:us-east-1:644160558196:cluster:elasticache-group-valkey-269-green-0002-001",
+                "Tags": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-269-elasticache_not_using_default_vpc"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    }
+                ]
+            },
+            {
+                "ResourceARN": "arn:aws:elasticache:us-east-1:644160558196:cluster:elasticache-group-valkey-269-green-0002-002",
+                "Tags": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-269-elasticache_not_using_default_vpc"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    }
+                ]
+            },
+            {
+                "ResourceARN": "arn:aws:elasticache:us-east-1:644160558196:cluster:elasticache-memcached-cluster-264-red",
+                "Tags": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-269-elasticache_not_using_default_vpc"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    }
+                ]
+            },
+            {
+                "ResourceARN": "arn:aws:elasticache:us-east-1:644160558196:cluster:elasticache-redis-cluster-269-green",
+                "Tags": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-269-elasticache_not_using_default_vpc"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    }
+                ]
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}
