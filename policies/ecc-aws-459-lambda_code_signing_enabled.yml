@@ -11,5 +11,11 @@ policies:
       Lambda code signing not enabled
     resource: aws.lambda
     filters:
+      - type: value
+        key: PackageType
+        op: ne
+        value: Image
       - not:
-          - type: awslambda-signing-config-filter
+        - type: code-signing-config
+          key: CodeSigningConfigArn
+          value: present

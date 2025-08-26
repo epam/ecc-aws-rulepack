@@ -45,7 +45,7 @@
                             "microsecond": 265000
                         },
                         "Endpoint": {
-                            "Address": "elasticache-redis-cluster-264-green.bygzb8.0001.use1.cache.amazonaws.com",
+                            "Address": "elasticache-redis-cluster-264-green.yhuvgf.0001.use1.cache.amazonaws.com",
                             "Port": 6666
                         },
                         "ParameterGroupStatus": "in-sync",
