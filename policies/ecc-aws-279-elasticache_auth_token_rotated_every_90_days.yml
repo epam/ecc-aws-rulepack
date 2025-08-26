@@ -10,7 +10,7 @@ policies:
     comment: '010029062000'
     description: |
       Elasticache AUTH token is not rotated every 90 days
-    resource: cache-cluster
+    resource: aws.elasticache-group
     filters:
       - type: value
         key: AuthTokenLastModifiedDate

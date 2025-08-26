@@ -4,7 +4,7 @@
         "PaginationToken": "",
         "ResourceTagMappingList": [
             {
-                "ResourceARN": "arn:aws:elasticache:us-east-1:111111111111:cluster:c7n-272-elasticache-memcached-cluster-green",
+                "ResourceARN": "arn:aws:elasticache:us-east-1:644160558196:cluster:elasticache-group-redis-272-0001-001",
                 "Tags": [
                     {
                         "Key": "CustodianRule",
@@ -17,7 +17,46 @@
                 ]
             },
             {
-                "ResourceARN": "arn:aws:elasticache:us-east-1:111111111111:cluster:c7n-272-elasticache-redis-cluster-green",
+                "ResourceARN": "arn:aws:elasticache:us-east-1:644160558196:cluster:elasticache-group-redis-272-0001-002",
+                "Tags": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-272-elasticache_latest_version"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    }
+                ]
+            },
+            {
+                "ResourceARN": "arn:aws:elasticache:us-east-1:644160558196:cluster:elasticache-group-valkey-0001-001",
+                "Tags": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-272-elasticache_latest_version"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    }
+                ]
+            },
+            {
+                "ResourceARN": "arn:aws:elasticache:us-east-1:644160558196:cluster:elasticache-group-valkey-0001-002",
+                "Tags": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-272-elasticache_latest_version"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    }
+                ]
+            },
+            {
+                "ResourceARN": "arn:aws:elasticache:us-east-1:644160558196:cluster:elasticache-memcached-cluster",
                 "Tags": [
                     {
                         "Key": "CustodianRule",

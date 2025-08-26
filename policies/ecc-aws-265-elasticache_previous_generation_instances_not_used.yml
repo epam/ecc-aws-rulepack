@@ -9,7 +9,7 @@ policies:
   - name: ecc-aws-265-elasticache_previous_generation_instances_not_used
     comment: '010006062000'
     description: |
-      Elasticache is not using last generation nodes
+      Elasticache self-designed cluster is not using last generation nodes
     resource: cache-cluster
     filters:
       - type: value

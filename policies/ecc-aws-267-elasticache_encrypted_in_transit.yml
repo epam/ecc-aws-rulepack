@@ -9,7 +9,7 @@ policies:
   - name: ecc-aws-267-elasticache_encrypted_in_transit
     comment: '010044062000'
     description: |
-      ElastiCache is not encrypted in transit
+      ElastiCache self-designed cluster is not encrypted in transit
     resource: cache-cluster
     filters:
       - type: value

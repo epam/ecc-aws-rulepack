@@ -4,15 +4,15 @@
         "PaginationToken": "",
         "ResourceTagMappingList": [
             {
-                "ResourceARN": "arn:aws:elasticache:us-east-1:111111111111:cluster:elasticache-group-279-green-001",
+                "ResourceARN": "arn:aws:elasticache:us-east-1:644160558196:replicationgroup:elasticache-group-redis-279",
                 "Tags": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-279-elasticache_redis_auth_enabled"
+                    },
                     {
                         "Key": "ComplianceStatus",
                         "Value": "Green"
-                    },
-                    {
-                        "Key": "CustodianRule",
-                        "Value": "ecc-aws-279-elasticache_auth_token_rotated_every_90_days"
                     }
                 ]
             }

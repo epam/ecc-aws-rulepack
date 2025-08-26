@@ -9,7 +9,7 @@ policies:
   - name: ecc-aws-268-elasticache_encrypted_at_rest_using_cmk
     comment: '010043062000'
     description: |
-      Elasticache Redis replication group is not encrypted at-rest with KMS CMK
+      Elasticache self-designed replication group is not encrypted at-rest with KMS CMK
     resource: elasticache-group
     filters:
       - type: value

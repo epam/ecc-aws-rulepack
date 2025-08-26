@@ -21,7 +21,7 @@ policies:
                   - type: value
                     key: EngineVersion
                     op: regex
-                    value: '1.6.*'
+                    value: '1.6.22'
               - and:
                   - type: value
                     key: Engine
@@ -30,3 +30,11 @@ policies:
                     key: EngineVersion
                     op: regex
                     value: '7.1.*'
+              - and:
+                  - type: value
+                    key: Engine
+                    value: valkey
+                  - type: value
+                    key: EngineVersion
+                    op: regex
+                    value: '8.1.*'
