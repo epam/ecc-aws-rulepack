@@ -5,11 +5,12 @@
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 policies:
-  - name: ecc-aws-459-lambda_code_signing_enabled
-    comment: '010023030400'
+  - name: ecc-aws-269-elasticache_not_using_default_vpc
+    comment: '010024062000'
     description: |
-      Lambda code signing not enabled
-    resource: aws.lambda
+      Elasticache self-designed cluster in default VPC
+    resource: cache-cluster
     filters:
-      - not:
-          - type: awslambda-signing-config-filter
+      - type: vpc
+        key: IsDefault
+        value: true

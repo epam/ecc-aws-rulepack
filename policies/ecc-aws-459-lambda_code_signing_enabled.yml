@@ -1,0 +1,21 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+policies:
+  - name: ecc-aws-459-lambda_code_signing_enabled
+    comment: '010023030400'
+    description: |
+      Lambda code signing not enabled
+    resource: aws.lambda
+    filters:
+      - type: value
+        key: PackageType
+        op: ne
+        value: Image
+      - not:
+        - type: code-signing-config
+          key: CodeSigningConfigArn
+          value: present

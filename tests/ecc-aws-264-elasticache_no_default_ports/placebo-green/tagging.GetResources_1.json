@@ -1,0 +1,61 @@
+{
+    "status_code": 200,
+    "data": {
+        "PaginationToken": "",
+        "ResourceTagMappingList": [
+            {
+                "ResourceARN": "arn:aws:elasticache:us-east-1:644160558196:cluster:elasticache-cluster-406-red",
+                "Tags": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-264-elasticache_no_default_ports"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    }
+                ]
+            },
+            {
+                "ResourceARN": "arn:aws:elasticache:us-east-1:644160558196:cluster:elasticache-group-406-red-001",
+                "Tags": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-264-elasticache_no_default_ports"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    }
+                ]
+            },
+            {
+                "ResourceARN": "arn:aws:elasticache:us-east-1:644160558196:cluster:elasticache-group-406-red2-001",
+                "Tags": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-264-elasticache_no_default_ports"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    }
+                ]
+            },
+            {
+                "ResourceARN": "arn:aws:elasticache:us-east-1:644160558196:cluster:elasticache-redis-cluster-264-green",
+                "Tags": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-264-elasticache_no_default_ports"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    }
+                ]
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

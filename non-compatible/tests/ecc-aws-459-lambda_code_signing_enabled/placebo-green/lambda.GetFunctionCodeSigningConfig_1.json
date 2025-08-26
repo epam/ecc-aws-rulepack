@@ -1,8 +1,0 @@
-{
-    "status_code": 200,
-    "data": {
-        "ResponseMetadata": {},
-        "CodeSigningConfigArn": "arn:aws:lambda:us-east-1:644160558196:code-signing-config:csc-089208cef09255cad",
-        "FunctionName": "459_lambda_green"
-    }
-}

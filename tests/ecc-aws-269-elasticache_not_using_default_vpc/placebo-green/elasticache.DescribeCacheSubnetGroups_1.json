@@ -1,0 +1,102 @@
+{
+    "status_code": 200,
+    "data": {
+        "CacheSubnetGroups": [
+            {
+                "CacheSubnetGroupName": "default",
+                "CacheSubnetGroupDescription": "Default CacheSubnetGroup",
+                "VpcId": "vpc-070e569424a46ab74",
+                "Subnets": [
+                    {
+                        "SubnetIdentifier": "subnet-1111",
+                        "SubnetAvailabilityZone": {
+                            "Name": "us-east-1b"
+                        },
+                        "SupportedNetworkTypes": [
+                            "ipv4"
+                        ]
+                    },
+                    {
+                        "SubnetIdentifier": "subnet-333",
+                        "SubnetAvailabilityZone": {
+                            "Name": "us-east-1a"
+                        },
+                        "SupportedNetworkTypes": [
+                            "ipv4"
+                        ]
+                    },
+                    {
+                        "SubnetIdentifier": "subnet-222",
+                        "SubnetAvailabilityZone": {
+                            "Name": "us-east-1f"
+                        },
+                        "SupportedNetworkTypes": [
+                            "ipv4"
+                        ]
+                    },
+                    {
+                        "SubnetIdentifier": "subnet-444",
+                        "SubnetAvailabilityZone": {
+                            "Name": "us-east-1e"
+                        },
+                        "SupportedNetworkTypes": [
+                            "ipv4"
+                        ]
+                    },
+                    {
+                        "SubnetIdentifier": "subnet-555",
+                        "SubnetAvailabilityZone": {
+                            "Name": "us-east-1d"
+                        },
+                        "SupportedNetworkTypes": [
+                            "ipv4"
+                        ]
+                    },
+                    {
+                        "SubnetIdentifier": "subnet-66666",
+                        "SubnetAvailabilityZone": {
+                            "Name": "us-east-1c"
+                        },
+                        "SupportedNetworkTypes": [
+                            "ipv4"
+                        ]
+                    }
+                ],
+                "ARN": "arn:aws:elasticache:us-east-1:644160558196:subnetgroup:default",
+                "SupportedNetworkTypes": [
+                    "ipv4"
+                ]
+            },
+            {
+                "CacheSubnetGroupName": "elasticache-subnet-269-green",
+                "CacheSubnetGroupDescription": "Managed by Terraform",
+                "VpcId": "vpc-111111111",
+                "Subnets": [
+                    {
+                        "SubnetIdentifier": "subnet-111",
+                        "SubnetAvailabilityZone": {
+                            "Name": "us-east-1b"
+                        },
+                        "SupportedNetworkTypes": [
+                            "ipv4"
+                        ]
+                    },
+                    {
+                        "SubnetIdentifier": "subnet-333",
+                        "SubnetAvailabilityZone": {
+                            "Name": "us-east-1a"
+                        },
+                        "SupportedNetworkTypes": [
+                            "ipv4"
+                        ]
+                    }
+                ],
+                "ARN": "arn:aws:elasticache:us-east-1:644160558196:subnetgroup:elasticache-subnet-269-green",
+                "SupportedNetworkTypes": [
+                    "ipv4"
+                ]
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

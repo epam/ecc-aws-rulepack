@@ -48,5 +48,5 @@ resource "aws_lambda_function" "this" {
   role                    = aws_iam_role.this.arn
   handler                 = "func.py"
   code_signing_config_arn = aws_lambda_code_signing_config.this.arn
-  runtime                 = "python3.8"
+  runtime                 = "python3.10"
 }

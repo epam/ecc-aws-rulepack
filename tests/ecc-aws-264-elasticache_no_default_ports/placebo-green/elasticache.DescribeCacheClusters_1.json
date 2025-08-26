@@ -1,0 +1,70 @@
+{
+    "status_code": 200,
+    "data": {
+        "CacheClusters": [
+            {
+                "CacheClusterId": "elasticache-redis-cluster-264-green",
+                "ClientDownloadLandingPage": "https://console.aws.amazon.com/elasticache/home#client-download:",
+                "CacheNodeType": "cache.t2.micro",
+                "Engine": "redis",
+                "EngineVersion": "7.1.0",
+                "CacheClusterStatus": "available",
+                "NumCacheNodes": 1,
+                "PreferredAvailabilityZone": "us-east-1f",
+                "CacheClusterCreateTime": {
+                    "__class__": "datetime",
+                    "year": 2025,
+                    "month": 8,
+                    "day": 20,
+                    "hour": 20,
+                    "minute": 28,
+                    "second": 19,
+                    "microsecond": 265000
+                },
+                "PreferredMaintenanceWindow": "sun:06:00-sun:07:00",
+                "PendingModifiedValues": {},
+                "CacheSecurityGroups": [],
+                "CacheParameterGroup": {
+                    "CacheParameterGroupName": "default.redis7",
+                    "ParameterApplyStatus": "in-sync",
+                    "CacheNodeIdsToReboot": []
+                },
+                "CacheSubnetGroupName": "default",
+                "CacheNodes": [
+                    {
+                        "CacheNodeId": "0001",
+                        "CacheNodeStatus": "available",
+                        "CacheNodeCreateTime": {
+                            "__class__": "datetime",
+                            "year": 2025,
+                            "month": 8,
+                            "day": 20,
+                            "hour": 20,
+                            "minute": 28,
+                            "second": 19,
+                            "microsecond": 265000
+                        },
+                        "Endpoint": {
+                            "Address": "elasticache-redis-cluster-264-green.yhuvgf.0001.use1.cache.amazonaws.com",
+                            "Port": 6666
+                        },
+                        "ParameterGroupStatus": "in-sync",
+                        "CustomerAvailabilityZone": "us-east-1f"
+                    }
+                ],
+                "AutoMinorVersionUpgrade": true,
+                "SnapshotRetentionLimit": 0,
+                "SnapshotWindow": "09:00-10:00",
+                "AuthTokenEnabled": false,
+                "TransitEncryptionEnabled": false,
+                "AtRestEncryptionEnabled": false,
+                "ARN": "arn:aws:elasticache:us-east-1:644160558196:cluster:elasticache-redis-cluster-264-green",
+                "ReplicationGroupLogDeliveryEnabled": false,
+                "LogDeliveryConfigurations": [],
+                "NetworkType": "ipv4",
+                "IpDiscovery": "ipv4"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

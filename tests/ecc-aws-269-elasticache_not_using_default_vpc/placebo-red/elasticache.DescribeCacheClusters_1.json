@@ -1,0 +1,49 @@
+{
+    "status_code": 200,
+    "data": {
+        "CacheClusters": [
+            {
+                "CacheClusterId": "elasticache-group-valkey-269-red-0001-001",
+                "ClientDownloadLandingPage": "https://console.aws.amazon.com/elasticache/home#client-download:",
+                "CacheNodeType": "cache.t2.micro",
+                "Engine": "valkey",
+                "EngineVersion": "8.1.0",
+                "CacheClusterStatus": "available",
+                "NumCacheNodes": 1,
+                "PreferredAvailabilityZone": "us-east-1a",
+                "CacheClusterCreateTime": {
+                    "__class__": "datetime",
+                    "year": 2025,
+                    "month": 8,
+                    "day": 25,
+                    "hour": 8,
+                    "minute": 17,
+                    "second": 53,
+                    "microsecond": 416000
+                },
+                "PreferredMaintenanceWindow": "mon:04:00-mon:05:00",
+                "PendingModifiedValues": {},
+                "CacheSecurityGroups": [],
+                "CacheParameterGroup": {
+                    "CacheParameterGroupName": "default.valkey8.cluster.on",
+                    "ParameterApplyStatus": "in-sync",
+                    "CacheNodeIdsToReboot": []
+                },
+                "CacheSubnetGroupName": "default",
+                "AutoMinorVersionUpgrade": true,
+                "ReplicationGroupId": "elasticache-group-valkey-269-red",
+                "SnapshotRetentionLimit": 0,
+                "SnapshotWindow": "09:30-10:30",
+                "AuthTokenEnabled": false,
+                "TransitEncryptionEnabled": false,
+                "AtRestEncryptionEnabled": true,
+                "ARN": "arn:aws:elasticache:us-east-1:644160558196:cluster:elasticache-group-valkey-269-red-0001-001",
+                "ReplicationGroupLogDeliveryEnabled": false,
+                "LogDeliveryConfigurations": [],
+                "NetworkType": "ipv4",
+                "IpDiscovery": "ipv4"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}
