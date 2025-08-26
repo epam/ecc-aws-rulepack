@@ -19,6 +19,11 @@ on:
   pull_request_review:
     types: 
       - submitted
+
+env:
+  ECC_BRANCH: rename-collections
+  ECC_ACTIONS_BRANCH: main
+
 jobs:
   test_policy_flights:
     runs-on: ubuntu-22.04
@@ -34,14 +39,14 @@ jobs:
     steps: 
       - uses: actions/checkout@v4
       - name: Checkout ecc-actions
-        run: git clone -b ${{ inputs.ECC_ACTIONS_BRANCH || 'main' }}  "https://git:$PROJECT_TOKEN@git.epam.com/epmc-sec/cloudlab/cloud_custodian/ecc-actions.git" ecc-actions
+        run: git clone -b ${{ inputs.ECC_ACTIONS_BRANCH || env.ECC_ACTIONS_BRANCH }}  "https://git:$PROJECT_TOKEN@git.epam.com/epmc-sec/cloudlab/cloud_custodian/ecc-actions.git" ecc-actions
         env:
           PROJECT_TOKEN: ${{ secrets.ECC_CHANGELOG_ACTION }}
       - uses: ./ecc-actions/flight-test-dependencies
         env:
             PROJECT_TOKEN: ${{ secrets.CLOUDCUSTODIAN_CORE }}
         with:
-          ecc_branch: ${{ inputs.ECC_BRANCH || 'develop' }}
+          ecc_branch: ${{ inputs.ECC_BRANCH || env.ECC_BRANCH }}
       - uses: ./ecc-actions/flight-test-action
         env:
           COMPLIANCE: ${{ matrix.compliance }}
@@ -56,7 +61,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Checkout ecc-actions
-        run: git clone -b ${{ inputs.ECC_ACTIONS_BRANCH || 'main' }}  "https://git:$PROJECT_TOKEN@git.epam.com/epmc-sec/cloudlab/cloud_custodian/ecc-actions.git" ecc-actions
+        run: git clone -b ${{ inputs.ECC_ACTIONS_BRANCH || env.ECC_ACTIONS_BRANCH }}  "https://git:$PROJECT_TOKEN@git.epam.com/epmc-sec/cloudlab/cloud_custodian/ecc-actions.git" ecc-actions
         env:
           PROJECT_TOKEN: ${{ secrets.ECC_CHANGELOG_ACTION }}
 
@@ -76,7 +81,7 @@ jobs:
     if: (startsWith(github.ref, 'refs/tags/v') || github.ref == 'refs/heads/main') && github.event_name != 'schedule'
     steps:
       - name: Checkout ecc-actions
-        run: git clone -b ${{ inputs.ECC_ACTIONS_BRANCH || 'main' }} "https://git:$PROJECT_TOKEN@git.epam.com/epmc-sec/cloudlab/cloud_custodian/ecc-actions.git" ecc-actions
+        run: git clone -b ${{ inputs.ECC_ACTIONS_BRANCH || env.ECC_ACTIONS_BRANCH }} "https://git:$PROJECT_TOKEN@git.epam.com/epmc-sec/cloudlab/cloud_custodian/ecc-actions.git" ecc-actions
         env:
           PROJECT_TOKEN: ${{ secrets.ECC_CHANGELOG_ACTION }}
       - name: Release ruleset on QA
@@ -86,7 +91,7 @@ jobs:
           C7N_CREDS: ${{ secrets.C7N_CREDS }}
           C7N_ENV: QA
         with:
-          ecc_branch: ${{ inputs.ECC_BRANCH || 'develop' }}
+          ecc_branch: ${{ inputs.ECC_BRANCH || env.ECC_BRANCH }}
 
 
   ruleset_release_prod:
@@ -96,7 +101,7 @@ jobs:
     if: (startsWith(github.ref, 'refs/tags/v') || github.ref == 'refs/heads/main') && github.event_name != 'schedule'
     steps:
       - name: Checkout ecc-actions
-        run: git clone -b ${{ inputs.ECC_ACTIONS_BRANCH || 'main' }} "https://git:$PROJECT_TOKEN@git.epam.com/epmc-sec/cloudlab/cloud_custodian/ecc-actions.git" ecc-actions
+        run: git clone -b ${{ inputs.ECC_ACTIONS_BRANCH || env.ECC_ACTIONS_BRANCH }} "https://git:$PROJECT_TOKEN@git.epam.com/epmc-sec/cloudlab/cloud_custodian/ecc-actions.git" ecc-actions
         env:
           PROJECT_TOKEN: ${{ secrets.ECC_CHANGELOG_ACTION }}
       - name: Release ruleset on PROD
@@ -106,4 +111,4 @@ jobs:
           C7N_CREDS: ${{ secrets.C7N_CREDS }}
           C7N_ENV: PROD
         with:
-          ecc_branch: ${{ inputs.ECC_BRANCH || 'develop' }}
+          ecc_branch: ${{ inputs.ECC_BRANCH || env.ECC_BRANCH }}
