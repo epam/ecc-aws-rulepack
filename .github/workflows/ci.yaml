@@ -21,7 +21,7 @@ on:
       - submitted
 
 env:
-  ECC_BRANCH: rename-collections
+  ECC_BRANCH: develop
   ECC_ACTIONS_BRANCH: main
 
 jobs:
