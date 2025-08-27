@@ -2,7 +2,7 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "~> 5"
+      version = "~> 6"
     }
   }
 }
@@ -14,6 +14,7 @@ provider "aws" {
     tags = {
       CustodianRule    = "ecc-aws-262-vpc_endpoint_manual_acceptance"
       ComplianceStatus = "Green"
+      Name              = "262-green"
     }
   }
 }

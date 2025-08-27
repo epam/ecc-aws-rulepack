@@ -1,0 +1,98 @@
+{
+    "status_code": 200,
+    "data": {
+        "ServiceConfigurations": [
+            {
+                "ServiceType": [
+                    {
+                        "ServiceType": "Interface"
+                    }
+                ],
+                "ServiceId": "vpce-svc-071cf182eff9b448c",
+                "ServiceName": "com.amazonaws.vpce.us-east-1.vpce-svc-071cf182eff9b448c",
+                "ServiceState": "Available",
+                "AvailabilityZones": [
+                    "us-east-1a",
+                    "us-east-1b"
+                ],
+                "AcceptanceRequired": false,
+                "ManagesVpcEndpoints": false,
+                "NetworkLoadBalancerArns": [
+                    "arn:aws:elasticloadbalancing:us-east-1:644160558196:loadbalancer/net/262-nlb-red/b154c23e6b65947e"
+                ],
+                "SupportedIpAddressTypes": [
+                    "ipv4"
+                ],
+                "BaseEndpointDnsNames": [
+                    "vpce-svc-071cf182eff9b448c.us-east-1.vpce.amazonaws.com"
+                ],
+                "PrivateDnsNameConfiguration": {},
+                "Tags": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-262-vpc_endpoint_manual_acceptance"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Red"
+                    }
+                ],
+                "SupportedRegions": [
+                    {
+                        "Region": "us-east-1",
+                        "ServiceState": "Available"
+                    }
+                ],
+                "RemoteAccessEnabled": false
+            },
+            {
+                "ServiceType": [
+                    {
+                        "ServiceType": "Interface"
+                    }
+                ],
+                "ServiceId": "vpce-svc-0f4f4c11b765b45bf",
+                "ServiceName": "com.amazonaws.vpce.us-east-1.vpce-svc-0f4f4c11b765b45bf",
+                "ServiceState": "Available",
+                "AvailabilityZones": [
+                    "us-east-1a",
+                    "us-east-1b"
+                ],
+                "AcceptanceRequired": true,
+                "ManagesVpcEndpoints": false,
+                "NetworkLoadBalancerArns": [
+                    "arn:aws:elasticloadbalancing:us-east-1:644160558196:loadbalancer/net/262-nlb-green/7fcc80aaea099f23"
+                ],
+                "SupportedIpAddressTypes": [
+                    "ipv4"
+                ],
+                "BaseEndpointDnsNames": [
+                    "vpce-svc-0f4f4c11b765b45bf.us-east-1.vpce.amazonaws.com"
+                ],
+                "PrivateDnsNameConfiguration": {},
+                "Tags": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-262-vpc_endpoint_manual_acceptance"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    },
+                    {
+                        "Key": "Name",
+                        "Value": "262-green"
+                    }
+                ],
+                "SupportedRegions": [
+                    {
+                        "Region": "us-east-1",
+                        "ServiceState": "Available"
+                    }
+                ],
+                "RemoteAccessEnabled": false
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

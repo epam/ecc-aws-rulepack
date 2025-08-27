@@ -9,9 +9,9 @@ policies:
     comment: '010024022000'
     description: |
       Manual acceptance is not enabled for VPC endpoints 
-    resource: vpc-endpoint-service
+    resource: vpc-endpoint-service-configuration
     filters:
-      - type: vpc-endpoint-service-configurations-filter
+      - type: value
         key: AcceptanceRequired
         op: eq
         value: false
