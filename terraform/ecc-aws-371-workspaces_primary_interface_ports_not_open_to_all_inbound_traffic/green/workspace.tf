@@ -3,24 +3,25 @@
 # This is a very expensive resource. Each WorkSpace will cost $7.25/month + $0.17/hour.
 
 /*
-To attach created security groups:
-1. Go to https://us-east-1.console.aws.amazon.com/workspaces/home?region=us-east-1#directories:directories
-2. Note VPC of the created Directory
-3. Go to https://us-east-1.console.aws.amazon.com/ec2/v2/home?region=us-east-1#NIC:
-4. Filter network interfaces using noted VPC ID.
-5. Select the Network interface which has the following description "Created By Amazon Workspaces for AWS Account ID"
-6. Click "Actions" and "Change security groups".
-7. Attach security groups that start with "workstation_security_group". Click "Add security group".
-8. Click "Save".
+doc: https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-security-groups.html
+https://docs.aws.amazon.com/workspaces/latest/adminguide/rebuild-workspace.html
 */
 
 data "aws_workspaces_bundle" "this" {
-  bundle_id = "wsb-8pmj7b7pq" 
+  owner = "Amazon"
+  name  = "Value with Windows 10 (Server 2019 based)"
+}
+
+resource "random_password" "this" {
+  length           = 12
+  special          = true
+  numeric          = true
+  override_special = "!#$%*()-_=+[]{}:?"
 }
 
 resource "aws_directory_service_directory" "this" {
-  name     = "workspaces.example.com"
-  password = "#S1ncerely"
+  name     = "workspaces.c7n.com"
+  password = random_password.this.result
   size = "Small"
 
   vpc_settings {
@@ -45,7 +46,7 @@ resource "aws_workspaces_workspace" "this" {
   user_name    = "Administrator"
 
   workspace_properties {
-    compute_type_name                         = "STANDARD"
+    compute_type_name                         = "VALUE"
     user_volume_size_gib                      = 10
     root_volume_size_gib                      = 80
     running_mode                              = "AUTO_STOP"

@@ -4,15 +4,11 @@
         "PaginationToken": "",
         "ResourceTagMappingList": [
             {
-                "ResourceARN": "arn:aws:workspaces:us-east-1:644160558196:workspace/ws-2kl4hch4j",
+                "ResourceARN": "arn:aws:workspaces:us-east-1:644160558196:workspace/ws-dm5tplp5z",
                 "Tags": [
                     {
                         "Key": "ComplianceStatus",
                         "Value": "Green"
-                    },
-                    {
-                        "Key": "CustodiaRule",
-                        "Value": "epam-aws-371-workspaces_primary_interface_ports_not_open_to_all_inbound_traffic"
                     }
                 ]
             }

@@ -3,25 +3,24 @@
     "data": {
         "Directories": [
             {
-                "DirectoryId": "d-9067b08c43",
-                "Alias": "d-9067b08c43",
-                "DirectoryName": "workspaces.green-example.com",
-                "RegistrationCode": "SLiad+2E52NA",
+                "DirectoryId": "d-9066225aaf",
+                "Alias": "d-9066225aaf",
+                "DirectoryName": "workspaces.c7n-green.com",
+                "RegistrationCode": "SLiad+KBYZF6",
                 "SubnetIds": [
-                    "subnet-0adb74da2954b4ef3",
-                    "subnet-0267bd372914b0019"
+                    "subnet-052ab7cc520dfd194",
+                    "subnet-020d471c7b922750d"
                 ],
                 "DnsIpAddresses": [
-                    "10.0.1.180",
-                    "10.0.2.193"
+                    "10.0.1.62",
+                    "10.0.2.118"
                 ],
                 "CustomerUserName": "Administrator",
                 "IamRoleId": "arn:aws:iam::644160558196:role/workspaces_DefaultRole",
                 "DirectoryType": "SIMPLE_AD",
-                "WorkspaceSecurityGroupId": "sg-075dda8c2674c9103",
+                "WorkspaceSecurityGroupId": "sg-0235bdd326b23e1b2",
                 "State": "REGISTERED",
                 "WorkspaceCreationProperties": {
-                    "EnableWorkDocs": false,
                     "EnableInternetAccess": true,
                     "UserEnabledAsLocalAdministrator": true,
                     "EnableMaintenanceMode": true
@@ -34,7 +33,8 @@
                     "DeviceTypeAndroid": "ALLOW",
                     "DeviceTypeChromeOs": "ALLOW",
                     "DeviceTypeZeroClient": "ALLOW",
-                    "DeviceTypeLinux": "DENY"
+                    "DeviceTypeLinux": "DENY",
+                    "DeviceTypeWorkSpacesThinClient": "ALLOW"
                 },
                 "Tenancy": "SHARED",
                 "SelfservicePermissions": {
@@ -43,6 +43,23 @@
                     "ChangeComputeType": "DISABLED",
                     "SwitchRunningMode": "DISABLED",
                     "RebuildWorkspace": "DISABLED"
+                },
+                "SamlProperties": {
+                    "Status": "DISABLED",
+                    "UserAccessUrl": "",
+                    "RelayStateParameterName": "RelayState"
+                },
+                "CertificateBasedAuthProperties": {
+                    "Status": "DISABLED"
+                },
+                "EndpointEncryptionMode": "STANDARD_TLS",
+                "UserIdentityType": "AWS_DIRECTORY_SERVICE",
+                "WorkspaceType": "PERSONAL",
+                "StreamingProperties": {
+                    "GlobalAccelerator": {
+                        "Mode": "DISABLED",
+                        "PreferredProtocol": "TCP"
+                    }
                 }
             }
         ],

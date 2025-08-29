@@ -3,72 +3,63 @@
     "data": {
         "VpcEndpoints": [
             {
-                "VpcEndpointId": "vpce-0eb3f849d2727efe8",
+                "VpcEndpointId": "vpce-0a23cde495171cab0",
                 "VpcEndpointType": "Interface",
-                "VpcId": "vpc-075929f398c4009f4",
+                "VpcId": "vpc-030face658bb50491",
                 "ServiceName": "com.amazonaws.us-east-1.workspaces",
                 "State": "available",
                 "PolicyDocument": "{\n  \"Statement\": [\n    {\n      \"Action\": \"*\", \n      \"Effect\": \"Allow\", \n      \"Principal\": \"*\", \n      \"Resource\": \"*\"\n    }\n  ]\n}",
                 "RouteTableIds": [],
                 "SubnetIds": [
-                    "subnet-0adb74da2954b4ef3",
-                    "subnet-0267bd372914b0019"
+                    "subnet-08a86de1105c133ed"
                 ],
                 "Groups": [
                     {
-                        "GroupId": "sg-007252a129faf4965",
-                        "GroupName": "workstation_security_group"
-                    },
-                    {
-                        "GroupId": "sg-0639a98b7e13c5cc6",
-                        "GroupName": "workstation_security_group2"
+                        "GroupId": "sg-058cdc87bf60be89b",
+                        "GroupName": "default"
                     }
                 ],
-                "PrivateDnsEnabled": true,
+                "IpAddressType": "ipv4",
+                "DnsOptions": {
+                    "DnsRecordIpType": "ipv4"
+                },
+                "PrivateDnsEnabled": false,
                 "RequesterManaged": false,
                 "NetworkInterfaceIds": [
-                    "eni-0cd11ba7c00cba636",
-                    "eni-03d47b0f5c06557c6"
+                    "eni-031d0ace45a239caa"
                 ],
                 "DnsEntries": [
                     {
-                        "DnsName": "vpce-0eb3f849d2727efe8-zjvlwu45.workspaces.us-east-1.vpce.amazonaws.com",
+                        "DnsName": "vpce-0a23cde495171cab0-0q9jktil.workspaces.us-east-1.vpce.amazonaws.com",
                         "HostedZoneId": "Z7HUB22UULQXV"
                     },
                     {
-                        "DnsName": "vpce-0eb3f849d2727efe8-zjvlwu45-us-east-1c.workspaces.us-east-1.vpce.amazonaws.com",
+                        "DnsName": "vpce-0a23cde495171cab0-0q9jktil-us-east-1d.workspaces.us-east-1.vpce.amazonaws.com",
                         "HostedZoneId": "Z7HUB22UULQXV"
-                    },
-                    {
-                        "DnsName": "vpce-0eb3f849d2727efe8-zjvlwu45-us-east-1d.workspaces.us-east-1.vpce.amazonaws.com",
-                        "HostedZoneId": "Z7HUB22UULQXV"
-                    },
-                    {
-                        "DnsName": "workspaces.us-east-1.amazonaws.com",
-                        "HostedZoneId": "Z007768612RI4PML5K5J3"
                     }
                 ],
                 "CreationTimestamp": {
                     "__class__": "datetime",
-                    "year": 2022,
-                    "month": 7,
-                    "day": 7,
-                    "hour": 6,
-                    "minute": 55,
-                    "second": 58,
-                    "microsecond": 247000
+                    "year": 2025,
+                    "month": 8,
+                    "day": 29,
+                    "hour": 19,
+                    "minute": 5,
+                    "second": 48,
+                    "microsecond": 749000
                 },
                 "Tags": [
                     {
-                        "Key": "CustodiaRule",
-                        "Value": "epam-aws-372-workspaces_api_requests_flow_through_vpc_endpoint"
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-545-workspaces_api_requests_flow_through_vpc_endpoint"
                     },
                     {
                         "Key": "ComplianceStatus",
                         "Value": "Green"
                     }
                 ],
-                "OwnerId": "644160558196"
+                "OwnerId": "644160558196",
+                "ServiceRegion": "us-east-1"
             }
         ],
         "ResponseMetadata": {}
