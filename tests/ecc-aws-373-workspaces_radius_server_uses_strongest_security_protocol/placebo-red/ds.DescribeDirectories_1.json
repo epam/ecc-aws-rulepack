@@ -1,0 +1,75 @@
+{
+    "status_code": 200,
+    "data": {
+        "DirectoryDescriptions": [
+            {
+                "DirectoryId": "d-9066225f37",
+                "Name": "workspaces.c7n-red.com",
+                "ShortName": "workspaces",
+                "Size": "Small",
+                "Edition": "Standard",
+                "Alias": "d-9066225f37",
+                "AccessUrl": "d-9066225f37.awsapps.com",
+                "DnsIpAddrs": [
+                    "10.0.1.190",
+                    "10.0.2.141"
+                ],
+                "Stage": "Active",
+                "LaunchTime": {
+                    "__class__": "datetime",
+                    "year": 2025,
+                    "month": 8,
+                    "day": 29,
+                    "hour": 23,
+                    "minute": 41,
+                    "second": 13,
+                    "microsecond": 342000
+                },
+                "StageLastUpdatedDateTime": {
+                    "__class__": "datetime",
+                    "year": 2025,
+                    "month": 8,
+                    "day": 30,
+                    "hour": 0,
+                    "minute": 7,
+                    "second": 23,
+                    "microsecond": 432000
+                },
+                "Type": "MicrosoftAD",
+                "VpcSettings": {
+                    "VpcId": "vpc-0034aa6257182bd8f",
+                    "SubnetIds": [
+                        "subnet-02a8b23f47456e646",
+                        "subnet-02b150dfa3c0a2be1"
+                    ],
+                    "SecurityGroupId": "sg-07e6b3645f5c01978",
+                    "AvailabilityZones": [
+                        "us-east-1c",
+                        "us-east-1b"
+                    ]
+                },
+                "RadiusSettings": {
+                    "RadiusServers": [
+                        "127.0.0.1"
+                    ],
+                    "RadiusPort": 1812,
+                    "RadiusTimeout": 4,
+                    "RadiusRetries": 0,
+                    "SharedSecret": "",
+                    "AuthenticationProtocol": "PAP",
+                    "DisplayLabel": "373_mfa_label",
+                    "UseSameUsername": false
+                },
+                "RadiusStatus": "Failed",
+                "SsoEnabled": false,
+                "DesiredNumberOfDomainControllers": 2,
+                "RegionsInfo": {
+                    "PrimaryRegion": "us-east-1",
+                    "AdditionalRegions": []
+                },
+                "OsVersion": "SERVER_2019"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

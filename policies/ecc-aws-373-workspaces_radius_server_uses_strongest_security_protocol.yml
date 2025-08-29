@@ -12,12 +12,12 @@ policies:
     resource: aws.workspaces-directory
     filters:
       - or:
-          - type: radius-settings
-            key: AuthenticationProtocol
+          - type: directory
+            key: RadiusSettings.AuthenticationProtocol
             value: PAP
-          - type: radius-settings
-            key: AuthenticationProtocol
+          - type: directory
+            key: RadiusSettings.AuthenticationProtocol
             value: CHAP
-          - type: radius-settings
-            key: AuthenticationProtocol
+          - type: directory
+            key: RadiusSettings.AuthenticationProtocol
             value: MS-CHAPv1
