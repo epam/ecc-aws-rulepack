@@ -3,20 +3,28 @@
     "data": {
         "Workspaces": [
             {
-                "WorkspaceId": "ws-2kl4hch4j",
-                "DirectoryId": "d-90674cc9a1",
+                "WorkspaceId": "ws-dm5tplp5z",
+                "DirectoryId": "d-906622be6f",
                 "UserName": "Administrator",
-                "IpAddress": "10.0.1.215",
-                "State": "STOPPED",
-                "BundleId": "wsb-8pmj7b7pq",
-                "SubnetId": "subnet-014f50caf7d83d8f2",
-                "ComputerName": "A-346MMO8DR51LL",
+                "IpAddress": "10.0.1.241",
+                "State": "AVAILABLE",
+                "BundleId": "wsb-fb2xfp6r8",
+                "SubnetId": "subnet-043f8ddf682372f3b",
+                "ComputerName": "WSAMZN-QTSAC9PH",
                 "WorkspaceProperties": {
                     "RunningMode": "AUTO_STOP",
                     "RunningModeAutoStopTimeoutInMinutes": 60,
                     "RootVolumeSizeGib": 80,
                     "UserVolumeSizeGib": 10,
-                    "ComputeTypeName": "STANDARD"
+                    "ComputeTypeName": "VALUE",
+                    "Protocols": [
+                        "WSP"
+                    ],
+                    "OperatingSystemName": "WINDOWS_SERVER_2019",
+                    "GlobalAccelerator": {
+                        "Mode": "INHERITED",
+                        "PreferredProtocol": "INHERITED"
+                    }
                 },
                 "ModificationStates": []
             }

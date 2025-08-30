@@ -3,48 +3,48 @@
     "data": {
         "DirectoryDescriptions": [
             {
-                "DirectoryId": "d-9067b08ddc",
-                "Name": "workspaces.red2-example.com",
+                "DirectoryId": "d-9066225aaf",
+                "Name": "workspaces.c7n-red.com",
                 "ShortName": "workspaces",
                 "Size": "Small",
-                "Alias": "d-9067b08ddc",
-                "AccessUrl": "d-9067b08ddc.awsapps.com",
+                "Alias": "d-9066225aaf",
+                "AccessUrl": "d-9066225aaf.awsapps.com",
                 "DnsIpAddrs": [
-                    "10.0.1.91",
-                    "10.0.2.197"
+                    "10.0.1.62",
+                    "10.0.2.118"
                 ],
                 "Stage": "Active",
                 "LaunchTime": {
                     "__class__": "datetime",
-                    "year": 2022,
-                    "month": 7,
-                    "day": 7,
-                    "hour": 9,
-                    "minute": 56,
-                    "second": 2,
-                    "microsecond": 416000
+                    "year": 2025,
+                    "month": 8,
+                    "day": 29,
+                    "hour": 22,
+                    "minute": 5,
+                    "second": 46,
+                    "microsecond": 504000
                 },
                 "StageLastUpdatedDateTime": {
                     "__class__": "datetime",
-                    "year": 2022,
-                    "month": 7,
-                    "day": 7,
-                    "hour": 10,
-                    "minute": 2,
-                    "second": 43,
-                    "microsecond": 403000
+                    "year": 2025,
+                    "month": 8,
+                    "day": 29,
+                    "hour": 22,
+                    "minute": 12,
+                    "second": 44,
+                    "microsecond": 384000
                 },
                 "Type": "SimpleAD",
                 "VpcSettings": {
-                    "VpcId": "vpc-0427a0e7163786aa8",
+                    "VpcId": "vpc-030face658bb50491",
                     "SubnetIds": [
-                        "subnet-0829a38914ab5c1d3",
-                        "subnet-0400e8348cda25e15"
+                        "subnet-020d471c7b922750d",
+                        "subnet-052ab7cc520dfd194"
                     ],
-                    "SecurityGroupId": "sg-02b7216870b7dfdb3",
+                    "SecurityGroupId": "sg-0c98c6540056aace5",
                     "AvailabilityZones": [
-                        "us-east-1c",
-                        "us-east-1d"
+                        "us-east-1b",
+                        "us-east-1c"
                     ]
                 },
                 "SsoEnabled": false,

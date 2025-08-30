@@ -3,22 +3,22 @@
     "data": {
         "Directories": [
             {
-                "DirectoryId": "d-9066225aaf",
-                "Alias": "d-9066225aaf",
+                "DirectoryId": "d-9066225f37",
+                "Alias": "d-9066225f37",
                 "DirectoryName": "workspaces.c7n-green.com",
-                "RegistrationCode": "SLiad+KBYZF6",
+                "RegistrationCode": "SLiad+PBYSB9",
                 "SubnetIds": [
-                    "subnet-052ab7cc520dfd194",
-                    "subnet-020d471c7b922750d"
+                    "subnet-02b150dfa3c0a2be1",
+                    "subnet-02a8b23f47456e646"
                 ],
                 "DnsIpAddresses": [
-                    "10.0.1.62",
-                    "10.0.2.118"
+                    "10.0.1.190",
+                    "10.0.2.141"
                 ],
                 "CustomerUserName": "Administrator",
                 "IamRoleId": "arn:aws:iam::644160558196:role/workspaces_DefaultRole",
-                "DirectoryType": "SIMPLE_AD",
-                "WorkspaceSecurityGroupId": "sg-0235bdd326b23e1b2",
+                "DirectoryType": "MicrosoftAD",
+                "WorkspaceSecurityGroupId": "sg-0472d774124fb5112",
                 "State": "REGISTERED",
                 "WorkspaceCreationProperties": {
                     "EnableInternetAccess": true,

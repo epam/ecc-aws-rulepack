@@ -3,22 +3,18 @@
     "data": {
         "SecurityGroups": [
             {
-                "Description": "Amazon WorkSpaces Security Group",
-                "GroupName": "d-90674cc9a1_workspacesMembers",
-                "IpPermissions": [],
-                "OwnerId": "644160558196",
-                "GroupId": "sg-0409f8de56ef6d316",
+                "GroupId": "sg-0e42b69f4a0106a95",
                 "IpPermissionsEgress": [
                     {
                         "IpProtocol": "-1",
+                        "UserIdGroupPairs": [],
                         "IpRanges": [
                             {
                                 "CidrIp": "0.0.0.0/0"
                             }
                         ],
                         "Ipv6Ranges": [],
-                        "PrefixListIds": [],
-                        "UserIdGroupPairs": []
+                        "PrefixListIds": []
                     }
                 ],
                 "Tags": [
@@ -27,27 +23,44 @@
                         "Value": "Amazon WorkSpaces"
                     }
                 ],
-                "VpcId": "vpc-0aef940e9ce813af1"
+                "VpcId": "vpc-07bca931148117b7a",
+                "SecurityGroupArn": "arn:aws:ec2:us-east-1:644160558196:security-group/sg-0e42b69f4a0106a95",
+                "OwnerId": "644160558196",
+                "GroupName": "d-906622be6f_workspacesMembers",
+                "Description": "Amazon WorkSpaces Security Group",
+                "IpPermissions": []
             },
             {
-                "Description": "Managed by Terraform",
+                "GroupId": "sg-081652bb2751f6232",
+                "IpPermissionsEgress": [],
+                "Tags": [
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    }
+                ],
+                "VpcId": "vpc-07bca931148117b7a",
+                "SecurityGroupArn": "arn:aws:ec2:us-east-1:644160558196:security-group/sg-081652bb2751f6232",
+                "OwnerId": "644160558196",
                 "GroupName": "workstation_security_group3",
+                "Description": "Managed by Terraform",
                 "IpPermissions": [
                     {
                         "IpProtocol": "-1",
-                        "IpRanges": [],
-                        "Ipv6Ranges": [],
-                        "PrefixListIds": [],
                         "UserIdGroupPairs": [
                             {
-                                "GroupId": "sg-0a2d122a65e992419",
-                                "UserId": "644160558196"
+                                "UserId": "644160558196",
+                                "GroupId": "sg-081652bb2751f6232"
                             }
-                        ]
+                        ],
+                        "IpRanges": [],
+                        "Ipv6Ranges": [],
+                        "PrefixListIds": []
                     },
                     {
-                        "FromPort": 22,
                         "IpProtocol": "udp",
+                        "FromPort": 22,
+                        "ToPort": 22,
                         "IpRanges": [
                             {
                                 "CidrIp": "0.0.0.0/0"
@@ -58,111 +71,387 @@
                                 "CidrIpv6": "::/0"
                             }
                         ],
-                        "PrefixListIds": [],
-                        "ToPort": 22,
                         "UserIdGroupPairs": [
                             {
-                                "GroupId": "sg-0dfa59e50240f5e1d",
-                                "UserId": "644160558196"
-                            }
-                        ]
-                    }
-                ],
-                "OwnerId": "644160558196",
-                "GroupId": "sg-0a2d122a65e992419",
-                "IpPermissionsEgress": [],
-                "Tags": [
-                    {
-                        "Key": "ComplianceStatus",
-                        "Value": "Green"
-                    },
-                    {
-                        "Key": "CustodiaRule",
-                        "Value": "epam-aws-371-workspaces_primary_interface_ports_not_open_to_all_inbound_traffic"
-                    }
-                ],
-                "VpcId": "vpc-0aef940e9ce813af1"
-            },
-            {
-                "Description": "Managed by Terraform",
-                "GroupName": "workstation_security_group2",
-                "IpPermissions": [
-                    {
-                        "IpProtocol": "-1",
-                        "IpRanges": [
-                            {
-                                "CidrIp": "10.0.0.0/16"
+                                "UserId": "644160558196",
+                                "GroupId": "sg-06f6a9ce8d50dc4a1"
                             }
                         ],
-                        "Ipv6Ranges": [],
-                        "PrefixListIds": [],
-                        "UserIdGroupPairs": [
-                            {
-                                "GroupId": "sg-0dfa59e50240f5e1d",
-                                "UserId": "644160558196"
-                            }
-                        ]
+                        "PrefixListIds": []
                     }
-                ],
-                "OwnerId": "644160558196",
-                "GroupId": "sg-000421c5480bbadef",
-                "IpPermissionsEgress": [],
-                "Tags": [
-                    {
-                        "Key": "ComplianceStatus",
-                        "Value": "Green"
-                    },
-                    {
-                        "Key": "CustodiaRule",
-                        "Value": "epam-aws-371-workspaces_primary_interface_ports_not_open_to_all_inbound_traffic"
-                    }
-                ],
-                "VpcId": "vpc-0aef940e9ce813af1"
+                ]
             },
             {
-                "Description": "Managed by Terraform",
-                "GroupName": "workstation_security_group",
-                "IpPermissions": [
-                    {
-                        "FromPort": 22,
-                        "IpProtocol": "tcp",
-                        "IpRanges": [
-                            {
-                                "CidrIp": "10.0.0.0/16"
-                            }
-                        ],
-                        "Ipv6Ranges": [],
-                        "PrefixListIds": [],
-                        "ToPort": 22,
-                        "UserIdGroupPairs": []
-                    }
-                ],
-                "OwnerId": "644160558196",
-                "GroupId": "sg-0dfa59e50240f5e1d",
+                "GroupId": "sg-0f96beb4176ee87e5",
                 "IpPermissionsEgress": [
                     {
                         "IpProtocol": "-1",
+                        "UserIdGroupPairs": [],
                         "IpRanges": [
                             {
                                 "CidrIp": "0.0.0.0/0"
                             }
                         ],
                         "Ipv6Ranges": [],
-                        "PrefixListIds": [],
-                        "UserIdGroupPairs": []
+                        "PrefixListIds": []
                     }
                 ],
                 "Tags": [
                     {
                         "Key": "ComplianceStatus",
                         "Value": "Green"
-                    },
-                    {
-                        "Key": "CustodiaRule",
-                        "Value": "epam-aws-371-workspaces_primary_interface_ports_not_open_to_all_inbound_traffic"
                     }
                 ],
-                "VpcId": "vpc-0aef940e9ce813af1"
+                "VpcId": "vpc-07bca931148117b7a",
+                "SecurityGroupArn": "arn:aws:ec2:us-east-1:644160558196:security-group/sg-0f96beb4176ee87e5",
+                "OwnerId": "644160558196",
+                "GroupName": "d-906622be6f_controllers",
+                "Description": "AWS created security group for d-906622be6f directory controllers",
+                "IpPermissions": [
+                    {
+                        "IpProtocol": "udp",
+                        "FromPort": 138,
+                        "ToPort": 138,
+                        "UserIdGroupPairs": [],
+                        "IpRanges": [
+                            {
+                                "CidrIp": "10.0.0.0/16"
+                            }
+                        ],
+                        "Ipv6Ranges": [],
+                        "PrefixListIds": []
+                    },
+                    {
+                        "IpProtocol": "udp",
+                        "FromPort": 445,
+                        "ToPort": 445,
+                        "UserIdGroupPairs": [],
+                        "IpRanges": [
+                            {
+                                "CidrIp": "10.0.0.0/16"
+                            }
+                        ],
+                        "Ipv6Ranges": [],
+                        "PrefixListIds": []
+                    },
+                    {
+                        "IpProtocol": "udp",
+                        "FromPort": 464,
+                        "ToPort": 464,
+                        "UserIdGroupPairs": [],
+                        "IpRanges": [
+                            {
+                                "CidrIp": "10.0.0.0/16"
+                            }
+                        ],
+                        "Ipv6Ranges": [],
+                        "PrefixListIds": []
+                    },
+                    {
+                        "IpProtocol": "tcp",
+                        "FromPort": 464,
+                        "ToPort": 464,
+                        "UserIdGroupPairs": [],
+                        "IpRanges": [
+                            {
+                                "CidrIp": "10.0.0.0/16"
+                            }
+                        ],
+                        "Ipv6Ranges": [],
+                        "PrefixListIds": []
+                    },
+                    {
+                        "IpProtocol": "udp",
+                        "FromPort": 389,
+                        "ToPort": 389,
+                        "UserIdGroupPairs": [],
+                        "IpRanges": [
+                            {
+                                "CidrIp": "10.0.0.0/16"
+                            }
+                        ],
+                        "Ipv6Ranges": [],
+                        "PrefixListIds": []
+                    },
+                    {
+                        "IpProtocol": "udp",
+                        "FromPort": 53,
+                        "ToPort": 53,
+                        "UserIdGroupPairs": [],
+                        "IpRanges": [
+                            {
+                                "CidrIp": "10.0.0.0/16"
+                            }
+                        ],
+                        "Ipv6Ranges": [],
+                        "PrefixListIds": []
+                    },
+                    {
+                        "IpProtocol": "tcp",
+                        "FromPort": 389,
+                        "ToPort": 389,
+                        "UserIdGroupPairs": [],
+                        "IpRanges": [
+                            {
+                                "CidrIp": "10.0.0.0/16"
+                            }
+                        ],
+                        "Ipv6Ranges": [],
+                        "PrefixListIds": []
+                    },
+                    {
+                        "IpProtocol": "icmp",
+                        "FromPort": -1,
+                        "ToPort": -1,
+                        "UserIdGroupPairs": [],
+                        "IpRanges": [
+                            {
+                                "CidrIp": "10.0.0.0/16"
+                            }
+                        ],
+                        "Ipv6Ranges": [],
+                        "PrefixListIds": []
+                    },
+                    {
+                        "IpProtocol": "tcp",
+                        "FromPort": 445,
+                        "ToPort": 445,
+                        "UserIdGroupPairs": [],
+                        "IpRanges": [
+                            {
+                                "CidrIp": "10.0.0.0/16"
+                            }
+                        ],
+                        "Ipv6Ranges": [],
+                        "PrefixListIds": []
+                    },
+                    {
+                        "IpProtocol": "udp",
+                        "FromPort": 123,
+                        "ToPort": 123,
+                        "UserIdGroupPairs": [],
+                        "IpRanges": [
+                            {
+                                "CidrIp": "10.0.0.0/16"
+                            }
+                        ],
+                        "Ipv6Ranges": [],
+                        "PrefixListIds": []
+                    },
+                    {
+                        "IpProtocol": "tcp",
+                        "FromPort": 88,
+                        "ToPort": 88,
+                        "UserIdGroupPairs": [],
+                        "IpRanges": [
+                            {
+                                "CidrIp": "10.0.0.0/16"
+                            }
+                        ],
+                        "Ipv6Ranges": [],
+                        "PrefixListIds": []
+                    },
+                    {
+                        "IpProtocol": "tcp",
+                        "FromPort": 3268,
+                        "ToPort": 3269,
+                        "UserIdGroupPairs": [],
+                        "IpRanges": [
+                            {
+                                "CidrIp": "10.0.0.0/16"
+                            }
+                        ],
+                        "Ipv6Ranges": [],
+                        "PrefixListIds": []
+                    },
+                    {
+                        "IpProtocol": "tcp",
+                        "FromPort": 1024,
+                        "ToPort": 65535,
+                        "UserIdGroupPairs": [],
+                        "IpRanges": [
+                            {
+                                "CidrIp": "10.0.0.0/16"
+                            }
+                        ],
+                        "Ipv6Ranges": [],
+                        "PrefixListIds": []
+                    },
+                    {
+                        "IpProtocol": "-1",
+                        "UserIdGroupPairs": [
+                            {
+                                "UserId": "644160558196",
+                                "GroupId": "sg-0f96beb4176ee87e5"
+                            }
+                        ],
+                        "IpRanges": [],
+                        "Ipv6Ranges": [],
+                        "PrefixListIds": []
+                    },
+                    {
+                        "IpProtocol": "tcp",
+                        "FromPort": 135,
+                        "ToPort": 135,
+                        "UserIdGroupPairs": [],
+                        "IpRanges": [
+                            {
+                                "CidrIp": "10.0.0.0/16"
+                            }
+                        ],
+                        "Ipv6Ranges": [],
+                        "PrefixListIds": []
+                    },
+                    {
+                        "IpProtocol": "tcp",
+                        "FromPort": 636,
+                        "ToPort": 636,
+                        "UserIdGroupPairs": [],
+                        "IpRanges": [
+                            {
+                                "CidrIp": "10.0.0.0/16"
+                            }
+                        ],
+                        "Ipv6Ranges": [],
+                        "PrefixListIds": []
+                    },
+                    {
+                        "IpProtocol": "tcp",
+                        "FromPort": 53,
+                        "ToPort": 53,
+                        "UserIdGroupPairs": [],
+                        "IpRanges": [
+                            {
+                                "CidrIp": "10.0.0.0/16"
+                            }
+                        ],
+                        "Ipv6Ranges": [],
+                        "PrefixListIds": []
+                    },
+                    {
+                        "IpProtocol": "udp",
+                        "FromPort": 88,
+                        "ToPort": 88,
+                        "UserIdGroupPairs": [],
+                        "IpRanges": [
+                            {
+                                "CidrIp": "10.0.0.0/16"
+                            }
+                        ],
+                        "Ipv6Ranges": [],
+                        "PrefixListIds": []
+                    }
+                ]
+            },
+            {
+                "GroupId": "sg-06f6a9ce8d50dc4a1",
+                "IpPermissionsEgress": [
+                    {
+                        "IpProtocol": "-1",
+                        "UserIdGroupPairs": [],
+                        "IpRanges": [
+                            {
+                                "CidrIp": "0.0.0.0/0"
+                            }
+                        ],
+                        "Ipv6Ranges": [],
+                        "PrefixListIds": []
+                    }
+                ],
+                "Tags": [
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    }
+                ],
+                "VpcId": "vpc-07bca931148117b7a",
+                "SecurityGroupArn": "arn:aws:ec2:us-east-1:644160558196:security-group/sg-06f6a9ce8d50dc4a1",
+                "OwnerId": "644160558196",
+                "GroupName": "workstation_security_group",
+                "Description": "Managed by Terraform",
+                "IpPermissions": [
+                    {
+                        "IpProtocol": "tcp",
+                        "FromPort": 22,
+                        "ToPort": 22,
+                        "UserIdGroupPairs": [],
+                        "IpRanges": [
+                            {
+                                "CidrIp": "10.0.0.0/16"
+                            }
+                        ],
+                        "Ipv6Ranges": [],
+                        "PrefixListIds": []
+                    }
+                ]
+            },
+            {
+                "GroupId": "sg-0ea233d167882886c",
+                "IpPermissionsEgress": [],
+                "Tags": [
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    }
+                ],
+                "VpcId": "vpc-07bca931148117b7a",
+                "SecurityGroupArn": "arn:aws:ec2:us-east-1:644160558196:security-group/sg-0ea233d167882886c",
+                "OwnerId": "644160558196",
+                "GroupName": "workstation_security_group2",
+                "Description": "Managed by Terraform",
+                "IpPermissions": [
+                    {
+                        "IpProtocol": "-1",
+                        "UserIdGroupPairs": [
+                            {
+                                "UserId": "644160558196",
+                                "GroupId": "sg-06f6a9ce8d50dc4a1"
+                            }
+                        ],
+                        "IpRanges": [
+                            {
+                                "CidrIp": "10.0.0.0/16"
+                            }
+                        ],
+                        "Ipv6Ranges": [],
+                        "PrefixListIds": []
+                    }
+                ]
+            },
+            {
+                "GroupId": "sg-01ada30d2e5e301e1",
+                "IpPermissionsEgress": [
+                    {
+                        "IpProtocol": "-1",
+                        "UserIdGroupPairs": [],
+                        "IpRanges": [
+                            {
+                                "CidrIp": "0.0.0.0/0"
+                            }
+                        ],
+                        "Ipv6Ranges": [],
+                        "PrefixListIds": []
+                    }
+                ],
+                "VpcId": "vpc-07bca931148117b7a",
+                "SecurityGroupArn": "arn:aws:ec2:us-east-1:644160558196:security-group/sg-01ada30d2e5e301e1",
+                "OwnerId": "644160558196",
+                "GroupName": "default",
+                "Description": "default VPC security group",
+                "IpPermissions": [
+                    {
+                        "IpProtocol": "-1",
+                        "UserIdGroupPairs": [
+                            {
+                                "UserId": "644160558196",
+                                "GroupId": "sg-01ada30d2e5e301e1"
+                            }
+                        ],
+                        "IpRanges": [],
+                        "Ipv6Ranges": [],
+                        "PrefixListIds": []
+                    }
+                ]
             }
         ],
         "ResponseMetadata": {}

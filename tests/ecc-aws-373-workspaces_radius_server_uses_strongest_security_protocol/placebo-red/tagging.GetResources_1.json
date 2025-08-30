@@ -4,7 +4,7 @@
         "PaginationToken": "",
         "ResourceTagMappingList": [
             {
-                "ResourceARN": "arn:aws:workspaces:us-east-1:644160558196:directory/d-9066225aaf",
+                "ResourceARN": "arn:aws:workspaces:us-east-1:644160558196:directory/d-9066225f37",
                 "Tags": [
                     {
                         "Key": "CustodianRule",
@@ -12,7 +12,7 @@
                     },
                     {
                         "Key": "ComplianceStatus",
-                        "Value": "Red"
+                        "Value": "red"
                     }
                 ]
             }

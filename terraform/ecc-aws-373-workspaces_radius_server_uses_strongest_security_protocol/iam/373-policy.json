@@ -5,9 +5,10 @@
             "Sid": "VisualEditor0",
             "Effect": "Allow",
             "Action": [
-                "workspaces:DescribeWorkspaceDirectories",
                 "tag:GetResources",
-                "ds:DescribeDirectories"
+                "ds:ListTagsForResource",
+                "ds:DescribeDirectories",
+                "workspaces:DescribeWorkspaceDirectories"
             ],
             "Resource": "*"
         }

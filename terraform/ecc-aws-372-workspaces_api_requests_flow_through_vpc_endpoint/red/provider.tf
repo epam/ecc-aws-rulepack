@@ -12,7 +12,7 @@ provider "aws" {
   region  = var.default-region
   default_tags {
     tags = {
-      CustodiaRule     = "ecc-aws-545-workspaces_api_requests_flow_through_vpc_endpoint"
+      CustodianRule    = "ecc-aws-372-workspaces_api_requests_flow_through_vpc_endpoint"
       ComplianceStatus = "Red"
     }
   }

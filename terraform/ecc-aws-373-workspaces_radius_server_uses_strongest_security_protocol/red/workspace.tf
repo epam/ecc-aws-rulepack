@@ -1,13 +1,3 @@
-/* run 'terraform apply'
-Go to the Directory Service.
-Select the created with teraform Directory
-Go to the buttom of the page, go to the 'Multi-factor authentication'
-Click 'Actions', 'Enable'
-Display label = 373_mfa_label
-RADIUS server DNS name or IP addresses = 127.0.0.1
-Protocol = CHAP
-*/
-
 resource "aws_directory_service_directory" "this" {
   name     = "workspaces.373RadiusServerRed.com"
   password = "#S1ncerely"
@@ -23,9 +13,36 @@ resource "aws_directory_service_directory" "this" {
 resource "aws_workspaces_directory" "this" {
   directory_id = aws_directory_service_directory.this.id
   subnet_ids   = [aws_subnet.this1.id, aws_subnet.this2.id]
-  # depends_on = [
-  #   aws_iam_role_policy_attachment.workspaces-default-service-access,
-  #   aws_iam_role_policy_attachment.workspaces-default-self-service-access
-  # ]
+  depends_on = [
+    aws_iam_role_policy_attachment.workspaces-default-service-access,
+    aws_iam_role_policy_attachment.workspaces-default-self-service-access
+  ]
 
+}
+
+resource "null_resource" "radius_settings" {
+  provisioner "local-exec" {
+    command = <<-EOT
+      aws ds enable-radius \
+        --directory-id ${aws_directory_service_directory.this.id} \
+        --radius-settings '{
+          "RadiusServers": ["127.0.0.1"],
+          "RadiusPort": 1812,
+          "RadiusTimeout": 1,
+          "RadiusRetries": 4,
+          "AuthenticationProtocol": "CHAP",
+          "DisplayLabel": "373_mfa_label",
+          "SharedSecret": "12345678"
+        }' \
+        --region us-east-1 || true
+    EOT
+    
+    on_failure = continue
+  }
+
+  depends_on = [aws_directory_service_directory.this]
+  
+  triggers = {
+    directory_id = aws_directory_service_directory.this.id
+  }
 }

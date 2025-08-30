@@ -3,47 +3,47 @@
     "data": {
         "DirectoryDescriptions": [
             {
-                "DirectoryId": "d-9067b08c43",
-                "Name": "workspaces.green-example.com",
+                "DirectoryId": "d-9066225aaf",
+                "Name": "workspaces.c7n-green.com",
                 "ShortName": "workspaces",
                 "Size": "Small",
-                "Alias": "d-9067b08c43",
-                "AccessUrl": "d-9067b08c43.awsapps.com",
+                "Alias": "d-9066225aaf",
+                "AccessUrl": "d-9066225aaf.awsapps.com",
                 "DnsIpAddrs": [
-                    "10.0.1.180",
-                    "10.0.2.193"
+                    "10.0.1.62",
+                    "10.0.2.118"
                 ],
                 "Stage": "Active",
                 "LaunchTime": {
                     "__class__": "datetime",
-                    "year": 2022,
-                    "month": 7,
-                    "day": 7,
-                    "hour": 9,
-                    "minute": 55,
-                    "second": 59,
-                    "microsecond": 78000
+                    "year": 2025,
+                    "month": 8,
+                    "day": 29,
+                    "hour": 22,
+                    "minute": 5,
+                    "second": 46,
+                    "microsecond": 504000
                 },
                 "StageLastUpdatedDateTime": {
                     "__class__": "datetime",
-                    "year": 2022,
-                    "month": 7,
-                    "day": 7,
-                    "hour": 10,
-                    "minute": 2,
-                    "second": 52,
-                    "microsecond": 303000
+                    "year": 2025,
+                    "month": 8,
+                    "day": 29,
+                    "hour": 22,
+                    "minute": 12,
+                    "second": 44,
+                    "microsecond": 384000
                 },
                 "Type": "SimpleAD",
                 "VpcSettings": {
-                    "VpcId": "vpc-075929f398c4009f4",
+                    "VpcId": "vpc-030face658bb50491",
                     "SubnetIds": [
-                        "subnet-0267bd372914b0019",
-                        "subnet-0adb74da2954b4ef3"
+                        "subnet-020d471c7b922750d",
+                        "subnet-052ab7cc520dfd194"
                     ],
-                    "SecurityGroupId": "sg-028a5b2ce722a3863",
+                    "SecurityGroupId": "sg-0c98c6540056aace5",
                     "AvailabilityZones": [
-                        "us-east-1d",
+                        "us-east-1b",
                         "us-east-1c"
                     ]
                 },

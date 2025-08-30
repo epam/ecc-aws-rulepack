@@ -3,8 +3,31 @@
     "data": {
         "SecurityGroups": [
             {
-                "Description": "Managed by Terraform",
-                "GroupName": "workstation_security_group",
+                "GroupId": "sg-0e42b69f4a0106a95",
+                "IpPermissionsEgress": [
+                    {
+                        "IpProtocol": "-1",
+                        "UserIdGroupPairs": [],
+                        "IpRanges": [
+                            {
+                                "CidrIp": "0.0.0.0/0"
+                            }
+                        ],
+                        "Ipv6Ranges": [],
+                        "PrefixListIds": []
+                    }
+                ],
+                "Tags": [
+                    {
+                        "Key": "Created by Amazon WorkSpaces",
+                        "Value": "Amazon WorkSpaces"
+                    }
+                ],
+                "VpcId": "vpc-07bca931148117b7a",
+                "SecurityGroupArn": "arn:aws:ec2:us-east-1:644160558196:security-group/sg-0e42b69f4a0106a95",
+                "OwnerId": "644160558196",
+                "GroupName": "d-906622be6f_workspacesMembers",
+                "Description": "Amazon WorkSpaces Security Group",
                 "IpPermissions": [
                     {
                         "IpProtocol": "-1",
@@ -30,33 +53,7 @@
                         "ToPort": 22,
                         "UserIdGroupPairs": []
                     }
-                ],
-                "OwnerId": "644160558196",
-                "GroupId": "sg-0dfa59e50240f5e1d",
-                "IpPermissionsEgress": [
-                    {
-                        "IpProtocol": "-1",
-                        "IpRanges": [
-                            {
-                                "CidrIp": "0.0.0.0/0"
-                            }
-                        ],
-                        "Ipv6Ranges": [],
-                        "PrefixListIds": [],
-                        "UserIdGroupPairs": []
-                    }
-                ],
-                "Tags": [
-                    {
-                        "Key": "ComplianceStatus",
-                        "Value": "Red"
-                    },
-                    {
-                        "Key": "CustodiaRule",
-                        "Value": "epam-aws-371-workspaces_primary_interface_ports_not_open_to_all_inbound_traffic"
-                    }
-                ],
-                "VpcId": "vpc-0aef940e9ce813af1"
+                ]
             }
         ],
         "ResponseMetadata": {}

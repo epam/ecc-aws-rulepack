@@ -5,65 +5,69 @@
             {
                 "Association": {
                     "IpOwnerId": "644160558196",
-                    "PublicDnsName": "ec2-18-233-14-186.compute-1.amazonaws.com",
-                    "PublicIp": "18.233.14.186"
+                    "PublicDnsName": "ec2-52-54-84-168.compute-1.amazonaws.com",
+                    "PublicIp": "52.54.84.168"
                 },
                 "Attachment": {
                     "AttachTime": {
                         "__class__": "datetime",
-                        "year": 2022,
-                        "month": 5,
-                        "day": 23,
-                        "hour": 10,
-                        "minute": 12,
-                        "second": 20,
+                        "year": 2025,
+                        "month": 8,
+                        "day": 28,
+                        "hour": 20,
+                        "minute": 11,
+                        "second": 22,
                         "microsecond": 0
                     },
-                    "AttachmentId": "eni-attach-01eefdf2f8e724883",
+                    "AttachmentId": "eni-attach-021cbdb2da3e32e25",
                     "DeleteOnTermination": false,
                     "DeviceIndex": 1,
                     "NetworkCardIndex": 0,
                     "InstanceOwnerId": "644160558196",
                     "Status": "attached"
                 },
-                "AvailabilityZone": "us-east-1c",
+                "AvailabilityZone": "us-east-1b",
                 "Description": "Created By Amazon Workspaces for AWS Account ID 644160558196",
                 "Groups": [
                     {
-                        "GroupName": "workstation_security_group",
-                        "GroupId": "sg-0dfa59e50240f5e1d"
-                    },
-                    {
-                        "GroupName": "d-90674cc9a1_workspacesMembers",
-                        "GroupId": "sg-0409f8de56ef6d316"
+                        "GroupId": "sg-0e42b69f4a0106a95",
+                        "GroupName": "d-906622be6f_workspacesMembers"
                     }
                 ],
                 "InterfaceType": "interface",
                 "Ipv6Addresses": [],
-                "MacAddress": "12:7c:08:36:a1:1d",
-                "NetworkInterfaceId": "eni-050dfd9bd0822e161",
+                "MacAddress": "12:a6:63:8b:2b:6f",
+                "NetworkInterfaceId": "eni-0d4fde846f0d33862",
                 "OwnerId": "644160558196",
-                "PrivateDnsName": "ip-10-0-1-215.ec2.internal",
-                "PrivateIpAddress": "10.0.1.215",
+                "PrivateDnsName": "ip-10-0-1-241.ec2.internal",
+                "PublicDnsName": "ec2-52-54-84-168.compute-1.amazonaws.com",
+                "PublicIpDnsNameOptions": {
+                    "DnsHostnameType": "public-ipv4-dns-name",
+                    "PublicIpv4DnsName": "ec2-52-54-84-168.compute-1.amazonaws.com"
+                },
+                "PrivateIpAddress": "10.0.1.241",
                 "PrivateIpAddresses": [
                     {
                         "Association": {
                             "IpOwnerId": "644160558196",
-                            "PublicDnsName": "ec2-18-233-14-186.compute-1.amazonaws.com",
-                            "PublicIp": "18.233.14.186"
+                            "PublicDnsName": "ec2-52-54-84-168.compute-1.amazonaws.com",
+                            "PublicIp": "52.54.84.168"
                         },
                         "Primary": true,
-                        "PrivateDnsName": "ip-10-0-1-215.ec2.internal",
-                        "PrivateIpAddress": "10.0.1.215"
+                        "PrivateDnsName": "ip-10-0-1-241.ec2.internal",
+                        "PrivateIpAddress": "10.0.1.241"
                     }
                 ],
-                "RequesterId": "AROAXPHGII4AJZ6FQEGXM:WorkSpace-Creation",
+                "RequesterId": "AROA2HVQ5H5CCZGKK5IJZ:WorkSpace-Creation",
                 "RequesterManaged": false,
                 "SourceDestCheck": true,
                 "Status": "in-use",
-                "SubnetId": "subnet-014f50caf7d83d8f2",
+                "SubnetId": "subnet-043f8ddf682372f3b",
                 "TagSet": [],
-                "VpcId": "vpc-0aef940e9ce813af1"
+                "VpcId": "vpc-07bca931148117b7a",
+                "Operator": {
+                    "Managed": false
+                }
             }
         ],
         "ResponseMetadata": {}

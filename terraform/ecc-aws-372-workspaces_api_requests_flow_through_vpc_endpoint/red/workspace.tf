@@ -1,7 +1,14 @@
+resource "random_password" "this" {
+  length           = 12
+  special          = true
+  numeric          = true
+  override_special = "!#$%*()-_=+[]{}:?"
+}
+
 resource "aws_directory_service_directory" "this" {
-  name     = "workspaces.red-example.com"
-  password = "#S1ncerely"
-  size     = "Small"
+  name     = "workspaces.c7n-red.com"
+  password = random_password.this.result
+  size = "Small"
 
   vpc_settings {
     vpc_id     = aws_vpc.this.id

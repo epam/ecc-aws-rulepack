@@ -1,0 +1,16 @@
+{
+    "status_code": 200,
+    "data": {
+        "Tags": [
+            {
+                "Key": "CustodianRule",
+                "Value": "ecc-aws-372-workspaces_api_requests_flow_through_vpc_endpoint"
+            },
+            {
+                "Key": "ComplianceStatus",
+                "Value": "Green"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}
