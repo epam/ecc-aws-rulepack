@@ -23,9 +23,9 @@
                     "year": 2025,
                     "month": 8,
                     "day": 30,
-                    "hour": 17,
-                    "minute": 46,
-                    "second": 6,
+                    "hour": 19,
+                    "minute": 2,
+                    "second": 18,
                     "microsecond": 0
                 },
                 "OptionSettings": [
@@ -560,17 +560,16 @@
                     {
                         "Namespace": "aws:elasticbeanstalk:managedactions",
                         "OptionName": "ManagedActionsEnabled",
-                        "Value": "true"
+                        "Value": "false"
                     },
                     {
                         "Namespace": "aws:elasticbeanstalk:managedactions",
-                        "OptionName": "PreferredStartTime",
-                        "Value": "Tue:09:00"
+                        "OptionName": "PreferredStartTime"
                     },
                     {
                         "Namespace": "aws:elasticbeanstalk:managedactions",
                         "OptionName": "ServiceRoleForManagedUpdates",
-                        "Value": "AWSServiceRoleForElasticBeanstalkManagedUpdates"
+                        "Value": "service_role_green"
                     },
                     {
                         "Namespace": "aws:elasticbeanstalk:managedactions:platformupdate",
@@ -579,8 +578,7 @@
                     },
                     {
                         "Namespace": "aws:elasticbeanstalk:managedactions:platformupdate",
-                        "OptionName": "UpdateLevel",
-                        "Value": "minor"
+                        "OptionName": "UpdateLevel"
                     },
                     {
                         "Namespace": "aws:elasticbeanstalk:monitoring",
@@ -615,7 +613,7 @@
                     {
                         "Namespace": "aws:elasticbeanstalk:xray",
                         "OptionName": "XRayEnabled",
-                        "Value": "true"
+                        "Value": "false"
                     },
                     {
                         "ResourceName": "AWSEBV2LoadBalancerListener",
@@ -660,7 +658,7 @@
                         "ResourceName": "AWSEBV2LoadBalancer",
                         "Namespace": "aws:elbv2:loadbalancer",
                         "OptionName": "AccessLogsS3Enabled",
-                        "Value": "true"
+                        "Value": "false"
                     },
                     {
                         "ResourceName": "AWSEBV2LoadBalancer",

@@ -11,11 +11,17 @@ policies:
       Elastic Beanstalk environments with application load balancer do not have access logs enabled
     resource: aws.elasticbeanstalk-environment
     filters:
-      - type: elasticbeanstalk-configuration-settings-filter
-        key: AccessLogsS3Enabled
-        op: eq
-        value: "false"
-      - type: elasticbeanstalk-configuration-settings-filter
-        key: LoadBalancerType
-        op: eq
-        value: "application"
+    - type: value
+      key: Status
+      op: ne
+      value: Terminated
+    - type: configuration-settings
+      attrs:
+        - OptionName: LoadBalancerType
+        - Value: "application"  
+    - type: configuration-settings
+      attrs:
+        - OptionName: AccessLogsS3Enabled
+        - Value: "false"
+    
+

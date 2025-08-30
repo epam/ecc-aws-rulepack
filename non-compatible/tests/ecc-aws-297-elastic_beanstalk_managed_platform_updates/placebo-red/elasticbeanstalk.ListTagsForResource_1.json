@@ -1,27 +1,23 @@
 {
     "status_code": 200,
     "data": {
-        "ResourceArn": "arn:aws:elasticbeanstalk:us-east-1:644160558196:environment/297-beanstalk-application-red/297-beanstalk-environment-red",
+        "ResourceArn": "arn:aws:elasticbeanstalk:us-east-1:644160558196:environment/beanstalk-application-green/beanstalk-environment-green",
         "ResourceTags": [
             {
-                "Key": "CustodianRule",
-                "Value": "epam-aws-297-elastic_beanstalk_managed_platform_updates"
-            },
-            {
                 "Key": "elasticbeanstalk:environment-id",
-                "Value": "e-rvygxza2p2"
+                "Value": "e-u2r3kz65d4"
             },
             {
                 "Key": "ComplianceStatus",
-                "Value": "Red"
+                "Value": "Green"
             },
             {
                 "Key": "elasticbeanstalk:environment-name",
-                "Value": "297-beanstalk-environment-red"
+                "Value": "beanstalk-environment-green"
             },
             {
                 "Key": "Name",
-                "Value": "297-beanstalk-environment-red"
+                "Value": "beanstalk-environment-green"
             }
         ],
         "ResponseMetadata": {}

@@ -1,14 +1,20 @@
 {
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Effect": "Allow",
-            "Action": [
-                "elasticbeanstalk:DescribeEnvironments",
-                "elasticbeanstalk:ListTagsForResource",
-                "elasticbeanstalk:DescribeConfigurationSettings"
-            ],
-            "Resource": "*"
-        }
-    ]
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Sid": "VisualEditor0",
+			"Effect": "Allow",
+			"Action": [
+				"s3:GetObject",
+				"s3:ListAllMyBuckets",
+				"elasticbeanstalk:DescribeEnvironments",
+				"elasticbeanstalk:DescribeConfigurationSettings",
+				"s3:GetBucketLocation",
+				"elasticbeanstalk:ListTagsForResource",
+				"ec2:DescribeSubnets",
+				"ec2:DescribeImages"
+			],
+			"Resource": "*"
+		}
+	]
 }
