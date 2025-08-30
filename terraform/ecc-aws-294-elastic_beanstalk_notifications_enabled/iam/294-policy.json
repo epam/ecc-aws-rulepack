@@ -6,12 +6,16 @@
             "Effect": "Allow",
             "Action": [
                 "s3:GetObject",
+                "s3:ListAllMyBuckets",
                 "elasticbeanstalk:DescribeEnvironments",
-                "sns:GetTopicAttributes",
-                "sns:ListTopics",
-                "s3:ListBucket",
                 "elasticbeanstalk:DescribeConfigurationSettings",
-                "s3:GetBucketLocation"
+                "s3:GetBucketLocation",
+                "elasticbeanstalk:ListTagsForResource",
+                "ec2:DescribeSubnets",
+                "ec2:DescribeImages",
+                "sns:GetTopicAttributes",
+                "SNS:ListTopics",
+                "tag:GetResources"
             ],
             "Resource": "*"
         }

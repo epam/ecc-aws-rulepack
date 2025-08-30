@@ -111,7 +111,7 @@
                         "value": "Green1"
                     }
                 ],
-                "createdBy": "arn:aws:iam::644160558196:user/Anna_Shcherbak",
+                "createdBy": "arn:aws:iam::644160558196:user/Anna",
                 "enableECSManagedTags": false,
                 "propagateTags": "NONE",
                 "enableExecuteCommand": false

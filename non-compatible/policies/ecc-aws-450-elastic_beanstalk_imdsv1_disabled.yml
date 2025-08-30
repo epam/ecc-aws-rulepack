@@ -11,7 +11,12 @@ policies:
       Elastic Beanstalk IMDSv1 is enabled
     resource: aws.elasticbeanstalk-environment
     filters:
-      - type: elasticbeanstalk-configuration-settings-filter
-        key: DisableIMDSv1
-        op: eq
-        value: "false"
+    - type: value
+      key: Status
+      op: ne
+      value: Terminated
+    - type: configuration-settings
+      attrs:
+        - OptionName: DisableIMDSv1
+        - Value: "false"
+

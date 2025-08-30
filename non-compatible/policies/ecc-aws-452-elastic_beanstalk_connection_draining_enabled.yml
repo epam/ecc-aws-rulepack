@@ -11,7 +11,15 @@ policies:
       Elastic Beanstalk connection draining is disabled
     resource: aws.elasticbeanstalk-environment
     filters:
-      - type: elasticbeanstalk-configuration-settings-filter
-        key: ConnectionDrainingEnabled
-        op: eq
-        value: "false"
+    - type: value
+      key: Status
+      op: ne
+      value: Terminated
+    - type: configuration-settings
+      attrs:
+        - OptionName: LoadBalancerType
+        - Value: "classic"
+    - type: configuration-settings
+      attrs:
+        - OptionName: ConnectionDrainingEnabled
+        - Value: "false"
