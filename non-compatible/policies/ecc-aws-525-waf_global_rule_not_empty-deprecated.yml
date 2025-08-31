@@ -5,11 +5,17 @@
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 policies:
-  - name: ecc-aws-525-waf_global_rule_not_empty
+  - name: ecc-aws-525-waf_global_rule_not_empty-deprecated
     comment: '010002092001'
     description: |
       A WAF global rule does not have at least one condition
     resource: aws.waf-rule
+    conditions:
+     - type: value
+       key: now
+       op: less-than
+       value_type: date
+       value: "2025-09-30"
     filters:
       - type: waf-rule-value
         key: Predicates
