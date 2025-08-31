@@ -1,0 +1,48 @@
+{
+    "status_code": 200,
+    "data": {
+        "Environments": [
+            {
+                "EnvironmentName": "beanstalk-environment-red",
+                "EnvironmentId": "e-u2r3kz65d4",
+                "ApplicationName": "beanstalk-application-red",
+                "SolutionStackName": "64bit Amazon Linux 2023 v4.7.1 running Python 3.11",
+                "PlatformArn": "arn:aws:elasticbeanstalk:us-east-1::platform/Python 3.11 running on 64bit Amazon Linux 2023/4.7.1",
+                "EndpointURL": "awseb--AWSEB-yT2S0Md93rAs-740335460.us-east-1.elb.amazonaws.com",
+                "CNAME": "beanstalk-environment-red.eba-gntrcwmy.us-east-1.elasticbeanstalk.com",
+                "DateCreated": {
+                    "__class__": "datetime",
+                    "year": 2025,
+                    "month": 8,
+                    "day": 30,
+                    "hour": 17,
+                    "minute": 33,
+                    "second": 2,
+                    "microsecond": 17000
+                },
+                "DateUpdated": {
+                    "__class__": "datetime",
+                    "year": 2025,
+                    "month": 8,
+                    "day": 30,
+                    "hour": 19,
+                    "minute": 6,
+                    "second": 23,
+                    "microsecond": 55000
+                },
+                "Status": "Ready",
+                "AbortableOperationInProgress": false,
+                "Health": "Green",
+                "HealthStatus": "Ok",
+                "Tier": {
+                    "Name": "WebServer",
+                    "Type": "Standard",
+                    "Version": "1.0"
+                },
+                "EnvironmentLinks": [],
+                "EnvironmentArn": "arn:aws:elasticbeanstalk:us-east-1:644160558196:environment/beanstalk-application-red/beanstalk-environment-red"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

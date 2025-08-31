@@ -5,8 +5,8 @@
             {
                 "SolutionStackName": "64bit Amazon Linux 2023 v4.7.1 running Python 3.11",
                 "PlatformArn": "arn:aws:elasticbeanstalk:us-east-1::platform/Python 3.11 running on 64bit Amazon Linux 2023/4.7.1",
-                "ApplicationName": "beanstalk-application-green",
-                "EnvironmentName": "beanstalk-environment-green",
+                "ApplicationName": "beanstalk-application-red",
+                "EnvironmentName": "beanstalk-environment-red",
                 "DeploymentStatus": "deployed",
                 "DateCreated": {
                     "__class__": "datetime",
@@ -78,7 +78,7 @@
                     {
                         "Namespace": "aws:autoscaling:launchconfiguration",
                         "OptionName": "DisableIMDSv1",
-                        "Value": "true"
+                        "Value": "false"
                     },
                     {
                         "ResourceName": "AWSEBEC2LaunchTemplate",
@@ -89,7 +89,7 @@
                         "ResourceName": "AWSEBEC2LaunchTemplate",
                         "Namespace": "aws:autoscaling:launchconfiguration",
                         "OptionName": "IamInstanceProfile",
-                        "Value": "profile_green"
+                        "Value": "profile_red"
                     },
                     {
                         "ResourceName": "AWSEBEC2LaunchTemplate",
@@ -454,7 +454,7 @@
                     {
                         "Namespace": "aws:elasticbeanstalk:environment",
                         "OptionName": "ServiceRole",
-                        "Value": "service_role_green"
+                        "Value": "service_role_red"
                     },
                     {
                         "ResourceName": "AWSEBV2LoadBalancerTargetGroup",
@@ -569,7 +569,7 @@
                     {
                         "Namespace": "aws:elasticbeanstalk:managedactions",
                         "OptionName": "ServiceRoleForManagedUpdates",
-                        "Value": "service_role_green"
+                        "Value": "service_role_red"
                     },
                     {
                         "Namespace": "aws:elasticbeanstalk:managedactions:platformupdate",
@@ -652,7 +652,7 @@
                         "ResourceName": "AWSEBV2LoadBalancer",
                         "Namespace": "aws:elbv2:loadbalancer",
                         "OptionName": "AccessLogsS3Bucket",
-                        "Value": "bucket-8281-green"
+                        "Value": "bucket-8281-red"
                     },
                     {
                         "ResourceName": "AWSEBV2LoadBalancer",
