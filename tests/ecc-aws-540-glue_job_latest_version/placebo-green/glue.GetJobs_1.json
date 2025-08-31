@@ -39,7 +39,7 @@
                 "MaxCapacity": 10.0,
                 "WorkerType": "G.1X",
                 "NumberOfWorkers": 10,
-                "GlueVersion": "4.0"
+                "GlueVersion": "5.0"
             }
         ],
         "ResponseMetadata": {}

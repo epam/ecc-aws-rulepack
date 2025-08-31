@@ -12,6 +12,11 @@ policies:
       Amazon RDS instance not uses general purpose ssd
     resource: rds
     filters:
+    - or:
       - type: value
         key: StorageType
         value: io1
+      - type: value
+        key: StorageType
+        value: io2
+ 

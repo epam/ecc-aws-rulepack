@@ -19,7 +19,7 @@
             "WebserverUrl": "aa7030fe-8d4df4-vpce.c75.us-east-1.airflow.amazonaws.com",
             "ExecutionRoleArn": "arn:aws:iam::644160558196:role/508_role_green",
             "ServiceRoleArn": "arn:aws:iam::644160558196:role/aws-service-role/airflow.amazonaws.com/AWSServiceRoleForAmazonMWAA",
-            "AirflowVersion": "2.10.1",
+            "AirflowVersion": "2.10.3",
             "SourceBucketArn": "arn:aws:s3:::508-bucket-7691070-green",
             "DagS3Path": "dags/",
             "EnvironmentClass": "mw1.small",

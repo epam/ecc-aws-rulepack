@@ -1,7 +1,7 @@
 resource "aws_eks_cluster" "this" {
   name     = "040_eks_cluster_red"
   role_arn = aws_iam_role.this.arn
-  version  = "1.28"
+  version  = "1.31"
 
   vpc_config {
     subnet_ids = [aws_subnet.subnet1.id, aws_subnet.subnet2.id]

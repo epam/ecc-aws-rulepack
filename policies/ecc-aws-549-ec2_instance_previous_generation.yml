@@ -19,4 +19,4 @@ policies:
       - type: value
         key: InstanceType
         op: regex
-        value: '(m1|m2|m3|m4|t1|c1|c2|c3|c4|cc2|i2|cr1|r3|r4|hs1|g2|a1|d2).[^\s]+'
+        value: '(m1|m2|m3|m4|t1|c1|c2|c3|c4|cc2|c6gn|i2|cr1|r3|r4|r6i|hs1|g2|a1|d2).[^\s]+'

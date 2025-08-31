@@ -9,10 +9,10 @@
                 "ARN": "arn:aws:es:us-east-1:644160558196:domain/elasticsearch-283-red",
                 "Created": true,
                 "Deleted": false,
-                "Endpoint": "search-elasticsearch-283-red-nn7tkpnvpivxzn7yukfzhwq26m.us-east-1.es.amazonaws.com",
+                "Endpoint": "search-elasticsearch-283-red-hwq26m.us-east-1.es.amazonaws.com",
                 "Processing": false,
                 "UpgradeProcessing": false,
-                "ElasticsearchVersion": "7.4",
+                "ElasticsearchVersion": "OpenSearch_2.15",
                 "ElasticsearchClusterConfig": {
                     "InstanceType": "m4.large.elasticsearch",
                     "InstanceCount": 1,
@@ -46,7 +46,7 @@
                     "rest.action.multi.allow_explicit_index": "true"
                 },
                 "ServiceSoftwareOptions": {
-                    "CurrentVersion": "Elasticsearch_7_4_R20241003",
+                    "CurrentVersion": "OpenSearch_2_15_R20250630-P3",
                     "NewVersion": "",
                     "UpdateAvailable": false,
                     "Cancellable": false,
@@ -57,7 +57,7 @@
                         "year": 1970,
                         "month": 1,
                         "day": 1,
-                        "hour": 0,
+                        "hour": 2,
                         "minute": 0,
                         "second": 0,
                         "microsecond": 0
@@ -78,27 +78,27 @@
                     "State": "DISABLED"
                 },
                 "ChangeProgressDetails": {
-                    "ChangeId": "32b8249b-cd0a-41f2-b5a4-1c477bab158c",
+                    "ChangeId": "17b29920-3437-4f03-b695-9433b904aee9",
                     "ConfigChangeStatus": "Completed",
                     "StartTime": {
                         "__class__": "datetime",
-                        "year": 2024,
-                        "month": 11,
-                        "day": 11,
-                        "hour": 10,
-                        "minute": 34,
-                        "second": 58,
-                        "microsecond": 817000
+                        "year": 2025,
+                        "month": 8,
+                        "day": 31,
+                        "hour": 22,
+                        "minute": 4,
+                        "second": 20,
+                        "microsecond": 758000
                     },
                     "LastUpdatedTime": {
                         "__class__": "datetime",
-                        "year": 2024,
-                        "month": 11,
-                        "day": 11,
-                        "hour": 10,
-                        "minute": 55,
-                        "second": 52,
-                        "microsecond": 458000
+                        "year": 2025,
+                        "month": 8,
+                        "day": 31,
+                        "hour": 22,
+                        "minute": 14,
+                        "second": 48,
+                        "microsecond": 727000
                     },
                     "InitiatedBy": "CUSTOMER"
                 },

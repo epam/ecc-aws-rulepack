@@ -15,4 +15,4 @@ policies:
       - not:
           - type: value
             key: GlueVersion
-            value: '4.0'
+            value: '5.0'

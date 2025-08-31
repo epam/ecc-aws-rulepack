@@ -6,7 +6,7 @@
             {
                 "FunctionName": "461_lambda_green",
                 "FunctionArn": "arn:aws:lambda:us-east-1:111111111111:function:461_lambda_green",
-                "Runtime": "python3.12",
+                "Runtime": "python3.13",
                 "Role": "arn:aws:iam::111111111111:role/461_role_green",
                 "Handler": "func.py",
                 "CodeSize": 299,

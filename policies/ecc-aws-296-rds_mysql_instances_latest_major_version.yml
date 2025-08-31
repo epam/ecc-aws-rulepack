@@ -19,4 +19,4 @@ policies:
           - type: value
             key: EngineVersion
             op: regex
-            value: '8.0.*'
+            value: '8.4.*'
