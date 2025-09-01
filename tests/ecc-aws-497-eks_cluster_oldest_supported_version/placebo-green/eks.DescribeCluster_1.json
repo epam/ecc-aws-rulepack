@@ -15,7 +15,7 @@
                 "second": 28,
                 "microsecond": 144000
             },
-            "version": "1.28",
+            "version": "1.31",
             "endpoint": "https://FB018462E830092FF71292F940D1E94B.gr7.us-east-1.eks.amazonaws.com",
             "roleArn": "arn:aws:iam::111111111111:role/eks-497-cluster-green",
             "resourcesVpcConfig": {

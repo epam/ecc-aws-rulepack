@@ -11,5 +11,41 @@ policies:
       Elastic Beanstalk environments notifications disabled
     resource: aws.elasticbeanstalk-environment
     filters:
-      - not:
-          - type: describe-configuration-settings-filter
+    - type: value
+      key: Status
+      op: ne
+      value: Terminated
+    - or:
+      - type: configuration-settings
+        attrs:
+          - OptionName: Notification Endpoint
+          - Value: null
+      - and:
+        - or:
+          - type: configuration-settings
+            attrs:
+              - OptionName: Notification Protocol
+              - Value: email
+          - type: configuration-settings
+            attrs:
+              - OptionName: Notification Protocol
+              - Value: email-json
+        - type: configuration-settings
+          attrs:
+            - type: value
+              key:  OptionName
+              value: Notification Topic ARN
+            - type: value
+              key:  Value
+              value: not-null
+        - type: related
+          ids: "\"c7n:OptionSettings\"[?OptionName=='Notification Topic ARN'].Value[]"
+          annotation: "c7n:sns"
+          policy:
+            resource: aws.sns
+            filters:
+              - type: value
+                key: SubscriptionsConfirmed
+                op: eq
+                value: "0"
+

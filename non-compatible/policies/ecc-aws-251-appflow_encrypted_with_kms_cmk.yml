@@ -11,7 +11,7 @@ policies:
       Appflow is not encrypted with KMS CMK 
     resource: aws.app-flow
     filters:
-      - type: appflow-kms-key-filter
+      - type: kms-key
         key: KeyManager
         op: eq
         value: AWS

@@ -8,4 +8,5 @@ class PolicyTest(object):
 
         for option in options:
           if option["OptionName"]=="Notification Topic ARN":
-            base_test.assertNotIn('Value', option)
+            sns = local_session.client("sns").get_topic_attributes(TopicArn=option["Value"])
+            base_test.assertEqual(sns["Attributes"]["SubscriptionsConfirmed"], "0")

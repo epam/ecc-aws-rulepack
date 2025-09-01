@@ -7,25 +7,25 @@
             "arn": "arn:aws:eks:us-east-1:644160558196:cluster/040_eks_cluster_green",
             "createdAt": {
                 "__class__": "datetime",
-                "year": 2024,
-                "month": 11,
-                "day": 8,
-                "hour": 15,
-                "minute": 44,
-                "second": 27,
-                "microsecond": 853000
+                "year": 2025,
+                "month": 8,
+                "day": 31,
+                "hour": 21,
+                "minute": 40,
+                "second": 23,
+                "microsecond": 460000
             },
-            "version": "1.31",
-            "endpoint": "https://20370F362F18CA6C8AD640B86E70F675.sk1.us-east-1.eks.amazonaws.com",
+            "version": "1.33",
+            "endpoint": "https://578527582.gr7.us-east-1.eks.amazonaws.com",
             "roleArn": "arn:aws:iam::644160558196:role/eks-040-cluster-green",
             "resourcesVpcConfig": {
                 "subnetIds": [
-                    "subnet-0d0c23061da0dc26d",
-                    "subnet-0321ad0b92de8311e"
+                    "subnet-07be004658a20c935",
+                    "subnet-06d1f19405a55b00e"
                 ],
                 "securityGroupIds": [],
-                "clusterSecurityGroupId": "sg-026eab2361121a56e",
-                "vpcId": "vpc-0b4bc9243302538d4",
+                "clusterSecurityGroupId": "sg-0b4ff9232c1db0c53",
+                "vpcId": "vpc-0d5ba549949e0c911",
                 "endpointPublicAccess": true,
                 "endpointPrivateAccess": false,
                 "publicAccessCidrs": [
@@ -34,7 +34,10 @@
             },
             "kubernetesNetworkConfig": {
                 "serviceIpv4Cidr": "172.20.0.0/16",
-                "ipFamily": "ipv4"
+                "ipFamily": "ipv4",
+                "elasticLoadBalancing": {
+                    "enabled": false
+                }
             },
             "logging": {
                 "clusterLogging": [
@@ -52,23 +55,23 @@
             },
             "identity": {
                 "oidc": {
-                    "issuer": "https://oidc.eks.us-east-1.amazonaws.com/id/2037075"
+                    "issuer": "https://oidc.eks.us-east-1.amazonaws.com/id/84878"
                 }
             },
             "status": "ACTIVE",
             "certificateAuthority": {
-                "data": "LS0tLS1"
+                "data": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURCVENDQWUyZ0F3SUJBZ0lJQTZMbjFoeSthMDR3RFFZSktvWklodmNOQVFFTEJRQXdGVEVUTUJFR0ExVUSlArY0RZdmhPS1dvUjZjN1E4c24KOGJjTzVVOHJHK0xoCi0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K"
             },
-            "platformVersion": "eks.10",
+            "platformVersion": "eks.11",
             "tags": {
                 "CustodianRule": "ecc-aws-040-eks_cluster_version_latest",
                 "ComplianceStatus": "Green"
             },
-            "health": {
-                "issues": []
-            },
             "accessConfig": {
                 "authenticationMode": "CONFIG_MAP"
+            },
+            "upgradePolicy": {
+                "supportType": "EXTENDED"
             }
         }
     }

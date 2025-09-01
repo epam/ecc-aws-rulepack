@@ -1,15 +1,15 @@
 {
     "status_code": 200,
     "data": {
-        "ResourceArn": "arn:aws:elasticbeanstalk:us-east-1:644160558196:environment/294-beanstalk-application-green/294-beanstalk-environment-green",
+        "ResourceArn": "arn:aws:elasticbeanstalk:us-east-1:644160558196:environment/292-beanstalk-application-green/292-beanstalk-environment-green3",
         "ResourceTags": [
             {
-                "Key": "elasticbeanstalk:environment-id",
-                "Value": "e-3masrrzu62"
+                "Key": "CustodianRule",
+                "Value": "ecc-aws-292-elastic_beanstalk_access_logs_enabled"
             },
             {
-                "Key": "CustodianRule",
-                "Value": "epam-aws-294-elastic_beanstalk_notifications_enabled"
+                "Key": "elasticbeanstalk:environment-id",
+                "Value": "e-cmpqvnd6nc"
             },
             {
                 "Key": "ComplianceStatus",
@@ -17,11 +17,11 @@
             },
             {
                 "Key": "elasticbeanstalk:environment-name",
-                "Value": "294-beanstalk-environment-green"
+                "Value": "292-beanstalk-environment-green3"
             },
             {
                 "Key": "Name",
-                "Value": "294-beanstalk-environment-green"
+                "Value": "292-beanstalk-environment-green3"
             }
         ],
         "ResponseMetadata": {}

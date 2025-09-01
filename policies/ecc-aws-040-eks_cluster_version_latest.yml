@@ -14,9 +14,9 @@ policies:
     filters:
       - type: value
         key: version
-        value: "1.31"
+        value: "1.33"
         op: lt
       - type: value
         key: version
-        value: "1.28"
+        value: "1.31"
         op: gte

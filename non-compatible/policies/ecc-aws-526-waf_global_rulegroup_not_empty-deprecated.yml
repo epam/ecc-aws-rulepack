@@ -6,11 +6,17 @@
 
 
 policies:
-  - name: ecc-aws-526-waf_global_rulegroup_not_empty
+  - name: ecc-aws-526-waf_global_rulegroup_not_empty-deprecated
     comment: '010018092001'
     description: |
       A WAF global rule group does not have at least one rule
     resource: aws.waf-rule-groups
+    conditions:
+     - type: value
+       key: now
+       op: less-than
+       value_type: date
+       value: "2025-09-30"
     filters:
       - not:
           - type: active-rules-filter

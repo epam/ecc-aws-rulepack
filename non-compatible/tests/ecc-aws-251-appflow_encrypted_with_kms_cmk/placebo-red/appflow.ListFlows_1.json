@@ -30,8 +30,8 @@
                     "second": 21,
                     "microsecond": 792000
                 },
-                "createdBy": "arn:aws:iam::644160558196:user/Anna_Shcherbak",
-                "lastUpdatedBy": "arn:aws:iam::644160558196:user/Anna_Shcherbak",
+                "createdBy": "arn:aws:iam::644160558196:user/Anna",
+                "lastUpdatedBy": "arn:aws:iam::644160558196:user/Anna",
                 "tags": {}
             }
         ]

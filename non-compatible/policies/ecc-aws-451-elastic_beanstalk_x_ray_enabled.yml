@@ -11,7 +11,11 @@ policies:
       Elastic Beanstalk X-Ray is disabled
     resource: aws.elasticbeanstalk-environment
     filters:
-      - type: elasticbeanstalk-configuration-settings-filter
-        key: XRayEnabled
-        op: eq
-        value: "false"
+    - type: value
+      key: Status
+      op: ne
+      value: Terminated
+    - type: configuration-settings
+      attrs:
+        - OptionName: XRayEnabled
+        - Value: "false"

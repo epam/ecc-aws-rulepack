@@ -3,32 +3,32 @@
     "data": {
         "Environments": [
             {
-                "EnvironmentName": "294-beanstalk-environment-green",
-                "EnvironmentId": "e-3masrrzu62",
-                "ApplicationName": "294-beanstalk-application-green",
-                "SolutionStackName": "64bit Amazon Linux 2 v3.3.13 running Python 3.8",
-                "PlatformArn": "arn:aws:elasticbeanstalk:us-east-1::platform/Python 3.8 running on 64bit Amazon Linux 2/3.3.13",
-                "EndpointURL": "awseb-e-3-AWSEBLoa-WPDVBXVJ6D9L-1694534420.us-east-1.elb.amazonaws.com",
-                "CNAME": "294-beanstalk-environment-green.eba-tutddfgr.us-east-1.elasticbeanstalk.com",
+                "EnvironmentName": "292-beanstalk-environment-green3",
+                "EnvironmentId": "e-cmpqvnd6nc",
+                "ApplicationName": "292-beanstalk-application-green",
+                "SolutionStackName": "64bit Amazon Linux 2023 v4.7.1 running Python 3.11",
+                "PlatformArn": "arn:aws:elasticbeanstalk:us-east-1::platform/Python 3.11 running on 64bit Amazon Linux 2023/4.7.1",
+                "EndpointURL": "awseb--AWSEB-LZlB5vPO7ABF-1706426835.us-east-1.elb.amazonaws.com",
+                "CNAME": "292-beanstalk-environment-green3.eba-gkzwwtg8.us-east-1.elasticbeanstalk.com",
                 "DateCreated": {
                     "__class__": "datetime",
-                    "year": 2022,
-                    "month": 6,
-                    "day": 6,
-                    "hour": 8,
-                    "minute": 28,
-                    "second": 31,
-                    "microsecond": 838000
+                    "year": 2025,
+                    "month": 8,
+                    "day": 30,
+                    "hour": 20,
+                    "minute": 16,
+                    "second": 52,
+                    "microsecond": 372000
                 },
                 "DateUpdated": {
                     "__class__": "datetime",
-                    "year": 2022,
-                    "month": 6,
-                    "day": 6,
-                    "hour": 8,
-                    "minute": 31,
-                    "second": 5,
-                    "microsecond": 589000
+                    "year": 2025,
+                    "month": 8,
+                    "day": 30,
+                    "hour": 20,
+                    "minute": 26,
+                    "second": 36,
+                    "microsecond": 684000
                 },
                 "Status": "Ready",
                 "AbortableOperationInProgress": false,
@@ -40,7 +40,87 @@
                     "Version": "1.0"
                 },
                 "EnvironmentLinks": [],
-                "EnvironmentArn": "arn:aws:elasticbeanstalk:us-east-1:644160558196:environment/294-beanstalk-application-green/294-beanstalk-environment-green"
+                "EnvironmentArn": "arn:aws:elasticbeanstalk:us-east-1:644160558196:environment/292-beanstalk-application-green/292-beanstalk-environment-green3"
+            },
+            {
+                "EnvironmentName": "292-beanstalk-environment-green2",
+                "EnvironmentId": "e-cgybu7e3ii",
+                "ApplicationName": "292-beanstalk-application-green",
+                "SolutionStackName": "64bit Amazon Linux 2023 v4.7.1 running Python 3.11",
+                "PlatformArn": "arn:aws:elasticbeanstalk:us-east-1::platform/Python 3.11 running on 64bit Amazon Linux 2023/4.7.1",
+                "EndpointURL": "awseb--AWSEB-D0EfQUj6S5y5-1915666402.us-east-1.elb.amazonaws.com",
+                "CNAME": "292-beanstalk-environment-green2.eba-gkzwwtg8.us-east-1.elasticbeanstalk.com",
+                "DateCreated": {
+                    "__class__": "datetime",
+                    "year": 2025,
+                    "month": 8,
+                    "day": 30,
+                    "hour": 20,
+                    "minute": 10,
+                    "second": 23,
+                    "microsecond": 684000
+                },
+                "DateUpdated": {
+                    "__class__": "datetime",
+                    "year": 2025,
+                    "month": 8,
+                    "day": 30,
+                    "hour": 21,
+                    "minute": 48,
+                    "second": 13,
+                    "microsecond": 832000
+                },
+                "Status": "Updating",
+                "AbortableOperationInProgress": true,
+                "Health": "Green",
+                "HealthStatus": "Ok",
+                "Tier": {
+                    "Name": "WebServer",
+                    "Type": "Standard",
+                    "Version": "1.0"
+                },
+                "EnvironmentLinks": [],
+                "EnvironmentArn": "arn:aws:elasticbeanstalk:us-east-1:644160558196:environment/292-beanstalk-application-green/292-beanstalk-environment-green2"
+            },
+            {
+                "EnvironmentName": "292-beanstalk-environment-green",
+                "EnvironmentId": "e-w9q3wng5sv",
+                "ApplicationName": "292-beanstalk-application-green",
+                "SolutionStackName": "64bit Amazon Linux 2023 v4.7.1 running Python 3.11",
+                "PlatformArn": "arn:aws:elasticbeanstalk:us-east-1::platform/Python 3.11 running on 64bit Amazon Linux 2023/4.7.1",
+                "EndpointURL": "awseb--AWSEB-087KRNPmV5eh-1883114043.us-east-1.elb.amazonaws.com",
+                "CNAME": "292-beanstalk-environment-green.eba-gkzwwtg8.us-east-1.elasticbeanstalk.com",
+                "DateCreated": {
+                    "__class__": "datetime",
+                    "year": 2025,
+                    "month": 8,
+                    "day": 30,
+                    "hour": 20,
+                    "minute": 4,
+                    "second": 28,
+                    "microsecond": 673000
+                },
+                "DateUpdated": {
+                    "__class__": "datetime",
+                    "year": 2025,
+                    "month": 8,
+                    "day": 30,
+                    "hour": 20,
+                    "minute": 26,
+                    "second": 36,
+                    "microsecond": 537000
+                },
+                "Status": "Ready",
+                "AbortableOperationInProgress": false,
+                "Health": "Green",
+                "HealthStatus": "Ok",
+                "Tier": {
+                    "Name": "WebServer",
+                    "Type": "Standard",
+                    "Version": "1.0"
+                },
+                "EnvironmentLinks": [],
+                "EnvironmentArn": "arn:aws:elasticbeanstalk:us-east-1:644160558196:environment/292-beanstalk-application-green/292-beanstalk-environment-green"
             }
         ],
         "ResponseMetadata": {}

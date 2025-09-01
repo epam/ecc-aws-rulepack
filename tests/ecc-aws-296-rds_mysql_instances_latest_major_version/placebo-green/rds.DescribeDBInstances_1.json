@@ -36,7 +36,7 @@
                 ],
                 "DBParameterGroups": [
                     {
-                        "DBParameterGroupName": "default.mysql8.0",
+                        "DBParameterGroupName": "default.mysql8.4",
                         "ParameterApplyStatus": "in-sync"
                     }
                 ],
@@ -100,7 +100,7 @@
                 "PreferredMaintenanceWindow": "fri:08:50-fri:09:20",
                 "PendingModifiedValues": {},
                 "MultiAZ": false,
-                "EngineVersion": "8.0.27",
+                "EngineVersion": "8.4.6",
                 "AutoMinorVersionUpgrade": true,
                 "ReadReplicaDBInstanceIdentifiers": [],
                 "LicenseModel": "general-public-license",

@@ -11,7 +11,15 @@ policies:
       Elastic Beanstalk managed platform updates is disabled
     resource: aws.elasticbeanstalk-environment
     filters:
-      - type: elasticbeanstalk-configuration-settings-filter
-        key: ManagedActionsEnabled
-        op: eq
-        value: "false"
+    - type: value
+      key: Status
+      op: ne
+      value: Terminated
+    - type: configuration-settings
+      attrs:
+        - type: value
+          key:  OptionName
+          value: ManagedActionsEnabled
+        - type: value
+          key:  Value
+          value: "false"

@@ -5,7 +5,6 @@ resource "aws_instance" "this" {
   vpc_security_group_ids = ["${aws_security_group.this.id}"]
   subnet_id              = aws_subnet.private.id
   iam_instance_profile   = aws_iam_instance_profile.this.name
-  key_name               = "anna_shcherbak_key"
   tags = {
     Name = "573_instance_green"
   }

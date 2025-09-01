@@ -1,6 +1,5 @@
 resource "aws_iam_role" "this" {
   name = "086_role_red2"
-  permissions_boundary = "arn:aws:iam::703671910212:policy/eo_role_boundary"
 
   assume_role_policy = <<EOF
 {
