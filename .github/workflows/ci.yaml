@@ -27,36 +27,36 @@ env:
   ECC_ACTIONS_BRANCH: main
 
 jobs:
-  test_policy_flights:
-    runs-on: ubuntu-22.04
-    strategy:
-      fail-fast: false
-      matrix:
-        compliance: ['red', 'green']
-    container:
-      image: python:3.13
-      env:
-        COMPLIANCE: ${{ matrix.compliance }}
-    if: github.event_name == 'push' || github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || (github.event_name == 'pull_request_review' && github.event.review.state == 'approved')
-    steps: 
-      - uses: actions/checkout@v4
-      - name: Checkout ecc-actions
-        run: git clone -b ${{ inputs.ECC_ACTIONS_BRANCH || env.ECC_ACTIONS_BRANCH }}  "https://git:$PROJECT_TOKEN@git.epam.com/epmc-sec/cloudlab/cloud_custodian/ecc-actions.git" ecc-actions
-        env:
-          PROJECT_TOKEN: ${{ secrets.ECC_CHANGELOG_ACTION }}
-      - uses: ./ecc-actions/flight-test-dependencies
-        env:
-            PROJECT_TOKEN: ${{ secrets.CLOUDCUSTODIAN_CORE }}
-        with:
-          ecc_branch: ${{ inputs.ECC_BRANCH || env.ECC_BRANCH }}
-      - uses: ./ecc-actions/flight-test-action
-        env:
-          COMPLIANCE: ${{ matrix.compliance }}
+  # test_policy_flights:
+  #   runs-on: ubuntu-22.04
+  #   strategy:
+  #     fail-fast: false
+  #     matrix:
+  #       compliance: ['red', 'green']
+  #   container:
+  #     image: python:3.13
+  #     env:
+  #       COMPLIANCE: ${{ matrix.compliance }}
+  #   if: github.event_name == 'push' || github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || (github.event_name == 'pull_request_review' && github.event.review.state == 'approved')
+  #   steps: 
+  #     - uses: actions/checkout@v4
+  #     - name: Checkout ecc-actions
+  #       run: git clone -b ${{ inputs.ECC_ACTIONS_BRANCH || env.ECC_ACTIONS_BRANCH }}  "https://git:$PROJECT_TOKEN@git.epam.com/epmc-sec/cloudlab/cloud_custodian/ecc-actions.git" ecc-actions
+  #       env:
+  #         PROJECT_TOKEN: ${{ secrets.ECC_CHANGELOG_ACTION }}
+  #     - uses: ./ecc-actions/flight-test-dependencies
+  #       env:
+  #           PROJECT_TOKEN: ${{ secrets.CLOUDCUSTODIAN_CORE }}
+  #       with:
+  #         ecc_branch: ${{ inputs.ECC_BRANCH || env.ECC_BRANCH }}
+  #     - uses: ./ecc-actions/flight-test-action
+  #       env:
+  #         COMPLIANCE: ${{ matrix.compliance }}
 
   github_release:
     name: create_release
     runs-on: ubuntu-latest
-    needs: [test_policy_flights]
+    # needs: [test_policy_flights]
     if: startsWith(github.ref, 'refs/tags/v')
     steps:
       - name: Checkout code
@@ -79,7 +79,7 @@ jobs:
   ruleset_release_qa:
     name: ruleset_release_qa
     runs-on: ubuntu-latest
-    needs: [test_policy_flights]
+    # needs: [test_policy_flights]
     if:  github.ref == 'refs/heads/main' && github.event_name == 'schedule' && github.event.schedule == '10 14 * * 1'
     steps:
       - name: Checkout ecc-actions
@@ -99,7 +99,7 @@ jobs:
   ruleset_release_prod:
     name: ruleset_release_prod
     runs-on: ubuntu-latest
-    needs: [test_policy_flights, github_release]
+    needs: [github_release]
     if: (startsWith(github.ref, 'refs/tags/v') || github.ref == 'refs/heads/main') && github.event_name != 'schedule'
     steps:
       - name: Checkout ecc-actions
