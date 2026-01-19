@@ -39,7 +39,7 @@
                     "VpcId": "vpc-030face658bb50491",
                     "SubnetIds": [
                         "subnet-020d471c7b922750d",
-                        "subnet-052ab7cc520dfd194"
+                        "subnet-08a86de1105c133ed"
                     ],
                     "SecurityGroupId": "sg-0c98c6540056aace5",
                     "AvailabilityZones": [

@@ -11,7 +11,8 @@
                 "PolicyDocument": "{\n  \"Statement\": [\n    {\n      \"Action\": \"*\", \n      \"Effect\": \"Allow\", \n      \"Principal\": \"*\", \n      \"Resource\": \"*\"\n    }\n  ]\n}",
                 "RouteTableIds": [],
                 "SubnetIds": [
-                    "subnet-08a86de1105c133ed"
+                    "subnet-08a86de1105c133ed",
+                    "subnet-020d471c7b922750d"
                 ],
                 "Groups": [
                     {
