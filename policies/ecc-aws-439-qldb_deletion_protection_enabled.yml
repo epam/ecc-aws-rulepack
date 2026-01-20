@@ -11,6 +11,12 @@ policies:
     description: |
       QLDB termination protection not enabled
     resource: qldb
+    conditions:
+      - type: value
+        key: now
+        op: less-than
+        value_type: date
+        value: "2026-01-01"
     filters:
       - type: value
         key: DeletionProtection

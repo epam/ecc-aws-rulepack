@@ -1,0 +1,122 @@
+{
+    "status_code": 200,
+    "data": {
+        "DomainName": "custodian-rule.click",
+        "Nameservers": [
+            {
+                "Name": "ns-59.awsdns-07.com",
+                "GlueIps": []
+            },
+            {
+                "Name": "ns-814.awsdns-37.net",
+                "GlueIps": []
+            },
+            {
+                "Name": "ns-1574.awsdns-04.co.uk",
+                "GlueIps": []
+            },
+            {
+                "Name": "ns-1256.awsdns-29.org",
+                "GlueIps": []
+            }
+        ],
+        "AutoRenew": false,
+        "AdminContact": {
+            "FirstName": "Enter_Name",
+            "LastName": "Enter_LastName",
+            "ContactType": "PERSON",
+            "AddressLine1": "30 Predslavynska",
+            "AddressLine2": "",
+            "City": "Kyiv",
+            "CountryCode": "UA",
+            "ZipCode": "123456",
+            "PhoneNumber": "+380.123456789",
+            "Email": "example@gmail.com",
+            "ExtraParams": []
+        },
+        "RegistrantContact": {
+            "FirstName": "Enter_Name",
+            "LastName": "Enter_LastName",
+            "ContactType": "PERSON",
+            "AddressLine1": "30 Predslavynska",
+            "AddressLine2": "",
+            "City": "Kyiv",
+            "CountryCode": "UA",
+            "ZipCode": "123456",
+            "PhoneNumber": "+380.123456789",
+            "Email": "example@gmail.com",
+            "ExtraParams": []
+        },
+        "TechContact": {
+            "FirstName": "Enter_Name",
+            "LastName": "Enter_LastName",
+            "ContactType": "PERSON",
+            "AddressLine1": "30 Predslavynska",
+            "AddressLine2": "",
+            "City": "Kyiv",
+            "CountryCode": "UA",
+            "ZipCode": "123456",
+            "PhoneNumber": "+380.123456789",
+            "Email": "example@gmail.com",
+            "ExtraParams": []
+        },
+        "AdminPrivacy": true,
+        "RegistrantPrivacy": true,
+        "TechPrivacy": true,
+        "RegistrarName": "Amazon Registrar, Inc.",
+        "WhoIsServer": "whois.registrar.amazon",
+        "RegistrarUrl": "http://registrar.amazon.com",
+        "AbuseContactEmail": "trustandsafety@support.aws.com",
+        "AbuseContactPhone":"example@gmail.com",
+        "CreationDate": {
+            "__class__": "datetime",
+            "year": 2025,
+            "month": 10,
+            "day": 27,
+            "hour": 14,
+            "minute": 55,
+            "second": 6,
+            "microsecond": 0
+        },
+        "UpdatedDate": {
+            "__class__": "datetime",
+            "year": 2025,
+            "month": 10,
+            "day": 27,
+            "hour": 15,
+            "minute": 6,
+            "second": 24,
+            "microsecond": 140000
+        },
+        "ExpirationDate": {
+            "__class__": "datetime",
+            "year": 2026,
+            "month": 10,
+            "day": 27,
+            "hour": 14,
+            "minute": 55,
+            "second": 6,
+            "microsecond": 0
+        },
+        "StatusList": [
+            "addPeriod",
+            "ok"
+        ],
+        "DnssecKeys": [],
+        "BillingContact": {
+            "FirstName": "Enter_Name",
+            "LastName": "Enter_LastName",
+            "ContactType": "PERSON",
+            "AddressLine1": "30 Predslavynska",
+            "AddressLine2": "Apt 201",
+            "City": "Kyiv",
+            "CountryCode": "UA",
+            "ZipCode": "02000",
+            "PhoneNumber": "+380.123456789",
+            "Email": "example@gmail.com",
+            "ExtraParams": []
+        },
+        "BillingPrivacy": true,
+        "ResponseMetadata": {}
+    }
+}
