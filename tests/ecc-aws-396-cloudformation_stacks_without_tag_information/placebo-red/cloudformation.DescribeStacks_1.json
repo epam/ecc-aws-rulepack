@@ -29,6 +29,29 @@
                 "DriftInformation": {
                     "StackDriftStatus": "NOT_CHECKED"
                 }
+            },
+            {
+                "StackId": "arn:aws:cloudformation:us-east-1:111111111111:stack/stack-396-red2/22222222-7c6d-11ed-b49d-0efc57186963",
+                "StackName": "stack-396-red2",
+                "Parameters": [],
+                "CreationTime": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 12,
+                    "day": 15,
+                    "hour": 11,
+                    "minute": 42,
+                    "second": 14,
+                    "microsecond": 75000
+                },
+                "RollbackConfiguration": {},
+                "StackStatus": "CREATE_COMPLETE",
+                "DisableRollback": false,
+                "NotificationARNs": [],
+                "Tags": [],
+                "DriftInformation": {
+                    "StackDriftStatus": "NOT_CHECKED"
+                }
             }
         ],
         "ResponseMetadata": {}

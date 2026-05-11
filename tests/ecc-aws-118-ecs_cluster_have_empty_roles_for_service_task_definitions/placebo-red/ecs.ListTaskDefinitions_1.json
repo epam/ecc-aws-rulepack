@@ -2,7 +2,8 @@
     "status_code": 200,
     "data": {
         "taskDefinitionArns": [
-            "arn:aws:ecs:us-east-1:644160558196:task-definition/118_task_red:4"
+            "arn:aws:ecs:us-east-1:644160558196:task-definition/118_task_red:4",
+            "arn:aws:ecs:us-east-1:644160558196:task-definition/118_task_red2:1"
         ],
         "ResponseMetadata": {}
     }

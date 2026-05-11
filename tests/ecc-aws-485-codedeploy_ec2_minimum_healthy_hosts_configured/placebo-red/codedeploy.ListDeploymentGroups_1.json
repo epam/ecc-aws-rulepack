@@ -3,7 +3,8 @@
     "data": {
         "applicationName": "485_codedeploy-app_red",
         "deploymentGroups": [
-            "485_codedeploy_deployment_group_red"
+            "485_codedeploy_deployment_group_red",
+            "485_codedeploy_deployment_group_red2"
         ],
         "ResponseMetadata": {}
     }

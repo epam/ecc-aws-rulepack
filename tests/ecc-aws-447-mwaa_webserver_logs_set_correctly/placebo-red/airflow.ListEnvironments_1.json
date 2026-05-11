@@ -3,7 +3,8 @@
     "data": {
         "ResponseMetadata": {},
         "Environments": [
-            "mwaa_447_red"
+            "mwaa_447_red",
+            "mwaa_447_red2"
         ]
     }
 }

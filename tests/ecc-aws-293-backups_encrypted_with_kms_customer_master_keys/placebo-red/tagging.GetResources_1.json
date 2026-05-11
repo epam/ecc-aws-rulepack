@@ -15,6 +15,19 @@
                         "Value": "ecc-aws-293-backups_encrypted_with_kms_customer_master_keys"
                     }
                 ]
+            },
+            {
+                "ResourceARN": "arn:aws:backup:us-east-1:111111111111:backup-vault:293_backup_vault_red2",
+                "Tags": [
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Red"
+                    },
+                    {
+                        "Key": "CsutodianRule",
+                        "Value": "ecc-aws-293-backups_encrypted_with_kms_customer_master_keys"
+                    }
+                ]
             }
         ],
         "ResponseMetadata": {}

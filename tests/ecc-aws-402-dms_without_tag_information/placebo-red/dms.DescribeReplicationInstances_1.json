@@ -89,6 +89,32 @@
                     "172.31.95.51"
                 ],
                 "PubliclyAccessible": false
+            },
+            {
+                "ReplicationInstanceIdentifier": "dms-replication-instance-402-red2",
+                "ReplicationInstanceClass": "dms.t2.micro",
+                "ReplicationInstanceStatus": "available",
+                "AllocatedStorage": 5,
+                "InstanceCreateTime": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 8,
+                    "day": 29,
+                    "hour": 12,
+                    "minute": 55,
+                    "second": 44,
+                    "microsecond": 335000
+                },
+                "VpcSecurityGroups": [],
+                "AvailabilityZone": "us-east-1c",
+                "PreferredMaintenanceWindow": "sun:09:42-sun:10:12",
+                "PendingModifiedValues": {},
+                "MultiAZ": false,
+                "EngineVersion": "3.4.6",
+                "AutoMinorVersionUpgrade": false,
+                "KmsKeyId": "arn:aws:kms:us-east-1:111111111111:key/e56f2d19-2ba5-4c25-829a-44ad8f133131",
+                "ReplicationInstanceArn": "arn:aws:dms:us-east-1:111111111111:rep:22222222222222222222222222222222222222",
+                "PubliclyAccessible": false
             }
         ],
         "ResponseMetadata": {}

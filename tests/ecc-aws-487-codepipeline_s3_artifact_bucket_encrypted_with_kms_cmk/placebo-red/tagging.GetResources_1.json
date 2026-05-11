@@ -15,6 +15,19 @@
                         "Value": "Red"
                     }
                 ]
+            },
+            {
+                "ResourceARN": "arn:aws:codepipeline:us-east-1:111111111111:487-codepipeline-red2",
+                "Tags": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-487-codepipeline_s3_artifact_bucket_encrypted_with_kms_cmk"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Red"
+                    }
+                ]
             }
         ],
         "ResponseMetadata": {}

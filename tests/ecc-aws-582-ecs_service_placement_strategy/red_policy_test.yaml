@@ -1,0 +1,25 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: PolicyTest
+
+  - name: PolicyTest_SpecificService
+    filters:
+      - type: value
+        key: serviceArn
+        op: in
+        value:
+          - arn:aws:ecs:us-east-1:644160558196:service/582_ecs_cluster_red/582_ecs_service_red
+
+  - name: PolicyTest_NoFoundServices
+    filters:
+      - type: value
+        key: serviceArn
+        op: in
+        value:
+          - arn:aws:ecs:us-east-1:644160558196:service/582_ecs_cluster_red/not_found
