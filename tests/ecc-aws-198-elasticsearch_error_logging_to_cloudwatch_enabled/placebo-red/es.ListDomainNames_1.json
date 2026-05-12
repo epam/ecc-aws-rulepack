@@ -5,6 +5,9 @@
         "DomainNames": [
             {
                 "DomainName": "domain-198-red"
+            },
+            {
+                "DomainName": "domain-198-red-b"
             }
         ]
     }

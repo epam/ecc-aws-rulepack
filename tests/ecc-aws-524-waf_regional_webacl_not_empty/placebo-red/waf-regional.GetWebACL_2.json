@@ -1,0 +1,16 @@
+{
+    "status_code": 200,
+    "data": {
+        "WebACL": {
+            "WebACLId": "d53ed095-1a78-4a0e-9333-c3bdc5054737",
+            "Name": "524_webacl_red_b",
+            "MetricName": "524WebaclMetricRedB",
+            "DefaultAction": {
+                "Type": "ALLOW"
+            },
+            "Rules": [],
+            "WebACLArn": "arn:aws:waf-regional:us-east-1:111111111111:webacl/d53ed095-1a78-4a0e-9333-c3bdc5054737"
+        },
+        "ResponseMetadata": {}
+    }
+}

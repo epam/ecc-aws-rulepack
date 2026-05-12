@@ -6,6 +6,10 @@
             {
                 "ResourceARN": "arn:aws:cloudfront::666666666666:distribution/EEEEEEEEEEEEEEE",
                 "Tags": []
+            },
+            {
+                "ResourceARN": "arn:aws:cloudfront::666666666666:distribution/GGGGGGGGGGGGGGG",
+                "Tags": []
             }
         ],
         "ResponseMetadata": {}

@@ -4,13 +4,13 @@
         "ResponseMetadata": {},
         "AuthenticationStrategy": "simple",
         "AutoMinorVersionUpgrade": false,
-        "BrokerArn": "arn:aws:mq:us-east-1:644160558196:broker:mq-broker-rabbit-434-red:bbb15-ab9ff7bdd1ec",
-        "BrokerId": "bbb15-ab9ff7bdd1ec",
+        "BrokerArn": "arn:aws:mq:us-east-1:644160558196:broker:mq-broker-rabbit-434-red:b-ef5d7457-a11c-43a9-bb15-ab9ff7bdd1ec",
+        "BrokerId": "b-ef5d7457-a11c-43a9-bb15-ab9ff7bdd1ec",
         "BrokerInstances": [
             {
-                "ConsoleURL": "https://bbb15-ab9ff7bdd1ec.mq.us-east-1.amazonaws.com",
+                "ConsoleURL": "https://b-ef5d7457-a11c-43a9-bb15-ab9ff7bdd1ec.mq.us-east-1.amazonaws.com",
                 "Endpoints": [
-                    "amqps://bbb15-ab9ff7bdd1ec.mq.us-east-1.amazonaws.com:5671"
+                    "amqps://b-ef5d7457-a11c-43a9-bb15-ab9ff7bdd1ec.mq.us-east-1.amazonaws.com:5671"
                 ]
             }
         ],
@@ -42,7 +42,7 @@
         "HostInstanceType": "mq.t3.micro",
         "Logs": {
             "General": false,
-            "GeneralLogGroup": "/aws/amazonmq/broker/bbb15-ab9ff7bdd1ec/general"
+            "GeneralLogGroup": "/aws/amazonmq/broker/b-ef5d7457-a11c-43a9-bb15-ab9ff7bdd1ec/general"
         },
         "MaintenanceWindowStartTime": {
             "DayOfWeek": "THURSDAY",

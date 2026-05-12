@@ -38,6 +38,43 @@
                 "Timeout": 2880,
                 "MaxCapacity": 10.0,
                 "GlueVersion": "0.9"
+            },
+            {
+                "Name": "457_glue_job_red_b",
+                "Role": "arn:aws:iam::111111111111:role/457_role_red_b",
+                "CreatedOn": {
+                    "__class__": "datetime",
+                    "year": 2023,
+                    "month": 1,
+                    "day": 24,
+                    "hour": 13,
+                    "minute": 5,
+                    "second": 0,
+                    "microsecond": 0
+                },
+                "LastModifiedOn": {
+                    "__class__": "datetime",
+                    "year": 2023,
+                    "month": 1,
+                    "day": 24,
+                    "hour": 13,
+                    "minute": 5,
+                    "second": 0,
+                    "microsecond": 0
+                },
+                "ExecutionProperty": {
+                    "MaxConcurrentRuns": 1
+                },
+                "Command": {
+                    "Name": "glueetl",
+                    "ScriptLocation": "s3://bucket-457-red-b/script",
+                    "PythonVersion": "2"
+                },
+                "MaxRetries": 0,
+                "AllocatedCapacity": 10,
+                "Timeout": 2880,
+                "MaxCapacity": 10.0,
+                "GlueVersion": "0.9"
             }
         ],
         "ResponseMetadata": {}

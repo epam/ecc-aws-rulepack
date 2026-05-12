@@ -1,0 +1,25 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: PolicyTest
+
+  - name: PolicyTest_SpecificDomain
+    filters:
+      - type: value
+        key: ARN
+        op: in
+        value:
+          - arn:aws:es:us-east-1:111111111111:domain/domain-154-red2
+
+  - name: PolicyTest_NoFoundDomains
+    filters:
+      - type: value
+        key: ARN
+        op: in
+        value:
+          - arn:aws:es:us-east-1:111111111111:domain/domain-154-red2-zzzz-notfound

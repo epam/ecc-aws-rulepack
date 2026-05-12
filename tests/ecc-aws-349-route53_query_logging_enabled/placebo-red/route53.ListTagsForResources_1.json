@@ -16,6 +16,20 @@
                         "Value": "Red"
                     }
                 ]
+            },
+            {
+                "ResourceType": "hostedzone",
+                "ResourceId": "Z349SECONDZONE0001",
+                "Tags": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-349-route53_query_logging_enabled"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Red"
+                    }
+                ]
             }
         ]
     }
