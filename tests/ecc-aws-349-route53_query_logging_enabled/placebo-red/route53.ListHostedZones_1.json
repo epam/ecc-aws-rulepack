@@ -4,9 +4,19 @@
         "ResponseMetadata": {},
         "HostedZones": [
             {
-                "Id": "/hostedzone/ASASASASASASAS",
+                "Id": "/hostedzone/Z02315613BNTIIDGXHMO5",
                 "Name": "349route53red.com.",
                 "CallerReference": "terraform-20220623070540121800000001",
+                "Config": {
+                    "Comment": "Managed by Terraform",
+                    "PrivateZone": false
+                },
+                "ResourceRecordSetCount": 2
+            },
+            {
+                "Id": "/hostedzone/Z349SECONDZONE0001",
+                "Name": "349route53red-b.com.",
+                "CallerReference": "terraform-20220623070540121800000002",
                 "Config": {
                     "Comment": "Managed by Terraform",
                     "PrivateZone": false

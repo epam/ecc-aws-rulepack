@@ -122,6 +122,60 @@
                 "createdBy": "arn:aws:iam::this:user/test",
                 "enableECSManagedTags": false,
                 "propagateTags": "NONE"
+            },
+            {
+                "serviceArn": "arn:aws:ecs:us-east-1:this:service/165_ecs_cluster_red/165_ecs_service_red2",
+                "serviceName": "165_ecs_service_red2",
+                "clusterArn": "arn:aws:ecs:us-east-1:this:cluster/165_ecs_cluster_red",
+                "loadBalancers": [],
+                "serviceRegistries": [],
+                "status": "ACTIVE",
+                "desiredCount": 1,
+                "runningCount": 0,
+                "pendingCount": 1,
+                "launchType": "FARGATE",
+                "platformVersion": "LATEST",
+                "taskDefinition": "arn:aws:ecs:us-east-1:this:task-definition/service:15",
+                "deployments": [
+                    {
+                        "id": "ecs-svc/2222222222222222222",
+                        "status": "PRIMARY",
+                        "taskDefinition": "arn:aws:ecs:us-east-1:this:task-definition/service:15",
+                        "desiredCount": 1,
+                        "pendingCount": 1,
+                        "runningCount": 0,
+                        "launchType": "FARGATE",
+                        "platformVersion": "1.4.0",
+                        "networkConfiguration": {
+                            "awsvpcConfiguration": {
+                                "subnets": [
+                                    "subnet-09e415e5229b84c95"
+                                ],
+                                "securityGroups": [
+                                    "sg-08abdfd433e56e5ee"
+                                ],
+                                "assignPublicIp": "ENABLED"
+                            }
+                        }
+                    }
+                ],
+                "events": [],
+                "placementConstraints": [],
+                "placementStrategy": [],
+                "networkConfiguration": {
+                    "awsvpcConfiguration": {
+                        "subnets": [
+                            "subnet-09e415e5229b84c95"
+                        ],
+                        "securityGroups": [
+                            "sg-08abdfd433e56e5ee"
+                        ],
+                        "assignPublicIp": "ENABLED"
+                    }
+                },
+                "schedulingStrategy": "REPLICA",
+                "enableECSManagedTags": false,
+                "propagateTags": "NONE"
             }
         ],
         "failures": [],

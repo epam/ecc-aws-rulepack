@@ -24,6 +24,20 @@
                 "settings": [],
                 "capacityProviders": [],
                 "defaultCapacityProviderStrategy": []
+            },
+            {
+                "clusterArn": "arn:aws:ecs:us-east-1:111111111111:cluster/464_ecs_cluster_red2",
+                "clusterName": "464_ecs_cluster_red2",
+                "status": "ACTIVE",
+                "registeredContainerInstancesCount": 0,
+                "runningTasksCount": 0,
+                "pendingTasksCount": 0,
+                "activeServicesCount": 0,
+                "statistics": [],
+                "tags": [],
+                "settings": [],
+                "capacityProviders": [],
+                "defaultCapacityProviderStrategy": []
             }
         ],
         "failures": [],

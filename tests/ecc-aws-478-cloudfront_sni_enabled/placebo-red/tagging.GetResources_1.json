@@ -15,6 +15,19 @@
                         "Value": "Red"
                     }
                 ]
+            },
+            {
+                "ResourceARN": "arn:aws:cloudfront::111111111111:distribution/ENM51XE4M777S",
+                "Tags": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-478-cloudfront_sni_enabled"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Red"
+                    }
+                ]
             }
         ],
         "ResponseMetadata": {}

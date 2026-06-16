@@ -1,0 +1,25 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: PolicyTest
+
+  - name: PolicyTest_SpecificSecurityConfiguration
+    filters:
+      - type: value
+        key: Name
+        op: in
+        value:
+          - "402_security_configuration_red"
+
+  - name: PolicyTest_NoFoundSecurityConfigurations
+    filters:
+      - type: value
+        key: Name
+        op: in
+        value:
+          - "255_security_configuration_not_found"

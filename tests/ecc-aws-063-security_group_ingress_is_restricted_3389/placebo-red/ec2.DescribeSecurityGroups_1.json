@@ -6,39 +6,76 @@
                 "GroupId": "sg-0cebf5524a225a4b7",
                 "IpPermissionsEgress": [],
                 "Tags": [
-                  {
-                    "Key": "ComplianceStatus",
-                    "Value": "Red"
-                  },
-                  {
-                    "Key": "Name",
-                    "Value": "034_security_group_red"
-                  },
-                  {
-                    "Key": "CustodianRule",
-                    "Value": "ecc-aws-034-security_group_ingress_is_restricted_traffic_to_netbios_ssn_port_139"
-                  }
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Red"
+                    },
+                    {
+                        "Key": "Name",
+                        "Value": "034_security_group_red"
+                    },
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-034-security_group_ingress_is_restricted_traffic_to_netbios_ssn_port_139"
+                    }
                 ],
                 "VpcId": "vpc-000",
                 "OwnerId": "471112502226",
                 "GroupName": "security_group_red",
                 "Description": "Managed by Terraform",
                 "IpPermissions": [
-                  {
-                    "IpProtocol": "tcp",
-                    "FromPort": 3389,
-                    "ToPort": 3389,
-                    "UserIdGroupPairs": [],
-                    "IpRanges": [],
-                    "Ipv6Ranges": [
-                      {
-                        "CidrIpv6": "::/0"
-                      }
-                    ],
-                    "PrefixListIds": []
-                  }
+                    {
+                        "IpProtocol": "tcp",
+                        "FromPort": 3389,
+                        "ToPort": 3389,
+                        "UserIdGroupPairs": [],
+                        "IpRanges": [],
+                        "Ipv6Ranges": [
+                            {
+                                "CidrIpv6": "::/0"
+                            }
+                        ],
+                        "PrefixListIds": []
+                    }
                 ]
-              }
+            },
+            {
+                "GroupId": "sg-0cebf5524a225a4ba",
+                "IpPermissionsEgress": [],
+                "Tags": [
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Red"
+                    },
+                    {
+                        "Key": "Name",
+                        "Value": "063_security_group_red2"
+                    },
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-063-security_group_ingress_is_restricted_3389"
+                    }
+                ],
+                "VpcId": "vpc-000",
+                "OwnerId": "471112502226",
+                "GroupName": "security_group_red2",
+                "Description": "Managed by Terraform",
+                "IpPermissions": [
+                    {
+                        "IpProtocol": "tcp",
+                        "FromPort": 3389,
+                        "ToPort": 3389,
+                        "UserIdGroupPairs": [],
+                        "IpRanges": [],
+                        "Ipv6Ranges": [
+                            {
+                                "CidrIpv6": "::/0"
+                            }
+                        ],
+                        "PrefixListIds": []
+                    }
+                ]
+            }
         ],
         "ResponseMetadata": {}
     }

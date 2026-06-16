@@ -6,6 +6,10 @@
             {
                 "WebACLId": "c43ed095-1a78-4a0e-9333-c3bdc5054736",
                 "Name": "524_webacl_red"
+            },
+            {
+                "WebACLId": "d53ed095-1a78-4a0e-9333-c3bdc5054737",
+                "Name": "524_webacl_red_b"
             }
         ],
         "ResponseMetadata": {}

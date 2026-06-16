@@ -1,0 +1,25 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: PolicyTest
+
+  - name: PolicyTest_SpecificBackupPlan
+    filters:
+      - type: value
+        key: BackupPlanArn
+        op: in
+        value:
+          - arn:aws:backup:us-east-1:111111111111:backup-plan:ceed06ad-bfcc-406e-914f-3ad817eacd25
+
+  - name: PolicyTest_NoFoundBackupPlans
+    filters:
+      - type: value
+        key: BackupPlanArn
+        op: in
+        value:
+          - arn:aws:backup:us-east-1:111111111111:backup-plan:00000000-0000-0000-0000-000000000000

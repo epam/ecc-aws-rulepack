@@ -1,0 +1,25 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: PolicyTest
+
+  - name: PolicyTest_SpecificEnvironment
+    filters:
+      - type: value
+        key: Arn
+        op: in
+        value:
+          - arn:aws:airflow:us-east-1:111111111111:environment/mwaa_447_red
+
+  - name: PolicyTest_NoFoundEnvironments
+    filters:
+      - type: value
+        key: Arn
+        op: in
+        value:
+          - arn:aws:airflow:us-east-1:111111111111:environment/mwaa_447_not_found

@@ -15,6 +15,19 @@
                         "Value": "Red"
                     }
                 ]
+            },
+            {
+                "ResourceARN": "arn:aws:cloudfront::111111111111:distribution/E1X0H1C4VB45J9",
+                "Tags": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-530-cloudfront_encryption_in_transit"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Red"
+                    }
+                ]
             }
         ],
         "ResponseMetadata": {}

@@ -1,7 +1,30 @@
 class PolicyTest(object):
 
-     def test_resources(self, base_test, resources):
+    def test_resources(self, base_test, resources):
+        base_test.assertEqual(len(resources), 2)
+        base_test.assertCountEqual(
+            [r['FunctionArn'] for r in resources],
+            [
+                'arn:aws:lambda:us-east-1:111111111111:function:500_lambda_red1',
+                'arn:aws:lambda:us-east-1:111111111111:function:500_lambda_red2',
+            ],
+        )
+        for r in resources:
+            base_test.assertEqual(len(r['VpcConfig']['SubnetIds']), 1)
+
+
+class PolicyTest_SpecificFunction(object):
+
+    def test_resources(self, base_test, resources):
         base_test.assertEqual(len(resources), 1)
-        base_test.assertEqual(len(resources[0]['VpcConfig']['SubnetIds']),1)
+        base_test.assertEqual(
+            resources[0]['FunctionArn'],
+            'arn:aws:lambda:us-east-1:111111111111:function:500_lambda_red1',
+        )
+        base_test.assertEqual(len(resources[0]['VpcConfig']['SubnetIds']), 1)
 
 
+class PolicyTest_NoFoundFunctions(object):
+
+    def test_resources(self, base_test, resources):
+        base_test.assertEqual(len(resources), 0)

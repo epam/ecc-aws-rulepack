@@ -2,7 +2,8 @@
     "status_code": 200,
     "data": {
         "serviceArns": [
-            "arn:aws:ecs:us-east-1:644160558196:service/582_ecs_cluster_red/582_ecs_service_red"
+            "arn:aws:ecs:us-east-1:644160558196:service/582_ecs_cluster_red/582_ecs_service_red",
+            "arn:aws:ecs:us-east-1:644160558196:service/582_ecs_cluster_red/582_ecs_service_red2"
         ],
         "ResponseMetadata": {}
     }

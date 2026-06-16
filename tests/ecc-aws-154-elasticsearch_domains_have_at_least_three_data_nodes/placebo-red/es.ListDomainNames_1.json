@@ -6,6 +6,9 @@
             {
                 "DomainName": "domain-154-red2",
                 "EngineType": "Elasticsearch"
+            },
+            {
+                "DomainName": "domain-154-red2-b"
             }
         ]
     }

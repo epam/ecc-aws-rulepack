@@ -1,0 +1,25 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: PolicyTest
+
+  - name: PolicyTest_SpecificGroup
+    filters:
+      - type: value
+        key: GroupId
+        op: in
+        value:
+          - sg-0e24cbbe76e4a9028
+
+  - name: PolicyTest_NoFoundGroups
+    filters:
+      - type: value
+        key: GroupId
+        op: in
+        value:
+          - sg-09999999999999999

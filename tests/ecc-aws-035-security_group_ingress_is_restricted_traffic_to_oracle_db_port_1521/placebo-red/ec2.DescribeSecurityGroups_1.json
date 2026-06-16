@@ -6,35 +6,68 @@
                 "GroupId": "sg-0cebf5524a225a4b7",
                 "IpPermissionsEgress": [],
                 "Tags": [
-                  {
-                    "Key": "ComplianceStatus",
-                    "Value": "Red"
-                  },
-                  {
-                    "Key": "Name",
-                    "Value": "035_security_group_red"
-                  }
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Red"
+                    },
+                    {
+                        "Key": "Name",
+                        "Value": "035_security_group_red"
+                    }
                 ],
                 "VpcId": "vpc-000",
                 "OwnerId": "471112502226",
                 "GroupName": "security_group_red",
                 "Description": "Managed by Terraform",
                 "IpPermissions": [
-                  {
-                    "IpProtocol": "tcp",
-                    "FromPort": 1521,
-                    "ToPort": 2483,
-                    "UserIdGroupPairs": [],
-                    "IpRanges": [],
-                    "Ipv6Ranges": [
-                      {
-                        "CidrIpv6": "::/0"
-                      }
-                    ],
-                    "PrefixListIds": []
-                  }
+                    {
+                        "IpProtocol": "tcp",
+                        "FromPort": 1521,
+                        "ToPort": 2483,
+                        "UserIdGroupPairs": [],
+                        "IpRanges": [],
+                        "Ipv6Ranges": [
+                            {
+                                "CidrIpv6": "::/0"
+                            }
+                        ],
+                        "PrefixListIds": []
+                    }
                 ]
-              }
+            },
+            {
+                "GroupId": "sg-0cebf5524a225a4b9",
+                "IpPermissionsEgress": [],
+                "Tags": [
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Red"
+                    },
+                    {
+                        "Key": "Name",
+                        "Value": "035_security_group_red2"
+                    }
+                ],
+                "VpcId": "vpc-000",
+                "OwnerId": "471112502226",
+                "GroupName": "security_group_red2",
+                "Description": "Managed by Terraform",
+                "IpPermissions": [
+                    {
+                        "IpProtocol": "tcp",
+                        "FromPort": 1521,
+                        "ToPort": 2483,
+                        "UserIdGroupPairs": [],
+                        "IpRanges": [],
+                        "Ipv6Ranges": [
+                            {
+                                "CidrIpv6": "::/0"
+                            }
+                        ],
+                        "PrefixListIds": []
+                    }
+                ]
+            }
         ],
         "ResponseMetadata": {}
     }
