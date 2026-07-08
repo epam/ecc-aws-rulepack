@@ -27,15 +27,8 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "this" {
 resource "aws_s3_bucket_ownership_controls" "this" {
   bucket = aws_s3_bucket.this.id
   rule {
-    object_ownership = "BucketOwnerPreferred"
+    object_ownership = "BucketOwnerEnforced"
   }
-}
-
-resource "aws_s3_bucket_acl" "this" {
-  depends_on = [aws_s3_bucket_ownership_controls.this]
-
-  bucket = aws_s3_bucket.this.id
-  acl    = "private"
 }
 
 resource "aws_s3_bucket_public_access_block" "this" {
@@ -51,6 +44,77 @@ resource "aws_s3_bucket_versioning" "this" {
   bucket = aws_s3_bucket.this.id
   versioning_configuration {
     status = "Enabled"
+  }
+}
+
+resource "aws_s3_bucket" "logging" {
+  bucket        = "${module.naming.resource_prefix.s3_bucket}-${random_integer.this.result}-logs"
+  force_destroy = true
+}
+
+resource "aws_s3_bucket_ownership_controls" "logging" {
+  bucket = aws_s3_bucket.logging.id
+  rule {
+    object_ownership = "BucketOwnerPreferred"
+  }
+}
+
+resource "aws_s3_bucket_acl" "logging" {
+  depends_on = [aws_s3_bucket_ownership_controls.logging]
+
+  bucket = aws_s3_bucket.logging.id
+  acl    = "log-delivery-write"
+}
+
+resource "aws_s3_bucket_logging" "this" {
+  bucket        = aws_s3_bucket.this.id
+  target_bucket = aws_s3_bucket.logging.id
+  target_prefix = "log/"
+}
+
+resource "aws_s3_bucket" "replica" {
+  provider      = aws.replica
+  bucket        = "${module.naming.resource_prefix.s3_bucket}-${random_integer.this.result}-replica"
+  force_destroy = true
+}
+
+resource "aws_s3_bucket_versioning" "replica" {
+  provider = aws.replica
+  bucket   = aws_s3_bucket.replica.id
+  versioning_configuration {
+    status = "Enabled"
+  }
+}
+
+resource "aws_iam_role" "replication" {
+  name                 = "${module.naming.resource_prefix.iam_role}-replication"
+  permissions_boundary = "arn:aws:iam::${data.aws_caller_identity.this.account_id}:policy/eo_role_boundary"
+  assume_role_policy   = data.aws_iam_policy_document.replication_assume_role.json
+}
+
+resource "aws_iam_role_policy" "replication" {
+  name   = "${module.naming.resource_prefix.iam_policy}-replication"
+  role   = aws_iam_role.replication.id
+  policy = data.aws_iam_policy_document.replication.json
+}
+
+resource "aws_s3_bucket_replication_configuration" "this" {
+  depends_on = [
+    aws_s3_bucket_versioning.this,
+    aws_s3_bucket_versioning.replica,
+  ]
+
+  role   = aws_iam_role.replication.arn
+  bucket = aws_s3_bucket.this.id
+
+  rule {
+    id     = "replicate-all"
+    status = "Enabled"
+
+    destination {
+      bucket        = aws_s3_bucket.replica.arn
+      storage_class = "STANDARD"
+    }
   }
 }
 

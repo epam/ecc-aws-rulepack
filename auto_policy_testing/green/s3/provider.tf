@@ -14,3 +14,11 @@ provider "aws" {
   }
 }
 
+provider "aws" {
+  alias  = "replica"
+  region = var.replication_region
+  default_tags {
+    tags = module.naming.default_tags
+  }
+}
+
