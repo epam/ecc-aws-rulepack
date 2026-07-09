@@ -1,6 +1,6 @@
 # ecc-aws-147-ebs_volume_without_encrypt
 # ecc-aws-570-ebs_volumes_are_of_type_gp3_instead_of_io1
-resource "aws_ebs_volume" "this" {
+resource "aws_ebs_volume" "io1_unencrypted" {
   availability_zone = data.aws_availability_zones.this.names[0]
   size              = 8
   type              = "io1"
@@ -18,7 +18,7 @@ resource "aws_ebs_volume" "this" {
 # ecc-aws-548-ebs_volumes_are_of_type_gp3_instead_of_gp2
 # ecc-aws-379-ebs_snapshot_without_tag_information
 # ecc-aws-378-ebs_without_tag_information
-resource "aws_ebs_volume" "default_volume" {
+resource "aws_ebs_volume" "default_volume_gp2" {
   availability_zone = data.aws_availability_zones.this.names[0]
   size              = 8
   type              = "gp2"
@@ -26,7 +26,7 @@ resource "aws_ebs_volume" "default_volume" {
 }
 
 resource "aws_ebs_snapshot" "this" {
-  volume_id = aws_ebs_volume.default_volume.id
+  volume_id = aws_ebs_volume.default_volume_gp2.id
   provider  = aws.provider2
 }
 
