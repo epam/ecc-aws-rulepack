@@ -8,6 +8,15 @@ resource "aws_s3_bucket" "this" {
   force_destroy = true
 }
 
+resource "aws_sqs_queue" "notification" {
+  name = "${module.naming.resource_prefix.s3_bucket}-${random_integer.this.result}-events"
+}
+
+resource "aws_sqs_queue_policy" "notification" {
+  queue_url = aws_sqs_queue.notification.id
+  policy    = data.aws_iam_policy_document.notification.json
+}
+
 resource "aws_s3_bucket_policy" "this" {
   bucket = aws_s3_bucket.this.id
   policy = data.aws_iam_policy_document.this.json
@@ -45,6 +54,17 @@ resource "aws_s3_bucket_versioning" "this" {
   versioning_configuration {
     status = "Enabled"
   }
+}
+
+resource "aws_s3_bucket_notification" "this" {
+  bucket = aws_s3_bucket.this.id
+
+  queue {
+    queue_arn = aws_sqs_queue.notification.arn
+    events    = ["s3:ObjectCreated:*"]
+  }
+
+  depends_on = [aws_sqs_queue_policy.notification]
 }
 
 resource "aws_s3_bucket" "logging" {
