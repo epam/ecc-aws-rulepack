@@ -20,6 +20,6 @@ resource "aws_ebs_snapshot" "this" {
 }
 
 resource "aws_ami_launch_permission" "this" {
-  image_id = aws_ami.this.id
-  group    = "all"
+  image_id   = aws_ami.this.id
+  account_id = data.aws_caller_identity.this.account_id
 }
