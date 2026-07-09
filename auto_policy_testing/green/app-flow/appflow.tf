@@ -1,5 +1,6 @@
 resource "aws_appflow_flow" "this" {
   name = module.naming.resource_prefix.app_flow
+  tags = module.naming.default_tags
 
   source_flow_config {
     connector_type = "S3"
