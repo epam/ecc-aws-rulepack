@@ -1,11 +1,11 @@
 resource "aws_eks_cluster" "this" {
-  name                      = "${module.naming.resource_prefix.eks}"
+  name                      = module.naming.resource_prefix.eks
   role_arn                  = aws_iam_role.this.arn
-  version                   = "1.28"
+  version                   = "1.36"
   enabled_cluster_log_types = ["api", "audit", "authenticator", "controllerManager", "scheduler"]
- 
+
   encryption_config {
-    resources = [ "secrets" ]
+    resources = ["secrets"]
     provider {
       key_arn = data.terraform_remote_state.common.outputs.kms_key_arn
     }
@@ -26,7 +26,8 @@ resource "aws_eks_cluster" "this" {
 }
 
 resource "aws_iam_role" "this" {
-  name = "${module.naming.resource_prefix.eks}"
+  name                 = module.naming.resource_prefix.eks
+  permissions_boundary = "arn:aws:iam::${data.aws_caller_identity.this.account_id}:policy/eo_role_boundary"
 
   assume_role_policy = <<POLICY
 {

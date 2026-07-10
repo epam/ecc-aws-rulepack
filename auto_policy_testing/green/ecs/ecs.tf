@@ -1,5 +1,5 @@
 resource "aws_ecs_cluster" "this" {
-  name = "${module.naming.resource_prefix.ecs}"
+  name = module.naming.resource_prefix.ecs
 
   setting {
     name  = "containerInsights"
@@ -9,21 +9,21 @@ resource "aws_ecs_cluster" "this" {
   configuration {
     execute_command_configuration {
       kms_key_id = data.terraform_remote_state.common.outputs.kms_key_arn
-      logging = "OVERRIDE"
+      logging    = "OVERRIDE"
 
       log_configuration {
         cloud_watch_encryption_enabled = true
-        cloud_watch_log_group_name   = aws_cloudwatch_log_group.this.name
-        s3_bucket_name               = aws_s3_bucket.this.id
-        s3_bucket_encryption_enabled = true
-        s3_key_prefix                = "exec-output"
+        cloud_watch_log_group_name     = aws_cloudwatch_log_group.this.name
+        s3_bucket_name                 = aws_s3_bucket.this.id
+        s3_bucket_encryption_enabled   = true
+        s3_key_prefix                  = "exec-output"
       }
     }
   }
 }
 
 resource "aws_ecs_task_definition" "this" {
-  family                   = "${module.naming.resource_prefix.ecs}"
+  family                   = module.naming.resource_prefix.ecs
   network_mode             = "awsvpc"
   execution_role_arn       = aws_iam_role.task-execution-role.arn
   task_role_arn            = aws_iam_role.task-role.arn
@@ -52,13 +52,13 @@ resource "aws_ecs_task_definition" "this" {
 ]
 TASK_DEFINITION
 
-  depends_on = [aws_cloudwatch_log_group.this,aws_s3_bucket.this,aws_iam_role.task-execution-role,aws_iam_role.task-role,aws_security_group.this]
+  depends_on = [aws_cloudwatch_log_group.this, aws_s3_bucket.this, aws_iam_role.task-execution-role, aws_iam_role.task-role, aws_security_group.this]
 }
 
 # ecc-aws-521-ecs_containers_readonly_access
 # ecc-aws-495-ecs_task_definition_memory_hard_limit
 resource "aws_ecs_task_definition" "this2" {
-  family                   = "${module.naming.resource_prefix.ecs}"
+  family                   = "${module.naming.resource_prefix.ecs}-readonly"
   network_mode             = "host"
   requires_compatibilities = ["EC2"]
   pid_mode                 = "task"
@@ -70,14 +70,14 @@ resource "aws_ecs_task_definition" "this2" {
     "cpu": 1,
     "memory": 5,
     "essential": true,
-    "ReadonlyRootFilesystem": true
+    "readonlyRootFilesystem": true
   }
 ]
 DEFINITION
 }
 
 resource "aws_ecs_service" "this" {
-  name                    = "${module.naming.resource_prefix.ecs_service}"
+  name                    = module.naming.resource_prefix.ecs_service
   cluster                 = aws_ecs_cluster.this.id
   task_definition         = aws_ecs_task_definition.this.arn
   enable_ecs_managed_tags = true
@@ -91,12 +91,13 @@ resource "aws_ecs_service" "this" {
     subnets          = [data.aws_subnets.this.ids[0]]
     assign_public_ip = false
   }
- 
+
   depends_on = [aws_ecs_task_definition.this]
 }
 
 resource "aws_iam_role" "task-execution-role" {
-  name = "${module.naming.resource_prefix.ecs}-execution"
+  name                 = "${module.naming.resource_prefix.ecs}-execution"
+  permissions_boundary = "arn:aws:iam::${data.aws_caller_identity.this.account_id}:policy/eo_role_boundary"
 
   assume_role_policy = <<EOF
 {
@@ -120,7 +121,8 @@ resource "aws_iam_role_policy_attachment" "task-execution-role" {
 }
 
 resource "aws_iam_role" "task-role" {
-  name = "${module.naming.resource_prefix.ecs}"
+  name                 = module.naming.resource_prefix.ecs
+  permissions_boundary = "arn:aws:iam::${data.aws_caller_identity.this.account_id}:policy/eo_role_boundary"
 
   assume_role_policy = <<EOF
 {
@@ -139,8 +141,8 @@ EOF
 }
 
 resource "aws_iam_policy" "task-role" {
-  name        = "${module.naming.resource_prefix.ecs}"
-  policy = templatefile("ecs-exec-task-role-policy.json", {bucket_arn = aws_s3_bucket.this.arn, account_id = data.aws_caller_identity.this.account_id,kms_key_arn = data.terraform_remote_state.common.outputs.kms_key_arn})
+  name   = module.naming.resource_prefix.ecs
+  policy = templatefile("ecs-exec-task-role-policy.json", { bucket_arn = aws_s3_bucket.this.arn, account_id = data.aws_caller_identity.this.account_id, kms_key_arn = data.terraform_remote_state.common.outputs.kms_key_arn })
 }
 
 resource "aws_iam_role_policy_attachment" "task-role" {
@@ -151,7 +153,7 @@ resource "aws_iam_role_policy_attachment" "task-role" {
 resource "aws_cloudwatch_log_group" "this" {
   name              = "/aws/ecs/${module.naming.resource_prefix.ecs}"
   retention_in_days = 7
-  kms_key_id = data.terraform_remote_state.common.outputs.kms_key_arn
+  kms_key_id        = data.terraform_remote_state.common.outputs.kms_key_arn
 }
 
 resource "aws_s3_bucket" "this" {
@@ -183,14 +185,14 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "this" {
 
   rule {
     apply_server_side_encryption_by_default {
-      sse_algorithm     = "AES256"
+      sse_algorithm = "AES256"
     }
   }
 }
 
 data "aws_vpc" "default" {
   default = true
-} 
+}
 
 data "aws_subnets" "this" {
   filter {
@@ -204,7 +206,7 @@ data "aws_subnets" "this" {
 }
 
 resource "aws_security_group" "this" {
-  name   = "${module.naming.resource_prefix.ecs}"
+  name   = module.naming.resource_prefix.ecs
   vpc_id = data.aws_vpc.default.id
 
   ingress {
@@ -215,7 +217,7 @@ resource "aws_security_group" "this" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-    ingress {
+  ingress {
     from_port   = 0
     to_port     = 0
     protocol    = "-1"
