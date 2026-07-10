@@ -1,5 +1,6 @@
 resource "aws_iam_role" "this" {
-  name = "${module.naming.resource_prefix.ec2}"
+  name                 = module.naming.resource_prefix.ec2
+  permissions_boundary = "arn:aws:iam::${data.aws_caller_identity.this.account_id}:policy/eo_role_boundary"
 
   assume_role_policy = <<EOF
 {
@@ -17,8 +18,13 @@ resource "aws_iam_role" "this" {
 EOF
 }
 
+resource "aws_iam_role_policy_attachment" "ssm" {
+  role       = aws_iam_role.this.name
+  policy_arn = "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore"
+}
+
 resource "aws_iam_instance_profile" "this" {
-  name = "${module.naming.resource_prefix.ec2}"
+  name = module.naming.resource_prefix.ec2
   role = aws_iam_role.this.name
 }
 
@@ -43,10 +49,17 @@ resource "aws_instance" "this" {
     device_name           = "/dev/sdh"
     volume_size           = 1
   }
+
+  depends_on = [
+    aws_iam_role_policy_attachment.ssm,
+    aws_vpc_endpoint.ssm,
+    aws_vpc_endpoint.ssmmessages,
+    aws_vpc_endpoint.ec2messages,
+  ]
 }
 
 resource "aws_ssm_patch_baseline" "this" {
-  name                                 = "${module.naming.resource_prefix.ec2}"
+  name                                 = module.naming.resource_prefix.ec2
   description                          = "Patch Baseline Description 091"
   operating_system                     = "AMAZON_LINUX_2"
   approved_patches_enable_non_security = true
@@ -89,11 +102,11 @@ resource "aws_ssm_patch_baseline" "this" {
 
 resource "aws_ssm_patch_group" "this" {
   baseline_id = aws_ssm_patch_baseline.this.id
-  patch_group = "${module.naming.resource_prefix.ec2}"
+  patch_group = module.naming.resource_prefix.ec2
 }
 
 resource "aws_ssm_maintenance_window" "this" {
-  name     = "${module.naming.resource_prefix.ec2}"
+  name     = module.naming.resource_prefix.ec2
   schedule = "rate(5 minutes)"
   duration = 3
   cutoff   = 1
@@ -101,7 +114,7 @@ resource "aws_ssm_maintenance_window" "this" {
 
 resource "aws_ssm_maintenance_window_target" "this" {
   window_id     = aws_ssm_maintenance_window.this.id
-  name          = "${module.naming.resource_prefix.ec2}"
+  name          = module.naming.resource_prefix.ec2
   resource_type = "INSTANCE"
 
   targets {
@@ -111,7 +124,7 @@ resource "aws_ssm_maintenance_window_target" "this" {
 }
 
 resource "aws_ssm_maintenance_window_task" "this" {
-  name             = "${module.naming.resource_prefix.ec2}"
+  name             = module.naming.resource_prefix.ec2
   max_concurrency  = 2
   max_errors       = 1
   priority         = 1
@@ -137,7 +150,7 @@ resource "aws_ssm_maintenance_window_task" "this" {
 
 resource "aws_ssm_association" "this" {
   name                = "AWS-UpdateSSMAgent"
-  association_name    = "${module.naming.resource_prefix.ec2}"
+  association_name    = module.naming.resource_prefix.ec2
   compliance_severity = "MEDIUM"
   schedule_expression = "rate(30 minutes)"
 
@@ -149,9 +162,9 @@ resource "aws_ssm_association" "this" {
   depends_on = [aws_instance.this]
 }
 
-
 resource "aws_network_interface" "this" {
-  subnet_id = aws_subnet.this.id
+  subnet_id       = aws_subnet.this.id
+  security_groups = [aws_security_group.this.id]
 }
 
 resource "aws_internet_gateway" "this" {
@@ -173,7 +186,9 @@ resource "aws_route_table_association" "this" {
 }
 
 resource "aws_vpc" "this" {
-  cidr_block = "10.0.0.0/16"
+  cidr_block           = "10.0.0.0/16"
+  enable_dns_support   = true
+  enable_dns_hostnames = true
 }
 
 resource "aws_subnet" "this" {
@@ -184,7 +199,7 @@ resource "aws_subnet" "this" {
 }
 
 resource "aws_security_group" "this" {
-  name   = "${module.naming.resource_prefix.ec2}"
+  name   = module.naming.resource_prefix.ec2
   vpc_id = aws_vpc.this.id
 
   ingress {
@@ -194,4 +209,57 @@ resource "aws_security_group" "this" {
     protocol    = "tcp"
     cidr_blocks = [aws_vpc.this.cidr_block]
   }
+
+  ingress {
+    description = "HTTPS from VPC for SSM endpoints"
+    from_port   = 443
+    to_port     = 443
+    protocol    = "tcp"
+    cidr_blocks = [aws_vpc.this.cidr_block]
+  }
+
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+}
+
+# Private SSM connectivity without assigning a public IP (ecc-aws-186 + ecc-aws-222)
+resource "aws_vpc_endpoint" "ssm" {
+  vpc_id              = aws_vpc.this.id
+  service_name        = "com.amazonaws.${var.region}.ssm"
+  vpc_endpoint_type   = "Interface"
+  subnet_ids          = [aws_subnet.this.id]
+  security_group_ids  = [aws_security_group.this.id]
+  private_dns_enabled = true
+}
+
+resource "aws_vpc_endpoint" "ssmmessages" {
+  vpc_id              = aws_vpc.this.id
+  service_name        = "com.amazonaws.${var.region}.ssmmessages"
+  vpc_endpoint_type   = "Interface"
+  subnet_ids          = [aws_subnet.this.id]
+  security_group_ids  = [aws_security_group.this.id]
+  private_dns_enabled = true
+}
+
+resource "aws_vpc_endpoint" "ec2messages" {
+  vpc_id              = aws_vpc.this.id
+  service_name        = "com.amazonaws.${var.region}.ec2messages"
+  vpc_endpoint_type   = "Interface"
+  subnet_ids          = [aws_subnet.this.id]
+  security_group_ids  = [aws_security_group.this.id]
+  private_dns_enabled = true
+}
+
+# Allow SSM agent time to register the instance
+resource "time_sleep" "wait_ssm" {
+  depends_on = [
+    aws_instance.this,
+    aws_ssm_association.this,
+  ]
+
+  create_duration = "3m"
 }
