@@ -1,5 +1,5 @@
 resource "aws_cloudtrail" "this" {
-  name                          = "${module.naming.resource_prefix.cloud_trail}"
+  name                          = module.naming.resource_prefix.cloud_trail
   s3_bucket_name                = aws_s3_bucket.this.id
   cloud_watch_logs_group_arn    = "${aws_cloudwatch_log_group.this.arn}:*"
   cloud_watch_logs_role_arn     = aws_iam_role.this.arn
@@ -8,7 +8,7 @@ resource "aws_cloudtrail" "this" {
   is_multi_region_trail         = false
   enable_logging                = true
   kms_key_id                    = data.terraform_remote_state.common.outputs.kms_key_arn
-  
+
   event_selector {
     include_management_events = true
     read_write_type           = "WriteOnly"
@@ -28,7 +28,7 @@ resource "aws_cloudtrail" "this" {
 resource "aws_s3_bucket" "this" {
   bucket        = "${module.naming.resource_prefix.s3_bucket}-${random_integer.this.result}"
   force_destroy = true
-  
+
 }
 
 resource "random_integer" "this" {
@@ -42,17 +42,18 @@ resource "aws_s3_bucket_policy" "this" {
 }
 
 resource "aws_cloudwatch_log_group" "this" {
-  name = "${module.naming.resource_prefix.cloud_trail}"
+  name = module.naming.resource_prefix.cloud_trail
 }
 
 resource "aws_cloudwatch_log_stream" "this" {
-  name           = "${module.naming.resource_prefix.cloud_trail}"
+  name           = module.naming.resource_prefix.cloud_trail
   log_group_name = aws_cloudwatch_log_group.this.name
 }
 
 resource "aws_iam_role" "this" {
-  name               = "${module.naming.resource_prefix.cloud_trail}"
-  assume_role_policy = <<-POLICY
+  name                 = module.naming.resource_prefix.cloud_trail
+  permissions_boundary = "arn:aws:iam::${data.aws_caller_identity.this.account_id}:policy/eo_role_boundary"
+  assume_role_policy   = <<-POLICY
     {
       "Version": "2012-10-17",
       "Statement": [
@@ -69,7 +70,7 @@ resource "aws_iam_role" "this" {
 }
 
 resource "aws_iam_role_policy" "this" {
-  name   = "${module.naming.resource_prefix.cloud_trail}"
+  name   = module.naming.resource_prefix.cloud_trail
   role   = aws_iam_role.this.id
   policy = <<-POLICY
   {
