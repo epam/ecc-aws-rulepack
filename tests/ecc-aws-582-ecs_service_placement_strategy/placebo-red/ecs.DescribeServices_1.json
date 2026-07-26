@@ -114,6 +114,35 @@
                 "enableECSManagedTags": false,
                 "propagateTags": "NONE",
                 "enableExecuteCommand": false
+            },
+            {
+                "serviceArn": "arn:aws:ecs:us-east-1:644160558196:service/582_ecs_cluster_red/582_ecs_service_red2",
+                "serviceName": "582_ecs_service_red2",
+                "clusterArn": "arn:aws:ecs:us-east-1:644160558196:cluster/582_ecs_cluster_red",
+                "loadBalancers": [],
+                "serviceRegistries": [],
+                "status": "ACTIVE",
+                "desiredCount": 1,
+                "runningCount": 1,
+                "pendingCount": 0,
+                "launchType": "EC2",
+                "taskDefinition": "arn:aws:ecs:us-east-1:644160558196:task-definition/582_ecs_task_definition_red:1",
+                "deployments": [],
+                "events": [],
+                "placementConstraints": [],
+                "placementStrategy": [
+                    {
+                        "type": "random"
+                    }
+                ],
+                "schedulingStrategy": "REPLICA",
+                "deploymentController": {
+                    "type": "ECS"
+                },
+                "tags": [],
+                "enableECSManagedTags": false,
+                "propagateTags": "NONE",
+                "enableExecuteCommand": false
             }
         ],
         "failures": [],

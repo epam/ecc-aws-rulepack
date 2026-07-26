@@ -1,0 +1,41 @@
+{
+    "status_code": 200,
+    "data": {
+        "SecurityGroups": [
+            {
+                "Description": "Managed by Terraform",
+                "GroupName": "345_security_group_red",
+                "IpPermissions": [
+                    {
+                        "FromPort": 0,
+                        "IpProtocol": "tcp",
+                        "IpRanges": [
+                            {
+                                "CidrIp": "10.0.0.0/16"
+                            }
+                        ],
+                        "Ipv6Ranges": [],
+                        "PrefixListIds": [],
+                        "ToPort": 65535,
+                        "UserIdGroupPairs": []
+                    }
+                ],
+                "OwnerId": "111111111111",
+                "GroupId": "sg-1234567asdfg",
+                "IpPermissionsEgress": [],
+                "Tags": [
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Red"
+                    },
+                    {
+                        "Key": "CustodiaRule",
+                        "Value": "ecc-aws-345-mq_broker_open_to_all_ports_protocols"
+                    }
+                ],
+                "VpcId": "vpc-12345asdfg"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

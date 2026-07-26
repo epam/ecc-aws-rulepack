@@ -101,6 +101,52 @@
                 },
                 "username": "ec2-user",
                 "sshKeyName": "key-pair-422-red"
+            },
+            {
+                "name": "lightsail-instance-422-red-b",
+                "arn": "arn:aws:lightsail:us-east-1:111111111111:Instance/fc5c86da-4679-54af-90ef-494a521f5bfd",
+                "supportCode": "111111111111/i-0c2766dee8bd9f6a0",
+                "createdAt": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 12,
+                    "day": 22,
+                    "hour": 12,
+                    "minute": 0,
+                    "second": 0,
+                    "microsecond": 0
+                },
+                "location": {
+                    "availabilityZone": "us-east-1b",
+                    "regionName": "us-east-1"
+                },
+                "resourceType": "Instance",
+                "tags": [],
+                "blueprintId": "amazon_linux_2",
+                "blueprintName": "Amazon Linux 2",
+                "bundleId": "nano_2_0",
+                "isStaticIp": false,
+                "privateIpAddress": "172.26.21.162",
+                "publicIpAddress": "3.216.90.11",
+                "ipv6Addresses": [],
+                "ipAddressType": "dualstack",
+                "hardware": {
+                    "cpuCount": 1,
+                    "disks": [],
+                    "ramSizeInGb": 0.5
+                },
+                "networking": {
+                    "monthlyTransfer": {
+                        "gbPerMonthAllocated": 1024
+                    },
+                    "ports": []
+                },
+                "state": {
+                    "code": 16,
+                    "name": "running"
+                },
+                "username": "ec2-user",
+                "sshKeyName": "key-pair-422-red-b"
             }
         ],
         "ResponseMetadata": {}

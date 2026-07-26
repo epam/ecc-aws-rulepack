@@ -2,7 +2,8 @@
     "status_code": 200,
     "data": {
         "DeliveryStreamNames": [
-            "334_kinesis_firehose_red"
+            "334_kinesis_firehose_red",
+            "334_kinesis_firehose_red_b"
         ],
         "HasMoreDeliveryStreams": false,
         "ResponseMetadata": {}

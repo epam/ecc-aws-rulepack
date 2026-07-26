@@ -1,0 +1,10 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "Tags": {
+            "ComplianceStatus": "Red",
+            "CustodianRule": "ecc-aws-308-glacier_vault_access_policy_does_not_allow_actions_from_all_principals"
+        }
+    }
+}

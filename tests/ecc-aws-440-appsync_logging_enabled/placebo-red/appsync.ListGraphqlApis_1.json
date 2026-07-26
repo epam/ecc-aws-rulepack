@@ -22,6 +22,26 @@
                     "GRAPHQL": "pa6p7kbyyffj5bwfflcf2fqqlu.appsync-api.us-east-1.amazonaws.com"
                 },
                 "visibility": "GLOBAL"
+            },
+            {
+                "name": "440_appsync-graphql-api_red_b",
+                "apiId": "w3lf8pood7cgoiehesenwtf7a5",
+                "authenticationType": "API_KEY",
+                "arn": "arn:aws:appsync:us-east-1:1111111111:apis/w3lf8pood7cgoiehesenwtf7a5",
+                "uris": {
+                    "REALTIME": "wss://qb7q8kbyyffj5bwfflcf2fqqlv.appsync-realtime-api.us-east-1.amazonaws.com/graphql",
+                    "GRAPHQL": "https://qb7q8kbyyffj5bwfflcf2fqqlv.appsync-api.us-east-1.amazonaws.com/graphql"
+                },
+                "tags": {
+                    "CustodianRule": "ecc-aws-440-appsync_logging_enabled",
+                    "ComplianceStatus": "Red"
+                },
+                "xrayEnabled": false,
+                "dns": {
+                    "REALTIME": "qb7q8kbyyffj5bwfflcf2fqqlv.appsync-realtime-api.us-east-1.amazonaws.com",
+                    "GRAPHQL": "qb7q8kbyyffj5bwfflcf2fqqlv.appsync-api.us-east-1.amazonaws.com"
+                },
+                "visibility": "GLOBAL"
             }
         ]
     }

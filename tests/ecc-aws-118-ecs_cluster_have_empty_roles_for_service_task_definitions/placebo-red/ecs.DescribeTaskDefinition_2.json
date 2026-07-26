@@ -1,0 +1,49 @@
+{
+    "status_code": 200,
+    "data": {
+        "taskDefinition": {
+            "taskDefinitionArn": "arn:aws:ecs:us-east-1:644160558196:task-definition/118_task_red2:1",
+            "containerDefinitions": [
+                {
+                    "name": "sample-app",
+                    "image": "public.ecr.aws/docker/library/nginx:latest",
+                    "cpu": 0,
+                    "portMappings": [],
+                    "essential": true,
+                    "environment": [],
+                    "mountPoints": [],
+                    "volumesFrom": [],
+                    "systemControls": []
+                }
+            ],
+            "family": "118_task_red2",
+            "networkMode": "awsvpc",
+            "revision": 1,
+            "volumes": [],
+            "status": "ACTIVE",
+            "requiresAttributes": [],
+            "placementConstraints": [],
+            "compatibilities": ["EC2", "FARGATE"],
+            "runtimePlatform": {
+                "cpuArchitecture": "X86_64",
+                "operatingSystemFamily": "LINUX"
+            },
+            "requiresCompatibilities": ["FARGATE"],
+            "cpu": "256",
+            "memory": "512",
+            "registeredAt": {
+                "__class__": "datetime",
+                "year": 2025,
+                "month": 1,
+                "day": 28,
+                "hour": 15,
+                "minute": 49,
+                "second": 27,
+                "microsecond": 660000
+            },
+            "registeredBy": "arn:aws:sts::644160558196:assumed-role/000/aws-go-sdk-1738079363727196193"
+        },
+        "tags": [],
+        "ResponseMetadata": {}
+    }
+}

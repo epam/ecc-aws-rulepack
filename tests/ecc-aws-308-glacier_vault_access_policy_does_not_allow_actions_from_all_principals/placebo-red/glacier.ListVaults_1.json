@@ -9,6 +9,13 @@
                 "CreationDate": "2022-01-18T09:54:53.926Z",
                 "NumberOfArchives": 0,
                 "SizeInBytes": 0
+            },
+            {
+                "VaultARN": "arn:aws:glacier:us-east-1:111111111111:vaults/308_glacier_vault_red_b",
+                "VaultName": "308_glacier_vault_red_b",
+                "CreationDate": "2022-01-18T09:55:00.000Z",
+                "NumberOfArchives": 0,
+                "SizeInBytes": 0
             }
         ]
     }

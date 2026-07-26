@@ -1,0 +1,64 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "AuthenticationStrategy": "simple",
+        "AutoMinorVersionUpgrade": false,
+        "BrokerArn": "arn:aws:mq:us-east-1:644160558196:broker:mq-broker-rabbit-434-red-b:b-ef5d7457-a11c-43a9-bb15-ab9ff7bdd1eb",
+        "BrokerId": "b-ef5d7457-a11c-43a9-bb15-ab9ff7bdd1eb",
+        "BrokerInstances": [
+            {
+                "ConsoleURL": "https://b-ef5d7457-a11c-43a9-bb15-ab9ff7bdd1eb.mq.us-east-1.amazonaws.com",
+                "Endpoints": [
+                    "amqps://b-ef5d7457-a11c-43a9-bb15-ab9ff7bdd1eb.mq.us-east-1.amazonaws.com:5671"
+                ]
+            }
+        ],
+        "BrokerName": "mq-broker-rabbit-434-red-b",
+        "BrokerState": "RUNNING",
+        "Configurations": {
+            "Current": {
+                "Id": "c-5d409df8-8fc1-4e34-b5aa-a2a4b15f1210",
+                "Revision": 1
+            },
+            "History": []
+        },
+        "Created": {
+            "__class__": "datetime",
+            "year": 2024,
+            "month": 11,
+            "day": 11,
+            "hour": 12,
+            "minute": 2,
+            "second": 35,
+            "microsecond": 639111
+        },
+        "DeploymentMode": "SINGLE_INSTANCE",
+        "EncryptionOptions": {
+            "UseAwsOwnedKey": true
+        },
+        "EngineType": "RabbitMQ",
+        "EngineVersion": "3.11.28",
+        "HostInstanceType": "mq.t3.micro",
+        "Logs": {
+            "General": false,
+            "GeneralLogGroup": "/aws/amazonmq/broker/b-ef5d7457-a11c-43a9-bb15-ab9ff7bdd1eb/general"
+        },
+        "MaintenanceWindowStartTime": {
+            "DayOfWeek": "THURSDAY",
+            "TimeOfDay": "17:00",
+            "TimeZone": "UTC"
+        },
+        "PubliclyAccessible": true,
+        "SecurityGroups": [],
+        "StorageType": "ebs",
+        "SubnetIds": [
+            "subnet-thtgs827"
+        ],
+        "Tags": {
+            "CustodianRule": "ecc-aws-434-mq_broker_latest_version",
+            "ComplianceStatus": "Red"
+        },
+        "Users": []
+    }
+}

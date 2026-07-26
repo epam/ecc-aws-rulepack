@@ -16,6 +16,21 @@
                     "second": 55,
                     "microsecond": 887000
                 }
+            },
+            {
+                "DomainName": "custodian-rule-red-b.click",
+                "AutoRenew": false,
+                "TransferLock": false,
+                "Expiry": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 6,
+                    "day": 15,
+                    "hour": 12,
+                    "minute": 0,
+                    "second": 0,
+                    "microsecond": 0
+                }
             }
         ],
         "ResponseMetadata": {}

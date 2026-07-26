@@ -2,7 +2,8 @@
     "status_code": 200,
     "data": {
         "clusterArns": [
-            "arn:aws:ecs:us-east-1:111111111111:cluster/493_ecs_cluster_red"
+            "arn:aws:ecs:us-east-1:111111111111:cluster/493_ecs_cluster_red",
+            "arn:aws:ecs:us-east-1:111111111111:cluster/493_ecs_cluster_red2"
         ],
         "ResponseMetadata": {}
     }

@@ -15,6 +15,19 @@
                         "Value": "Red"
                     }
                 ]
+            },
+            {
+                "ResourceARN": "arn:aws:glue:us-east-1:111111111111:job/542_glue_job_red_b",
+                "Tags": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-542-glue_job_autoscaling_enabled"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Red"
+                    }
+                ]
             }
         ],
         "ResponseMetadata": {}

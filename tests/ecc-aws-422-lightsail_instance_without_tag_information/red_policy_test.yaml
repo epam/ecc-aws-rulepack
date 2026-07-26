@@ -1,0 +1,25 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: PolicyTest
+
+  - name: PolicyTest_SpecificInstance
+    filters:
+      - type: value
+        key: arn
+        op: in
+        value:
+          - "arn:aws:lightsail:us-east-1:111111111111:Instance/eb4b75c9-3568-439e-89ef-383f410e4aec"
+
+  - name: PolicyTest_NoFoundInstances
+    filters:
+      - type: value
+        key: arn
+        op: in
+        value:
+          - "arn:aws:lightsail:us-east-1:111111111111:Instance/00000000-0000-0000-0000-000000000000"

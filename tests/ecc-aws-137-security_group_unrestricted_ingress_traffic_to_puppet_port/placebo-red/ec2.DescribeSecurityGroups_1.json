@@ -34,6 +34,39 @@
                         "PrefixListIds": []
                     }
                 ]
+            },
+            {
+                "GroupId": "sg-0be3d1d06e30fdedd",
+                "IpPermissionsEgress": [],
+                "Tags": [
+                    {
+                        "Key": "Name",
+                        "Value": "security_group_red2"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Red"
+                    }
+                ],
+                "VpcId": "vpc-000",
+                "OwnerId": "644160558196",
+                "GroupName": "security_group_red2",
+                "Description": "Managed by Terraform",
+                "IpPermissions": [
+                    {
+                        "IpProtocol": "tcp",
+                        "FromPort": 8140,
+                        "ToPort": 8140,
+                        "UserIdGroupPairs": [],
+                        "IpRanges": [
+                            {
+                                "CidrIp": "0.0.0.0/0"
+                            }
+                        ],
+                        "Ipv6Ranges": [],
+                        "PrefixListIds": []
+                    }
+                ]
             }
         ],
         "ResponseMetadata": {}

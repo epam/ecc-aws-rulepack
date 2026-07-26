@@ -1,0 +1,25 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: PolicyTest
+
+  - name: PolicyTest_SpecificUser
+    filters:
+      - type: value
+        key: Arn
+        op: in
+        value:
+          - arn:aws:iam::121212121212:user/USER
+
+  - name: PolicyTest_NoFoundUsers
+    filters:
+      - type: value
+        key: Arn
+        op: in
+        value:
+          - arn:aws:iam::121212121212:user/UserNotFound

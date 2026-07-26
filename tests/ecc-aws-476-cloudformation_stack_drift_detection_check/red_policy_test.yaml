@@ -1,0 +1,25 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: PolicyTest
+
+  - name: PolicyTest_SpecificStack
+    filters:
+      - type: value
+        key: StackId
+        op: in
+        value:
+          - arn:aws:cloudformation:us-east-1:111111111111:stack/stack-476-red/8b4a36c0-06d9-11ed-9110-12bd5528e831
+
+  - name: PolicyTest_NoFoundStacks
+    filters:
+      - type: value
+        key: StackId
+        op: in
+        value:
+          - arn:aws:cloudformation:us-east-1:111111111111:stack/not-found/00000000-0000-0000-0000-000000000000

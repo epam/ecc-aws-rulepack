@@ -1,0 +1,25 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: PolicyTest
+
+  - name: PolicyTest_SpecificBroker
+    filters:
+      - type: value
+        key: BrokerArn
+        op: in
+        value:
+          - arn:aws:mq:us-east-1:111111111111:broker:mq-broker-active-433-red:b-dbd9cf80-6664-47c8-8774-2bbddc89b13b
+
+  - name: PolicyTest_NoFoundBrokers
+    filters:
+      - type: value
+        key: BrokerArn
+        op: in
+        value:
+          - arn:aws:mq:us-east-1:111111111111:broker:mq-broker-not-found:b-aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa

@@ -17,6 +17,22 @@
                 "Tags": [],
                 "VpcId": "vpc-12345asdfg",
                 "OwnerId": "111111111111"
+            },
+            {
+                "Associations": [],
+                "PropagatingVgws": [],
+                "RouteTableId": "rtb-0f28fb304278d004b",
+                "Routes": [
+                    {
+                        "DestinationCidrBlock": "10.0.0.0/16",
+                        "GatewayId": "local",
+                        "Origin": "CreateRouteTable",
+                        "State": "active"
+                    }
+                ],
+                "Tags": [],
+                "VpcId": "vpc-12345asdfg",
+                "OwnerId": "111111111111"
             }
         ],
         "ResponseMetadata": {}

@@ -42,6 +42,47 @@
                         "microsecond": 676000
                     }
                 }
+            },
+            {
+                "StackId": "arn:aws:cloudformation:us-east-1:111111111111:stack/stack-476-red2/22222222-06d9-11ed-9110-12bd5528e831",
+                "StackName": "stack-476-red2",
+                "CreationTime": {
+                    "__class__": "datetime",
+                    "year": 2022,
+                    "month": 7,
+                    "day": 18,
+                    "hour": 20,
+                    "minute": 38,
+                    "second": 13,
+                    "microsecond": 358000
+                },
+                "RollbackConfiguration": {},
+                "StackStatus": "CREATE_COMPLETE",
+                "DisableRollback": false,
+                "NotificationARNs": [],
+                "Tags": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-657-redshift_availability_zone_relocation_enabled"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    }
+                ],
+                "DriftInformation": {
+                    "StackDriftStatus": "DRIFTED",
+                    "LastCheckTimestamp": {
+                        "__class__": "datetime",
+                        "year": 2022,
+                        "month": 7,
+                        "day": 18,
+                        "hour": 20,
+                        "minute": 39,
+                        "second": 24,
+                        "microsecond": 676000
+                    }
+                }
             }
         ],
         "ResponseMetadata": {}

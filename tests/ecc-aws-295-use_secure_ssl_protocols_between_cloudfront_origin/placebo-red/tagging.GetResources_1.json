@@ -15,6 +15,19 @@
                         "Value": "Red"
                     }
                 ]
+            },
+            {
+                "ResourceARN": "arn:aws:cloudfront::644160558196:distribution/E3153VPXBPXF30",
+                "Tags": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-295-use_secure_ssl_protocols_between_cloudfront_origin"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Red"
+                    }
+                ]
             }
         ],
         "ResponseMetadata": {}
