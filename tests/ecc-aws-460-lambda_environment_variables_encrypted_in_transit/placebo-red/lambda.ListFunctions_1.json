@@ -29,6 +29,34 @@
                 "Architectures": [
                     "x86_64"
                 ]
+            },
+            {
+                "FunctionName": "460_lambda_red_kms",
+                "FunctionArn": "arn:aws:lambda:us-east-1:111111111111:function:460_lambda_red_kms",
+                "Runtime": "python3.9",
+                "Role": "arn:aws:iam::111111111111:role/460_role_red_kms",
+                "Handler": "lambda_function.lambda_handler",
+                "CodeSize": 520,
+                "Description": "",
+                "Timeout": 3,
+                "MemorySize": 128,
+                "LastModified": "2023-01-20T16:58:04.353+0000",
+                "CodeSha256": "rhQ+bO32SDYy4HNxNGDNOCyYEeJ/QRUXMryH7IwXa+I=",
+                "Version": "$LATEST",
+                "KMSKeyArn": "arn:aws:kms:us-east-1:111111111111:key/3f6d3ec3-128a-4a46-8ff2-00812bc5499a",
+                "Environment": {
+                    "Variables": {
+                        "foo": "bar"
+                    }
+                },
+                "TracingConfig": {
+                    "Mode": "PassThrough"
+                },
+                "RevisionId": "2ec2d58a-a577-4dac-94f3-dd4781fe3dee",
+                "PackageType": "Zip",
+                "Architectures": [
+                    "x86_64"
+                ]
             }
         ]
     }

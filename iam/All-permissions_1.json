@@ -167,6 +167,7 @@
                 "kinesis:DescribeStream",
                 "kinesis:ListStreams",
                 "kinesisvideo:ListStreams",
+                "kms:Decrypt",
                 "kms:DescribeKey",
                 "kms:GetKeyRotationStatus",
                 "kms:ListAliases",
