@@ -4,5 +4,5 @@ resource "aws_cloudwatch_event_bus_policy" "this" {
 }
 
 resource "aws_cloudwatch_event_bus" "this" {
-  name = "${module.naming.resource_prefix.event_bus}"
+  name = module.naming.resource_prefix.event_bus
 }
