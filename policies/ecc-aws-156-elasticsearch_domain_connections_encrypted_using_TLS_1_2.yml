@@ -16,7 +16,7 @@ policies:
           - and:
               - type: value
                 key: DomainEndpointOptions.TLSSecurityPolicy
-                value: Policy-Min-TLS-1-2-2019-07
+                value: Policy-Min-TLS-1-2-PFS-2023-10
               - type: value
                 key: DomainEndpointOptions.EnforceHTTPS
                 value: true
