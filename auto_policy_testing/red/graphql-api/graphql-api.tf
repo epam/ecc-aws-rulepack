@@ -1,5 +1,6 @@
 resource "aws_iam_role" "this" {
-  name = "${module.naming.resource_prefix.graphql_api}"
+  name                 = module.naming.resource_prefix.graphql_api
+  permissions_boundary = "arn:aws:iam::${data.aws_caller_identity.this.account_id}:policy/eo_role_boundary"
 
   assume_role_policy = <<POLICY
 {
@@ -23,13 +24,6 @@ resource "aws_iam_role_policy_attachment" "this" {
 }
 
 resource "aws_appsync_graphql_api" "this" {
-  name                = "${module.naming.resource_prefix.graphql_api}"
+  name                = module.naming.resource_prefix.graphql_api
   authentication_type = "API_KEY"
-}
-
-resource "aws_appsync_api_cache" "this" {
-  api_id                     = aws_appsync_graphql_api.this.id
-  api_caching_behavior       = "FULL_REQUEST_CACHING"
-  type                       = "SMALL"
-  ttl                        = 900
 }

@@ -6,7 +6,8 @@
             "Effect": "Allow",
             "Action": [
                 "appsync:ListGraphqlApis",
-                "appsync:GetGraphqlApi"
+                "appsync:GetGraphqlApi",
+                "wafv2:ListWebACLs"
             ],
             "Resource": "*"
         }
