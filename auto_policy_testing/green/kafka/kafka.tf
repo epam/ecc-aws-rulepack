@@ -25,8 +25,8 @@ resource "aws_security_group" "this" {
 }
 
 resource "aws_msk_cluster" "this" {
-  cluster_name           = "${module.naming.resource_prefix.kafka}"
-  kafka_version          = "2.6.2"
+  cluster_name           = module.naming.resource_prefix.kafka
+  kafka_version          = "3.9.x"
   number_of_broker_nodes = 3
 
   broker_node_group_info {
@@ -46,10 +46,10 @@ resource "aws_msk_cluster" "this" {
 
   encryption_info {
     encryption_at_rest_kms_key_arn = data.terraform_remote_state.common.outputs.kms_key_arn
-    
+
     encryption_in_transit {
       client_broker = "TLS"
-      in_cluster = true
+      in_cluster    = true
     }
   }
 
@@ -64,5 +64,5 @@ resource "aws_msk_cluster" "this" {
 }
 
 resource "aws_cloudwatch_log_group" "this" {
-  name = "${module.naming.resource_prefix.kafka}"
+  name = module.naming.resource_prefix.kafka
 }

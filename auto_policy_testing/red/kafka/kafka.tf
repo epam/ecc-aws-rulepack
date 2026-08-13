@@ -25,15 +25,15 @@ resource "aws_security_group" "this" {
 }
 
 resource "aws_msk_cluster" "this" {
-  cluster_name           = "${module.naming.resource_prefix.kafka}"
-  kafka_version          = "2.6.2"
+  cluster_name           = module.naming.resource_prefix.kafka
+  kafka_version          = "3.9.x"
   number_of_broker_nodes = 3
   provider               = aws.provider2
 
   encryption_info {
     encryption_in_transit {
       client_broker = "TLS_PLAINTEXT"
-      in_cluster = true
+      in_cluster    = true
     }
   }
 
