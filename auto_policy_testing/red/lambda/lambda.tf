@@ -1,10 +1,11 @@
 resource "aws_security_group" "this" {
-  name   = "${module.naming.resource_prefix.lambda_function}"
+  name   = module.naming.resource_prefix.lambda_function
   vpc_id = data.terraform_remote_state.common.outputs.vpc_id
 }
 
 resource "aws_iam_role" "this" {
-  name = "${module.naming.resource_prefix.lambda_function}"
+  name                 = module.naming.resource_prefix.lambda_function
+  permissions_boundary = "arn:aws:iam::${data.aws_caller_identity.this.account_id}:policy/eo_role_boundary"
 
   assume_role_policy = <<EOF
 {
@@ -24,7 +25,7 @@ EOF
 }
 
 resource "aws_iam_role_policy" "this" {
-  name = "${module.naming.resource_prefix.lambda_function}"
+  name = module.naming.resource_prefix.lambda_function
   role = aws_iam_role.this.id
 
   policy = <<-EOF
@@ -49,10 +50,10 @@ resource "aws_iam_role_policy" "this" {
 
 resource "aws_lambda_function" "this" {
   filename                       = "func.zip"
-  function_name                  = "${module.naming.resource_prefix.lambda_function}"
+  function_name                  = module.naming.resource_prefix.lambda_function
   role                           = aws_iam_role.this.arn
   handler                        = "func.py"
-  runtime                        = "python3.8"
+  runtime                        = "python3.11"
   reserved_concurrent_executions = -1
   provider                       = aws.provider2
 

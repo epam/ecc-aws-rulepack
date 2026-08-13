@@ -1,10 +1,16 @@
+locals {
+  # Public AWS-owned Lambda Insights extension (not the caller account)
+  lambda_insights_layer = "arn:aws:lambda:${var.region}:580247275435:layer:LambdaInsightsExtension:55"
+}
+
 resource "aws_security_group" "this" {
-  name   = "${module.naming.resource_prefix.lambda_function}"
+  name   = module.naming.resource_prefix.lambda_function
   vpc_id = data.terraform_remote_state.common.outputs.vpc_id
 }
 
 resource "aws_iam_role" "this" {
-  name = "${module.naming.resource_prefix.lambda_function}"
+  name                 = module.naming.resource_prefix.lambda_function
+  permissions_boundary = "arn:aws:iam::${data.aws_caller_identity.this.account_id}:policy/eo_role_boundary"
 
   assume_role_policy = <<EOF
 {
@@ -24,7 +30,7 @@ EOF
 }
 
 resource "aws_iam_role_policy" "this" {
-  name = "${module.naming.resource_prefix.lambda_function}"
+  name = module.naming.resource_prefix.lambda_function
   role = aws_iam_role.this.id
 
   policy = <<-EOF
@@ -47,23 +53,25 @@ resource "aws_iam_role_policy" "this" {
   EOF
 }
 
+resource "aws_iam_role_policy_attachment" "insights" {
+  role       = aws_iam_role.this.name
+  policy_arn = "arn:aws:iam::aws:policy/CloudWatchLambdaInsightsExecutionRolePolicy"
+}
+
+# Primary green function: latest runtime (461), Insights (458), CMK (337), no plaintext env (460)
 resource "aws_lambda_function" "this" {
   filename                       = "func.zip"
-  function_name                  = "${module.naming.resource_prefix.lambda_function}"
+  function_name                  = module.naming.resource_prefix.lambda_function
   role                           = aws_iam_role.this.arn
-  handler                        = "func.py"
+  handler                        = "func.lambda_handler"
   kms_key_arn                    = data.terraform_remote_state.common.outputs.kms_key_arn
   runtime                        = "python3.12"
-  reserved_concurrent_executions = 1 
-  # Layer version arn:aws:lambda:us-east-1:513731479296:layer:LambdaInsightsExtension:21 does not exist.
-  # layers                         = ["arn:aws:lambda:${var.region}:${data.aws_caller_identity.this.account_id}:layer:LambdaInsightsExtension:21"]
-
-  # OR 
-  # layers                         = ["data.aws_lambda_layer_version.LambdaInsightsExtension.arn"]
+  reserved_concurrent_executions = 1
+  layers                         = [local.lambda_insights_layer]
 
   vpc_config {
     security_group_ids = [aws_security_group.this.id]
-    subnet_ids         = [
+    subnet_ids = [
       data.terraform_remote_state.common.outputs.vpc_subnet_1_id,
       data.terraform_remote_state.common.outputs.vpc_subnet_2_id,
     ]
@@ -72,10 +80,13 @@ resource "aws_lambda_function" "this" {
   tracing_config {
     mode = "Active"
   }
+}
 
-  environment {
-    variables = {
-      foo = "bar"
-    }
-  }
+# ecc-aws-536 allowlist is stale (python3.9 etc.) and conflicts with 461 (python3.12)
+resource "aws_lambda_function" "supported_runtime" {
+  filename      = "func.zip"
+  function_name = "${module.naming.resource_prefix.lambda_function}-536"
+  role          = aws_iam_role.this.arn
+  handler       = "func.lambda_handler"
+  runtime       = "python3.9"
 }
