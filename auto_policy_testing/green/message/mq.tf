@@ -1,8 +1,8 @@
 resource "aws_mq_broker" "this" {
-  broker_name                = "${module.naming.resource_prefix.message_broker}"
+  broker_name                = module.naming.resource_prefix.message_broker
   engine_type                = "ActiveMQ"
-  engine_version             = "5.17.6"
-  host_instance_type         = "mq.t2.micro"
+  engine_version             = "5.19"
+  host_instance_type         = "mq.t3.micro"
   auto_minor_version_upgrade = true
   publicly_accessible        = true
   deployment_mode            = "ACTIVE_STANDBY_MULTI_AZ"
@@ -26,9 +26,9 @@ resource "aws_mq_broker" "this" {
 }
 
 resource "random_password" "this" {
-  length           = 12
+  length           = 16
   special          = true
-  override_special = "!#$%*()-_=+[]{}:?"
+  override_special = "!#$%&*()-_+[]{}?"
 }
 
 resource "aws_vpc" "this" {
@@ -48,8 +48,9 @@ resource "aws_subnet" "subnet2" {
   availability_zone = "us-east-1b"
 }
 
+# Discrete FromPort/ToPort 8162 + 61617 so ecc-aws-345 does not match this broker
 resource "aws_security_group" "this" {
-  name   = "345_security_group_green"
+  name   = "${module.naming.resource_prefix.message_broker}-sg"
   vpc_id = aws_vpc.this.id
 
   ingress {
@@ -58,6 +59,7 @@ resource "aws_security_group" "this" {
     protocol    = "tcp"
     cidr_blocks = [aws_vpc.this.cidr_block]
   }
+
   ingress {
     from_port   = 61617
     to_port     = 61617
@@ -70,12 +72,13 @@ resource "aws_internet_gateway" "this" {
   vpc_id = aws_vpc.this.id
 }
 
-# 
+# Private broker for ecc-aws-343 (must not be publicly accessible)
 resource "aws_mq_broker" "this2" {
   broker_name                = "${module.naming.resource_prefix.message_broker}-2"
   engine_type                = "ActiveMQ"
-  engine_version             = "5.17.6"
-  host_instance_type         = "mq.t2.micro"
+  engine_version             = "5.19"
+  host_instance_type         = "mq.t3.micro"
+  auto_minor_version_upgrade = true
   publicly_accessible        = false
 
   user {
