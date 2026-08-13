@@ -1,8 +1,8 @@
 resource "aws_lightsail_instance" "this" {
   name              = "${module.naming.resource_prefix.lightsail_instance}-${random_integer.this.result}"
   availability_zone = data.aws_availability_zones.this.names[0]
-  blueprint_id      = "amazon_linux_2"
-  bundle_id         = "nano_2_0"
+  blueprint_id      = "amazon_linux_2023"
+  bundle_id         = "nano_3_0"
   key_pair_name     = aws_lightsail_key_pair.this.name
 }
 
@@ -17,6 +17,6 @@ resource "random_integer" "this" {
 }
 
 resource "aws_lightsail_key_pair" "this" {
-  name       = "${module.naming.resource_prefix.lightsail_instance}"
+  name       = module.naming.resource_prefix.lightsail_instance
   public_key = tls_private_key.this.public_key_openssh
 }
