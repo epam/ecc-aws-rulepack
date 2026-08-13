@@ -1,5 +1,6 @@
 output "log" {
   value = {
-    log-group = aws_cloudwatch_log_group.this.arn
+    # Custodian log-group "arn" includes the :* suffix
+    log-group = "${aws_cloudwatch_log_group.this.arn}:*"
   }
 }

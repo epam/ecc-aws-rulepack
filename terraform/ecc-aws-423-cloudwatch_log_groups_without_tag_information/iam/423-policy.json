@@ -6,7 +6,8 @@
             "Effect": "Allow",
             "Action": [
                 "logs:DescribeLogGroups",
-                "tag:GetResources"
+                "tag:GetResources",
+                "kms:ListAliases"
             ],
             "Resource": "*"
         }
