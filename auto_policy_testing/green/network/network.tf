@@ -1,6 +1,6 @@
 resource "aws_network_acl" "this" {
-  vpc_id             = data.terraform_remote_state.common.outputs.vpc_id
-  subnet_ids         = [data.terraform_remote_state.common.outputs.vpc_subnet_1_id]
+  vpc_id     = data.terraform_remote_state.common.outputs.vpc_id
+  subnet_ids = [data.terraform_remote_state.common.outputs.vpc_subnet_1_id]
 }
 
 resource "aws_eip" "this" {
