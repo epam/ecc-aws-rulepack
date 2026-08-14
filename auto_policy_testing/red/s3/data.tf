@@ -11,7 +11,7 @@ data "aws_iam_policy_document" "this" {
       identifiers = ["*"]
     }
 
-    actions = ["*"]
+    actions   = ["*"]
     resources = ["${aws_s3_bucket.this.arn}/*"]
   }
 }

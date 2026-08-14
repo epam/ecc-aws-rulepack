@@ -6,7 +6,7 @@ resource "random_integer" "this" {
 resource "aws_s3_bucket" "this" {
   bucket        = "${module.naming.resource_prefix.s3_bucket}-${random_integer.this.result}"
   force_destroy = true
-  provider = aws.provider2
+  provider      = aws.provider2
 }
 
 resource "aws_s3_bucket_ownership_controls" "this" {
@@ -34,8 +34,15 @@ resource "aws_s3_bucket_public_access_block" "this" {
 
 resource "aws_s3_bucket_versioning" "this" {
   bucket = aws_s3_bucket.this.id
-  
+
   versioning_configuration {
     status = "Enabled"
   }
+}
+
+# ecc-aws-463: name with periods fails DNS-compliance regex ^[a-z0-9][a-z0-9-]{1,61}[a-z0-9]$
+resource "aws_s3_bucket" "not_dns_compliant" {
+  bucket        = "463.bucket.${random_integer.this.result}.red"
+  force_destroy = true
+  provider      = aws.provider2
 }
