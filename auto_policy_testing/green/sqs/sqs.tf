@@ -1,5 +1,5 @@
 resource "aws_sqs_queue" "this" {
-  name                              = "${module.naming.resource_prefix.sqs}"
+  name                              = module.naming.resource_prefix.sqs
   delay_seconds                     = 90
   max_message_size                  = 2048
   message_retention_seconds         = 86400
