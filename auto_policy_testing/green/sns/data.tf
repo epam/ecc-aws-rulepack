@@ -12,3 +12,5 @@ data "aws_iam_policy_document" "this" {
     }
   }
 }
+
+data "aws_caller_identity" "this" {}
