@@ -16,3 +16,5 @@ data "aws_iam_policy_document" "this" {
 data "aws_sagemaker_prebuilt_ecr_image" "this" {
   repository_name = "kmeans"
 }
+
+data "aws_caller_identity" "this" {}
