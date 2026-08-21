@@ -2,6 +2,10 @@ import os
 import json
 import timer
 import subprocess
+from logger import get_logger
+
+
+logger = get_logger(__name__)
 
 
 # control text style
@@ -22,13 +26,13 @@ def auto_approve(path, verbosity=False, up=False, remove=False):
     command = f"cd {path} ; terraform {'apply' if up else 'destroy'} -auto-approve -no-color {'> /dev/null' if not verbosity else ''}"
     result = subprocess.run(command, shell=True, capture_output=True, text=True, check=True)
     state_list = subprocess.run(f"cd {path} ; terraform state list", shell=True, capture_output=True, text=True, check=True)
-    print("list of active resources:\n", state_list.stdout if state_list.stdout else "No active resources")
+    logger.info("list of active resources:\n%s", state_list.stdout if state_list.stdout else "No active resources")
     if up is not True and remove and result.returncode == 0:
         subprocess.run(f"cd {path} ; rm -rfv .terraform* terraform.tfstate*", shell=True, capture_output=True, text=True, check=True)
 
 
 def tf_up(resource, path, cloud, infra_color):
-    print(f"\nTerraform apply '{cloud.lower()}.{resource}...'\n")
+    logger.info("Terraform apply '%s.%s...'", cloud.lower(), resource)
     tf_up_subprocess_result = green_red_infrastructures_up_down(
         path,
         infra_color,
@@ -37,7 +41,7 @@ def tf_up(resource, path, cloud, infra_color):
 
 
 def tf_down(resource, path, cloud, infra_color):
-    print(f"\nTerraform destroy '{cloud.lower()}.{resource}...'\n")
+    logger.info("Terraform destroy '%s.%s...'", cloud.lower(), resource)
     tf_down_subprocess_result = green_red_infrastructures_up_down(
         path,
         infra_color,
@@ -47,7 +51,7 @@ def tf_down(resource, path, cloud, infra_color):
 
 
 def common_tf_up(rulepack_testing_path, infra_color):
-    print("\nTerraform apply common resources\n")
+    logger.info("Terraform apply common resources")
     tf_up_common_subprocess_result = green_red_infrastructures_up_down(
         os.path.join(rulepack_testing_path, infra_color, 'common_resources'),
         infra_color,
@@ -56,7 +60,7 @@ def common_tf_up(rulepack_testing_path, infra_color):
 
 
 def common_tf_down(rulepack_testing_path, infra_color):
-    print("\nTerraform destroy common resources\n")
+    logger.info("Terraform destroy common resources")
     tf_down_common_subprocess_result = green_red_infrastructures_up_down(
         os.path.join(rulepack_testing_path, infra_color, 'common_resources'),
         infra_color,
@@ -71,9 +75,15 @@ def green_red_infrastructures_up_down(path, infra_color, up=False, down=False, v
     try:
         color = infra_color
 
-        print(f"{Color.GREEN + 3*'+' + Color.YELLOW + ' Up' if up else Color.RED + 3*'-' + Color.YELLOW + ' Down'}"
-              f"{Color.RED if color == 'red' else Color.GREEN} {color} {path}"
-              f"{'' if not verbosity else 'Full path: ' + Color.YELLOW + path} {Color.RESET}")
+        logger.info(
+            "%s%s %s %s%s%s",
+            Color.GREEN + 3 * '+' + Color.YELLOW + ' Up' if up else Color.RED + 3 * '-' + Color.YELLOW + ' Down',
+            Color.RED if color == 'red' else Color.GREEN,
+            color,
+            path,
+            '' if not verbosity else 'Full path: ' + Color.YELLOW + path + ' ',
+            Color.RESET,
+        )
         if path is not None:
             if up:
                 command = f"cd {path} ; terraform init -no-color {'> /dev/null' if not verbosity else ''}; \
@@ -99,10 +109,23 @@ def output(path, policy_name, resource):
 
     # Load the JSON output into a variable
     terraform_output = json.loads(output.decode())
-    terraform_output = terraform_output[next(iter(terraform_output))]['value']
+    logger.debug(f"terraform output: {terraform_output}", )
     resource_id = ""
-    if policy_name in terraform_output:
-        resource_id = terraform_output[policy_name]
-    elif resource in terraform_output:
-        resource_id = terraform_output[resource]
+    for output_block in terraform_output.values():
+        if not isinstance(output_block, dict):
+            continue
+        output_value = output_block.get('value')
+        if isinstance(output_value, dict):
+            if policy_name in output_value:
+                resource_id = output_value[policy_name]
+                break
+            elif resource in output_value:
+                resource_id = output_value[resource]
+                break
+        elif isinstance(output_value, str) and output_value:
+            resource_id = output_value
+            break
+
+    if resource_id:
+        return resource_id
     return resource_id

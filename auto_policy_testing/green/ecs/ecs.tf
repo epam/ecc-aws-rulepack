@@ -97,7 +97,6 @@ resource "aws_ecs_service" "this" {
 
 resource "aws_iam_role" "task-execution-role" {
   name                 = "${module.naming.resource_prefix.ecs}-execution"
-  permissions_boundary = "arn:aws:iam::${data.aws_caller_identity.this.account_id}:policy/eo_role_boundary"
 
   assume_role_policy = <<EOF
 {
@@ -122,7 +121,6 @@ resource "aws_iam_role_policy_attachment" "task-execution-role" {
 
 resource "aws_iam_role" "task-role" {
   name                 = module.naming.resource_prefix.ecs
-  permissions_boundary = "arn:aws:iam::${data.aws_caller_identity.this.account_id}:policy/eo_role_boundary"
 
   assume_role_policy = <<EOF
 {

@@ -108,7 +108,6 @@ resource "aws_s3_bucket_versioning" "replica" {
 
 resource "aws_iam_role" "replication" {
   name                 = "${module.naming.resource_prefix.iam_role}-replication"
-  permissions_boundary = "arn:aws:iam::${data.aws_caller_identity.this.account_id}:policy/eo_role_boundary"
   assume_role_policy   = data.aws_iam_policy_document.replication_assume_role.json
 }
 

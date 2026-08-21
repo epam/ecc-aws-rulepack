@@ -54,5 +54,3 @@ data "archive_file" "this" {
   source_file = "welcome.py"
   output_path = "welcome.zip"
 }
-
-data "aws_caller_identity" "this" {}

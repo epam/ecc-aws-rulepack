@@ -3,9 +3,13 @@ import json
 import boto3
 import botocore
 from pathlib import Path
+from logger import get_logger
+
+
+logger = get_logger(__name__)
 
 readonly_role_name = "github_ci_readonly_ecc-aws-rulepack"
-ci_role_name = "github_ci_ecc-aws-rulepack"
+DEFAULT_CI_ROLE_NAME = "github_ci_ecc-aws-rulepack"
 policy_name = 'custodian_readonly'
 
 def check_role_exists(color):
@@ -26,7 +30,8 @@ def check_policy_exists(readonly_role_name, policy_name):
         policy_exists = False
     return policy_exists
 
-def create_delete_readonly_role_aws(create=False, delete=False, color = ''):
+def create_delete_readonly_role_aws(create=False, delete=False, color='',
+                                    ci_role_name=DEFAULT_CI_ROLE_NAME):
     readonly_role_name_color = f"{readonly_role_name}_{color}"
     sts = boto3.client("sts")
     account_id = sts.get_caller_identity()["Account"]
@@ -47,11 +52,12 @@ def create_delete_readonly_role_aws(create=False, delete=False, color = ''):
         if not check_role_exists(color):
             try:
                 role = client.create_role(
-                    RoleName=readonly_role_name_color, AssumeRolePolicyDocument=json.dumps(trust_policy)
+                    RoleName=readonly_role_name_color,
+                    AssumeRolePolicyDocument=json.dumps(trust_policy),
                 )
-                print(f"Created role {readonly_role_name_color}.")
+                logger.info("Created role %s.", readonly_role_name_color)
             except botocore.exceptions.ClientError:
-                print(f"Couldn't create role {readonly_role_name_color}.")
+                logger.exception("Couldn't create role %s.", readonly_role_name_color)
                 raise
             else:
                 return role
@@ -60,9 +66,9 @@ def create_delete_readonly_role_aws(create=False, delete=False, color = ''):
                 role = client.update_assume_role_policy(
                     RoleName=readonly_role_name_color, PolicyDocument=json.dumps(trust_policy)
                 )
-                print(f"Updated trust policy for role {readonly_role_name_color}.")
+                logger.info("Updated trust policy for role %s.", readonly_role_name_color)
             except botocore.exceptions.ClientError:
-                print(f"Couldn't update trust policy for role {readonly_role_name_color}.")
+                logger.exception("Couldn't update trust policy for role %s.", readonly_role_name_color)
                 raise
             else:
                 return role
@@ -72,9 +78,9 @@ def create_delete_readonly_role_aws(create=False, delete=False, color = ''):
                 if check_policy_exists(readonly_role_name_color, policy_name):
                     client.delete_role_policy(RoleName=readonly_role_name_color, PolicyName=policy_name)
                 client.delete_role(RoleName=readonly_role_name_color)
-                print(f"Deleted role {readonly_role_name_color}.")
+                logger.info("Deleted role %s.", readonly_role_name_color)
             except botocore.exceptions.ClientError:
-                print(f"Couldn't delete role {readonly_role_name_color}.")
+                logger.exception("Couldn't delete role %s.", readonly_role_name_color)
                 raise
 
 

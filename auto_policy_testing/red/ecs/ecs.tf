@@ -190,7 +190,6 @@ DEFINITION
 
 resource "aws_iam_role" "task_execution" {
   name                 = "${module.naming.resource_prefix.ecs}-execution"
-  permissions_boundary = "arn:aws:iam::${data.aws_caller_identity.this.account_id}:policy/eo_role_boundary"
 
   assume_role_policy = <<EOF
 {
@@ -215,7 +214,6 @@ resource "aws_iam_role_policy_attachment" "task_execution" {
 
 resource "aws_iam_role" "task" {
   name                 = "${module.naming.resource_prefix.ecs}-task"
-  permissions_boundary = "arn:aws:iam::${data.aws_caller_identity.this.account_id}:policy/eo_role_boundary"
 
   assume_role_policy = <<EOF
 {

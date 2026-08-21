@@ -30,8 +30,7 @@ resource "aws_secretsmanager_secret_version" "rotation_failing" {
 }
 
 resource "aws_iam_role" "rotation" {
-  name                 = "${module.naming.resource_prefix.secrets}-rotation"
-  permissions_boundary = "arn:aws:iam::${data.aws_caller_identity.this.account_id}:policy/eo_role_boundary"
+  name = "${module.naming.resource_prefix.secrets}-rotation"
 
   assume_role_policy = jsonencode({
     Version = "2012-10-17"

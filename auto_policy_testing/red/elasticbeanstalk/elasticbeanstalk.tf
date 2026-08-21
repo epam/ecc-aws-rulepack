@@ -7,7 +7,6 @@ data "aws_elastic_beanstalk_solution_stack" "python" {
 
 resource "aws_iam_role" "ec2" {
   name                 = "${module.naming.resource_prefix.beanstalk}-ec2"
-  permissions_boundary = "arn:aws:iam::${data.aws_caller_identity.this.account_id}:policy/eo_role_boundary"
 
   assume_role_policy = <<EOF
 {
@@ -42,7 +41,6 @@ resource "aws_iam_instance_profile" "ec2" {
 
 resource "aws_iam_role" "service" {
   name                 = "${module.naming.resource_prefix.beanstalk}-service"
-  permissions_boundary = "arn:aws:iam::${data.aws_caller_identity.this.account_id}:policy/eo_role_boundary"
 
   assume_role_policy = <<EOF
 {

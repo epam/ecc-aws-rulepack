@@ -52,7 +52,6 @@ resource "aws_cloudwatch_log_stream" "this" {
 
 resource "aws_iam_role" "this" {
   name                 = module.naming.resource_prefix.cloud_trail
-  permissions_boundary = "arn:aws:iam::${data.aws_caller_identity.this.account_id}:policy/eo_role_boundary"
   assume_role_policy   = <<-POLICY
     {
       "Version": "2012-10-17",

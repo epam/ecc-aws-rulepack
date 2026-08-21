@@ -41,13 +41,11 @@ data "aws_iam_policy_document" "lambda_assume_role" {
 
 resource "aws_iam_role" "lambda_role" {
   name                 = "${module.naming.resource_prefix.step_function}-lambda"
-  permissions_boundary = "arn:aws:iam::${data.aws_caller_identity.this.account_id}:policy/eo_role_boundary"
   assume_role_policy   = data.aws_iam_policy_document.lambda_assume_role.json
 }
 
 resource "aws_iam_role" "sfn" {
   name                 = "${module.naming.resource_prefix.step_function}-sfn"
-  permissions_boundary = "arn:aws:iam::${data.aws_caller_identity.this.account_id}:policy/eo_role_boundary"
   assume_role_policy   = data.aws_iam_policy_document.sfn.json
 }
 

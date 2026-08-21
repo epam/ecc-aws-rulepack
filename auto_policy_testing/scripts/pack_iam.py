@@ -1,9 +1,12 @@
 import os
-import re
 import sys
 import yaml
 import json
 from pathlib import Path
+from logger import get_logger
+
+
+logger = get_logger(__name__)
 
 root_path = Path(os.getcwd()).parents[1]
 tf_path = os.path.join(root_path, 'terraform')
@@ -85,12 +88,8 @@ def pack_iam():
                         if permission not in full_resource_type_policy["Statement"][0]["Action"]:
                             full_resource_type_policy["Statement"][0]["Action"].append(permission)
             else:
-                print("File does not exist: ", tf_iam_path)
+                logger.error("File does not exist: %s", tf_iam_path)
                 sys.exit(1)
         resource_type_iam_path = os.path.join(iam_path, resource + '.json')
         with open(resource_type_iam_path, "w") as iam_file:
             json.dump(full_resource_type_policy, iam_file)
-
-
-if __name__ == "__main__":
-    main()

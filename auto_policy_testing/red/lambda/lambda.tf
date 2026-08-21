@@ -5,7 +5,6 @@ resource "aws_security_group" "this" {
 
 resource "aws_iam_role" "this" {
   name                 = module.naming.resource_prefix.lambda_function
-  permissions_boundary = "arn:aws:iam::${data.aws_caller_identity.this.account_id}:policy/eo_role_boundary"
 
   assume_role_policy = <<EOF
 {

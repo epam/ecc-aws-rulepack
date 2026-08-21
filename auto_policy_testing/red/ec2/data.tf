@@ -12,8 +12,6 @@ data "aws_iam_role" "ssm" {
   name = "AWSServiceRoleForAmazonSSM"
 }
 
-data "aws_caller_identity" "this" {}
-
 data "aws_availability_zones" "this" {
   state = "available"
 }
