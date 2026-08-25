@@ -1,5 +1,5 @@
 resource "aws_glue_security_configuration" "this" {
-  name = "${module.naming.resource_prefix.glue_security_configuration}"
+  name = module.naming.resource_prefix.glue_security_configuration
 
   encryption_configuration {
     cloudwatch_encryption {

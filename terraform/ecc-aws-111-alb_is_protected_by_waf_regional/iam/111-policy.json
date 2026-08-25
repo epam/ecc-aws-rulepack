@@ -7,7 +7,9 @@
                 "elasticloadbalancing:DescribeLoadBalancers",
                 "elasticloadbalancing:DescribeTags",
                 "waf-regional:ListWebACLs",
-                "waf-regional:ListResourcesForWebACL"
+                "waf-regional:ListResourcesForWebACL",
+                "wafv2:ListWebACLs",
+                "wafv2:ListResourcesForWebACL"
             ],
             "Resource": "*"
         }

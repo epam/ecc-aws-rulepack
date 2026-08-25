@@ -1,5 +1,5 @@
 resource "aws_iam_role" "this" {
-  name = "${module.naming.resource_prefix.dlm_policy}"
+  name                 = module.naming.resource_prefix.dlm_policy
 
   assume_role_policy = <<EOF
 {
@@ -19,7 +19,7 @@ EOF
 }
 
 resource "aws_iam_role_policy" "this" {
-  name = "${module.naming.resource_prefix.dlm_policy}"
+  name = module.naming.resource_prefix.dlm_policy
   role = aws_iam_role.this.id
 
   policy = <<EOF
@@ -51,7 +51,7 @@ EOF
 }
 
 resource "aws_dlm_lifecycle_policy" "this" {
-  description        = "${module.naming.resource_prefix.dlm_policy}"
+  description        = module.naming.resource_prefix.dlm_policy
   execution_role_arn = aws_iam_role.this.arn
   state              = "ENABLED"
 

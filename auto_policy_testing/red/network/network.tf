@@ -3,5 +3,5 @@ resource "aws_network_acl" "this" {
   provider = aws.provider2
 }
 
-resource "aws_eip" "this" { }
+resource "aws_eip" "this" {}
 

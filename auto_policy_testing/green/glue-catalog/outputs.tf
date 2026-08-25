@@ -1,5 +1,5 @@
 output "glue-catalog" {
   value = {
-    glue-catalog = aws_glue_data_catalog_encryption_settings.this.id
+    glue-catalog = data.aws_caller_identity.this.account_id
   }
 }

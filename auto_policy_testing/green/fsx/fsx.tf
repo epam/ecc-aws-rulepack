@@ -24,7 +24,7 @@ resource "aws_fsx_backup" "this" {
 }
 
 # ecc-aws-467-fsx_windows_file_server_multi_az_enabled
-# resource creation may take about 30 minutes
+# MULTI_AZ Windows + Managed AD often takes 60-90+ minutes
 resource "aws_directory_service_directory" "this" {
   name     = "workspaces.example.com"
   password = "#S1ncerely"
@@ -33,19 +33,25 @@ resource "aws_directory_service_directory" "this" {
 
   vpc_settings {
     vpc_id     = data.aws_vpc.default.id
-    subnet_ids = [data.aws_subnets.this.ids[0], data.aws_subnets.this.ids[1]]
+    subnet_ids = [data.aws_subnet.az1.id, data.aws_subnet.az2.id]
   }
 }
 
 resource "aws_fsx_windows_file_system" "this" {
-  active_directory_id             = aws_directory_service_directory.this.id
-  storage_type                    = "HDD"
-  storage_capacity                = 2000
-  subnet_ids                      = [data.aws_subnets.this.ids[0],data.aws_subnets.this.ids[1]]
-  throughput_capacity             = 8
-  skip_final_backup               = true
-  deployment_type                 = "MULTI_AZ_1"
-  preferred_subnet_id             = data.aws_subnets.this.ids[0]
+  active_directory_id = aws_directory_service_directory.this.id
+  storage_type        = "HDD"
+  storage_capacity    = 2000
+  subnet_ids          = [data.aws_subnet.az1.id, data.aws_subnet.az2.id]
+  throughput_capacity = 8
+  skip_final_backup   = true
+  deployment_type     = "MULTI_AZ_1"
+  preferred_subnet_id = data.aws_subnet.az1.id
 
   depends_on = [aws_directory_service_directory.this]
+
+  timeouts {
+    create = "90m"
+    delete = "60m"
+    update = "90m"
+  }
 }

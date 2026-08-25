@@ -1,5 +1,5 @@
 output "hostedzone" {
   value = {
-    hostedzone = aws_route53_zone.this.id
+    hostedzone = "/hostedzone/${aws_route53_zone.this.zone_id}"
   }
 }

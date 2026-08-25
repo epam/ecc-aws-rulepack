@@ -4,7 +4,8 @@
         {
             "Effect": "Allow",
             "Action": [
-                "es:DescribeElasticsearchDomain"
+                "es:DescribeElasticsearchDomain",
+                "es:DescribeReservedElasticsearchInstances"
             ],
             "Resource": "*"
         }

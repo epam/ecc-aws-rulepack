@@ -4,13 +4,14 @@ resource "aws_lb" "this" {
   load_balancer_type         = "application"
   security_groups            = [aws_security_group.this.id]
   subnets                    = [aws_subnet.subnet1.id, aws_subnet.subnet2.id]
-  internal                   = false
+  internal                   = true
   drop_invalid_header_fields = true
-  # enable_deletion_protection = true
-  desync_mitigation_mode     = "defensive"
+  # enable_deletion_protection = var.enable_deletion_protection
+  desync_mitigation_mode = "defensive"
 
   access_logs {
     bucket  = aws_s3_bucket.this.bucket
+    prefix  = ""
     enabled = true
   }
 
@@ -37,59 +38,72 @@ resource "aws_lb_listener" "this" {
 }
 
 resource "aws_security_group_rule" "rule1" {
-    type        = "ingress"
-    from_port   = 80
-    to_port     = 80
-    protocol    = "tcp"
-    cidr_blocks = [aws_vpc.this.cidr_block]
-    security_group_id = aws_security_group.this.id
-  }
-
-resource "aws_security_group_rule" "rule2" {
-  type        = "egress"
-  from_port   = 443
-  to_port     = 443
-  protocol    = "tcp"
-  cidr_blocks = [aws_vpc.this.cidr_block]
+  type              = "ingress"
+  from_port         = 80
+  to_port           = 80
+  protocol          = "tcp"
+  cidr_blocks       = [aws_vpc.this.cidr_block]
   security_group_id = aws_security_group.this.id
 }
 
-resource "aws_wafregional_ipset" "this" {
-  name = "GreenWAFRegionalIPSet"
+resource "aws_security_group_rule" "rule2" {
+  type              = "egress"
+  from_port         = 443
+  to_port           = 443
+  protocol          = "tcp"
+  cidr_blocks       = [aws_vpc.this.cidr_block]
+  security_group_id = aws_security_group.this.id
 }
 
-resource "aws_wafregional_rule" "this" {
-  name        = "GreenWAFRegionalRule"
-  metric_name = "GreenWAFRegionalRule"
-
-  predicate {
-    data_id = aws_wafregional_ipset.this.id
-    negated = false
-    type    = "IPMatch"
-  }
+resource "aws_wafv2_ip_set" "this" {
+  name               = "GreenWAFv2IPSet"
+  description        = "IP set for ALB WAFv2 rule"
+  scope              = "REGIONAL"
+  ip_address_version = "IPV4"
+  # RFC 5737 TEST-NET-2 placeholder for tests
+  addresses = ["198.51.100.0/24"]
 }
 
-resource "aws_wafregional_web_acl" "this" {
-  name        = "GreenWAFRegionalACL"
-  metric_name = "GreenWAFRegionalACL"
+resource "aws_wafv2_web_acl" "this" {
+  name        = "GreenWAFv2ACL"
+  description = "Regional WAFv2 ACL for ALB"
+  scope       = "REGIONAL"
 
   default_action {
-    type = "ALLOW"
+    allow {}
   }
 
   rule {
+    name     = "block-ip-set"
+    priority = 1
+
     action {
-      type = "BLOCK"
+      block {}
     }
 
-    priority = 1
-    rule_id  = aws_wafregional_rule.this.id
+    statement {
+      ip_set_reference_statement {
+        arn = aws_wafv2_ip_set.this.arn
+      }
+    }
+
+    visibility_config {
+      cloudwatch_metrics_enabled = true
+      metric_name                = "GreenWAFv2Rule"
+      sampled_requests_enabled   = true
+    }
+  }
+
+  visibility_config {
+    cloudwatch_metrics_enabled = true
+    metric_name                = "GreenWAFv2ACL"
+    sampled_requests_enabled   = true
   }
 }
 
-resource "aws_wafregional_web_acl_association" "this" {
+resource "aws_wafv2_web_acl_association" "this" {
   resource_arn = aws_lb.this.arn
-  web_acl_id   = aws_wafregional_web_acl.this.id
+  web_acl_arn  = aws_wafv2_web_acl.this.arn
 }
 
 # resource "aws_vpc" "this" {
@@ -130,14 +144,6 @@ resource "aws_security_group" "this" {
   name        = "allow_http"
   description = "Allow HTTP inbound traffic"
   vpc_id      = aws_vpc.this.id
-
-  ingress {
-    description = "HTTP from VPC"
-    from_port   = 80
-    to_port     = 80
-    protocol    = "tcp"
-    cidr_blocks = [aws_vpc.this.cidr_block]
-  }
 
   egress {
     from_port   = 0

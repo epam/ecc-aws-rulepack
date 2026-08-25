@@ -1,5 +1,5 @@
 resource "aws_iam_role" "this" {
-  name = "${module.naming.resource_prefix.graphql_api}"
+  name                 = module.naming.resource_prefix.graphql_api
 
   assume_role_policy = <<POLICY
 {
@@ -23,7 +23,7 @@ resource "aws_iam_role_policy_attachment" "this" {
 }
 
 resource "aws_appsync_graphql_api" "this" {
-  name                = "${module.naming.resource_prefix.graphql_api}"
+  name                = module.naming.resource_prefix.graphql_api
   authentication_type = "API_KEY"
 
   log_config {
@@ -43,7 +43,7 @@ resource "aws_appsync_api_cache" "this" {
 }
 
 resource "aws_wafv2_web_acl" "this" {
-  name  = "${module.naming.resource_prefix.graphql_api}"
+  name  = module.naming.resource_prefix.graphql_api
   scope = "REGIONAL"
 
   default_action {
@@ -52,7 +52,7 @@ resource "aws_wafv2_web_acl" "this" {
 
   visibility_config {
     cloudwatch_metrics_enabled = false
-    metric_name                = "${module.naming.resource_prefix.graphql_api}"
+    metric_name                = module.naming.resource_prefix.graphql_api
     sampled_requests_enabled   = false
   }
 }

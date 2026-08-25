@@ -19,7 +19,7 @@ output "resource_prefix" {
     sagemaker_model = "${local.suffix}-${var.resource_type}-sagemaker-model-${local.compliance_status}"
     sagemaker_notebook = "${local.suffix}-${var.resource_type}-sagemaker-notebook-${local.compliance_status}"
     qldb              = "${local.suffix}-${var.resource_type}-qldb-${local.compliance_status}"
-    kafka             = "${local.suffix}_${var.resource_type}_kafka_${local.compliance_status}"
+    kafka             = "${local.suffix}-${var.resource_type}-kafka-${local.compliance_status}"
     launch_config     = "${local.suffix}_${var.resource_type}_launch_config_${local.compliance_status}"
     cloud_trail       = "${local.suffix}_${var.resource_type}_cloudtrail_${local.compliance_status}"
     nat_gateway       = "${local.suffix}_${var.resource_type}_ng_${local.compliance_status}"
@@ -65,6 +65,7 @@ output "resource_prefix" {
     cw_log_group      = "${local.suffix}_${var.resource_type}_lg_${local.compliance_status}"
     s3_bucket         = "${local.suffix}-${var.resource_type}-bucket-${local.compliance_status}"
     vpn_gtw           = "${local.suffix}-${var.resource_type}-vpn_gtw-${local.compliance_status}"
+    dax               = "${local.suffix}-${var.resource_type}-${local.compliance_status}"
   }
 }
 

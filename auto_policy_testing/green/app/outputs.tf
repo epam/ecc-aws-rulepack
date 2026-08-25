@@ -1,5 +1,0 @@
-output "kafka" {
-  value = {
-    # 
-  }
-}

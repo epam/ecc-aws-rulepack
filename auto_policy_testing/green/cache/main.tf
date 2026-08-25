@@ -11,3 +11,5 @@ data "terraform_remote_state" "common" {
     path = "../common_resources/terraform.tfstate"
   }
 }
+
+data "aws_caller_identity" "this" {}

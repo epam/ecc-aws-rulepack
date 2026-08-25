@@ -1,5 +1,5 @@
 resource "aws_iam_role" "firehose_role" {
-  name = "${module.naming.resource_prefix.firehose}"
+  name                 = module.naming.resource_prefix.firehose
 
   assume_role_policy = <<EOF
 {
@@ -19,7 +19,7 @@ EOF
 }
 
 resource "aws_iam_role" "lambda_iam" {
-  name = "${module.naming.resource_prefix.lambda_function}"
+  name                 = module.naming.resource_prefix.lambda_function
 
   assume_role_policy = <<EOF
 {
@@ -39,19 +39,19 @@ EOF
 }
 
 resource "aws_kinesis_firehose_delivery_stream" "this" {
-  name        = "${module.naming.resource_prefix.firehose}"
+  name        = module.naming.resource_prefix.firehose
   destination = "extended_s3"
-  server_side_encryption{
+  server_side_encryption {
     enabled = true
   }
-  extended_s3_configuration{
+  extended_s3_configuration {
     role_arn   = aws_iam_role.firehose_role.arn
     bucket_arn = aws_s3_bucket.this.arn
   }
 }
 
 resource "aws_s3_bucket" "this" {
-  bucket = "${module.naming.resource_prefix.s3_bucket}-${random_integer.this.result}"
+  bucket        = "${module.naming.resource_prefix.s3_bucket}-${random_integer.this.result}"
   force_destroy = "true"
 }
 

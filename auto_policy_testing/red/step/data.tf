@@ -55,3 +55,4 @@ data "archive_file" "this" {
   output_path = "welcome.zip"
 }
 
+data "aws_caller_identity" "this" {}

@@ -1,5 +1,5 @@
 resource "aws_redshift_cluster" "this" {
-  cluster_identifier                   = "${module.naming.resource_prefix.redshift_cluster}"
+  cluster_identifier                   = module.naming.resource_prefix.redshift_cluster
   database_name                        = "redshifttest"
   master_username                      = "root"
   master_password                      = random_password.this.result
@@ -26,7 +26,7 @@ resource "aws_redshift_cluster" "this" {
 }
 
 resource "aws_redshift_parameter_group" "this" {
-  name   = "${module.naming.resource_prefix.redshift_parameter_group}"
+  name   = module.naming.resource_prefix.redshift_parameter_group
   family = "redshift-1.0"
 
   parameter {

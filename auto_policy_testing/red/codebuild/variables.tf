@@ -5,12 +5,12 @@ variable "region" {
 }
 
 variable "github_location" {
-  type        = string
-  default     = "https://github.com/mitchellh/packer.git"
+  type    = string
+  default = "https://github.com/mitchellh/packer.git"
 }
 
 variable "bitbucket_location" {
-  type        = string
-  default     = "https://bitbucket.org/ansible/ansible"
+  type    = string
+  default = "https://bitbucket.org/ansible/ansible"
 }
 

@@ -97,7 +97,7 @@ resource "aws_codebuild_project" "b" {
 
 
 resource "aws_iam_role" "this" {
-  name = "${module.naming.resource_prefix.codebuild}"
+  name                 = module.naming.resource_prefix.codebuild
 
   assume_role_policy = <<EOF
 {

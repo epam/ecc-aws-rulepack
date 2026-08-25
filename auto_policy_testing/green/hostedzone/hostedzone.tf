@@ -21,7 +21,7 @@ data "aws_iam_policy_document" "this" {
 
 resource "aws_cloudwatch_log_resource_policy" "this" {
   policy_document = data.aws_iam_policy_document.this.json
-  policy_name     = "${module.naming.resource_prefix.hostedzone}"
+  policy_name     = module.naming.resource_prefix.hostedzone
 }
 
 resource "aws_route53_zone" "this" {

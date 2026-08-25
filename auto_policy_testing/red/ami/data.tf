@@ -10,3 +10,5 @@ data "aws_ami" "this" {
     values = ["amzn2-ami-hvm*"]
   }
 }
+
+data "aws_caller_identity" "this" {}

@@ -2,6 +2,7 @@ resource "aws_s3_bucket" "input_bucket" {
   bucket        = "${module.naming.resource_prefix.codebuild}-${random_integer.this.result}"
   force_destroy = true
 }
+
 resource "aws_s3_bucket" "output_bucket" {
   bucket        = "${module.naming.resource_prefix.codebuild}-${random_integer.this.result}-2"
   force_destroy = true
@@ -19,7 +20,7 @@ resource "aws_s3_object" "object" {
 }
 
 resource "aws_codebuild_project" "this" {
-  name = "${module.naming.resource_prefix.codebuild}"
+  name = module.naming.resource_prefix.codebuild
 
   service_role = aws_iam_role.this.arn
   provider     = aws.provider2
@@ -52,8 +53,8 @@ resource "aws_codebuild_project" "this" {
     }
 
     s3_logs {
-      status   = "ENABLED"
-      location = "${aws_s3_bucket.output_bucket.id}/build-log"
+      status              = "ENABLED"
+      location            = "${aws_s3_bucket.output_bucket.id}/build-log"
       encryption_disabled = true
     }
   }
@@ -67,7 +68,7 @@ resource "aws_codebuild_project" "this" {
 }
 
 resource "aws_iam_role" "this" {
-  name = "${module.naming.resource_prefix.codebuild}"
+  name                 = module.naming.resource_prefix.codebuild
 
   assume_role_policy = <<EOF
 {

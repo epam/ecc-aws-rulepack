@@ -6,6 +6,10 @@ import sys
 import timer
 import exception_rules
 from terraform_infra import output
+from logger import get_logger
+
+
+logger = get_logger(__name__)
 
 
 def read_yaml_file(filepath: str):
@@ -39,17 +43,17 @@ def custodian_run(policy_execution_outputs: dict,
     OUTPUT_DIR = output_dir
     REGIONS = regions
     CLOUD = cloud
-    print(f"'{resource}' policies", flush=True)
+    logger.info(f"'{resource}' policies: {[p.split('.')[0] for p in policies]}")
 
     if not REGIONS:
         REGIONS = os.getenv("AWS_DEFAULT_REGION")
 
     # Run yaml policies
-    print("The cloud is " + CLOUD)
+    logger.info("The cloud is %s", CLOUD)
     if CLOUD != 'AWS':
         REGIONS = 'default'
     elif not REGIONS:
-        print('Please use --regions param or setup the AWS_DEFAULT_REGION environment variable')
+        logger.error("Please use --regions param or setup the AWS_DEFAULT_REGION environment variable")
         sys.exit(1)
     regions = REGIONS.split(';')
 
@@ -75,8 +79,9 @@ def custodian_run(policy_execution_outputs: dict,
                     if region != "default":
                         policy_execution_outputs[policy.split('.')[0]]['region'] = region
 
-                    print(f"processed {policy} policy")
+                    logger.info("processed %s policy", policy)
             except Exception as error:
-                print(f"An exception occurred with policy {policy}:", error)
+                logger.exception("An exception occurred with policy %s: %s", policy, error)
                 sys.exit(1)
+    logger.debug(f"Policy execution outputs: {policy_execution_outputs}")
     return policy_execution_outputs

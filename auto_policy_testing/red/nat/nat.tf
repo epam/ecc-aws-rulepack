@@ -23,7 +23,7 @@ resource "aws_route_table_association" "public" {
   route_table_id = aws_route_table.public.id
 }
 
-resource "aws_eip" "this" { }
+resource "aws_eip" "this" {}
 
 resource "aws_route_table" "private" {
   vpc_id   = data.terraform_remote_state.common.outputs.vpc_id

@@ -1,7 +1,12 @@
 import os
 import json
 import regex
+
+from logger import get_logger
 from scan import policy_in_exception
+
+
+logger = get_logger(__name__)
 
 pattern_for_json_substring = regex.compile(r'\{(?:[^{}]|(?R))*\}')
 
@@ -152,6 +157,7 @@ def create_report(policy_execution_outputs: dict,
         resource_found = False
         tf_resource_name_status = {}
         tf_resource_id = policy_execution_outputs_test[entity['policy_name']]['resource_id']
+        logger.debug("Terraform resource ID for policy %s: %s", entity['policy_name'], tf_resource_id)
 
         with open(cloud.lower() + '_map_report_fields.json', 'r') as file:
             map_report_fields = json.load(file)
@@ -165,7 +171,7 @@ def create_report(policy_execution_outputs: dict,
                     entity["errors"].append("ERROR - Resource type has multiple report fields, but in terraform output given only one!")
                     # resource_field_value = {r: resource[r] for r in resource_field}
                 else:
-                    resource_field_value = resource[resource_field[0]]
+                    resource_field_value = resource.get(resource_field[0])
                     if tf_resource_id == resource_field_value and tf_resource_id:
                         tf_resource_name_status = {tf_resource_id: True}
                         resource_found = all(value is True for value in tf_resource_name_status.values())
@@ -185,7 +191,7 @@ def create_report(policy_execution_outputs: dict,
                         entity["errors"].append("ERROR - Resource type has multiple report fields, but in terraform output given only one!")
                         # resource_field_value = {r: resource[r] for r in resource_field}
                     else:
-                        resource_field_value = resource[resource_field[0]]
+                        resource_field_value = resource.get(resource_field[0])
                     for tf_resource in tf_resource_ids:
                         if isinstance(resource_field_value, str):
                             if tf_resource == resource_field_value and tf_resource:
