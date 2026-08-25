@@ -23,11 +23,16 @@ aws = {
         "ecc-aws-552-dynamodb_tables_unused",
         "ecc-aws-519-vpc_vpn_2_tunnels_up",
         "ecc-aws-071-codebuild_project_source_repo_url_check",
+        "ecc-aws-092-ami_public_access",
+        # Reserved instances cannot be provisioned by auto_policy_testing terraform
         "ecc-aws-577-reserved_ec2_instance_payment_failed",
         "ecc-aws-578-reserved_ec2_instance_payment_pending",
         "ecc-aws-579-reserved_ec2_instance_recent_purchases",
         "ecc-aws-580-reserved_instance_lease_expiration_in_30_days",
         "ecc-aws-581-reserved_instance_lease_expiration_in_7_days",
+        "ecc-aws-587-elasticsearch_reserved_instance_payment_failed",
+        "ecc-aws-588-elasticsearch_reserved_instance_payment_pending",
+        "ecc-aws-589-elasticsearch_reserved_instance_recent_purchases",
         # Reserved Redshift nodes cannot be provisioned by auto_policy_testing terraform
         "ecc-aws-595-reserved_redshift_node_payment_failed",
         "ecc-aws-596-reserved_redshift_node_payment_pending",

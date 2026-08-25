@@ -9,7 +9,7 @@ from logger import get_logger
 logger = get_logger(__name__)
 
 readonly_role_name = "github_ci_readonly_ecc-aws-rulepack"
-DEFAULT_CI_ROLE_NAME = "github_ci_ecc-aws-rulepack"
+DEFAULT_CI_ROLE_NAME = os.getenv("AUTO_TEST_CI_ROLE_NAME") or "github_ci_ecc-aws-rulepack"
 policy_name = 'custodian_readonly'
 
 def check_role_exists(color):
