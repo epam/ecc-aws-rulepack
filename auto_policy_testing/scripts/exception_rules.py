@@ -10,6 +10,10 @@ aws = {
         "ecc-aws-579-reserved_ec2_instance_recent_purchases",
         "ecc-aws-580-reserved_instance_lease_expiration_in_30_days",
         "ecc-aws-581-reserved_instance_lease_expiration_in_7_days",
+        # Reserved Elasticsearch instances cannot be provisioned by auto_policy_testing terraform
+        "ecc-aws-587-elasticsearch_reserved_instance_payment_failed",
+        "ecc-aws-588-elasticsearch_reserved_instance_payment_pending",
+        "ecc-aws-589-elasticsearch_reserved_instance_recent_purchases",
         # Reserved Redshift nodes cannot be provisioned by auto_policy_testing terraform
         "ecc-aws-595-reserved_redshift_node_payment_failed",
         "ecc-aws-596-reserved_redshift_node_payment_pending",
@@ -30,6 +34,7 @@ aws = {
         "ecc-aws-579-reserved_ec2_instance_recent_purchases",
         "ecc-aws-580-reserved_instance_lease_expiration_in_30_days",
         "ecc-aws-581-reserved_instance_lease_expiration_in_7_days",
+        # Reserved Elasticsearch instances cannot be provisioned by auto_policy_testing terraform
         "ecc-aws-587-elasticsearch_reserved_instance_payment_failed",
         "ecc-aws-588-elasticsearch_reserved_instance_payment_pending",
         "ecc-aws-589-elasticsearch_reserved_instance_recent_purchases",
@@ -45,7 +50,6 @@ aws = {
         "ecc-aws-185-ec2_stopped_instance",
         "ecc-aws-610-idle_ec2_instance",
         # EKS versions matching these policy thresholds can no longer be created in AWS
-        "ecc-aws-040-eks_cluster_version_latest",
         "ecc-aws-497-eks_cluster_oldest_supported_version",
         # Glue catalog encryption is account-singleton; red uses SSE-KMS/aws/glue for 253+365
         "ecc-aws-252-glue_data_catalog_encrypted_at_rest",
