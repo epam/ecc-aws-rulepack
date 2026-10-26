@@ -1,0 +1,12 @@
+{
+    "status_code": 200,
+    "data": {
+        "RuleGroups": [
+            {
+                "RuleGroupId": "3be77fa1-0ce2-482a-a666-8ca29d96dfab",
+                "Name": "526_waf_rule_group_red"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

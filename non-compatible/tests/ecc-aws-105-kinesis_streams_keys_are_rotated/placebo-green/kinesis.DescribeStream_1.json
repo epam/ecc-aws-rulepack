@@ -1,0 +1,42 @@
+{
+    "status_code": 200,
+    "data": {
+        "StreamDescription": {
+            "StreamName": "green-kinesis-stream-105",
+            "StreamARN": "arn:aws:kinesis:us-east-1:this:stream/green-kinesis-stream-105",
+            "StreamStatus": "ACTIVE",
+            "Shards": [
+                {
+                    "ShardId": "shardId-this",
+                    "HashKeyRange": {
+                        "StartingHashKey": "0",
+                        "EndingHashKey": "340282366920938463463374607431768211455"
+                    },
+                    "SequenceNumberRange": {
+                        "StartingSequenceNumber": "49620095887639926646506478518891411229893758550368321538"
+                    }
+                }
+            ],
+            "HasMoreShards": false,
+            "RetentionPeriodHours": 24,
+            "StreamCreationTimestamp": {
+                "__class__": "datetime",
+                "year": 2021,
+                "month": 7,
+                "day": 13,
+                "hour": 11,
+                "minute": 14,
+                "second": 25,
+                "microsecond": 0
+            },
+            "EnhancedMonitoring": [
+                {
+                    "ShardLevelMetrics": []
+                }
+            ],
+            "EncryptionType": "KMS",
+            "KeyId": "3a24022c-6ec3-428d-bf8d-ca82fe08660f"
+        },
+        "ResponseMetadata": {}
+    }
+}

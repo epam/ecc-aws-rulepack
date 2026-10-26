@@ -1,0 +1,42 @@
+{
+    "status_code": 200,
+    "data": {
+        "StreamDescription": {
+            "StreamName": "red-kinesis-stream-105-b",
+            "StreamARN": "arn:aws:kinesis:us-east-1:this:stream/red-kinesis-stream-105-b",
+            "StreamStatus": "ACTIVE",
+            "Shards": [
+                {
+                    "ShardId": "shardId-this",
+                    "HashKeyRange": {
+                        "StartingHashKey": "0",
+                        "EndingHashKey": "340282366920938463463374607431768211455"
+                    },
+                    "SequenceNumberRange": {
+                        "StartingSequenceNumber": "49620095929743733581332295010110847328653873182557601794"
+                    }
+                }
+            ],
+            "HasMoreShards": false,
+            "RetentionPeriodHours": 24,
+            "StreamCreationTimestamp": {
+                "__class__": "datetime",
+                "year": 2021,
+                "month": 7,
+                "day": 13,
+                "hour": 11,
+                "minute": 16,
+                "second": 23,
+                "microsecond": 0
+            },
+            "EnhancedMonitoring": [
+                {
+                    "ShardLevelMetrics": []
+                }
+            ],
+            "EncryptionType": "KMS",
+            "KeyId": "e5c5a40a-b77d-4d2b-ab2c-71e01cb3a3bc"
+        },
+        "ResponseMetadata": {}
+    }
+}
