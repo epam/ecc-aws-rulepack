@@ -9,7 +9,7 @@ policies:
   - name: ecc-aws-439-qldb_deletion_protection_enabled
     comment: '010047062000'
     description: |
-      QLDB termination protection not enabled
+      [DEPRECATED] QLDB termination protection not enabled
     resource: qldb
     conditions:
       - type: value
